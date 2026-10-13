@@ -15,6 +15,11 @@ thumb that an exit should be 20–30% faster than its entrance. Every number her
 | Inline expansion (quiz, tree branch) | Height and opacity of the content itself, from the row above it |
 | Toast | Slides up 8px, fades in, holds, then fades out — it never just blinks |
 | Card content under a skeleton | Skeletons cross-fade to content in 150ms, no jump |
+| **Route change** | The whole page rises 14px and settles in 260ms, keyed on pathname in `+layout.svelte`, so every navigation replays it. The current tab's icon settles from 0.86 to 1 at the same time. |
+
+A 6px move over 240ms is invisible in practice — that was the first attempt and it read as "nothing
+happened". Route transitions need to be at least a 12px travel to be noticed, and the tab the user
+landed on has to acknowledge the tap.
 
 ## Durations and curves
 

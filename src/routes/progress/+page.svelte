@@ -20,7 +20,7 @@
 
 <AppBar title="Progress" subtitle={`${totals.topics} topics · ${totals.subtopics + totals.types} subtopics in the library`} />
 
-<main class="page page-in">
+<main class="page">
 	<section class="gutter tiles">
 		<div class="tile">
 			<ProgressRing percent={$hydrated && allCardIds.length ? Math.round((overallSeen / allCardIds.length) * 100) : 0} size={52} stroke={4} />

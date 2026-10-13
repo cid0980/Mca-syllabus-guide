@@ -55,7 +55,7 @@
 	subtitle={`${totals.subjects} subjects · ${totals.topics} topics · ${totals.subtopics + totals.types} subtopics`}
 />
 
-<main class="page page-in">
+<main class="page">
 	<div class="gutter search-wrap">
 		<label class="input">
 			<span class="search-icon"><Search size={18} /></span>

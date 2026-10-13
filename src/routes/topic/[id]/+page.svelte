@@ -58,7 +58,7 @@
 
 {#if !data.found}
 	<AppBar title="Topic not found" back="/explore" />
-	<main class="page page-in">
+	<main class="page">
 		<ErrorState
 			title="Topic not found"
 			message="This id is not part of the stored syllabus. It may have been renamed."
@@ -82,7 +82,7 @@
 		]}
 	/>
 
-	<main class="page page-in">
+	<main class="page">
 		<section class="head gutter">
 			<div class="tags">
 				<span class="badge">{node.kind === 'type' ? 'Type' : node.kind === 'subtopic' ? 'Subtopic' : 'Topic'}</span>

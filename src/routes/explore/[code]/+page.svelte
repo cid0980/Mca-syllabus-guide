@@ -36,7 +36,7 @@
 	back="/explore"
 />
 
-<main class="page page-in">
+<main class="page">
 	{#if !data.found}
 		<ErrorState
 			title="Subject not found"

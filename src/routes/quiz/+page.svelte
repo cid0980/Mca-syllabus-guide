@@ -1,93 +1,209 @@
 <script lang="ts">
-	import { ListChecks, Play, Shuffle } from 'lucide-svelte';
-	import { subjects, cardsOfModule, loadTree } from '$lib/content';
+	import type { PageData } from './$types';
+	import { ListChecks, ChevronRight, Shuffle, RotateCcw, Play, Trophy } from 'lucide-svelte';
+	import { plural, totals } from '$lib/content';
+	import { progress } from '$lib/stores/progress';
+	import { hydrated } from '$lib/stores/hydrate';
+	import { lastSession } from '$lib/quiz';
 	import AppBar from '$lib/components/AppBar.svelte';
-	import ListRow from '$lib/components/ListRow.svelte';
 	import Notice from '$lib/components/Notice.svelte';
-	import Skeleton from '$lib/components/Skeleton.svelte';
-	import ErrorState from '$lib/components/ErrorState.svelte';
 
-	/** Quiz needs card counts per module, so load every tree once (cached after). */
-	let treesPromise = Promise.all(subjects.map((s) => loadTree(s.code).then((t) => ({ code: s.code, tree: t }))));
+	export let data: PageData;
 
-	$: quizSubjectsPromise = treesPromise.then((entries) =>
-		entries
-			.map(({ code, tree }) => ({
-				code,
-				subject: tree.subject,
-				modules: tree.modules
-					.map((m) => ({ module: m.module, title: m.title, cards: cardsOfModule(tree, m.module).length }))
-					.filter((m) => m.cards > 0)
-			}))
-			.filter((s) => s.modules.length > 0)
-	);
+	/** "wrong" mode needs the questions the student got wrong; ids come from the progress map */
+	$: wrongIds = Object.entries($progress)
+		.filter(([, p]) => p.quizWrong > 0)
+		.map(([id]) => id);
+	$: last = $hydrated ? lastSession() : null;
+
+	const sizes = [5, 10, 0];
+	function sizeLabel(n: number): string {
+		return n === 0 ? 'All' : `${n} questions`;
+	}
 </script>
 
 <svelte:head><title>Quiz — StudyFeed</title></svelte:head>
 
-<AppBar title="Quiz" subtitle="Questions come from the saved cards" />
+<AppBar
+	title="Quiz"
+	subtitle={data.totalQuestions
+		? `${data.totalQuestions} questions from ${plural(data.cardCount, 'card')}`
+		: 'Questions come from the saved cards'}
+/>
 
-<main class="page page-in">
-	<Notice
-		tone="accent"
-		title="Quiz mode is build step 4"
-		text="Question banks, scoring and the wrong-answer review list are built on the cards you already have. The decks below are ready to be quizzed."
-	/>
-	{#await quizSubjectsPromise}
-		<p class="section-label">Loading decks</p>
-		<Skeleton variant="rows" count={4} />
-	{:then list}
-		{#each list as subject}
-			<p class="section-label">{subject.subject}</p>
-			<div class="group">
-				{#each subject.modules as module}
-					<ListRow
-						href={`/feed/${encodeURIComponent(subject.code)}/${module.module}`}
-						title={`Module ${module.module} — ${module.title}`}
-						subtitle={`${module.cards} question cards available`}
-						chevron
-					>
-						<span slot="lead" class="mod nums">{module.module}</span>
-					</ListRow>
-				{/each}
-			</div>
-		{/each}
-	{:catch error}
-		<ErrorState
-			title="Could not load the question bank"
-			message={error.message}
-			on:retry={() => (treesPromise = Promise.all(subjects.map((s) => loadTree(s.code).then((t) => ({ code: s.code, tree: t })))))}
+<main class="page">
+	{#if data.totalQuestions === 0}
+		<Notice
+			title="No quiz questions yet"
+			text="Quiz mode reads the questions saved on each card, so it fills up as cards are written. The syllabus and every definition are already readable."
 		/>
-	{/await}
+		<div class="gutter">
+			<a class="btn btn--primary btn--block" href="/explore">Browse the syllabus</a>
+		</div>
+	{:else}
+		{#if last}
+			<div class="gutter last">
+				<Trophy size={16} />
+				<span class="grow">
+					Last run: <strong class="nums">{last.correct}/{last.total}</strong> · {last.scope}
+				</span>
+			</div>
+		{/if}
 
-	<section class="gutter actions">
-		<a class="btn btn--secondary" href="/feed/CSCA%20411/I"><Shuffle size={16} /> Practice in the feed</a>
-		<a class="btn btn--primary" href="/feed/CSCA%20411/I"><Play size={16} /> Start with DSA Module I</a>
-	</section>
+		<p class="section-label">Mixed practice</p>
+		<div class="gutter modes">
+			<a class="mode" href="/quiz/mixed?n=10">
+				<span class="mode-icon"><Shuffle size={18} /></span>
+				<span class="grow">
+					<span class="mode-title">10 random questions</span>
+					<span class="mode-sub">Pulled from every subject that has cards</span>
+				</span>
+				<span class="chev"><ChevronRight size={18} /></span>
+			</a>
+			<a class="mode" href="/quiz/mixed?n=20">
+				<span class="mode-icon"><ListChecks size={18} /></span>
+				<span class="grow">
+					<span class="mode-title">20 random questions</span>
+					<span class="mode-sub">A longer mixed set before an exam</span>
+				</span>
+				<span class="chev"><ChevronRight size={18} /></span>
+			</a>
+			{#if $hydrated && wrongIds.length}
+				<a class="mode" href="/quiz/mixed?mode=wrong">
+					<span class="mode-icon warn"><RotateCcw size={18} /></span>
+					<span class="grow">
+						<span class="mode-title">Retry what I missed</span>
+						<span class="mode-sub nums">{plural(wrongIds.length, 'card')} with a wrong answer recorded</span>
+					</span>
+					<span class="chev"><ChevronRight size={18} /></span>
+				</a>
+			{/if}
+		</div>
+
+		<p class="section-label">By module</p>
+		<div class="group">
+			{#each data.decks as deck}
+				<a class="deck pressable" href={`/quiz/${encodeURIComponent(deck.code)}/${deck.module}`}>
+					<span class="avatar" aria-hidden="true">{deck.module}</span>
+					<span class="grow">
+						<span class="deck-title">{deck.moduleTitle}</span>
+						<span class="deck-sub">
+							{deck.code} · {plural(deck.questions, 'question')} from {plural(deck.cards, 'card')}
+						</span>
+					</span>
+					<span class="chev"><ChevronRight size={18} /></span>
+				</a>
+			{/each}
+		</div>
+
+		<div class="gutter note">
+			<a class="btn btn--secondary btn--block" href="/feed/CSCA%20411/I">
+				<Play size={16} /> Study the cards before quizzing
+			</a>
+			<p class="fineprint">
+				Every answer is recorded per card, so the Progress screen shows accuracy per subject and per
+				module. Wrong answers can be retried at the end of any run.
+			</p>
+		</div>
+	{/if}
 </main>
 
 <style>
-	.mod {
+	.last {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-2);
+		margin-top: var(--sp-4);
+		padding: var(--sp-3);
+		background: var(--fill);
+		border-radius: var(--radius);
+		font-size: var(--fs-small);
+		color: var(--fg-muted);
+	}
+
+	.modes {
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-2);
+	}
+
+	.mode {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-3);
+		padding: var(--sp-3);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		transition: background-color var(--dur-press) var(--ease-standard), transform var(--dur-press) var(--ease-standard);
+	}
+
+	.mode:active {
+		background: var(--fill);
+		transform: scale(0.99);
+	}
+
+	.mode-icon {
 		display: grid;
 		place-items: center;
-		width: 34px;
-		height: 34px;
+		width: 36px;
+		height: 36px;
 		border-radius: var(--radius-full);
 		background: var(--fill);
 		color: var(--fg-muted);
-		font-size: var(--fs-caption);
+		flex: 0 0 auto;
+	}
+
+	.mode-icon.warn {
+		color: var(--warning);
+	}
+
+	.mode-title {
+		display: block;
+		font-size: var(--fs-body);
 		font-weight: 600;
 	}
 
-	.actions {
+	.mode-sub {
+		display: block;
+		font-size: var(--fs-caption);
+		color: var(--fg-subtle);
+	}
+
+	.deck {
 		display: flex;
-		gap: var(--sp-2);
+		align-items: center;
+		gap: var(--sp-3);
+		min-height: 60px;
+		padding: var(--sp-3) var(--sp-4);
+	}
+
+	.deck-title {
+		display: block;
+		font-size: var(--fs-body);
+		font-weight: 600;
+		line-height: 1.35;
+	}
+
+	.deck-sub {
+		display: block;
+		font-size: var(--fs-caption);
+		color: var(--fg-subtle);
+	}
+
+	.chev {
+		display: inline-flex;
+		color: var(--fg-subtle);
+		flex: 0 0 auto;
+	}
+
+	.note {
 		padding-top: var(--sp-6);
 	}
 
-	.actions .btn {
-		flex: 1;
-		min-width: 0;
-		font-size: var(--fs-small);
+	.fineprint {
+		font-size: var(--fs-caption);
+		line-height: 1.6;
+		color: var(--fg-subtle);
+		margin-top: var(--sp-3);
 	}
 </style>

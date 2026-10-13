@@ -111,6 +111,20 @@
 		line-height: 0;
 	}
 
+	/* the tab you land on settles in, so a navigation is visibly acknowledged */
+	.tab.on .glyph {
+		animation: tab-settle var(--dur-page) var(--ease-standard) both;
+	}
+
+	@keyframes tab-settle {
+		from {
+			transform: scale(0.86);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
+
 	.label {
 		font-size: 10px;
 		font-weight: 500;

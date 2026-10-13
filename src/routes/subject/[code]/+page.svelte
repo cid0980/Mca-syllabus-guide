@@ -19,7 +19,7 @@
 	back="/"
 />
 
-<main class="page page-in">
+<main class="page">
 	{#if !data.found}
 		<ErrorState
 			title="Subject not found"
@@ -43,7 +43,7 @@
 		{#if summary.counts.cards}
 			<div class="gutter actions">
 				<a class="btn btn--primary" href={`/feed/${encodeURIComponent(data.code)}/I`}>Start studying</a>
-				<a class="btn btn--secondary" href={`/explore/${encodeURIComponent(data.code)}`}>Syllabus</a>
+				<a class="btn btn--secondary" href={`/quiz/${encodeURIComponent(data.code)}/I`}>Quiz me</a>
 			</div>
 		{:else}
 			<div class="gutter actions">

@@ -54,7 +54,7 @@
 	--dur-quick: 150ms;
 	--dur-enter: 240ms;
 	--dur-exit: 180ms;
-	--dur-page: 240ms;
+	--dur-page: 260ms;
 	--dur-slow: 320ms;
 	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
 	--ease-enter: cubic-bezier(0.05, 0.7, 0.1, 1);
@@ -619,15 +619,15 @@ ol {
 
 /* ---------- content transitions ---------- */
 
-/* page content settles in instead of appearing fully formed */
-.page-in {
-	animation: page-in var(--dur-page) var(--ease-enter) both;
+/* every navigation: content rises into place and settles (see src/routes/+layout.svelte) */
+.route {
+	animation: route-in var(--dur-page) var(--ease-enter) both;
 }
 
-@keyframes page-in {
+@keyframes route-in {
 	from {
 		opacity: 0;
-		transform: translate3d(0, 6px, 0);
+		transform: translate3d(0, 14px, 0);
 	}
 }
 

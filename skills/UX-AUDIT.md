@@ -48,6 +48,17 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 24 | Typography feels cramped on a phone | One Inter variable stack, 4/8/12/16/24/32/48 spacing scale, 1.3–1.6 line heights | fixed |
 | 25 | Panels appear with no explanation | Sheets slide from the bottom edge, menus grow from their trigger, per `skills/MOTION.md` | fixed |
 
+## Quiz mode (built)
+
+| # | Where a person gets stuck | Fix | Status |
+|---|---|---|---|
+| 31 | Not knowing what a quiz will cover | The picker shows the question count and the card count per module, plus what the last run scored | fixed |
+| 32 | Answering with no idea why | Every answer immediately shows the verdict and the card's written reason for the correct option | fixed |
+| 33 | Finishing with no next step | Results screen: score ring, a plain-language verdict, the missed questions with both your pick and the right one, then retry-missed / run-again / back | fixed |
+| 34 | Questions repeating in the same order | Order is shuffled once the page is live (never during hydration, which would break the server-rendered first question) | fixed |
+| 35 | No keyboard path on desktop | Keys 1-4 or A-D answer, Enter or Space advances, Escape leaves the sheet | fixed |
+| 36 | Recording a wrong answer twice | Each question records once; the option buttons lock after answering | fixed |
+
 ## Still planned
 
 | # | Item | Why |
@@ -55,5 +66,5 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 26 | Export / import of progress and bookmarks | Browsers clear storage silently; a JSON file is the only real backup (build step 7) |
 | 27 | Streak calendar view | The streak number alone doesn't show gaps |
 | 28 | Offline indicator | The PWA works offline, but nothing tells the user they are offline |
-| 29 | Full quiz runner with ordered question banks and a wrong-answer review list | Build step 4 |
+| 29 | ~~Full quiz runner with ordered question banks and a wrong-answer review list~~ | Done: `/quiz` picker (mixed 10/20, retry-missed, per-module decks), `/quiz/mixed` and `/quiz/[code]/[module]` runners with immediate feedback, score, review list and retry-missed | fixed |
 | 30 | Verified-card review flow | Draft cards are marked; there is no screen yet to tick them off in bulk |

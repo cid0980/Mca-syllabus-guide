@@ -127,7 +127,7 @@
 
 <AppBar title="Settings" back="/" />
 
-<main class="page page-in">
+<main class="page">
 	<p class="section-label">AI helper</p>
 	{#if !$hydrated}
 		<div class="group"><ListRow title="Loading your settings" lines={1} /></div>

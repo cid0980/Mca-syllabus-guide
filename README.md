@@ -152,7 +152,9 @@ produced by `scripts/generate-cards.ts` (build step 5), which needs your `ANTHRO
 | `/feed/[code]/[module]` | Instagram-style vertical feed: one card per screen, native scroll-snap, **tap to flip to the quiz**, **double tap to save**, progress bar, next/previous buttons |
 | `/saved` | Bookmarked topics and cards, resolved from the trees, with next-step links when empty |
 | `/progress` | Cards seen, quiz accuracy, day streak, per-subject and per-module breakdowns |
-| `/quiz` | Question-bank overview (step 4 adds the full quiz runner) |
+| `/quiz` | Picker: mixed 10/20, retry-the-missed, and one deck per module with question counts |
+| `/quiz/mixed` | Runner for a random set or for `?mode=wrong` (questions you answered wrongly) |
+| `/quiz/[code]/[module]` | Runner for one module: one question per screen, immediate reason, score ring, review list, retry-missed |
 | `/exam/[code]/[module]` | Exam mode: definitions and tips only, no quiz reveal |
 | `/settings` | AI provider keys with fetch-models and test, answer cache, theme (dark / light / system), data summary, reset |
 
@@ -182,7 +184,7 @@ A topic card links straight into the feed: `/feed/CSCA 411/II?card=CSCA411-M2-06
 | 2d | Instagram-derived theme, native scroll-snap feed, solid active tab icons, tree rails, dev service worker removed | done |
 | 2e | **Tab bar reactivity fixed at the compiler level, instant tap feedback + accent indicator, subject story row, Explore tile grid, store-read helpers inlined** | done |
 | 3 | Saved screen, Progress screen, streak view | built — needs your test |
-| 4 | Quiz mode and Exam mode | pending: exam mode done, quiz runner next |
+| 4 | Quiz mode and Exam mode | done — needs your test |
 | 5 | `generate-cards.ts`: card content for the other nine subjects | pending: needs API key |
 | 6 | `/api/ask` with Gemini / OpenRouter / NVIDIA keys, Ask panel, IndexedDB answer cache | done — needs your test |
 | 7 | Export / Import, offline check, polish | pending |
@@ -201,6 +203,7 @@ Search across the whole tree already works on `/explore`; the AI panel comes in 
 | `sf:settings` | `{ theme }` |
 | `sf:lastOpened` | last subject + module for the continue card |
 | `sf:ai` | chosen AI provider + your API keys + model per provider (never sent anywhere except the provider you picked) |
+| `sf:quiz` | last 20 finished quiz runs (`{ at, scope, correct, total }`) for the "last run" line |
 
 IndexedDB `aiAnswers` caches AI answers so the same question is never paid for twice.
 

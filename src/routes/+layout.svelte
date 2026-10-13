@@ -3,7 +3,7 @@
 	import '../app.css';
 
 	import { onMount } from 'svelte';
-	import { navigating } from '$app/stores';
+	import { page, navigating } from '$app/stores';
 	import BottomNav from '$lib/components/BottomNav.svelte';
 	import { hydrateAll } from '$lib/stores/hydrate';
 
@@ -28,13 +28,24 @@
 			const { registerSW } = await import('virtual:pwa-register');
 			registerSW({ immediate: true });
 		} catch {
-			/* service worker unavailable (sandboxed preview) — app still works */
+			/* service worker unavailable (sandboxed preview) - app still works */
 		}
 	});
 </script>
 
 <div class="route-progress" class:active={!!$navigating} aria-hidden="true"></div>
-<slot />
+
+<!--
+	A keyed wrapper: the key changes on every navigation, so the entry animation replays.
+	This is what makes moving between pages visible instead of instant. Pathname only, so
+	query-only changes (?card=..., ?mode=...) do not re-animate the whole screen.
+-->
+{#key $page.url.pathname}
+	<div class="route">
+		<slot />
+	</div>
+{/key}
+
 <BottomNav />
 
 <style>
@@ -43,25 +54,25 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 2px;
+		height: 3px;
 		background: var(--accent);
 		transform: scaleX(0);
 		transform-origin: left;
-		transition: transform 0.3s ease-out, opacity 0.2s ease 0.2s;
+		transition: transform 0.4s var(--ease-standard), opacity 0.2s ease 0.25s;
 		opacity: 0;
 		z-index: 60;
 		pointer-events: none;
 	}
 
 	.route-progress.active {
-		transform: scaleX(0.7);
+		transform: scaleX(0.75);
 		opacity: 1;
-		animation: creep 6s ease-out forwards;
+		animation: creep 8s var(--ease-standard) forwards;
 	}
 
 	@keyframes creep {
 		to {
-			transform: scaleX(0.95);
+			transform: scaleX(0.96);
 		}
 	}
 </style>
