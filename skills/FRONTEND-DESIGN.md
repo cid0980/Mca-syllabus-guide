@@ -97,3 +97,15 @@ Three possible render states, always:
 
 If a list is legitimately empty, replace it with useful content and one next step. Example: a module
 with no cards yet shows its full topic list with definitions and a link to the syllabus.
+
+## Svelte reactivity rules (learned the hard way)
+
+1. A template expression only re-runs when it **textually references** a variable that changed.
+   `class:on={active(item.href)}` never updates if `active()` reads a store internally, because
+   Svelte cannot see the dependency. Derive first, then compare:
+   `$: current = tabFor($page.url.pathname);` … `class:on={current === item.href}`.
+   The same bug hid in `pct()`-style helpers — inline `percentSeenByIds(ids, $progress)` instead.
+2. Never read `localStorage` during the first render: start from the empty value, then hydrate in
+   `onMount` and gate anything that changes shape on `$hydrated`.
+3. Never write to `localStorage` on every scroll or view; debounce (300ms) — it was visible jank.
+4. Do not animate with per-frame JavaScript. Use native scroll-snap and let the compositor work.

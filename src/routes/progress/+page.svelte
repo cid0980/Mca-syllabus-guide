@@ -14,9 +14,6 @@
 	$: overallAccuracy = accuracyByIds(allCardIds, $progress);
 	$: activeSubjects = subjects.filter((s) => s.counts.cards > 0);
 
-	function subjectPct(cardIds: string[]): number {
-		return percentSeenByIds(cardIds, $progress);
-	}
 </script>
 
 <svelte:head><title>Progress — StudyFeed</title></svelte:head>
@@ -72,9 +69,11 @@
 				href={`/subject/${encodeURIComponent(subject.code)}`}
 				title={subject.subject}
 				subtitle={subject.counts.cards
-					? `${seenCountByIds(subject.cardIds, $progress)} of ${subject.counts.cards} cards seen · ${accuracyByIds(subject.cardIds, $progress).answered ? accuracyByIds(subject.cardIds, $progress).percent + '% accuracy' : 'no quiz attempts yet'}`
+					? `${seenCountByIds(subject.cardIds, $progress)} of ${subject.counts.cards} cards seen · ${accuracyByIds(subject.cardIds, $progress).answered ? `${accuracyByIds(subject.cardIds, $progress).percent}% accuracy` : 'no quiz attempts yet'}`
 					: `${subject.counts.topics} topics mapped · cards pending`}
-				value={subject.counts.cards ? `${subjectPct(subject.cardIds)}%` : `${subject.counts.topics}`}
+				value={subject.counts.cards
+					? `${$hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}%`
+					: `${subject.counts.topics}`}
 				chevron
 			>
 				<span slot="lead" class="course nums">{subject.code.replace('CSCA ', '')}</span>

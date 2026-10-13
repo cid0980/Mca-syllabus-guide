@@ -113,8 +113,8 @@ produced by `scripts/generate-cards.ts` (build step 5), which needs your `ANTHRO
 
 | Route | What it does |
 |---|---|
-| `/` | Continue card, semester selector, subject rows with progress rings, and straight links into the syllabus tree and the first deck |
-| `/explore` | **All subjects + search** across every topic, subtopic and type |
+| `/` | Subject story row (coloured ring = still to study), continue card, semester selector, subject rows, direct links into the syllabus tree and the first deck |
+| `/explore` | Tile grid of subjects + **search** across every topic, subtopic and type |
 | `/explore/[code]` | Full drill-down: modules -> topics -> subtopics -> types, expand all / collapse all, module rings |
 | `/topic/[id]` | **Detail page**: definition, subtopics and types with definitions, full card, quiz, exam tip, prev/next, bookmark |
 | `/subject/[code]` | Progress ring, module rows with counts, start studying / syllabus |
@@ -148,7 +148,8 @@ A topic card links straight into the feed: `/feed/CSCA 411/II?card=CSCA411-M2-06
 | 2 | Sample cards + Home, Subject, Feed screens | done |
 | 2b | Full syllabus tree for all 10 subjects + Explore / Topic pages | done |
 | 2c | UI overhaul: skills, tokens, Lucide, Inter, logo, load-based SSR | done |
-| 2d | **Instagram-derived theme, native scroll-snap feed, solid active tab icons, tree rails, dev service worker removed** | done |
+| 2d | Instagram-derived theme, native scroll-snap feed, solid active tab icons, tree rails, dev service worker removed | done |
+| 2e | **Tab bar reactivity fixed at the compiler level, instant tap feedback + accent indicator, subject story row, Explore tile grid, store-read helpers inlined** | done |
 | 3 | Saved screen, Progress screen, streak view | built — needs your test |
 | 4 | Quiz mode and Exam mode | pending: exam mode done, quiz runner next |
 | 5 | `generate-cards.ts`: card content for the other nine subjects | pending: needs API key |

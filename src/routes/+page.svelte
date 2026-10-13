@@ -4,7 +4,6 @@
 	import { progress, percentSeenByIds, streak } from '$lib/stores/progress';
 	import { KEYS, readJSON } from '$lib/storage';
 	import { hydrated } from '$lib/stores/hydrate';
-	import ProgressRing from '$lib/components/ProgressRing.svelte';
 
 	let semester = 1;
 	let last: { code: string; module: string } | null = null;
@@ -12,8 +11,10 @@
 	$: if ($hydrated) last = readJSON<{ code: string; module: string } | null>(KEYS.lastOpened, null);
 	$: semesterSubjects = subjectsOfSemester(semester);
 
-	function pct(ids: string[]): number {
-		return $hydrated ? percentSeenByIds(ids, $progress) : 0;
+	/** story ring state — like an unwatched / watched story */
+	function ringState(cards: number, pct: number): 'accent' | 'muted' | 'done' {
+		if (cards === 0) return 'muted';
+		return pct >= 100 ? 'done' : 'accent';
 	}
 </script>
 
@@ -31,15 +32,55 @@
 </header>
 
 <main class="page">
+	<!-- subject "stories": a coloured ring means there is something to study -->
+	<div class="stories">
+		{#each semesterSubjects as subject}
+			{@const pct = $hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}
+			{@const state = ringState(subject.counts.cards, pct)}
+			<a class="story pressable" href={`/subject/${encodeURIComponent(subject.code)}`}>
+				<span class="ring" class:accent={state === 'accent'} class:done={state === 'done'}>
+					<span class="avatar nums">{subject.code.replace('CSCA ', '')}</span>
+				</span>
+				<span class="story-label nums">{pct > 0 && pct < 100 ? `${pct}%` : subject.code.replace('CSCA ', '')}</span>
+			</a>
+		{/each}
+		<a class="story pressable" href="/explore">
+			<span class="ring muted">
+				<span class="avatar"><ListTree size={18} /></span>
+			</span>
+			<span class="story-label">All</span>
+		</a>
+	</div>
+
 	{#if last}
 		{@const subject = indexSubject(last.code)}
 		{#if subject}
+			{@const pct = $hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}
 			<a class="continue" href={`/feed/${encodeURIComponent(last.code)}/${last.module}`}>
-				<ProgressRing percent={pct(subject.cardIds)} size={44} stroke={3} />
+				<span class="continue-ring">
+					<svg viewBox="0 0 40 40" width="44" height="44" aria-hidden="true">
+						<circle cx="20" cy="20" r="18" fill="none" stroke="var(--fill)" stroke-width="3" />
+						{#if pct > 0}
+							<circle
+								cx="20"
+								cy="20"
+								r="18"
+								fill="none"
+								stroke="var(--accent)"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-dasharray={2 * Math.PI * 18}
+								stroke-dashoffset={2 * Math.PI * 18 * (1 - pct / 100)}
+								transform="rotate(-90 20 20)"
+							/>
+						{/if}
+					</svg>
+					<span class="continue-pct nums">{pct}%</span>
+				</span>
 				<span class="grow">
 					<span class="continue-label">Continue studying</span>
 					<span class="continue-title truncate">{subject.subject}</span>
-					<span class="continue-sub">Module {last.module} · {pct(subject.cardIds)}% seen</span>
+					<span class="continue-sub">Module {last.module} · {plural(subject.counts.cards, 'card')}</span>
 				</span>
 				<span class="chev"><ChevronRight size={18} /></span>
 			</a>
@@ -57,19 +98,18 @@
 	<p class="section-label">{semesterLabel(semester)} subjects</p>
 	<div class="group">
 		{#each semesterSubjects as subject}
+			{@const pct = $hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}
 			<a class="subj pressable" href={`/subject/${encodeURIComponent(subject.code)}`}>
 				<span class="avatar" aria-hidden="true">{subject.code.replace('CSCA ', '')}</span>
 				<span class="grow">
 					<span class="subj-title">{subject.subject}</span>
 					<span class="subj-sub truncate">
-						{plural(subject.counts.modules, 'module')} · {plural(subject.counts.topics, 'topic')} ·
-						{plural(subject.counts.subtopics, 'subtopic')}
+						{plural(subject.counts.topics, 'topic')} · {plural(subject.counts.subtopics, 'subtopic')}
 					</span>
 					<span class="subj-meta nums">
-						{subject.counts.cards ? `${subject.counts.cards} cards` : 'definitions ready'} · {pct(subject.cardIds)}% seen
+						{subject.counts.cards ? `${subject.counts.cards} cards · ${pct}% seen` : 'definitions ready · cards pending'}
 					</span>
 				</span>
-				<ProgressRing percent={pct(subject.cardIds)} size={34} stroke={2.5} />
 				<span class="chev"><ChevronRight size={18} /></span>
 			</a>
 		{/each}
@@ -82,18 +122,18 @@
 			<span class="grow">
 				<span class="subj-title">Syllabus tree</span>
 				<span class="subj-sub">
-					{totals.subjects} subjects · {totals.topics} topics · {totals.subtopics + totals.types} subtopics and types
+					{totals.subjects} subjects · {totals.topics} topics
 				</span>
-				<span class="subj-meta">Browse subject, module, topic, subtopic, type</span>
+				<span class="subj-meta nums">{totals.subtopics + totals.types} subtopics and types, each defined</span>
 			</span>
 			<span class="chev"><ChevronRight size={18} /></span>
 		</a>
 		<a class="subj pressable" href="/feed/CSCA%20411/I">
 			<span class="avatar" aria-hidden="true"><BookOpen size={18} /></span>
 			<span class="grow">
-				<span class="subj-title">Start the deck</span>
+				<span class="subj-title">Study the first deck</span>
 				<span class="subj-sub">Data Structures and Algorithms · Module I</span>
-				<span class="subj-meta">{totals.cards} cards written so far</span>
+				<span class="subj-meta nums">{totals.cards} cards written</span>
 			</span>
 			<span class="chev"><ChevronRight size={18} /></span>
 		</a>
@@ -123,23 +163,84 @@
 	.wordmark {
 		font-size: var(--fs-title);
 		font-weight: 700;
-		letter-spacing: -0.02em;
+		letter-spacing: -0.03em;
 	}
 
 	.streak {
 		font-size: var(--fs-small);
 		font-weight: 700;
-		color: var(--fg);
 		background: var(--fill);
 		border-radius: var(--radius-full);
 		padding: 2px 10px;
 	}
 
+	/* ---------- story row ---------- */
+
+	.stories {
+		display: flex;
+		gap: var(--sp-4);
+		overflow-x: auto;
+		scrollbar-width: none;
+		padding: var(--sp-3) var(--sp-4) var(--sp-2);
+	}
+
+	.stories::-webkit-scrollbar {
+		display: none;
+	}
+
+	.story {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--sp-1);
+		width: 64px;
+		flex: 0 0 auto;
+		border-radius: var(--radius);
+	}
+
+	.ring {
+		display: grid;
+		place-items: center;
+		width: 60px;
+		height: 60px;
+		border-radius: var(--radius-full);
+		padding: 2px;
+		border: 2px solid var(--border);
+		transition: border-color 0.12s ease;
+	}
+
+	/* unwatched = coloured ring, finished or empty = grey, exactly like a story ring */
+	.ring.accent {
+		border-color: var(--accent);
+	}
+
+	.ring.done,
+	.ring.muted {
+		border-color: var(--border);
+	}
+
+	.ring .avatar {
+		width: 100%;
+		height: 100%;
+		font-size: var(--fs-small);
+	}
+
+	.story-label {
+		font-size: var(--fs-caption);
+		color: var(--fg-muted);
+		max-width: 64px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	/* ---------- continue ---------- */
+
 	.continue {
 		display: flex;
 		align-items: center;
 		gap: var(--sp-3);
-		margin: var(--sp-4);
+		margin: 0 var(--sp-4) var(--sp-2);
 		padding: var(--sp-3);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-lg);
@@ -149,6 +250,22 @@
 	.continue:active {
 		background: var(--fill);
 		transform: scale(0.99);
+	}
+
+	.continue-ring {
+		position: relative;
+		display: grid;
+		place-items: center;
+		flex: 0 0 auto;
+	}
+
+	.continue-ring > * {
+		grid-area: 1 / 1;
+	}
+
+	.continue-pct {
+		font-size: var(--fs-caption);
+		font-weight: 700;
 	}
 
 	.continue-label {
@@ -176,6 +293,8 @@
 	.seg-wrap {
 		padding-top: var(--sp-2);
 	}
+
+	/* ---------- subject rows ---------- */
 
 	.subj {
 		display: flex;
