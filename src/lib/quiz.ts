@@ -5,7 +5,7 @@
  * Per-card results go into `sf:progress` (already used by the Progress screen); finished sessions
  * go into `sf:quiz` so the picker can say what last time looked like.
  */
-import type { QuizQuestion } from '$lib/types';
+import type { ProgressMap, QuizQuestion } from '$lib/types';
 
 export interface QuizItem {
 	cardId: string;
@@ -59,6 +59,126 @@ export function shuffle<T>(list: T[]): T[] {
 		[out[i], out[j]] = [out[j], out[i]];
 	}
 	return out;
+}
+
+/* ---------------- selection ---------------- */
+
+/**
+ * Which band a card sits in, used to order a run:
+ *
+ *   0  answered wrongly before  — mistakes come first, they are the point of a quiz
+ *   1  never opened             — new material comes next
+ *   2  seen and not wrong       — revision comes last
+ *
+ * The signal already exists in `sf:progress`, so nothing new is stored.
+ */
+export function cardBand(cardId: string, progress: ProgressMap = {}): 0 | 1 | 2 {
+	const p = progress[cardId];
+	if (p && p.quizWrong > 0) return 0;
+	if (!p || !p.seen) return 1;
+	return 2;
+}
+
+export interface CardGroup {
+	cardId: string;
+	items: QuizItem[];
+	band: 0 | 1 | 2;
+	/** questions already asked for this card — used to rotate which one comes next */
+	answered: number;
+	lastSeen: number;
+}
+
+export function groupByCard(items: QuizItem[]): CardGroup[] {
+	const map = new Map<string, CardGroup>();
+	for (const item of items) {
+		let group = map.get(item.cardId);
+		if (!group) {
+			group = { cardId: item.cardId, items: [], band: 2, answered: 0, lastSeen: 0 };
+			map.set(item.cardId, group);
+		}
+		group.items.push(item);
+	}
+	return [...map.values()];
+}
+
+/**
+ * Cards ordered worst-first: wrong answers, then unseen, then the rest. Inside a band the
+ * card seen longest ago wins, and equal timestamps are shuffled so two runs of the same
+ * size are not identical.
+ */
+export function rankCards(items: QuizItem[], progress: ProgressMap = {}): CardGroup[] {
+	const groups = groupByCard(items).map((group) => {
+		const p = progress[group.cardId];
+		return {
+			...group,
+			band: cardBand(group.cardId, progress),
+			answered: (p?.quizCorrect ?? 0) + (p?.quizWrong ?? 0),
+			lastSeen: p?.lastSeen ?? 0
+		};
+	});
+
+	const bands: [CardGroup[], CardGroup[], CardGroup[]] = [[], [], []];
+	for (const group of groups) bands[group.band].push(group);
+
+	const ordered: CardGroup[] = [];
+	for (const band of bands) {
+		const decorated = band.map((group) => ({ group, tie: Math.random() }));
+		decorated.sort((a, b) => a.group.lastSeen - b.group.lastSeen || a.tie - b.tie);
+		for (const d of decorated) ordered.push(d.group);
+	}
+	return ordered;
+}
+
+/**
+ * Builds a run of `limit` questions (0 = every question in the pool).
+ *
+ * Questions are handed out one per card per round, walking the ranked card list, so a run of
+ * 10 or 20 never asks the same card twice while there are cards left. A card only contributes
+ * a second question once every card has contributed one - that is what makes an all-questions
+ * module run spread a card's four questions apart instead of sitting them in a row.
+ *
+ * `answered` rotates the starting question per card, so a card seen twice in one day does not
+ * open with the same question every time. It comes from the existing per-card counters.
+ */
+export function pickQuestions(items: QuizItem[], limit: number, progress: ProgressMap = {}): QuizItem[] {
+	if (items.length === 0) return [];
+	const total = limit > 0 ? Math.min(limit, items.length) : items.length;
+	const ranked = rankCards(items, progress);
+	const out: QuizItem[] = [];
+
+	let round = 0;
+	while (out.length < total && round < 64) {
+		let placed = false;
+		for (const group of ranked) {
+			if (out.length >= total) break;
+			const count = group.items.length;
+			if (round >= count) continue;
+			const start = group.answered % count;
+			out.push(group.items[(start + round) % count]);
+			placed = true;
+		}
+		if (!placed) break;
+		round++;
+	}
+	return out;
+}
+
+export interface PrioritySummary {
+	wrong: number;
+	unseen: number;
+	reviewed: number;
+}
+
+/** Card counts per band for the pool, so a run can say what it prioritised. */
+export function prioritySummary(items: QuizItem[], progress: ProgressMap = {}): PrioritySummary {
+	const summary: PrioritySummary = { wrong: 0, unseen: 0, reviewed: 0 };
+	for (const group of groupByCard(items)) {
+		const band = cardBand(group.cardId, progress);
+		if (band === 0) summary.wrong++;
+		else if (band === 1) summary.unseen++;
+		else summary.reviewed++;
+	}
+	return summary;
 }
 
 export function readSessions(): QuizSession[] {

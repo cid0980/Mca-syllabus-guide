@@ -12,10 +12,20 @@
 		RotateCcw,
 		ListChecks,
 		BookOpen,
-		Trophy
+		Trophy,
+		Target
 	} from 'lucide-svelte';
 	import { recordQuiz } from '$lib/stores/progress';
-	import { recordSession, scoreMessage, shuffle, type QuizItem } from '$lib/quiz';
+	import {
+		recordSession,
+		scoreMessage,
+		shuffle,
+		pickQuestions,
+		prioritySummary,
+		type PrioritySummary,
+		type QuizItem
+	} from '$lib/quiz';
+	import type { ProgressMap } from '$lib/types';
 	import ProgressRing from '$lib/components/ProgressRing.svelte';
 
 	const dispatch = createEventDispatcher<{ exit: void }>();
@@ -24,6 +34,10 @@
 	/** how many questions this run should ask (0 = all of them) */
 	export let limit = 0;
 	export let scope = 'quiz';
+	/** saved progress, read once to order the run; nothing is written to it from here */
+	export let progressMap: ProgressMap = {};
+	/** ask the cards you got wrong and the cards you never opened first, one question per card */
+	export let prioritise = false;
 	export let emptyTitle = 'No questions here yet';
 	export let emptyText =
 		'This set has no quiz questions because the cards for it have not been written. The topics and their definitions are still readable in the syllabus.';
@@ -36,6 +50,8 @@
 	let answers: Answer[] = [];
 	let phase: 'ask' | 'done' = 'ask';
 	let startedWith: QuizItem[] | null = null;
+	/** snapshot for the order note; taken once so answering cannot rewrite it mid-run */
+	const summary: PrioritySummary | null = prioritise ? prioritySummary(items, progressMap) : null;
 
 	$: total = queue.length;
 	$: correctCount = answers.filter((a) => a.correct).length;
@@ -44,6 +60,30 @@
 
 	function buildQueue(questions: QuizItem[], n: number): QuizItem[] {
 		return n > 0 && n < questions.length ? questions.slice(0, n) : [...questions];
+	}
+
+	/**
+	 * Priority run. `pickQuestions` does the ordering and the card de-duplication, so this is the
+	 * finished queue. It only ever runs in the browser: both quiz screens wait for hydration
+	 * before they mount this component, so the server never renders a random order.
+	 */
+	function startPicked(questions: QuizItem[], n: number) {
+		queue = pickQuestions(questions, n, progressMap);
+		index = 0;
+		picked = null;
+		answers = [];
+		phase = 'ask';
+		if (questions.length) startedWith = questions;
+	}
+
+	function begin(questions: QuizItem[]) {
+		if (prioritise) startPicked(questions, limit);
+		else start(questions, limit, false);
+	}
+
+	function rerun() {
+		if (prioritise) startPicked(items, limit);
+		else start(items);
 	}
 
 	function start(questions: QuizItem[], n = limit, randomise = true) {
@@ -61,8 +101,8 @@
 	 * there would break hydration. The first question is stable; the rest are shuffled once the
 	 * page is live, so a second run still feels fresh.
 	 */
-	if (items.length) start(items, limit, false);
-	$: if (items !== startedWith) start(items, limit, false);
+	if (items.length) begin(items);
+	$: if (items !== startedWith) begin(items);
 
 	function choose(oi: number) {
 		const current = queue[index];
@@ -110,9 +150,12 @@
 
 	onMount(() => {
 		globalThis.addEventListener('keydown', onKey);
-		// shuffle only what is still ahead of the question already on screen
-		const ahead = queue.slice(index + 1);
-		if (ahead.length > 1) queue = [...queue.slice(0, index + 1), ...shuffle(ahead)];
+		// a priority queue is already randomised by the engine; plain decks are shuffled here,
+		// keeping the question already on screen where it is
+		if (!prioritise) {
+			const ahead = queue.slice(index + 1);
+			if (ahead.length > 1) queue = [...queue.slice(0, index + 1), ...shuffle(ahead)];
+		}
 		return () => globalThis.removeEventListener('keydown', onKey);
 	});
 </script>
@@ -137,6 +180,16 @@
 	{#if phase === 'ask' && queue[index]}
 		{@const item = queue[index]}
 		<div class="body">
+			{#if prioritise && index === 0 && summary && summary.wrong + summary.unseen > 0}
+				<p class="priority">
+					<Target size={14} />
+					<span>
+						Picked for you:
+						{#if summary.wrong}<strong>{summary.wrong} {summary.wrong === 1 ? 'card' : 'cards'}</strong> you answered wrongly{#if summary.unseen}, {/if}{/if}
+						{#if summary.unseen}<strong>{summary.unseen}</strong> not opened yet{/if}
+					</span>
+				</p>
+			{/if}
 			{#key index}
 				<section class="question expand-in">
 					<h2 class="q-text">{item.question.q}</h2>
@@ -219,7 +272,7 @@
 						<RotateCcw size={16} /> Retry the {wrong.length} missed
 					</button>
 				{/if}
-				<button class="btn btn--secondary btn--block" on:click={() => start(items)}>
+				<button class="btn btn--secondary btn--block" on:click={rerun}>
 					<ListChecks size={16} /> Run it again
 				</button>
 				<button class="btn btn--secondary btn--block" on:click={() => dispatch('exit')}>
@@ -446,6 +499,23 @@
 		color: var(--fg-subtle);
 		text-align: center;
 		padding: var(--sp-2) 0;
+	}
+
+	.priority {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--sp-2);
+		padding: var(--sp-2) var(--sp-3);
+		background: var(--fill);
+		border-radius: var(--radius);
+		font-size: var(--fs-caption);
+		line-height: 1.5;
+		color: var(--fg-subtle);
+	}
+
+	.priority strong {
+		font-weight: 700;
+		color: var(--fg-muted);
 	}
 
 	/* ---------- results ---------- */

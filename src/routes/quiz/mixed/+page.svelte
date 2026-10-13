@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { progress } from '$lib/stores/progress';
 	import { hydrated } from '$lib/stores/hydrate';
-	import { buildItems, type QuizItem } from '$lib/quiz';
+	import type { QuizItem } from '$lib/quiz';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import QuizRunner from '$lib/components/QuizRunner.svelte';
 	import Skeleton from '$lib/components/Skeleton.svelte';
@@ -18,11 +18,22 @@
 		.map(([id]) => id);
 
 	/**
-	 * The wrong-answer set can only be known in the browser (it reads your progress), so the
-	 * runner waits for hydration before it starts.
+	 * The pool is rebuilt only when the mode or the set of missed cards actually changes.
+	 *
+	 * It used to be a plain `$: filtered = data.items.filter(...)`, which handed QuizRunner a new
+	 * array on every progress write - and `recordQuiz` writes on every answer. The runner restarts
+	 * when its `items` prop changes identity, so "retry what I missed" jumped back to question one
+	 * after each tap. Comparing a key keeps the array stable for the whole run.
 	 */
-	$: filtered =
-		mode === 'wrong' ? data.items.filter((i) => wrongIds.includes(i.cardId)) : data.items;
+	let pool: QuizItem[] = [];
+	let poolKey = '';
+	$: {
+		const key = mode === 'wrong' ? `wrong:${[...wrongIds].sort().join(',')}` : 'all';
+		if (key !== poolKey) {
+			poolKey = key;
+			pool = mode === 'wrong' ? data.items.filter((i) => wrongIds.includes(i.cardId)) : data.items;
+		}
+	}
 
 	$: title = mode === 'wrong' ? 'Retry missed questions' : n > 0 ? `${n} random questions` : 'Mixed quiz';
 </script>
@@ -31,12 +42,14 @@
 
 <div class="quiz-page">
 	<AppBar title="Quiz" subtitle={title} onBack={() => goto('/quiz')} />
-	{#if mode === 'wrong' && !$hydrated}
+	{#if !$hydrated}
 		<div class="loading"><Skeleton variant="card" /></div>
 	{:else}
 		<QuizRunner
-			items={filtered}
+			items={pool}
 			limit={n}
+			progressMap={$progress}
+			prioritise
 			emptyTitle={mode === 'wrong' ? 'Nothing to retry' : 'No questions yet'}
 			emptyText={mode === 'wrong'
 				? 'You have no wrong answers recorded yet. Answer a few questions first, or run a mixed set.'
