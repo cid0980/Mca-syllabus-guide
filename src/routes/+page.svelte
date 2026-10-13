@@ -43,7 +43,7 @@
 				class="streak"
 				role="img"
 				title="Daily study streak"
-				aria-label={`${$streak.count} day study streak`}
+				aria-label={`${$streak.count}-day study streak`}
 			>
 				<Flame size={14} aria-hidden="true" />
 				<span class="nums" aria-hidden="true">{$streak.count}d</span>
@@ -342,6 +342,7 @@
 
 	.subj-head {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--sp-2);
 	}
