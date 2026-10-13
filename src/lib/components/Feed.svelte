@@ -38,8 +38,8 @@
 	let atEnd = false;
 
 	$: total = cards.length;
-	/** cards run 0..total-1 and the end of module block sits at total, so the jump buttons reach it */
-	$: lastStop = total;
+	/** the jump arrows move between cards; the end footer is at the bottom of the scroll */
+	$: lastStop = Math.max(0, total - 1);
 	/** the bar shows how much of this deck the student has actually marked, not scroll position */
 	$: readCount = $hydrated ? cards.filter((c) => $progress[c.id]?.seen).length : 0;
 
@@ -146,25 +146,24 @@
 	for the next module. This block names where the next tap goes, and shows what was read.
 -->
 {#if current}
-	<section class="snap end" data-i={total} aria-label={`End of Module ${current.module}`}>
-		<p class="end-label">End of Module {current.module}</p>
-		<h2 class="end-title">{current.title}</h2>
-		<p class="end-status">
-			{#if total > 0 && readCount === total}
-				All {plural(total, 'card')} marked read.
-			{:else}
-				You marked {readCount} of {total} cards read.
-			{/if}
+	<section class="end" aria-label={`End of Module ${current.module}: ${current.title}`}>
+		<p class="end-line">
+			<span class="end-label">End of Module {current.module}</span>
+			<span class="end-count nums">{readCount}/{total} read</span>
 		</p>
 
 		<div class="end-actions">
 			{#if prev}
-				<a class="end-btn" href={`/feed/${encodeURIComponent(prev.code)}/${prev.module}`}>
-					<ChevronLeft size={18} />
-					<span class="grow">
-						<span class="end-btn-title">Previous module</span>
-						<span class="end-btn-sub truncate">
-							{prev.code !== current.code ? `${shortName(prev.code)} · ` : ''}Module {prev.module} · {prev.title}
+				<a
+					class="end-btn"
+					href={`/feed/${encodeURIComponent(prev.code)}/${prev.module}`}
+					aria-label={`Previous module: ${prev.title} for ${prev.subject}`}
+				>
+					<ChevronLeft size={16} />
+					<span class="end-btn-text">
+						<span class="end-btn-title">Previous</span>
+						<span class="end-btn-sub">
+							{prev.code !== current.code ? `${shortName(prev.code)} · ` : ''}Module {prev.module}
 						</span>
 					</span>
 				</a>
@@ -174,24 +173,29 @@
 				<a
 					class="end-btn end-btn--primary"
 					href={`/feed/${encodeURIComponent(next.code)}/${next.module}`}
+					aria-label={`Next module: ${next.title} for ${next.subject}`}
 				>
-					<span class="grow">
+					<span class="end-btn-text">
 						<span class="end-btn-title">
-							{next.code === current.code ? 'Next module' : 'Next subject'}
+							{next.code === current.code ? 'Next' : 'Next subject'}
 						</span>
-						<span class="end-btn-sub truncate">
-							{next.code !== current.code ? `${shortName(next.code)} · ` : ''}Module {next.module} · {next.title}
+						<span class="end-btn-sub">
+							{next.code !== current.code ? `${shortName(next.code)} · ` : ''}Module {next.module}
 						</span>
 					</span>
-					<ChevronRight size={18} />
+					<ChevronRight size={16} />
 				</a>
 			{:else}
-				<a class="end-btn" href={`/subject/${encodeURIComponent(current.code)}`}>
-					<span class="grow">
-						<span class="end-btn-title">All modules of {shortName(current.code)}</span>
-						<span class="end-btn-sub">No written module follows this one yet</span>
+				<a
+					class="end-btn"
+					href={`/subject/${encodeURIComponent(current.code)}`}
+					aria-label={`All modules of ${current.subject}`}
+				>
+					<span class="end-btn-text">
+						<span class="end-btn-title">All modules</span>
+						<span class="end-btn-sub">nothing follows yet</span>
 					</span>
-					<ChevronRight size={18} />
+					<ChevronRight size={16} />
 				</a>
 			{/if}
 		</div>
@@ -262,25 +266,22 @@
 		border-top: 1px solid var(--border);
 	}
 
-	.snap.end {
-		scroll-snap-align: start;
-		border-top: 1px solid var(--border);
-	}
-
 	/* ---------- end of module ---------- */
 
+	/* a small footer at the end of the cards, not a full screen: it must not eat the reading area */
 	.end {
-		min-height: 70%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		display: grid;
 		gap: var(--sp-2);
-		padding: var(--sp-6) var(--sp-4) var(--sp-8);
+		padding: var(--sp-4) var(--sp-4) var(--sp-6);
+		border-top: 1px solid var(--border);
+		background: var(--bg);
 	}
 
-	/* a flex child will not shrink below its content unless it is allowed to */
-	.end-btn .grow {
-		min-width: 0;
+	.end-line {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--sp-2);
 	}
 
 	.end-label {
@@ -291,32 +292,28 @@
 		color: var(--fg-subtle);
 	}
 
-	.end-title {
-		font-size: var(--fs-title);
-		font-weight: 700;
-		line-height: 1.3;
-	}
-
-	.end-status {
-		font-size: var(--fs-small);
-		color: var(--fg-muted);
+	.end-count {
+		font-size: var(--fs-caption);
+		color: var(--fg-subtle);
 	}
 
 	.end-actions {
-		display: grid;
+		display: flex;
 		gap: var(--sp-2);
-		margin-top: var(--sp-3);
 	}
 
 	.end-btn {
 		display: flex;
 		align-items: center;
-		gap: var(--sp-3);
-		min-height: 56px;
-		padding: var(--sp-3) var(--sp-4);
+		gap: var(--sp-1);
+		flex: 1 1 0;
+		min-width: 0;
+		min-height: 46px;
+		padding: var(--sp-2) var(--sp-3);
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		color: var(--fg);
+		font-size: var(--fs-small);
 		transition: transform var(--dur-press) var(--ease-standard), background-color var(--dur-press) var(--ease-standard);
 	}
 
@@ -336,16 +333,26 @@
 		opacity: 0.9;
 	}
 
+	.end-btn-text {
+		display: block;
+		flex: 1;
+		min-width: 0;
+	}
+
 	.end-btn-title {
 		display: block;
-		font-size: var(--fs-body);
 		font-weight: 600;
+		line-height: 1.2;
 	}
 
 	.end-btn-sub {
 		display: block;
 		font-size: var(--fs-caption);
+		line-height: 1.2;
 		color: var(--fg-subtle);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.end-btn--primary .end-btn-sub {
