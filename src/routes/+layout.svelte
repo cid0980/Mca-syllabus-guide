@@ -9,6 +9,21 @@
 
 	onMount(async () => {
 		hydrateAll();
+
+		if (import.meta.env.DEV) {
+			// earlier builds registered a dev service worker; it caches stale assets and makes
+			// everything feel slow, so clear it out in dev
+			if ('serviceWorker' in navigator) {
+				const regs = await navigator.serviceWorker.getRegistrations();
+				await Promise.all(regs.map((r) => r.unregister()));
+			}
+			if ('caches' in window) {
+				const keys = await caches.keys();
+				await Promise.all(keys.map((k) => caches.delete(k)));
+			}
+			return;
+		}
+
 		try {
 			const { registerSW } = await import('virtual:pwa-register');
 			registerSW({ immediate: true });

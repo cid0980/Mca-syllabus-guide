@@ -1,22 +1,23 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
-	import { Bookmark, BookmarkCheck, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-svelte';
-	import { browser } from '$app/environment';
+	import { ChevronLeft, ChevronRight, ListTree, GitBranch, Layers } from 'lucide-svelte';
 	import type { DeckCard } from '$lib/content';
-	import { markSeen, recordQuiz, progress } from '$lib/stores/progress';
-	import { bookmarks, isBookmarked, toggleBookmark } from '$lib/stores/bookmarks';
+	import { markSeen, progress } from '$lib/stores/progress';
+	import { bookmarks, toggleBookmark } from '$lib/stores/bookmarks';
 	import { hydrated } from '$lib/stores/hydrate';
 	import AppBar from '$lib/components/AppBar.svelte';
-	import Card from '$lib/components/Card.svelte';
+	import Post from '$lib/components/Post.svelte';
 	import ErrorState from '$lib/components/ErrorState.svelte';
 
 	export let data: PageData;
 
-	$: card = deckCard(data);
-	$: saved = data.found ? isBookmarked(data.node.id, $bookmarks) : false;
+	let toast = '';
+	let toastTimer: ReturnType<typeof setTimeout>;
 
-	/** The stored node as a feed card, so the topic page can show the same study card. */
+	$: card = deckCard(data);
+	$: saved = data.found ? $bookmarks.includes(data.node.id) : false;
+
 	function deckCard(d: PageData): DeckCard | null {
 		if (!d.found || !d.node.card) return null;
 		return {
@@ -34,24 +35,21 @@
 		};
 	}
 
-	let toast = '';
-	let toastTimer: ReturnType<typeof setTimeout>;
-
 	function notify(message: string) {
 		toast = message;
 		clearTimeout(toastTimer);
-		toastTimer = setTimeout(() => (toast = ''), 1600);
+		toastTimer = setTimeout(() => (toast = ''), 1500);
+	}
+
+	function save(next: boolean) {
+		if (!data.found) return;
+		toggleBookmark(data.node.id);
+		notify(next ? 'Saved' : 'Removed');
 	}
 
 	onMount(() => {
 		if (data.found && data.node.card) markSeen(data.node.id);
 	});
-
-	function save() {
-		if (!data.found) return;
-		const added = toggleBookmark(data.node.id);
-		notify(added ? 'Saved' : 'Removed from saved');
-	}
 </script>
 
 <svelte:head><title>{data.found ? data.node.title : 'Topic'} — StudyFeed</title></svelte:head>
@@ -71,28 +69,22 @@
 	{@const children = node.children ?? []}
 	{@const plain = children.filter((c) => c.kind !== 'type')}
 	{@const types = children.filter((c) => c.kind === 'type')}
-	{@const saved = isBookmarked(node.id, $bookmarks)}
 
 	<AppBar
 		title={node.title}
-		subtitle={`${data.code} · Module ${data.module.module}${data.parent ? ` · ${data.parent.title}` : ''}`}
+		subtitle={`${data.code} · Module ${data.module.module}`}
 		back={`/explore/${encodeURIComponent(data.code)}`}
-	>
-		<button
-			slot="actions"
-			class="icon-btn"
-			class:icon-btn--on={$hydrated && saved}
-			on:click={save}
-			aria-label={$hydrated && saved ? 'Remove from saved' : 'Save topic'}
-		>
-			{#if $hydrated && saved}<BookmarkCheck size={20} />{:else}<Bookmark size={20} />{/if}
-		</button>
-	</AppBar>
+		crumbs={[
+			{ label: data.subject, href: `/explore/${encodeURIComponent(data.code)}` },
+			{ label: `Module ${data.module.module}`, href: `/explore/${encodeURIComponent(data.code)}` }
+		]}
+	/>
 
 	<main class="page">
-		<section class="gutter head">
-			<div class="badges">
+		<section class="head gutter">
+			<div class="tags">
 				<span class="badge">{node.kind === 'type' ? 'Type' : node.kind === 'subtopic' ? 'Subtopic' : 'Topic'}</span>
+				{#if node.card}<span class="badge">card</span>{/if}
 				{#if node.card && !node.card.verified}<span class="badge draft">draft</span>{/if}
 			</div>
 			<p class="definition">{node.definition}</p>
@@ -105,43 +97,63 @@
 		</section>
 
 		{#if plain.length}
-			<p class="section-label">Subtopics · {plain.length}</p>
-			<div class="group long-list">
+			<p class="section-label">
+				<span class="ico"><Layers size={12} /></span> Subtopics · {plain.length}
+			</p>
+			<div class="tree group">
 				{#each plain as child}
-					<a class="child-row" href={`/topic/${child.id}`}>
-						<span class="child-title">{child.title}</span>
-						<span class="child-def">{child.definition}</span>
+					<a class="branch" href={`/topic/${child.id}`}>
+						<span class="rail" aria-hidden="true"></span>
+						<span class="grow">
+							<span class="branch-title">{child.title}</span>
+							<span class="branch-def">{child.definition}</span>
+						</span>
+						<span class="chev"><ChevronRight size={16} /></span>
 					</a>
 				{/each}
 			</div>
 		{/if}
 
 		{#if types.length}
-			<p class="section-label">Types · {types.length}</p>
-			<div class="group long-list">
+			<p class="section-label">
+				<span class="ico"><GitBranch size={12} /></span> Types · {types.length}
+			</p>
+			<div class="tree group">
 				{#each types as child}
-					<a class="child-row" href={`/topic/${child.id}`}>
-						<span class="child-title">{child.title}</span>
-						<span class="child-def">{child.definition}</span>
+					<a class="branch" href={`/topic/${child.id}`}>
+						<span class="rail" aria-hidden="true"></span>
+						<span class="grow">
+							<span class="branch-title">{child.title}</span>
+							<span class="branch-def">{child.definition}</span>
+						</span>
+						<span class="chev"><ChevronRight size={16} /></span>
 					</a>
 				{/each}
 			</div>
 		{/if}
 
 		{#if card}
-			<p class="section-label">Study card</p>
+			<p class="section-label"><span class="ico"><ListTree size={12} /></span> Study card</p>
+			<div class="post-wrap">
+				<Post
+					card={card}
+					{saved}
+					index={0}
+					total={1}
+					on:save={(e) => save(e.detail)}
+					on:ask={() => notify('Ask AI arrives in build step 6')}
+				/>
+			</div>
 			<div class="gutter">
-				<Card {card} quizRecord={(correct) => recordQuiz(node.id, correct)} />
 				<a
 					class="btn btn--secondary btn--block feed-link"
 					href={`/feed/${encodeURIComponent(data.code)}/${data.module.module}?card=${node.id}`}
 				>
-					Open in the swipe feed
+					Open in the feed
 				</a>
 			</div>
 		{:else}
 			<section class="gutter note">
-				<p class="note-title"><Lightbulb size={14} /> Definition only</p>
 				<p class="note-text">
 					This entry carries its own syllabus definition. The full card — explanation, example,
 					quiz and exam tip — is written when the content pipeline runs for {data.code}.
@@ -180,18 +192,14 @@
 		gap: var(--sp-3);
 	}
 
-	.badges {
+	.tags {
 		display: flex;
 		gap: var(--sp-2);
 	}
 
-	.badge.draft {
-		color: var(--warning);
-	}
-
 	.definition {
 		font-size: var(--fs-def);
-		font-weight: 500;
+		font-weight: 600;
 		line-height: 1.45;
 		letter-spacing: -0.01em;
 	}
@@ -199,37 +207,64 @@
 	.parent {
 		display: inline-flex;
 		align-items: center;
-		gap: var(--sp-1);
-		font-size: var(--fs-small);
-		color: var(--fg-muted);
-	}
-
-	.child-row {
-		display: flex;
-		flex-direction: column;
 		gap: 2px;
-		padding: var(--sp-3) var(--sp-4);
-		background: var(--bg-subtle);
-		min-height: 56px;
-	}
-
-	.child-row + .child-row {
-		border-top: 1px solid var(--border);
-	}
-
-	.child-row:hover {
-		background: var(--bg-hover);
-	}
-
-	.child-title {
 		font-size: var(--fs-small);
-		font-weight: 500;
+		color: var(--accent);
 	}
 
-	.child-def {
+	.section-label {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-1);
+	}
+
+	.ico {
+		display: inline-flex;
+		color: var(--fg-subtle);
+	}
+
+	.branch {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-3);
+		min-height: 56px;
+		padding: var(--sp-2) var(--sp-4);
+	}
+
+	/* the visual "tree": a hairline rail down the left of every child row */
+	.rail {
+		width: 2px;
+		align-self: stretch;
+		background: var(--border);
+		border-radius: var(--radius-full);
+		flex: 0 0 auto;
+		margin: var(--sp-1) 0;
+	}
+
+	.branch-title {
+		display: block;
+		font-size: var(--fs-body);
+		font-weight: 600;
+	}
+
+	.branch-def {
+		display: block;
 		font-size: var(--fs-small);
 		color: var(--fg-muted);
 		line-height: 1.5;
+		margin-top: 1px;
+	}
+
+	.chev {
+		display: inline-flex;
+		color: var(--fg-subtle);
+		flex: 0 0 auto;
+	}
+
+	.post-wrap {
+		margin: var(--sp-2) 0 0;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.feed-link {
@@ -238,17 +273,6 @@
 
 	.note {
 		padding-top: var(--sp-4);
-	}
-
-	.note-title {
-		display: flex;
-		align-items: center;
-		gap: var(--sp-1);
-		font-size: var(--fs-caption);
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		color: var(--accent);
-		margin-bottom: var(--sp-2);
 	}
 
 	.note-text {
@@ -272,11 +296,5 @@
 
 	.pager-btn.right {
 		justify-content: flex-end;
-	}
-
-	.footnote {
-		font-size: var(--fs-caption);
-		color: var(--fg-subtle);
-		padding: var(--sp-4) var(--sp-4) 0;
 	}
 </style>

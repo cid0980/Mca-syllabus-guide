@@ -11,7 +11,11 @@ export function initBookmarks(): void {
 	if (!browser || ready) return;
 	ready = true;
 	bookmarks.set(readJSON<string[]>(KEYS.bookmarks, []));
-	bookmarks.subscribe((v) => writeJSON(KEYS.bookmarks, v));
+	let saveTimer: ReturnType<typeof setTimeout> | undefined;
+	bookmarks.subscribe((v) => {
+		clearTimeout(saveTimer);
+		saveTimer = setTimeout(() => writeJSON(KEYS.bookmarks, v), 200);
+	});
 }
 
 export function isBookmarked(id: string, list: string[] = get(bookmarks)): boolean {

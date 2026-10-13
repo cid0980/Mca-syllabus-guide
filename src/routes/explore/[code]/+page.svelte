@@ -93,16 +93,22 @@
 								<div class="children">
 									{#each plain as child}
 										<a class="child" href={`/topic/${child.id}`}>
-											<span class="child-title">{child.title}</span>
-											<span class="child-def">{child.definition}</span>
+											<span class="rail" aria-hidden="true"></span>
+											<span class="grow">
+												<span class="child-title">{child.title}</span>
+												<span class="child-def">{child.definition}</span>
+											</span>
 										</a>
 									{/each}
 									{#if types.length}
 										<p class="child-group">Types</p>
 										{#each types as child}
 											<a class="child" href={`/topic/${child.id}`}>
-												<span class="child-title">{child.title}</span>
-												<span class="child-def">{child.definition}</span>
+												<span class="rail" aria-hidden="true"></span>
+												<span class="grow">
+													<span class="child-title">{child.title}</span>
+													<span class="child-def">{child.definition}</span>
+												</span>
 											</a>
 										{/each}
 									{/if}
@@ -197,7 +203,7 @@
 	}
 
 	.topic-head:hover {
-		background: var(--bg-hover);
+		background: var(--fill);
 	}
 
 	.chev {
@@ -240,8 +246,26 @@
 	}
 
 	.child {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-3);
 		padding: var(--sp-2) 0;
 		border-top: 1px solid var(--border);
+		min-height: 48px;
+	}
+
+	.child:active {
+		background: var(--fill);
+	}
+
+	/* hairline rail = the visual tree connection to the parent topic */
+	.rail {
+		width: 2px;
+		align-self: stretch;
+		background: var(--border);
+		border-radius: var(--radius-full);
+		flex: 0 0 auto;
+		margin: var(--sp-1) 0;
 	}
 
 	.child-title {

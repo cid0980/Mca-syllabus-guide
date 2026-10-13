@@ -127,7 +127,7 @@
 		width: 40px;
 		height: 40px;
 		border-radius: var(--radius-full);
-		background: var(--bg-element);
+		background: var(--fill);
 		color: var(--fg-muted);
 		flex: 0 0 auto;
 	}
@@ -148,7 +148,7 @@
 		width: 36px;
 		height: 36px;
 		border-radius: var(--radius-full);
-		background: var(--bg-element);
+		background: var(--fill);
 		color: var(--fg-muted);
 		font-size: var(--fs-caption);
 		font-weight: 600;

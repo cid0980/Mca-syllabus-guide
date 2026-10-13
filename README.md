@@ -34,46 +34,39 @@ The UI rules live in [`skills/`](skills/) and are the source of truth for every 
 | File | Covers |
 |---|---|
 | `skills/TASTE.md` | The ban list: emojis, decorative gradients, glow, drop shadows on cards, backdrop blur, containers padded on all sides, centred paragraphs, competing primary buttons, dead-end empty screens |
-| `skills/FRONTEND-DESIGN.md` | Colour, type, spacing and radius tokens, the component state contract (default / hover / active / focus-visible / disabled / loading / error) |
-| `skills/MOBILE-UX.md` | 48px touch targets, full-bleed list groups, bottom tab rules, skeleton and error rules, performance budget |
+| `skills/FRONTEND-DESIGN.md` | The token table (colour, type, spacing, radius) and the component state contract (default / hover / active / focus-visible / disabled / loading / error) |
+| `skills/MOBILE-UX.md` | 48px touch targets, full-bleed rows, the scroll-snap feed, skeleton and error rules, performance budget |
 | `skills/CONTENT-STYLE.md` | How a card is written (used by `scripts/generate-cards.ts`) |
 | `skills/DATA.md` | Tree schema, `index.json` shape, storage keys |
 
+The visual language is derived from Instagram's: a plain background, hairline dividers, one accent
+blue (`#0095f6`), full-contrast text with a single muted grey for secondary lines, and solid icons
+for the active tab. Light is the default and follows the system; dark is an override of the same
+variables, so no component branches on theme.
+
 What that means in code:
 
-- **Tokens, not magic numbers.** `src/app.css` defines the palette and the 4/8/12/16/24/32/48/64
-  spacing scale. Components never hardcode a colour. Light mode is an override of the same
-  variables, so no component branches on theme.
+- **Tokens, never magic numbers.** `src/app.css` defines the palette and the 4/8/12/16/24/32/48/64
+  spacing scale. Components never hardcode a colour.
+- **The feed scrolls natively.** One card per screen with `scroll-snap-type: y mandatory`; an
+  `IntersectionObserver` marks the current card. There is no JavaScript transform per frame —
+  that is what made the first version stutter.
 - **Real packages.** Icons are [Lucide](https://lucide.dev) components (`lucide-svelte`), the type
   is Inter Variable (`@fontsource-variable/inter`) shipped in the bundle so it works offline.
 - **No emojis anywhere.** A scan of `src/`, `static/` and `scripts/` returns zero emoji characters.
 - **One elevation.** Cards are separated by a 1px border and a background step, never by shadow.
-  The only shadow in the app is on overlays (toast).
+  The only shadow in the app is on floating controls and toasts.
 - **Every async view has three states:** loading (skeleton shaped like the content), error (what
-  failed, why, retry), and done. Nothing renders an empty screen — `Saved`, `Progress`, an empty
+  failed, why, retry) and done. Nothing renders an empty screen — `Saved`, `Progress`, an empty
   module feed and `Exam mode` all explain what is happening and offer the next tap.
+- **Taps register.** Every button and row has a pressed state, and the bottom tab bar shows the
+  active destination as a solid, full-contrast icon like Instagram's.
 
 ### Logo and icons
 
 `static/logo.svg` is the app mark: two overlapping cards (the feed) with a solid accent face.
 `static/favicon.svg`, `icon-192.png`, `icon-512.png`, `maskable-512.png` and `apple-touch-icon.png`
 are generated from the same geometry by `scripts/make-icons.py`.
-
----
-
-## Deploy on Vercel
-
-`svelte.config.js` uses **`@sveltejs/adapter-vercel` when `VERCEL=1`** (which Vercel sets during its
-build) and **`@sveltejs/adapter-node` otherwise**, so `npm run build && node build` still works on a
-plain server.
-
-1. Import the GitHub repo at [vercel.com/new](https://vercel.com/new) — pick
-   `cid0980/Mca-syllabus-guide`, root directory `.`, framework preset SvelteKit. Build command stays
-   `npm run build` (it regenerates `index.json` first).
-2. No environment variables are required yet. When `/api/ask` lands (step 6), add
-   `ANTHROPIC_API_KEY` under Project -> Settings -> Environment Variables. The key is only ever read
-   on the server; `.env` stays out of the repo.
-3. Every push to `main` deploys to production; other branches and pull requests get preview URLs.
 
 ---
 
@@ -120,12 +113,12 @@ produced by `scripts/generate-cards.ts` (build step 5), which needs your `ANTHRO
 
 | Route | What it does |
 |---|---|
-| `/` | Semester selector, resume card, subject rows with progress rings, library stats |
+| `/` | Continue card, semester selector, subject rows with progress rings, and straight links into the syllabus tree and the first deck |
 | `/explore` | **All subjects + search** across every topic, subtopic and type |
 | `/explore/[code]` | Full drill-down: modules -> topics -> subtopics -> types, expand all / collapse all, module rings |
 | `/topic/[id]` | **Detail page**: definition, subtopics and types with definitions, full card, quiz, exam tip, prev/next, bookmark |
 | `/subject/[code]` | Progress ring, module rows with counts, start studying / syllabus |
-| `/feed/[code]/[module]` | Swipe deck: swipe or arrow keys, **tap to flip to the quiz**, **double tap to bookmark**, progress bar, Ask |
+| `/feed/[code]/[module]` | Instagram-style vertical feed: one card per screen, native scroll-snap, **tap to flip to the quiz**, **double tap to save**, progress bar, next/previous buttons |
 | `/saved` | Bookmarked topics and cards, resolved from the trees, with next-step links when empty |
 | `/progress` | Cards seen, quiz accuracy, day streak, per-subject and per-module breakdowns |
 | `/quiz` | Question-bank overview (step 4 adds the full quiz runner) |
@@ -154,7 +147,8 @@ A topic card links straight into the feed: `/feed/CSCA 411/II?card=CSCA411-M2-06
 | 1 | Scaffold SvelteKit + TypeScript + PWA + manifest | done |
 | 2 | Sample cards + Home, Subject, Feed screens | done |
 | 2b | Full syllabus tree for all 10 subjects + Explore / Topic pages | done |
-| 2c | **UI overhaul: skills, tokens, Lucide, Inter, logo, SVG icons, load-based SSR, all screens on the design system** | done |
+| 2c | UI overhaul: skills, tokens, Lucide, Inter, logo, load-based SSR | done |
+| 2d | **Instagram-derived theme, native scroll-snap feed, solid active tab icons, tree rails, dev service worker removed** | done |
 | 3 | Saved screen, Progress screen, streak view | built — needs your test |
 | 4 | Quiz mode and Exam mode | pending: exam mode done, quiz runner next |
 | 5 | `generate-cards.ts`: card content for the other nine subjects | pending: needs API key |

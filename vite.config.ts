@@ -27,9 +27,10 @@ export default defineConfig({
 			workbox: {
 				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,webmanifest,json}']
 			},
+			// the dev service worker intercepts every request and makes navigation feel slow,
+			// so it is only generated for real builds
 			devOptions: {
-				enabled: true,
-				type: 'module'
+				enabled: false
 			}
 		})
 	]

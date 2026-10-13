@@ -4,7 +4,7 @@ import { writable } from 'svelte/store';
 import type { Settings } from '$lib/types';
 import { KEYS, readJSON, writeJSON } from '$lib/storage';
 
-const DEFAULTS: Settings = { theme: 'dark' };
+const DEFAULTS: Settings = { theme: 'system' };
 
 export const settings = writable<Settings>(DEFAULTS);
 
@@ -36,6 +36,6 @@ export function setTheme(theme: Settings['theme']): void {
 
 /** Resolved theme actually on screen right now. */
 export function resolvedTheme(): 'dark' | 'light' {
-	if (!browser) return 'dark';
-	return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+	if (!browser) return 'light';
+	return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
 }

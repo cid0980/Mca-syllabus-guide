@@ -3,11 +3,9 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { plural } from '$lib/content';
-	import { hydrated } from '$lib/stores/hydrate';
 	import { KEYS, readJSON, writeJSON } from '$lib/storage';
 	import AppBar from '$lib/components/AppBar.svelte';
-	import SwipeFeed from '$lib/components/SwipeFeed.svelte';
-	import Skeleton from '$lib/components/Skeleton.svelte';
+	import Feed from '$lib/components/Feed.svelte';
 
 	export let data: PageData;
 
@@ -33,13 +31,12 @@
 	<title>{data.summary ? data.summary.subject : data.code} · Module {data.module} — StudyFeed</title>
 </svelte:head>
 
-<AppBar
-	title={data.summary ? data.summary.subject : data.code}
-	subtitle={`Module ${data.module} · ${plural(data.cards.length, 'card')}`}
-	back={data.cards.length ? `/subject/${encodeURIComponent(data.code)}` : `/explore/${encodeURIComponent(data.code)}`}
-/>
-
 {#if data.cards.length === 0}
+	<AppBar
+		title={data.summary ? data.summary.subject : data.code}
+		subtitle={`Module ${data.module}`}
+		back={`/explore/${encodeURIComponent(data.code)}`}
+	/>
 	<main class="page">
 		<section class="gutter empty">
 			<h2>No cards in Module {data.module} yet</h2>
@@ -59,8 +56,8 @@
 			<p class="section-label">Modules with cards</p>
 			<div class="group">
 				{#each data.otherModules as m}
-					<a class="module-link" href={`/feed/${encodeURIComponent(data.code)}/${m.module}`}>
-						<span class="module-no nums">{m.module}</span>
+					<a class="module-link pressable" href={`/feed/${encodeURIComponent(data.code)}/${m.module}`}>
+						<span class="avatar" aria-hidden="true">{m.module}</span>
 						<span class="grow">
 							<span class="module-title">{m.title}</span>
 							<span class="module-meta nums">{plural(m.cards, 'card')}</span>
@@ -71,13 +68,14 @@
 		{/if}
 	</main>
 {:else}
-	<main class="feed-page">
-		{#if $hydrated}
-			<SwipeFeed cards={data.cards} initialIndex={startIndex()} />
-		{:else}
-			<Skeleton variant="card" />
-		{/if}
-	</main>
+	<div class="feed-page">
+		<AppBar
+			title={data.summary ? data.summary.subject : data.code}
+			subtitle={`Module ${data.module} · ${plural(data.cards.length, 'card')}`}
+			back={`/subject/${encodeURIComponent(data.code)}`}
+		/>
+		<Feed cards={data.cards} initialIndex={startIndex()} />
+	</div>
 {/if}
 
 <style>
@@ -87,8 +85,8 @@
 		height: 100dvh;
 		max-width: 600px;
 		margin: 0 auto;
-		padding: var(--sp-3) var(--sp-4) 0;
-		padding-bottom: calc(var(--nav-h) + var(--sp-3) + env(safe-area-inset-bottom));
+		padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));
+		background: var(--bg);
 	}
 
 	.empty {
@@ -97,7 +95,7 @@
 
 	.empty h2 {
 		font-size: var(--fs-title);
-		font-weight: 600;
+		font-weight: 700;
 		margin-bottom: var(--sp-2);
 	}
 
@@ -123,34 +121,12 @@
 		gap: var(--sp-3);
 		min-height: 56px;
 		padding: var(--sp-3) var(--sp-4);
-		background: var(--bg-subtle);
-	}
-
-	.module-link + .module-link {
-		border-top: 1px solid var(--border);
-	}
-
-	.module-link:hover {
-		background: var(--bg-hover);
-	}
-
-	.module-no {
-		display: grid;
-		place-items: center;
-		width: 32px;
-		height: 32px;
-		border-radius: var(--radius-full);
-		background: var(--bg-element);
-		color: var(--fg-muted);
-		font-size: var(--fs-caption);
-		font-weight: 600;
-		flex: 0 0 auto;
 	}
 
 	.module-title {
 		display: block;
-		font-size: var(--fs-small);
-		font-weight: 500;
+		font-size: var(--fs-body);
+		font-weight: 600;
 	}
 
 	.module-meta {

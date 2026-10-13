@@ -5,28 +5,32 @@ size; they use the tokens below.
 
 ## Colour
 
-12-step scale per Radix convention, but only the steps we actually need are exposed as semantic
-tokens. Dark is the default; light overrides the same names, so components never branch on theme.
+The palette is derived from Instagram's: a plain background, hairline dividers, one accent blue,
+and text that is either full-contrast or a muted grey. No gradients, no glow, no tinted panels.
 
-| Token | Dark | Light | Used for |
+Light is the default; dark is an override of the same variables, so no component branches on theme.
+
+| Token | Light | Dark | Used for |
 |---|---|---|---|
-| `--bg` | `#0e0e10` | `#ffffff` | app background |
-| `--bg-subtle` | `#141416` | `#f7f7f9` | grouped surfaces, inputs, sheets |
-| `--bg-element` | `#1a1a1d` | `#f1f1f4` | rows, chips, skeletons |
-| `--bg-hover` | `#222226` | `#e9e9ee` | hover / press feedback |
-| `--bg-active` | `#2b2b31` | `#e0e0e6` | selected row, pressed segment |
-| `--border` | `#26262b` | `#e2e2e7` | hairlines, dividers, card stroke |
-| `--border-strong` | `#34343c` | `#cfcfd7` | inputs, focusable outlines |
-| `--fg` | `#ededf0` | `#16161a` | primary text |
-| `--fg-muted` | `#a0a0ab` | `#5f5f6b` | secondary text, labels, icons |
-| `--fg-subtle` | `#6e6e7a` | `#8a8a94` | tertiary text, chevrons, placeholders |
-| `--accent` | `#6e56cf` | `#6e56cf` | primary action, progress, focus |
-| `--accent-hover` | `#7c66dc` | `#5f49bd` | hovered primary action |
-| `--accent-fg` | `#ffffff` | `#ffffff` | text on accent |
-| `--danger` | `#e5484d` | `#dc3d43` | destructive, error icon |
-| `--success` | `#30a46c` | `#218358` | correct answer |
+| `--bg` | `#ffffff` | `#000000` | page and card background |
+| `--bg-subtle` | `#fafafa` | `#090909` | pressed / secondary surfaces |
+| `--fill` | `#efefef` | `#262626` | secondary buttons, chips, avatars, skeletons |
+| `--fill-strong` | `#dbdbdb` | `#363636` | stronger fills |
+| `--border` | `#dbdbdb` | `#262626` | hairline dividers, 1px only |
+| `--border-strong` | `#c7c7c7` | `#363636` | inputs, outlined controls |
+| `--fg` | `#262626` | `#f5f5f5` | primary text and icons |
+| `--fg-muted` | `#737373` | `#a8a8a8` | body copy, secondary lines |
+| `--fg-subtle` | `#8e8e8e` | `#737373` | captions, counts, idle tab icons |
+| `--accent` | `#0095f6` | `#0095f6` | primary buttons, links, active tab icon, progress |
+| `--accent-hover` | `#1877f2` | `#4db5f9` | hover on the accent |
+| `--danger` | `#ed4956` | `#ff5c6c` | destructive + wrong quiz answer |
+| `--success` | `#1a7f37` | `#4ade80` | correct quiz answer |
+| `--warning` | `#b26a00` | `#f5a623` | the "draft" badge |
+| `--shadow-pop` | `0 4px 16px rgba(0,0,0,.12)` | `0 4px 16px rgba(0,0,0,.7)` | floating controls and toasts only |
 
-Never grey text on a coloured background. Never use `--accent` for decoration.
+Contrast rule: body text is `--fg-muted` on `--bg`, never `--fg-subtle`. `--fg-subtle` is for
+captions and counts only. Never put grey text on the accent colour.
+
 
 ## Type
 

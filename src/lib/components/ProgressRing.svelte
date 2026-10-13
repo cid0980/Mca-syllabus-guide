@@ -16,7 +16,7 @@
 
 <span class="ring" style={`width:${size}px;height:${size}px`} role="img" aria-label={`${pct} percent complete`}>
 	<svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-		<circle cx={size / 2} cy={size / 2} {r} fill="none" stroke="var(--bg-element)" stroke-width={stroke} />
+		<circle cx={size / 2} cy={size / 2} {r} fill="none" stroke="var(--fill)" stroke-width={stroke} />
 		{#if pct > 0}
 			<circle
 				cx={size / 2}

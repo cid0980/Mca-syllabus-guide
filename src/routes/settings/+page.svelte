@@ -114,7 +114,7 @@
 	}
 
 	.theme-row:hover {
-		background: var(--bg-hover);
+		background: var(--fill);
 	}
 
 	.theme-icon {
@@ -142,7 +142,7 @@
 	}
 
 	.danger-row:hover {
-		background: var(--bg-hover);
+		background: var(--fill);
 	}
 
 	.danger-row.solid:hover {

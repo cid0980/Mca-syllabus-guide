@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { Settings } from 'lucide-svelte';
+	import { Settings, ListTree, ChevronRight, BookOpen } from 'lucide-svelte';
 	import { indexSubject, subjectsOfSemester, semesterLabel, totals, plural } from '$lib/content';
 	import { progress, percentSeenByIds, streak } from '$lib/stores/progress';
-	import { hydrated } from '$lib/stores/hydrate';
 	import { KEYS, readJSON } from '$lib/storage';
-	import { browser } from '$app/environment';
-	import ListRow from '$lib/components/ListRow.svelte';
+	import { hydrated } from '$lib/stores/hydrate';
 	import ProgressRing from '$lib/components/ProgressRing.svelte';
 
 	let semester = 1;
@@ -13,10 +11,9 @@
 
 	$: if ($hydrated) last = readJSON<{ code: string; module: string } | null>(KEYS.lastOpened, null);
 	$: semesterSubjects = subjectsOfSemester(semester);
-	$: libraryCards = totals.cards;
 
-	function pctFor(cardIds: string[]): number {
-		return percentSeenByIds(cardIds, $progress);
+	function pct(ids: string[]): number {
+		return $hydrated ? percentSeenByIds(ids, $progress) : 0;
 	}
 </script>
 
@@ -24,16 +21,10 @@
 
 <header class="appbar">
 	<div class="inner">
-		<img src="/logo.svg" alt="" width="26" height="26" />
-		<div class="grow">
-			<h1>StudyFeed</h1>
-			<p class="sub">MCA · Pondicherry University</p>
-		</div>
+		<img src="/logo.svg" alt="" width="24" height="24" />
+		<h1 class="wordmark grow">StudyFeed</h1>
 		{#if $hydrated && $streak.count > 0}
-			<span class="streak nums" title="Day streak">
-				{$streak.count}
-				<span class="streak-label">{$streak.count === 1 ? 'day' : 'days'}</span>
-			</span>
+			<span class="streak nums">{$streak.count}d</span>
 		{/if}
 		<a class="icon-btn" href="/settings" aria-label="Settings"><Settings size={20} /></a>
 	</div>
@@ -43,19 +34,19 @@
 	{#if last}
 		{@const subject = indexSubject(last.code)}
 		{#if subject}
-			<div class="gutter resume">
-				<a class="resume-card" href={`/feed/${encodeURIComponent(last.code)}/${last.module}`}>
-					<ProgressRing percent={$hydrated ? pctFor(subject.cardIds) : 0} size={40} stroke={3} />
-					<span class="grow">
-						<span class="resume-label">Continue</span>
-						<span class="resume-title truncate">{subject.subject} · Module {last.module}</span>
-					</span>
-				</a>
-			</div>
+			<a class="continue" href={`/feed/${encodeURIComponent(last.code)}/${last.module}`}>
+				<ProgressRing percent={pct(subject.cardIds)} size={44} stroke={3} />
+				<span class="grow">
+					<span class="continue-label">Continue studying</span>
+					<span class="continue-title truncate">{subject.subject}</span>
+					<span class="continue-sub">Module {last.module} · {pct(subject.cardIds)}% seen</span>
+				</span>
+				<span class="chev"><ChevronRight size={18} /></span>
+			</a>
 		{/if}
 	{/if}
 
-	<div class="gutter">
+	<div class="gutter seg-wrap">
 		<div class="seg" role="group" aria-label="Semester">
 			{#each [1, 2, 3] as s}
 				<button aria-pressed={semester === s} on:click={() => (semester = s)}>{semesterLabel(s)}</button>
@@ -63,47 +54,50 @@
 		</div>
 	</div>
 
-	<p class="section-label">{semesterLabel(semester)}</p>
-
+	<p class="section-label">{semesterLabel(semester)} subjects</p>
 	<div class="group">
 		{#each semesterSubjects as subject}
-			<ListRow
-				href={`/subject/${encodeURIComponent(subject.code)}`}
-				title={subject.subject}
-				subtitle={`${plural(subject.counts.topics, 'topic')} · ${plural(
-					subject.counts.subtopics,
-					'subtopic'
-				)} · ${plural(subject.counts.cards, 'card')}`}
-				chevron
-			>
-				<span slot="lead" class="course">
-					<span class="course-code nums">{subject.code.replace('CSCA ', '')}</span>
+			<a class="subj pressable" href={`/subject/${encodeURIComponent(subject.code)}`}>
+				<span class="avatar" aria-hidden="true">{subject.code.replace('CSCA ', '')}</span>
+				<span class="grow">
+					<span class="subj-title">{subject.subject}</span>
+					<span class="subj-sub truncate">
+						{plural(subject.counts.modules, 'module')} · {plural(subject.counts.topics, 'topic')} ·
+						{plural(subject.counts.subtopics, 'subtopic')}
+					</span>
+					<span class="subj-meta nums">
+						{subject.counts.cards ? `${subject.counts.cards} cards` : 'definitions ready'} · {pct(subject.cardIds)}% seen
+					</span>
 				</span>
-				<span slot="trail">
-					<ProgressRing percent={$hydrated ? pctFor(subject.cardIds) : 0} size={34} stroke={2.5} />
-				</span>
-			</ListRow>
+				<ProgressRing percent={pct(subject.cardIds)} size={34} stroke={2.5} />
+				<span class="chev"><ChevronRight size={18} /></span>
+			</a>
 		{/each}
 	</div>
 
-	<a class="link-row gutter" href="/explore">
-		Browse all subjects and modules
-	</a>
-
-	<p class="section-label">Library</p>
+	<p class="section-label">Whole syllabus</p>
 	<div class="group">
-		<div class="stats">
-			<div><strong class="nums">{totals.topics}</strong><span>topics</span></div>
-			<div><strong class="nums">{totals.subtopics + totals.types}</strong><span>subtopics</span></div>
-			<div><strong class="nums">{libraryCards}</strong><span>cards</span></div>
-			<div><strong class="nums">{$hydrated ? pctFor(subjectsOfSemester(1).flatMap((s) => s.cardIds)) : 0}%</strong><span>seen</span></div>
-		</div>
+		<a class="subj pressable" href="/explore">
+			<span class="avatar" aria-hidden="true"><ListTree size={18} /></span>
+			<span class="grow">
+				<span class="subj-title">Syllabus tree</span>
+				<span class="subj-sub">
+					{totals.subjects} subjects · {totals.topics} topics · {totals.subtopics + totals.types} subtopics and types
+				</span>
+				<span class="subj-meta">Browse subject, module, topic, subtopic, type</span>
+			</span>
+			<span class="chev"><ChevronRight size={18} /></span>
+		</a>
+		<a class="subj pressable" href="/feed/CSCA%20411/I">
+			<span class="avatar" aria-hidden="true"><BookOpen size={18} /></span>
+			<span class="grow">
+				<span class="subj-title">Start the deck</span>
+				<span class="subj-sub">Data Structures and Algorithms · Module I</span>
+				<span class="subj-meta">{totals.cards} cards written so far</span>
+			</span>
+			<span class="chev"><ChevronRight size={18} /></span>
+		</a>
 	</div>
-
-	<p class="footnote">
-		Definitions for every syllabus entry are stored in the app and work offline. Cards marked
-		<em>draft</em> are your own study material — check them against the textbook and mark them verified.
-	</p>
 </main>
 
 <style>
@@ -120,122 +114,100 @@
 		display: flex;
 		align-items: center;
 		gap: var(--sp-3);
-		min-height: var(--bar-h);
+		height: var(--bar-h);
 		max-width: 600px;
 		margin: 0 auto;
 		padding: 0 var(--sp-4);
 	}
 
-	h1 {
+	.wordmark {
 		font-size: var(--fs-title);
-		font-weight: 600;
-		letter-spacing: -0.01em;
-	}
-
-	.sub {
-		font-size: var(--fs-caption);
-		color: var(--fg-subtle);
+		font-weight: 700;
+		letter-spacing: -0.02em;
 	}
 
 	.streak {
 		font-size: var(--fs-small);
-		font-weight: 500;
-		color: var(--fg-muted);
-		display: inline-flex;
-		align-items: baseline;
-		gap: 3px;
+		font-weight: 700;
+		color: var(--fg);
+		background: var(--fill);
+		border-radius: var(--radius-full);
+		padding: 2px 10px;
 	}
 
-	.streak-label {
+	.continue {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-3);
+		margin: var(--sp-4);
+		padding: var(--sp-3);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		transition: background-color 0.12s ease, transform 0.12s ease;
+	}
+
+	.continue:active {
+		background: var(--fill);
+		transform: scale(0.99);
+	}
+
+	.continue-label {
+		display: block;
+		font-size: var(--fs-caption);
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+
+	.continue-title {
+		display: block;
+		font-size: var(--fs-body);
+		font-weight: 700;
+		margin-top: 1px;
+	}
+
+	.continue-sub {
+		display: block;
 		font-size: var(--fs-caption);
 		color: var(--fg-subtle);
 	}
 
-	.resume {
-		padding-top: var(--sp-4);
+	.seg-wrap {
+		padding-top: var(--sp-2);
 	}
 
-	.resume-card {
+	.subj {
 		display: flex;
 		align-items: center;
 		gap: var(--sp-3);
 		padding: var(--sp-3) var(--sp-4);
-		background: var(--bg-subtle);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
 	}
 
-	.resume-card:active {
-		background: var(--bg-hover);
-	}
-
-	.resume-label {
-		display: block;
-		font-size: var(--fs-caption);
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		color: var(--fg-subtle);
-	}
-
-	.resume-title {
+	.subj-title {
 		display: block;
 		font-size: var(--fs-body);
-		font-weight: 500;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+
+	.subj-sub {
+		display: block;
+		font-size: var(--fs-small);
+		color: var(--fg-muted);
 		margin-top: 1px;
 	}
 
-	.course {
-		display: grid;
-		place-items: center;
-		width: 36px;
-		height: 36px;
-		border-radius: var(--radius-full);
-		background: var(--bg-element);
-		color: var(--fg-muted);
-		font-size: var(--fs-caption);
-		font-weight: 600;
-	}
-
-	.link-row {
+	.subj-meta {
 		display: block;
-		padding-top: var(--sp-3);
-		padding-bottom: var(--sp-1);
-		font-size: var(--fs-small);
-		color: var(--accent);
-	}
-
-	.stats {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: var(--sp-2);
-		padding: var(--sp-4);
-	}
-
-	.stats div {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-	}
-
-	.stats strong {
-		font-size: var(--fs-title);
-		font-weight: 600;
-	}
-
-	.stats span {
 		font-size: var(--fs-caption);
 		color: var(--fg-subtle);
+		margin-top: 2px;
 	}
 
-	.footnote {
-		font-size: var(--fs-caption);
-		line-height: 1.6;
+	.chev {
+		display: inline-flex;
 		color: var(--fg-subtle);
-		padding: var(--sp-6) var(--sp-4) 0;
-	}
-
-	.footnote em {
-		font-style: normal;
-		color: var(--fg-muted);
+		flex: 0 0 auto;
 	}
 </style>

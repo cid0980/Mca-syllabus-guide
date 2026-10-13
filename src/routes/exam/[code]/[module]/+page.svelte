@@ -1,23 +1,19 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { plural } from '$lib/content';
-	import { hydrated } from '$lib/stores/hydrate';
 	import AppBar from '$lib/components/AppBar.svelte';
-	import SwipeFeed from '$lib/components/SwipeFeed.svelte';
-	import Skeleton from '$lib/components/Skeleton.svelte';
+	import Feed from '$lib/components/Feed.svelte';
 
 	export let data: PageData;
 </script>
 
 <svelte:head><title>Exam mode — StudyFeed</title></svelte:head>
 
-<AppBar
-	title="Exam mode"
-	subtitle={`${data.summary ? data.summary.subject : data.code} · Module ${data.module}`}
-	back={`/subject/${encodeURIComponent(data.code)}`}
-/>
-
 {#if data.cards.length === 0}
+	<AppBar
+		title="Exam mode"
+		subtitle={`${data.summary ? data.summary.subject : data.code} · Module ${data.module}`}
+		back={`/subject/${encodeURIComponent(data.code)}`}
+	/>
 	<main class="page">
 		<section class="gutter empty">
 			<h2>Nothing to revise in Module {data.module} yet</h2>
@@ -29,13 +25,14 @@
 		</section>
 	</main>
 {:else}
-	<main class="feed-page">
-		{#if $hydrated}
-			<SwipeFeed cards={data.cards} initialIndex={0} examMode />
-		{:else}
-			<Skeleton variant="card" />
-		{/if}
-	</main>
+	<div class="feed-page">
+		<AppBar
+			title="Exam mode"
+			subtitle={`${data.summary ? data.summary.subject : data.code} · Module ${data.module}`}
+			back={`/subject/${encodeURIComponent(data.code)}`}
+		/>
+		<Feed cards={data.cards} initialIndex={0} examMode />
+	</div>
 {/if}
 
 <style>
@@ -45,8 +42,8 @@
 		height: 100dvh;
 		max-width: 600px;
 		margin: 0 auto;
-		padding: var(--sp-3) var(--sp-4) 0;
-		padding-bottom: calc(var(--nav-h) + var(--sp-3) + env(safe-area-inset-bottom));
+		padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));
+		background: var(--bg);
 	}
 
 	.empty {
@@ -59,7 +56,7 @@
 
 	.empty h2 {
 		font-size: var(--fs-title);
-		font-weight: 600;
+		font-weight: 700;
 	}
 
 	.empty p {

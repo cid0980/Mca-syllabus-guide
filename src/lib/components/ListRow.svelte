@@ -56,12 +56,12 @@
 
 	@media (hover: hover) {
 		a.row-item:hover {
-			background: var(--bg-hover);
+			background: var(--fill);
 		}
 	}
 
 	a.row-item:active {
-		background: var(--bg-active);
+		background: var(--fill-strong);
 	}
 
 	.row-item.disabled {

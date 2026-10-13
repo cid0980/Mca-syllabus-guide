@@ -9,7 +9,7 @@
  * Derived helpers take the progress map as an argument, which keeps templates reactive.
  */
 import { browser } from '$app/environment';
-import { writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 import type { ProgressMap, StreakState } from '$lib/types';
 import { KEYS, daysBetween, readJSON, todayKey, writeJSON } from '$lib/storage';
 
@@ -24,8 +24,20 @@ export function initProgress(): void {
 	progress.set(readJSON<ProgressMap>(KEYS.progress, {}));
 	streak.set(readJSON<StreakState>(KEYS.streak, { count: 0, lastDay: '' }));
 	refreshStreak();
-	progress.subscribe((v) => writeJSON(KEYS.progress, v));
-	streak.subscribe((v) => writeJSON(KEYS.streak, v));
+	// debounced: writing on every card view was showing up as jank while scrolling
+	let saveTimer: ReturnType<typeof setTimeout> | undefined;
+	const flush = () => writeJSON(KEYS.progress, get(progress));
+	progress.subscribe(() => {
+		clearTimeout(saveTimer);
+		saveTimer = setTimeout(flush, 300);
+	});
+	streak.subscribe((v) => {
+		clearTimeout(saveTimer);
+		saveTimer = setTimeout(() => {
+			writeJSON(KEYS.progress, get(progress));
+			writeJSON(KEYS.streak, v);
+		}, 300);
+	});
 }
 
 export function markSeen(nodeId: string): void {
