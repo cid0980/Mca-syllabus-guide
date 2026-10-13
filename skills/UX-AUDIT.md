@@ -80,6 +80,7 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 51 | A question lost because the request failed | The question is saved before the request is sent, and a failed answer offers Retry with the same text | fixed |
 | 52 | Counting was called "seen" while the mark was manual | Every label now says "marked read" (Home, Syllabus, Progress, Saved, Settings, backup copy) | fixed |
 | 53 | A blue circle around 411 read as "finished" while nothing had been read (reported 2026-10-13) | The course ring is now the progress itself: dashed accent = cards waiting, solid accent arc = the share marked read, grey = nothing to track yet. Same treatment on Home and Syllabus | fixed |
+| 54 | OpenRouter answered with its own billing text: "you requested up to 700 tokens, but can only afford 615 - upgrade to a paid account" (reported 2026-10-13) | The request now asks for 400 tokens, which is still twice what a 120-word answer needs; a refusal of that kind is translated into plain words with the three ways out (add credit, use a `:free` model, switch provider); OpenRouter's free models are listed first and tagged in Settings | fixed |
 
 ## Still planned
 

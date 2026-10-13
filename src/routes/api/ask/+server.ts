@@ -56,7 +56,9 @@ async function gemini(key: string, model: string, prompt: string, signal: AbortS
 		body: JSON.stringify({
 			systemInstruction: { parts: [{ text: SYSTEM }] },
 			contents: [{ role: 'user', parts: [{ text: prompt }] }],
-			generationConfig: { temperature: 0.3, maxOutputTokens: 700 }
+			// answers are capped at 120 words, so 400 is generous; asking for less also means a key with
+			// a small balance can still answer (OpenRouter refuses a request it cannot afford)
+			generationConfig: { temperature: 0.3, maxOutputTokens: 400 }
 		})
 	});
 	const data = (await res.json().catch(() => ({}))) as {
@@ -92,7 +94,7 @@ async function openaiLike(
 		body: JSON.stringify({
 			model,
 			temperature: 0.3,
-			max_tokens: 700,
+			max_tokens: 400,
 			messages: [
 				{ role: 'system', content: SYSTEM },
 				{ role: 'user', content: prompt }
@@ -120,12 +122,31 @@ class HttpError extends Error {
 	}
 }
 
-function friendly(err: unknown): { status: number; message: string } {
+function creditMessage(provider: ProviderId): string {
+	if (provider === 'openrouter')
+		return 'This key has too little credit left for that model. Add credit at openrouter.ai/settings/credits, pick a model id ending in :free (those cost nothing), or switch provider in Settings.';
+	return 'That account has no credit or quota left for this model. Check the provider plan, or switch provider in Settings.';
+}
+
+/** A key with no money behind it is not a bug, it is a bill - say so in plain words. */
+function isCreditError(status: number, message: string): boolean {
+	if (status === 402) return true;
+	return /insufficient credit|insufficient_quota|can only afford|out of credit|exceeded your current quota/i.test(
+		message
+	);
+}
+
+function friendly(err: unknown, provider: ProviderId): { status: number; message: string } {
 	if (err instanceof HttpError) {
+		if (isCreditError(err.status, err.message)) return { status: 402, message: creditMessage(provider) };
 		if (err.status === 401 || err.status === 403)
 			return { status: 401, message: 'That API key was rejected. Check it in Settings.' };
 		if (err.status === 404) return { status: 404, message: 'That model id does not exist for this provider.' };
-		if (err.status === 429) return { status: 429, message: 'Rate limited or out of quota. Try again in a moment.' };
+		if (err.status === 429)
+			return {
+				status: 429,
+				message: 'Rate limited or out of quota for this key. Wait a moment and try again, or switch provider in Settings.'
+			};
 		return { status: err.status, message: err.message };
 	}
 	if ((err as Error)?.name === 'AbortError') return { status: 504, message: 'The provider took too long to answer.' };
@@ -182,7 +203,7 @@ export const POST: RequestHandler = async ({ request }) => {
 				: await openaiLike(OPENAI_BASE[provider as 'openrouter' | 'nvidia'], key, model, prompt, controller.signal);
 		return json({ answer, provider, model });
 	} catch (err) {
-		const { status, message } = friendly(err);
+		const { status, message } = friendly(err, provider);
 		return json({ error: message }, { status });
 	} finally {
 		clearTimeout(timer);

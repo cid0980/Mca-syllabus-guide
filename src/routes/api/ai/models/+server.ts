@@ -52,11 +52,19 @@ export const POST: RequestHandler = async ({ request }) => {
 			const msg = typeof data.error === 'object' ? data.error?.message : undefined;
 			return json({ error: msg ?? `The provider returned ${res.status}.` }, { status: res.status });
 		}
-		const models = (data.data ?? [])
-			.map((m) => m.id ?? '')
-			.filter(Boolean)
-			.sort();
-		return json({ models: models.slice(0, 200) });
+		// A free model is the only one a key with no credit can use, so those are listed first and
+		// Settings marks them. OpenRouter prices are strings in USD, so "0" means free.
+		const rows = (data.data ?? []) as { id?: string; pricing?: { prompt?: string; completion?: string } }[];
+		const entries = rows
+			.filter((m) => m.id)
+			.map((m) => ({
+				id: m.id as string,
+				free:
+					(m.id as string).endsWith(':free') ||
+					(m.pricing?.prompt === '0' && m.pricing?.completion === '0')
+			}));
+		entries.sort((a, b) => Number(b.free) - Number(a.free) || a.id.localeCompare(b.id));
+		return json({ models: entries.map((e) => e.id).slice(0, 200) });
 	} catch (err) {
 		return json({ error: (err as Error).message }, { status: 500 });
 	}

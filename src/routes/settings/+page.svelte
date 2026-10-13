@@ -221,7 +221,7 @@
 					<div class="models">
 						{#each modelList[selected.id] ?? [] as m}
 							<button class="model-chip" class:on={($ai.models[selected.id] ?? selected.defaultModel) === m} on:click={() => setModel(selected.id, m)}>
-								{m}
+								{m}{#if m.endsWith(':free')}<span class="free-tag">free</span>{/if}
 							</button>
 						{/each}
 					</div>
@@ -242,6 +242,10 @@
 					use, then pick one.
 					{#if selected.console}
 						Get a key at <span class="mono">{selected.console}</span>.
+					{/if}
+					{#if selected.id === 'openrouter'}
+						On OpenRouter, ids ending in <span class="mono">:free</span> cost nothing and are listed
+						first — a key with no credit left can still use them.
 					{/if}
 				</p>
 
@@ -480,6 +484,15 @@
 	.model-chip.on {
 		background: var(--accent);
 		color: var(--accent-fg);
+	}
+
+	.free-tag {
+		margin-left: 6px;
+		padding: 0 5px;
+		border-radius: var(--radius-full);
+		border: 1px solid currentColor;
+		font-size: 10px;
+		opacity: 0.7;
 	}
 
 	.hint {
