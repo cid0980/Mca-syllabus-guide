@@ -1,0 +1,1137 @@
+{
+  "code": "CSCA 421",
+  "subject": "Computer Networks",
+  "semester": 2,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Introduction to Networks and the Physical Layer",
+      "topics": [
+        {
+          "id": "CSCA421-MI-T01",
+          "title": "Network Topology",
+          "kind": "topic",
+          "definition": "Topology is the physical or logical arrangement of nodes and links in a network.",
+          "children": [
+            {
+              "id": "CSCA421-MI-T01-s1",
+              "title": "Bus topology",
+              "kind": "subtopic",
+              "definition": "All nodes share one backbone cable, which is cheap but a single break stops the whole network."
+            },
+            {
+              "id": "CSCA421-MI-T01-s2",
+              "title": "Star topology",
+              "kind": "subtopic",
+              "definition": "Every node connects to a central hub or switch, so one cable failure affects only that node."
+            },
+            {
+              "id": "CSCA421-MI-T01-s3",
+              "title": "Ring topology",
+              "kind": "subtopic",
+              "definition": "Nodes form a closed loop and data circulates in one direction, with a token often controlling access."
+            },
+            {
+              "id": "CSCA421-MI-T01-s4",
+              "title": "Mesh topology",
+              "kind": "subtopic",
+              "definition": "Every node links to every other node, giving high reliability at high cabling cost; partial mesh is a compromise."
+            },
+            {
+              "id": "CSCA421-MI-T01-s5",
+              "title": "Tree and hybrid topology",
+              "kind": "subtopic",
+              "definition": "Hierarchical combinations of star and bus arrangements used in campus networks."
+            },
+            {
+              "id": "CSCA421-MI-T01-s6",
+              "title": "LAN, MAN and WAN",
+              "kind": "subtopic",
+              "definition": "Networks classified by reach: a room or building, a city, and a country or the world."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MI-T02",
+          "title": "Network Architecture",
+          "kind": "topic",
+          "definition": "Network architecture describes how the work of communication is divided among layers and how they interact.",
+          "children": [
+            {
+              "id": "CSCA421-MI-T02-s1",
+              "title": "Client server architecture",
+              "kind": "subtopic",
+              "definition": "A server provides services such as file, web or mail access and clients request them."
+            },
+            {
+              "id": "CSCA421-MI-T02-s2",
+              "title": "Peer to peer architecture",
+              "kind": "subtopic",
+              "definition": "Every computer can act as both client and server, which suits small networks without a central machine."
+            },
+            {
+              "id": "CSCA421-MI-T02-s3",
+              "title": "Layered architecture and protocols",
+              "kind": "subtopic",
+              "definition": "Each layer offers services to the layer above and uses the layer below, communicating through protocols."
+            },
+            {
+              "id": "CSCA421-MI-T02-s4",
+              "title": "Connection oriented versus connectionless service",
+              "kind": "subtopic",
+              "definition": "A connection oriented service agrees on a path and guarantees order, while a connectionless service sends independent packets."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MI-T03",
+          "title": "Reference Models",
+          "kind": "topic",
+          "definition": "Reference models divide network functions into layers: the seven layer OSI model and the four or five layer TCP/IP model.",
+          "children": [
+            {
+              "id": "CSCA421-MI-T03-s1",
+              "title": "OSI model and its seven layers",
+              "kind": "subtopic",
+              "definition": "Physical, data link, network, transport, session, presentation and application layers, each with defined duties."
+            },
+            {
+              "id": "CSCA421-MI-T03-s2",
+              "title": "TCP/IP model",
+              "kind": "subtopic",
+              "definition": "Network access, internet, transport and application layers, which is what the real Internet implements."
+            },
+            {
+              "id": "CSCA421-MI-T03-s3",
+              "title": "Comparison of OSI and TCP/IP",
+              "kind": "subtopic",
+              "definition": "OSI is a teaching reference with separate session and presentation layers; TCP/IP is practical and merges them into the application layer."
+            },
+            {
+              "id": "CSCA421-MI-T03-s4",
+              "title": "Encapsulation and de-encapsulation",
+              "kind": "subtopic",
+              "definition": "Each layer adds its own header on the way down and removes it on the way up, forming a protocol data unit."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MI-T04",
+          "title": "Example Networks",
+          "kind": "topic",
+          "definition": "ARPANET, NSFNET and the Internet show how research networks evolved into one global network.",
+          "children": [
+            {
+              "id": "CSCA421-MI-T04-s1",
+              "title": "ARPANET",
+              "kind": "subtopic",
+              "definition": "The 1969 US defence research network that introduced packet switching and the first host protocols."
+            },
+            {
+              "id": "CSCA421-MI-T04-s2",
+              "title": "NSFNET",
+              "kind": "subtopic",
+              "definition": "A US academic backbone created in the 1980s that opened the network to universities and later to commercial traffic."
+            },
+            {
+              "id": "CSCA421-MI-T04-s3",
+              "title": "The Internet",
+              "kind": "subtopic",
+              "definition": "A network of networks using TCP/IP, governed by ISPs, IXPs and standard bodies such as IETF and ICANN."
+            },
+            {
+              "id": "CSCA421-MI-T04-s4",
+              "title": "Other example networks",
+              "kind": "subtopic",
+              "definition": "Public switched telephone networks, cable and mobile networks, and enterprise intranets."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MI-T05",
+          "title": "Physical Layer",
+          "kind": "topic",
+          "definition": "The physical layer transmits raw bits over a medium by defining voltages, frequencies, data rates and connectors.",
+          "children": [
+            {
+              "id": "CSCA421-MI-T05-s1",
+              "title": "Functions of the physical layer",
+              "kind": "subtopic",
+              "definition": "Bit synchronisation, bit rate control, line configuration and physical topology."
+            },
+            {
+              "id": "CSCA421-MI-T05-s2",
+              "title": "Bandwidth, data rate and latency",
+              "kind": "subtopic",
+              "definition": "Bandwidth is the capacity in hertz or bits per second, while latency is the delay a signal suffers."
+            },
+            {
+              "id": "CSCA421-MI-T05-s3",
+              "title": "Transmission modes",
+              "kind": "subtopic",
+              "definition": "Simplex is one direction only, half duplex alternates and full duplex works both ways at once."
+            },
+            {
+              "id": "CSCA421-MI-T05-s4",
+              "title": "Switching techniques",
+              "kind": "subtopic",
+              "definition": "Circuit switching reserves a path, message switching stores and forwards whole messages and packet switching forwards small packets."
+            },
+            {
+              "id": "CSCA421-MI-T05-s5",
+              "title": "Multiplexing",
+              "kind": "subtopic",
+              "definition": "Frequency, time and wavelength division multiplexing share one medium among several signals."
+            },
+            {
+              "id": "CSCA421-MI-T05-s6",
+              "title": "Transmission impairments",
+              "kind": "subtopic",
+              "definition": "Attenuation, distortion and noise degrade the signal and set limits on distance and speed."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MI-T06",
+          "title": "Transmission Media",
+          "kind": "topic",
+          "definition": "Transmission media are the physical paths that carry signals, either guided along a cable or unguided through air.",
+          "children": [
+            {
+              "id": "CSCA421-MI-T06-s1",
+              "title": "Twisted pair cable",
+              "kind": "subtopic",
+              "definition": "Two insulated copper wires twisted together; unshielded and shielded forms are cheap and easy to install but suffer interference."
+            },
+            {
+              "id": "CSCA421-MI-T06-s2",
+              "title": "Coaxial cable",
+              "kind": "subtopic",
+              "definition": "A central conductor with a braided shield, giving higher bandwidth and better noise immunity than twisted pair."
+            },
+            {
+              "id": "CSCA421-MI-T06-s3",
+              "title": "Optical fibre",
+              "kind": "subtopic",
+              "definition": "Glass or plastic core carrying light, offering very high bandwidth, low attenuation and immunity to electromagnetic interference."
+            },
+            {
+              "id": "CSCA421-MI-T06-s4",
+              "title": "Radio waves and microwaves",
+              "kind": "subtopic",
+              "definition": "Unguided media for broadcasting and line of sight links, affected by weather and obstacles."
+            },
+            {
+              "id": "CSCA421-MI-T06-s5",
+              "title": "Infrared and satellite links",
+              "kind": "subtopic",
+              "definition": "Infrared suits short indoor links while satellites cover wide areas with higher delay."
+            },
+            {
+              "id": "CSCA421-MI-T06-s6",
+              "title": "Guided versus unguided media",
+              "kind": "subtopic",
+              "definition": "Guided media confine the signal to a cable while unguided media transmit through free space."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "The Data Link Layer",
+      "topics": [
+        {
+          "id": "CSCA421-MII-T01",
+          "title": "Data Link Layer Design Issues",
+          "kind": "topic",
+          "definition": "The data link layer turns a raw transmission line into a reliable link between two adjacent nodes.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T01-s1",
+              "title": "Framing",
+              "kind": "subtopic",
+              "definition": "Grouping the bit stream into frames using character counts, flag bytes with stuffing, or physical layer coding violations."
+            },
+            {
+              "id": "CSCA421-MII-T01-s2",
+              "title": "Error control",
+              "kind": "subtopic",
+              "definition": "Detecting and correcting damaged frames with acknowledgements, timers and retransmission."
+            },
+            {
+              "id": "CSCA421-MII-T01-s3",
+              "title": "Flow control",
+              "kind": "subtopic",
+              "definition": "Preventing a fast sender from drowning a slow receiver through feedback or rate based schemes."
+            },
+            {
+              "id": "CSCA421-MII-T01-s4",
+              "title": "Link management and addressing",
+              "kind": "subtopic",
+              "definition": "Establishing, maintaining and releasing links and identifying the physical addresses of neighbours."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MII-T02",
+          "title": "Error Detection and Correction Methods",
+          "kind": "topic",
+          "definition": "Errors are detected with redundant bits and corrected either by retransmission or by locating the error bits.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T02-s1",
+              "title": "Types of errors",
+              "kind": "subtopic",
+              "definition": "A single bit error flips one bit while a burst error damages a continuous group of bits."
+            },
+            {
+              "id": "CSCA421-MII-T02-s2",
+              "title": "Parity check",
+              "kind": "subtopic",
+              "definition": "Adds one bit so the number of ones is even or odd; simple but it can miss two bit errors."
+            },
+            {
+              "id": "CSCA421-MII-T02-s3",
+              "title": "Two dimensional parity",
+              "kind": "subtopic",
+              "definition": "Rows and columns are both checked, which can locate and correct a single bit error."
+            },
+            {
+              "id": "CSCA421-MII-T02-s4",
+              "title": "Checksum",
+              "kind": "subtopic",
+              "definition": "The sender appends the sum of the data words so the receiver can verify the total, commonly used in the Internet."
+            },
+            {
+              "id": "CSCA421-MII-T02-s5",
+              "title": "Cyclic Redundancy Check (CRC)",
+              "kind": "subtopic",
+              "definition": "Treats the frame as a polynomial and appends the remainder of division by a generator polynomial, giving strong detection."
+            },
+            {
+              "id": "CSCA421-MII-T02-s6",
+              "title": "Hamming code",
+              "kind": "subtopic",
+              "definition": "Inserts check bits at power of two positions so the receiver can identify and correct a single bit error."
+            },
+            {
+              "id": "CSCA421-MII-T02-s7",
+              "title": "Hamming distance and code capability",
+              "kind": "subtopic",
+              "definition": "The minimum number of bit changes between valid codewords decides how many errors can be detected or corrected."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MII-T03",
+          "title": "Elementary Data Link Protocols",
+          "kind": "topic",
+          "definition": "The elementary protocols add reliability step by step, starting from an ideal channel and moving to a noisy one.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T03-s1",
+              "title": "Unrestricted simplex protocol",
+              "kind": "subtopic",
+              "definition": "An ideal channel with no errors and no flow control, where the sender transmits endlessly."
+            },
+            {
+              "id": "CSCA421-MII-T03-s2",
+              "title": "Stop and wait protocol",
+              "kind": "subtopic",
+              "definition": "The sender sends one frame and waits for its acknowledgement before sending the next, which solves flow control."
+            },
+            {
+              "id": "CSCA421-MII-T03-s3",
+              "title": "Simplex protocol for a noisy channel",
+              "kind": "subtopic",
+              "definition": "Frames are numbered and retransmitted after a timeout or a negative acknowledgement, which needs timers and sequence numbers."
+            },
+            {
+              "id": "CSCA421-MII-T03-s4",
+              "title": "Piggybacking",
+              "kind": "subtopic",
+              "definition": "Attaching an acknowledgement to a data frame travelling in the opposite direction to save bandwidth."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MII-T04",
+          "title": "Sliding Window Protocols",
+          "kind": "topic",
+          "definition": "Sliding window protocols allow several frames to be outstanding, which keeps the link busy on long delay paths.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T04-s1",
+              "title": "Sender and receiver windows",
+              "kind": "subtopic",
+              "definition": "Each side keeps a window of sequence numbers; the window slides forward as acknowledgements arrive."
+            },
+            {
+              "id": "CSCA421-MII-T04-s2",
+              "title": "One bit sliding window",
+              "kind": "subtopic",
+              "definition": "Window size one on both sides, which behaves like stop and wait with numbered frames."
+            },
+            {
+              "id": "CSCA421-MII-T04-s3",
+              "title": "Go Back N",
+              "kind": "subtopic",
+              "definition": "The receiver discards out of order frames and the sender retransmits the whole window from the lost frame onwards."
+            },
+            {
+              "id": "CSCA421-MII-T04-s4",
+              "title": "Selective Repeat",
+              "kind": "subtopic",
+              "definition": "The receiver buffers correct frames and the sender retransmits only the missing ones, which needs a larger window and sorting logic."
+            },
+            {
+              "id": "CSCA421-MII-T04-s5",
+              "title": "Efficiency and window size",
+              "kind": "subtopic",
+              "definition": "Larger windows improve utilisation but need more sequence numbers; window size and bandwidth-delay product must match."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MII-T05",
+          "title": "Protocol Verification Methods",
+          "kind": "topic",
+          "definition": "Protocol verification proves that a protocol behaves correctly in every possible interaction between the two sides.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T05-s1",
+              "title": "Finite state machine model",
+              "kind": "subtopic",
+              "definition": "Each protocol machine is drawn as states and transitions, and the reachable product machine is checked for deadlock or unspecified states."
+            },
+            {
+              "id": "CSCA421-MII-T05-s2",
+              "title": "Petri net model",
+              "kind": "subtopic",
+              "definition": "Places and transitions model the flow of tokens representing messages and states."
+            },
+            {
+              "id": "CSCA421-MII-T05-s3",
+              "title": "Channel and queue models",
+              "kind": "subtopic",
+              "definition": "The communication channel is modelled as a queue with bounds to expose overflow or loss behaviour."
+            },
+            {
+              "id": "CSCA421-MII-T05-s4",
+              "title": "Why verification matters",
+              "kind": "subtopic",
+              "definition": "Protocols that seem correct can deadlock or lose frames in rare interleavings, which only formal checking reveals."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MII-T06",
+          "title": "Channel Allocation and Multiple Access Protocols",
+          "kind": "topic",
+          "definition": "Multiple access protocols decide which station may use a shared channel at a given moment.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T06-s1",
+              "title": "ALOHA and slotted ALOHA",
+              "kind": "subtopic",
+              "definition": "Stations transmit whenever they wish, with retransmission after collisions; slotted ALOHA doubles the throughput by aligning to time slots."
+            },
+            {
+              "id": "CSCA421-MII-T06-s2",
+              "title": "Carrier Sense Multiple Access (CSMA)",
+              "kind": "subtopic",
+              "definition": "A station listens before transmitting; persistent and non persistent variants differ in how they retry after sensing a busy channel."
+            },
+            {
+              "id": "CSCA421-MII-T06-s3",
+              "title": "CSMA with Collision Detection (CSMA/CD)",
+              "kind": "subtopic",
+              "definition": "Stations detect collisions while transmitting and abort early, which is the basis of classic Ethernet."
+            },
+            {
+              "id": "CSCA421-MII-T06-s4",
+              "title": "CSMA with Collision Avoidance (CSMA/CA)",
+              "kind": "subtopic",
+              "definition": "Used in wireless networks where collisions cannot be detected, so stations reserve the medium with acknowledgements and backoff."
+            },
+            {
+              "id": "CSCA421-MII-T06-s5",
+              "title": "Collision free protocols",
+              "kind": "subtopic",
+              "definition": "Bit map reservation, binary countdown and token passing avoid collisions entirely at the cost of overhead."
+            },
+            {
+              "id": "CSCA421-MII-T06-s6",
+              "title": "Limited contention protocols",
+              "kind": "subtopic",
+              "definition": "Adaptive tree walk and reservation schemes balance contention and order under varying load."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MII-T07",
+          "title": "IEEE 802 Standards",
+          "kind": "topic",
+          "definition": "The IEEE 802 family standardises local and metropolitan area network technologies.",
+          "children": [
+            {
+              "id": "CSCA421-MII-T07-s1",
+              "title": "IEEE 802.1 and 802.2",
+              "kind": "subtopic",
+              "definition": "Cover bridging, VLAN tagging and the logical link control sublayer."
+            },
+            {
+              "id": "CSCA421-MII-T07-s2",
+              "title": "IEEE 802.3 Ethernet",
+              "kind": "subtopic",
+              "definition": "CSMA/CD with MAC addressing and frame formats; switched full duplex Ethernet is the dominant LAN technology today."
+            },
+            {
+              "id": "CSCA421-MII-T07-s3",
+              "title": "IEEE 802.4 token bus and 802.5 token ring",
+              "kind": "subtopic",
+              "definition": "Deterministic token passing networks with bounded access delay, now obsolete but still examined."
+            },
+            {
+              "id": "CSCA421-MII-T07-s4",
+              "title": "IEEE 802.11 wireless LAN",
+              "kind": "subtopic",
+              "definition": "Uses CSMA/CA with optional RTS/CTS handshaking; standards such as 802.11b, g, n, ac and ax differ in speed and band."
+            },
+            {
+              "id": "CSCA421-MII-T07-s5",
+              "title": "Bridges, switches and VLANs",
+              "kind": "subtopic",
+              "definition": "Link layer devices that forward frames by MAC address and can separate broadcast domains."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "The Network Layer",
+      "topics": [
+        {
+          "id": "CSCA421-MIII-T01",
+          "title": "Network Layer Design Issues",
+          "kind": "topic",
+          "definition": "The network layer delivers packets from source to destination across many intervening networks.",
+          "children": [
+            {
+              "id": "CSCA421-MIII-T01-s1",
+              "title": "Store and forward packet switching",
+              "kind": "subtopic",
+              "definition": "A router receives a packet, stores it, inspects the header and forwards it on the chosen link."
+            },
+            {
+              "id": "CSCA421-MIII-T01-s2",
+              "title": "Services offered to the transport layer",
+              "kind": "subtopic",
+              "definition": "Datagram service treats packets independently, while virtual circuit service sets up a path before sending."
+            },
+            {
+              "id": "CSCA421-MIII-T01-s3",
+              "title": "Routing and forwarding",
+              "kind": "subtopic",
+              "definition": "Routing builds the tables by which forwarding decisions are made hop by hop."
+            },
+            {
+              "id": "CSCA421-MIII-T01-s4",
+              "title": "Internetworking challenges",
+              "kind": "subtopic",
+              "definition": "Different frame sizes, addressing schemes, and quality of service across heterogeneous networks."
+            },
+            {
+              "id": "CSCA421-MIII-T01-s5",
+              "title": "Congestion and QoS",
+              "kind": "subtopic",
+              "definition": "When offered load exceeds capacity, delay and loss grow, so the layer must manage congestion."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MIII-T02",
+          "title": "Routing Algorithms",
+          "kind": "topic",
+          "definition": "Routing algorithms choose the path a packet takes, either by a global view of the network or by exchanging information with neighbours.",
+          "children": [
+            {
+              "id": "CSCA421-MIII-T02-s1",
+              "title": "Fixed and flooding routing",
+              "kind": "subtopic",
+              "definition": "Fixed routing uses static tables while flooding sends every packet on all links except the incoming one."
+            },
+            {
+              "id": "CSCA421-MIII-T02-s2",
+              "title": "Shortest path (Dijkstra) routing",
+              "kind": "subtopic",
+              "definition": "Builds a least cost tree from the source using the Dijkstra algorithm on a weighted graph."
+            },
+            {
+              "id": "CSCA421-MIII-T02-s3",
+              "title": "Distance vector routing",
+              "kind": "subtopic",
+              "definition": "Each router tells its neighbours its distance to every destination, as in RIP; slow to converge and prone to count to infinity."
+            },
+            {
+              "id": "CSCA421-MIII-T02-s4",
+              "title": "Link state routing",
+              "kind": "subtopic",
+              "definition": "Every router learns the full topology with link state packets and runs shortest path, as in OSPF."
+            },
+            {
+              "id": "CSCA421-MIII-T02-s5",
+              "title": "Path vector and BGP",
+              "kind": "subtopic",
+              "definition": "Border routers exchange full path information, which detects loops and applies policy between autonomous systems."
+            },
+            {
+              "id": "CSCA421-MIII-T02-s6",
+              "title": "Hierarchical, broadcast and multicast routing",
+              "kind": "subtopic",
+              "definition": "Areas reduce table size, flooding and spanning trees deliver broadcast, and multicast trees serve group traffic."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MIII-T03",
+          "title": "Congestion Control Algorithms",
+          "kind": "topic",
+          "definition": "Congestion control keeps the number of packets inside the network below the level at which performance collapses.",
+          "children": [
+            {
+              "id": "CSCA421-MIII-T03-s1",
+              "title": "Causes and effects of congestion",
+              "kind": "subtopic",
+              "definition": "Queue build up increases delay and drops packets, and beyond a point throughput falls as load rises."
+            },
+            {
+              "id": "CSCA421-MIII-T03-s2",
+              "title": "Leaky bucket and token bucket",
+              "kind": "subtopic",
+              "definition": "Traffic shaping smooths bursts by releasing packets at a fixed rate or by allowing saved credits for bursts."
+            },
+            {
+              "id": "CSCA421-MIII-T03-s3",
+              "title": "Choke packets and explicit signalling",
+              "kind": "subtopic",
+              "definition": "A congested router asks the source to slow down, either by marking or by sending control packets."
+            },
+            {
+              "id": "CSCA421-MIII-T03-s4",
+              "title": "Load shedding and admission control",
+              "kind": "subtopic",
+              "definition": "Under pressure the network drops some packets deliberately or refuses new flows."
+            },
+            {
+              "id": "CSCA421-MIII-T03-s5",
+              "title": "Flow control versus congestion control",
+              "kind": "subtopic",
+              "definition": "Flow control protects the receiver while congestion control protects the network itself."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MIII-T04",
+          "title": "Internetworking and the Network Layer in the Internet",
+          "kind": "topic",
+          "definition": "The Internet layer glues dissimilar networks together with IP addressing and supporting protocols.",
+          "children": [
+            {
+              "id": "CSCA421-MIII-T04-s1",
+              "title": "IP addressing and classes",
+              "kind": "subtopic",
+              "definition": "IPv4 addresses are grouped in classes A to E historically, with network and host parts."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s2",
+              "title": "Subnetting and supernetting",
+              "kind": "subtopic",
+              "definition": "Borrowing bits from the host part creates subnets, while CIDR aggregates prefixes to reduce table size."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s3",
+              "title": "Network address translation",
+              "kind": "subtopic",
+              "definition": "A private address space is mapped to one public address using port numbers, which eases address shortage."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s4",
+              "title": "IPv4 datagram format",
+              "kind": "subtopic",
+              "definition": "Version, header length, total length, identification, flags, fragment offset, TTL, protocol, checksum, source and destination addresses."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s5",
+              "title": "Fragmentation and reassembly",
+              "kind": "subtopic",
+              "definition": "Packets are split to fit a link MTU and reassembled at the destination using the identification field."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s6",
+              "title": "IPv6",
+              "kind": "subtopic",
+              "definition": "128 bit addresses, fixed header, flow label, no header checksum and built in extension headers."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s7",
+              "title": "ICMP, ARP and DHCP",
+              "kind": "subtopic",
+              "definition": "ICMP reports errors and echo, ARP resolves IP to MAC and DHCP assigns addresses automatically."
+            },
+            {
+              "id": "CSCA421-MIII-T04-s8",
+              "title": "Routing protocols in the Internet",
+              "kind": "subtopic",
+              "definition": "RIP inside small networks, OSPF inside large ones and BGP between autonomous systems."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "The Transport Protocols",
+      "topics": [
+        {
+          "id": "CSCA421-MIV-T01",
+          "title": "Transport Service",
+          "kind": "topic",
+          "definition": "The transport layer provides end to end communication between processes on different hosts.",
+          "children": [
+            {
+              "id": "CSCA421-MIV-T01-s1",
+              "title": "Services to the upper layers",
+              "kind": "subtopic",
+              "definition": "Reliable or unreliable delivery, connection management, flow control and multiplexing."
+            },
+            {
+              "id": "CSCA421-MIV-T01-s2",
+              "title": "Transport service primitives",
+              "kind": "subtopic",
+              "definition": "LISTEN, CONNECT, ACCEPT, SEND, RECEIVE, DISCONNECT and CLOSE describe how applications use the service."
+            },
+            {
+              "id": "CSCA421-MIV-T01-s3",
+              "title": "Sockets and port numbers",
+              "kind": "subtopic",
+              "definition": "A socket is an IP address plus a port, which identifies one endpoint of a connection."
+            },
+            {
+              "id": "CSCA421-MIV-T01-s4",
+              "title": "Berkeley sockets API",
+              "kind": "subtopic",
+              "definition": "socket, bind, listen, accept, connect, send, recv and close are the standard programming calls."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MIV-T02",
+          "title": "Transport Protocols and Their Elements",
+          "kind": "topic",
+          "definition": "A transport protocol must handle addressing, connection setup, release, flow control and multiplexing.",
+          "children": [
+            {
+              "id": "CSCA421-MIV-T02-s1",
+              "title": "Addressing and connection identifiers",
+              "kind": "subtopic",
+              "definition": "Ports and connection identifiers distinguish simultaneous conversations between the same hosts."
+            },
+            {
+              "id": "CSCA421-MIV-T02-s2",
+              "title": "Connection establishment",
+              "kind": "subtopic",
+              "definition": "Three way handshake, or a four way handshake when both sides open together."
+            },
+            {
+              "id": "CSCA421-MIV-T02-s3",
+              "title": "Connection release",
+              "kind": "subtopic",
+              "definition": "Two way and four way release avoid losing data when both sides close at the same time."
+            },
+            {
+              "id": "CSCA421-MIV-T02-s4",
+              "title": "Flow control and buffering",
+              "kind": "subtopic",
+              "definition": "Sliding window flow control buffers data at the receiver to match slow processes."
+            },
+            {
+              "id": "CSCA421-MIV-T02-s5",
+              "title": "Multiplexing and demultiplexing",
+              "kind": "subtopic",
+              "definition": "Many applications share the network service through ports, which identifies the destination process."
+            },
+            {
+              "id": "CSCA421-MIV-T02-s6",
+              "title": "Crash recovery and timers",
+              "kind": "subtopic",
+              "definition": "Retransmission timers must be set carefully, and a crashed host must not break later connections."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MIV-T03",
+          "title": "Internet Transport Protocols: UDP and TCP",
+          "kind": "topic",
+          "definition": "UDP provides simple connectionless datagram service and TCP provides reliable connection oriented byte streams.",
+          "children": [
+            {
+              "id": "CSCA421-MIV-T03-s1",
+              "title": "User Datagram Protocol (UDP)",
+              "kind": "subtopic",
+              "definition": "Eight byte header with source port, destination port, length and checksum; no connection, no reliability, low overhead."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s2",
+              "title": "Transmission Control Protocol (TCP)",
+              "kind": "subtopic",
+              "definition": "Connection oriented, ordered and reliable, with flow control, congestion control and sequence numbers."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s3",
+              "title": "TCP segment header",
+              "kind": "subtopic",
+              "definition": "Source and destination ports, sequence and acknowledgement numbers, header length, flags, window size, checksum and options."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s4",
+              "title": "Three way handshake",
+              "kind": "subtopic",
+              "definition": "SYN, SYN ACK and ACK set up the sequence numbers and parameters before data flows."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s5",
+              "title": "Sliding window flow control in TCP",
+              "kind": "subtopic",
+              "definition": "The receiver advertises a window that tells the sender how much data may be outstanding."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s6",
+              "title": "TCP congestion control",
+              "kind": "subtopic",
+              "definition": "Slow start, congestion avoidance, fast retransmit and fast recovery adjust the sending rate after loss."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s7",
+              "title": "TCP timers",
+              "kind": "subtopic",
+              "definition": "Retransmission, persist, keep alive and two-army timers manage retransmission and dead connections."
+            },
+            {
+              "id": "CSCA421-MIV-T03-s8",
+              "title": "UDP versus TCP",
+              "kind": "subtopic",
+              "definition": "UDP is fast, simple and used for streaming, DNS and games; TCP is reliable and used for web, mail and file transfer."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MIV-T04",
+          "title": "Performance Issues",
+          "kind": "topic",
+          "definition": "Transport performance depends on delay, bandwidth, window size and the cost of connection setup.",
+          "children": [
+            {
+              "id": "CSCA421-MIV-T04-s1",
+              "title": "Bandwidth and delay",
+              "kind": "subtopic",
+              "definition": "The bandwidth-delay product decides how much data may be in flight, which sets the needed window size."
+            },
+            {
+              "id": "CSCA421-MIV-T04-s2",
+              "title": "Throughput and utilisation",
+              "kind": "subtopic",
+              "definition": "Actual throughput is limited by window size, round trip time and congestion."
+            },
+            {
+              "id": "CSCA421-MIV-T04-s3",
+              "title": "Round trip estimation and jitter",
+              "kind": "subtopic",
+              "definition": "RTT and its variation are estimated to set safe retransmission timeouts."
+            },
+            {
+              "id": "CSCA421-MIV-T04-s4",
+              "title": "Delayed and duplicate acknowledgements",
+              "kind": "subtopic",
+              "definition": "Acknowledgement policy affects throughput and unnecessary retransmissions."
+            },
+            {
+              "id": "CSCA421-MIV-T04-s5",
+              "title": "Quality of service concerns",
+              "kind": "subtopic",
+              "definition": "Delay sensitive applications such as voice need bounded latency and jitter, which TCP does not guarantee."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "The Application Layer and Network Security",
+      "topics": [
+        {
+          "id": "CSCA421-MV-T01",
+          "title": "Application Layer Design Issues",
+          "kind": "topic",
+          "definition": "The application layer provides the services that users and programs actually use, such as web, mail and file transfer.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T01-s1",
+              "title": "Client server and peer to peer models",
+              "kind": "subtopic",
+              "definition": "Applications either ask a server for a service or share work among equal peers."
+            },
+            {
+              "id": "CSCA421-MV-T01-s2",
+              "title": "Uniform naming and addressing",
+              "kind": "subtopic",
+              "definition": "URLs, domain names and port numbers locate the resource and the service."
+            },
+            {
+              "id": "CSCA421-MV-T01-s3",
+              "title": "Application protocols and APIs",
+              "kind": "subtopic",
+              "definition": "Each service defines a message format and sequence of exchanges, exposed to programmers through an API."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MV-T02",
+          "title": "Domain Name System",
+          "kind": "topic",
+          "definition": "DNS translates human readable domain names into IP addresses through a distributed hierarchy of name servers.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T02-s1",
+              "title": "Name space and hierarchy",
+              "kind": "subtopic",
+              "definition": "The tree of names with root, top level domains, second level domains and hosts."
+            },
+            {
+              "id": "CSCA421-MV-T02-s2",
+              "title": "Root, TLD, authoritative and local name servers",
+              "kind": "subtopic",
+              "definition": "Each level answers for its own part of the tree, and resolvers cache answers to cut traffic."
+            },
+            {
+              "id": "CSCA421-MV-T02-s3",
+              "title": "Name resolution",
+              "kind": "subtopic",
+              "definition": "Recursive resolution makes the server do the work while iterative resolution returns the next server to ask."
+            },
+            {
+              "id": "CSCA421-MV-T02-s4",
+              "title": "Resource records",
+              "kind": "subtopic",
+              "definition": "A, AAAA, CNAME, MX, NS, SOA, TXT and PTR records hold the different kinds of name data."
+            },
+            {
+              "id": "CSCA421-MV-T02-s5",
+              "title": "DNS in practice and security",
+              "kind": "subtopic",
+              "definition": "Caching, TTL values and threats such as cache poisoning, addressed by DNSSEC."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MV-T03",
+          "title": "Electronic Mail",
+          "kind": "topic",
+          "definition": "Email is a store and forward service in which the server of the sender pushes messages to the mailbox of the recipient.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T03-s1",
+              "title": "Architecture of email",
+              "kind": "subtopic",
+              "definition": "User agents compose and read mail while mail servers transfer and store it."
+            },
+            {
+              "id": "CSCA421-MV-T03-s2",
+              "title": "Simple Mail Transfer Protocol (SMTP)",
+              "kind": "subtopic",
+              "definition": "Push protocol on port 25 used to send mail and to relay between servers."
+            },
+            {
+              "id": "CSCA421-MV-T03-s3",
+              "title": "POP3 and IMAP",
+              "kind": "subtopic",
+              "definition": "POP3 downloads and usually deletes messages from the server; IMAP keeps them on the server and syncs folders, which suits multiple devices."
+            },
+            {
+              "id": "CSCA421-MV-T03-s4",
+              "title": "Message format and MIME",
+              "kind": "subtopic",
+              "definition": "RFC 822 headers with From, To, Subject and the body, and MIME extends this to attachments, images and other character sets."
+            },
+            {
+              "id": "CSCA421-MV-T03-s5",
+              "title": "Mail security",
+              "kind": "subtopic",
+              "definition": "STARTTLS, SPF, DKIM and DMARC reduce spoofing and eavesdropping."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MV-T04",
+          "title": "World Wide Web",
+          "kind": "topic",
+          "definition": "The web is a collection of hyperlinked documents retrieved with HTTP and addressed by URLs.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T04-s1",
+              "title": "URL and URI structure",
+              "kind": "subtopic",
+              "definition": "Scheme, host, port, path, query and fragment identify a resource on a server."
+            },
+            {
+              "id": "CSCA421-MV-T04-s2",
+              "title": "HTTP overview",
+              "kind": "subtopic",
+              "definition": "A request response text protocol; HTTP is stateless, so cookies or tokens carry state."
+            },
+            {
+              "id": "CSCA421-MV-T04-s3",
+              "title": "HTTP request methods",
+              "kind": "subtopic",
+              "definition": "GET, POST, PUT, DELETE, HEAD and OPTIONS describe the intended action."
+            },
+            {
+              "id": "CSCA421-MV-T04-s4",
+              "title": "HTTP response and status codes",
+              "kind": "subtopic",
+              "definition": "1xx informational, 2xx success, 3xx redirection, 4xx client error and 5xx server error."
+            },
+            {
+              "id": "CSCA421-MV-T04-s5",
+              "title": "Persistent connections, cookies and caching",
+              "kind": "subtopic",
+              "definition": "Keep alive reduces setup cost, cookies maintain sessions and cache headers reduce repeat transfers."
+            },
+            {
+              "id": "CSCA421-MV-T04-s6",
+              "title": "Web servers and proxies",
+              "kind": "subtopic",
+              "definition": "Servers such as Apache, Nginx and IIS serve content; proxies and CDNs cache and accelerate delivery."
+            },
+            {
+              "id": "CSCA421-MV-T04-s7",
+              "title": "Web 2.0 and dynamic pages",
+              "kind": "subtopic",
+              "definition": "AJAX, REST APIs and single page applications changed the web from static pages to interactive programs."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MV-T05",
+          "title": "Other Applications",
+          "kind": "topic",
+          "definition": "Besides the web and email, the application layer provides file transfer, remote login, directories and network management.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T05-s1",
+              "title": "File Transfer Protocol (FTP)",
+              "kind": "subtopic",
+              "definition": "Uses a control connection on port 21 and a separate data connection, with active and passive modes."
+            },
+            {
+              "id": "CSCA421-MV-T05-s2",
+              "title": "Telnet and SSH",
+              "kind": "subtopic",
+              "definition": "Telnet sends text in the clear while SSH encrypts the session and supports tunnelling."
+            },
+            {
+              "id": "CSCA421-MV-T05-s3",
+              "title": "DHCP and directory services",
+              "kind": "subtopic",
+              "definition": "DHCP leases IP configuration automatically and LDAP holds directory information such as users and groups."
+            },
+            {
+              "id": "CSCA421-MV-T05-s4",
+              "title": "Network management (SNMP)",
+              "kind": "subtopic",
+              "definition": "Managed devices store data in MIBs and agents report to a manager, with traps for events."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MV-T06",
+          "title": "Network Security",
+          "kind": "topic",
+          "definition": "Network security protects data in transit from unauthorised reading, modification and denial of service.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T06-s1",
+              "title": "Security goals and attacks",
+              "kind": "subtopic",
+              "definition": "Confidentiality, integrity, availability and authentication versus interception, modification, masquerading and denial of service."
+            },
+            {
+              "id": "CSCA421-MV-T06-s2",
+              "title": "Firewalls",
+              "kind": "subtopic",
+              "definition": "Packet filters, stateful inspection and application proxies control traffic between networks."
+            },
+            {
+              "id": "CSCA421-MV-T06-s3",
+              "title": "Intrusion detection and VPNs",
+              "kind": "subtopic",
+              "definition": "IDS and IPS watch for attacks, while VPN tunnels carry private traffic over public networks."
+            }
+          ]
+        },
+        {
+          "id": "CSCA421-MV-T07",
+          "title": "Basic Cryptography: Symmetric and Asymmetric",
+          "kind": "topic",
+          "definition": "Cryptography protects messages by transforming them with keys; symmetric schemes share one key and asymmetric schemes use a key pair.",
+          "children": [
+            {
+              "id": "CSCA421-MV-T07-s1",
+              "title": "Basic terms",
+              "kind": "subtopic",
+              "definition": "Plaintext, ciphertext, encryption, decryption, key and cryptanalysis."
+            },
+            {
+              "id": "CSCA421-MV-T07-s2",
+              "title": "Substitution and transposition ciphers",
+              "kind": "subtopic",
+              "definition": "Characters are replaced or rearranged; classical examples are the Caesar cipher and the rail fence cipher."
+            },
+            {
+              "id": "CSCA421-MV-T07-s3",
+              "title": "Symmetric key cryptography",
+              "kind": "subtopic",
+              "definition": "The same secret key encrypts and decrypts; DES uses 56 bit keys, 3DES repeats it, and AES uses 128 to 256 bit keys with faster and stronger security."
+            },
+            {
+              "id": "CSCA421-MV-T07-s4",
+              "title": "Asymmetric key cryptography",
+              "kind": "subtopic",
+              "definition": "A public key encrypts and the matching private key decrypts, as in RSA and elliptic curve cryptography, which also enables signatures."
+            },
+            {
+              "id": "CSCA421-MV-T07-s5",
+              "title": "Digital signature and certificates",
+              "kind": "subtopic",
+              "definition": "A hash encrypted with the private key proves origin and integrity, and a certificate authority vouches for public keys with X.509 certificates."
+            },
+            {
+              "id": "CSCA421-MV-T07-s6",
+              "title": "Hash functions and message authentication",
+              "kind": "subtopic",
+              "definition": "MD5 and SHA families produce fixed length digests; HMAC combines a hash with a shared secret."
+            },
+            {
+              "id": "CSCA421-MV-T07-s7",
+              "title": "Symmetric versus asymmetric comparison",
+              "kind": "subtopic",
+              "definition": "Symmetric is fast but needs key distribution, asymmetric solves distribution but is slow, so both are combined in TLS."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

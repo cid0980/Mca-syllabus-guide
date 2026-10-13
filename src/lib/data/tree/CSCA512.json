@@ -1,0 +1,1311 @@
+{
+  "code": "CSCA 512",
+  "subject": "Internet and Web Technologies",
+  "semester": 3,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Internet Fundamentals and Web Architecture",
+      "topics": [
+        {
+          "id": "CSCA512-MI-T01",
+          "title": "Internet Standards",
+          "kind": "topic",
+          "definition": "Internet standards are agreed specifications that let different systems and vendors work together.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T01-s1",
+              "title": "RFC documents and IETF",
+              "kind": "subtopic",
+              "definition": "Requests for comments are the working documents of the Internet Engineering Task Force, and some become full standards after maturity levels."
+            },
+            {
+              "id": "CSCA512-MI-T01-s2",
+              "title": "W3C, ISO and IEEE",
+              "kind": "subtopic",
+              "definition": "W3C standardises web technologies, ISO standardises broad information technology and IEEE standardises local area networks."
+            },
+            {
+              "id": "CSCA512-MI-T01-s3",
+              "title": "Maturity levels of a standard",
+              "kind": "subtopic",
+              "definition": "Proposed standard, draft standard, Internet standard and historic or experimental status."
+            },
+            {
+              "id": "CSCA512-MI-T01-s4",
+              "title": "Why standards matter",
+              "kind": "subtopic",
+              "definition": "Interoperability, portability and the ability of any browser to talk to any server."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MI-T02",
+          "title": "Introduction to the World Wide Web",
+          "kind": "topic",
+          "definition": "The web is an information system of linked hypertext documents accessed over the Internet.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T02-s1",
+              "title": "Web page, website and hyperlinks",
+              "kind": "subtopic",
+              "definition": "A page is one document, a site is a collection of related pages and hyperlinks connect them."
+            },
+            {
+              "id": "CSCA512-MI-T02-s2",
+              "title": "Web browser and web server",
+              "kind": "subtopic",
+              "definition": "The browser requests and renders content while the server stores and delivers it."
+            },
+            {
+              "id": "CSCA512-MI-T02-s3",
+              "title": "Static versus dynamic pages",
+              "kind": "subtopic",
+              "definition": "Static pages are stored ready made, dynamic pages are generated for each request."
+            },
+            {
+              "id": "CSCA512-MI-T02-s4",
+              "title": "Web evolution: Web 1.0 to Web 3.0",
+              "kind": "subtopic",
+              "definition": "From read only pages to social and interactive applications to semantic and decentralised ideas."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MI-T03",
+          "title": "WWW Architecture",
+          "kind": "topic",
+          "definition": "WWW architecture describes how browsers, servers and the network cooperate to deliver web content.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T03-s1",
+              "title": "Client server model of the web",
+              "kind": "subtopic",
+              "definition": "The browser is the client, the web server is the server and HTTP carries the requests and responses."
+            },
+            {
+              "id": "CSCA512-MI-T03-s2",
+              "title": "Three tier architecture",
+              "kind": "subtopic",
+              "definition": "Presentation, application logic and data tiers separate the interface, business rules and storage."
+            },
+            {
+              "id": "CSCA512-MI-T03-s3",
+              "title": "Web server software and hosting",
+              "kind": "subtopic",
+              "definition": "Apache, Nginx and IIS serve content from a document root with configuration for virtual hosts."
+            },
+            {
+              "id": "CSCA512-MI-T03-s4",
+              "title": "Web caching and proxies",
+              "kind": "subtopic",
+              "definition": "Forward and reverse proxies plus content delivery networks reduce latency and server load."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MI-T04",
+          "title": "SMTP, POP3 and IMAP",
+          "kind": "topic",
+          "definition": "Email is delivered by push protocols and retrieved by pull protocols.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T04-s1",
+              "title": "Simple Mail Transfer Protocol (SMTP)",
+              "kind": "subtopic",
+              "definition": "Push protocol on port 25 that sends mail from client to server and between servers."
+            },
+            {
+              "id": "CSCA512-MI-T04-s2",
+              "title": "Post Office Protocol version 3 (POP3)",
+              "kind": "subtopic",
+              "definition": "Pull protocol on port 110 that downloads messages, usually deleting them from the server."
+            },
+            {
+              "id": "CSCA512-MI-T04-s3",
+              "title": "Internet Message Access Protocol (IMAP)",
+              "kind": "subtopic",
+              "definition": "Port 143 protocol that keeps mail on the server, supports folders and synchronises across devices."
+            },
+            {
+              "id": "CSCA512-MI-T04-s4",
+              "title": "Email message format and MIME",
+              "kind": "subtopic",
+              "definition": "Headers plus body defined by RFC 822, with MIME allowing attachments and non-ASCII content."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MI-T05",
+          "title": "File Transfer Protocol (FTP)",
+          "kind": "topic",
+          "definition": "FTP transfers files between a client and a server using two separate connections.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T05-s1",
+              "title": "Control and data connections",
+              "kind": "subtopic",
+              "definition": "The control connection on port 21 carries commands while the data connection carries the file."
+            },
+            {
+              "id": "CSCA512-MI-T05-s2",
+              "title": "Active and passive modes",
+              "kind": "subtopic",
+              "definition": "Active lets the server open the data connection to the client; passive lets the client open it, which works through firewalls."
+            },
+            {
+              "id": "CSCA512-MI-T05-s3",
+              "title": "FTP commands and replies",
+              "kind": "subtopic",
+              "definition": "USER, PASS, RETR, STOR, LIST and QUIT with three digit reply codes."
+            },
+            {
+              "id": "CSCA512-MI-T05-s4",
+              "title": "Secure alternatives",
+              "kind": "subtopic",
+              "definition": "SFTP over SSH and FTPS over TLS replace plain FTP for confidential transfers."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MI-T06",
+          "title": "Overview of HTTP and the Request Response Model",
+          "kind": "topic",
+          "definition": "HTTP is the stateless request response protocol of the web.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T06-s1",
+              "title": "Request message structure",
+              "kind": "subtopic",
+              "definition": "Request line with method and URL, headers, a blank line and an optional body."
+            },
+            {
+              "id": "CSCA512-MI-T06-s2",
+              "title": "Response message structure",
+              "kind": "subtopic",
+              "definition": "Status line, headers such as content type and length, a blank line and the body."
+            },
+            {
+              "id": "CSCA512-MI-T06-s3",
+              "title": "Methods and status codes",
+              "kind": "subtopic",
+              "definition": "GET, POST, PUT, DELETE, PATCH, HEAD and OPTIONS; 1xx to 5xx status classes."
+            },
+            {
+              "id": "CSCA512-MI-T06-s4",
+              "title": "Headers, content types and cookies",
+              "kind": "subtopic",
+              "definition": "Metadata such as Accept, User-Agent and Set-Cookie that shape caching, sessions and content negotiation."
+            },
+            {
+              "id": "CSCA512-MI-T06-s5",
+              "title": "Persistent connections and pipelining",
+              "kind": "subtopic",
+              "definition": "Keep alive lets many requests share one TCP connection, which lowers latency."
+            },
+            {
+              "id": "CSCA512-MI-T06-s6",
+              "title": "HTTPS",
+              "kind": "subtopic",
+              "definition": "HTTP over TLS encrypts traffic and verifies the server identity with certificates."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MI-T07",
+          "title": "Generation of Dynamic Web Pages",
+          "kind": "topic",
+          "definition": "Dynamic pages are built at request time on the server, on the client or on both.",
+          "children": [
+            {
+              "id": "CSCA512-MI-T07-s1",
+              "title": "Common Gateway Interface (CGI)",
+              "kind": "subtopic",
+              "definition": "An old standard in which the server starts a separate program for each request, which is simple but slow."
+            },
+            {
+              "id": "CSCA512-MI-T07-s2",
+              "title": "Server side scripting",
+              "kind": "subtopic",
+              "definition": "PHP, JSP, ASP.NET, Python and Node.js generate HTML on the server before it is sent."
+            },
+            {
+              "id": "CSCA512-MI-T07-s3",
+              "title": "Client side scripting",
+              "kind": "subtopic",
+              "definition": "JavaScript runs in the browser to update the page without a full reload."
+            },
+            {
+              "id": "CSCA512-MI-T07-s4",
+              "title": "Server side includes and templating",
+              "kind": "subtopic",
+              "definition": "Reusable fragments and templates are combined with data to build the final page."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "HTML and CSS for User Interface Design",
+      "topics": [
+        {
+          "id": "CSCA512-MII-T01",
+          "title": "Introduction to HTML and HTML5",
+          "kind": "topic",
+          "definition": "HTML is the markup language that gives structure and meaning to web content.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T01-s1",
+              "title": "Document structure",
+              "kind": "subtopic",
+              "definition": "DOCTYPE, html, head with title and meta tags, and body holding the visible content."
+            },
+            {
+              "id": "CSCA512-MII-T01-s2",
+              "title": "Tags, elements and attributes",
+              "kind": "subtopic",
+              "definition": "Elements are written with opening and closing tags and configured by attributes such as id, class and src."
+            },
+            {
+              "id": "CSCA512-MII-T01-s3",
+              "title": "HTML5 semantic elements",
+              "kind": "subtopic",
+              "definition": "header, nav, main, section, article, aside, figure and footer describe the role of each part."
+            },
+            {
+              "id": "CSCA512-MII-T01-s4",
+              "title": "HTML5 features",
+              "kind": "subtopic",
+              "definition": "Native audio and video, canvas, SVG, local storage, web workers and better form input types."
+            },
+            {
+              "id": "CSCA512-MII-T01-s5",
+              "title": "Headings and paragraph elements",
+              "kind": "subtopic",
+              "definition": "h1 to h6 for hierarchy and p, br and hr for text blocks and breaks."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MII-T02",
+          "title": "Formatting, Fonts, Comments and Backgrounds",
+          "kind": "topic",
+          "definition": "Formatting elements control the look of text while comments document the code.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T02-s1",
+              "title": "Text formatting elements",
+              "kind": "subtopic",
+              "definition": "b, i, u, strong, em, sub, sup, mark, small and del change the appearance or meaning of text."
+            },
+            {
+              "id": "CSCA512-MII-T02-s2",
+              "title": "Fonts and colours",
+              "kind": "subtopic",
+              "definition": "The font tag is obsolete; modern pages use CSS font-family, size and colour instead."
+            },
+            {
+              "id": "CSCA512-MII-T02-s3",
+              "title": "Commenting code",
+              "kind": "subtopic",
+              "definition": "Comments are written between the symbols for less-than, exclamation, two dashes and their mirror image, and are ignored by the browser."
+            },
+            {
+              "id": "CSCA512-MII-T02-s4",
+              "title": "Backgrounds",
+              "kind": "subtopic",
+              "definition": "Background colour and images were set with attributes in old HTML and are set with CSS today."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MII-T03",
+          "title": "Anchors, Hyperlinks and Images",
+          "kind": "topic",
+          "definition": "Links connect documents and images embed pictures in a page.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T03-s1",
+              "title": "Anchor tag and href",
+              "kind": "subtopic",
+              "definition": "The a element creates a link using href, which may point to a page, a section, an email address or a file."
+            },
+            {
+              "id": "CSCA512-MII-T03-s2",
+              "title": "Types of hyperlinks",
+              "kind": "subtopic",
+              "definition": "Internal links within a site, external links to other sites, and fragment links to a section of the same page."
+            },
+            {
+              "id": "CSCA512-MII-T03-s3",
+              "title": "Target attribute and link behaviour",
+              "kind": "subtopic",
+              "definition": "target makes a link open in a new tab or a named frame."
+            },
+            {
+              "id": "CSCA512-MII-T03-s4",
+              "title": "Image tag, alt text and formats",
+              "kind": "subtopic",
+              "definition": "The img element uses src and alt with JPEG, PNG, GIF, SVG and WebP formats for different needs."
+            },
+            {
+              "id": "CSCA512-MII-T03-s5",
+              "title": "Image maps and figure captions",
+              "kind": "subtopic",
+              "definition": "Map regions of one image to different links and use figure with figcaption for captions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MII-T04",
+          "title": "Lists, Tables and Frames",
+          "kind": "topic",
+          "definition": "Lists group items, tables arrange data in rows and columns and frames embed or split content.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T04-s1",
+              "title": "Ordered and unordered lists",
+              "kind": "subtopic",
+              "definition": "ol numbers items and ul marks them with bullets, with li marking each item and nested lists allowed."
+            },
+            {
+              "id": "CSCA512-MII-T04-s2",
+              "title": "Definition lists",
+              "kind": "subtopic",
+              "definition": "dl with dt for the term and dd for its description."
+            },
+            {
+              "id": "CSCA512-MII-T04-s3",
+              "title": "Creating tables",
+              "kind": "subtopic",
+              "definition": "table, caption, thead, tbody, tr, th and td give rows, headers and cells."
+            },
+            {
+              "id": "CSCA512-MII-T04-s4",
+              "title": "Rowspan and colspan plus nested tables",
+              "kind": "subtopic",
+              "definition": "Cells can span several rows or columns, and tables can be nested inside cells."
+            },
+            {
+              "id": "CSCA512-MII-T04-s5",
+              "title": "Framesets and iframes",
+              "kind": "subtopic",
+              "definition": "Framesets split a window into panes and are obsolete; iframe embeds another document inside a page."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MII-T05",
+          "title": "HTML Forms",
+          "kind": "topic",
+          "definition": "Forms collect user input and submit it to a server for processing.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T05-s1",
+              "title": "Form element and action",
+              "kind": "subtopic",
+              "definition": "The form tag names the processing URL with action and the sending method with method, usually GET or POST."
+            },
+            {
+              "id": "CSCA512-MII-T05-s2",
+              "title": "Input types",
+              "kind": "subtopic",
+              "definition": "text, password, email, number, date, radio, checkbox, file, hidden, submit and reset with attributes name, value and placeholder."
+            },
+            {
+              "id": "CSCA512-MII-T05-s3",
+              "title": "Select, option, textarea and button",
+              "kind": "subtopic",
+              "definition": "Drop down lists, multi-line text and buttons with caption or image."
+            },
+            {
+              "id": "CSCA512-MII-T05-s4",
+              "title": "Labels, fieldsets and accessibility",
+              "kind": "subtopic",
+              "definition": "label ties text to a control and fieldset with legend groups related controls."
+            },
+            {
+              "id": "CSCA512-MII-T05-s5",
+              "title": "Client side validation attributes",
+              "kind": "subtopic",
+              "definition": "required, pattern, min, max and maxlength check input before submission, with HTML5 validation messages."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MII-T06",
+          "title": "Cascading Style Sheets: Need, Syntax and Types",
+          "kind": "topic",
+          "definition": "CSS separates presentation from content and controls layout, colour and typography.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T06-s1",
+              "title": "Why CSS is needed",
+              "kind": "subtopic",
+              "definition": "Consistency across pages, easier maintenance, smaller HTML and separation of concerns."
+            },
+            {
+              "id": "CSCA512-MII-T06-s2",
+              "title": "Syntax and structure",
+              "kind": "subtopic",
+              "definition": "A rule has a selector and a declaration block of property value pairs, with comments and units."
+            },
+            {
+              "id": "CSCA512-MII-T06-s3",
+              "title": "Inline styles",
+              "kind": "subtopic",
+              "definition": "Applied with the style attribute on one element only, which has the highest priority but cannot be reused."
+            },
+            {
+              "id": "CSCA512-MII-T06-s4",
+              "title": "Embedded (internal) style sheets",
+              "kind": "subtopic",
+              "definition": "Written in a style element in the head, which applies to one page."
+            },
+            {
+              "id": "CSCA512-MII-T06-s5",
+              "title": "Linking external style sheets",
+              "kind": "subtopic",
+              "definition": "The link element with rel stylesheet shares one CSS file across an entire site."
+            },
+            {
+              "id": "CSCA512-MII-T06-s6",
+              "title": "Cascade, specificity and inheritance",
+              "kind": "subtopic",
+              "definition": "Later, more specific rules win, and inheritable properties pass from parent to child."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MII-T07",
+          "title": "CSS Text, Backgrounds, Box Model and Positioning",
+          "kind": "topic",
+          "definition": "CSS controls typography, colour, spacing and where each element appears.",
+          "children": [
+            {
+              "id": "CSCA512-MII-T07-s1",
+              "title": "Text manipulation",
+              "kind": "subtopic",
+              "definition": "font-family, font-size, font-weight, line-height, letter-spacing, text-align and text-decoration."
+            },
+            {
+              "id": "CSCA512-MII-T07-s2",
+              "title": "Backgrounds and borders",
+              "kind": "subtopic",
+              "definition": "Background colour, gradients or images, with border radius and box shadow for styling."
+            },
+            {
+              "id": "CSCA512-MII-T07-s3",
+              "title": "Margins and padding",
+              "kind": "subtopic",
+              "definition": "Margin is space outside the border and padding is space inside it; the box model is content, padding, border and margin."
+            },
+            {
+              "id": "CSCA512-MII-T07-s4",
+              "title": "Width, height and overflow",
+              "kind": "subtopic",
+              "definition": "Box sizing decides whether padding is included in the width, and overflow decides what happens to excess content."
+            },
+            {
+              "id": "CSCA512-MII-T07-s5",
+              "title": "Positioning",
+              "kind": "subtopic",
+              "definition": "Static, relative, absolute, fixed and sticky positioning, with z-index for stacking order."
+            },
+            {
+              "id": "CSCA512-MII-T07-s6",
+              "title": "Float, flexbox and grid",
+              "kind": "subtopic",
+              "definition": "Floats for wrapping text, flexbox for one dimensional layouts and grid for two dimensional layouts."
+            },
+            {
+              "id": "CSCA512-MII-T07-s7",
+              "title": "Responsive design and media queries",
+              "kind": "subtopic",
+              "definition": "Percentages, flexible units and media queries adapt one layout to phones, tablets and desktops."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Introduction to JavaScript",
+      "topics": [
+        {
+          "id": "CSCA512-MIII-T01",
+          "title": "JavaScript: Introduction and Core Features",
+          "kind": "topic",
+          "definition": "JavaScript is the scripting language of the browser that makes pages interactive and can also run on servers.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T01-s1",
+              "title": "Where JavaScript runs",
+              "kind": "subtopic",
+              "definition": "In the browser engine, inside HTML with the script tag, in external files and on the server through Node.js."
+            },
+            {
+              "id": "CSCA512-MIII-T01-s2",
+              "title": "Core features",
+              "kind": "subtopic",
+              "definition": "Interpreted, dynamically typed, object based, event driven and single threaded with an event loop."
+            },
+            {
+              "id": "CSCA512-MIII-T01-s3",
+              "title": "Advantages and limitations",
+              "kind": "subtopic",
+              "definition": "Fast client side validation and rich interfaces, but browser differences and client side security limits."
+            },
+            {
+              "id": "CSCA512-MIII-T01-s4",
+              "title": "Adding JavaScript to a page",
+              "kind": "subtopic",
+              "definition": "Inline handlers, the script element inside head or body, and external .js files with defer or async."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T02",
+          "title": "Data Types, Variables, Operators and Statements",
+          "kind": "topic",
+          "definition": "JavaScript variables hold values of primitive or object types, and expressions are built with operators and statements.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T02-s1",
+              "title": "Data types",
+              "kind": "subtopic",
+              "definition": "Primitive types string, number, bigint, boolean, undefined, null and symbol, plus object types including arrays and functions."
+            },
+            {
+              "id": "CSCA512-MIII-T02-s2",
+              "title": "Variables: var, let and const",
+              "kind": "subtopic",
+              "definition": "var is function scoped and hoisted, let is block scoped and const cannot be reassigned."
+            },
+            {
+              "id": "CSCA512-MIII-T02-s3",
+              "title": "Operators and expressions",
+              "kind": "subtopic",
+              "definition": "Arithmetic, comparison with == and ===, logical, assignment, ternary and typeof operators."
+            },
+            {
+              "id": "CSCA512-MIII-T02-s4",
+              "title": "Statements and control flow",
+              "kind": "subtopic",
+              "definition": "if, else, switch, for, while, do while, for of, for in, break, continue and try catch finally."
+            },
+            {
+              "id": "CSCA512-MIII-T02-s5",
+              "title": "Type conversion and coercion",
+              "kind": "subtopic",
+              "definition": "Implicit conversion by operators and explicit conversion with Number, String and Boolean."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T03",
+          "title": "Functions",
+          "kind": "topic",
+          "definition": "A function is a reusable block of code that may take parameters and return a value.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T03-s1",
+              "title": "Function declaration and expression",
+              "kind": "subtopic",
+              "definition": "Declarations are hoisted while function expressions are assigned to variables."
+            },
+            {
+              "id": "CSCA512-MIII-T03-s2",
+              "title": "Parameters, arguments and return",
+              "kind": "subtopic",
+              "definition": "Parameters receive values, arguments holds them, and return sends a value back with undefined as the default."
+            },
+            {
+              "id": "CSCA512-MIII-T03-s3",
+              "title": "Scope, closures and hoisting",
+              "kind": "subtopic",
+              "definition": "A closure remembers the variables of the function that created it."
+            },
+            {
+              "id": "CSCA512-MIII-T03-s4",
+              "title": "Arrow functions and callbacks",
+              "kind": "subtopic",
+              "definition": "Shorter syntax with lexical this, commonly used as callbacks and event handlers."
+            },
+            {
+              "id": "CSCA512-MIII-T03-s5",
+              "title": "Rest, spread and default parameters",
+              "kind": "subtopic",
+              "definition": "Modern syntax for flexible argument lists and copying or expanding arrays and objects."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T04",
+          "title": "Objects, Arrays, Date and Math",
+          "kind": "topic",
+          "definition": "JavaScript provides built-in objects for structured data, dates and mathematical operations.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T04-s1",
+              "title": "Objects and properties",
+              "kind": "subtopic",
+              "definition": "Objects store key value pairs; properties and methods are accessed with a dot or brackets."
+            },
+            {
+              "id": "CSCA512-MIII-T04-s2",
+              "title": "Arrays and their methods",
+              "kind": "subtopic",
+              "definition": "Arrays are ordered collections with push, pop, shift, unshift, slice, splice, map, filter, reduce, sort and forEach."
+            },
+            {
+              "id": "CSCA512-MIII-T04-s3",
+              "title": "Strings and their methods",
+              "kind": "subtopic",
+              "definition": "length, charAt, indexOf, substring, slice, split, replace, toUpperCase and trim."
+            },
+            {
+              "id": "CSCA512-MIII-T04-s4",
+              "title": "Date object",
+              "kind": "subtopic",
+              "definition": "Creates and manipulates dates with getFullYear, getMonth, getTime and parsing of date strings."
+            },
+            {
+              "id": "CSCA512-MIII-T04-s5",
+              "title": "Math object",
+              "kind": "subtopic",
+              "definition": "Math.round, floor, ceil, abs, pow, sqrt, random, min and max."
+            },
+            {
+              "id": "CSCA512-MIII-T04-s6",
+              "title": "Regular expressions",
+              "kind": "subtopic",
+              "definition": "Patterns used with test, match, replace and split for validation and searching."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T05",
+          "title": "Document Object Model (DOM)",
+          "kind": "topic",
+          "definition": "The DOM is a tree representation of the page that JavaScript can read and modify.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T05-s1",
+              "title": "DOM tree and nodes",
+              "kind": "subtopic",
+              "definition": "Elements, attributes and text form a hierarchy under the document node."
+            },
+            {
+              "id": "CSCA512-MIII-T05-s2",
+              "title": "Selecting elements",
+              "kind": "subtopic",
+              "definition": "getElementById, getElementsByClassName, getElementsByTagName, querySelector and querySelectorAll."
+            },
+            {
+              "id": "CSCA512-MIII-T05-s3",
+              "title": "Changing content and attributes",
+              "kind": "subtopic",
+              "definition": "innerHTML, textContent, setAttribute, classList, and style manipulation."
+            },
+            {
+              "id": "CSCA512-MIII-T05-s4",
+              "title": "Creating and removing elements",
+              "kind": "subtopic",
+              "definition": "createElement, appendChild, insertBefore, removeChild and cloneNode for dynamic page updates."
+            },
+            {
+              "id": "CSCA512-MIII-T05-s5",
+              "title": "Traversing the DOM",
+              "kind": "subtopic",
+              "definition": "parentNode, children, firstElementChild, nextElementSibling and closest."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T06",
+          "title": "Event Handling",
+          "kind": "topic",
+          "definition": "Event handling lets the page respond to user actions such as clicks, typing and scrolling.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T06-s1",
+              "title": "Event and event object",
+              "kind": "subtopic",
+              "definition": "The event object carries the type, target, coordinates, key and modifiers."
+            },
+            {
+              "id": "CSCA512-MIII-T06-s2",
+              "title": "Event handlers and listeners",
+              "kind": "subtopic",
+              "definition": "Inline handlers, properties such as onclick and addEventListener with options."
+            },
+            {
+              "id": "CSCA512-MIII-T06-s3",
+              "title": "Event flow: capture, target and bubble",
+              "kind": "subtopic",
+              "definition": "Events travel down to the target and bubble back up, and stopPropagation stops the journey."
+            },
+            {
+              "id": "CSCA512-MIII-T06-s4",
+              "title": "Event delegation",
+              "kind": "subtopic",
+              "definition": "One listener on a parent handles events from many children, which is efficient for lists."
+            },
+            {
+              "id": "CSCA512-MIII-T06-s5",
+              "title": "Common events",
+              "kind": "subtopic",
+              "definition": "click, dblclick, mouseover, keydown, keyup, change, input, submit, load, scroll and touch events."
+            },
+            {
+              "id": "CSCA512-MIII-T06-s6",
+              "title": "Form events and validation",
+              "kind": "subtopic",
+              "definition": "preventDefault is used to stop submission while custom validation runs."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T07",
+          "title": "Controlling Windows, Frames and Documents",
+          "kind": "topic",
+          "definition": "JavaScript can open, resize, move and close windows and can access frames and documents.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T07-s1",
+              "title": "Window object",
+              "kind": "subtopic",
+              "definition": "open, close, alert, confirm, prompt, moveTo, resizeTo, setTimeout and setInterval."
+            },
+            {
+              "id": "CSCA512-MIII-T07-s2",
+              "title": "Navigator, screen, history and location",
+              "kind": "subtopic",
+              "definition": "Browser information, display size, browsing history and the current URL, with location.href performing redirection."
+            },
+            {
+              "id": "CSCA512-MIII-T07-s3",
+              "title": "Frames and iframes",
+              "kind": "subtopic",
+              "definition": "Frame collections and accessing the document of a same origin frame."
+            },
+            {
+              "id": "CSCA512-MIII-T07-s4",
+              "title": "Timers and animation",
+              "kind": "subtopic",
+              "definition": "setTimeout and setInterval drive repeated updates and simple animations."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIII-T08",
+          "title": "Form Handling and Validation in JavaScript",
+          "kind": "topic",
+          "definition": "Forms are validated in the browser before submission to save server work and give instant feedback.",
+          "children": [
+            {
+              "id": "CSCA512-MIII-T08-s1",
+              "title": "Accessing form elements",
+              "kind": "subtopic",
+              "definition": "document.forms, element names and values, checkbox and radio checked states."
+            },
+            {
+              "id": "CSCA512-MIII-T08-s2",
+              "title": "Validation techniques",
+              "kind": "subtopic",
+              "definition": "Checking empty fields, lengths, patterns with regular expressions and numeric ranges."
+            },
+            {
+              "id": "CSCA512-MIII-T08-s3",
+              "title": "Validation events and error display",
+              "kind": "subtopic",
+              "definition": "onsubmit, onblur and oninput with error messages placed near fields."
+            },
+            {
+              "id": "CSCA512-MIII-T08-s4",
+              "title": "Advantages and limits of client side validation",
+              "kind": "subtopic",
+              "definition": "Fast feedback, but it can be bypassed, so server side validation is still required."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Advanced JavaScript",
+      "topics": [
+        {
+          "id": "CSCA512-MIV-T01",
+          "title": "Browser and Media Management",
+          "kind": "topic",
+          "definition": "Browsers expose objects that let scripts manage windows, navigation and media content.",
+          "children": [
+            {
+              "id": "CSCA512-MIV-T01-s1",
+              "title": "Browser object model",
+              "kind": "subtopic",
+              "definition": "window, document, navigator, screen, history and location together form the BOM."
+            },
+            {
+              "id": "CSCA512-MIV-T01-s2",
+              "title": "Cookies and web storage",
+              "kind": "subtopic",
+              "definition": "Cookies carry small data with every request while localStorage and sessionStorage keep data in the browser only."
+            },
+            {
+              "id": "CSCA512-MIV-T01-s3",
+              "title": "Handling images, audio and video",
+              "kind": "subtopic",
+              "definition": "The image objects, audio and video elements with play, pause, currentTime and volume control."
+            },
+            {
+              "id": "CSCA512-MIV-T01-s4",
+              "title": "Canvas and SVG",
+              "kind": "subtopic",
+              "definition": "Canvas draws pixels through the 2D context while SVG describes vector graphics as XML."
+            },
+            {
+              "id": "CSCA512-MIV-T01-s5",
+              "title": "Geolocation and device APIs",
+              "kind": "subtopic",
+              "definition": "The geolocation API, drag and drop, and the file reader API extend browser behaviour."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIV-T02",
+          "title": "Classes, Constructors and Object Orientation in JavaScript",
+          "kind": "topic",
+          "definition": "Modern JavaScript provides class syntax over a prototype based object model.",
+          "children": [
+            {
+              "id": "CSCA512-MIV-T02-s1",
+              "title": "Object constructors",
+              "kind": "subtopic",
+              "definition": "A constructor function initialises objects with this and new, and methods are placed on the prototype."
+            },
+            {
+              "id": "CSCA512-MIV-T02-s2",
+              "title": "Prototypes and the prototype chain",
+              "kind": "subtopic",
+              "definition": "Objects inherit properties through links up the chain to Object.prototype."
+            },
+            {
+              "id": "CSCA512-MIV-T02-s3",
+              "title": "Encapsulation with closures and private fields",
+              "kind": "subtopic",
+              "definition": "Data privacy is achieved with closures or the hash prefix private fields and static members."
+            },
+            {
+              "id": "CSCA512-MIV-T02-s4",
+              "title": "ES6 class syntax",
+              "kind": "subtopic",
+              "definition": "class with constructor, methods, getters and setters is syntactic sugar over prototypes."
+            },
+            {
+              "id": "CSCA512-MIV-T02-s5",
+              "title": "Inheritance: subclasses and superclasses",
+              "kind": "subtopic",
+              "definition": "extends creates a subclass and super calls the parent constructor or method."
+            },
+            {
+              "id": "CSCA512-MIV-T02-s6",
+              "title": "Polymorphism and method overriding",
+              "kind": "subtopic",
+              "definition": "A subclass may replace a parent method, and the most derived version is called."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIV-T03",
+          "title": "JSON",
+          "kind": "topic",
+          "definition": "JavaScript Object Notation is a text format for exchanging structured data between a browser and a server.",
+          "children": [
+            {
+              "id": "CSCA512-MIV-T03-s1",
+              "title": "JSON syntax rules",
+              "kind": "subtopic",
+              "definition": "Objects with quoted keys, arrays, strings, numbers, true, false and null, with no functions or comments."
+            },
+            {
+              "id": "CSCA512-MIV-T03-s2",
+              "title": "JSON.parse and JSON.stringify",
+              "kind": "subtopic",
+              "definition": "Converting between a JSON string and a JavaScript object in both directions."
+            },
+            {
+              "id": "CSCA512-MIV-T03-s3",
+              "title": "JSON versus XML",
+              "kind": "subtopic",
+              "definition": "JSON is lighter, easier to parse and native to JavaScript, while XML supports schemas, attributes and namespaces."
+            },
+            {
+              "id": "CSCA512-MIV-T03-s4",
+              "title": "JSON in web APIs",
+              "kind": "subtopic",
+              "definition": "REST services send and receive JSON, which is the standard format of modern web APIs."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIV-T04",
+          "title": "jQuery",
+          "kind": "topic",
+          "definition": "jQuery is a small JavaScript library that simplifies DOM traversal, events, animation and AJAX.",
+          "children": [
+            {
+              "id": "CSCA512-MIV-T04-s1",
+              "title": "Selectors and chaining",
+              "kind": "subtopic",
+              "definition": "The jQuery function selects elements with CSS style selectors and methods can be chained."
+            },
+            {
+              "id": "CSCA512-MIV-T04-s2",
+              "title": "DOM manipulation and effects",
+              "kind": "subtopic",
+              "definition": "text, html, attr, addClass, append, remove, show, hide, fadeIn and slideToggle."
+            },
+            {
+              "id": "CSCA512-MIV-T04-s3",
+              "title": "Events in jQuery",
+              "kind": "subtopic",
+              "definition": "on, click, hover and ready centralise event handling with the shorthand dollar ready function."
+            },
+            {
+              "id": "CSCA512-MIV-T04-s4",
+              "title": "AJAX helpers",
+              "kind": "subtopic",
+              "definition": "get, post and ajax methods wrap XMLHttpRequest for short code."
+            },
+            {
+              "id": "CSCA512-MIV-T04-s5",
+              "title": "Advantages and disadvantages",
+              "kind": "subtopic",
+              "definition": "Cross browser convenience and a large plugin base versus extra download size and reduced need today."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MIV-T05",
+          "title": "AJAX",
+          "kind": "topic",
+          "definition": "AJAX updates part of a page by exchanging data with the server in the background without reloading the page.",
+          "children": [
+            {
+              "id": "CSCA512-MIV-T05-s1",
+              "title": "How AJAX works",
+              "kind": "subtopic",
+              "definition": "JavaScript sends an asynchronous request, the server replies with data, and the DOM is updated from the response."
+            },
+            {
+              "id": "CSCA512-MIV-T05-s2",
+              "title": "XMLHttpRequest steps",
+              "kind": "subtopic",
+              "definition": "Create the object, open the request, set the callback, send it, then read readyState and status in the handler."
+            },
+            {
+              "id": "CSCA512-MIV-T05-s3",
+              "title": "The fetch API and promises",
+              "kind": "subtopic",
+              "definition": "fetch returns a promise with json and text methods, used with async and await for cleaner code."
+            },
+            {
+              "id": "CSCA512-MIV-T05-s4",
+              "title": "Same origin policy and CORS",
+              "kind": "subtopic",
+              "definition": "Cross origin requests are blocked unless the server allows them with CORS headers."
+            },
+            {
+              "id": "CSCA512-MIV-T05-s5",
+              "title": "Advantages and issues",
+              "kind": "subtopic",
+              "definition": "Smoother interfaces and less data transfer, but bookmarking, history and search engine indexing become harder."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "PHP and MySQL",
+      "topics": [
+        {
+          "id": "CSCA512-MV-T01",
+          "title": "How the Web Works with PHP and the LAMP Stack",
+          "kind": "topic",
+          "definition": "PHP is a server side scripting language that runs on the web server and outputs HTML.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T01-s1",
+              "title": "Request response with PHP",
+              "kind": "subtopic",
+              "definition": "The browser requests a .php page, the server executes the script and returns the generated HTML."
+            },
+            {
+              "id": "CSCA512-MV-T01-s2",
+              "title": "Setting up the environment with LAMP",
+              "kind": "subtopic",
+              "definition": "Linux, Apache, MySQL and PHP form the classic free hosting stack, with XAMPP or WAMP for local practice."
+            },
+            {
+              "id": "CSCA512-MV-T01-s3",
+              "title": "PHP versus client side scripting",
+              "kind": "subtopic",
+              "definition": "PHP code runs on the server and the user never sees it, while JavaScript runs in the browser and is visible."
+            },
+            {
+              "id": "CSCA512-MV-T01-s4",
+              "title": "PHP file structure",
+              "kind": "subtopic",
+              "definition": "PHP code is written inside the opening and closing PHP tags and can be mixed with HTML."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MV-T02",
+          "title": "PHP Basics: Syntax, Variables and Constants",
+          "kind": "topic",
+          "definition": "PHP scripts use loosely typed variables with a dollar sign and constants defined once.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T02-s1",
+              "title": "Basic syntax and statements",
+              "kind": "subtopic",
+              "definition": "Statements end with a semicolon, comments use double slash, hash or block syntax, and case matters for variables."
+            },
+            {
+              "id": "CSCA512-MV-T02-s2",
+              "title": "Variables and scope",
+              "kind": "subtopic",
+              "definition": "Variables start with $, are dynamically typed, and have local, global and static scope with superglobals such as GET and POST."
+            },
+            {
+              "id": "CSCA512-MV-T02-s3",
+              "title": "Constants",
+              "kind": "subtopic",
+              "definition": "define and const create values that cannot change, and predefined constants include PHP_VERSION and __FILE__."
+            },
+            {
+              "id": "CSCA512-MV-T02-s4",
+              "title": "Data types and type juggling",
+              "kind": "subtopic",
+              "definition": "String, integer, float, boolean, array, object, null and resource, with automatic conversion in expressions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MV-T03",
+          "title": "Print and Echo",
+          "kind": "topic",
+          "definition": "PHP outputs content to the browser with echo, print, print_r and var_dump.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T03-s1",
+              "title": "echo and print",
+              "kind": "subtopic",
+              "definition": "echo can take several arguments and is slightly faster, while print returns a value and takes one argument."
+            },
+            {
+              "id": "CSCA512-MV-T03-s2",
+              "title": "print_r and var_dump",
+              "kind": "subtopic",
+              "definition": "Debugging helpers that display arrays and objects in readable form."
+            },
+            {
+              "id": "CSCA512-MV-T03-s3",
+              "title": "printf and number formatting",
+              "kind": "subtopic",
+              "definition": "Formatted output with placeholders such as percent s, percent d and percent f."
+            },
+            {
+              "id": "CSCA512-MV-T03-s4",
+              "title": "Embedding output in HTML",
+              "kind": "subtopic",
+              "definition": "Short echo tags and heredoc syntax mix dynamic values into markup."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MV-T04",
+          "title": "Strings and Arrays in PHP",
+          "kind": "topic",
+          "definition": "PHP offers many string functions and three kinds of arrays.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T04-s1",
+              "title": "String functions",
+              "kind": "subtopic",
+              "definition": "strlen, strpos, substr, str_replace, strtoupper, trim, explode, implode and nl2br."
+            },
+            {
+              "id": "CSCA512-MV-T04-s2",
+              "title": "String interpolation",
+              "kind": "subtopic",
+              "definition": "Double quoted strings expand variables while single quoted strings do not."
+            },
+            {
+              "id": "CSCA512-MV-T04-s3",
+              "title": "Indexed arrays",
+              "kind": "subtopic",
+              "definition": "Arrays with numeric keys accessed by position, created with array or square brackets."
+            },
+            {
+              "id": "CSCA512-MV-T04-s4",
+              "title": "Associative arrays",
+              "kind": "subtopic",
+              "definition": "Arrays with named keys, used like records with field names."
+            },
+            {
+              "id": "CSCA512-MV-T04-s5",
+              "title": "Multidimensional arrays",
+              "kind": "subtopic",
+              "definition": "Arrays of arrays used for tables and grouped data."
+            },
+            {
+              "id": "CSCA512-MV-T04-s6",
+              "title": "Array functions",
+              "kind": "subtopic",
+              "definition": "count, sort, ksort, array_push, array_pop, array_merge, array_keys, array_values and foreach traversal."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MV-T05",
+          "title": "Operators, Control Structures and Functions in PHP",
+          "kind": "topic",
+          "definition": "PHP supports the usual operators, branches, loops and user defined functions.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T05-s1",
+              "title": "Operators",
+              "kind": "subtopic",
+              "definition": "Arithmetic, assignment, comparison with == and ===, logical, increment, string concatenation with a dot and the null coalescing operator."
+            },
+            {
+              "id": "CSCA512-MV-T05-s2",
+              "title": "Conditional statements",
+              "kind": "subtopic",
+              "definition": "if, else, elseif, switch and the match expression."
+            },
+            {
+              "id": "CSCA512-MV-T05-s3",
+              "title": "Loops",
+              "kind": "subtopic",
+              "definition": "for, while, do while and foreach, with break and continue."
+            },
+            {
+              "id": "CSCA512-MV-T05-s4",
+              "title": "User defined functions",
+              "kind": "subtopic",
+              "definition": "Declared with the function keyword, with parameters, default values, variadic arguments, type hints and return values."
+            },
+            {
+              "id": "CSCA512-MV-T05-s5",
+              "title": "Include and require",
+              "kind": "subtopic",
+              "definition": "include and require reuse code from other files, with require stopping the script on failure."
+            },
+            {
+              "id": "CSCA512-MV-T05-s6",
+              "title": "Superglobals and sessions",
+              "kind": "subtopic",
+              "definition": "GET, POST, REQUEST, SERVER, COOKIE and SESSION carry data between requests."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MV-T06",
+          "title": "Reading Data in Web Pages",
+          "kind": "topic",
+          "definition": "PHP reads user input from forms, URLs and cookies to build dynamic responses.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T06-s1",
+              "title": "GET versus POST",
+              "kind": "subtopic",
+              "definition": "GET places data in the URL, is visible and limited in size; POST sends it in the request body and is safer for sensitive data."
+            },
+            {
+              "id": "CSCA512-MV-T06-s2",
+              "title": "Handling form input",
+              "kind": "subtopic",
+              "definition": "Reading the name attributes through the POST superglobal and validating each field on the server."
+            },
+            {
+              "id": "CSCA512-MV-T06-s3",
+              "title": "Validation and sanitisation",
+              "kind": "subtopic",
+              "definition": "filter_var, htmlspecialchars and trim defend against bad input, SQL injection and cross site scripting."
+            },
+            {
+              "id": "CSCA512-MV-T06-s4",
+              "title": "Uploading files",
+              "kind": "subtopic",
+              "definition": "The FILES superglobal with move_uploaded_file stores uploaded files after checking type and size."
+            },
+            {
+              "id": "CSCA512-MV-T06-s5",
+              "title": "Cookies and sessions",
+              "kind": "subtopic",
+              "definition": "setcookie stores small data on the client while session_start keeps server side state with a session id."
+            }
+          ]
+        },
+        {
+          "id": "CSCA512-MV-T07",
+          "title": "Connecting PHP with MySQL",
+          "kind": "topic",
+          "definition": "PHP connects to MySQL to store and retrieve application data with SQL statements.",
+          "children": [
+            {
+              "id": "CSCA512-MV-T07-s1",
+              "title": "Creating a connection",
+              "kind": "subtopic",
+              "definition": "mysqli_connect or new PDO with host, user, password and database name, plus error handling."
+            },
+            {
+              "id": "CSCA512-MV-T07-s2",
+              "title": "Executing queries",
+              "kind": "subtopic",
+              "definition": "mysqli_query or prepared statements run SELECT, INSERT, UPDATE and DELETE statements."
+            },
+            {
+              "id": "CSCA512-MV-T07-s3",
+              "title": "Fetching results",
+              "kind": "subtopic",
+              "definition": "Associative and numeric fetch modes, mysqli_fetch_assoc, fetch_all and loops that print rows into a table."
+            },
+            {
+              "id": "CSCA512-MV-T07-s4",
+              "title": "Prepared statements",
+              "kind": "subtopic",
+              "definition": "Parameterised queries with bind_param or PDO bindValue prevent SQL injection."
+            },
+            {
+              "id": "CSCA512-MV-T07-s5",
+              "title": "Insert, update and delete with feedback",
+              "kind": "subtopic",
+              "definition": "Affected rows and insert id confirm the result of a data change."
+            },
+            {
+              "id": "CSCA512-MV-T07-s6",
+              "title": "Closing connections and error handling",
+              "kind": "subtopic",
+              "definition": "Frees results and closes the connection, with try catch or mysqli error checks for failures."
+            },
+            {
+              "id": "CSCA512-MV-T07-s7",
+              "title": "A small complete example",
+              "kind": "subtopic",
+              "definition": "A student form that inserts a record and lists all students joins HTML forms, PHP and MySQL end to end."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

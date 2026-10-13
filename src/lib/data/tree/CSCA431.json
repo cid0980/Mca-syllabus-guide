@@ -1,0 +1,925 @@
+{
+  "code": "CSCA 431",
+  "subject": "Mathematics for Computer Science",
+  "semester": 1,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Logics and Proofs",
+      "topics": [
+        {
+          "id": "CSCA431-MI-T01",
+          "title": "Propositional Logic",
+          "kind": "topic",
+          "definition": "Propositional logic studies statements that are either true or false and how they combine.",
+          "children": [
+            {
+              "id": "CSCA431-MI-T01-s1",
+              "title": "Propositions and truth values",
+              "kind": "subtopic",
+              "definition": "A proposition is a declarative statement with a definite truth value, such as \"2 + 2 = 4\"."
+            },
+            {
+              "id": "CSCA431-MI-T01-s2",
+              "title": "Logical connectives",
+              "kind": "subtopic",
+              "definition": "Negation, conjunction, disjunction, exclusive or, implication and biconditional."
+            },
+            {
+              "id": "CSCA431-MI-T01-s3",
+              "title": "Truth tables",
+              "kind": "subtopic",
+              "definition": "A table listing the truth value of a compound statement for every combination of its variables."
+            },
+            {
+              "id": "CSCA431-MI-T01-s4",
+              "title": "Tautology, contradiction and contingency",
+              "kind": "subtopic",
+              "definition": "Always true, always false and sometimes true statements respectively."
+            },
+            {
+              "id": "CSCA431-MI-T01-s5",
+              "title": "Logical equivalence and laws",
+              "kind": "subtopic",
+              "definition": "Identity, domination, idempotent, double negation, commutative, associative, distributive, De Morgan and absorption laws."
+            },
+            {
+              "id": "CSCA431-MI-T01-s6",
+              "title": "Normal forms",
+              "kind": "subtopic",
+              "definition": "Conjunctive and disjunctive normal forms, and functional completeness of the connectives."
+            },
+            {
+              "id": "CSCA431-MI-T01-s7",
+              "title": "Arguments and validity",
+              "kind": "subtopic",
+              "definition": "An argument is valid when the conclusion must be true whenever all premises are true."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MI-T02",
+          "title": "Predicates and Quantifiers",
+          "kind": "topic",
+          "definition": "Predicate logic extends propositional logic with variables, predicates and quantifiers.",
+          "children": [
+            {
+              "id": "CSCA431-MI-T02-s1",
+              "title": "Predicates",
+              "kind": "subtopic",
+              "definition": "A statement involving variables, such as P(x) meaning x is greater than 3, which becomes a proposition when x is fixed."
+            },
+            {
+              "id": "CSCA431-MI-T02-s2",
+              "title": "Universal quantifier",
+              "kind": "subtopic",
+              "definition": "For all x, written with an upside down A, true when P(x) holds for every element of the domain."
+            },
+            {
+              "id": "CSCA431-MI-T02-s3",
+              "title": "Existential quantifier",
+              "kind": "subtopic",
+              "definition": "There exists an x, written with a backwards E, true when at least one element satisfies P(x)."
+            },
+            {
+              "id": "CSCA431-MI-T02-s4",
+              "title": "Negating quantified statements",
+              "kind": "subtopic",
+              "definition": "The negation of for all is there exists a counterexample, and the negation of there exists is for all not."
+            },
+            {
+              "id": "CSCA431-MI-T02-s5",
+              "title": "Nested quantifiers",
+              "kind": "subtopic",
+              "definition": "Statements such as for all x there exists y, where the order of quantifiers changes the meaning."
+            },
+            {
+              "id": "CSCA431-MI-T02-s6",
+              "title": "Rules of inference",
+              "kind": "subtopic",
+              "definition": "Modus ponens, modus tollens, hypothetical syllogism, disjunctive syllogism, addition, simplification, conjunction and resolution."
+            },
+            {
+              "id": "CSCA431-MI-T02-s7",
+              "title": "Fallacies",
+              "kind": "subtopic",
+              "definition": "The fallacy of affirming the consequent and of denying the antecedent, which look valid but are not."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MI-T03",
+          "title": "Methods of Proof",
+          "kind": "topic",
+          "definition": "A proof is a valid argument that establishes the truth of a mathematical statement.",
+          "children": [
+            {
+              "id": "CSCA431-MI-T03-s1",
+              "title": "Direct proof",
+              "kind": "subtopic",
+              "definition": "Assume the hypothesis and derive the conclusion by known facts and algebra."
+            },
+            {
+              "id": "CSCA431-MI-T03-s2",
+              "title": "Indirect proof by contraposition",
+              "kind": "subtopic",
+              "definition": "Prove the contrapositive, that not q implies not p, which is logically equivalent to p implies q."
+            },
+            {
+              "id": "CSCA431-MI-T03-s3",
+              "title": "Proof by contradiction",
+              "kind": "subtopic",
+              "definition": "Assume the statement is false and derive a contradiction, used classically to prove the irrationality of the square root of 2."
+            },
+            {
+              "id": "CSCA431-MI-T03-s4",
+              "title": "Vacuous and trivial proof",
+              "kind": "subtopic",
+              "definition": "A conditional is vacuously true when the hypothesis is false and trivially true when the conclusion is known to be true."
+            },
+            {
+              "id": "CSCA431-MI-T03-s5",
+              "title": "Proof by cases and exhaustive proof",
+              "kind": "subtopic",
+              "definition": "Split the statement into covering cases and prove each one."
+            },
+            {
+              "id": "CSCA431-MI-T03-s6",
+              "title": "Existence and uniqueness proofs",
+              "kind": "subtopic",
+              "definition": "Show that an object exists, and if required that it is the only one."
+            },
+            {
+              "id": "CSCA431-MI-T03-s7",
+              "title": "Constructive versus non constructive proof",
+              "kind": "subtopic",
+              "definition": "Either produce the object or prove it must exist without producing it."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MI-T04",
+          "title": "Proof Strategies and Mathematical Induction",
+          "kind": "topic",
+          "definition": "Strategies guide which proof method to try, and induction proves statements about all natural numbers.",
+          "children": [
+            {
+              "id": "CSCA431-MI-T04-s1",
+              "title": "Forward and backward reasoning",
+              "kind": "subtopic",
+              "definition": "Work from the hypothesis towards the goal, or from the goal backwards to known facts."
+            },
+            {
+              "id": "CSCA431-MI-T04-s2",
+              "title": "Adapting an existing proof and looking for counterexamples",
+              "kind": "subtopic",
+              "definition": "Reuse known proofs with modifications, and test small cases before attempting a proof."
+            },
+            {
+              "id": "CSCA431-MI-T04-s3",
+              "title": "Principle of mathematical induction",
+              "kind": "subtopic",
+              "definition": "Prove the base case and the inductive step that P(k) implies P(k + 1), which proves P(n) for all n."
+            },
+            {
+              "id": "CSCA431-MI-T04-s4",
+              "title": "Strong induction and well ordering",
+              "kind": "subtopic",
+              "definition": "Strong induction assumes all smaller cases, and the well ordering property says every non-empty set of positive integers has a least element."
+            },
+            {
+              "id": "CSCA431-MI-T04-s5",
+              "title": "Common induction mistakes",
+              "kind": "subtopic",
+              "definition": "Assuming what is to be proved and skipping the base case."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Basic Structures and Relations",
+      "topics": [
+        {
+          "id": "CSCA431-MII-T01",
+          "title": "Sets",
+          "kind": "topic",
+          "definition": "A set is an unordered collection of distinct objects called its elements.",
+          "children": [
+            {
+              "id": "CSCA431-MII-T01-s1",
+              "title": "Set builder and roster notation",
+              "kind": "subtopic",
+              "definition": "Sets are listed as {1, 2, 3} or described as {x | x is an even integer}."
+            },
+            {
+              "id": "CSCA431-MII-T01-s2",
+              "title": "Subsets and power set",
+              "kind": "subtopic",
+              "definition": "A is a subset of B if every element of A is in B; the power set is the set of all subsets and has 2 to the n elements."
+            },
+            {
+              "id": "CSCA431-MII-T01-s3",
+              "title": "Set operations",
+              "kind": "subtopic",
+              "definition": "Union, intersection, difference, complement and symmetric difference."
+            },
+            {
+              "id": "CSCA431-MII-T01-s4",
+              "title": "Set identities and Venn diagrams",
+              "kind": "subtopic",
+              "definition": "Algebraic identities such as De Morgan laws together with diagrams that show operations visually."
+            },
+            {
+              "id": "CSCA431-MII-T01-s5",
+              "title": "Cardinality and inclusion exclusion",
+              "kind": "subtopic",
+              "definition": "The size of a set, with the two set rule |A union B| = |A| + |B| - |A intersection B|."
+            },
+            {
+              "id": "CSCA431-MII-T01-s6",
+              "title": "Cartesian product and ordered pairs",
+              "kind": "subtopic",
+              "definition": "The set of all ordered pairs from two sets, which underlies relations and functions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MII-T02",
+          "title": "Functions",
+          "kind": "topic",
+          "definition": "A function maps each element of its domain to exactly one element of its codomain.",
+          "children": [
+            {
+              "id": "CSCA431-MII-T02-s1",
+              "title": "Domain, codomain and range",
+              "kind": "subtopic",
+              "definition": "The allowed inputs, the declared output set and the outputs actually produced."
+            },
+            {
+              "id": "CSCA431-MII-T02-s2",
+              "title": "Injective (one to one) function",
+              "kind": "subtopic",
+              "definition": "Different inputs always give different outputs."
+            },
+            {
+              "id": "CSCA431-MII-T02-s3",
+              "title": "Surjective (onto) function",
+              "kind": "subtopic",
+              "definition": "Every element of the codomain is the image of some input."
+            },
+            {
+              "id": "CSCA431-MII-T02-s4",
+              "title": "Bijective function and inverse",
+              "kind": "subtopic",
+              "definition": "Both injective and surjective, so an inverse function exists."
+            },
+            {
+              "id": "CSCA431-MII-T02-s5",
+              "title": "Composition and graphs of functions",
+              "kind": "subtopic",
+              "definition": "Composition applies one function after another, and the graph shows the ordered pairs."
+            },
+            {
+              "id": "CSCA431-MII-T02-s6",
+              "title": "Important functions",
+              "kind": "subtopic",
+              "definition": "Identity, constant, floor, ceiling, factorial and exponential functions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MII-T03",
+          "title": "Sequences and Sums",
+          "kind": "topic",
+          "definition": "A sequence is an ordered list of numbers and a sum adds the terms of a sequence.",
+          "children": [
+            {
+              "id": "CSCA431-MII-T03-s1",
+              "title": "Arithmetic progression",
+              "kind": "subtopic",
+              "definition": "Each term differs from the previous one by a constant, with sum n over 2 times first plus last."
+            },
+            {
+              "id": "CSCA431-MII-T03-s2",
+              "title": "Geometric progression",
+              "kind": "subtopic",
+              "definition": "Each term is a constant multiple of the previous one, with sum a(r to the n minus 1) over (r minus 1)."
+            },
+            {
+              "id": "CSCA431-MII-T03-s3",
+              "title": "Recurrence relations",
+              "kind": "subtopic",
+              "definition": "A sequence defined by earlier terms, such as the Fibonacci relation."
+            },
+            {
+              "id": "CSCA431-MII-T03-s4",
+              "title": "Special integer sequences",
+              "kind": "subtopic",
+              "definition": "Fibonacci numbers, factorials, powers and triangular numbers."
+            },
+            {
+              "id": "CSCA431-MII-T03-s5",
+              "title": "Summation notation and formulas",
+              "kind": "subtopic",
+              "definition": "Sigma notation, sums of constants, arithmetic series, geometric series and sums of squares and cubes."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MII-T04",
+          "title": "Matrices",
+          "kind": "topic",
+          "definition": "A matrix is a rectangular array of numbers used to represent data and transformations.",
+          "children": [
+            {
+              "id": "CSCA431-MII-T04-s1",
+              "title": "Matrix types",
+              "kind": "subtopic",
+              "definition": "Row, column, square, diagonal, identity, symmetric and zero matrices."
+            },
+            {
+              "id": "CSCA431-MII-T04-s2",
+              "title": "Matrix operations",
+              "kind": "subtopic",
+              "definition": "Addition, subtraction, scalar multiplication and matrix multiplication with its row by column rule."
+            },
+            {
+              "id": "CSCA431-MII-T04-s3",
+              "title": "Transpose and trace",
+              "kind": "subtopic",
+              "definition": "The transpose swaps rows and columns and the trace adds the diagonal elements."
+            },
+            {
+              "id": "CSCA431-MII-T04-s4",
+              "title": "Inverse of a matrix",
+              "kind": "subtopic",
+              "definition": "Exists only for square matrices with non-zero determinant, with A times inverse equals identity."
+            },
+            {
+              "id": "CSCA431-MII-T04-s5",
+              "title": "Boolean matrices",
+              "kind": "subtopic",
+              "definition": "Entries are 0 and 1 with the join and meet operations, used to represent relations."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MII-T05",
+          "title": "Relations",
+          "kind": "topic",
+          "definition": "A relation from A to B is a subset of the Cartesian product A cross B.",
+          "children": [
+            {
+              "id": "CSCA431-MII-T05-s1",
+              "title": "Binary relations and their representation",
+              "kind": "subtopic",
+              "definition": "Sets of ordered pairs shown as lists, matrices or directed graphs."
+            },
+            {
+              "id": "CSCA431-MII-T05-s2",
+              "title": "Properties of relations",
+              "kind": "subtopic",
+              "definition": "Reflexive, symmetric, antisymmetric, transitive and irreflexive on a set."
+            },
+            {
+              "id": "CSCA431-MII-T05-s3",
+              "title": "Equivalence relations",
+              "kind": "subtopic",
+              "definition": "Reflexive, symmetric and transitive; they partition the set into equivalence classes."
+            },
+            {
+              "id": "CSCA431-MII-T05-s4",
+              "title": "Partial ordering relations",
+              "kind": "subtopic",
+              "definition": "Reflexive, antisymmetric and transitive; Hasse diagrams draw them compactly, with maximal, minimal, least and greatest elements."
+            },
+            {
+              "id": "CSCA431-MII-T05-s5",
+              "title": "Closures of relations",
+              "kind": "subtopic",
+              "definition": "The reflexive, symmetric and transitive closure, with Warshall algorithm for transitive closure."
+            },
+            {
+              "id": "CSCA431-MII-T05-s6",
+              "title": "n-ary relations and databases",
+              "kind": "subtopic",
+              "definition": "Relations of degree n as tables, with primary keys as candidate keys and operations like selection and projection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Number Theory",
+      "topics": [
+        {
+          "id": "CSCA431-MIII-T01",
+          "title": "Divisibility and Modular Arithmetic",
+          "kind": "topic",
+          "definition": "Divisibility studies when one integer divides another exactly, and modular arithmetic keeps only remainders.",
+          "children": [
+            {
+              "id": "CSCA431-MIII-T01-s1",
+              "title": "Division algorithm and divisibility",
+              "kind": "subtopic",
+              "definition": "For integers a and d with d positive there are unique q and r with a = dq + r and 0 <= r < d; d divides a if r is 0."
+            },
+            {
+              "id": "CSCA431-MIII-T01-s2",
+              "title": "Congruence modulo m",
+              "kind": "subtopic",
+              "definition": "a is congruent to b mod m when m divides a minus b, which means both leave the same remainder."
+            },
+            {
+              "id": "CSCA431-MIII-T01-s3",
+              "title": "Arithmetic modulo m",
+              "kind": "subtopic",
+              "definition": "Addition and multiplication wrap around using the remainder, which models clocks and hashing."
+            },
+            {
+              "id": "CSCA431-MIII-T01-s4",
+              "title": "Applications of modular arithmetic",
+              "kind": "subtopic",
+              "definition": "Hash functions, check digits, day of the week arithmetic and cryptography."
+            },
+            {
+              "id": "CSCA431-MIII-T01-s5",
+              "title": "Linear congruences",
+              "kind": "subtopic",
+              "definition": "Equations ax congruent to b mod m, solvable when the gcd of a and m divides b."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MIII-T02",
+          "title": "Integer Algorithms",
+          "kind": "topic",
+          "definition": "Classical algorithms work on integers and many of them run in time proportional to the number of digits.",
+          "children": [
+            {
+              "id": "CSCA431-MIII-T02-s1",
+              "title": "Integer representation and base conversion",
+              "kind": "subtopic",
+              "definition": "Numbers in base b are converted to decimal by expansion and back by repeated division."
+            },
+            {
+              "id": "CSCA431-MIII-T02-s2",
+              "title": "Euclidean algorithm for GCD",
+              "kind": "subtopic",
+              "definition": "Repeatedly replace the pair by the divisor and remainder until the remainder is zero."
+            },
+            {
+              "id": "CSCA431-MIII-T02-s3",
+              "title": "Extended Euclidean algorithm",
+              "kind": "subtopic",
+              "definition": "Also finds the coefficients x and y such that ax + by equals the gcd, which gives modular inverses."
+            },
+            {
+              "id": "CSCA431-MIII-T02-s4",
+              "title": "Finding modular inverses",
+              "kind": "subtopic",
+              "definition": "The inverse of a modulo m exists when gcd is 1 and is found by the extended Euclidean algorithm."
+            },
+            {
+              "id": "CSCA431-MIII-T02-s5",
+              "title": "Complexity of integer algorithms",
+              "kind": "subtopic",
+              "definition": "Bit operations count for addition, multiplication and division, and the running times of gcd computations."
+            },
+            {
+              "id": "CSCA431-MIII-T02-s6",
+              "title": "Linear Diophantine equations",
+              "kind": "subtopic",
+              "definition": "Equations of the form ax + by = c are solvable exactly when gcd divides c."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MIII-T03",
+          "title": "Primes and Greatest Common Divisor",
+          "kind": "topic",
+          "definition": "A prime has no positive divisors other than 1 and itself, and the gcd is the largest common divisor.",
+          "children": [
+            {
+              "id": "CSCA431-MIII-T03-s1",
+              "title": "Fundamental theorem of arithmetic",
+              "kind": "subtopic",
+              "definition": "Every integer greater than 1 factors uniquely into primes up to order."
+            },
+            {
+              "id": "CSCA431-MIII-T03-s2",
+              "title": "Fundamental theorem of arithmetic applications",
+              "kind": "subtopic",
+              "definition": "Finding gcd and lcm from prime factorisations."
+            },
+            {
+              "id": "CSCA431-MIII-T03-s3",
+              "title": "Relatively prime numbers",
+              "kind": "subtopic",
+              "definition": "Two integers whose gcd is 1; pairwise relatively prime sets are used in number theory and cryptography."
+            },
+            {
+              "id": "CSCA431-MIII-T03-s4",
+              "title": "Least common multiple",
+              "kind": "subtopic",
+              "definition": "The smallest positive integer divisible by both numbers, equal to a times b divided by gcd."
+            },
+            {
+              "id": "CSCA431-MIII-T03-s5",
+              "title": "Sieve of Eratosthenes and trial division",
+              "kind": "subtopic",
+              "definition": "Methods for listing or testing primes; trial division needs checking divisors up to the square root."
+            },
+            {
+              "id": "CSCA431-MIII-T03-s6",
+              "title": "Mersenne and Fermat primes",
+              "kind": "subtopic",
+              "definition": "Primes of the form 2 to the p minus 1 and Fermat numbers, with a role in primality testing."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MIII-T04",
+          "title": "Congruences and Classical Theorems",
+          "kind": "topic",
+          "definition": "Congruence equations and famous theorems make computation with large numbers practical.",
+          "children": [
+            {
+              "id": "CSCA431-MIII-T04-s1",
+              "title": "Systems of linear congruences",
+              "kind": "subtopic",
+              "definition": "Solved by substitution or by the Chinese remainder theorem."
+            },
+            {
+              "id": "CSCA431-MIII-T04-s2",
+              "title": "Chinese remainder theorem",
+              "kind": "subtopic",
+              "definition": "A system of congruences with pairwise relatively prime moduli has a unique solution modulo their product."
+            },
+            {
+              "id": "CSCA431-MIII-T04-s3",
+              "title": "Fermat little theorem",
+              "kind": "subtopic",
+              "definition": "If p is prime and a is not divisible by p then a to the p minus 1 is congruent to 1 mod p."
+            },
+            {
+              "id": "CSCA431-MIII-T04-s4",
+              "title": "Euler theorem and totient",
+              "kind": "subtopic",
+              "definition": "Generalises Fermat with the totient phi, which counts integers up to n that are coprime to n."
+            },
+            {
+              "id": "CSCA431-MIII-T04-s5",
+              "title": "Applications to cryptography",
+              "kind": "subtopic",
+              "definition": "RSA uses modular exponentiation, the totient function and large primes for public key encryption."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Algebraic Structures",
+      "topics": [
+        {
+          "id": "CSCA431-MIV-T01",
+          "title": "Groups",
+          "kind": "topic",
+          "definition": "A group is a set with one binary operation that is associative, has an identity and gives every element an inverse.",
+          "children": [
+            {
+              "id": "CSCA431-MIV-T01-s1",
+              "title": "Definition and axioms",
+              "kind": "subtopic",
+              "definition": "Closure, associativity, identity element and inverse element define a group."
+            },
+            {
+              "id": "CSCA431-MIV-T01-s2",
+              "title": "Abelian group",
+              "kind": "subtopic",
+              "definition": "A group in which the operation is also commutative."
+            },
+            {
+              "id": "CSCA431-MIV-T01-s3",
+              "title": "Examples of groups",
+              "kind": "subtopic",
+              "definition": "Integers under addition, non-zero rationals under multiplication and symmetries of a figure under composition."
+            },
+            {
+              "id": "CSCA431-MIV-T01-s4",
+              "title": "Order of a group and of an element",
+              "kind": "subtopic",
+              "definition": "The number of elements in the group, and the smallest positive n with a to the n equal to the identity."
+            },
+            {
+              "id": "CSCA431-MIV-T01-s5",
+              "title": "Subgroups",
+              "kind": "subtopic",
+              "definition": "A subset that is itself a group under the same operation, tested by closure and inverse conditions."
+            },
+            {
+              "id": "CSCA431-MIV-T01-s6",
+              "title": "Permutation groups and symmetries",
+              "kind": "subtopic",
+              "definition": "Groups whose elements are bijections of a set, and the dihedral groups of polygons."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MIV-T02",
+          "title": "Cyclic Groups and Homomorphism",
+          "kind": "topic",
+          "definition": "A cyclic group is generated by one element, and a homomorphism is a structure preserving map between groups.",
+          "children": [
+            {
+              "id": "CSCA431-MIV-T02-s1",
+              "title": "Cyclic group",
+              "kind": "subtopic",
+              "definition": "Every element is a power of a single generator g, such as the integers under addition with generator 1."
+            },
+            {
+              "id": "CSCA431-MIV-T02-s2",
+              "title": "Generators and order",
+              "kind": "subtopic",
+              "definition": "The order of a cyclic group equals the order of its generator, and subgroups of cyclic groups are cyclic."
+            },
+            {
+              "id": "CSCA431-MIV-T02-s3",
+              "title": "Group homomorphism",
+              "kind": "subtopic",
+              "definition": "A map f with f of a times b equal to f of a times f of b, preserving the operation."
+            },
+            {
+              "id": "CSCA431-MIV-T02-s4",
+              "title": "Kernel and image",
+              "kind": "subtopic",
+              "definition": "The set mapping to the identity and the set of all images, both of which are subgroups."
+            },
+            {
+              "id": "CSCA431-MIV-T02-s5",
+              "title": "Isomorphism",
+              "kind": "subtopic",
+              "definition": "A bijective homomorphism, which means the two groups are structurally the same."
+            },
+            {
+              "id": "CSCA431-MIV-T02-s6",
+              "title": "Properties of homomorphisms",
+              "kind": "subtopic",
+              "definition": "Order preservation, the kernel as a normal subgroup and the first isomorphism theorem."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MIV-T03",
+          "title": "Cosets, Normal Subgroups and Lagrange Theorem",
+          "kind": "topic",
+          "definition": "Cosets split a group into equal sized blocks, and Lagrange theorem relates their size to the group order.",
+          "children": [
+            {
+              "id": "CSCA431-MIV-T03-s1",
+              "title": "Left and right cosets",
+              "kind": "subtopic",
+              "definition": "Sets aH or Ha formed by multiplying a fixed element with every element of a subgroup."
+            },
+            {
+              "id": "CSCA431-MIV-T03-s2",
+              "title": "Coset properties",
+              "kind": "subtopic",
+              "definition": "Cosets of a subgroup partition the group and all have the same size as the subgroup."
+            },
+            {
+              "id": "CSCA431-MIV-T03-s3",
+              "title": "Index of a subgroup",
+              "kind": "subtopic",
+              "definition": "The number of distinct cosets, equal to the order of the group divided by the order of the subgroup."
+            },
+            {
+              "id": "CSCA431-MIV-T03-s4",
+              "title": "Lagrange theorem",
+              "kind": "subtopic",
+              "definition": "The order of a subgroup divides the order of the finite group, so the order of every element divides the group order."
+            },
+            {
+              "id": "CSCA431-MIV-T03-s5",
+              "title": "Normal subgroup",
+              "kind": "subtopic",
+              "definition": "A subgroup with aH equal to Ha for every a, which is exactly what allows a quotient group to be formed."
+            },
+            {
+              "id": "CSCA431-MIV-T03-s6",
+              "title": "Quotient group and simple groups",
+              "kind": "subtopic",
+              "definition": "A quotient group is formed from the cosets of a normal subgroup; simple groups have no proper non-trivial normal subgroup."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MIV-T04",
+          "title": "Rings and Fields",
+          "kind": "topic",
+          "definition": "A ring has two operations with addition forming a group and multiplication distributing over it, and a field adds division.",
+          "children": [
+            {
+              "id": "CSCA431-MIV-T04-s1",
+              "title": "Ring definition",
+              "kind": "subtopic",
+              "definition": "An abelian group under addition with an associative multiplication that distributes over addition."
+            },
+            {
+              "id": "CSCA431-MIV-T04-s2",
+              "title": "Commutative ring and unity",
+              "kind": "subtopic",
+              "definition": "A ring where multiplication is commutative, with or without a multiplicative identity element."
+            },
+            {
+              "id": "CSCA431-MIV-T04-s3",
+              "title": "Integral domain",
+              "kind": "subtopic",
+              "definition": "A commutative ring with unity and no zero divisors, so cancellation works."
+            },
+            {
+              "id": "CSCA431-MIV-T04-s4",
+              "title": "Field definition and examples",
+              "kind": "subtopic",
+              "definition": "A commutative ring with unity in which every non-zero element has an inverse; rationals, reals and integers modulo a prime are fields."
+            },
+            {
+              "id": "CSCA431-MIV-T04-s5",
+              "title": "Characteristic of a ring",
+              "kind": "subtopic",
+              "definition": "The smallest positive n with n times 1 equal to 0, which is 0, a prime or a composite."
+            },
+            {
+              "id": "CSCA431-MIV-T04-s6",
+              "title": "Polynomial rings and applications",
+              "kind": "subtopic",
+              "definition": "Rings of polynomials and their use in coding theory and cryptography; finite fields underlie AES and error correcting codes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Counting",
+      "topics": [
+        {
+          "id": "CSCA431-MV-T01",
+          "title": "Basics of Counting",
+          "kind": "topic",
+          "definition": "Counting determines the size of a set without listing all its elements.",
+          "children": [
+            {
+              "id": "CSCA431-MV-T01-s1",
+              "title": "Product rule",
+              "kind": "subtopic",
+              "definition": "If one task has m outcomes and a second has n, the pair has m times n outcomes."
+            },
+            {
+              "id": "CSCA431-MV-T01-s2",
+              "title": "Sum rule",
+              "kind": "subtopic",
+              "definition": "If two cases cannot happen together with m and n outcomes, the total is m + n."
+            },
+            {
+              "id": "CSCA431-MV-T01-s3",
+              "title": "Subtraction (inclusion exclusion) rule",
+              "kind": "subtopic",
+              "definition": "For overlapping cases, the total is m + n minus the number of common outcomes."
+            },
+            {
+              "id": "CSCA431-MV-T01-s4",
+              "title": "Tree diagrams",
+              "kind": "subtopic",
+              "definition": "A branching diagram that shows all outcomes of a sequence of choices."
+            },
+            {
+              "id": "CSCA431-MV-T01-s5",
+              "title": "Counting with sets and functions",
+              "kind": "subtopic",
+              "definition": "Counting subsets, functions between finite sets and the number of injective functions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MV-T02",
+          "title": "Pigeonhole Principle",
+          "kind": "topic",
+          "definition": "If more items than boxes are placed into boxes, some box holds more than one item.",
+          "children": [
+            {
+              "id": "CSCA431-MV-T02-s1",
+              "title": "Simple pigeonhole principle",
+              "kind": "subtopic",
+              "definition": "Placing n + 1 objects into n boxes forces at least one box to hold two objects."
+            },
+            {
+              "id": "CSCA431-MV-T02-s2",
+              "title": "Generalised pigeonhole principle",
+              "kind": "subtopic",
+              "definition": "Placing N objects into k boxes forces some box to hold at least the ceiling of N divided by k objects."
+            },
+            {
+              "id": "CSCA431-MV-T02-s3",
+              "title": "Classical applications",
+              "kind": "subtopic",
+              "definition": "Among any 13 people two share a birth month, and among n + 1 integers chosen from 1 to 2n one divides another."
+            },
+            {
+              "id": "CSCA431-MV-T02-s4",
+              "title": "Subsequence and geometry applications",
+              "kind": "subtopic",
+              "definition": "Any sequence of n squared + 1 distinct numbers has an increasing or decreasing subsequence of length n + 1."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MV-T03",
+          "title": "Permutations and Combinations",
+          "kind": "topic",
+          "definition": "A permutation counts ordered arrangements and a combination counts unordered selections.",
+          "children": [
+            {
+              "id": "CSCA431-MV-T03-s1",
+              "title": "Permutations without repetition",
+              "kind": "subtopic",
+              "definition": "The number of ways to arrange r items chosen from n is n factorial divided by (n minus r) factorial."
+            },
+            {
+              "id": "CSCA431-MV-T03-s2",
+              "title": "Permutations with repetition",
+              "kind": "subtopic",
+              "definition": "Arrangements when items may repeat are n to the power r."
+            },
+            {
+              "id": "CSCA431-MV-T03-s3",
+              "title": "Circular permutations",
+              "kind": "subtopic",
+              "definition": "Arrangements around a circle number (n minus 1) factorial because rotations are the same."
+            },
+            {
+              "id": "CSCA431-MV-T03-s4",
+              "title": "Combinations",
+              "kind": "subtopic",
+              "definition": "The number of r element subsets of an n element set is n factorial over r factorial times (n minus r) factorial."
+            },
+            {
+              "id": "CSCA431-MV-T03-s5",
+              "title": "Combinations with repetition",
+              "kind": "subtopic",
+              "definition": "Distributions of identical objects into distinct boxes number C of (n plus r minus 1) choose r."
+            },
+            {
+              "id": "CSCA431-MV-T03-s6",
+              "title": "Permutations and combinations with restrictions",
+              "kind": "subtopic",
+              "definition": "Cases with adjacent items, no two together, or fixed positions handled by first arranging the restricted items."
+            }
+          ]
+        },
+        {
+          "id": "CSCA431-MV-T04",
+          "title": "Binomial Coefficients and the Binomial Theorem",
+          "kind": "topic",
+          "definition": "Binomial coefficients count selections and appear as the coefficients in the expansion of a power of a binomial.",
+          "children": [
+            {
+              "id": "CSCA431-MV-T04-s1",
+              "title": "Binomial theorem",
+              "kind": "subtopic",
+              "definition": "The expansion of (x plus y) to the n as a sum of C(n, k) times x to the n minus k times y to the k."
+            },
+            {
+              "id": "CSCA431-MV-T04-s2",
+              "title": "Pascal triangle and Pascal identity",
+              "kind": "subtopic",
+              "definition": "Each entry is the sum of the two above it, which is the identity C(n, k) = C(n-1, k-1) + C(n-1, k)."
+            },
+            {
+              "id": "CSCA431-MV-T04-s3",
+              "title": "Useful identities",
+              "kind": "subtopic",
+              "definition": "C(n, k) = C(n, n-k), the sum of all C(n, k) is 2 to the n, and Vandermonde identity."
+            },
+            {
+              "id": "CSCA431-MV-T04-s4",
+              "title": "Multinomial coefficients and theorem",
+              "kind": "subtopic",
+              "definition": "Counting arrangements of objects of several types, and the expansion of a sum of several terms."
+            },
+            {
+              "id": "CSCA431-MV-T04-s5",
+              "title": "Applications of counting",
+              "kind": "subtopic",
+              "definition": "Probability of card and dice outcomes, password strength, seat allocation and algorithm analysis."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

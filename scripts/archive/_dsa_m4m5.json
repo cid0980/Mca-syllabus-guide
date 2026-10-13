@@ -1,0 +1,435 @@
+[
+  {
+    "module": "IV",
+    "title": "Algorithm Design Techniques: Divide and Conquer, Greedy Method",
+    "topics": [
+      {
+        "id": "CSCA411-M4-01",
+        "title": "Divide and Conquer: General Method",
+        "kind": "topic",
+        "definition": "Divide and conquer solves a problem by splitting it into smaller instances of the same problem, solving them recursively, and combining their answers.",
+        "children": [
+          { "id": "CSCA411-M4-01-s1", "title": "Divide step", "kind": "subtopic", "definition": "Break the input of size n into two or more smaller subproblems, usually of about half the size." },
+          { "id": "CSCA411-M4-01-s2", "title": "Conquer step", "kind": "subtopic", "definition": "Solve each subproblem recursively, or directly if it is small enough to be a base case." },
+          { "id": "CSCA411-M4-01-s3", "title": "Combine step", "kind": "subtopic", "definition": "Merge the subproblem solutions into the solution of the original problem." },
+          { "id": "CSCA411-M4-01-s4", "title": "Control abstraction", "kind": "subtopic", "definition": "A single skeleton - divide, recurse, combine - that describes every divide and conquer algorithm; only the split and merge rules change." },
+          { "id": "CSCA411-M4-01-s5", "title": "Recurrence relation", "kind": "subtopic", "definition": "The cost is written as T(n) = aT(n/b) + f(n), where a is the number of subproblems, b the shrink factor and f(n) the combine cost." },
+          { "id": "CSCA411-M4-01-s6", "title": "Classic examples", "kind": "subtopic", "definition": "Binary search, merge sort, quick sort, and multiplication of large numbers (Strassen's matrix multiplication)." }
+        ],
+        "card": {
+          "explanation": "The idea is old and simple: a hard problem of size n is broken into similar problems that are easier, and their answers are glued back together. Because the subproblems are of the same kind, recursion expresses the algorithm naturally, and the cost is captured by a recurrence like T(n) = 2T(n/2) + n. Splitting into halves is popular because the depth of recursion then becomes log n, which keeps the total cost low. The technique pays off when combining partial answers is cheaper than solving the whole problem directly.",
+          "example": "Finding the heaviest student in a class: split the class into two halves, find the heaviest in each half, then compare those two - the subproblems are smaller versions of the same job.",
+          "quiz": [
+            { "q": "The general recurrence for a divide and conquer algorithm is:", "options": ["T(n) = T(n - 1) + 1", "T(n) = aT(n/b) + f(n)", "T(n) = nT(n)", "T(n) = T(n) + f(n)"], "answer": 1, "why": "It has a subproblems of size n/b each, plus f(n) work to divide and combine." },
+            { "q": "Which step of divide and conquer is usually the most expensive?", "options": ["Divide", "Conquer", "Combine", "Base case"], "answer": 2, "why": "Merging the partial solutions often dominates, as in merge sort's linear merge." }
+          ],
+          "examTip": "Write the three steps and the general recurrence as the first three lines of any divide and conquer answer; the rest of the marks follow from applying them.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-02",
+        "title": "Binary Search as Divide and Conquer",
+        "kind": "topic",
+        "definition": "Binary search finds a key in a sorted array by comparing it with the middle element and discarding the half that cannot contain it.",
+        "children": [
+          { "id": "CSCA411-M4-02-s1", "title": "Precondition of sorted data", "kind": "subtopic", "definition": "The array must be sorted, otherwise discarding a half is not valid." },
+          { "id": "CSCA411-M4-02-s2", "title": "Recursive procedure", "kind": "subtopic", "definition": "Compare the key with a[mid]; if it is equal return, if smaller recurse on the left half, if larger recurse on the right half." },
+          { "id": "CSCA411-M4-02-s3", "title": "Iterative procedure", "kind": "subtopic", "definition": "Use low and high indices in a loop, updating them with mid - 1 or mid + 1, which avoids recursion stack overhead." },
+          { "id": "CSCA411-M4-02-s4", "title": "Analysis", "kind": "subtopic", "definition": "The recurrence is T(n) = T(n/2) + 1, giving O(log n) comparisons in the worst case and O(1) space iteratively." },
+          { "id": "CSCA411-M4-02-s5", "title": "Comparison with linear search", "kind": "subtopic", "definition": "Binary search is far faster for large sorted data, but it requires sorted input and does not work on linked lists efficiently." }
+        ],
+        "card": {
+          "explanation": "Each comparison with the middle element eliminates half of the remaining items, so the search space shrinks from n to n/2, n/4 and so on until one element is left. That halving is why the cost is logarithmic - a million sorted records need only about twenty comparisons. The recursive and iterative versions are logically identical, but the iterative one avoids function call overhead. The sorted precondition is not optional: on unsorted data the algorithm silently returns wrong answers.",
+          "example": "Looking up a word in a dictionary: you open the middle, decide which half the word lies in, and repeat - never reading every page.",
+          "quiz": [
+            { "q": "Worst case time complexity of binary search is:", "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"], "answer": 1, "why": "The search space halves at every comparison, so the number of steps is logarithmic." },
+            { "q": "Binary search cannot be used on:", "options": ["a sorted array", "an unsorted array", "a sorted list of numbers", "a sorted list of strings"], "answer": 1, "why": "Discarding a half is only valid when the data is ordered." }
+          ],
+          "examTip": "Write the recurrence T(n) = T(n/2) + 1 and solve it in two lines - the derivation earns more marks than the final O(log n).",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-03",
+        "title": "Merge Sort",
+        "kind": "topic",
+        "definition": "Merge sort divides the array into two halves, sorts each half recursively and merges the two sorted halves into one sorted array.",
+        "children": [
+          { "id": "CSCA411-M4-03-s1", "title": "Divide and merge steps", "kind": "subtopic", "definition": "Split the array at the middle, sort both halves recursively, then merge them by repeatedly taking the smaller of the two current elements." },
+          { "id": "CSCA411-M4-03-s2", "title": "Recurrence and analysis", "kind": "subtopic", "definition": "T(n) = 2T(n/2) + n gives O(n log n) in the best, average and worst cases." },
+          { "id": "CSCA411-M4-03-s3", "title": "Space complexity", "kind": "subtopic", "definition": "The merge step needs an auxiliary array of size n, so merge sort is O(n) in extra space and is not in-place." },
+          { "id": "CSCA411-M4-03-s4", "title": "Stability of merge sort", "kind": "subtopic", "definition": "Equal elements keep their original relative order, which matters when sorting records by one field at a time." },
+          { "id": "CSCA411-M4-03-s5", "title": "Applications", "kind": "subtopic", "definition": "External sorting of files too large for memory, sorting linked lists, and counting inversions or other divide and conquer variants." }
+        ],
+        "card": {
+          "explanation": "Merge sort trusts recursion completely: it sorts the left half, sorts the right half, and then assumes only one thing - how to merge two already sorted lists. Merging is easy and linear, comparing the front elements of both lists and always taking the smaller. Because the split is always at the middle, the recursion depth is exactly log n and every level does O(n) merging work, giving O(n log n) in every case. The price is the extra array needed for merging, and the benefit is guaranteed speed with stable output.",
+          "example": "Two teachers each sort half of the answer sheets, then one helper merges the two sorted piles by always picking the smaller top roll number.",
+          "quiz": [
+            { "q": "Time complexity of merge sort in the worst case is:", "options": ["O(n)", "O(n log n)", "O(n squared)", "O(log n)"], "answer": 1, "why": "Each of the log n levels performs O(n) merging work." },
+            { "q": "The main drawback of merge sort compared with quick sort is:", "options": ["It is unstable", "It needs O(n) extra space", "It works only on integers", "It has quadratic worst case"], "answer": 1, "why": "Merging requires an auxiliary array, so it is not an in-place sort." }
+          ],
+          "examTip": "Trace a small array through the recursion tree and show the merge at each level - the tree plus the merge lines is the expected answer format.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-04",
+        "title": "Quick Sort",
+        "kind": "topic",
+        "definition": "Quick sort picks an element as pivot, partitions the array so that smaller elements go left and larger go right, and then sorts both parts recursively.",
+        "children": [
+          { "id": "CSCA411-M4-04-s1", "title": "Pivot selection", "kind": "subtopic", "definition": "The pivot may be the first, last, middle or a random element; random or median-of-three choices avoid the worst case." },
+          { "id": "CSCA411-M4-04-s2", "title": "Partition algorithm", "kind": "subtopic", "definition": "Two pointers move inwards, swapping misplaced elements until they cross, after which the pivot is placed at its final position." },
+          { "id": "CSCA411-M4-04-s3", "title": "Best, average and worst case", "kind": "subtopic", "definition": "Balanced partitions give O(n log n), while a very unbalanced split such as always picking the smallest element gives O(n squared)." },
+          { "id": "CSCA411-M4-04-s4", "title": "In-place and unstable", "kind": "subtopic", "definition": "Quick sort uses only O(log n) space for recursion and needs no extra array, but equal elements may change relative order." },
+          { "id": "CSCA411-M4-04-s5", "title": "Merge sort versus quick sort", "kind": "subtopic", "definition": "Quick sort is usually faster in practice and works in place, while merge sort guarantees O(n log n) and is stable but needs extra space." }
+        ],
+        "card": {
+          "explanation": "Quick sort does its heavy work before the recursion, not after: partitioning places the pivot exactly where it belongs and separates smaller from larger elements. If each partition splits the array reasonably evenly, the depth of recursion is log n and each level costs n comparisons, giving O(n log n). A bad pivot, as when the array is already sorted and you always pick the end element, creates partitions of size 0 and n - 1, which degrades to O(n squared). Choosing a random or median pivot makes that worst case very unlikely in practice.",
+          "example": "Sorting a stack of exam papers by grade: pick one paper as a reference, place better papers on one side and weaker ones on the other, then repeat on each pile.",
+          "quiz": [
+            { "q": "Worst case time complexity of quick sort is:", "options": ["O(n log n)", "O(n squared)", "O(n)", "O(log n)"], "answer": 1, "why": "Extremely unbalanced partitions make the recursion depth n with linear work per level." },
+            { "q": "The pivot in quick sort ends up:", "options": ["at the beginning of the array", "in its final sorted position", "in the middle always", "removed from the array"], "answer": 1, "why": "Partitioning puts every smaller element on the left and larger on the right, which fixes the pivot's place." }
+          ],
+          "examTip": "Show the partition step with two pointers and state when the worst case occurs - the reason (already sorted input with an end pivot) is the marked part.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-05",
+        "title": "Analysis of Recursive and Non-recursive Algorithms, Solving Recurrences",
+        "kind": "topic",
+        "definition": "The cost of a recursive algorithm is expressed as a recurrence relation, and solving that recurrence gives its time complexity.",
+        "children": [
+          { "id": "CSCA411-M4-05-s1", "title": "Step count of a non-recursive algorithm", "kind": "subtopic", "definition": "Count the basic operations as a function of input size, then keep only the highest order term." },
+          { "id": "CSCA411-M4-05-s2", "title": "Setting up a recurrence", "kind": "subtopic", "definition": "Relate the cost of size n to the cost of smaller sizes plus the non-recursive work, and state the base case." },
+          { "id": "CSCA411-M4-05-s3", "title": "Substitution or back substitution method", "kind": "subtopic", "definition": "Repeatedly expand the recurrence, spot the pattern, and sum the resulting series." },
+          { "id": "CSCA411-M4-05-s4", "title": "Recursion tree method", "kind": "subtopic", "definition": "Draw one node per subproblem with its cost, then total the cost level by level and multiply by the number of levels." },
+          { "id": "CSCA411-M4-05-s5", "title": "Master theorem", "kind": "subtopic", "definition": "For T(n) = aT(n/b) + f(n), compare f(n) with n raised to log base b of a to read the answer directly in one of three cases." },
+          { "id": "CSCA411-M4-05-s6", "title": "Standard results to remember", "kind": "subtopic", "definition": "T(n) = T(n/2) + 1 gives log n; T(n) = 2T(n/2) + n gives n log n; T(n) = T(n - 1) + 1 gives n." }
+        ],
+        "card": {
+          "explanation": "Recursive algorithms are analysed by writing down what they cost, not by running them: the recurrence captures both the recursive calls and the work done outside them. Back substitution is the simplest manual method - expand a few steps, see the pattern, and sum the series - while the recursion tree shows the same thing as a picture of costs per level. The master theorem shortcuts all of it for the common shape T(n) = aT(n/b) + f(n) by comparing the combine cost with the growth of the subproblems. Exam questions usually expect one of these three methods plus the final O result.",
+          "example": "Merge sort costs n work per level and there are log n levels, so the recursion tree is n wide at each of log n rows - total n log n.",
+          "quiz": [
+            { "q": "Solving T(n) = 2T(n/2) + n gives:", "options": ["O(n)", "O(n log n)", "O(n squared)", "O(log n)"], "answer": 1, "why": "Each of log n levels contributes n units of work." },
+            { "q": "The recursion tree method summarises an algorithm by:", "options": ["running the code", "totalling cost level by level", "sorting the input", "counting variables"], "answer": 1, "why": "Each level's total cost is added and multiplied by the number of levels." }
+          ],
+          "examTip": "Always state the base case along with the recurrence - a recurrence without its base case is considered incomplete.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-06",
+        "title": "Greedy Method: General Method",
+        "kind": "topic",
+        "definition": "The greedy method builds a solution step by step, always taking the choice that looks best at that moment, and never undoing a choice.",
+        "children": [
+          { "id": "CSCA411-M4-06-s1", "title": "Feasible and optimal solution", "kind": "subtopic", "definition": "A feasible solution satisfies all the constraints; the optimal solution is the feasible one with the best objective value." },
+          { "id": "CSCA411-M4-06-s2", "title": "Objective function and constraints", "kind": "subtopic", "definition": "The objective function measures quality (profit, cost, distance) while constraints fix what is allowed." },
+          { "id": "CSCA411-M4-06-s3", "title": "Selection procedure", "kind": "subtopic", "definition": "A rule picks the next item to consider, for example highest profit, lowest weight or best profit-to-weight ratio." },
+          { "id": "CSCA411-M4-06-s4", "title": "Greedy choice property and optimal substructure", "kind": "subtopic", "definition": "The method succeeds only when a locally best choice can be part of a globally optimal solution and the problem has optimal substructure." },
+          { "id": "CSCA411-M4-06-s5", "title": "Control abstraction of the greedy method", "kind": "subtopic", "definition": "Start with an empty solution, repeatedly select the next best candidate, add it if it keeps the solution feasible, and stop when done." },
+          { "id": "CSCA411-M4-06-s6", "title": "Greedy versus dynamic programming", "kind": "subtopic", "definition": "Greedy makes one irreversible choice per step and is faster, while dynamic programming examines all choices and is needed when greedy fails, as in 0/1 knapsack." }
+        ],
+        "card": {
+          "explanation": "The greedy method is attractive because it is simple and fast: there is no backtracking and no table of subresults, just a loop of locally best choices. That speed is only correct when the problem has the greedy choice property - taking the best-looking item now must never destroy the chance of the best overall answer. Fractional knapsack, minimum spanning trees, Huffman coding and Dijkstra's algorithm all satisfy it. Problems like 0/1 knapsack do not, and there a greedy choice can be clearly wrong, which is why dynamic programming is used instead.",
+          "example": "Withdrawing the fewest notes from an ATM: take the largest note that still fits the amount, repeat, and you end up with the minimum number of notes.",
+          "quiz": [
+            { "q": "The greedy method makes decisions that are:", "options": ["always globally optimal", "locally best and never reversed", "chosen randomly", "made after full search"], "answer": 1, "why": "It commits to the best available option at each step without backtracking." },
+            { "q": "Which problem cannot be solved correctly by a greedy choice alone?", "options": ["Fractional knapsack", "0/1 knapsack", "Huffman coding", "Minimum spanning tree"], "answer": 1, "why": "An item must be taken whole or not at all, so a locally attractive choice can block the optimum." }
+          ],
+          "examTip": "List the five greedy elements (candidate set, selection function, feasibility check, objective function, solution function) - this is a standard, mark-heavy question.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-07",
+        "title": "Fractional Knapsack Problem (Greedy)",
+        "kind": "topic",
+        "definition": "In the fractional knapsack problem, items can be cut, so the greedy rule of taking the highest profit-to-weight ratio first gives the optimal answer.",
+        "children": [
+          { "id": "CSCA411-M4-07-s1", "title": "Problem statement", "kind": "subtopic", "definition": "Fill a knapsack of capacity M from n items with given weights and profits, maximising total profit when fractions of items are allowed." },
+          { "id": "CSCA411-M4-07-s2", "title": "Profit to weight ratio rule", "kind": "subtopic", "definition": "Compute pi/wi for each item, sort in decreasing order and take as much as possible of each item in that order." },
+          { "id": "CSCA411-M4-07-s3", "title": "Worked greedy steps", "kind": "subtopic", "definition": "Take whole items while they fit, and take only the fraction that fills the remaining capacity of the last item." },
+          { "id": "CSCA411-M4-07-s4", "title": "Why greedy is optimal here", "kind": "subtopic", "definition": "Because items are divisible, filling the knapsack with the best ratio per unit weight leaves no wasted capacity, so no exchange can improve the answer." },
+          { "id": "CSCA411-M4-07-s5", "title": "Time complexity", "kind": "subtopic", "definition": "Dominated by sorting the items: O(n log n)." }
+        ],
+        "card": {
+          "explanation": "The fractional version is easy because cutting items lets you fill every last unit of capacity with whatever is most valuable per kilogram. So you sort items by profit divided by weight, take whole items while they fit, and take a fraction of the item that crosses the capacity line. This exchange argument - any solution that does not follow the ratio order can be improved - proves the greedy answer is optimal. The problem becomes genuinely hard only when items are indivisible, which is the 0/1 knapsack of dynamic programming.",
+          "example": "Filling a 5 kg shopping bag with rice, dal and ghee: pack the item with the best value per kilogram first, and if the bag is nearly full, take only the quantity that fits.",
+          "quiz": [
+            { "q": "The greedy criterion for fractional knapsack is:", "options": ["highest weight first", "highest profit first", "highest profit-to-weight ratio first", "smallest weight last"], "answer": 2, "why": "Ratio ordering maximises value per unit of capacity, which is optimal when fractions are allowed." },
+            { "q": "Complexity of the fractional knapsack algorithm is:", "options": ["O(n)", "O(n log n)", "O(n squared)", "O(2^n)"], "answer": 1, "why": "Sorting by ratio dominates the linear fill that follows." }
+          ],
+          "examTip": "Show the sorted ratio table, then fill step by step and state the final profit - and mention that greedy works only because items are divisible.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-08",
+        "title": "Greedy Algorithms on Graphs: Prim, Kruskal and Dijkstra",
+        "kind": "topic",
+        "definition": "The same greedy idea powers three classic graph algorithms: Prim and Kruskal for minimum spanning trees and Dijkstra for single source shortest paths.",
+        "children": [
+          { "id": "CSCA411-M4-08-s1", "title": "Greedy view of Prim's algorithm", "kind": "subtopic", "definition": "Grow one tree by always adding the cheapest edge that leaves the current tree." },
+          { "id": "CSCA411-M4-08-s2", "title": "Greedy view of Kruskal's algorithm", "kind": "subtopic", "definition": "Sort edges globally by weight and add the cheapest edge that does not create a cycle, using union-find to test." },
+          { "id": "CSCA411-M4-08-s3", "title": "Greedy view of Dijkstra's algorithm", "kind": "subtopic", "definition": "Finalise the unfinalised vertex with the smallest tentative distance and relax its neighbours, so each step locks one shortest distance." },
+          { "id": "CSCA411-M4-08-s4", "title": "Single source shortest path", "kind": "subtopic", "definition": "Distances from one source to all vertices, computed correctly when all edge weights are non-negative." },
+          { "id": "CSCA411-M4-08-s5", "title": "Complexity comparison", "kind": "subtopic", "definition": "Prim O(V squared) or O(E log V), Kruskal O(E log E), Dijkstra O(V squared) or O((V+E) log V) with a heap." }
+        ],
+        "card": {
+          "explanation": "All three algorithms look locally optimal yet produce globally optimal results, and the reason in each case is a cutting argument. Prim's tree can never be improved by a cheaper edge crossing the cut, Kruskal's sorted edge list cannot be improved by any lighter edge that avoids a cycle, and Dijkstra's finalised distance cannot be beaten because all remaining paths already cost more. The shared structure is a loop that repeatedly extracts the best remaining candidate - which is why a priority queue is the natural implementation. Note that Dijkstra, unlike the other two, requires non-negative weights.",
+          "example": "Planning fibre links between campus buildings (Prim), picking the cheapest cable contracts overall (Kruskal), and finding the fastest route from your hostel to the department (Dijkstra).",
+          "quiz": [
+            { "q": "Which of these three algorithms fails with negative edge weights?", "options": ["Prim's", "Kruskal's", "Dijkstra's", "None of them"], "answer": 2, "why": "Dijkstra finalises vertices greedily, which a negative edge could later contradict." },
+            { "q": "Kruskal's algorithm uses which structure to detect cycles efficiently?", "options": ["Stack", "Union-find (disjoint set)", "Queue", "Hash table"], "answer": 1, "why": "Union-find tells in almost constant time whether two endpoints are already connected." }
+          ],
+          "examTip": "Compare the three in one table - problem solved, greedy rule, data structure used and complexity - since most questions ask for exactly this comparison.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-09",
+        "title": "Scheduling: Job Sequencing with Deadlines",
+        "kind": "topic",
+        "definition": "Job sequencing with deadlines arranges unit-time jobs with profits and deadlines so that the total profit of jobs completed in time is maximum.",
+        "children": [
+          { "id": "CSCA411-M4-09-s1", "title": "Problem statement", "kind": "subtopic", "definition": "Each job takes one unit of time, must finish by its deadline and earns a profit; jobs that miss the deadline earn nothing." },
+          { "id": "CSCA411-M4-09-s2", "title": "Greedy rule", "kind": "subtopic", "definition": "Sort jobs in decreasing order of profit and place each job in the latest free slot before its deadline." },
+          { "id": "CSCA411-M4-09-s3", "title": "Feasibility check", "kind": "subtopic", "definition": "A set of jobs is feasible if they can all be scheduled within their deadlines; scanning slots from the deadline backwards keeps it feasible." },
+          { "id": "CSCA411-M4-09-s4", "title": "Worked example", "kind": "subtopic", "definition": "For jobs with profits 100, 50, 40 and deadlines 2, 1, 2, the greedy order takes the first and third, giving a total profit of 140." },
+          { "id": "CSCA411-M4-09-s5", "title": "Time complexity", "kind": "subtopic", "definition": "O(n log n) for the sort plus up to O(n squared) for slot searching, which can be reduced with union-find." }
+        ],
+        "card": {
+          "explanation": "This problem is about limited time, so the greedy measure is profit rather than ratio: consider the most profitable job first. Each job must be placed somewhere, and putting it as late as possible keeps earlier slots free for others, which is what preserves feasibility. If no free slot exists before the deadline, that job is simply dropped. The sorted job order plus the latest-possible-slot rule produces an optimal schedule for unit-time jobs.",
+          "example": "Exam week with four submissions due on different days and different credit weights: do the highest-weight submission first, and each one as late as its deadline allows so urgent small ones can fit in.",
+          "quiz": [
+            { "q": "In job sequencing with deadlines, jobs are considered in order of:", "options": ["arrival time", "increasing deadline", "decreasing profit", "shortest processing time"], "answer": 2, "why": "Greedy picks the most profitable job first and then finds it a feasible slot." },
+            { "q": "A job is rejected during the greedy scan when:", "options": ["its profit is low", "no free slot exists before its deadline", "it is the last job", "its deadline is the largest"], "answer": 1, "why": "Without a free slot in time it cannot be scheduled, so it is discarded." }
+          ],
+          "examTip": "Draw the timeline of slots and mark each chosen job with its deadline - the timeline diagram is the answer examiners look for.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M4-10",
+        "title": "Huffman Coding",
+        "kind": "topic",
+        "definition": "Huffman coding builds an optimal binary tree in which frequently used characters get short codes and rare characters get long codes, reducing file size.",
+        "children": [
+          { "id": "CSCA411-M4-10-s1", "title": "Fixed length versus variable length codes", "kind": "subtopic", "definition": "Fixed length codes use the same number of bits for every character; variable length codes assign fewer bits to frequent characters." },
+          { "id": "CSCA411-M4-10-s2", "title": "Prefix code property", "kind": "subtopic", "definition": "No code is a prefix of another, which makes decoding unambiguous without separators." },
+          { "id": "CSCA411-M4-10-s3", "title": "Building the Huffman tree", "kind": "subtopic", "definition": "Put all characters in a min-heap by frequency; repeatedly remove the two smallest, join them under a new node whose frequency is their sum, and continue until one tree remains." },
+          { "id": "CSCA411-M4-10-s4", "title": "Assigning codes and decoding", "kind": "subtopic", "definition": "Label left edges 0 and right edges 1; a character's code is the path from the root, and decoding walks the same tree from the root." },
+          { "id": "CSCA411-M4-10-s5", "title": "Complexity and applications", "kind": "subtopic", "definition": "O(n log n) with a heap; used in file compression such as ZIP, in image formats and in data transmission." }
+        ],
+        "card": {
+          "explanation": "Huffman coding exploits the fact that in normal text some letters appear far more often than others, so giving every letter eight bits wastes space. The greedy rule merges the two least frequent characters at every step, which pushes rare characters deeper into the tree and frequent ones closer to the root. The result is a prefix code, so the 0 and 1 path to each character is unambiguous and no separator is needed. Because the greedy merge is provably optimal, no other prefix code gives a shorter average length for the same frequencies.",
+          "example": "In an SMS, letters like e and a get short codes while z and q get long ones, so the same message needs fewer bits overall.",
+          "quiz": [
+            { "q": "In Huffman coding, the two nodes combined at each step are the ones with:", "options": ["highest frequency", "lowest frequency", "longest code", "equal frequency"], "answer": 1, "why": "Merging the rarest characters first pushes them deepest into the tree, which minimises total code length." },
+            { "q": "A prefix code means:", "options": ["every code has equal length", "no code is a prefix of another code", "codes start with 1", "codes are sorted"], "answer": 1, "why": "This property makes decoding unambiguous while reading bits one at a time." }
+          ],
+          "examTip": "Show the frequency-sorted list, then every merge step in order and the final codes in a table - the merge order itself carries most of the marks.",
+          "verified": false
+        }
+      }
+    ]
+  },
+  {
+    "module": "V",
+    "title": "Dynamic Programming, Backtracking and Complexity Classes",
+    "topics": [
+      {
+        "id": "CSCA411-M5-01",
+        "title": "Dynamic Programming: General Method",
+        "kind": "topic",
+        "definition": "Dynamic programming solves a problem by storing the answers to overlapping subproblems and reusing them instead of recomputing.",
+        "children": [
+          { "id": "CSCA411-M5-01-s1", "title": "Overlapping subproblems", "kind": "subtopic", "definition": "The same smaller problem is needed again and again, so recomputing it wastes time." },
+          { "id": "CSCA411-M5-01-s2", "title": "Optimal substructure", "kind": "subtopic", "definition": "An optimal solution contains optimal solutions of its subproblems, so small answers can be combined into the big one." },
+          { "id": "CSCA411-M5-01-s3", "title": "Principle of optimality", "kind": "subtopic", "definition": "Whatever the first decision, the remaining decisions must be optimal for the state that results from it." },
+          { "id": "CSCA411-M5-01-s4", "title": "Memoization (top-down)", "kind": "subtopic", "definition": "Write the recursion naturally but cache each computed result, so repeated calls return from the table." },
+          { "id": "CSCA411-M5-01-s5", "title": "Tabulation (bottom-up)", "kind": "subtopic", "definition": "Fill a table iteratively from the smallest subproblems upward, which avoids recursion overhead." },
+          { "id": "CSCA411-M5-01-s6", "title": "Dynamic programming versus greedy and divide and conquer", "kind": "subtopic", "definition": "Unlike greedy it considers all choices, and unlike plain divide and conquer it reuses results of overlapping subproblems instead of solving them again." }
+        ],
+        "card": {
+          "explanation": "Dynamic programming is the answer when a problem has two features: the best overall solution is built from best solutions of smaller pieces, and those smaller pieces keep repeating. A plain recursive solution would recompute the same states exponentially many times, while dynamic programming computes each state once and looks it up afterwards. Memoization does that lazily from the top with the recursion kept as it is, and tabulation does it eagerly from the bottom with loops. The cost is memory for the table, and the reward is turning exponential recursion into polynomial time.",
+          "example": "Climbing a staircase of 10 steps taking 1 or 2 steps at a time: the number of ways to reach step 8 and step 9 is reused to find step 10, instead of counting from scratch each time.",
+          "quiz": [
+            { "q": "Dynamic programming is preferred when a problem has:", "options": ["no recursion", "overlapping subproblems and optimal substructure", "negative weights", "no solution"], "answer": 1, "why": "These two properties let stored subproblem answers be combined into the optimum." },
+            { "q": "Memoization differs from tabulation because it:", "options": ["uses a table", "works top-down and caches results lazily", "is always iterative", "ignores subproblems"], "answer": 1, "why": "Memoization keeps recursion but stores answers the first time they are computed." }
+          ],
+          "examTip": "State the principle of optimality in the very first line, then write the recurrence and the table - this sequence matches the expected answer format.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-02",
+        "title": "0/1 Knapsack Using Dynamic Programming",
+        "kind": "topic",
+        "definition": "In the 0/1 knapsack problem each item must be taken whole or left behind, so dynamic programming is used to choose the most profitable subset within the weight limit.",
+        "children": [
+          { "id": "CSCA411-M5-02-s1", "title": "Problem statement", "kind": "subtopic", "definition": "Choose a subset of n items with weights wi and profits pi such that the total weight does not exceed capacity M and the total profit is maximum." },
+          { "id": "CSCA411-M5-02-s2", "title": "Recurrence relation", "kind": "subtopic", "definition": "dp[i][w] = max(dp[i-1][w], pi + dp[i-1][w - wi]) when the item fits, otherwise dp[i][w] = dp[i-1][w]." },
+          { "id": "CSCA411-M5-02-s3", "title": "Table construction", "kind": "subtopic", "definition": "Build a table with items as rows and capacities as columns, filling each cell from the cell above and the cell above-left." },
+          { "id": "CSCA411-M5-02-s4", "title": "Backtracking the chosen items", "kind": "subtopic", "definition": "Walk back through the table: an item was included if the value differs from the row above, which reconstructs the optimal subset." },
+          { "id": "CSCA411-M5-02-s5", "title": "Time and space complexity", "kind": "subtopic", "definition": "O(nW) time and O(nW) space, reducible to O(W) space by keeping only one row; this is pseudo-polynomial, not polynomial in the input size." },
+          { "id": "CSCA411-M5-02-s6", "title": "Contrast with fractional knapsack", "kind": "subtopic", "definition": "Greedy by ratio fails here because an attractive item may leave no room for a better combination later." }
+        ],
+        "card": {
+          "explanation": "Because an item cannot be cut, every decision is a yes-or-no choice, and a locally attractive greedy pick can spoil the remaining capacity - so all choices are explored and remembered. The state is simply 'best profit using the first i items with capacity w', and each cell either leaves the item out or includes it and adds the column shifted left by its weight. Filling the table row by row writes every one of those answers exactly once, and the last cell holds the maximum profit. Walking backwards through the table tells you which items were actually chosen.",
+          "example": "Packing a 3 kg travel bag from items with weights 2, 2 and 3 kg and values 4, 5 and 6 - taking the 2 kg plus 1 kg is impossible because nothing can be cut, so the DP table compares whole combinations.",
+          "quiz": [
+            { "q": "The 0/1 knapsack recurrence for an item that fits is:", "options": ["dp[i][w] = pi + dp[i][w - wi]", "dp[i][w] = max(dp[i-1][w], pi + dp[i-1][w - wi])", "dp[i][w] = dp[i-1][w - wi]", "dp[i][w] = wi + pi"], "answer": 1, "why": "Either exclude the item, or include it and add the best of the remaining capacity from the previous row." },
+            { "q": "The complexity of the dynamic programming knapsack is:", "options": ["O(n log n)", "O(nW)", "O(2^n)", "O(W squared)"], "answer": 1, "why": "The table has n rows and W columns, each filled in constant time." }
+          ],
+          "examTip": "Draw the full dp table with rows as items and columns as capacities, then mark the included items by back-tracing - a table without the trace-back loses marks.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-03",
+        "title": "Travelling Salesman Problem",
+        "kind": "topic",
+        "definition": "The travelling salesman problem asks for the shortest tour that visits every city exactly once and returns to the starting city.",
+        "children": [
+          { "id": "CSCA411-M5-03-s1", "title": "Problem statement", "kind": "subtopic", "definition": "Given a cost matrix between n cities, find a Hamiltonian cycle of minimum total cost." },
+          { "id": "CSCA411-M5-03-s2", "title": "Brute force and its cost", "kind": "subtopic", "definition": "Trying every tour needs (n - 1)! permutations, so even fifteen cities are beyond brute force." },
+          { "id": "CSCA411-M5-03-s3", "title": "Dynamic programming formulation", "kind": "subtopic", "definition": "Solve subproblems defined by 'shortest path from city 1 to city j visiting exactly the set S of cities', storing them by (j, S)." },
+          { "id": "CSCA411-M5-03-s4", "title": "Complexity of the Held-Karp method", "kind": "subtopic", "definition": "O(n squared times 2^n) time and O(n times 2^n) space, which is far better than factorial but still exponential." },
+          { "id": "CSCA411-M5-03-s5", "title": "TSP is NP-hard", "kind": "subtopic", "definition": "No polynomial time algorithm is known, so in practice approximation and heuristic methods are used." },
+          { "id": "CSCA411-M5-03-s6", "title": "Applications", "kind": "subtopic", "definition": "Delivery route planning, circuit board drilling, school bus routing and warehouse picking." }
+        ],
+        "card": {
+          "explanation": "The TSP is deceptively small: visiting every city once is easy, but visiting them in the cheapest order means comparing an astronomical number of tours. Dynamic programming improves the search dramatically by noticing that what matters for the future is which cities remain and where you currently are, not the exact order already travelled. That shrinks the problem into states of the form 'current city plus set of visited cities', which is exponential but far smaller than factorial. Even so, no polynomial algorithm is known, which places TSP among the NP-hard problems.",
+          "example": "A delivery van must visit twelve shops and return to the depot; checking every possible order means billions of tours, so routing software uses dynamic programming or heuristics.",
+          "quiz": [
+            { "q": "The number of distinct tours checked by brute force for n cities is about:", "options": ["n squared", "2^n", "(n - 1)!", "n log n"], "answer": 2, "why": "Fixing the start leaves permutations of the remaining n - 1 cities." },
+            { "q": "The dynamic programming state for TSP consists of:", "options": ["only the current city", "current city and the set of visited cities", "the total cost so far only", "the starting city"], "answer": 1, "why": "Those two pieces of information are enough to decide the rest of the tour optimally." }
+          ],
+          "examTip": "Write the recurrence for the (current city, visited set) state and the complexity 2^n - examiners usually give most marks for the state definition, not the numbers.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-04",
+        "title": "Backtracking: General Method",
+        "kind": "topic",
+        "definition": "Backtracking builds a solution one component at a time and abandons a partial solution as soon as it cannot lead to a valid answer.",
+        "children": [
+          { "id": "CSCA411-M5-04-s1", "title": "State space tree", "kind": "subtopic", "definition": "Every partial solution is a node of a tree; the root is the empty solution and the leaves are complete solutions or dead ends." },
+          { "id": "CSCA411-M5-04-s2", "title": "Promising and non-promising nodes", "kind": "subtopic", "definition": "A node is promising if it can still be completed into a valid solution; a non-promising node is pruned immediately." },
+          { "id": "CSCA411-M5-04-s3", "title": "Bounding functions", "kind": "subtopic", "definition": "A bound estimates the best value achievable under a node; if it cannot beat the current best, the whole subtree is skipped." },
+          { "id": "CSCA411-M5-04-s4", "title": "Control abstraction", "kind": "subtopic", "definition": "A recursive loop tries each candidate; if the partial solution is still promising, recurse, otherwise undo the choice and try the next." },
+          { "id": "CSCA411-M5-04-s5", "title": "Applications", "kind": "subtopic", "definition": "n-Queens, graph colouring, Hamiltonian cycle, sum of subsets, sudoku, maze solving and constraint satisfaction problems." }
+        ],
+        "card": {
+          "explanation": "Backtracking is depth first search over the space of partial solutions, with early rejection of hopeless branches - that pruning is what makes it practical. At each step you extend the current partial solution with one more decision, and you stop expanding the moment the constraints are violated. If no decision works, you undo the last one and try another, which is literally 'backtracking'. The state space tree is still exponential in the worst case, but pruning usually makes the explored part far smaller than brute force.",
+          "example": "Filling a sudoku: place a digit in a cell, and if it breaks a row or box rule, immediately erase it and try the next digit instead of finishing the whole grid wrongly.",
+          "quiz": [
+            { "q": "A node in the state space tree is called promising when:", "options": ["it has children", "it can still lead to a valid solution", "it is a leaf", "its cost is lowest"], "answer": 1, "why": "Promising nodes are worth expanding; others are pruned." },
+            { "q": "Backtracking is essentially:", "options": ["breadth first search", "depth first search with pruning", "dynamic programming", "greedy selection"], "answer": 1, "why": "It dives deep into one choice and abandons it as soon as it becomes infeasible." }
+          ],
+          "examTip": "Draw the state space tree with promising nodes marked and pruned branches crossed out - the crossing out is what shows the technique, not the final answer.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-05",
+        "title": "n-Queen Problem",
+        "kind": "topic",
+        "definition": "The n-Queen problem places n queens on an n by n chessboard so that no two queens share a row, a column or a diagonal.",
+        "children": [
+          { "id": "CSCA411-M5-05-s1", "title": "Constraints", "kind": "subtopic", "definition": "One queen per row and column, and no two queens on the same diagonal - which is checked by testing row plus column and row minus column values." },
+          { "id": "CSCA411-M5-05-s2", "title": "Solution as an n-tuple", "kind": "subtopic", "definition": "A solution is written as (x1, x2, ..., xn) where xi is the column of the queen placed in row i, so the row constraint is automatic." },
+          { "id": "CSCA411-M5-05-s3", "title": "Backtracking procedure", "kind": "subtopic", "definition": "Place a queen row by row, test each column for safety, recurse if safe, and remove the queen and try the next column if not." },
+          { "id": "CSCA411-M5-05-s4", "title": "4-Queens example", "kind": "subtopic", "definition": "For n = 4 the solutions are (2, 4, 1, 3) and (3, 1, 4, 2), and the first placement (1, 3, ...) fails and is abandoned." },
+          { "id": "CSCA411-M5-05-s5", "title": "Number of solutions", "kind": "subtopic", "definition": "n = 1 gives 1 solution, n = 2 and n = 3 have none, and the count grows quickly from n = 4 onwards." },
+          { "id": "CSCA411-M5-05-s6", "title": "Complexity", "kind": "subtopic", "definition": "The plain search is factorial in the worst case, but pruning cuts it sharply; the time grows exponentially with n." }
+        ],
+        "card": {
+          "explanation": "The chessboard rules make this a perfect backtracking problem: place queens one row at a time, and reject a column immediately if it is attacked. Because a queen attacks its entire row, column and both diagonals, you only need to check the columns and the two diagonals of the queens already placed. When a row has no safe column left, you undo the previous placement and continue from there - the classic backtrack. The solution is written as a tuple of column numbers, which is compact and lets the row constraint be satisfied for free.",
+          "example": "Arranging four wedding photographers around a square hall so that no two stand in the same line of sight, front-to-back or diagonally.",
+          "quiz": [
+            { "q": "A safe queen placement is tested by checking:", "options": ["only the row", "column and the two diagonals", "only the diagonals", "nothing, since rows differ"], "answer": 1, "why": "Rows are already distinct because one queen is placed per row, so columns and diagonals are checked." },
+            { "q": "How many solutions does the 4-Queens problem have?", "options": ["1", "2", "3", "4"], "answer": 1, "why": "The two solutions are (2,4,1,3) and (3,1,4,2)." }
+          ],
+          "examTip": "Solve the 4-Queens case step by step, drawing the board at each stage and showing at least one pruned branch - that trace is the whole answer.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-06",
+        "title": "Graph Colouring Problem",
+        "kind": "topic",
+        "definition": "Graph colouring assigns colours to vertices so that no two adjacent vertices share a colour, using as few colours as possible.",
+        "children": [
+          { "id": "CSCA411-M5-06-s1", "title": "Chromatic number", "kind": "subtopic", "definition": "The minimum number of colours needed to colour a graph properly, written as the chromatic number of the graph." },
+          { "id": "CSCA411-M5-06-s2", "title": "m-colourability", "kind": "subtopic", "definition": "The decision problem of whether a graph can be coloured with at most m colours." },
+          { "id": "CSCA411-M5-06-s3", "title": "Backtracking approach", "kind": "subtopic", "definition": "Assign colours to vertices one by one, reject a colour that matches a coloured neighbour, backtrack when no colour works for a vertex." },
+          { "id": "CSCA411-M5-06-s4", "title": "Bound on colours", "kind": "subtopic", "definition": "A graph can always be coloured with one more colour than its maximum degree, and by the four colour theorem every planar map needs at most four." },
+          { "id": "CSCA411-M5-06-s5", "title": "Applications", "kind": "subtopic", "definition": "Map colouring, exam timetable and register allocation in compilers, frequency assignment in mobile networks and seating conflict problems." }
+        ],
+        "card": {
+          "explanation": "Colouring is really a conflict problem: vertices that must differ are joined by an edge, and the question is how few categories can separate them all. Backtracking works through the vertices in order, trying colours one at a time and rejecting a colour as soon as a neighbour already uses it. When a vertex has no valid colour, the algorithm backtracks to the previous vertex and changes its colour. The minimum number of colours, the chromatic number, is hard to compute in general, and deciding whether three colours suffice is itself an NP-complete problem.",
+          "example": "Timetable scheduling: courses that share students must not be scheduled in the same time slot, so each time slot behaves like a colour.",
+          "quiz": [
+            { "q": "The chromatic number of a graph is:", "options": ["its number of vertices", "the minimum colours needed for a proper colouring", "its maximum degree", "the number of edges"], "answer": 1, "why": "It is the smallest number of colours such that no adjacent pair shares a colour." },
+            { "q": "In graph colouring, backtracking is used to:", "options": ["sort vertices", "find a proper colouring by undoing bad colour choices", "compute shortest paths", "count edges"], "answer": 1, "why": "When a vertex cannot be coloured, the previous colour assignment is changed." }
+          ],
+          "examTip": "Explain with the map colouring example, then show the backtracking tree for a small graph - state the chromatic number at the end.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-07",
+        "title": "Complexity Classes: P and NP",
+        "kind": "topic",
+        "definition": "P is the class of decision problems solvable in polynomial time, and NP is the class of problems whose proposed solutions can be verified in polynomial time.",
+        "children": [
+          { "id": "CSCA411-M5-07-s1", "title": "Decision problem", "kind": "subtopic", "definition": "A problem whose answer is yes or no, such as 'is there a tour shorter than 500 km?' - the standard form used in complexity theory." },
+          { "id": "CSCA411-M5-07-s2", "title": "Class P", "kind": "subtopic", "definition": "Problems solvable by a deterministic algorithm in time O(n^k), such as sorting, searching and shortest paths." },
+          { "id": "CSCA411-M5-07-s3", "title": "Class NP", "kind": "subtopic", "definition": "Problems for which a given solution can be checked quickly, even if finding it is hard; every P problem is also in NP." },
+          { "id": "CSCA411-M5-07-s4", "title": "The P versus NP question", "kind": "subtopic", "definition": "Whether every problem whose solution can be verified quickly can also be solved quickly; it is open, and most researchers believe P is not equal to NP." },
+          { "id": "CSCA411-M5-07-s5", "title": "Non-deterministic view", "kind": "subtopic", "definition": "NP can be described as problems that a non-deterministic machine guesses and verifies in polynomial time, which is equivalent to the certificate view." }
+        ],
+        "card": {
+          "explanation": "Complexity classes group problems by how their difficulty grows with input size, which lets us say something useful even when an exact algorithm is unknown. P contains the problems we can definitely solve quickly: sorting a list, finding a shortest path, checking whether a number is prime. NP is broader: it allows problems where recognising a correct answer is easy even if discovering it is not, such as checking whether a given tour is shorter than 500 km. Since verifying can never be harder than solving, P is contained in NP, and whether the two are actually equal is the most famous open question in computer science.",
+          "example": "Solving a jigsaw is tedious, but seeing a finished jigsaw and confirming it is correct takes seconds - that gap is exactly the difference between solving and verifying.",
+          "quiz": [
+            { "q": "Class P contains problems that:", "options": ["can only be verified quickly", "can be solved in polynomial time", "have no solution", "need exponential space"], "answer": 1, "why": "P is the set of decision problems solvable in polynomial time by a deterministic algorithm." },
+            { "q": "Which statement is true?", "options": ["P is a subset of NP", "NP is a subset of P", "P and NP are disjoint", "P equals NP"], "answer": 0, "why": "Anything solvable quickly can also be verified quickly, so P is contained in NP." }
+          ],
+          "examTip": "Define decision problem first, then P, then NP, and finish with the containment P within NP - that is the standard five-mark structure.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M5-08",
+        "title": "NP-Hard and NP-Complete Problems",
+        "kind": "topic",
+        "definition": "A problem is NP-hard if every NP problem reduces to it, and NP-complete if it is NP-hard and also belongs to NP.",
+        "children": [
+          { "id": "CSCA411-M5-08-s1", "title": "Polynomial time reduction", "kind": "subtopic", "definition": "Problem A reduces to B if any instance of A can be rewritten as an instance of B in polynomial time, so a solver for B also solves A." },
+          { "id": "CSCA411-M5-08-s2", "title": "NP-hard", "kind": "subtopic", "definition": "A problem is NP-hard when every problem in NP reduces to it; an NP-hard problem need not itself be in NP, and it may be undecidable." },
+          { "id": "CSCA411-M5-08-s3", "title": "NP-complete", "kind": "subtopic", "definition": "A problem that is both in NP and NP-hard - the hardest problems in NP, such as satisfiability, clique, vertex cover and Hamiltonian cycle." },
+          { "id": "CSCA411-M5-08-s4", "title": "Cook's theorem", "kind": "subtopic", "definition": "The satisfiability problem (SAT) was the first problem proved NP-complete, which is why it anchors all further proofs." },
+          { "id": "CSCA411-M5-08-s5", "title": "Dealing with NP-complete problems", "kind": "subtopic", "definition": "Use approximation algorithms, heuristics, branch and bound, or solve restricted special cases in polynomial time." }
+        ],
+        "card": {
+          "explanation": "Once one hard problem is identified, others can be proved hard by translating them into it, which is the idea of reduction. A problem is NP-hard if every NP problem can be transformed into it, meaning an efficient solution would immediately solve all of NP; if it is also in NP itself, it is called NP-complete. Satisfiability is the anchor example from Cook's theorem, and clique, vertex cover, graph colouring, Hamiltonian cycle and TSP follow from it. In practice, NP-complete problems are attacked with approximation, heuristics or branch and bound rather than exact exponential search.",
+          "example": "Timetable clashes, delivery routing and exam scheduling in a college are all NP-complete in general, so colleges use heuristics that give good, not provably optimal, schedules.",
+          "quiz": [
+            { "q": "A problem is NP-complete if it is:", "options": ["NP-hard only", "in NP only", "NP-hard and in NP", "solvable in polynomial time"], "answer": 2, "why": "NP-completeness requires both membership in NP and NP-hardness." },
+            { "q": "Which problem was the first proved NP-complete?", "options": ["Travelling salesman", "Satisfiability (SAT)", "Graph colouring", "Clique"], "answer": 1, "why": "Cook's theorem established SAT as the first NP-complete problem." }
+          ],
+          "examTip": "Define reduction, then NP-hard, then NP-complete, and note that NP-complete means 'NP-hard and in NP' - missing that last clause is the most common mistake.",
+          "verified": false
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,711 @@
+{
+  "generatedAt": "2026-10-13T05:13:19.053Z",
+  "totals": {
+    "subjects": 10,
+    "modules": 50,
+    "topics": 277,
+    "subtopics": 1391,
+    "types": 21,
+    "cards": 51
+  },
+  "subjects": [
+    {
+      "code": "CSCA 411",
+      "subject": "Data Structures and Algorithms",
+      "semester": 1,
+      "counts": {
+        "modules": 5,
+        "topics": 51,
+        "subtopics": 252,
+        "cards": 51
+      },
+      "cardIds": [
+        "CSCA411-M1-01",
+        "CSCA411-M1-02",
+        "CSCA411-M1-03",
+        "CSCA411-M1-04",
+        "CSCA411-M1-05",
+        "CSCA411-M1-06",
+        "CSCA411-M1-07",
+        "CSCA411-M1-08",
+        "CSCA411-M1-09",
+        "CSCA411-M1-10",
+        "CSCA411-M2-01",
+        "CSCA411-M2-02",
+        "CSCA411-M2-03",
+        "CSCA411-M2-04",
+        "CSCA411-M2-05",
+        "CSCA411-M2-06",
+        "CSCA411-M2-07",
+        "CSCA411-M2-08",
+        "CSCA411-M2-09",
+        "CSCA411-M2-10",
+        "CSCA411-M2-11",
+        "CSCA411-M2-12",
+        "CSCA411-M3-01",
+        "CSCA411-M3-02",
+        "CSCA411-M3-03",
+        "CSCA411-M3-04",
+        "CSCA411-M3-05",
+        "CSCA411-M3-06",
+        "CSCA411-M3-07",
+        "CSCA411-M3-08",
+        "CSCA411-M3-09",
+        "CSCA411-M3-10",
+        "CSCA411-M3-11",
+        "CSCA411-M4-01",
+        "CSCA411-M4-02",
+        "CSCA411-M4-03",
+        "CSCA411-M4-04",
+        "CSCA411-M4-05",
+        "CSCA411-M4-06",
+        "CSCA411-M4-07",
+        "CSCA411-M4-08",
+        "CSCA411-M4-09",
+        "CSCA411-M4-10",
+        "CSCA411-M5-01",
+        "CSCA411-M5-02",
+        "CSCA411-M5-03",
+        "CSCA411-M5-04",
+        "CSCA411-M5-05",
+        "CSCA411-M5-06",
+        "CSCA411-M5-07",
+        "CSCA411-M5-08"
+      ],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Foundations: Data Structures, Algorithms and Arrays",
+          "topics": 10,
+          "subtopics": 38,
+          "types": 0,
+          "cards": 10,
+          "cardIds": [
+            "CSCA411-M1-01",
+            "CSCA411-M1-02",
+            "CSCA411-M1-03",
+            "CSCA411-M1-04",
+            "CSCA411-M1-05",
+            "CSCA411-M1-06",
+            "CSCA411-M1-07",
+            "CSCA411-M1-08",
+            "CSCA411-M1-09",
+            "CSCA411-M1-10"
+          ]
+        },
+        {
+          "module": "II",
+          "title": "Linear Structures: Stacks, Queues and Linked Lists",
+          "topics": 12,
+          "subtopics": 51,
+          "types": 6,
+          "cards": 12,
+          "cardIds": [
+            "CSCA411-M2-01",
+            "CSCA411-M2-02",
+            "CSCA411-M2-03",
+            "CSCA411-M2-04",
+            "CSCA411-M2-05",
+            "CSCA411-M2-06",
+            "CSCA411-M2-07",
+            "CSCA411-M2-08",
+            "CSCA411-M2-09",
+            "CSCA411-M2-10",
+            "CSCA411-M2-11",
+            "CSCA411-M2-12"
+          ]
+        },
+        {
+          "module": "III",
+          "title": "Non-linear Structures: Trees and Graphs",
+          "topics": 11,
+          "subtopics": 45,
+          "types": 15,
+          "cards": 11,
+          "cardIds": [
+            "CSCA411-M3-01",
+            "CSCA411-M3-02",
+            "CSCA411-M3-03",
+            "CSCA411-M3-04",
+            "CSCA411-M3-05",
+            "CSCA411-M3-06",
+            "CSCA411-M3-07",
+            "CSCA411-M3-08",
+            "CSCA411-M3-09",
+            "CSCA411-M3-10",
+            "CSCA411-M3-11"
+          ]
+        },
+        {
+          "module": "IV",
+          "title": "Algorithm Design Techniques: Divide and Conquer, Greedy Method",
+          "topics": 10,
+          "subtopics": 53,
+          "types": 0,
+          "cards": 10,
+          "cardIds": [
+            "CSCA411-M4-01",
+            "CSCA411-M4-02",
+            "CSCA411-M4-03",
+            "CSCA411-M4-04",
+            "CSCA411-M4-05",
+            "CSCA411-M4-06",
+            "CSCA411-M4-07",
+            "CSCA411-M4-08",
+            "CSCA411-M4-09",
+            "CSCA411-M4-10"
+          ]
+        },
+        {
+          "module": "V",
+          "title": "Dynamic Programming, Backtracking and Complexity Classes",
+          "topics": 8,
+          "subtopics": 44,
+          "types": 0,
+          "cards": 8,
+          "cardIds": [
+            "CSCA411-M5-01",
+            "CSCA411-M5-02",
+            "CSCA411-M5-03",
+            "CSCA411-M5-04",
+            "CSCA411-M5-05",
+            "CSCA411-M5-06",
+            "CSCA411-M5-07",
+            "CSCA411-M5-08"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CSCA 412",
+      "subject": "Object Oriented Programming",
+      "semester": 1,
+      "counts": {
+        "modules": 5,
+        "topics": 26,
+        "subtopics": 116,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Introduction to C++ and User Defined Functions",
+          "topics": 7,
+          "subtopics": 27,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Object Oriented Concepts, Classes, Overloading and Inheritance",
+          "topics": 7,
+          "subtopics": 34,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Java Applets, Graphics, Files and Collections",
+          "topics": 4,
+          "subtopics": 18,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Event Handling, Applets and AWT",
+          "topics": 5,
+          "subtopics": 21,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Java Swing, Java Beans and Servlets",
+          "topics": 3,
+          "subtopics": 16,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 413",
+      "subject": "Database Management Systems",
+      "semester": 1,
+      "counts": {
+        "modules": 5,
+        "topics": 33,
+        "subtopics": 155,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Introduction and Data Modelling",
+          "topics": 6,
+          "subtopics": 28,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Relational Model, SQL, Design and Normalisation",
+          "topics": 8,
+          "subtopics": 44,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Transaction Processing, Concurrency and Recovery",
+          "topics": 8,
+          "subtopics": 36,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Files, Hashing and Indexing",
+          "topics": 4,
+          "subtopics": 21,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Special Purpose Databases",
+          "topics": 7,
+          "subtopics": 26,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 431",
+      "subject": "Mathematics for Computer Science",
+      "semester": 1,
+      "counts": {
+        "modules": 5,
+        "topics": 21,
+        "subtopics": 120,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Logics and Proofs",
+          "topics": 4,
+          "subtopics": 26,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Basic Structures and Relations",
+          "topics": 5,
+          "subtopics": 28,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Number Theory",
+          "topics": 4,
+          "subtopics": 22,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Algebraic Structures",
+          "topics": 4,
+          "subtopics": 24,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Counting",
+          "topics": 4,
+          "subtopics": 20,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 421",
+      "subject": "Computer Networks",
+      "semester": 2,
+      "counts": {
+        "modules": 5,
+        "topics": 28,
+        "subtopics": 146,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Introduction to Networks and the Physical Layer",
+          "topics": 6,
+          "subtopics": 30,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "The Data Link Layer",
+          "topics": 7,
+          "subtopics": 35,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "The Network Layer",
+          "topics": 4,
+          "subtopics": 24,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "The Transport Protocols",
+          "topics": 4,
+          "subtopics": 23,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "The Application Layer and Network Security",
+          "topics": 7,
+          "subtopics": 34,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 422",
+      "subject": "Operating Systems",
+      "semester": 2,
+      "counts": {
+        "modules": 5,
+        "topics": 27,
+        "subtopics": 148,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Introduction, Processes and CPU Scheduling",
+          "topics": 6,
+          "subtopics": 37,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Process Synchronisation and Deadlocks",
+          "topics": 6,
+          "subtopics": 30,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Memory Management",
+          "topics": 7,
+          "subtopics": 35,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Disk Scheduling, File Systems and Distributed File Systems",
+          "topics": 4,
+          "subtopics": 25,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Case Studies: Linux, Windows, Android and Virtual Machines",
+          "topics": 4,
+          "subtopics": 21,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 423",
+      "subject": "Communication Skills",
+      "semester": 2,
+      "counts": {
+        "modules": 5,
+        "topics": 15,
+        "subtopics": 87,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Communication Concepts and Process",
+          "topics": 4,
+          "subtopics": 17,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Developing Communication Skills: Reading, Writing, Listening and Speaking",
+          "topics": 4,
+          "subtopics": 22,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Interview Techniques and Group Discussion",
+          "topics": 2,
+          "subtopics": 15,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Body Language, Negotiation and Meetings",
+          "topics": 3,
+          "subtopics": 19,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Management Communication and Presentations",
+          "topics": 2,
+          "subtopics": 14,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 432",
+      "subject": "Management Concepts and Strategies",
+      "semester": 3,
+      "counts": {
+        "modules": 5,
+        "topics": 20,
+        "subtopics": 109,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Management Theories, Planning and Strategies",
+          "topics": 5,
+          "subtopics": 26,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Decision Making and Organising",
+          "topics": 5,
+          "subtopics": 26,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Human Resource Management and Development",
+          "topics": 3,
+          "subtopics": 16,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Motivation, Leadership and Communication",
+          "topics": 3,
+          "subtopics": 19,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Controlling, Productivity and Global Management",
+          "topics": 4,
+          "subtopics": 22,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 511",
+      "subject": "Software Engineering",
+      "semester": 3,
+      "counts": {
+        "modules": 5,
+        "topics": 22,
+        "subtopics": 112,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Software Process, Process Models and Requirements Engineering",
+          "topics": 4,
+          "subtopics": 22,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "Software Modelling and Design",
+          "topics": 5,
+          "subtopics": 26,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Software Quality Management",
+          "topics": 5,
+          "subtopics": 24,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Managing Software Projects",
+          "topics": 5,
+          "subtopics": 25,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "Software Reliability and Security",
+          "topics": 3,
+          "subtopics": 15,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    },
+    {
+      "code": "CSCA 512",
+      "subject": "Internet and Web Technologies",
+      "semester": 3,
+      "counts": {
+        "modules": 5,
+        "topics": 34,
+        "subtopics": 167,
+        "cards": 0
+      },
+      "cardIds": [],
+      "modules": [
+        {
+          "module": "I",
+          "title": "Internet Fundamentals and Web Architecture",
+          "topics": 7,
+          "subtopics": 30,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "II",
+          "title": "HTML and CSS for User Interface Design",
+          "topics": 7,
+          "subtopics": 37,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "III",
+          "title": "Introduction to JavaScript",
+          "topics": 8,
+          "subtopics": 39,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "IV",
+          "title": "Advanced JavaScript",
+          "topics": 5,
+          "subtopics": 25,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        },
+        {
+          "module": "V",
+          "title": "PHP and MySQL",
+          "topics": 7,
+          "subtopics": 36,
+          "types": 0,
+          "cards": 0,
+          "cardIds": []
+        }
+      ]
+    }
+  ]
+}

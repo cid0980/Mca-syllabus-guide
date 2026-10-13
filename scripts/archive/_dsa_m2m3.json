@@ -1,0 +1,545 @@
+[
+  {
+    "module": "II",
+    "title": "Linear Structures: Stacks, Queues and Linked Lists",
+    "topics": [
+      {
+        "id": "CSCA411-M2-01",
+        "title": "Stack: Definition and Operations",
+        "kind": "topic",
+        "definition": "A stack is a linear data structure in which insertion and deletion both happen at one end called the top, so the last element added is the first one removed.",
+        "children": [
+          { "id": "CSCA411-M2-01-s1", "title": "LIFO (Last In First Out) principle", "kind": "subtopic", "definition": "The rule that the element pushed last is the element popped first, because the top is the only open end." },
+          { "id": "CSCA411-M2-01-s2", "title": "push operation", "kind": "subtopic", "definition": "Adds a new element on top of the stack by first checking that the stack is not full." },
+          { "id": "CSCA411-M2-01-s3", "title": "pop operation", "kind": "subtopic", "definition": "Removes and returns the top element after checking that the stack is not empty." },
+          { "id": "CSCA411-M2-01-s4", "title": "peek or top operation", "kind": "subtopic", "definition": "Reads the top element without removing it, so the stack stays unchanged." },
+          { "id": "CSCA411-M2-01-s5", "title": "isFull and isEmpty checks", "kind": "subtopic", "definition": "Boundary tests that stop a push into a full stack (overflow) or a pop from an empty stack (underflow)." },
+          { "id": "CSCA411-M2-01-s6", "title": "TOP pointer", "kind": "subtopic", "definition": "A single index that always points to the current top element and is set to -1 for an empty stack." }
+        ],
+        "card": {
+          "explanation": "Both insertion and deletion happen at the same end, the top, so a stack behaves Last In First Out - like a pile of plates where you take the last one placed. push adds at the top, pop removes the top, and peek only reads the top. Before pushing you test isFull, and before popping you test isEmpty, which prevents overflow and underflow errors. One variable named top is enough to manage the whole stack.",
+          "example": "Your phone's back button keeps the pages you visited; pressing back returns you to the most recently opened page first - exactly LIFO.",
+          "quiz": [
+            { "q": "A stack follows which order of access?", "options": ["FIFO - first in first out", "LIFO - last in first out", "Random access by index", "Priority order"], "answer": 1, "why": "Both push and pop act at the top, so the newest element leaves first." },
+            { "q": "Which operation returns the top element without deleting it?", "options": ["pop", "push", "peek", "isFull"], "answer": 2, "why": "peek (also called top) reads the element only; pop is the one that removes it." }
+          ],
+          "examTip": "Draw the stack as a vertical column with the top pointer marked, then label push and pop - most stack answers are marked mainly on this figure.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-02",
+        "title": "Stack Representation: Array and Linked List",
+        "kind": "topic",
+        "definition": "A stack can be stored in a fixed-size array using a top index, or built from linked nodes where the head is the top of the stack.",
+        "children": [
+          { "id": "CSCA411-M2-02-s1", "title": "Array representation", "kind": "subtopic", "definition": "Elements stay in contiguous memory, top is an integer index, and the size must be fixed in advance." },
+          { "id": "CSCA411-M2-02-s2", "title": "Linked representation", "kind": "subtopic", "definition": "Each element is a node with a pointer to the node below it, so the stack grows and shrinks as needed." },
+          { "id": "CSCA411-M2-02-s3", "title": "Comparison of the two", "kind": "subtopic", "definition": "The array is faster and cache friendly but fixed in size; the linked stack is flexible but needs extra memory for pointers." }
+        ],
+        "card": {
+          "explanation": "With an array you reserve space in advance and keep an integer top; pushing means top = top + 1 and writing there. With a linked list, push creates a node whose next pointer is the old top, and pop removes that node - the head of the list is the top of the stack. The linked version never overflows until memory itself runs out, but every node pays the cost of one pointer. The array version is simpler and faster per operation when the maximum size is known.",
+          "example": "A canteen that always serves exactly 50 plates uses a fixed tray pile (array). A courier company whose parcel count changes every day stacks parcels on a trolley and adds more room as needed (linked list).",
+          "quiz": [
+            { "q": "A linked stack overflows only when:", "options": ["top equals size - 1", "the memory of the machine is exhausted", "it holds 100 nodes", "the head pointer is NULL"], "answer": 1, "why": "Nodes are created on demand, so there is no fixed capacity limit." },
+            { "q": "In a linked stack, the top of the stack is:", "options": ["the last node created", "the head node of the list", "the node with the largest value", "the tail node"], "answer": 1, "why": "Push inserts at the head, so the head is always the newest element - the top." }
+          ],
+          "examTip": "State the overflow condition (top == MAX-1) and the underflow condition (top == -1) for the array version - they are worth easy marks.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-03",
+        "title": "Stack Applications: Expression Conversion",
+        "kind": "topic",
+        "definition": "A stack converts an infix expression, where the operator sits between operands, into postfix or prefix, where the operator sits after or before them.",
+        "children": [
+          { "id": "CSCA411-M2-03-s1", "title": "Infix notation", "kind": "subtopic", "definition": "The everyday form A + B where the operator is written between its two operands and brackets are needed." },
+          { "id": "CSCA411-M2-03-s2", "title": "Postfix notation (Reverse Polish)", "kind": "subtopic", "definition": "The form A B + where the operator follows its operands, so no brackets or precedence rules are needed." },
+          { "id": "CSCA411-M2-03-s3", "title": "Prefix notation (Polish)", "kind": "subtopic", "definition": "The form + A B where the operator comes before its operands." },
+          { "id": "CSCA411-M2-03-s4", "title": "Operator precedence and associativity", "kind": "subtopic", "definition": "The rules that decide which operator acts first: ^, then * and /, then + and -, left to right for equal rank." },
+          { "id": "CSCA411-M2-03-s5", "title": "Algorithm for infix to postfix", "kind": "subtopic", "definition": "Print operands, push operators, pop while the stack top has greater or equal precedence, and empty the stack at the end." }
+        ],
+        "card": {
+          "explanation": "Computers find postfix easier because the order of operations is already fixed by position, so no bracket or precedence checking is needed at run time. To convert, you scan the infix expression once: operands go straight to the output, an operator is pushed only after popping every stacked operator of higher or equal precedence, and an opening bracket is pushed while a closing bracket pops until it meets its pair. At the end the remaining operators are popped. The same idea with a small change gives prefix notation.",
+          "example": "The expression A + B * C becomes A B C * + in postfix, because multiplication is done before addition - exactly what an exam calculator does internally.",
+          "quiz": [
+            { "q": "What is the postfix form of A + B * C?", "options": ["A B + C *", "A B C * +", "A B * C +", "A B C + *"], "answer": 1, "why": "B * C is evaluated first and printed as B C *, then the addition of A gives A B C * +." },
+            { "q": "Postfix expressions need no brackets because:", "options": ["operators are written first", "the position of the operator fixes the order of evaluation", "operands are sorted", "the stack removes them"], "answer": 1, "why": "In postfix, evaluation order is unambiguous from the layout alone." }
+          ],
+          "examTip": "Show the stack contents after every scanned symbol in a table - examiners give step marks even if the final answer slips.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-04",
+        "title": "Stack Applications: Postfix Evaluation, Recursion and More",
+        "kind": "topic",
+        "definition": "A stack evaluates postfix expressions by pushing operands and, on meeting an operator, popping two values to apply it.",
+        "children": [
+          { "id": "CSCA411-M2-04-s1", "title": "Postfix evaluation with a stack", "kind": "subtopic", "definition": "Push every operand; for an operator pop two values, compute, and push the result, leaving one value at the end." },
+          { "id": "CSCA411-M2-04-s2", "title": "Recursion and the call stack", "kind": "subtopic", "definition": "Each recursive call stores its state (parameters and return address) on the system stack and is popped when the call returns." },
+          { "id": "CSCA411-M2-04-s3", "title": "Balanced bracket checking", "kind": "subtopic", "definition": "Push every opening bracket and pop for every closing bracket; a mismatch or a leftover means the expression is invalid." },
+          { "id": "CSCA411-M2-04-s4", "title": "Backtracking and undo operations", "kind": "subtopic", "definition": "A stack remembers the path taken so the previous state can be restored when a choice fails or the user presses undo." },
+          { "id": "CSCA411-M2-04-s5", "title": "Conversion of number bases", "kind": "subtopic", "definition": "Repeated division by the base gives remainders that are pushed and then popped to print the digits in the correct order." }
+        ],
+        "card": {
+          "explanation": "Evaluation is the reverse of conversion: you scan the postfix string and use the stack as working memory. Each operand is pushed; each operator pops two operands, applies itself and pushes back one result, so a well formed expression leaves exactly one value on the stack. Recursion uses the same structure invisibly - the computer keeps every unfinished call on a call stack. Bracket matching, undo history and base conversion are further everyday uses of this one idea.",
+          "example": "When you press Ctrl+Z in a word processor, the editor pops the most recent change off an undo stack and restores the document state before it.",
+          "quiz": [
+            { "q": "Evaluating the postfix expression 5 3 + 2 * gives:", "options": ["16", "13", "11", "10"], "answer": 0, "why": "5 + 3 = 8 is pushed, then 8 * 2 = 16." },
+            { "q": "Recursion is naturally supported by a stack because:", "options": ["the calls are stored in a queue", "each pending call keeps its state on the call stack", "the compiler sorts the calls", "recursion needs no memory"], "answer": 1, "why": "LIFO suits nested calls: the most recent call finishes first." }
+          ],
+          "examTip": "For postfix evaluation, show the stack after each symbol as a column of values - that single table carries most of the marks.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-05",
+        "title": "Queue: Definition and Operations",
+        "kind": "topic",
+        "definition": "A queue is a linear data structure in which insertion happens at one end called the rear and deletion at the other end called the front, giving First In First Out order.",
+        "children": [
+          { "id": "CSCA411-M2-05-s1", "title": "FIFO (First In First Out) principle", "kind": "subtopic", "definition": "The element that entered first is the element that leaves first, because the two ends are separate." },
+          { "id": "CSCA411-M2-05-s2", "title": "enqueue operation", "kind": "subtopic", "definition": "Inserts a new element at the rear after checking that the queue is not full." },
+          { "id": "CSCA411-M2-05-s3", "title": "dequeue operation", "kind": "subtopic", "definition": "Removes and returns the element at the front after checking that the queue is not empty." },
+          { "id": "CSCA411-M2-05-s4", "title": "front and rear pointers", "kind": "subtopic", "definition": "Two indices that track the two open ends; both are set to -1 in an empty queue." },
+          { "id": "CSCA411-M2-05-s5", "title": "Queue overflow and underflow", "kind": "subtopic", "definition": "Overflow is an enqueue into a full queue; underflow is a dequeue from an empty queue." }
+        ],
+        "card": {
+          "explanation": "A queue keeps its two ends separate - new items join at the rear and old items leave from the front - so service order is strictly first come, first served. enqueue moves the rear forward by one, dequeue moves the front forward, and both check their boundary condition first. Because nothing is removed from the middle, a queue is the natural model for any waiting line. A simple array queue wastes the space at the front after deletions, which is exactly the problem the circular queue solves.",
+          "example": "A ticket counter line: the person who joined the line first buys the ticket first, no matter how long the queue becomes.",
+          "quiz": [
+            { "q": "In a queue, insertion and deletion take place at:", "options": ["the same end called top", "rear and front respectively", "front and rear respectively", "any position"], "answer": 1, "why": "enqueue adds at the rear and dequeue removes from the front, which produces FIFO order." },
+            { "q": "An empty queue is indicated by:", "options": ["front = rear = 0", "front = rear = -1", "front = 0, rear = -1", "top = -1"], "answer": 1, "why": "The standard convention sets both front and rear to -1 when no element is present." }
+          ],
+          "examTip": "Write the FIFO example of a printer queue first, then the operations - real examples fetch marks in the first paragraph itself.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-06",
+        "title": "Circular Queue and Its Need",
+        "kind": "topic",
+        "definition": "A circular queue is an array queue in which the rear wraps around to the beginning using modulo arithmetic, so space freed at the front is reused.",
+        "children": [
+          { "id": "CSCA411-M2-06-s1", "title": "Drawback of a linear array queue", "kind": "subtopic", "definition": "After deletions the front space is never reused, so the queue reports overflow while empty cells still exist - the false overflow problem." },
+          { "id": "CSCA411-M2-06-s2", "title": "Circular increment formula", "kind": "subtopic", "definition": "Instead of rear + 1, the next position is computed as rear = (rear + 1) % size, which wraps the index to 0 at the end." },
+          { "id": "CSCA411-M2-06-s3", "title": "Full and empty conditions", "kind": "subtopic", "definition": "The queue is full when (rear + 1) % size == front, and empty when front == -1; the full test deliberately leaves one cell free." },
+          { "id": "CSCA411-M2-06-s4", "title": "Counting the elements", "kind": "subtopic", "definition": "The number of items is (rear - front + size) % size plus one adjustment, which removes the need for a separate counter." }
+        ],
+        "card": {
+          "explanation": "In a plain array queue, once the rear reaches the last index the queue is declared full even if deletions have left empty cells at the front - that is false overflow. The circular queue treats the array as a ring: the rear jumps back to index 0 when it passes the end, so freed cells are reused and no space is wasted. The price is that full and empty look identical when front equals rear, so one slot is deliberately kept empty to separate the two cases. Everything else, including the FIFO order, stays the same.",
+          "example": "A 40-seat canteen where, after the first four students leave, new students occupy those same four chairs instead of standing outside.",
+          "quiz": [
+            { "q": "The next rear position in a circular queue of size n is:", "options": ["rear + 1", "(rear + 1) % n", "rear - 1", "n - rear"], "answer": 1, "why": "The modulo operation wraps the index back to 0 after the last cell." },
+            { "q": "A circular queue of size n can hold at most:", "options": ["n elements", "n - 1 elements", "n + 1 elements", "2n elements"], "answer": 1, "why": "One slot stays empty so that the full condition can be told apart from the empty condition." }
+          ],
+          "examTip": "Mention false overflow while justifying the circular queue, then write the two conditions with the modulo formula - this is a very frequently asked 5-mark question.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-07",
+        "title": "Priority Queue and Deque",
+        "kind": "topic",
+        "definition": "A priority queue removes the element with the highest priority rather than the oldest one, and a deque allows insertion and deletion at both ends.",
+        "children": [
+          { "id": "CSCA411-M2-07-s1", "title": "Priority queue", "kind": "subtopic", "definition": "Each element carries a priority; dequeue always takes the highest priority element, breaking ties by arrival order." },
+          { "id": "CSCA411-M2-07-s2", "title": "Implementation of a priority queue", "kind": "subtopic", "definition": "Commonly built with a heap, which gives O(log n) insert and delete-minimum, or with a sorted or unsorted list." },
+          { "id": "CSCA411-M2-07-s3", "title": "Deque (double-ended queue)", "kind": "subtopic", "definition": "A linear structure permitting insert and delete at both the front and the rear, so it generalises both stack and queue." },
+          { "id": "CSCA411-M2-07-s4", "title": "Input and output restricted deques", "kind": "type", "definition": "An input restricted deque allows insertion at one end only while deletions happen at both; an output restricted deque does the opposite." }
+        ],
+        "card": {
+          "explanation": "Normal queues serve customers strictly in arrival order, but many systems must let an urgent job jump the line - that is what a priority queue does. Elements are stored with a priority value, and deletion always removes the element with the highest (or lowest) priority, so the structure is not FIFO at all. Because a heap keeps the extreme value at the root, it is the standard implementation and gives logarithmic time for insert and remove. A deque is the other generalisation: it opens both ends, so it can behave like a stack, like a queue, or like neither.",
+          "example": "In a hospital emergency room, a critical patient is treated before people who arrived earlier with minor injuries; a sliding-window maximum in data analysis is done with a deque.",
+          "quiz": [
+            { "q": "A priority queue removes:", "options": ["the oldest element", "the newest element", "the element with the highest priority", "a random element"], "answer": 2, "why": "Priority decides removal order, not arrival time." },
+            { "q": "Which data structure is normally used to implement a priority queue efficiently?", "options": ["Array", "Heap", "Stack", "Circular list"], "answer": 1, "why": "A heap keeps the highest priority element at the root, giving O(log n) operations." }
+          ],
+          "examTip": "Compare priority queue and deque with the plain queue in a three-row table; the differences are what examiners look for.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-08",
+        "title": "Applications of Queues",
+        "kind": "topic",
+        "definition": "Queues model any first-come-first-served waiting line: CPU scheduling, printer spooling, buffers and breadth first search.",
+        "children": [
+          { "id": "CSCA411-M2-08-s1", "title": "CPU and process scheduling", "kind": "subtopic", "definition": "The ready queue holds processes waiting for the processor, and round robin scheduling serves them in rotation." },
+          { "id": "CSCA411-M2-08-s2", "title": "I/O and printer spooling buffers", "kind": "subtopic", "definition": "Jobs are queued so a slow device such as a printer receives them in the order they were submitted." },
+          { "id": "CSCA411-M2-08-s3", "title": "Breadth First Search on graphs", "kind": "subtopic", "definition": "A queue stores the vertices discovered but not yet processed, which is what makes BFS explore level by level." },
+          { "id": "CSCA411-M2-08-s4", "title": "Resource sharing in operating systems", "kind": "subtopic", "definition": "Requests for a single shared resource, such as a disk track or a network line, are held in a queue." },
+          { "id": "CSCA411-M2-08-s5", "title": "Message and call centre queues", "kind": "subtopic", "definition": "Messages and calls are buffered in the order they arrive so that no request is lost while the system is busy." }
+        ],
+        "card": {
+          "explanation": "Queues are the standard answer whenever requests must be handled in arrival order instead of instantly. Operating systems keep a ready queue of runnable processes, device driver software keeps a queue of pending jobs, and graph algorithms use a queue to explore level by level. Because all of these only ever add at one end and remove at the other, one data structure solves all of them. Recognising the FIFO pattern in a problem statement is usually enough to decide that a queue is needed.",
+          "example": "Ten documents sent to one printer are printed one after another in the order they were sent, even though the printer is slower than the computer.",
+          "quiz": [
+            { "q": "Which graph traversal depends on a queue?", "options": ["Depth First Search", "Breadth First Search", "Binary search", "Dijkstra with a heap"], "answer": 1, "why": "BFS keeps discovered vertices in a queue, which produces level-by-level order." },
+            { "q": "Printer spooling uses a queue because:", "options": ["jobs must be printed in submission order", "jobs must be printed by size", "the printer is fast", "the printer stores sorted data"], "answer": 0, "why": "Spooling preserves fairness by keeping FIFO order." }
+          ],
+          "examTip": "Give three standard applications with one line each - CPU scheduling, printer spooling and BFS - and no examiner will ask for more.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-09",
+        "title": "Linked List: Definition and Node Structure",
+        "kind": "topic",
+        "definition": "A linked list is a linear collection of nodes scattered in memory, where each node stores a data value and a pointer to the next node.",
+        "children": [
+          { "id": "CSCA411-M2-09-s1", "title": "Node structure", "kind": "subtopic", "definition": "A node has two fields: the information part holding the value and the link part holding the address of the next node." },
+          { "id": "CSCA411-M2-09-s2", "title": "Head pointer", "kind": "subtopic", "definition": "A single external pointer that marks the first node; losing it loses the entire list." },
+          { "id": "CSCA411-M2-09-s3", "title": "NULL terminator", "kind": "subtopic", "definition": "The last node stores NULL in its link field, which signals the end of the list." },
+          { "id": "CSCA411-M2-09-s4", "title": "Dynamic memory allocation", "kind": "subtopic", "definition": "Nodes are created with new or malloc at run time and freed with delete or free, so the size changes as needed." },
+          { "id": "CSCA411-M2-09-s5", "title": "No direct index access", "kind": "subtopic", "definition": "Items cannot be reached by position; you must follow the links from the head, so access is sequential." }
+        ],
+        "card": {
+          "explanation": "An array keeps its elements side by side, so inserting in the middle forces everything after it to shift. A linked list avoids that by storing each element wherever free memory is available and joining them with pointers. The cost is that only the head is known, so reaching the k-th node means walking k links, and each node needs extra bytes for the pointer. Relying on one head pointer also means careless pointer handling can break or leak the whole list.",
+          "example": "A treasure hunt where each clue gives the location of the next clue: the clues are in unrelated places, but the chain of pointers leads you through all of them in order.",
+          "quiz": [
+            { "q": "Each node of a singly linked list contains:", "options": ["only data", "data and one pointer", "two pointers only", "an index and a pointer"], "answer": 1, "why": "One information field plus one link to the next node." },
+            { "q": "Access to the k-th element of a linked list takes:", "options": ["O(1)", "O(log k)", "O(k)", "O(k squared)"], "answer": 2, "why": "Links must be followed one by one from the head, giving sequential access." }
+          ],
+          "examTip": "Always draw the node as two boxes with an arrow, and mark NULL at the end - the diagram answers half the question.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-10",
+        "title": "Singly, Doubly and Circular Linked Lists",
+        "kind": "topic",
+        "definition": "Linked lists are classified by how their nodes are linked: singly, doubly, circular and doubly circular.",
+        "children": [
+          { "id": "CSCA411-M2-10-s1", "title": "Singly linked list", "kind": "type", "definition": "Each node points only to the next node, so traversal is possible in one direction and the last node points to NULL." },
+          { "id": "CSCA411-M2-10-s2", "title": "Doubly linked list", "kind": "type", "definition": "Each node has both next and previous pointers, allowing two-way traversal and easy deletion when the node itself is known." },
+          { "id": "CSCA411-M2-10-s3", "title": "Circular linked list", "kind": "type", "definition": "The last node points back to the first node instead of NULL, so traversal can continue around the ring endlessly." },
+          { "id": "CSCA411-M2-10-s4", "title": "Doubly circular linked list", "kind": "type", "definition": "A doubly linked list whose first node's previous pointer meets the last node's next pointer, giving two-way circular movement." },
+          { "id": "CSCA411-M2-10-s5", "title": "Choosing between the types", "kind": "subtopic", "definition": "Use singly for least memory, doubly when backward movement or easy deletion is needed, and circular for round-robin repetition." }
+        ],
+        "card": {
+          "explanation": "The three classic forms differ only in how many pointers a node carries and where the last pointer lands. A singly linked list is the cheapest but can only move forward, so deleting a node requires its predecessor. A doubly linked list adds a previous pointer, which allows backward traversal and O(1) deletion once the node is known, at the cost of one extra pointer per node. A circular list replaces the final NULL with a jump back to the first node, which suits applications that cycle forever, such as round robin scheduling.",
+          "example": "A music player's next button alone is a singly linked list; next and previous together make it doubly linked; a 'repeat all' playlist behaves like a circular list.",
+          "quiz": [
+            { "q": "Which list allows traversal in both directions?", "options": ["Singly linked list", "Doubly linked list", "Circular singly linked list", "Array"], "answer": 1, "why": "Only the doubly linked node stores a previous pointer." },
+            { "q": "In a circular linked list, the last node's pointer:", "options": ["is NULL", "points to itself", "points to the first node", "points to the middle node"], "answer": 2, "why": "The ring is closed by linking the last node back to the first." }
+          ],
+          "examTip": "Draw all three forms side by side with arrows, including the circular one closing into a ring - this diagram is the answer itself.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-11",
+        "title": "Linked List Operations and Their Complexity",
+        "kind": "topic",
+        "definition": "The standard operations on a linked list are traversal, insertion, deletion, search and counting, each with its own time cost.",
+        "children": [
+          { "id": "CSCA411-M2-11-s1", "title": "Traversal", "kind": "subtopic", "definition": "Visit each node once by following the links, which is O(n) and the basis of every other operation." },
+          { "id": "CSCA411-M2-11-s2", "title": "Insertion at the beginning", "kind": "subtopic", "definition": "Create a node, point it at the current head and move the head; O(1) because no walking is needed." },
+          { "id": "CSCA411-M2-11-s3", "title": "Insertion at the end or after a node", "kind": "subtopic", "definition": "Requires reaching that node first, so it costs O(n) unless a tail pointer is maintained." },
+          { "id": "CSCA411-M2-11-s4", "title": "Deletion of a node", "kind": "subtopic", "definition": "Bypass the node with its predecessor's pointer and free the memory; O(1) if the node or its predecessor is known." },
+          { "id": "CSCA411-M2-11-s5", "title": "Search and count", "kind": "subtopic", "definition": "Both scan the list sequentially, so both are O(n) in the worst case." }
+        ],
+        "card": {
+          "explanation": "All linked list work is built on one loop that walks from head to NULL. Because of that walk, operations near the head are cheap - inserting at the front is O(1) - while anything that needs a particular position costs O(n). Deletion itself is just pointer surgery, but finding the node to delete is the expensive part, which is why a doubly linked list helps. Comparing this with arrays shows the trade-off clearly: arrays win on random access, linked lists win on insertion and deletion in the middle.",
+          "example": "Adding a new student at the front of a roll-call register takes one step; finding roll number 57 in the same register means reading through the earlier names.",
+          "quiz": [
+            { "q": "Inserting a node at the beginning of a singly linked list is:", "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"], "answer": 0, "why": "Only the head pointer and one new node are touched." },
+            { "q": "Why is deletion in the middle of a linked list usually described as O(n)?", "options": ["Pointers need sorting", "The predecessor must be located by traversal", "Memory is copied", "The list must be reversed"], "answer": 1, "why": "Reaching the position is the costly part, not the pointer change." }
+          ],
+          "examTip": "Tabulate the time complexity of insert, delete and search for a linked list against an array - this comparison appears almost every year.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M2-12",
+        "title": "Applications of Linked Lists, Arrays versus Linked Lists",
+        "kind": "topic",
+        "definition": "Linked lists are used wherever data grows or shrinks unpredictably: polynomials, sparse matrices, free memory lists, stacks, queues and hash chains.",
+        "children": [
+          { "id": "CSCA411-M2-12-s1", "title": "Polynomial representation", "kind": "subtopic", "definition": "Each node stores a coefficient and an exponent, so only the non-zero terms of a polynomial occupy memory." },
+          { "id": "CSCA411-M2-12-s2", "title": "Sparse matrix representation", "kind": "subtopic", "definition": "Only the non-zero elements are stored as nodes with row, column and value, which saves large amounts of memory." },
+          { "id": "CSCA411-M2-12-s3", "title": "Free space and memory management", "kind": "subtopic", "definition": "The operating system keeps available memory blocks as a linked list of free nodes." },
+          { "id": "CSCA411-M2-12-s4", "title": "Implementing stacks, queues and hash tables", "kind": "subtopic", "definition": "Linked nodes give these structures unlimited size; chaining resolves hash collisions with one list per bucket." },
+          { "id": "CSCA411-M2-12-s5", "title": "Array versus linked list", "kind": "type", "definition": "Arrays give O(1) index access and less memory per element but fixed size and costly middle insertion; linked lists give flexible size and cheap insertion but sequential access and extra pointer memory." }
+        ],
+        "card": {
+          "explanation": "The strength of a linked list is that nothing has to move when the data changes - only pointers are rewritten, and the size is limited only by free memory. That makes it the natural choice for dynamic collections such as polynomials, sparse matrices and hash chains, and it is how stacks and queues are often built when their maximum size is unknown. The trade-off is sequential access and one extra pointer per element. Choosing between an array and a linked list is therefore a question about which operation dominates in the application.",
+          "example": "A campus WiFi user list changes every few minutes as students connect and disconnect; a linked list simply adds and removes nodes instead of rebuilding the whole list.",
+          "quiz": [
+            { "q": "Storing a polynomial as a linked list saves memory because:", "options": ["only non-zero terms are stored", "it is sorted automatically", "coefficients are compressed", "it allows random access"], "answer": 0, "why": "Nodes exist only for terms that actually appear, so zeros cost nothing." },
+            { "q": "Which operation is faster in an array than in a linked list?", "options": ["Insert at the front", "Access the 100th element", "Delete the head", "Grow beyond its size"], "answer": 1, "why": "Arrays compute the address directly, giving O(1) random access." }
+          ],
+          "examTip": "Prepare a five-row array versus linked list comparison table (access, insertion, deletion, memory, size) - it can be reused in almost any question.",
+          "verified": false
+        }
+      }
+    ]
+  },
+  {
+    "module": "III",
+    "title": "Non-linear Structures: Trees and Graphs",
+    "topics": [
+      {
+        "id": "CSCA411-M3-01",
+        "title": "Tree Terminology",
+        "kind": "topic",
+        "definition": "A tree is a non-linear hierarchical structure of nodes connected by edges with exactly one root and no cycles.",
+        "children": [
+          { "id": "CSCA411-M3-01-s1", "title": "Root, parent and child", "kind": "subtopic", "definition": "The root is the single topmost node, a parent is a node with branches below it and its children are the nodes it connects to." },
+          { "id": "CSCA411-M3-01-s2", "title": "Sibling, ancestor and descendant", "kind": "subtopic", "definition": "Siblings share the same parent; ancestors lie on the path towards the root and descendants lie below a node." },
+          { "id": "CSCA411-M3-01-s3", "title": "Leaf and internal node", "kind": "subtopic", "definition": "A leaf (terminal node) has no children, while an internal node has at least one child." },
+          { "id": "CSCA411-M3-01-s4", "title": "Degree of a node and of a tree", "kind": "subtopic", "definition": "The degree of a node is the number of children it has; the degree of a tree is the maximum degree among its nodes." },
+          { "id": "CSCA411-M3-01-s5", "title": "Level, depth and height", "kind": "subtopic", "definition": "The level or depth of a node is its distance from the root, and the height of the tree is the number of levels or the longest root-to-leaf path." },
+          { "id": "CSCA411-M3-01-s6", "title": "Subtree and forest", "kind": "subtopic", "definition": "A subtree is any node together with all its descendants; removing the root leaves a forest of separate trees." }
+        ],
+        "card": {
+          "explanation": "Trees describe hierarchies, so their vocabulary comes from family relations: parents above children, siblings side by side and leaves at the bottom. Two measurements matter in every tree question - degree, which counts children, and level, which counts distance from the root. These two numbers decide the shape of the tree and therefore how expensive searching it becomes. A tree with n nodes has exactly n - 1 edges, which is a fact worth remembering for numerical questions.",
+          "example": "Your college's administrative chart - Vice Chancellor, then Deans, then Heads of Department, then faculty - is a tree with the Vice Chancellor as root.",
+          "quiz": [
+            { "q": "The number of edges in a tree with n nodes is:", "options": ["n", "n - 1", "n + 1", "2n"], "answer": 1, "why": "Every node except the root has exactly one edge connecting it to its parent." },
+            { "q": "A node with no children is called:", "options": ["Root", "Internal node", "Leaf", "Sibling"], "answer": 2, "why": "Terminal nodes with degree zero are leaves." }
+          ],
+          "examTip": "Label a diagram with root, level, degree and height before starting the answer - terminology marks are otherwise easy to lose.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-02",
+        "title": "Binary Tree and Its Representation",
+        "kind": "topic",
+        "definition": "A binary tree is a tree in which every node has at most two children, called the left child and the right child.",
+        "children": [
+          { "id": "CSCA411-M3-02-s1", "title": "Left and right subtree", "kind": "subtopic", "definition": "Each node's two children head their own subtrees, and the two are not interchangeable - left and right have distinct meaning." },
+          { "id": "CSCA411-M3-02-s2", "title": "Array representation", "kind": "subtopic", "definition": "Nodes are stored by level in a linear array where the children of index i sit at 2i (or 2i+1 depending on convention) and 2i+1." },
+          { "id": "CSCA411-M3-02-s3", "title": "Linked representation", "kind": "subtopic", "definition": "Each node holds data plus left and right pointers, which uses memory in proportion to the number of nodes actually present." },
+          { "id": "CSCA411-M3-02-s4", "title": "Maximum and minimum nodes at a level", "kind": "subtopic", "definition": "Level i can hold at most 2^i nodes, so a binary tree of height h has at most 2^(h+1) - 1 nodes and at least h + 1." }
+        ],
+        "card": {
+          "explanation": "The rule that a node may have at most two children makes the tree predictable, and that predictability is what algorithms exploit. In the array form the position of a node immediately tells you where its children live, so no pointers are needed, but gaps appear if the tree is not complete. In the linked form each node carries a left and a right link, which fits uneven trees neatly at the cost of two pointers per node. Because level i can hold up to 2^i nodes, the number of nodes at least doubles down the tree, which is why tree height grows only logarithmically.",
+          "example": "A family tree limited to two children per couple behaves like a binary tree; 'left' and 'right' matter the same way birth order or twin order would.",
+          "quiz": [
+            { "q": "The maximum number of nodes on level i of a binary tree (root at level 0) is:", "options": ["i", "2i", "2^i", "i squared"], "answer": 2, "why": "Each node can have two children, so the count doubles at every level." },
+            { "q": "Which representation wastes space for a skewed binary tree?", "options": ["Linked", "Array", "Both equally", "Neither"], "answer": 1, "why": "The array form must leave gaps for missing nodes, so a skewed tree leaves most of the array empty." }
+          ],
+          "examTip": "Write the formulas 2^i per level and 2^(h+1) - 1 nodes total for a full binary tree; numerical questions come straight from them.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-03",
+        "title": "Binary Tree Traversals",
+        "kind": "topic",
+        "definition": "A traversal is a systematic way of visiting every node of a tree exactly once: inorder, preorder, postorder and level order.",
+        "children": [
+          { "id": "CSCA411-M3-03-s1", "title": "Inorder traversal", "kind": "type", "definition": "Left subtree, then root, then right subtree - visit order LNR; on a binary search tree this prints the keys in sorted order." },
+          { "id": "CSCA411-M3-03-s2", "title": "Preorder traversal", "kind": "type", "definition": "Root, then left subtree, then right subtree - visit order NLR; used to copy a tree or create its prefix expression." },
+          { "id": "CSCA411-M3-03-s3", "title": "Postorder traversal", "kind": "type", "definition": "Left subtree, then right subtree, then root - visit order LRN; used to delete a tree or produce a postfix expression." },
+          { "id": "CSCA411-M3-03-s4", "title": "Level order traversal", "kind": "type", "definition": "Visits nodes level by level from left to right using a queue, which is breadth first search on a tree." },
+          { "id": "CSCA411-M3-03-s5", "title": "Reconstructing a tree", "kind": "subtopic", "definition": "Inorder together with either preorder or postorder fixes the unique shape of a binary tree." }
+        ],
+        "card": {
+          "explanation": "Traversals exist because a tree is not linear, so there is no single natural order of visiting. Inorder puts the root between the two subtrees, preorder puts it first and postorder puts it last, and each has a matching use - sorting, copying and deleting respectively. Level order is different in style: it uses a queue and sweeps the tree breadth first, which is why it pairs with BFS. Names and visit orders must be memorised exactly, because examiners swap them deliberately while testing.",
+          "example": "In a folder tree, deleting a directory (postorder) must remove the files inside it first; copying it (preorder) creates the folder before its contents.",
+          "quiz": [
+            { "q": "Which traversal prints the nodes of a binary search tree in ascending order?", "options": ["Preorder", "Inorder", "Postorder", "Level order"], "answer": 1, "why": "Inorder visits left subtree, root and right subtree, which matches key order in a BST." },
+            { "q": "Level order traversal uses which data structure?", "options": ["Stack", "Queue", "Priority queue", "Hash table"], "answer": 1, "why": "A queue holds the nodes of the next level, giving FIFO level-by-level output." }
+          ],
+          "examTip": "Memorise the three orders as LNR, NLR and LRN, then practise one tree drawn by hand - swapping these orders is the exam's favourite trick.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-04",
+        "title": "Types of Binary Trees",
+        "kind": "topic",
+        "definition": "Binary trees are classified by their shape: full, complete, perfect, skewed, balanced, expression, threaded and heap trees.",
+        "children": [
+          { "id": "CSCA411-M3-04-s1", "title": "Full or strict binary tree", "kind": "type", "definition": "Every node has either zero or two children - no node has exactly one child." },
+          { "id": "CSCA411-M3-04-s2", "title": "Complete binary tree", "kind": "type", "definition": "All levels are completely filled except possibly the last, which is filled from left to right." },
+          { "id": "CSCA411-M3-04-s3", "title": "Perfect binary tree", "kind": "type", "definition": "All internal nodes have two children and all leaves lie at the same level, giving exactly 2^(h+1) - 1 nodes." },
+          { "id": "CSCA411-M3-04-s4", "title": "Skewed binary tree", "kind": "type", "definition": "Every node has only one child, so the tree degenerates into a linked list and its height becomes n." },
+          { "id": "CSCA411-M3-04-s5", "title": "Balanced and AVL tree", "kind": "type", "definition": "A balanced tree keeps the heights of the two subtrees of every node within one, which AVL trees enforce by rotations and hold height at O(log n)." },
+          { "id": "CSCA411-M3-04-s6", "title": "Expression tree", "kind": "type", "definition": "Leaves hold operands and internal nodes hold operators, so inorder, preorder and postorder traversal directly give infix, prefix and postfix forms." },
+          { "id": "CSCA411-M3-04-s7", "title": "Threaded binary tree", "kind": "type", "definition": "NULL pointers are replaced by threads pointing to the inorder predecessor or successor, which speeds up traversal without a stack." },
+          { "id": "CSCA411-M3-04-s8", "title": "Binary heap", "kind": "type", "definition": "A complete binary tree with the heap order property - each parent is larger (max heap) or smaller (min heap) than its children." }
+        ],
+        "card": {
+          "explanation": "These names describe shapes, and shape decides cost: a balanced tree of n nodes has height O(log n), while a skewed tree has height n and behaves like a list. Full means every internal node has two children, complete means the levels fill from the left, and perfect combines both with all leaves at the bottom level. Balanced variants such as AVL trees rebuild themselves with rotations whenever an insertion disturbs the balance. Expression trees and heaps are shape-based structures with a special purpose - evaluating expressions and supporting priority queues.",
+          "example": "A tournament draw sheet that is completely filled to the final is a perfect binary tree; if one player receives a bye and the sheet collapses into a chain, it becomes skewed.",
+          "quiz": [
+            { "q": "In a complete binary tree:", "options": ["every node has two children", "all leaves are at the same level", "all levels are full except possibly the last, filled left to right", "every node has one child"], "answer": 2, "why": "Completeness is about filling level by level from the left, which is why arrays can store them compactly." },
+            { "q": "A skewed binary tree of n nodes has height:", "options": ["log n", "n / 2", "n", "n squared"], "answer": 2, "why": "One child per node means the tree becomes a chain of n levels." }
+          ],
+          "examTip": "Draw one small example for each type - full, complete, perfect, skewed - and note where the definitions differ; that is where marks are lost.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-05",
+        "title": "Applications of Trees",
+        "kind": "topic",
+        "definition": "Trees are used wherever data or work is hierarchical: searching, indexing, expression evaluation, compression, files and decisions.",
+        "children": [
+          { "id": "CSCA411-M3-05-s1", "title": "Searching and dictionaries", "kind": "subtopic", "definition": "A binary search tree keeps keys ordered so search, insert and delete cost O(log n) when the tree is balanced." },
+          { "id": "CSCA411-M3-05-s2", "title": "Database indexing", "kind": "subtopic", "definition": "B-trees and B+ trees keep disk blocks sorted with a shallow, wide shape, so a record is found in very few disk reads." },
+          { "id": "CSCA411-M3-05-s3", "title": "Expression evaluation and compilation", "kind": "subtopic", "definition": "Expression trees and syntax trees let a compiler evaluate arithmetic and check the grammar of a program." },
+          { "id": "CSCA411-M3-05-s4", "title": "File systems and organisation charts", "kind": "subtopic", "definition": "Directories, company hierarchies and classification schemes are naturally stored as trees." },
+          { "id": "CSCA411-M3-05-s5", "title": "Data compression with Huffman trees", "kind": "subtopic", "definition": "Frequent characters get short codes in a binary tree so the encoded file becomes smaller." },
+          { "id": "CSCA411-M3-05-s6", "title": "Decision trees and priority queues", "kind": "subtopic", "definition": "Decision trees model choices in machine learning and expert systems, while heaps implement priority queues." }
+        ],
+        "card": {
+          "explanation": "Trees earn their place because they turn a linear scan into a short walk down a hierarchy of comparisons. Ordered trees give logarithmic search, which is exactly what database indexes and dictionaries need, and B+ trees extend that idea to disk blocks. Expression trees let a compiler evaluate and rewrite formulas, and Huffman trees compress data by giving frequent symbols shorter codes. Wherever the data itself is hierarchical - folders, organisations, classifications - a tree is the honest model rather than a convenience.",
+          "example": "Searching a contact list of a lakh names: a phone book tree finds the name in about 17 comparisons, while checking names one by one could need a lakh.",
+          "quiz": [
+            { "q": "Database indexes are usually built with which tree type?", "options": ["AVL tree", "B+ tree", "Threaded binary tree", "Expression tree"], "answer": 1, "why": "B+ trees are shallow and keep many keys per node, which suits slow disk reads." },
+            { "q": "Huffman trees are used for:", "options": ["Sorting numbers", "Data compression", "Graph colouring", "Memory paging"], "answer": 1, "why": "They assign shorter codes to more frequent characters." }
+          ],
+          "examTip": "Give at least five different applications with one line each - search, indexing, compression, file systems, decision making.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-06",
+        "title": "Graph Terminology and Types",
+        "kind": "topic",
+        "definition": "A graph is a set of vertices joined by edges, used to model any network of relationships, with no root and no hierarchy.",
+        "children": [
+          { "id": "CSCA411-M3-06-s1", "title": "Vertex and edge", "kind": "subtopic", "definition": "Vertices (or nodes) are the objects and edges are the connections between pairs of them." },
+          { "id": "CSCA411-M3-06-s2", "title": "Directed and undirected graph", "kind": "type", "definition": "An undirected edge works both ways while a directed edge (arc) has a direction, so a one-way road versus a two-way road." },
+          { "id": "CSCA411-M3-06-s3", "title": "Weighted graph", "kind": "type", "definition": "Each edge carries a number such as distance, cost or time, which is what shortest path problems need." },
+          { "id": "CSCA411-M3-06-s4", "title": "Degree of a vertex", "kind": "subtopic", "definition": "The number of edges touching a vertex; in a directed graph we separately count in-degree and out-degree." },
+          { "id": "CSCA411-M3-06-s5", "title": "Path, cycle and connectedness", "kind": "subtopic", "definition": "A path is a sequence of adjacent vertices, a cycle returns to the starting vertex, and a graph is connected if a path exists between every pair of vertices." },
+          { "id": "CSCA411-M3-06-s6", "title": "Component and forest", "kind": "subtopic", "definition": "A connected component is a maximal connected part of the graph; a graph with no cycles is a forest, and a connected forest is a tree." },
+          { "id": "CSCA411-M3-06-s7", "title": "Other special types", "kind": "type", "definition": "A multigraph allows parallel edges, a self-loop joins a vertex to itself, a simple graph has neither, and a bipartite graph splits vertices into two sets with edges only between the sets." }
+        ],
+        "card": {
+          "explanation": "Graphs drop the tree restrictions: there is no root, a vertex may connect to any number of others, and cycles are allowed. That freedom is what makes graphs the right model for roads, friendships, circuits and course prerequisites. The vocabulary that matters most is direction (one-way or two-way), weight (cost on an edge) and connectivity (whether everything is reachable). Trees are a special case - a connected graph with exactly n - 1 edges and no cycles.",
+          "example": "A metro map is a graph: stations are vertices, tracks are edges, interchange stations have a high degree, and a route that returns to the start is a cycle.",
+          "quiz": [
+            { "q": "In a directed graph, the number of edges entering a vertex is its:", "options": ["degree", "out-degree", "in-degree", "weight"], "answer": 2, "why": "In-degree counts incoming edges, out-degree counts outgoing ones." },
+            { "q": "A connected graph with n vertices and no cycles has how many edges?", "options": ["n", "n - 1", "n + 1", "2n"], "answer": 1, "why": "That is exactly the definition of a tree, which is a special graph." }
+          ],
+          "examTip": "Start the answer by distinguishing a graph from a tree - no root, cycles allowed - then list the terminology with a small figure.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-07",
+        "title": "Graph Representation",
+        "kind": "topic",
+        "definition": "A graph is stored in the computer either as an adjacency matrix or as an adjacency list, sometimes also as an incidence matrix.",
+        "children": [
+          { "id": "CSCA411-M3-07-s1", "title": "Adjacency matrix", "kind": "subtopic", "definition": "A V by V table where entry (i, j) is 1 or the edge weight if an edge exists; it uses O(V squared) space whatever the number of edges." },
+          { "id": "CSCA411-M3-07-s2", "title": "Adjacency list", "kind": "subtopic", "definition": "Each vertex keeps a list of its neighbours, which uses O(V + E) space and suits sparse graphs." },
+          { "id": "CSCA411-M3-07-s3", "title": "Incidence matrix", "kind": "subtopic", "definition": "A V by E table in which each column has a 1 or -1 marking the endpoints of one edge." },
+          { "id": "CSCA411-M3-07-s4", "title": "Which representation to choose", "kind": "subtopic", "definition": "Use a matrix for dense graphs and for O(1) edge existence tests, a list for sparse graphs and for quickly iterating over neighbours." }
+        ],
+        "card": {
+          "explanation": "The representation decides the cost of everything that follows, so it is chosen with the graph's density in mind. A matrix answers 'is there an edge between these two vertices?' in one lookup, which is why weighted algorithms often use it, but it spends V squared cells even when few edges exist. An adjacency list stores only the edges that actually exist, so it is the practical choice for real networks that are sparse. Both forms can be used with the same traversal algorithms; only the running time changes.",
+          "example": "A friendship network among a million users has only a handful of friends each, so an adjacency list is used - a million by million matrix would be absurd.",
+          "quiz": [
+            { "q": "Space used by an adjacency matrix for a graph with V vertices:", "options": ["O(V)", "O(V + E)", "O(V squared)", "O(E log V)"], "answer": 2, "why": "The matrix always has V rows and V columns, regardless of the number of edges." },
+            { "q": "For a sparse graph, the preferred representation is:", "options": ["Adjacency matrix", "Adjacency list", "Incidence matrix", "Distance matrix"], "answer": 1, "why": "Adjacency lists store only the existing edges, saving both memory and traversal time." }
+          ],
+          "examTip": "Show both representations for the same small graph side by side, then state the space complexity of each - that pair of sentences carries the answer.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-08",
+        "title": "Graph Traversals: BFS and DFS",
+        "kind": "topic",
+        "definition": "Breadth First Search explores a graph level by level using a queue, and Depth First Search dives as far as possible using a stack or recursion.",
+        "children": [
+          { "id": "CSCA411-M3-08-s1", "title": "Breadth First Search (BFS)", "kind": "subtopic", "definition": "Start at a vertex, visit all its neighbours, then their unvisited neighbours, keeping discovered vertices in a queue and marking them visited." },
+          { "id": "CSCA411-M3-08-s2", "title": "Depth First Search (DFS)", "kind": "subtopic", "definition": "Follow one path as deep as possible, backtrack on dead ends, and use a stack (or the recursion stack) with a visited array." },
+          { "id": "CSCA411-M3-08-s3", "title": "Time complexity of both", "kind": "subtopic", "definition": "Each is O(V + E) with an adjacency list and O(V squared) with a matrix, because every vertex and edge is examined once." },
+          { "id": "CSCA411-M3-08-s4", "title": "Applications of BFS", "kind": "subtopic", "definition": "Shortest path in an unweighted graph, level order of a tree, finding connected components and testing bipartiteness." },
+          { "id": "CSCA411-M3-08-s5", "title": "Applications of DFS", "kind": "subtopic", "definition": "Cycle detection, topological sorting, finding articulation points and bridges, and solving maze or puzzle problems." }
+        ],
+        "card": {
+          "explanation": "Both traversals visit every reachable vertex once and differ only in the order they choose to expand next. BFS expands the oldest discovered vertex first, which needs a queue and produces shortest paths when all edges cost the same. DFS expands the most recently discovered vertex first, which needs a stack or recursion and naturally produces backtracking-style exploration. The visited array is essential in both, otherwise cycles would cause the same vertex to be processed forever.",
+          "example": "In a campus map, BFS finds the route with the fewest turns by spreading out in rings, while DFS is like exploring one corridor to its end before trying the next one.",
+          "quiz": [
+            { "q": "Which data structure does BFS use?", "options": ["Stack", "Queue", "Heap", "Hash table"], "answer": 1, "why": "FIFO order gives the level-by-level expansion that characterises BFS." },
+            { "q": "The time complexity of BFS or DFS using an adjacency list is:", "options": ["O(V)", "O(E)", "O(V + E)", "O(V squared)"], "answer": 2, "why": "Every vertex and every edge is inspected exactly once." }
+          ],
+          "examTip": "Trace BFS and DFS on the same small graph, writing the visit order and the queue or stack after each step - the trace is what is being marked.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-09",
+        "title": "Shortest Path Problem: Dijkstra's Algorithm",
+        "kind": "topic",
+        "definition": "Dijkstra's algorithm finds the shortest path from one source vertex to all other vertices when no edge weight is negative.",
+        "children": [
+          { "id": "CSCA411-M3-09-s1", "title": "Single source shortest path", "kind": "subtopic", "definition": "The problem of computing the minimum total weight path from a chosen source to every other vertex in a weighted graph." },
+          { "id": "CSCA411-M3-09-s2", "title": "Greedy working of the algorithm", "kind": "subtopic", "definition": "Repeatedly pick the unvisited vertex with the smallest tentative distance, then relax its neighbours by offering a shorter route through it." },
+          { "id": "CSCA411-M3-09-s3", "title": "Distance and visited arrays", "kind": "subtopic", "definition": "One array holds the best known distance from the source and another records which vertices are finalised." },
+          { "id": "CSCA411-M3-09-s4", "title": "Why negative weights fail", "kind": "subtopic", "definition": "The algorithm never revisits a finalised vertex, so a negative edge could later produce a shorter path it would miss; Bellman-Ford is used instead." },
+          { "id": "CSCA411-M3-09-s5", "title": "Time complexity", "kind": "subtopic", "definition": "O(V squared) with a simple array, or O((V + E) log V) using a priority queue (min heap)." }
+        ],
+        "card": {
+          "explanation": "Dijkstra works because once you have found the globally closest unfinalised vertex, no other route can reach it more cheaply - so that distance can be locked in. The algorithm then relaxes the neighbours, replacing their stored distance whenever a shorter route through the current vertex appears. This greedy certainty is exactly why negative weights break it: a negative edge arriving later could beat a distance that was already locked. The priority queue version is the practical implementation for large road and network graphs.",
+          "example": "Google Maps computing the fastest route from your home to college, where each road segment carries a travel time as its weight.",
+          "quiz": [
+            { "q": "Dijkstra's algorithm fails on graphs with:", "options": ["cycles", "negative edge weights", "parallel edges", "disconnected vertices"], "answer": 1, "why": "A negative edge could improve a distance already finalised, which the greedy choice forbids." },
+            { "q": "Dijkstra's algorithm is which type of algorithm?", "options": ["Divide and conquer", "Greedy", "Dynamic programming", "Backtracking"], "answer": 1, "why": "It repeatedly makes the locally cheapest choice of the nearest unfinalised vertex." }
+          ],
+          "examTip": "Solve one table with columns for vertex, visited and distance, updating it after each selection - examiners mark the table, not the final numbers.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-10",
+        "title": "Topological Sorting",
+        "kind": "topic",
+        "definition": "Topological sorting arranges the vertices of a directed acyclic graph in an order where every edge points forward, so each vertex comes before the ones that depend on it.",
+        "children": [
+          { "id": "CSCA411-M3-10-s1", "title": "Directed acyclic graph (DAG) requirement", "kind": "subtopic", "definition": "Only a graph with directed edges and no cycles can be topologically sorted; a cycle means the tasks depend on each other and no order exists." },
+          { "id": "CSCA411-M3-10-s2", "title": "DFS based method", "kind": "subtopic", "definition": "Run DFS and push each vertex onto a stack when its recursion finishes; popping the stack gives a topological order." },
+          { "id": "CSCA411-M3-10-s3", "title": "Kahn's indegree method", "kind": "subtopic", "definition": "Repeatedly remove a vertex whose in-degree is zero, place it in the order and decrement its neighbours' in-degrees." },
+          { "id": "CSCA411-M3-10-s4", "title": "Cycle detection and output", "kind": "subtopic", "definition": "If some vertices remain unprocessed at the end, the graph has a cycle and no topological order exists; several valid orders may exist." },
+          { "id": "CSCA411-M3-10-s5", "title": "Time complexity", "kind": "subtopic", "definition": "Both methods run in O(V + E) with an adjacency list." }
+        ],
+        "card": {
+          "explanation": "Topological sorting answers dependency questions: given tasks and prerequisites, what order lets you do everything? The graph must be acyclic, because a cycle would mean task A needs B while B needs A. The indegree method is intuitive - keep taking any task that has no pending prerequisite, then update the counts of what it unblocked. The DFS method achieves the same result by recording a vertex after all its successors have been finished. Because ties can be broken freely, a DAG usually has more than one valid order.",
+          "example": "Course prerequisites: Data Structures before Algorithms before Network Security. Any order that respects every prerequisite is a valid topological sort of your study plan.",
+          "quiz": [
+            { "q": "Topological sorting is possible only for:", "options": ["Undirected graphs", "Directed acyclic graphs", "Complete graphs", "Bipartite graphs"], "answer": 1, "why": "Any cycle would make the dependency impossible to order." },
+            { "q": "In Kahn's method, the next vertex chosen is one whose:", "options": ["out-degree is zero", "in-degree is zero", "weight is smallest", "degree is maximum"], "answer": 1, "why": "Such a vertex has no pending prerequisite, so it can be placed next." }
+          ],
+          "examTip": "Mention explicitly that the graph must be acyclic, then show one complete trace - students often forget the requirement and lose a mark.",
+          "verified": false
+        }
+      },
+      {
+        "id": "CSCA411-M3-11",
+        "title": "Minimum Spanning Tree: Prim and Kruskal",
+        "kind": "topic",
+        "definition": "A minimum spanning tree is a set of n - 1 edges that connects all vertices of a weighted graph at the least possible total cost.",
+        "children": [
+          { "id": "CSCA411-M3-11-s1", "title": "Spanning tree", "kind": "subtopic", "definition": "A subgraph that contains all the vertices of the graph, is connected, and has exactly n - 1 edges with no cycles." },
+          { "id": "CSCA411-M3-11-s2", "title": "Prim's algorithm", "kind": "subtopic", "definition": "Start from any vertex and repeatedly add the cheapest edge that joins a tree vertex to a vertex outside the tree." },
+          { "id": "CSCA411-M3-11-s3", "title": "Kruskal's algorithm", "kind": "subtopic", "definition": "Sort all edges by weight and add them one by one, skipping any edge that would form a cycle, usually tested with a union-find structure." },
+          { "id": "CSCA411-M3-11-s4", "title": "Comparison and complexity", "kind": "subtopic", "definition": "Prim grows one tree and suits dense graphs with its O(V squared) array form, while Kruskal works on sorted edge lists, suits sparse graphs and costs O(E log E)." },
+          { "id": "CSCA411-M3-11-s5", "title": "Applications", "kind": "subtopic", "definition": "Laying cable or pipelines, designing road and rail links, cluster analysis and network design at minimum cost." }
+        ],
+        "card": {
+          "explanation": "A spanning tree connects everything with the fewest edges, and the minimum spanning tree chooses which edges so that the total weight is smallest. Both classic algorithms are greedy but differ in what they grow: Prim always extends the single tree, while Kruskal considers edges globally in increasing weight and avoids cycles. The cut property guarantees that these locally cheap choices produce a globally minimum tree when weights are distinct. Since n - 1 edges are needed no matter what, the only real decision is which ones.",
+          "example": "Laying optical fibre to connect ten campus buildings: you must link every building, but you want the shortest total trench, so you pick the cheapest set of links with no loop.",
+          "quiz": [
+            { "q": "A minimum spanning tree of a graph with n vertices has:", "options": ["n edges", "n - 1 edges", "n + 1 edges", "E edges"], "answer": 1, "why": "A tree on n vertices always has exactly n - 1 edges." },
+            { "q": "Which algorithm adds edges in increasing order of weight?", "options": ["Prim's", "Kruskal's", "Dijkstra's", "Floyd's"], "answer": 1, "why": "Kruskal sorts all edges globally and picks the cheapest usable ones." }
+          ],
+          "examTip": "Run both algorithms on the same graph and show the chosen edge set with total weight - comparing them in one table usually completes the answer.",
+          "verified": false
+        }
+      }
+    ]
+  }
+]

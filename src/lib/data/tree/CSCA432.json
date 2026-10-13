@@ -1,0 +1,851 @@
+{
+  "code": "CSCA 432",
+  "subject": "Management Concepts and Strategies",
+  "semester": 3,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Management Theories, Planning and Strategies",
+      "topics": [
+        {
+          "id": "CSCA432-MI-T01",
+          "title": "Management: Science, Theory and Practice",
+          "kind": "topic",
+          "definition": "Management is the process of getting things done through people by planning, organising, staffing, leading and controlling.",
+          "children": [
+            {
+              "id": "CSCA432-MI-T01-s1",
+              "title": "Definition, nature and scope of management",
+              "kind": "subtopic",
+              "definition": "Management is both an art and a science, universal in application and concerned with results through others."
+            },
+            {
+              "id": "CSCA432-MI-T01-s2",
+              "title": "Levels of management",
+              "kind": "subtopic",
+              "definition": "Top level sets direction and policy, middle level translates policy into plans and supervisory level supervises daily work."
+            },
+            {
+              "id": "CSCA432-MI-T01-s3",
+              "title": "Managerial skills",
+              "kind": "subtopic",
+              "definition": "Technical, human and conceptual skills, with the mix changing by level."
+            },
+            {
+              "id": "CSCA432-MI-T01-s4",
+              "title": "Functions of management",
+              "kind": "subtopic",
+              "definition": "Planning, organising, staffing, directing, coordinating and controlling."
+            },
+            {
+              "id": "CSCA432-MI-T01-s5",
+              "title": "Management as a profession and its universality",
+              "kind": "subtopic",
+              "definition": "Growing professional standards, but management remains situational and practice based."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MI-T02",
+          "title": "Management and Society: Social Responsibility and Ethics",
+          "kind": "topic",
+          "definition": "Management operates within society, so it must balance profit with obligations towards people and the environment.",
+          "children": [
+            {
+              "id": "CSCA432-MI-T02-s1",
+              "title": "Social responsibility of business",
+              "kind": "subtopic",
+              "definition": "Responsibilities towards employees, consumers, shareholders, government and the community."
+            },
+            {
+              "id": "CSCA432-MI-T02-s2",
+              "title": "Arguments for and against social responsibility",
+              "kind": "subtopic",
+              "definition": "Long run survival, public image and obligation versus cost, lack of skill and dilution of purpose."
+            },
+            {
+              "id": "CSCA432-MI-T02-s3",
+              "title": "Business ethics and ethical theories",
+              "kind": "subtopic",
+              "definition": "Utilitarian, rights and justice approaches to ethical decisions."
+            },
+            {
+              "id": "CSCA432-MI-T02-s4",
+              "title": "Values and ethics in the workplace",
+              "kind": "subtopic",
+              "definition": "Codes of conduct, whistle blowing, conflict of interest and ethical leadership."
+            },
+            {
+              "id": "CSCA432-MI-T02-s5",
+              "title": "Corporate governance and sustainability",
+              "kind": "subtopic",
+              "definition": "Board accountability, transparency, green practices and triple bottom line reporting."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MI-T03",
+          "title": "Nature and Purpose of Planning",
+          "kind": "topic",
+          "definition": "Planning decides in advance what to do, how and when, so that goals are reached efficiently.",
+          "children": [
+            {
+              "id": "CSCA432-MI-T03-s1",
+              "title": "Nature of planning",
+              "kind": "subtopic",
+              "definition": "Primacy of planning among the functions, its contribution to purpose and its pervasiveness at all levels."
+            },
+            {
+              "id": "CSCA432-MI-T03-s2",
+              "title": "Types of plans",
+              "kind": "subtopic",
+              "definition": "Vision, mission, objectives, strategies, policies, procedures, rules, programmes, budgets and schedules."
+            },
+            {
+              "id": "CSCA432-MI-T03-s3",
+              "title": "Steps in planning",
+              "kind": "subtopic",
+              "definition": "Being aware of opportunities, setting objectives, developing premises, comparing alternatives, choosing a plan and implementing with review."
+            },
+            {
+              "id": "CSCA432-MI-T03-s4",
+              "title": "Management by objectives (MBO)",
+              "kind": "subtopic",
+              "definition": "Goal setting jointly with subordinates, action planning, review and appraisal against agreed objectives."
+            },
+            {
+              "id": "CSCA432-MI-T03-s5",
+              "title": "Obstacles to effective planning",
+              "kind": "subtopic",
+              "definition": "Uncertainty, lack of information, resistance to change, cost of planning and psychological barriers."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MI-T04",
+          "title": "Objectives and Planning Premises",
+          "kind": "topic",
+          "definition": "Objectives are the ends towards which activity is aimed, and premises are the assumptions on which plans rest.",
+          "children": [
+            {
+              "id": "CSCA432-MI-T04-s1",
+              "title": "Nature of objectives and goal hierarchy",
+              "kind": "subtopic",
+              "definition": "Objectives form a hierarchy from socioeconomic purpose down to individual goals."
+            },
+            {
+              "id": "CSCA432-MI-T04-s2",
+              "title": "Setting objectives and SMART criteria",
+              "kind": "subtopic",
+              "definition": "Specific, measurable, achievable, relevant and time bound objectives."
+            },
+            {
+              "id": "CSCA432-MI-T04-s3",
+              "title": "Management by objectives as a system",
+              "kind": "subtopic",
+              "definition": "Objectives, participation, feedback and performance review joined into a system."
+            },
+            {
+              "id": "CSCA432-MI-T04-s4",
+              "title": "Forecasting and planning premises",
+              "kind": "subtopic",
+              "definition": "Internal and external premises, with quantitative and qualitative forecasting techniques."
+            },
+            {
+              "id": "CSCA432-MI-T04-s5",
+              "title": "Vision, mission and values",
+              "kind": "subtopic",
+              "definition": "The long term aspiration, the purpose of the organisation and the beliefs that guide behaviour."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MI-T05",
+          "title": "Strategies, Policies and Strategic Planning",
+          "kind": "topic",
+          "definition": "Strategy is the broad plan for achieving objectives by matching the organisation to its environment.",
+          "children": [
+            {
+              "id": "CSCA432-MI-T05-s1",
+              "title": "Strategic planning process",
+              "kind": "subtopic",
+              "definition": "Define mission, scan the environment, set objectives, generate alternatives, choose strategy and implement."
+            },
+            {
+              "id": "CSCA432-MI-T05-s2",
+              "title": "SWOT and environmental analysis",
+              "kind": "subtopic",
+              "definition": "Strengths, weaknesses, opportunities and threats analysed with internal and external scanning."
+            },
+            {
+              "id": "CSCA432-MI-T05-s3",
+              "title": "Porter generic strategies",
+              "kind": "subtopic",
+              "definition": "Cost leadership, differentiation and focus for competitive advantage, plus the value chain."
+            },
+            {
+              "id": "CSCA432-MI-T05-s4",
+              "title": "Porter five forces and the BCG matrix",
+              "kind": "subtopic",
+              "definition": "Industry attractiveness through competition, suppliers, buyers, substitutes and entrants; portfolio choices of stars, cash cows, question marks and dogs."
+            },
+            {
+              "id": "CSCA432-MI-T05-s5",
+              "title": "Growth, stability and retrenchment strategies",
+              "kind": "subtopic",
+              "definition": "Directions of strategy at corporate level, with diversification and vertical integration options."
+            },
+            {
+              "id": "CSCA432-MI-T05-s6",
+              "title": "Strategic versus tactical planning",
+              "kind": "subtopic",
+              "definition": "Strategy sets long term direction while tactics deal with short term methods."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Decision Making and Organising",
+      "topics": [
+        {
+          "id": "CSCA432-MII-T01",
+          "title": "Decision Making",
+          "kind": "topic",
+          "definition": "Decision making is the process of choosing among alternatives to reach an objective.",
+          "children": [
+            {
+              "id": "CSCA432-MII-T01-s1",
+              "title": "Types of decisions",
+              "kind": "subtopic",
+              "definition": "Programmed decisions follow rules for routine problems; non programmed decisions are novel and unstructured."
+            },
+            {
+              "id": "CSCA432-MII-T01-s2",
+              "title": "Rational decision making process",
+              "kind": "subtopic",
+              "definition": "Identify the problem, set criteria, allocate weights, develop and analyse alternatives, then choose and implement."
+            },
+            {
+              "id": "CSCA432-MII-T01-s3",
+              "title": "Bounded rationality and satisficing",
+              "kind": "subtopic",
+              "definition": "Real managers work with incomplete information and limited time, so they accept a good enough option."
+            },
+            {
+              "id": "CSCA432-MII-T01-s4",
+              "title": "Group decision making",
+              "kind": "subtopic",
+              "definition": "Brainstorming, nominal group technique and Delphi improve quality but may cause groupthink and slow decisions."
+            },
+            {
+              "id": "CSCA432-MII-T01-s5",
+              "title": "Decision trees and payoff tables",
+              "kind": "subtopic",
+              "definition": "Quantitative tools that show alternatives, states of nature, probabilities and expected values."
+            },
+            {
+              "id": "CSCA432-MII-T01-s6",
+              "title": "Creativity and innovation in decisions",
+              "kind": "subtopic",
+              "definition": "Encouraging new ideas and managing the risks that come with them."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MII-T02",
+          "title": "Nature and Purpose of Organising",
+          "kind": "topic",
+          "definition": "Organising groups activities, assigns them to positions and defines authority so that plans can be implemented.",
+          "children": [
+            {
+              "id": "CSCA432-MII-T02-s1",
+              "title": "Organisation structure and design",
+              "kind": "subtopic",
+              "definition": "The formal pattern of relationships, and the choices of division of labour and coordination."
+            },
+            {
+              "id": "CSCA432-MII-T02-s2",
+              "title": "Formal and informal organisation",
+              "kind": "subtopic",
+              "definition": "The official structure versus the social network that emerges among employees."
+            },
+            {
+              "id": "CSCA432-MII-T02-s3",
+              "title": "Span of control and organisation levels",
+              "kind": "subtopic",
+              "definition": "The number of subordinates a manager can supervise, which decides how flat or tall the structure is."
+            },
+            {
+              "id": "CSCA432-MII-T02-s4",
+              "title": "Authority, responsibility and accountability",
+              "kind": "subtopic",
+              "definition": "Authority is the right to command, responsibility is the duty assigned and accountability is the obligation to report."
+            },
+            {
+              "id": "CSCA432-MII-T02-s5",
+              "title": "Delegation and its obstacles",
+              "kind": "subtopic",
+              "definition": "Transferring authority and tasks, with barriers such as fear of losing control on both sides."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MII-T03",
+          "title": "Departmentalization",
+          "kind": "topic",
+          "definition": "Departmentalisation groups activities into manageable units so that common work sits together.",
+          "children": [
+            {
+              "id": "CSCA432-MII-T03-s1",
+              "title": "Functional departmentalization",
+              "kind": "subtopic",
+              "definition": "Grouping by work function such as marketing, production and finance, which gives expertise but slows coordination."
+            },
+            {
+              "id": "CSCA432-MII-T03-s2",
+              "title": "Product departmentalization",
+              "kind": "subtopic",
+              "definition": "Grouping by product line, which suits diversified companies with product managers."
+            },
+            {
+              "id": "CSCA432-MII-T03-s3",
+              "title": "Geographical departmentalization",
+              "kind": "subtopic",
+              "definition": "Grouping by territory, which suits sales and service organisations spread over regions."
+            },
+            {
+              "id": "CSCA432-MII-T03-s4",
+              "title": "Customer and process departmentalization",
+              "kind": "subtopic",
+              "definition": "Grouping by customer type or by production process step."
+            },
+            {
+              "id": "CSCA432-MII-T03-s5",
+              "title": "Matrix and team structures",
+              "kind": "subtopic",
+              "definition": "Employees report to both a functional and a project manager, which gives flexibility but creates dual authority."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MII-T04",
+          "title": "Line and Staff Authority, Decentralization",
+          "kind": "topic",
+          "definition": "Line positions carry direct command responsibility while staff positions advise, and decentralisation spreads decision authority.",
+          "children": [
+            {
+              "id": "CSCA432-MII-T04-s1",
+              "title": "Line, staff and functional authority",
+              "kind": "subtopic",
+              "definition": "Line managers command operations, staff specialists support and functional authority lets staff give orders on narrow matters."
+            },
+            {
+              "id": "CSCA432-MII-T04-s2",
+              "title": "Line and staff conflicts",
+              "kind": "subtopic",
+              "definition": "Conflicts arise when staff advice is seen as interference or when line managers ignore expertise."
+            },
+            {
+              "id": "CSCA432-MII-T04-s3",
+              "title": "Centralization versus decentralization",
+              "kind": "subtopic",
+              "definition": "Centralisation keeps decisions with top management while decentralisation pushes them to lower levels, with degrees in between."
+            },
+            {
+              "id": "CSCA432-MII-T04-s4",
+              "title": "Advantages and disadvantages of decentralization",
+              "kind": "subtopic",
+              "definition": "Faster decisions, motivation and development of managers versus lost control, duplication and cost."
+            },
+            {
+              "id": "CSCA432-MII-T04-s5",
+              "title": "Recentralization and balance",
+              "kind": "subtopic",
+              "definition": "Technology and control systems allow partial recentralisation; the right balance depends on size and environment."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MII-T05",
+          "title": "Effective Organizing and Organizational Culture",
+          "kind": "topic",
+          "definition": "Effective organising avoids structural errors, and culture shapes how people actually behave in the structure.",
+          "children": [
+            {
+              "id": "CSCA432-MII-T05-s1",
+              "title": "Avoiding organisational mistakes",
+              "kind": "subtopic",
+              "definition": "Eliminate unclear responsibility, flexible structures that confuse and over-complex delegation."
+            },
+            {
+              "id": "CSCA432-MII-T05-s2",
+              "title": "Ensuring flexibility and clarity",
+              "kind": "subtopic",
+              "definition": "Plans should be changeable, positions clearly defined and accountability traceable."
+            },
+            {
+              "id": "CSCA432-MII-T05-s3",
+              "title": "Organisational culture and its dimensions",
+              "kind": "subtopic",
+              "definition": "Shared values, beliefs and norms; dimensions such as outcome orientation, people orientation and team orientation."
+            },
+            {
+              "id": "CSCA432-MII-T05-s4",
+              "title": "Culture versus formal structure",
+              "kind": "subtopic",
+              "definition": "The structure says how things should work while culture decides how they actually work."
+            },
+            {
+              "id": "CSCA432-MII-T05-s5",
+              "title": "Learning organisation and knowledge management",
+              "kind": "subtopic",
+              "definition": "Encouraging continuous learning, systems thinking, teamwork and sharing of knowledge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Human Resource Management and Development",
+      "topics": [
+        {
+          "id": "CSCA432-MIII-T01",
+          "title": "Human Resource Management and Selection",
+          "kind": "topic",
+          "definition": "HRM manages the people side of an organisation from recruitment to retirement.",
+          "children": [
+            {
+              "id": "CSCA432-MIII-T01-s1",
+              "title": "Meaning, objectives and functions of HRM",
+              "kind": "subtopic",
+              "definition": "Acquiring, developing, motivating and retaining people to meet organisational goals."
+            },
+            {
+              "id": "CSCA432-MIII-T01-s2",
+              "title": "HR planning and job analysis",
+              "kind": "subtopic",
+              "definition": "Forecasting needs and defining jobs through job description and job specification."
+            },
+            {
+              "id": "CSCA432-MIII-T01-s3",
+              "title": "Recruitment sources",
+              "kind": "subtopic",
+              "definition": "Internal sources such as promotion and transfer; external sources such as advertisements, campus placement, agencies and referrals."
+            },
+            {
+              "id": "CSCA432-MIII-T01-s4",
+              "title": "Selection process",
+              "kind": "subtopic",
+              "definition": "Application screening, tests, interviews, reference checks, medical examination and induction."
+            },
+            {
+              "id": "CSCA432-MIII-T01-s5",
+              "title": "Types of tests and interviews",
+              "kind": "subtopic",
+              "definition": "Aptitude, achievement, personality and interest tests, and structured or panel interviews."
+            },
+            {
+              "id": "CSCA432-MIII-T01-s6",
+              "title": "Orientation and placement",
+              "kind": "subtopic",
+              "definition": "Introducing the new employee to the organisation and fitting them to the right job."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MIII-T02",
+          "title": "Training, Development and Performance Appraisal",
+          "kind": "topic",
+          "definition": "Training builds skills for the current job while development prepares employees for future responsibilities.",
+          "children": [
+            {
+              "id": "CSCA432-MIII-T02-s1",
+              "title": "Training methods",
+              "kind": "subtopic",
+              "definition": "On the job methods such as coaching, job rotation and apprenticeship; off the job methods such as lectures, case studies, vestibule training and computer based training."
+            },
+            {
+              "id": "CSCA432-MIII-T02-s2",
+              "title": "Benefits of training",
+              "kind": "subtopic",
+              "definition": "Higher productivity, quality, morale and lower supervision need with fewer accidents."
+            },
+            {
+              "id": "CSCA432-MIII-T02-s3",
+              "title": "Performance appraisal methods",
+              "kind": "subtopic",
+              "definition": "Rating scales, ranking, paired comparison, critical incident, essay, checklist, MBO based and 360 degree appraisal."
+            },
+            {
+              "id": "CSCA432-MIII-T02-s4",
+              "title": "Appraisal problems and solutions",
+              "kind": "subtopic",
+              "definition": "Halo effect, leniency, central tendency and recency bias, reduced by training and objective criteria."
+            },
+            {
+              "id": "CSCA432-MIII-T02-s5",
+              "title": "Career strategy and succession planning",
+              "kind": "subtopic",
+              "definition": "Career stages, career paths, mentoring and preparing successors for key posts."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MIII-T03",
+          "title": "Manager and Organizational Development",
+          "kind": "topic",
+          "definition": "Managerial development builds long term capability, and organisation development improves systems and culture.",
+          "children": [
+            {
+              "id": "CSCA432-MIII-T03-s1",
+              "title": "Managerial development methods",
+              "kind": "subtopic",
+              "definition": "Understudy assignments, coaching, job rotation, special projects, committees and university programmes."
+            },
+            {
+              "id": "CSCA432-MIII-T03-s2",
+              "title": "Learning and change",
+              "kind": "subtopic",
+              "definition": "Individual learning cycles and resistance to change, which must be managed openly."
+            },
+            {
+              "id": "CSCA432-MIII-T03-s3",
+              "title": "Organizational development interventions",
+              "kind": "subtopic",
+              "definition": "Survey feedback, team building, sensitivity training, process consultation and intergroup development."
+            },
+            {
+              "id": "CSCA432-MIII-T03-s4",
+              "title": "Organizational change models",
+              "kind": "subtopic",
+              "definition": "Lewin unfreezing, changing and refreezing model, and the role of change agents."
+            },
+            {
+              "id": "CSCA432-MIII-T03-s5",
+              "title": "Employee engagement and retention",
+              "kind": "subtopic",
+              "definition": "Motivation, recognition, career growth and a healthy work environment to reduce attrition."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Motivation, Leadership and Communication",
+      "topics": [
+        {
+          "id": "CSCA432-MIV-T01",
+          "title": "Motivation",
+          "kind": "topic",
+          "definition": "Motivation is the willingness to exert high levels of effort towards organisational goals.",
+          "children": [
+            {
+              "id": "CSCA432-MIV-T01-s1",
+              "title": "Maslow hierarchy of needs",
+              "kind": "subtopic",
+              "definition": "Physiological, safety, social, esteem and self actualisation needs, satisfied from the bottom up."
+            },
+            {
+              "id": "CSCA432-MIV-T01-s2",
+              "title": "Herzberg two factor theory",
+              "kind": "subtopic",
+              "definition": "Hygiene factors prevent dissatisfaction while motivators such as achievement and growth create satisfaction."
+            },
+            {
+              "id": "CSCA432-MIV-T01-s3",
+              "title": "McGregor theory X and theory Y",
+              "kind": "subtopic",
+              "definition": "Negative and positive assumptions about workers, which lead to different management styles."
+            },
+            {
+              "id": "CSCA432-MIV-T01-s4",
+              "title": "McClelland three needs theory",
+              "kind": "subtopic",
+              "definition": "The needs for achievement, power and affiliation that drive behaviour."
+            },
+            {
+              "id": "CSCA432-MIV-T01-s5",
+              "title": "Vroom expectancy theory",
+              "kind": "subtopic",
+              "definition": "Motivation equals expectancy times instrumentality times valence."
+            },
+            {
+              "id": "CSCA432-MIV-T01-s6",
+              "title": "Equity and ERG theories",
+              "kind": "subtopic",
+              "definition": "Adams equity compares inputs and outcomes with others; Alderfer compresses Maslow into existence, relatedness and growth."
+            },
+            {
+              "id": "CSCA432-MIV-T01-s7",
+              "title": "Motivation in practice",
+              "kind": "subtopic",
+              "definition": "Job enrichment, flexible work, recognition, fair pay and participative management."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MIV-T02",
+          "title": "Leadership",
+          "kind": "topic",
+          "definition": "Leadership is the ability to influence people to work willingly towards group goals.",
+          "children": [
+            {
+              "id": "CSCA432-MIV-T02-s1",
+              "title": "Leadership versus management",
+              "kind": "subtopic",
+              "definition": "Managers rely on formal authority while leaders rely on influence and vision."
+            },
+            {
+              "id": "CSCA432-MIV-T02-s2",
+              "title": "Trait and behavioural theories",
+              "kind": "subtopic",
+              "definition": "Early trait lists and the Ohio State and Michigan studies of consideration versus initiating structure."
+            },
+            {
+              "id": "CSCA432-MIV-T02-s3",
+              "title": "Managerial grid and styles",
+              "kind": "subtopic",
+              "definition": "Blake and Mouton grid of concern for people and production, giving styles from impoverished to team management."
+            },
+            {
+              "id": "CSCA432-MIV-T02-s4",
+              "title": "Contingency and situational theories",
+              "kind": "subtopic",
+              "definition": "Fiedler contingency model, Hersey and Blanchard situational leadership and path goal theory."
+            },
+            {
+              "id": "CSCA432-MIV-T02-s5",
+              "title": "Transformational and transactional leadership",
+              "kind": "subtopic",
+              "definition": "Transactional exchanges rewards for performance while transformational inspires through vision and individual consideration."
+            },
+            {
+              "id": "CSCA432-MIV-T02-s6",
+              "title": "Leadership skills and qualities",
+              "kind": "subtopic",
+              "definition": "Communication, decision making, empathy, integrity, courage and the ability to develop people."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MIV-T03",
+          "title": "Communication in Management",
+          "kind": "topic",
+          "definition": "Communication is the transfer and understanding of meaning, and it is the basis of all managerial work.",
+          "children": [
+            {
+              "id": "CSCA432-MIV-T03-s1",
+              "title": "Communication process and channels",
+              "kind": "subtopic",
+              "definition": "Encoding, medium, decoding and feedback through formal and informal channels."
+            },
+            {
+              "id": "CSCA432-MIV-T03-s2",
+              "title": "Downward, upward and lateral communication",
+              "kind": "subtopic",
+              "definition": "Instructions and policies flow down, reports and suggestions flow up, and coordination flows sideways."
+            },
+            {
+              "id": "CSCA432-MIV-T03-s3",
+              "title": "Barriers to communication",
+              "kind": "subtopic",
+              "definition": "Semantic, psychological, organisational and personal barriers."
+            },
+            {
+              "id": "CSCA432-MIV-T03-s4",
+              "title": "Grapevine and informal communication",
+              "kind": "subtopic",
+              "definition": "The informal network spreads information quickly, sometimes inaccurately, and can be used positively."
+            },
+            {
+              "id": "CSCA432-MIV-T03-s5",
+              "title": "Effective communication and active listening",
+              "kind": "subtopic",
+              "definition": "Clarity, feedback, empathy, simple language and reducing noise."
+            },
+            {
+              "id": "CSCA432-MIV-T03-s6",
+              "title": "Communication technology in management",
+              "kind": "subtopic",
+              "definition": "Email, video conferencing, collaboration tools and their effect on speed and richness of messages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Controlling, Productivity and Global Management",
+      "topics": [
+        {
+          "id": "CSCA432-MV-T01",
+          "title": "The System and Process of Controlling",
+          "kind": "topic",
+          "definition": "Controlling measures performance against standards and corrects deviations so that plans are achieved.",
+          "children": [
+            {
+              "id": "CSCA432-MV-T01-s1",
+              "title": "Control process steps",
+              "kind": "subtopic",
+              "definition": "Establish standards, measure performance, compare with standards and take corrective action."
+            },
+            {
+              "id": "CSCA432-MV-T01-s2",
+              "title": "Types of control",
+              "kind": "subtopic",
+              "definition": "Feedforward control before activity, concurrent control during it and feedback control after it."
+            },
+            {
+              "id": "CSCA432-MV-T01-s3",
+              "title": "Requirements for effective control",
+              "kind": "subtopic",
+              "definition": "Controls must be tailored, accurate, timely, economical and acceptable to the people involved."
+            },
+            {
+              "id": "CSCA432-MV-T01-s4",
+              "title": "Control and planning relationship",
+              "kind": "subtopic",
+              "definition": "Planning sets the standards that control measures, so controlling completes the cycle."
+            },
+            {
+              "id": "CSCA432-MV-T01-s5",
+              "title": "Critical point, control and management by exception",
+              "kind": "subtopic",
+              "definition": "Watch only the key deviations, which saves time and keeps attention on important matters."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MV-T02",
+          "title": "Control Techniques and Information Technology",
+          "kind": "topic",
+          "definition": "Managers use budgets, ratios and information systems as control tools.",
+          "children": [
+            {
+              "id": "CSCA432-MV-T02-s1",
+              "title": "Budgetary control",
+              "kind": "subtopic",
+              "definition": "Expense, revenue, cash and capital budgets with variance analysis and flexible budgets."
+            },
+            {
+              "id": "CSCA432-MV-T02-s2",
+              "title": "Non budgetary control techniques",
+              "kind": "subtopic",
+              "definition": "Statistical data, break even analysis, ratio analysis, internal audit and personal observation."
+            },
+            {
+              "id": "CSCA432-MV-T02-s3",
+              "title": "Break even analysis",
+              "kind": "subtopic",
+              "definition": "Fixed and variable costs with contribution and margin of safety to find the no profit no loss point."
+            },
+            {
+              "id": "CSCA432-MV-T02-s4",
+              "title": "Management information systems",
+              "kind": "subtopic",
+              "definition": "Collecting, processing and reporting data for decision making and control."
+            },
+            {
+              "id": "CSCA432-MV-T02-s5",
+              "title": "Balanced scorecard and dashboards",
+              "kind": "subtopic",
+              "definition": "Measures across financial, customer, internal process and learning perspectives."
+            },
+            {
+              "id": "CSCA432-MV-T02-s6",
+              "title": "Information technology in control",
+              "kind": "subtopic",
+              "definition": "ERP, databases and analytics give faster, finer control but require data accuracy and security."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MV-T03",
+          "title": "Productivity and Operations Management",
+          "kind": "topic",
+          "definition": "Productivity is the ratio of output to input, and operations management organises the processes that create value.",
+          "children": [
+            {
+              "id": "CSCA432-MV-T03-s1",
+              "title": "Measuring productivity",
+              "kind": "subtopic",
+              "definition": "Partial, multifactor and total productivity measures, and their use in comparing periods and units."
+            },
+            {
+              "id": "CSCA432-MV-T03-s2",
+              "title": "Quality concepts and TQM",
+              "kind": "subtopic",
+              "definition": "Fitness for purpose, continuous improvement, customer focus, employee involvement and statistical quality control."
+            },
+            {
+              "id": "CSCA432-MV-T03-s3",
+              "title": "Operations planning and control",
+              "kind": "subtopic",
+              "definition": "Forecasting demand, capacity planning, scheduling, inventory control and just in time."
+            },
+            {
+              "id": "CSCA432-MV-T03-s4",
+              "title": "Supply chain essentials",
+              "kind": "subtopic",
+              "definition": "Purchasing, logistics, vendor selection and the bullwhip effect in demand information."
+            },
+            {
+              "id": "CSCA432-MV-T03-s5",
+              "title": "Productivity improvement techniques",
+              "kind": "subtopic",
+              "definition": "Work study, method study, automation, training and better layout."
+            }
+          ]
+        },
+        {
+          "id": "CSCA432-MV-T04",
+          "title": "Overall and Preventive Control, Toward a Unified Global Theory",
+          "kind": "topic",
+          "definition": "Overall control looks at the total performance of the organisation while preventive control stops problems before they occur.",
+          "children": [
+            {
+              "id": "CSCA432-MV-T04-s1",
+              "title": "Overall performance control",
+              "kind": "subtopic",
+              "definition": "Financial controls through ROI and profit, plus comparative analysis and industry benchmarking."
+            },
+            {
+              "id": "CSCA432-MV-T04-s2",
+              "title": "Preventive control",
+              "kind": "subtopic",
+              "definition": "Managing by anticipation through good planning, selection, training and culture rather than after the fact."
+            },
+            {
+              "id": "CSCA432-MV-T04-s3",
+              "title": "Control pitfalls",
+              "kind": "subtopic",
+              "definition": "Over control, rigid standards and measures that encourage the wrong behaviour."
+            },
+            {
+              "id": "CSCA432-MV-T04-s4",
+              "title": "Systems and contingency approaches",
+              "kind": "subtopic",
+              "definition": "Viewing the organisation as an open system and adapting management style to the situation."
+            },
+            {
+              "id": "CSCA432-MV-T04-s5",
+              "title": "Global management and cultural dimensions",
+              "kind": "subtopic",
+              "definition": "Hofstede cultural dimensions, cross cultural leadership and managing multinational teams."
+            },
+            {
+              "id": "CSCA432-MV-T04-s6",
+              "title": "Management in the Indian context and the road ahead",
+              "kind": "subtopic",
+              "definition": "Joint family influence, jugaad innovation, family business structures and the shift to knowledge work and digitisation."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

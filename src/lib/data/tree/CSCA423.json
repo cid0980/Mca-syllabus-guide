@@ -1,0 +1,679 @@
+{
+  "code": "CSCA 423",
+  "subject": "Communication Skills",
+  "semester": 2,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Communication Concepts and Process",
+      "topics": [
+        {
+          "id": "CSCA423-MI-T01",
+          "title": "Communication: Concepts and Definition",
+          "kind": "topic",
+          "definition": "Communication is the process of exchanging information, ideas and feelings between two or more people so that meaning is shared.",
+          "children": [
+            {
+              "id": "CSCA423-MI-T01-s1",
+              "title": "Definition and elements",
+              "kind": "subtopic",
+              "definition": "Sender, message, encoding, channel, receiver, decoding, feedback and noise make up the communication process."
+            },
+            {
+              "id": "CSCA423-MI-T01-s2",
+              "title": "Importance of communication",
+              "kind": "subtopic",
+              "definition": "It coordinates work, builds relationships, supports decision making and prevents misunderstanding."
+            },
+            {
+              "id": "CSCA423-MI-T01-s3",
+              "title": "Objectives of communication",
+              "kind": "subtopic",
+              "definition": "To inform, persuade, instruct, motivate, warn, educate and build goodwill."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MI-T02",
+          "title": "Process and Models of Communication",
+          "kind": "topic",
+          "definition": "Models simplify the communication process and show where meanings can be lost.",
+          "children": [
+            {
+              "id": "CSCA423-MI-T02-s1",
+              "title": "Shannon and Weaver model",
+              "kind": "subtopic",
+              "definition": "A linear model with source, encoder, channel, decoder, destination and noise."
+            },
+            {
+              "id": "CSCA423-MI-T02-s2",
+              "title": "Berlo SMCR model",
+              "kind": "subtopic",
+              "definition": "Source, message, channel and receiver, each influenced by skills, attitudes and knowledge."
+            },
+            {
+              "id": "CSCA423-MI-T02-s3",
+              "title": "Transactional and interactive models",
+              "kind": "subtopic",
+              "definition": "Communication is a simultaneous two way exchange in which both parties send and receive at once."
+            },
+            {
+              "id": "CSCA423-MI-T02-s4",
+              "title": "Feedback and noise in the process",
+              "kind": "subtopic",
+              "definition": "Feedback confirms understanding while noise - physical, semantic or psychological - distorts the message."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MI-T03",
+          "title": "Types and Modes of Communication",
+          "kind": "topic",
+          "definition": "Communication is classified by the medium used and the direction of flow.",
+          "children": [
+            {
+              "id": "CSCA423-MI-T03-s1",
+              "title": "Verbal and non verbal communication",
+              "kind": "subtopic",
+              "definition": "Words carry the content while tone, gestures and expressions carry much of the meaning."
+            },
+            {
+              "id": "CSCA423-MI-T03-s2",
+              "title": "Oral and written communication",
+              "kind": "subtopic",
+              "definition": "Oral is fast and personal with immediate feedback; written is permanent, precise and easier to audit."
+            },
+            {
+              "id": "CSCA423-MI-T03-s3",
+              "title": "Formal and informal communication",
+              "kind": "subtopic",
+              "definition": "Formal follows the official chain of command while informal flows through the grapevine."
+            },
+            {
+              "id": "CSCA423-MI-T03-s4",
+              "title": "Interpersonal and intrapersonal communication",
+              "kind": "subtopic",
+              "definition": "Interpersonal is between two or more people while intrapersonal is the internal conversation within oneself."
+            },
+            {
+              "id": "CSCA423-MI-T03-s5",
+              "title": "One way and two way communication",
+              "kind": "subtopic",
+              "definition": "Two way communication includes feedback and therefore reduces misunderstanding."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MI-T04",
+          "title": "Barriers to Communication and the Commandments of Communication",
+          "kind": "topic",
+          "definition": "Barriers are obstacles that distort or block a message, and the commandments are the basic rules that prevent them.",
+          "children": [
+            {
+              "id": "CSCA423-MI-T04-s1",
+              "title": "Physical and environmental barriers",
+              "kind": "subtopic",
+              "definition": "Noise, distance, poor network connection and uncomfortable surroundings."
+            },
+            {
+              "id": "CSCA423-MI-T04-s2",
+              "title": "Semantic and language barriers",
+              "kind": "subtopic",
+              "definition": "Jargon, poor vocabulary, bad grammar and words with several meanings."
+            },
+            {
+              "id": "CSCA423-MI-T04-s3",
+              "title": "Psychological and emotional barriers",
+              "kind": "subtopic",
+              "definition": "Prejudice, fear, lack of attention, stress and distrust."
+            },
+            {
+              "id": "CSCA423-MI-T04-s4",
+              "title": "Organisational and cultural barriers",
+              "kind": "subtopic",
+              "definition": "Long chains of command, information overload, status differences and cultural differences."
+            },
+            {
+              "id": "CSCA423-MI-T04-s5",
+              "title": "Commandments of good communication",
+              "kind": "subtopic",
+              "definition": "Be clear, concise, complete, correct, courteous, concrete and considerate - the seven C principles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Developing Communication Skills: Reading, Writing, Listening and Speaking",
+      "topics": [
+        {
+          "id": "CSCA423-MII-T01",
+          "title": "Reading Skills",
+          "kind": "topic",
+          "definition": "Reading is the active skill of deriving meaning from written symbols, and it can be made faster and more purposeful.",
+          "children": [
+            {
+              "id": "CSCA423-MII-T01-s1",
+              "title": "Preparation before reading",
+              "kind": "subtopic",
+              "definition": "Define the purpose, skim the layout, and decide what information is needed."
+            },
+            {
+              "id": "CSCA423-MII-T01-s2",
+              "title": "Reading styles",
+              "kind": "subtopic",
+              "definition": "Skimming for the gist, scanning for a specific fact, intensive reading for detail and extensive reading for pleasure."
+            },
+            {
+              "id": "CSCA423-MII-T01-s3",
+              "title": "Linear and faster reading",
+              "kind": "subtopic",
+              "definition": "Linear reading follows the text from start to finish while faster reading uses eye movement control and avoids sub-vocalisation."
+            },
+            {
+              "id": "CSCA423-MII-T01-s4",
+              "title": "Reading techniques",
+              "kind": "subtopic",
+              "definition": "SQ3R - survey, question, read, recite and review - along with note making, underlining and summarising."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MII-T02",
+          "title": "Writing Skills",
+          "kind": "topic",
+          "definition": "Effective writing is clear, correct and organised for a known reader and a defined purpose.",
+          "children": [
+            {
+              "id": "CSCA423-MII-T02-s1",
+              "title": "Principles of effective writing",
+              "kind": "subtopic",
+              "definition": "Clarity, brevity, accuracy, coherence and appropriate tone, with a logical introduction, body and conclusion."
+            },
+            {
+              "id": "CSCA423-MII-T02-s2",
+              "title": "Report writing",
+              "kind": "subtopic",
+              "definition": "Formal documents with title, terms of reference, procedure, findings, conclusions and recommendations."
+            },
+            {
+              "id": "CSCA423-MII-T02-s3",
+              "title": "Speech writing",
+              "kind": "subtopic",
+              "definition": "Written to be heard, with a strong opening, signposted body and memorable conclusion."
+            },
+            {
+              "id": "CSCA423-MII-T02-s4",
+              "title": "Minutes and agenda writing",
+              "kind": "subtopic",
+              "definition": "The agenda lists items to be discussed and the minutes record decisions, attendance and action points."
+            },
+            {
+              "id": "CSCA423-MII-T02-s5",
+              "title": "Letters and correspondence",
+              "kind": "subtopic",
+              "definition": "Formal letters follow a fixed layout with sender address, date, receiver address, subject, salutation, body and closing."
+            },
+            {
+              "id": "CSCA423-MII-T02-s6",
+              "title": "Article writing",
+              "kind": "subtopic",
+              "definition": "Explains or argues a point for a general reader with a headline, introduction, main points and conclusion."
+            },
+            {
+              "id": "CSCA423-MII-T02-s7",
+              "title": "Improving English language writing",
+              "kind": "subtopic",
+              "definition": "Build vocabulary, revise grammar, read good writing and edit ruthlessly."
+            },
+            {
+              "id": "CSCA423-MII-T02-s8",
+              "title": "When to write and when not to write",
+              "kind": "subtopic",
+              "definition": "Write when a record, precision or evidence is needed; speak when urgency or discussion is needed."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MII-T03",
+          "title": "Listening Skills",
+          "kind": "topic",
+          "definition": "Listening is the conscious effort to hear and understand a message, and it is the most used communication skill.",
+          "children": [
+            {
+              "id": "CSCA423-MII-T03-s1",
+              "title": "Importance and advantages of listening",
+              "kind": "subtopic",
+              "definition": "Good listening builds trust, reduces errors, improves decisions and saves the time lost in repeated work."
+            },
+            {
+              "id": "CSCA423-MII-T03-s2",
+              "title": "Art of listening",
+              "kind": "subtopic",
+              "definition": "Attention, patience, eye contact, avoiding interruption and reflecting the meaning back."
+            },
+            {
+              "id": "CSCA423-MII-T03-s3",
+              "title": "Types of listening",
+              "kind": "subtopic",
+              "definition": "Active, passive, empathetic, critical, appreciative and discriminative listening."
+            },
+            {
+              "id": "CSCA423-MII-T03-s4",
+              "title": "Barriers to listening and listening tests",
+              "kind": "subtopic",
+              "definition": "Distraction, premature evaluation, boredom and bias; listening tests use passages followed by questions to measure comprehension."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MII-T04",
+          "title": "Speaking Skills",
+          "kind": "topic",
+          "definition": "Speaking is the process of conveying ideas orally with clarity, confidence and suitable tone.",
+          "children": [
+            {
+              "id": "CSCA423-MII-T04-s1",
+              "title": "Art of conversation",
+              "kind": "subtopic",
+              "definition": "Starting, maintaining and closing a conversation, taking turns, showing interest and avoiding argument."
+            },
+            {
+              "id": "CSCA423-MII-T04-s2",
+              "title": "Telephone and telephonic etiquette",
+              "kind": "subtopic",
+              "definition": "Identify yourself, speak clearly, keep it brief, listen actively and close politely."
+            },
+            {
+              "id": "CSCA423-MII-T04-s3",
+              "title": "Methods of asking questions",
+              "kind": "subtopic",
+              "definition": "Open, closed, leading, probing and rhetorical questions achieve different purposes."
+            },
+            {
+              "id": "CSCA423-MII-T04-s4",
+              "title": "Brainstorming and presenting reports",
+              "kind": "subtopic",
+              "definition": "Generate many ideas without judgement first, then organise and present the chosen ones with evidence."
+            },
+            {
+              "id": "CSCA423-MII-T04-s5",
+              "title": "Improving speech delivery",
+              "kind": "subtopic",
+              "definition": "Pace, pause, pitch, volume, pronunciation and the avoidance of filler words."
+            },
+            {
+              "id": "CSCA423-MII-T04-s6",
+              "title": "Expressing techniques",
+              "kind": "subtopic",
+              "definition": "Choosing the right words and tone, using examples and being concise."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Interview Techniques and Group Discussion",
+      "topics": [
+        {
+          "id": "CSCA423-MIII-T01",
+          "title": "Interview Techniques",
+          "kind": "topic",
+          "definition": "An interview is a planned conversation in which an employer and a candidate assess each other.",
+          "children": [
+            {
+              "id": "CSCA423-MIII-T01-s1",
+              "title": "What an interview is and why it matters",
+              "kind": "subtopic",
+              "definition": "It verifies the application, checks communication and attitude, and gives the employer evidence beyond the resume."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s2",
+              "title": "Types of interviews",
+              "kind": "subtopic",
+              "definition": "Structured, unstructured, semi structured, panel, group, stress, telephonic, video and walk in interviews."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s3",
+              "title": "Understanding the intricacies",
+              "kind": "subtopic",
+              "definition": "Interviewers look for knowledge, clarity of thought, attitude and cultural fit as well as qualifications."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s4",
+              "title": "Planning for an interview",
+              "kind": "subtopic",
+              "definition": "Research the organisation and role, prepare examples with STAR - situation, task, action and result - and plan logistics."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s5",
+              "title": "Answering skills",
+              "kind": "subtopic",
+              "definition": "Listen fully, answer to the point, structure with examples and never bluff."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s6",
+              "title": "Effective communication during interviews",
+              "kind": "subtopic",
+              "definition": "Dress appropriately, keep good posture and eye contact, speak at a measured pace and thank the panel."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s7",
+              "title": "TIPS to remember",
+              "kind": "subtopic",
+              "definition": "Think before answering, be honest, present yourself confidently and stay positive about past employers."
+            },
+            {
+              "id": "CSCA423-MIII-T01-s8",
+              "title": "Mock interview",
+              "kind": "subtopic",
+              "definition": "A practice session that builds confidence and exposes weak answers before the real thing."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MIII-T02",
+          "title": "Group Discussion",
+          "kind": "topic",
+          "definition": "A group discussion is a purposeful conversation among several candidates evaluated for content, communication and teamwork.",
+          "children": [
+            {
+              "id": "CSCA423-MIII-T02-s1",
+              "title": "Purpose of group discussion",
+              "kind": "subtopic",
+              "definition": "To assess knowledge, reasoning, leadership, listening and the ability to work in a team."
+            },
+            {
+              "id": "CSCA423-MIII-T02-s2",
+              "title": "Process and getting started",
+              "kind": "subtopic",
+              "definition": "Introduction of the topic, individual opinions, agreement building and conclusion within a time limit."
+            },
+            {
+              "id": "CSCA423-MIII-T02-s3",
+              "title": "Preparation",
+              "kind": "subtopic",
+              "definition": "Read widely, keep facts and statistics ready and practise speaking in groups."
+            },
+            {
+              "id": "CSCA423-MIII-T02-s4",
+              "title": "Art of guiding and controlling discussion",
+              "kind": "subtopic",
+              "definition": "Enter early and politely, keep the group on track and manage dominant speakers."
+            },
+            {
+              "id": "CSCA423-MIII-T02-s5",
+              "title": "Personality test through group discussion",
+              "kind": "subtopic",
+              "definition": "Evaluators observe initiative, cooperation, patience and clarity under pressure."
+            },
+            {
+              "id": "CSCA423-MIII-T02-s6",
+              "title": "Lateral thinking",
+              "kind": "subtopic",
+              "definition": "Looking at the same problem from an unexpected angle, which makes contributions memorable."
+            },
+            {
+              "id": "CSCA423-MIII-T02-s7",
+              "title": "Participation techniques and mock GD",
+              "kind": "subtopic",
+              "definition": "Speak to the group rather than to the evaluator, build on others ideas, and practise with mock discussions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Body Language, Negotiation and Meetings",
+      "topics": [
+        {
+          "id": "CSCA423-MIV-T01",
+          "title": "Body Language",
+          "kind": "topic",
+          "definition": "Body language is non verbal communication through posture, gestures, facial expression, eye contact and space.",
+          "children": [
+            {
+              "id": "CSCA423-MIV-T01-s1",
+              "title": "Origin and development of body language",
+              "kind": "subtopic",
+              "definition": "Inherited and learned signals that developed before speech as a way to convey danger, interest and intent."
+            },
+            {
+              "id": "CSCA423-MIV-T01-s2",
+              "title": "Body language as a tool for personality identification",
+              "kind": "subtopic",
+              "definition": "Habits such as posture, handshake and eye contact give clues about confidence and attitude."
+            },
+            {
+              "id": "CSCA423-MIV-T01-s3",
+              "title": "Analysis of body language",
+              "kind": "subtopic",
+              "definition": "The main areas are kinesics or gestures, proxemics or space, haptics or touch, oculesics or eye contact, and paralanguage or voice."
+            },
+            {
+              "id": "CSCA423-MIV-T01-s4",
+              "title": "Types of body language",
+              "kind": "subtopic",
+              "definition": "Positive and open signals versus negative and closed signals such as folded arms and avoiding eye contact."
+            },
+            {
+              "id": "CSCA423-MIV-T01-s5",
+              "title": "Desirable body language",
+              "kind": "subtopic",
+              "definition": "An open posture, steady eye contact, relaxed gestures, an appropriate distance and a genuine smile."
+            },
+            {
+              "id": "CSCA423-MIV-T01-s6",
+              "title": "Attitude and body language",
+              "kind": "subtopic",
+              "definition": "Attitudes shape posture and expression, and changing posture can in turn influence attitude."
+            },
+            {
+              "id": "CSCA423-MIV-T01-s7",
+              "title": "Body language as powerful communication",
+              "kind": "subtopic",
+              "definition": "Consistency between words and body language builds credibility; mismatch signals deception."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MIV-T02",
+          "title": "Negotiation Techniques",
+          "kind": "topic",
+          "definition": "Negotiation is the process of reaching an agreement between parties with partly different interests.",
+          "children": [
+            {
+              "id": "CSCA423-MIV-T02-s1",
+              "title": "Meaning and importance",
+              "kind": "subtopic",
+              "definition": "Settling prices, salaries, contracts and resources without damaging relationships."
+            },
+            {
+              "id": "CSCA423-MIV-T02-s2",
+              "title": "Fundamentals of negotiation",
+              "kind": "subtopic",
+              "definition": "Interests rather than positions, the zone of possible agreement and the best alternative to a negotiated agreement."
+            },
+            {
+              "id": "CSCA423-MIV-T02-s3",
+              "title": "Preparation and techniques",
+              "kind": "subtopic",
+              "definition": "Know your limits and alternatives, set objectives, decide the opening offer and consider integrative options."
+            },
+            {
+              "id": "CSCA423-MIV-T02-s4",
+              "title": "Managing the process of negotiation",
+              "kind": "subtopic",
+              "definition": "Explore, signal, propose, bargain and close, with active listening throughout."
+            },
+            {
+              "id": "CSCA423-MIV-T02-s5",
+              "title": "Interpersonal behaviour and case studies",
+              "kind": "subtopic",
+              "definition": "Trust, patience, emotional control and cultural sensitivity decide outcomes."
+            },
+            {
+              "id": "CSCA423-MIV-T02-s6",
+              "title": "Mock negotiation",
+              "kind": "subtopic",
+              "definition": "Practice sessions that reveal how concessions and tactics affect the final agreement."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MIV-T03",
+          "title": "Meetings and Seminars",
+          "kind": "topic",
+          "definition": "A meeting is a planned gathering of people to discuss and decide, and a seminar is a presentation followed by discussion.",
+          "children": [
+            {
+              "id": "CSCA423-MIV-T03-s1",
+              "title": "Meaning, importance and objectives",
+              "kind": "subtopic",
+              "definition": "Meetings coordinate work, share information, solve problems and record decisions."
+            },
+            {
+              "id": "CSCA423-MIV-T03-s2",
+              "title": "Leading and participating in meetings",
+              "kind": "subtopic",
+              "definition": "The chair sets the agenda and keeps time while participants prepare, contribute and listen."
+            },
+            {
+              "id": "CSCA423-MIV-T03-s3",
+              "title": "Success indicators and pitfalls",
+              "kind": "subtopic",
+              "definition": "A clear decision, assigned actions and a closing summary indicate success; lack of agenda or domination by one person causes failure."
+            },
+            {
+              "id": "CSCA423-MIV-T03-s4",
+              "title": "Process of meetings",
+              "kind": "subtopic",
+              "definition": "Notice, agenda, quorum, discussion, resolution, minutes and follow up."
+            },
+            {
+              "id": "CSCA423-MIV-T03-s5",
+              "title": "Communication skills for meetings",
+              "kind": "subtopic",
+              "definition": "Concise speaking, note taking, constructive disagreement and summarising."
+            },
+            {
+              "id": "CSCA423-MIV-T03-s6",
+              "title": "Mock meetings and seminars",
+              "kind": "subtopic",
+              "definition": "Simulated practice that builds the confidence to speak in formal settings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Management Communication and Presentations",
+      "topics": [
+        {
+          "id": "CSCA423-MV-T01",
+          "title": "Management Communication Relationships",
+          "kind": "topic",
+          "definition": "Management communication is the flow of information that coordinates work inside an organisation.",
+          "children": [
+            {
+              "id": "CSCA423-MV-T01-s1",
+              "title": "Communication in management",
+              "kind": "subtopic",
+              "definition": "Planning, organising, leading and controlling all depend on timely and accurate communication."
+            },
+            {
+              "id": "CSCA423-MV-T01-s2",
+              "title": "Semantics and meaning",
+              "kind": "subtopic",
+              "definition": "The same word can mean different things to different people, which creates misunderstanding."
+            },
+            {
+              "id": "CSCA423-MV-T01-s3",
+              "title": "Employee and employer communication",
+              "kind": "subtopic",
+              "definition": "Grievance handling, feedback, appraisal discussion and suggestion schemes."
+            },
+            {
+              "id": "CSCA423-MV-T01-s4",
+              "title": "Downward and upward communication",
+              "kind": "subtopic",
+              "definition": "Downward carries instructions, policies and feedback; upward carries reports, suggestions and complaints."
+            },
+            {
+              "id": "CSCA423-MV-T01-s5",
+              "title": "Lateral, diagonal and informal communication",
+              "kind": "subtopic",
+              "definition": "Peer communication between departments, cross level communication and the grapevine."
+            },
+            {
+              "id": "CSCA423-MV-T01-s6",
+              "title": "Communication by specialists",
+              "kind": "subtopic",
+              "definition": "Technical and staff specialists translate expert knowledge for the rest of the organisation."
+            },
+            {
+              "id": "CSCA423-MV-T01-s7",
+              "title": "The union role in communication",
+              "kind": "subtopic",
+              "definition": "Unions represent workers in negotiations and carry collective concerns to management."
+            }
+          ]
+        },
+        {
+          "id": "CSCA423-MV-T02",
+          "title": "Presentations",
+          "kind": "topic",
+          "definition": "A presentation is a structured talk supported by visuals that informs, persuades or trains an audience.",
+          "children": [
+            {
+              "id": "CSCA423-MV-T02-s1",
+              "title": "Meaning and types of presentation",
+              "kind": "subtopic",
+              "definition": "Informative, persuasive, instructional, motivational and impromptu presentations."
+            },
+            {
+              "id": "CSCA423-MV-T02-s2",
+              "title": "Understanding the audience",
+              "kind": "subtopic",
+              "definition": "Audience size, knowledge level, expectations and attitude decide content and tone."
+            },
+            {
+              "id": "CSCA423-MV-T02-s3",
+              "title": "Planning and designing the presentation",
+              "kind": "subtopic",
+              "definition": "Define the objective, build a clear structure and choose suitable visuals for each part."
+            },
+            {
+              "id": "CSCA423-MV-T02-s4",
+              "title": "Written and oral presentation",
+              "kind": "subtopic",
+              "definition": "A written report allows detail and rereading while an oral talk allows immediate interaction."
+            },
+            {
+              "id": "CSCA423-MV-T02-s5",
+              "title": "Making use of notes and outlines",
+              "kind": "subtopic",
+              "definition": "Cue cards and a short outline keep the speaker on track without reading out a script."
+            },
+            {
+              "id": "CSCA423-MV-T02-s6",
+              "title": "Techniques for delivering presentation",
+              "kind": "subtopic",
+              "definition": "Strong opening, eye contact, voice modulation, controlled pace, purposeful gestures and a clear conclusion."
+            },
+            {
+              "id": "CSCA423-MV-T02-s7",
+              "title": "Personal style and model presentation",
+              "kind": "subtopic",
+              "definition": "Developing a natural style and studying a model presentation to improve delivery."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

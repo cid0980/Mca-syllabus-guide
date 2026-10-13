@@ -1,0 +1,1231 @@
+{
+  "code": "CSCA 413",
+  "subject": "Database Management Systems",
+  "semester": 1,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Introduction and Data Modelling",
+      "topics": [
+        {
+          "id": "CSCA413-MI-T01",
+          "title": "File Systems versus Database Systems",
+          "kind": "topic",
+          "definition": "A file system stores data in separate application files, while a DBMS stores it centrally with controlled sharing and integrity.",
+          "children": [
+            {
+              "id": "CSCA413-MI-T01-s1",
+              "title": "Drawbacks of file processing",
+              "kind": "subtopic",
+              "definition": "Data redundancy, inconsistency, difficulty of concurrent access, weak security and program data dependence."
+            },
+            {
+              "id": "CSCA413-MI-T01-s2",
+              "title": "Advantages of a DBMS",
+              "kind": "subtopic",
+              "definition": "Controlled redundancy, shared data, integrity constraints, backup and recovery, security and data independence."
+            },
+            {
+              "id": "CSCA413-MI-T01-s3",
+              "title": "When a DBMS is not suitable",
+              "kind": "subtopic",
+              "definition": "Small single user applications with simple fixed data may not justify the cost and complexity of a DBMS."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MI-T02",
+          "title": "Data Models",
+          "kind": "topic",
+          "definition": "A data model is a collection of concepts for describing the structure of a database and the operations allowed on it.",
+          "children": [
+            {
+              "id": "CSCA413-MI-T02-s1",
+              "title": "Hierarchical model",
+              "kind": "subtopic",
+              "definition": "Organises data as a tree of parent and child records, where each child has exactly one parent."
+            },
+            {
+              "id": "CSCA413-MI-T02-s2",
+              "title": "Network model",
+              "kind": "subtopic",
+              "definition": "Uses a graph of records where a child may have more than one parent, handled through sets and pointers."
+            },
+            {
+              "id": "CSCA413-MI-T02-s3",
+              "title": "Relational model",
+              "kind": "subtopic",
+              "definition": "Represents data as tables of rows and columns with keys and relationships expressed by matching values."
+            },
+            {
+              "id": "CSCA413-MI-T02-s4",
+              "title": "Object based and object relational models",
+              "kind": "subtopic",
+              "definition": "Store complex objects, classes and inheritance, with object relational systems adding these ideas to relational tables."
+            },
+            {
+              "id": "CSCA413-MI-T02-s5",
+              "title": "Entity relationship model",
+              "kind": "subtopic",
+              "definition": "A conceptual, diagrammatic model of entities, attributes and relationships used before implementation."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MI-T03",
+          "title": "DBMS Architecture",
+          "kind": "topic",
+          "definition": "A DBMS is organised in levels so that users, the logical design and the physical storage remain independent of one another.",
+          "children": [
+            {
+              "id": "CSCA413-MI-T03-s1",
+              "title": "Three schema architecture",
+              "kind": "subtopic",
+              "definition": "External or view level for individual users, conceptual level for the logical design and internal level for physical storage."
+            },
+            {
+              "id": "CSCA413-MI-T03-s2",
+              "title": "Data abstraction",
+              "kind": "subtopic",
+              "definition": "Hides storage detail from users and shows only the level of detail each user needs."
+            },
+            {
+              "id": "CSCA413-MI-T03-s3",
+              "title": "Database administrator and users",
+              "kind": "subtopic",
+              "definition": "The DBA designs and maintains the schema and controls access, while end users, application programmers and analysts use the data."
+            },
+            {
+              "id": "CSCA413-MI-T03-s4",
+              "title": "Database languages",
+              "kind": "subtopic",
+              "definition": "DDL defines structures, DML manipulates data, DCL controls privileges and TCL manages transactions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MI-T04",
+          "title": "Data Independence",
+          "kind": "topic",
+          "definition": "Data independence means that a change at one level of the schema does not force changes at a higher level.",
+          "children": [
+            {
+              "id": "CSCA413-MI-T04-s1",
+              "title": "Logical data independence",
+              "kind": "subtopic",
+              "definition": "Changing the conceptual schema, such as adding a column, need not change the external views or the application programs."
+            },
+            {
+              "id": "CSCA413-MI-T04-s2",
+              "title": "Physical data independence",
+              "kind": "subtopic",
+              "definition": "Changing storage structures such as adding an index need not change the conceptual schema."
+            },
+            {
+              "id": "CSCA413-MI-T04-s3",
+              "title": "How independence is achieved",
+              "kind": "subtopic",
+              "definition": "By keeping separate schema levels and mapping each level to the next."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MI-T05",
+          "title": "Data Modelling Using the Entity Relationship Model",
+          "kind": "topic",
+          "definition": "The ER model describes data as entities, their attributes and the relationships between them, drawn as a diagram.",
+          "children": [
+            {
+              "id": "CSCA413-MI-T05-s1",
+              "title": "Entity and entity set",
+              "kind": "subtopic",
+              "definition": "An entity is a real world object such as a student and an entity set is a collection of similar entities."
+            },
+            {
+              "id": "CSCA413-MI-T05-s2",
+              "title": "Attributes and their types",
+              "kind": "subtopic",
+              "definition": "Simple, composite, single valued, multivalued, derived and key attributes describe the properties of an entity."
+            },
+            {
+              "id": "CSCA413-MI-T05-s3",
+              "title": "Relationship and relationship set",
+              "kind": "subtopic",
+              "definition": "An association among entities such as enrols between student and course."
+            },
+            {
+              "id": "CSCA413-MI-T05-s4",
+              "title": "Degree and cardinality ratio",
+              "kind": "subtopic",
+              "definition": "Degree counts participating entity sets; cardinality is one to one, one to many, many to one or many to many."
+            },
+            {
+              "id": "CSCA413-MI-T05-s5",
+              "title": "Participation constraints",
+              "kind": "subtopic",
+              "definition": "Total participation means every entity takes part, partial means only some do."
+            },
+            {
+              "id": "CSCA413-MI-T05-s6",
+              "title": "Keys in ER design",
+              "kind": "subtopic",
+              "definition": "Super key, candidate key, primary key and foreign key identify entities and link them."
+            },
+            {
+              "id": "CSCA413-MI-T05-s7",
+              "title": "Weak entity set",
+              "kind": "subtopic",
+              "definition": "An entity set without a key of its own, identified only through its owner entity with a partial key."
+            },
+            {
+              "id": "CSCA413-MI-T05-s8",
+              "title": "ER diagram notation",
+              "kind": "subtopic",
+              "definition": "Rectangles for entities, ellipses for attributes, diamonds for relationships, double lines for total participation."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MI-T06",
+          "title": "Enhanced ER Modelling",
+          "kind": "topic",
+          "definition": "Enhanced ER modelling adds abstraction tools such as specialisation, generalisation, aggregation and categories.",
+          "children": [
+            {
+              "id": "CSCA413-MI-T06-s1",
+              "title": "Specialisation and generalisation",
+              "kind": "subtopic",
+              "definition": "Specialisation splits a superclass into subclasses, generalisation combines similar entities into a superclass."
+            },
+            {
+              "id": "CSCA413-MI-T06-s2",
+              "title": "Attribute inheritance",
+              "kind": "subtopic",
+              "definition": "A subclass inherits all attributes of its superclass and adds its own."
+            },
+            {
+              "id": "CSCA413-MI-T06-s3",
+              "title": "Constraints on specialisation",
+              "kind": "subtopic",
+              "definition": "Disjoint or overlapping subclasses, and total or partial participation in the specialisation."
+            },
+            {
+              "id": "CSCA413-MI-T06-s4",
+              "title": "Aggregation",
+              "kind": "subtopic",
+              "definition": "Treats a relationship as a higher level entity so it can take part in another relationship."
+            },
+            {
+              "id": "CSCA413-MI-T06-s5",
+              "title": "Category and union type",
+              "kind": "subtopic",
+              "definition": "A subclass whose members come from a union of several different superclasses, shown with a union circle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Relational Model, SQL, Design and Normalisation",
+      "topics": [
+        {
+          "id": "CSCA413-MII-T01",
+          "title": "Relational Model Concepts",
+          "kind": "topic",
+          "definition": "The relational model stores data in relations (tables) of tuples (rows) and attributes (columns) drawn from domains.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T01-s1",
+              "title": "Relation, tuple, attribute and domain",
+              "kind": "subtopic",
+              "definition": "A relation is a table, a tuple is a row, an attribute is a named column and a domain is the set of allowed values."
+            },
+            {
+              "id": "CSCA413-MII-T01-s2",
+              "title": "Degree and cardinality",
+              "kind": "subtopic",
+              "definition": "Degree counts the attributes or columns and cardinality counts the tuples or rows."
+            },
+            {
+              "id": "CSCA413-MII-T01-s3",
+              "title": "Keys of a relation",
+              "kind": "subtopic",
+              "definition": "Super key uniquely identifies a tuple, candidate keys are minimal super keys, one becomes the primary key and foreign keys reference other relations."
+            },
+            {
+              "id": "CSCA413-MII-T01-s4",
+              "title": "Integrity constraints",
+              "kind": "subtopic",
+              "definition": "Entity integrity forbids NULL primary keys and referential integrity requires a foreign key to match some existing primary key or be NULL."
+            },
+            {
+              "id": "CSCA413-MII-T01-s5",
+              "title": "Codd rules",
+              "kind": "subtopic",
+              "definition": "Twelve rules described by E F Codd that a full relational DBMS should satisfy."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T02",
+          "title": "Relational Algebra",
+          "kind": "topic",
+          "definition": "Relational algebra is a procedural query language of operators that take relations and produce a new relation.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T02-s1",
+              "title": "Selection and projection",
+              "kind": "subtopic",
+              "definition": "Selection (sigma) chooses rows satisfying a condition; projection (pi) chooses a subset of columns."
+            },
+            {
+              "id": "CSCA413-MII-T02-s2",
+              "title": "Set operations",
+              "kind": "subtopic",
+              "definition": "Union, intersection, set difference and Cartesian product combine relations with compatible schemas."
+            },
+            {
+              "id": "CSCA413-MII-T02-s3",
+              "title": "Join operations",
+              "kind": "subtopic",
+              "definition": "Theta join, equi join and natural join combine matching rows; outer joins keep unmatched rows padded with NULL."
+            },
+            {
+              "id": "CSCA413-MII-T02-s4",
+              "title": "Division operation",
+              "kind": "subtopic",
+              "definition": "Returns tuples of one relation that match every tuple of another, used for questions like \"students who took all courses\"."
+            },
+            {
+              "id": "CSCA413-MII-T02-s5",
+              "title": "Renaming and assignment",
+              "kind": "subtopic",
+              "definition": "The rho operator renames relations or attributes and the assignment operator names intermediate results."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T03",
+          "title": "SQL: Basic and Complex Queries",
+          "kind": "topic",
+          "definition": "SQL is the standard language for defining and querying relational databases, written as declarative statements.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T03-s1",
+              "title": "DDL, DML, DCL and TCL",
+              "kind": "subtopic",
+              "definition": "DDL creates and alters structures, DML selects and modifies rows, DCL grants privileges and TCL commits or rolls back transactions."
+            },
+            {
+              "id": "CSCA413-MII-T03-s2",
+              "title": "Basic SELECT queries",
+              "kind": "subtopic",
+              "definition": "SELECT columns FROM table WHERE condition with DISTINCT, ORDER BY, BETWEEN, IN and LIKE."
+            },
+            {
+              "id": "CSCA413-MII-T03-s3",
+              "title": "Aggregate functions and grouping",
+              "kind": "subtopic",
+              "definition": "COUNT, SUM, AVG, MIN and MAX with GROUP BY and HAVING for conditions on groups."
+            },
+            {
+              "id": "CSCA413-MII-T03-s4",
+              "title": "Joins in SQL",
+              "kind": "subtopic",
+              "definition": "Inner join, left, right and full outer joins in both the classic and ANSI syntax."
+            },
+            {
+              "id": "CSCA413-MII-T03-s5",
+              "title": "Subqueries and correlated queries",
+              "kind": "subtopic",
+              "definition": "Nested SELECT statements, including EXISTS, ANY and ALL comparisons against inner results."
+            },
+            {
+              "id": "CSCA413-MII-T03-s6",
+              "title": "UPDATE, DELETE and INSERT",
+              "kind": "subtopic",
+              "definition": "Statements that modify the contents of existing relations."
+            },
+            {
+              "id": "CSCA413-MII-T03-s7",
+              "title": "Views",
+              "kind": "subtopic",
+              "definition": "A stored query acting as a virtual table, used for security and simplified access; updatable only under restrictions."
+            },
+            {
+              "id": "CSCA413-MII-T03-s8",
+              "title": "Constraints",
+              "kind": "subtopic",
+              "definition": "NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK and DEFAULT enforce rules at the schema level."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T04",
+          "title": "Relational Calculus",
+          "kind": "topic",
+          "definition": "Relational calculus is a non procedural query language that describes what result is wanted rather than how to compute it.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T04-s1",
+              "title": "Tuple relational calculus",
+              "kind": "subtopic",
+              "definition": "Describes the set of tuples t for which a predicate is true, written as {t | P(t)}."
+            },
+            {
+              "id": "CSCA413-MII-T04-s2",
+              "title": "Domain relational calculus",
+              "kind": "subtopic",
+              "definition": "Describes the result by listing the domains of its attributes with conditions on them."
+            },
+            {
+              "id": "CSCA413-MII-T04-s3",
+              "title": "Expressiveness and safety",
+              "kind": "subtopic",
+              "definition": "Both calculi are equivalent in power to relational algebra; safe expressions avoid infinite results."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T05",
+          "title": "Overview of Commercial RDBMSs",
+          "kind": "topic",
+          "definition": "Commercial systems such as Oracle, SQL Server, MySQL, PostgreSQL and DB2 implement SQL with vendor extensions.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T05-s1",
+              "title": "Features to compare",
+              "kind": "subtopic",
+              "definition": "Storage limits, concurrency control, recovery, partitioning, security, replication and cost."
+            },
+            {
+              "id": "CSCA413-MII-T05-s2",
+              "title": "Oracle and SQL Server",
+              "kind": "subtopic",
+              "definition": "Enterprise systems with PL/SQL and T-SQL procedural extensions and rich administration tools."
+            },
+            {
+              "id": "CSCA413-MII-T05-s3",
+              "title": "MySQL and PostgreSQL",
+              "kind": "subtopic",
+              "definition": "Widely used open source systems, one favoured for web applications and the other for standards compliance."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T06",
+          "title": "Database Design and Functional Dependencies",
+          "kind": "topic",
+          "definition": "Good relational design starts from dependencies among attributes that reveal redundancy and update anomalies.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T06-s1",
+              "title": "Informal design guidelines",
+              "kind": "subtopic",
+              "definition": "Keep semantics clear, reduce redundancy and avoid NULL heavy relations."
+            },
+            {
+              "id": "CSCA413-MII-T06-s2",
+              "title": "Functional dependency",
+              "kind": "subtopic",
+              "definition": "X determines Y means any two tuples agreeing on X must also agree on Y, written X -> Y."
+            },
+            {
+              "id": "CSCA413-MII-T06-s3",
+              "title": "Partial and transitive dependency",
+              "kind": "subtopic",
+              "definition": "A partial dependency uses only part of a composite key; a transitive dependency reaches a non-key attribute through another non-key attribute."
+            },
+            {
+              "id": "CSCA413-MII-T06-s4",
+              "title": "Armstrong axioms",
+              "kind": "subtopic",
+              "definition": "Reflexivity, augmentation and transitivity generate all dependencies, with union, decomposition and pseudotransitivity as derived rules."
+            },
+            {
+              "id": "CSCA413-MII-T06-s5",
+              "title": "Closure and candidate key computation",
+              "kind": "subtopic",
+              "definition": "The closure of an attribute set gives everything it determines, and a minimal attribute set whose closure is the whole relation is a candidate key."
+            },
+            {
+              "id": "CSCA413-MII-T06-s6",
+              "title": "Canonical cover",
+              "kind": "subtopic",
+              "definition": "A minimal equivalent set of functional dependencies with no redundant dependencies or attributes."
+            },
+            {
+              "id": "CSCA413-MII-T06-s7",
+              "title": "Decomposition and its properties",
+              "kind": "subtopic",
+              "definition": "Splitting a relation into smaller relations, checked for lossless join and dependency preservation."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T07",
+          "title": "Normal Forms",
+          "kind": "topic",
+          "definition": "Normalisation removes redundancy and anomalies by checking a relation against progressively stricter normal forms.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T07-s1",
+              "title": "Why normalisation is needed",
+              "kind": "subtopic",
+              "definition": "Unnormalised relations suffer update, insertion and deletion anomalies along with wasted space."
+            },
+            {
+              "id": "CSCA413-MII-T07-s2",
+              "title": "1NF (First Normal Form)",
+              "kind": "subtopic",
+              "definition": "All attributes hold atomic single values - no multivalued attributes or repeating groups."
+            },
+            {
+              "id": "CSCA413-MII-T07-s3",
+              "title": "2NF (Second Normal Form)",
+              "kind": "subtopic",
+              "definition": "In 1NF and no non-prime attribute is partially dependent on part of a candidate key."
+            },
+            {
+              "id": "CSCA413-MII-T07-s4",
+              "title": "3NF (Third Normal Form)",
+              "kind": "subtopic",
+              "definition": "In 2NF and no non-prime attribute is transitively dependent on a candidate key."
+            },
+            {
+              "id": "CSCA413-MII-T07-s5",
+              "title": "BCNF (Boyce Codd Normal Form)",
+              "kind": "subtopic",
+              "definition": "For every non trivial dependency X -> Y, X must be a super key - stricter than 3NF."
+            },
+            {
+              "id": "CSCA413-MII-T07-s6",
+              "title": "4NF (Fourth Normal Form)",
+              "kind": "subtopic",
+              "definition": "In BCNF and free of multivalued dependencies, which occur when independent multivalued facts are stored together."
+            },
+            {
+              "id": "CSCA413-MII-T07-s7",
+              "title": "5NF (Fifth Normal Form)",
+              "kind": "subtopic",
+              "definition": "Also called project join normal form, where a relation cannot be decomposed any further without loss."
+            },
+            {
+              "id": "CSCA413-MII-T07-s8",
+              "title": "Denormalisation",
+              "kind": "subtopic",
+              "definition": "Deliberately relaxing normal forms to reduce joins and improve read performance in reporting systems."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MII-T08",
+          "title": "Query Processing and Cost Estimation",
+          "kind": "topic",
+          "definition": "Query processing turns an SQL statement into an executable plan whose cost is estimated to pick the cheapest strategy.",
+          "children": [
+            {
+              "id": "CSCA413-MII-T08-s1",
+              "title": "Parsing, validation and translation",
+              "kind": "subtopic",
+              "definition": "The query is checked for syntax and semantics and converted into a relational algebra expression."
+            },
+            {
+              "id": "CSCA413-MII-T08-s2",
+              "title": "Optimisation and plan generation",
+              "kind": "subtopic",
+              "definition": "Equivalent expressions and access paths are compared to choose an efficient execution plan."
+            },
+            {
+              "id": "CSCA413-MII-T08-s3",
+              "title": "Algorithms for executing query operations",
+              "kind": "subtopic",
+              "definition": "Full table scan or index scan for selection, nested loop, sort merge and hash join for joins, external sorting for large data."
+            },
+            {
+              "id": "CSCA413-MII-T08-s4",
+              "title": "Cost estimation",
+              "kind": "subtopic",
+              "definition": "Estimates block transfers and disk seeks using statistics such as number of tuples, block factor and selectivity."
+            },
+            {
+              "id": "CSCA413-MII-T08-s5",
+              "title": "Heuristic optimisation rules",
+              "kind": "subtopic",
+              "definition": "Push selections down, then projections, and perform the most restrictive operations first."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Transaction Processing, Concurrency and Recovery",
+      "topics": [
+        {
+          "id": "CSCA413-MIII-T01",
+          "title": "Transaction Processing and Properties",
+          "kind": "topic",
+          "definition": "A transaction is a logical unit of work that must either complete fully or leave the database unchanged.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T01-s1",
+              "title": "Transaction operations",
+              "kind": "subtopic",
+              "definition": "read_item, write_item, commit and rollback are the basic operations of a transaction."
+            },
+            {
+              "id": "CSCA413-MIII-T01-s2",
+              "title": "ACID properties",
+              "kind": "subtopic",
+              "definition": "Atomicity, consistency, isolation and durability describe the guarantees a DBMS must provide."
+            },
+            {
+              "id": "CSCA413-MIII-T01-s3",
+              "title": "Transaction states",
+              "kind": "subtopic",
+              "definition": "Active, partially committed, committed, failed and aborted states trace the life of a transaction."
+            },
+            {
+              "id": "CSCA413-MIII-T01-s4",
+              "title": "Desirable additional properties",
+              "kind": "subtopic",
+              "definition": "Fine granularity of data items and protection from crashes and concurrent interference."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T02",
+          "title": "Serializability",
+          "kind": "topic",
+          "definition": "A schedule is serializable when its effect equals that of some serial order of the same transactions.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T02-s1",
+              "title": "Schedules and their types",
+              "kind": "subtopic",
+              "definition": "Serial schedules run transactions one after another; non-serial schedules interleave them."
+            },
+            {
+              "id": "CSCA413-MIII-T02-s2",
+              "title": "Conflict serializability",
+              "kind": "subtopic",
+              "definition": "Two different transactions accessing the same item with at least one write conflict; the precedence graph must be acyclic."
+            },
+            {
+              "id": "CSCA413-MIII-T02-s3",
+              "title": "View serializability",
+              "kind": "subtopic",
+              "definition": "A weaker condition requiring the same reads-from relations and the same final writes."
+            },
+            {
+              "id": "CSCA413-MIII-T02-s4",
+              "title": "Recoverable and cascade-less schedules",
+              "kind": "subtopic",
+              "definition": "A schedule is recoverable if a transaction commits only after all transactions it read from have committed; cascading rollback is avoided by strict schedules."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T03",
+          "title": "Transaction Support in SQL",
+          "kind": "topic",
+          "definition": "SQL supports explicit transaction control with COMMIT, ROLLBACK and SAVEPOINT statements and isolation levels.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T03-s1",
+              "title": "COMMIT and ROLLBACK",
+              "kind": "subtopic",
+              "definition": "COMMIT makes changes permanent while ROLLBACK undoes changes of the current transaction."
+            },
+            {
+              "id": "CSCA413-MIII-T03-s2",
+              "title": "SAVEPOINT and partial rollback",
+              "kind": "subtopic",
+              "definition": "Marks an intermediate point to which the transaction can roll back without losing earlier work."
+            },
+            {
+              "id": "CSCA413-MIII-T03-s3",
+              "title": "Isolation levels",
+              "kind": "subtopic",
+              "definition": "READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ and SERIALIZABLE trade correctness against concurrency."
+            },
+            {
+              "id": "CSCA413-MIII-T03-s4",
+              "title": "Concurrency problems controlled by levels",
+              "kind": "subtopic",
+              "definition": "Dirty read, non repeatable read and phantom read."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T04",
+          "title": "Locking Techniques",
+          "kind": "topic",
+          "definition": "Locking prevents conflicting accesses by making a transaction acquire a lock before reading or writing an item.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T04-s1",
+              "title": "Shared and exclusive locks",
+              "kind": "subtopic",
+              "definition": "A shared lock allows reading by many transactions while an exclusive lock allows one writer and blocks everyone else."
+            },
+            {
+              "id": "CSCA413-MIII-T04-s2",
+              "title": "Binary locking versus shared exclusive locking",
+              "kind": "subtopic",
+              "definition": "Binary locks are locked or unlocked; shared exclusive locks distinguish readers from writers."
+            },
+            {
+              "id": "CSCA413-MIII-T04-s3",
+              "title": "Two phase locking (2PL)",
+              "kind": "subtopic",
+              "definition": "A growing phase acquires locks and a shrinking phase releases them, which guarantees conflict serializability."
+            },
+            {
+              "id": "CSCA413-MIII-T04-s4",
+              "title": "Strict and rigorous 2PL",
+              "kind": "subtopic",
+              "definition": "Strict 2PL holds exclusive locks until commit, and rigorous 2PL holds all locks until commit, both easing recovery."
+            },
+            {
+              "id": "CSCA413-MIII-T04-s5",
+              "title": "Deadlock and starvation",
+              "kind": "subtopic",
+              "definition": "Deadlock is a circular wait for locks and starvation is a transaction repeatedly losing the competition; both must be handled."
+            },
+            {
+              "id": "CSCA413-MIII-T04-s6",
+              "title": "Lock conversion",
+              "kind": "subtopic",
+              "definition": "Upgrading a shared lock to exclusive or downgrading it the other way, which must respect the two phases."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T05",
+          "title": "Timestamp Ordering and Validation Techniques",
+          "kind": "topic",
+          "definition": "Timestamp ordering orders transactions by their start time, and validation methods check for conflicts only at commit time.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T05-s1",
+              "title": "Timestamp ordering protocol",
+              "kind": "subtopic",
+              "definition": "Each item keeps the read and write timestamps of the last transaction that accessed it, and conflicting older operations are rejected and restarted."
+            },
+            {
+              "id": "CSCA413-MIII-T05-s2",
+              "title": "Thomas write rule",
+              "kind": "subtopic",
+              "definition": "Ignores an obsolete write that a later transaction has already overwritten."
+            },
+            {
+              "id": "CSCA413-MIII-T05-s3",
+              "title": "Optimistic (validation based) concurrency control",
+              "kind": "subtopic",
+              "definition": "Transactions run freely and are validated in three phases: read, validation and write."
+            },
+            {
+              "id": "CSCA413-MIII-T05-s4",
+              "title": "Comparison with locking",
+              "kind": "subtopic",
+              "definition": "Timestamp and validation methods avoid deadlock because they never make a transaction wait for a lock."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T06",
+          "title": "Granularity of Data Items",
+          "kind": "topic",
+          "definition": "Granularity refers to the size of the unit locked, from a single field up to the whole database.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T06-s1",
+              "title": "Trade-off of granularity",
+              "kind": "subtopic",
+              "definition": "Small items allow more concurrency but more lock overhead, while large items do the opposite."
+            },
+            {
+              "id": "CSCA413-MIII-T06-s2",
+              "title": "Multiple granularity locking",
+              "kind": "subtopic",
+              "definition": "Locks are taken at several levels of the hierarchy with intention locks."
+            },
+            {
+              "id": "CSCA413-MIII-T06-s3",
+              "title": "Intention shared and intention exclusive locks",
+              "kind": "subtopic",
+              "definition": "IS and IX locks on ancestors signal that a descendant will be locked in shared or exclusive mode."
+            },
+            {
+              "id": "CSCA413-MIII-T06-s4",
+              "title": "Compatibility of intention locks",
+              "kind": "subtopic",
+              "definition": "The compatibility matrix decides which combinations may be granted at the same time."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T07",
+          "title": "Recovery Concepts",
+          "kind": "topic",
+          "definition": "Recovery restores the database to a consistent state after a failure and ensures committed work is not lost.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T07-s1",
+              "title": "Types of failure",
+              "kind": "subtopic",
+              "definition": "Transaction failure, system crash, media failure and natural disasters need different recovery responses."
+            },
+            {
+              "id": "CSCA413-MIII-T07-s2",
+              "title": "Storage structure and stable storage",
+              "kind": "subtopic",
+              "definition": "Volatile memory, non volatile disk and stable storage mirrored across sites define what survives a crash."
+            },
+            {
+              "id": "CSCA413-MIII-T07-s3",
+              "title": "Log based recovery",
+              "kind": "subtopic",
+              "definition": "A log records before images, after images and transaction events; deferred and immediate update policies use it differently."
+            },
+            {
+              "id": "CSCA413-MIII-T07-s4",
+              "title": "Checkpoints",
+              "kind": "subtopic",
+              "definition": "Periodically flush the log and buffers so that recovery need not scan the whole log."
+            },
+            {
+              "id": "CSCA413-MIII-T07-s5",
+              "title": "Shadow paging",
+              "kind": "subtopic",
+              "definition": "Maintains a current and a shadow page table, switching atomically on commit, which avoids a log but fragments storage."
+            },
+            {
+              "id": "CSCA413-MIII-T07-s6",
+              "title": "ARIES recovery algorithm",
+              "kind": "subtopic",
+              "definition": "Uses write ahead logging, repeating history and fuzzy checkpoints in analysis, redo and undo passes."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIII-T08",
+          "title": "Database Security Issues",
+          "kind": "topic",
+          "definition": "Database security protects data from unauthorised access, disclosure and modification.",
+          "children": [
+            {
+              "id": "CSCA413-MIII-T08-s1",
+              "title": "Access control and authorisation",
+              "kind": "subtopic",
+              "definition": "Discretionary and mandatory access control models grant privileges to users and roles."
+            },
+            {
+              "id": "CSCA413-MIII-T08-s2",
+              "title": "Views and query modification",
+              "kind": "subtopic",
+              "definition": "Restricting a user to a view exposes only the rows and columns they may see."
+            },
+            {
+              "id": "CSCA413-MIII-T08-s3",
+              "title": "Encryption and auditing",
+              "kind": "subtopic",
+              "definition": "Data is encrypted in storage or transit, and audit trails record who did what."
+            },
+            {
+              "id": "CSCA413-MIII-T08-s4",
+              "title": "Statistical database security",
+              "kind": "subtopic",
+              "definition": "Statistical queries must not allow inference of individual values; techniques include query restriction, perturbation and auditing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Files, Hashing and Indexing",
+      "topics": [
+        {
+          "id": "CSCA413-MIV-T01",
+          "title": "File Organisation and Operations",
+          "kind": "topic",
+          "definition": "A file is stored as records in blocks on disk, and its organisation decides how efficiently records are found and updated.",
+          "children": [
+            {
+              "id": "CSCA413-MIV-T01-s1",
+              "title": "File operations",
+              "kind": "subtopic",
+              "definition": "Insertion, deletion, modification and retrieval of records identified by a search key."
+            },
+            {
+              "id": "CSCA413-MIV-T01-s2",
+              "title": "Heap file organisation",
+              "kind": "subtopic",
+              "definition": "Records are placed wherever space is free, which makes insertion fast but search slow."
+            },
+            {
+              "id": "CSCA413-MIV-T01-s3",
+              "title": "Sequential file organisation",
+              "kind": "subtopic",
+              "definition": "Records are kept in order of a search key, so search and ordered retrieval are fast while insertion needs reorganisation."
+            },
+            {
+              "id": "CSCA413-MIV-T01-s4",
+              "title": "Hashing and indexed organisation",
+              "kind": "subtopic",
+              "definition": "A hash function or index computes the location directly, trading space and maintenance for speed."
+            },
+            {
+              "id": "CSCA413-MIV-T01-s5",
+              "title": "Blocking factor and record layout",
+              "kind": "subtopic",
+              "definition": "Fixed or variable length records are packed into blocks, and the blocking factor is the records per block."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIV-T02",
+          "title": "Hashing Techniques",
+          "kind": "topic",
+          "definition": "Hashing applies a function to the search key to compute the bucket where the record is stored.",
+          "children": [
+            {
+              "id": "CSCA413-MIV-T02-s1",
+              "title": "Static hashing",
+              "kind": "subtopic",
+              "definition": "A fixed number of buckets is chosen in advance; the file grows slowly and long overflow chains appear."
+            },
+            {
+              "id": "CSCA413-MIV-T02-s2",
+              "title": "Collision and overflow handling",
+              "kind": "subtopic",
+              "definition": "Open addressing, chaining within a bucket and multiple hashing resolve records that map to a full bucket."
+            },
+            {
+              "id": "CSCA413-MIV-T02-s3",
+              "title": "Dynamic and extendible hashing",
+              "kind": "subtopic",
+              "definition": "The number of buckets grows and shrinks with the data by splitting buckets and using a directory of pointer bits."
+            },
+            {
+              "id": "CSCA413-MIV-T02-s4",
+              "title": "Comparison of hashing with indexing",
+              "kind": "subtopic",
+              "definition": "Hashing is excellent for equality searches but useless for range queries, where indexes are preferred."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIV-T03",
+          "title": "Indexing and Types of Indexes",
+          "kind": "topic",
+          "definition": "An index is an auxiliary file of key and pointer pairs that speeds up retrieval from the main file.",
+          "children": [
+            {
+              "id": "CSCA413-MIV-T03-s1",
+              "title": "Primary index",
+              "kind": "subtopic",
+              "definition": "Built on the ordered key field of a sequentially ordered file, with one entry per block."
+            },
+            {
+              "id": "CSCA413-MIV-T03-s2",
+              "title": "Clustering index",
+              "kind": "subtopic",
+              "definition": "Defined on an ordered non key field, so several records can share the same index value."
+            },
+            {
+              "id": "CSCA413-MIV-T03-s3",
+              "title": "Secondary index",
+              "kind": "subtopic",
+              "definition": "Built on a non ordered field, giving one entry per distinct value with pointers to blocks."
+            },
+            {
+              "id": "CSCA413-MIV-T03-s4",
+              "title": "Dense and sparse indexes",
+              "kind": "subtopic",
+              "definition": "A dense index has an entry for every search key value while a sparse index has entries for some values only."
+            },
+            {
+              "id": "CSCA413-MIV-T03-s5",
+              "title": "Single level and multilevel indexes",
+              "kind": "subtopic",
+              "definition": "When the index itself becomes large it is indexed again, forming a multilevel structure like an ISAM tree."
+            },
+            {
+              "id": "CSCA413-MIV-T03-s6",
+              "title": "Indexes on multiple keys",
+              "kind": "subtopic",
+              "definition": "Composite indexes order by the concatenation of keys, and grid or partitioned hashing handles multiattribute equality queries."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MIV-T04",
+          "title": "B Tree and B+ Tree",
+          "kind": "topic",
+          "definition": "B trees and B+ trees are balanced multilevel search structures designed for disk storage with a high branching factor.",
+          "children": [
+            {
+              "id": "CSCA413-MIV-T04-s1",
+              "title": "B tree properties",
+              "kind": "subtopic",
+              "definition": "All leaves are at the same level, nodes hold between a minimum and maximum number of keys, and a node with k keys has k + 1 children."
+            },
+            {
+              "id": "CSCA413-MIV-T04-s2",
+              "title": "B+ tree properties",
+              "kind": "subtopic",
+              "definition": "Internal nodes hold only keys and pointers while all data pointers live in a linked list of leaves."
+            },
+            {
+              "id": "CSCA413-MIV-T04-s3",
+              "title": "Insertion in a B+ tree",
+              "kind": "subtopic",
+              "definition": "Insert into the correct leaf and split it when full, pushing the middle key into the parent and possibly splitting upwards to the root."
+            },
+            {
+              "id": "CSCA413-MIV-T04-s4",
+              "title": "Deletion in a B+ tree",
+              "kind": "subtopic",
+              "definition": "Remove the entry, redistribute keys with a sibling or merge nodes when a node falls below the minimum occupancy."
+            },
+            {
+              "id": "CSCA413-MIV-T04-s5",
+              "title": "B tree versus B+ tree",
+              "kind": "subtopic",
+              "definition": "B trees store data pointers in internal nodes and B+ trees do not, so B+ trees have higher fan-out and faster range scans."
+            },
+            {
+              "id": "CSCA413-MIV-T04-s6",
+              "title": "Why B+ trees dominate databases",
+              "kind": "subtopic",
+              "definition": "A high fan-out keeps the tree shallow, so a record is found in three or four disk accesses even for millions of records."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Special Purpose Databases",
+      "topics": [
+        {
+          "id": "CSCA413-MV-T01",
+          "title": "Object Oriented Database Management Systems",
+          "kind": "topic",
+          "definition": "An OODBMS stores objects with their methods and supports the object oriented features of programming languages directly.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T01-s1",
+              "title": "Need for OODBMS",
+              "kind": "subtopic",
+              "definition": "Applications with complex data such as CAD, multimedia and GIS suffer from the impedance mismatch between objects and tables."
+            },
+            {
+              "id": "CSCA413-MV-T01-s2",
+              "title": "Features",
+              "kind": "subtopic",
+              "definition": "Object identity, encapsulation, inheritance, polymorphism and persistence are supported natively."
+            },
+            {
+              "id": "CSCA413-MV-T01-s3",
+              "title": "Object oriented data model",
+              "kind": "subtopic",
+              "definition": "Objects have identity and state, classes define types, and relationships are captured through references and collections."
+            },
+            {
+              "id": "CSCA413-MV-T01-s4",
+              "title": "Object oriented languages and persistence",
+              "kind": "subtopic",
+              "definition": "Languages such as C++ and Java are extended with a persistent object store, or pure OO languages such as Smalltalk are used."
+            },
+            {
+              "id": "CSCA413-MV-T01-s5",
+              "title": "Advantages and disadvantages",
+              "kind": "subtopic",
+              "definition": "Excellent for complex data and navigational access, but weak for ad hoc queries and lacking a common standard."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MV-T02",
+          "title": "Object Relational Databases",
+          "kind": "topic",
+          "definition": "An object relational DBMS extends the relational model with objects, inheritance, complex types and methods.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T02-s1",
+              "title": "Object relational features",
+              "kind": "subtopic",
+              "definition": "User defined types, collections such as arrays and nested tables, references and object identifiers."
+            },
+            {
+              "id": "CSCA413-MV-T02-s2",
+              "title": "Bridging objects and tables",
+              "kind": "subtopic",
+              "definition": "Object relational mapping persists programming objects as rows and columns."
+            },
+            {
+              "id": "CSCA413-MV-T02-s3",
+              "title": "Comparison of the three approaches",
+              "kind": "subtopic",
+              "definition": "RDBMS flatten complex data, OODBMS lose SQL simplicity and ORDBMS keep both, which is why commercial systems follow this route."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MV-T03",
+          "title": "XML and Semi-structured Data",
+          "kind": "topic",
+          "definition": "XML is a text based, self describing format for exchanging hierarchical data between systems.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T03-s1",
+              "title": "Structure of XML",
+              "kind": "subtopic",
+              "definition": "A prolog, nested elements with tags, attributes, entities and text content form a well formed document."
+            },
+            {
+              "id": "CSCA413-MV-T03-s2",
+              "title": "DTD and XML Schema",
+              "kind": "subtopic",
+              "definition": "Define the allowed elements, attributes and structure, so documents can be validated."
+            },
+            {
+              "id": "CSCA413-MV-T03-s3",
+              "title": "Parsing and querying XML",
+              "kind": "subtopic",
+              "definition": "DOM and SAX parsers read documents and XPath, XQuery and XSLT select and transform the data."
+            },
+            {
+              "id": "CSCA413-MV-T03-s4",
+              "title": "Storing XML in a database",
+              "kind": "subtopic",
+              "definition": "Documents may be stored as CLOB values, shredded into tables or kept in native XML columns."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MV-T04",
+          "title": "Temporal Databases",
+          "kind": "topic",
+          "definition": "Temporal databases record time so that past, present and future states of the data can be queried.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T04-s1",
+              "title": "Valid time and transaction time",
+              "kind": "subtopic",
+              "definition": "Valid time is when a fact is true in the real world; transaction time is when it was stored in the database."
+            },
+            {
+              "id": "CSCA413-MV-T04-s2",
+              "title": "Bitemporal databases",
+              "kind": "subtopic",
+              "definition": "Track both kinds of time, allowing corrections and audit of what the system believed at any moment."
+            },
+            {
+              "id": "CSCA413-MV-T04-s3",
+              "title": "Temporal operators",
+              "kind": "subtopic",
+              "definition": "Queries use operators such as overlaps, contains, precedes and during on time intervals."
+            },
+            {
+              "id": "CSCA413-MV-T04-s4",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "Banking audit trails, medical records, insurance history and employee service records."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MV-T05",
+          "title": "Mobile Databases",
+          "kind": "topic",
+          "definition": "A mobile database runs on portable devices and synchronises with a central database over wireless links.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T05-s1",
+              "title": "Challenges",
+              "kind": "subtopic",
+              "definition": "Frequent disconnection, limited bandwidth, low battery and small memory change the design assumptions."
+            },
+            {
+              "id": "CSCA413-MV-T05-s2",
+              "title": "Data synchronisation and replication",
+              "kind": "subtopic",
+              "definition": "Changes made offline are reconciled later, which can raise conflicts that need resolution rules."
+            },
+            {
+              "id": "CSCA413-MV-T05-s3",
+              "title": "Mobile transactions",
+              "kind": "subtopic",
+              "definition": "Long lived, location dependent transactions require relaxed ACID properties in some systems."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MV-T06",
+          "title": "Spatial Databases",
+          "kind": "topic",
+          "definition": "Spatial databases store geometric objects such as points, lines and polygons and answer location based queries.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T06-s1",
+              "title": "Spatial data types and queries",
+              "kind": "subtopic",
+              "definition": "Point, line and region types support queries like \"find all hospitals within 5 km\"."
+            },
+            {
+              "id": "CSCA413-MV-T06-s2",
+              "title": "Spatial indexing",
+              "kind": "subtopic",
+              "definition": "R trees, quad trees and grid files organise two dimensional data for fast region queries."
+            },
+            {
+              "id": "CSCA413-MV-T06-s3",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "Geographic information systems, maps, navigation, urban planning and location based services."
+            }
+          ]
+        },
+        {
+          "id": "CSCA413-MV-T07",
+          "title": "Case Study: Designing and Managing a Project Database",
+          "kind": "topic",
+          "definition": "A case study ties the whole module together by taking one application from requirements to a working, normalised database.",
+          "children": [
+            {
+              "id": "CSCA413-MV-T07-s1",
+              "title": "Requirement analysis",
+              "kind": "subtopic",
+              "definition": "Identify entities, attributes, relationships, constraints and reports the users need."
+            },
+            {
+              "id": "CSCA413-MV-T07-s2",
+              "title": "Conceptual and logical design",
+              "kind": "subtopic",
+              "definition": "Draw the ER diagram, map it to relations, choose keys and normalise up to 3NF or BCNF."
+            },
+            {
+              "id": "CSCA413-MV-T07-s3",
+              "title": "Physical design and implementation",
+              "kind": "subtopic",
+              "definition": "Choose file organisation, indexes, constraints, views, triggers and the required privileges."
+            },
+            {
+              "id": "CSCA413-MV-T07-s4",
+              "title": "Maintenance and tuning",
+              "kind": "subtopic",
+              "definition": "Monitor performance, rebuild indexes, back up regularly and handle schema evolution."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

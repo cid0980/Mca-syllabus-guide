@@ -1,0 +1,941 @@
+{
+  "code": "CSCA 412",
+  "subject": "Object Oriented Programming",
+  "semester": 1,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Introduction to C++ and User Defined Functions",
+      "topics": [
+        {
+          "id": "CSCA412-MI-T01",
+          "title": "Introduction to C++",
+          "kind": "topic",
+          "definition": "C++ is a general purpose language that extends C with classes and objects, giving both low level control and object oriented features.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T01-s1",
+              "title": "Applications of C++",
+              "kind": "subtopic",
+              "definition": "Used for operating systems, games, embedded software, banking systems, compilers and performance critical libraries."
+            },
+            {
+              "id": "CSCA412-MI-T01-s2",
+              "title": "History and features of C++",
+              "kind": "subtopic",
+              "definition": "Developed by Bjarne Stroustrup as C with classes; features include classes, objects, encapsulation, polymorphism, templates and exception handling."
+            },
+            {
+              "id": "CSCA412-MI-T01-s3",
+              "title": "C++ versus C",
+              "kind": "subtopic",
+              "definition": "C is procedural with no classes, while C++ supports objects, function overloading, references, namespaces and the standard template library."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MI-T02",
+          "title": "Structure of a Simple C++ Program",
+          "kind": "topic",
+          "definition": "A C++ program has preprocessor directives, a main function and statements, with optional class and function definitions above main.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T02-s1",
+              "title": "Header files and preprocessor directives",
+              "kind": "subtopic",
+              "definition": "Lines beginning with # such as #include <iostream> pull in library declarations before compilation."
+            },
+            {
+              "id": "CSCA412-MI-T02-s2",
+              "title": "Namespace std",
+              "kind": "subtopic",
+              "definition": "A container that holds library names like cout, so you must write std::cout or add using namespace std."
+            },
+            {
+              "id": "CSCA412-MI-T02-s3",
+              "title": "The main function",
+              "kind": "subtopic",
+              "definition": "The entry point returning an int status code, where execution begins and ends."
+            },
+            {
+              "id": "CSCA412-MI-T02-s4",
+              "title": "Comments and indentation",
+              "kind": "subtopic",
+              "definition": "Single line // comments and block /* */ comments keep the code readable and are ignored by the compiler."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MI-T03",
+          "title": "Compiling and Executing C++ Programs",
+          "kind": "topic",
+          "definition": "The source file passes through preprocessing, compilation, assembly and linking to become an executable.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T03-s1",
+              "title": "Preprocessor stage",
+              "kind": "subtopic",
+              "definition": "Expands directives such as #include and #define before the actual compilation."
+            },
+            {
+              "id": "CSCA412-MI-T03-s2",
+              "title": "Compiler and assembler stages",
+              "kind": "subtopic",
+              "definition": "The compiler turns source into object code and the assembler produces machine level object files."
+            },
+            {
+              "id": "CSCA412-MI-T03-s3",
+              "title": "Linker stage",
+              "kind": "subtopic",
+              "definition": "Joins the object files with library code to produce the final executable."
+            },
+            {
+              "id": "CSCA412-MI-T03-s4",
+              "title": "Runtime errors and debugging",
+              "kind": "subtopic",
+              "definition": "Syntax errors are caught by the compiler while logic errors surface only while running, so debugging with breakpoints is used."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MI-T04",
+          "title": "Programming Elements",
+          "kind": "topic",
+          "definition": "The basic building blocks of a program are tokens, data types, variables, constants, operators and control statements.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T04-s1",
+              "title": "Tokens, keywords and identifiers",
+              "kind": "subtopic",
+              "definition": "The smallest units such as keywords, identifiers, constants, strings and operators that the compiler recognises."
+            },
+            {
+              "id": "CSCA412-MI-T04-s2",
+              "title": "Data types and variables",
+              "kind": "subtopic",
+              "definition": "Fundamental types int, float, double, char and bool with modifiers, plus user defined types such as class."
+            },
+            {
+              "id": "CSCA412-MI-T04-s3",
+              "title": "Operators and expressions",
+              "kind": "subtopic",
+              "definition": "Arithmetic, relational, logical, assignment, increment and bitwise operators combine operands into expressions."
+            },
+            {
+              "id": "CSCA412-MI-T04-s4",
+              "title": "Control statements",
+              "kind": "subtopic",
+              "definition": "Selection with if, if else and switch, and repetition with for, while and do while."
+            },
+            {
+              "id": "CSCA412-MI-T04-s5",
+              "title": "Input and output with cin and cout",
+              "kind": "subtopic",
+              "definition": "Stream operators >> and << read from the keyboard and write to the screen."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MI-T05",
+          "title": "C++ Library Functions",
+          "kind": "topic",
+          "definition": "The standard library supplies ready made functions grouped in headers such as iostream, cmath, cstring and cstdlib.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T05-s1",
+              "title": "iostream and string functions",
+              "kind": "subtopic",
+              "definition": "Provide stream input output and text manipulation such as strlen, strcpy and strcmp."
+            },
+            {
+              "id": "CSCA412-MI-T05-s2",
+              "title": "math and utility functions",
+              "kind": "subtopic",
+              "definition": "sqrt, pow, abs, ceil and floor come from cmath; rand and atoi come from cstdlib."
+            },
+            {
+              "id": "CSCA412-MI-T05-s3",
+              "title": "Why libraries are used",
+              "kind": "subtopic",
+              "definition": "Reusing tested library code shortens development time and reduces programming errors."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MI-T06",
+          "title": "User Defined Functions",
+          "kind": "topic",
+          "definition": "A user defined function packages a task with a name, a parameter list and a return type so it can be called repeatedly.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T06-s1",
+              "title": "Function declaration, definition and call",
+              "kind": "subtopic",
+              "definition": "The prototype announces the signature, the definition holds the body and the call passes control with arguments."
+            },
+            {
+              "id": "CSCA412-MI-T06-s2",
+              "title": "Return values and void functions",
+              "kind": "subtopic",
+              "definition": "A function returns one value of the stated type, or returns nothing when declared void."
+            },
+            {
+              "id": "CSCA412-MI-T06-s3",
+              "title": "Actual and formal parameters",
+              "kind": "subtopic",
+              "definition": "Actual parameters are the values passed at the call site; formal parameters are the names receiving them inside the function."
+            },
+            {
+              "id": "CSCA412-MI-T06-s4",
+              "title": "Default arguments and inline functions",
+              "kind": "subtopic",
+              "definition": "Default values let some arguments be omitted, and inline functions expand the body at the call site to avoid call overhead."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MI-T07",
+          "title": "Parameter Passing: Call by Value and Call by Reference",
+          "kind": "topic",
+          "definition": "Call by value copies the argument so the original is unchanged, while call by reference passes the address so the function can modify the caller variable.",
+          "children": [
+            {
+              "id": "CSCA412-MI-T07-s1",
+              "title": "Call by value",
+              "kind": "subtopic",
+              "definition": "A duplicate of the value reaches the function, so changes stay local - swapping two numbers this way does not work."
+            },
+            {
+              "id": "CSCA412-MI-T07-s2",
+              "title": "Call by reference using references",
+              "kind": "subtopic",
+              "definition": "The reference parameter is another name for the same variable, so changes are visible to the caller."
+            },
+            {
+              "id": "CSCA412-MI-T07-s3",
+              "title": "Call by address using pointers",
+              "kind": "subtopic",
+              "definition": "The pointer parameter holds the address, and the function dereferences it to modify the original value."
+            },
+            {
+              "id": "CSCA412-MI-T07-s4",
+              "title": "Choosing between them",
+              "kind": "subtopic",
+              "definition": "Use call by value for small read only data and call by reference for large objects or when results must come back through parameters."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Object Oriented Concepts, Classes, Overloading and Inheritance",
+      "topics": [
+        {
+          "id": "CSCA412-MII-T01",
+          "title": "Object Oriented Programming Paradigm",
+          "kind": "topic",
+          "definition": "OOP organises a program around objects that combine data and the functions that operate on that data.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T01-s1",
+              "title": "Procedural versus object oriented approach",
+              "kind": "subtopic",
+              "definition": "Procedural programming follows functions and global data, while OOP follows objects with encapsulated state and behaviour."
+            },
+            {
+              "id": "CSCA412-MII-T01-s2",
+              "title": "Basic OOP concepts",
+              "kind": "subtopic",
+              "definition": "The core ideas are class, object, encapsulation, abstraction, inheritance, polymorphism and message passing."
+            },
+            {
+              "id": "CSCA412-MII-T01-s3",
+              "title": "Benefits of OOP",
+              "kind": "subtopic",
+              "definition": "Reusability through inheritance, easier maintenance, data security by encapsulation and natural modelling of real world entities."
+            },
+            {
+              "id": "CSCA412-MII-T01-s4",
+              "title": "Applications of OOP",
+              "kind": "subtopic",
+              "definition": "Used in simulation, GUI software, databases, CAD systems and large business applications."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MII-T02",
+          "title": "C++ Class Definition and Member Functions",
+          "kind": "topic",
+          "definition": "A class is a user defined type that bundles data members and member functions, and an object is one instance of that class.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T02-s1",
+              "title": "Class specification and access specifiers",
+              "kind": "subtopic",
+              "definition": "Members are declared private, protected or public; private members are reachable only inside the class."
+            },
+            {
+              "id": "CSCA412-MII-T02-s2",
+              "title": "Member functions inside and outside the class",
+              "kind": "subtopic",
+              "definition": "Small functions can be defined inline in the class, while larger ones are declared inside and defined outside using the scope resolution operator."
+            },
+            {
+              "id": "CSCA412-MII-T02-s3",
+              "title": "Objects and memory",
+              "kind": "subtopic",
+              "definition": "Each object gets its own copy of the data members, while member functions are shared by all objects of the class."
+            },
+            {
+              "id": "CSCA412-MII-T02-s4",
+              "title": "The this pointer",
+              "kind": "subtopic",
+              "definition": "A hidden pointer inside every member function that refers to the object on which the function was called."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MII-T03",
+          "title": "Static Members",
+          "kind": "topic",
+          "definition": "A static data member is shared by all objects of the class and a static member function can be called without any object.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T03-s1",
+              "title": "Static data member",
+              "kind": "subtopic",
+              "definition": "Declared inside the class and defined once outside; only one copy exists for the whole class."
+            },
+            {
+              "id": "CSCA412-MII-T03-s2",
+              "title": "Static member function",
+              "kind": "subtopic",
+              "definition": "Has no this pointer, so it can access only static members and other static functions."
+            },
+            {
+              "id": "CSCA412-MII-T03-s3",
+              "title": "Use cases",
+              "kind": "subtopic",
+              "definition": "Counting the number of objects created, keeping shared configuration values and implementing utility functions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MII-T04",
+          "title": "Constructors and Destructors",
+          "kind": "topic",
+          "definition": "A constructor initialises an object when it is created, and a destructor releases its resources when it is destroyed.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T04-s1",
+              "title": "Default constructor",
+              "kind": "subtopic",
+              "definition": "Takes no arguments and is supplied by the compiler if no constructor is written."
+            },
+            {
+              "id": "CSCA412-MII-T04-s2",
+              "title": "Parameterised constructor",
+              "kind": "subtopic",
+              "definition": "Accepts arguments so an object can be created with initial values, as in Student s(101, \"Ravi\")."
+            },
+            {
+              "id": "CSCA412-MII-T04-s3",
+              "title": "Copy constructor",
+              "kind": "subtopic",
+              "definition": "Creates a new object as a copy of another, taking a reference to the same class; needed to avoid shallow copying of pointers."
+            },
+            {
+              "id": "CSCA412-MII-T04-s4",
+              "title": "Dynamic constructor",
+              "kind": "subtopic",
+              "definition": "Allocates memory at run time using new, which the destructor must free with delete."
+            },
+            {
+              "id": "CSCA412-MII-T04-s5",
+              "title": "Destructor",
+              "kind": "subtopic",
+              "definition": "Named with a tilde, takes no arguments and runs automatically when the object goes out of scope or is deleted."
+            },
+            {
+              "id": "CSCA412-MII-T04-s6",
+              "title": "Constructor overloading",
+              "kind": "subtopic",
+              "definition": "Several constructors with different parameter lists let objects be built in different ways."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MII-T05",
+          "title": "Operator Overloading",
+          "kind": "topic",
+          "definition": "Operator overloading gives an extra meaning to an existing operator so it works on user defined types such as complex numbers.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T05-s1",
+              "title": "Unary operator overloading",
+              "kind": "subtopic",
+              "definition": "Operators with one operand, such as ++, -- and unary minus, are overloaded with no argument or with a dummy int for postfix."
+            },
+            {
+              "id": "CSCA412-MII-T05-s2",
+              "title": "Binary operator overloading",
+              "kind": "subtopic",
+              "definition": "Operators with two operands such as +, - and * are overloaded with one parameter, or as friend functions with two."
+            },
+            {
+              "id": "CSCA412-MII-T05-s3",
+              "title": "Rules of operator overloading",
+              "kind": "subtopic",
+              "definition": "New operators cannot be invented, precedence and arity cannot change, and operators such as :: and sizeof cannot be overloaded."
+            },
+            {
+              "id": "CSCA412-MII-T05-s4",
+              "title": "Type conversions",
+              "kind": "subtopic",
+              "definition": "Conversion between basic and user defined types is done by constructor conversion and by conversion operator functions."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MII-T06",
+          "title": "Function Overloading, Friend and Virtual Functions",
+          "kind": "topic",
+          "definition": "C++ allows several functions with the same name but different parameter lists, and provides friend and virtual functions for special access and late binding.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T06-s1",
+              "title": "Function overloading",
+              "kind": "subtopic",
+              "definition": "The compiler picks the correct version from the number or types of the arguments - the return type alone cannot distinguish them."
+            },
+            {
+              "id": "CSCA412-MII-T06-s2",
+              "title": "Friend function and friend class",
+              "kind": "subtopic",
+              "definition": "A non member function or another class granted access to the private members of the class that declares it."
+            },
+            {
+              "id": "CSCA412-MII-T06-s3",
+              "title": "Virtual function",
+              "kind": "subtopic",
+              "definition": "A member function declared virtual is chosen at run time based on the actual object, which is how runtime polymorphism works."
+            },
+            {
+              "id": "CSCA412-MII-T06-s4",
+              "title": "Pure virtual function and abstract class",
+              "kind": "subtopic",
+              "definition": "A virtual function with no body makes the class abstract, so objects cannot be created but derived classes must implement it."
+            },
+            {
+              "id": "CSCA412-MII-T06-s5",
+              "title": "Static versus dynamic binding",
+              "kind": "subtopic",
+              "definition": "Normal calls are resolved at compile time while virtual calls are resolved at run time through the vtable."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MII-T07",
+          "title": "Inheritance and Its Types",
+          "kind": "topic",
+          "definition": "Inheritance lets a new class reuse and extend the members of an existing class, expressing an is-a relationship.",
+          "children": [
+            {
+              "id": "CSCA412-MII-T07-s1",
+              "title": "Base and derived class",
+              "kind": "subtopic",
+              "definition": "The base class supplies common members and the derived class adds or overrides behaviour."
+            },
+            {
+              "id": "CSCA412-MII-T07-s2",
+              "title": "Single inheritance",
+              "kind": "subtopic",
+              "definition": "One derived class inherits from exactly one base class."
+            },
+            {
+              "id": "CSCA412-MII-T07-s3",
+              "title": "Multiple inheritance",
+              "kind": "subtopic",
+              "definition": "One derived class inherits from more than one base class, which can cause ambiguity between same named members."
+            },
+            {
+              "id": "CSCA412-MII-T07-s4",
+              "title": "Multilevel inheritance",
+              "kind": "subtopic",
+              "definition": "A chain such as A to B to C, where each level inherits from the previous one."
+            },
+            {
+              "id": "CSCA412-MII-T07-s5",
+              "title": "Hierarchical inheritance",
+              "kind": "subtopic",
+              "definition": "Several classes inherit from one common base class."
+            },
+            {
+              "id": "CSCA412-MII-T07-s6",
+              "title": "Hybrid inheritance",
+              "kind": "subtopic",
+              "definition": "A combination of two or more inheritance forms, usually built from multiple and multilevel."
+            },
+            {
+              "id": "CSCA412-MII-T07-s7",
+              "title": "Virtual base class",
+              "kind": "subtopic",
+              "definition": "Declaring a base virtual ensures that only one copy of its members survives the diamond problem of multiple inheritance."
+            },
+            {
+              "id": "CSCA412-MII-T07-s8",
+              "title": "Applications of inheritance",
+              "kind": "subtopic",
+              "definition": "Code reuse, building class libraries and frameworks, and modelling taxonomies such as Shape and Circle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Java Applets, Graphics, Files and Collections",
+      "topics": [
+        {
+          "id": "CSCA412-MIII-T01",
+          "title": "Introduction to Java Applet Programming",
+          "kind": "topic",
+          "definition": "An applet is a small Java program that used to be embedded in a web page and executed inside the browser.",
+          "children": [
+            {
+              "id": "CSCA412-MIII-T01-s1",
+              "title": "What an applet is",
+              "kind": "subtopic",
+              "definition": "A class extending Applet or JApplet whose execution is controlled by the browser or applet viewer."
+            },
+            {
+              "id": "CSCA412-MIII-T01-s2",
+              "title": "Applet life cycle",
+              "kind": "subtopic",
+              "definition": "init, start, paint, stop and destroy are called by the browser at the appropriate moments."
+            },
+            {
+              "id": "CSCA412-MIII-T01-s3",
+              "title": "Applet versus application",
+              "kind": "subtopic",
+              "definition": "An application starts at main and runs on its own, while an applet has no main, is embedded in HTML and is restricted by the browser sandbox."
+            },
+            {
+              "id": "CSCA412-MIII-T01-s4",
+              "title": "Why applets are obsolete",
+              "kind": "subtopic",
+              "definition": "Browsers removed plugin support, so applets are replaced by Java Web Start and modern web technologies."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIII-T02",
+          "title": "Graphic Programming in Java",
+          "kind": "topic",
+          "definition": "The Graphics class provides drawing primitives for lines, rectangles, ovals, polygons, strings and images.",
+          "children": [
+            {
+              "id": "CSCA412-MIII-T02-s1",
+              "title": "Coordinate system and Graphics object",
+              "kind": "subtopic",
+              "definition": "The origin is the top left corner and the Graphics object supplied to paint performs all drawing."
+            },
+            {
+              "id": "CSCA412-MIII-T02-s2",
+              "title": "Drawing shapes and text",
+              "kind": "subtopic",
+              "definition": "Methods such as drawLine, drawRect, fillRect, drawOval, drawPolygon and drawString draw the primitives."
+            },
+            {
+              "id": "CSCA412-MIII-T02-s3",
+              "title": "Colours and fonts",
+              "kind": "subtopic",
+              "definition": "setColor with the Color class and setFont with the Font class control appearance."
+            },
+            {
+              "id": "CSCA412-MIII-T02-s4",
+              "title": "Animation basics",
+              "kind": "subtopic",
+              "definition": "Shapes are redrawn in a loop after a delay, usually inside the paint method, to create movement."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIII-T03",
+          "title": "Managing Input and Output Files",
+          "kind": "topic",
+          "definition": "Java file handling reads and writes data through stream classes, with character streams for text and byte streams for binary data.",
+          "children": [
+            {
+              "id": "CSCA412-MIII-T03-s1",
+              "title": "File and FileWriter or FileReader",
+              "kind": "subtopic",
+              "definition": "The File class represents a path while FileReader and FileWriter transfer characters to and from a file."
+            },
+            {
+              "id": "CSCA412-MIII-T03-s2",
+              "title": "BufferedReader and BufferedWriter",
+              "kind": "subtopic",
+              "definition": "Wrap the character streams to buffer data, which reduces the number of slow disk operations."
+            },
+            {
+              "id": "CSCA412-MIII-T03-s3",
+              "title": "Streams versus readers",
+              "kind": "subtopic",
+              "definition": "InputStream and OutputStream work on bytes while Reader and Writer work on characters with encoding."
+            },
+            {
+              "id": "CSCA412-MIII-T03-s4",
+              "title": "Exception handling during file operations",
+              "kind": "subtopic",
+              "definition": "File operations throw IOException, so try, catch and finally blocks are required."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIII-T04",
+          "title": "Java Collections Framework",
+          "kind": "topic",
+          "definition": "The collections framework provides ready made data structures such as lists, sets, maps and queues together with iterators.",
+          "children": [
+            {
+              "id": "CSCA412-MIII-T04-s1",
+              "title": "Lists: ArrayList and LinkedList",
+              "kind": "subtopic",
+              "definition": "ArrayList keeps a growable array with fast index access; LinkedList uses nodes and is faster for insertion at the ends."
+            },
+            {
+              "id": "CSCA412-MIII-T04-s2",
+              "title": "Sets: HashSet and TreeSet",
+              "kind": "subtopic",
+              "definition": "HashSet stores unique elements without order while TreeSet keeps them sorted."
+            },
+            {
+              "id": "CSCA412-MIII-T04-s3",
+              "title": "Maps: HashMap and TreeMap",
+              "kind": "subtopic",
+              "definition": "Store key value pairs; HashMap has no order while TreeMap iterates in sorted key order."
+            },
+            {
+              "id": "CSCA412-MIII-T04-s4",
+              "title": "Queue and Deque interfaces",
+              "kind": "subtopic",
+              "definition": "Used for FIFO and double ended queue behaviour, with PriorityQueue for priority order."
+            },
+            {
+              "id": "CSCA412-MIII-T04-s5",
+              "title": "Iterator and the for-each loop",
+              "kind": "subtopic",
+              "definition": "The Iterator walks through a collection and may remove elements safely during traversal."
+            },
+            {
+              "id": "CSCA412-MIII-T04-s6",
+              "title": "Comparison with arrays",
+              "kind": "subtopic",
+              "definition": "Collections resize automatically, hold objects and provide algorithms such as sort and search through the Collections class."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Event Handling, Applets and AWT",
+      "topics": [
+        {
+          "id": "CSCA412-MIV-T01",
+          "title": "Event Handling",
+          "kind": "topic",
+          "definition": "Event handling responds to user actions by notifying listener objects that the event has occurred.",
+          "children": [
+            {
+              "id": "CSCA412-MIV-T01-s1",
+              "title": "Delegation event model",
+              "kind": "subtopic",
+              "definition": "A source generates an event object and sends it to registered listener objects that implement the matching interface."
+            },
+            {
+              "id": "CSCA412-MIV-T01-s2",
+              "title": "Event classes",
+              "kind": "subtopic",
+              "definition": "ActionEvent, MouseEvent, KeyEvent, ItemEvent and WindowEvent carry details such as source and modifiers."
+            },
+            {
+              "id": "CSCA412-MIV-T01-s3",
+              "title": "Listener interfaces and adapter classes",
+              "kind": "subtopic",
+              "definition": "ActionListener, MouseListener and KeyListener receive events, and adapter classes provide empty implementations of their methods."
+            },
+            {
+              "id": "CSCA412-MIV-T01-s4",
+              "title": "Registering listeners",
+              "kind": "subtopic",
+              "definition": "addActionListener, addMouseListener and addKeyListener connect a component to its handler."
+            },
+            {
+              "id": "CSCA412-MIV-T01-s5",
+              "title": "Common statements inside a handler",
+              "kind": "subtopic",
+              "definition": "Determining the source and performing the required action such as validating a form or closing a window."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIV-T02",
+          "title": "AWT: Working with Windows, Graphics and Text",
+          "kind": "topic",
+          "definition": "The Abstract Window Toolkit provides the original Java classes for windows, controls, graphics and text.",
+          "children": [
+            {
+              "id": "CSCA412-MIV-T02-s1",
+              "title": "Frame and window basics",
+              "kind": "subtopic",
+              "definition": "Frame creates a top level window with a title bar, while Panel groups components inside it."
+            },
+            {
+              "id": "CSCA412-MIV-T02-s2",
+              "title": "Components and containers",
+              "kind": "subtopic",
+              "definition": "Controls are added to containers such as Frame and Panel using add."
+            },
+            {
+              "id": "CSCA412-MIV-T02-s3",
+              "title": "Drawing on a component",
+              "kind": "subtopic",
+              "definition": "The paint method draws lines, shapes and text on the component surface."
+            },
+            {
+              "id": "CSCA412-MIV-T02-s4",
+              "title": "Text output with fonts",
+              "kind": "subtopic",
+              "definition": "drawString plus the Font and FontMetrics classes position and measure text."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIV-T03",
+          "title": "AWT Controls",
+          "kind": "topic",
+          "definition": "AWT supplies standard controls for user input, each with its own event type.",
+          "children": [
+            {
+              "id": "CSCA412-MIV-T03-s1",
+              "title": "Labels and buttons",
+              "kind": "subtopic",
+              "definition": "Label displays fixed text and Button raises an ActionEvent when clicked."
+            },
+            {
+              "id": "CSCA412-MIV-T03-s2",
+              "title": "Text fields and text areas",
+              "kind": "subtopic",
+              "definition": "TextField accepts one line and TextArea accepts multiple lines of input."
+            },
+            {
+              "id": "CSCA412-MIV-T03-s3",
+              "title": "Checkbox, choice and list",
+              "kind": "subtopic",
+              "definition": "Checkbox toggles a state, Choice is a drop down list and List shows a scrollable list of items."
+            },
+            {
+              "id": "CSCA412-MIV-T03-s4",
+              "title": "Scrollbars and layout within controls",
+              "kind": "subtopic",
+              "definition": "Scrollbar values generate adjustment events and are used for sliders or scrolling."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIV-T04",
+          "title": "Layout Managers and Menus",
+          "kind": "topic",
+          "definition": "Layout managers decide the position and size of components, and menus provide a standard menu bar interface.",
+          "children": [
+            {
+              "id": "CSCA412-MIV-T04-s1",
+              "title": "FlowLayout",
+              "kind": "subtopic",
+              "definition": "Arranges components left to right and wraps to the next line, like words on a page."
+            },
+            {
+              "id": "CSCA412-MIV-T04-s2",
+              "title": "BorderLayout",
+              "kind": "subtopic",
+              "definition": "Places components in five regions: north, south, east, west and centre."
+            },
+            {
+              "id": "CSCA412-MIV-T04-s3",
+              "title": "GridLayout and CardLayout",
+              "kind": "subtopic",
+              "definition": "GridLayout arranges components in equal sized cells, CardLayout stacks components so only one is visible at a time."
+            },
+            {
+              "id": "CSCA412-MIV-T04-s4",
+              "title": "GridBagLayout",
+              "kind": "subtopic",
+              "definition": "The most flexible manager, using constraints for grid position, weight and fill of each component."
+            },
+            {
+              "id": "CSCA412-MIV-T04-s5",
+              "title": "MenuBar, Menu and MenuItem",
+              "kind": "subtopic",
+              "definition": "A frame holds one menu bar, each menu holds items, and selecting an item raises an action event."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MIV-T05",
+          "title": "Working with Images",
+          "kind": "topic",
+          "definition": "Images are loaded with getImage or ImageIcon and drawn with drawImage, and can be manipulated pixel by pixel.",
+          "children": [
+            {
+              "id": "CSCA412-MIV-T05-s1",
+              "title": "Loading an image",
+              "kind": "subtopic",
+              "definition": "getImage needs an applet or Toolkit context, while ImageIcon works in any application."
+            },
+            {
+              "id": "CSCA412-MIV-T05-s2",
+              "title": "Drawing an image",
+              "kind": "subtopic",
+              "definition": "drawImage paints it at a position and with an optional size, and it may load asynchronously."
+            },
+            {
+              "id": "CSCA412-MIV-T05-s3",
+              "title": "Image processing basics",
+              "kind": "subtopic",
+              "definition": "Pixel arrays from PixelGrabber allow filters, cropping and resizing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Java Swing, Java Beans and Servlets",
+      "topics": [
+        {
+          "id": "CSCA412-MV-T01",
+          "title": "Java Swing and Its Controls",
+          "kind": "topic",
+          "definition": "Swing is a lightweight component library built on AWT that provides richer and platform independent controls.",
+          "children": [
+            {
+              "id": "CSCA412-MV-T01-s1",
+              "title": "JFrame, JPanel and container hierarchy",
+              "kind": "subtopic",
+              "definition": "JFrame is the top level window, its content pane holds components and JPanel groups them."
+            },
+            {
+              "id": "CSCA412-MV-T01-s2",
+              "title": "Common Swing controls",
+              "kind": "subtopic",
+              "definition": "JButton, JLabel, JTextField, JTextArea, JCheckBox, JRadioButton, JComboBox, JList and JTable."
+            },
+            {
+              "id": "CSCA412-MV-T01-s3",
+              "title": "Swing versus AWT",
+              "kind": "subtopic",
+              "definition": "Swing components are lightweight and drawn by Java, AWT components are heavyweight and depend on the operating system."
+            },
+            {
+              "id": "CSCA412-MV-T01-s4",
+              "title": "Dialogs and message boxes",
+              "kind": "subtopic",
+              "definition": "JOptionPane shows messages and collects simple input without building a whole form."
+            },
+            {
+              "id": "CSCA412-MV-T01-s5",
+              "title": "Menus and toolbars in Swing",
+              "kind": "subtopic",
+              "definition": "JMenuBar, JMenu and JMenuItem together with JToolBar create the standard application interface."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MV-T02",
+          "title": "Java Beans",
+          "kind": "topic",
+          "definition": "A Java Bean is a reusable software component that follows naming conventions so tools can inspect and manipulate it.",
+          "children": [
+            {
+              "id": "CSCA412-MV-T02-s1",
+              "title": "Properties of a bean",
+              "kind": "subtopic",
+              "definition": "Private fields exposed through getter and setter methods that follow the getX and setX pattern."
+            },
+            {
+              "id": "CSCA412-MV-T02-s2",
+              "title": "Introspection",
+              "kind": "subtopic",
+              "definition": "Tools discover a bean properties, methods and events automatically from the naming conventions."
+            },
+            {
+              "id": "CSCA412-MV-T02-s3",
+              "title": "Events and bound properties",
+              "kind": "subtopic",
+              "definition": "A bean can notify listeners when a property changes using the event model."
+            },
+            {
+              "id": "CSCA412-MV-T02-s4",
+              "title": "Bean Development Kit usage",
+              "kind": "subtopic",
+              "definition": "The BDK allowed beans to be assembled visually in a builder tool without writing code."
+            },
+            {
+              "id": "CSCA412-MV-T02-s5",
+              "title": "Advantages of beans",
+              "kind": "subtopic",
+              "definition": "Reusability, visual assembly and configuration through properties."
+            }
+          ]
+        },
+        {
+          "id": "CSCA412-MV-T03",
+          "title": "Servlets",
+          "kind": "topic",
+          "definition": "A servlet is a Java class that runs on a web server and generates dynamic web content in response to HTTP requests.",
+          "children": [
+            {
+              "id": "CSCA412-MV-T03-s1",
+              "title": "Servlet life cycle",
+              "kind": "subtopic",
+              "definition": "The container calls init once, service for every request and destroy before removing it."
+            },
+            {
+              "id": "CSCA412-MV-T03-s2",
+              "title": "HttpServlet and doGet or doPost",
+              "kind": "subtopic",
+              "definition": "GET carries parameters in the URL for retrieval, POST carries them in the request body for submission."
+            },
+            {
+              "id": "CSCA412-MV-T03-s3",
+              "title": "Request and response objects",
+              "kind": "subtopic",
+              "definition": "HttpServletRequest supplies parameters and HttpServletResponse writes the reply, with content type set first."
+            },
+            {
+              "id": "CSCA412-MV-T03-s4",
+              "title": "Session tracking",
+              "kind": "subtopic",
+              "definition": "Cookies, hidden form fields and HttpSession maintain state between separate HTTP requests."
+            },
+            {
+              "id": "CSCA412-MV-T03-s5",
+              "title": "Servlet versus CGI",
+              "kind": "subtopic",
+              "definition": "Servlets stay loaded in memory and handle each request in a thread, while CGI starts a new process per request."
+            },
+            {
+              "id": "CSCA412-MV-T03-s6",
+              "title": "Deployment",
+              "kind": "subtopic",
+              "definition": "A web.xml descriptor or annotations map URLs to servlet classes inside a web container such as Tomcat."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

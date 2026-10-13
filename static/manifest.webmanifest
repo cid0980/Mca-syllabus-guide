@@ -1,0 +1,16 @@
+{
+  "name": "StudyFeed — MCA Study Companion",
+  "short_name": "StudyFeed",
+  "description": "Personal study cards, quizzes and revision for the Pondicherry University MCA syllabus (2020-21).",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e0e10",
+  "theme_color": "#0e0e10",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

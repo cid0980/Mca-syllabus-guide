@@ -1,0 +1,272 @@
+[
+  {
+    "code": "CSCA 411",
+    "subject": "Data Structures and Algorithms",
+    "semester": 1,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Data Structures: Basic Terminologies – Algorithms: Definition, Pseudocode Representation – Time complexity and space complexity – efficiency of algorithms – O-notation – Omega notation and Theta Notation – Arrays: One dimensional & multidimensional arrays – Searching."
+      },
+      {
+        "module": "II",
+        "topics": "Stacks: Representation – Operations – Applications. Queues: Representation – Operations – Applications. Linked List: Single Linked List, Double Linked List, Circular Linked List, Applications of Linked List."
+      },
+      {
+        "module": "III",
+        "topics": "Trees: Basic Terminologies – Binary trees: Representation, Operations, Traversals, Types – Applications of Trees. Graphs: Basic Terminologies, Representation, Operations, Traversals – Applications: Shortest path problem, Topological sorting, Minimum Spanning trees."
+      },
+      {
+        "module": "IV",
+        "topics": "Divide and Conquer: General method – binary search – merge sort – quick sort – Recursive algorithms, analysis of non-recursive and recursive algorithms, solving recurrence equations. Greedy Method: General method – knapsack problem – minimum spanning tree algorithms – single source shortest path algorithm – scheduling – Huffman codes."
+      },
+      {
+        "module": "V",
+        "topics": "Dynamic Programming: 0/1 Knapsack and Traveling salesman problem – Backtracking: n-Queen problem – Graph Colouring – Introduction to NP-Hard and NP-Completeness."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 412",
+    "subject": "Object Oriented Programming",
+    "semester": 1,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Introduction to C++ – Applications of C++ – Structure of a Simple C++ Program – Compiling and Executing C++ programs – Programming elements – C++ Library function – User Defined Functions: Call by value, call by reference."
+      },
+      {
+        "module": "II",
+        "topics": "Object oriented programming paradigm – Basic OOP concepts – Benefits – C++ Class definition – Member functions – Static members – Constructor and destructors: various types. Operator overloading: Unary, binary – Rules for Operator overloading – Type conversions – Function overloading – Friend and Virtual Functions. Inheritance: Various Types, Applications – Abstract classes – Virtual base classes."
+      },
+      {
+        "module": "III",
+        "topics": "Introduction to Java Applet programming – Graphic Programming – Managing input and output files – Java Collections."
+      },
+      {
+        "module": "IV",
+        "topics": "Event Handling – Applets – AWT: Working with windows, Graphics and Text – AWT controls – Layout Managers and Menus – Images."
+      },
+      {
+        "module": "V",
+        "topics": "Java Swing and its controls – Java Beans – Servlets."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 413",
+    "subject": "Database Management Systems",
+    "semester": 1,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "File systems versus Database systems – Data Models – DBMS Architecture – Data Independence – Data modeling using Entity-Relationship Model – Enhanced E-R Modeling."
+      },
+      {
+        "module": "II",
+        "topics": "Relational Model Concepts – Relational Algebra – SQL – Basic Queries – Complex SQL Queries – Views – Constraints – Relational Calculus – Tuple Relational Calculus – Domain Relational Calculus – Overview of commercial RDBMSs – Database Design – Functional Dependencies – Normal Forms: 1NF, 2NF, 3NF, BCNF, 4NF, 5NF – Algorithms for Executing Query Operations – Cost Estimation."
+      },
+      {
+        "module": "III",
+        "topics": "Transaction Processing – Properties of Transactions – Serializability – Transaction support in SQL – Locking Techniques – Time Stamp ordering – Validation Techniques – Granularity of Data Items – Recovery concepts – Shadow paging – Log Based Recovery – Database Security Issues – Access control – Statistical Database Security."
+      },
+      {
+        "module": "IV",
+        "topics": "File operations – Hashing Techniques – Indexing – Single level and Multi-level Indexes – B+ tree – Static Hashing – Indexes on Multiple Keys."
+      },
+      {
+        "module": "V",
+        "topics": "OODBMS – Object-Based Databases – OO Data Model – OO Languages – Persistence – Object Relational Databases – XML – Structure of XML – Temporal Databases – Mobile Databases – Spatial Databases – Case Study for Design and Manage the Database for any Project."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 431",
+    "subject": "Mathematics for Computer Science",
+    "semester": 1,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Logics and Proofs: Propositional Logic – Predicates – Proofs – Methods and strategies."
+      },
+      {
+        "module": "II",
+        "topics": "Basic Structures and Relations: Sets – Functions – Sequences – Sums – Matrices. Relations – properties – representation."
+      },
+      {
+        "module": "III",
+        "topics": "Number Theory: Divisibility and Modular Arithmetic – integer – algorithm – prime and GCD – Congruences."
+      },
+      {
+        "module": "IV",
+        "topics": "Algebraic Structures: Groups – cyclic group – Homomorphism – Cosets and Lagrange's Theorem – Normal Subgroups – Rings and Fields (definition and examples)."
+      },
+      {
+        "module": "V",
+        "topics": "Counting: Basics – Pigeon hole principle – Permutations and combinations – Binomial coefficients."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 421",
+    "subject": "Computer Networks",
+    "semester": 2,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Network Topology – Network Architecture – Reference Models – Example Networks: ARPANET, NSFNET, Internet – Physical Layer – Transmission media."
+      },
+      {
+        "module": "II",
+        "topics": "Data Link Layer design issues – Error Detection and Correction Methods – Elementary Data Link Protocols – Sliding Window Protocols – Protocol Verification Methods – Channel Allocation Multiple Access protocols – IEEE 802 Standards."
+      },
+      {
+        "module": "III",
+        "topics": "Network Layer design issues – Routing algorithms – Congestion Control algorithms – Internetworking – Network Layer in Internet."
+      },
+      {
+        "module": "IV",
+        "topics": "Transport Service – Transport Protocols – Internet Transport Protocols: UDP, TCP – Performance issues."
+      },
+      {
+        "module": "V",
+        "topics": "Application Layer design issues – Domain Name System – Electronic Mail – World Wide Web – Other Applications – Network Security – Basic Cryptography – Symmetric and Asymmetric Cryptography."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 422",
+    "subject": "Operating Systems",
+    "semester": 2,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Types of operating systems – Operating systems Structures – Systems components – Operating systems services – System calls – Systems programs – Processes: process concept, process scheduling, operation on processes, co-operating processes, Inter process communications – CPU Scheduling: Scheduling criteria, Scheduling algorithms, Multiple-processor Scheduling."
+      },
+      {
+        "module": "II",
+        "topics": "Critical Section problem – Semaphores – Classical problems of synchronization – Critical Regions – Monitors – Deadlock Characterization – Deadlock Handling – Deadlock Prevention – Deadlock Avoidance – Deadlock Detection – Deadlock Recovery – Threads – Multithreading Models."
+      },
+      {
+        "module": "III",
+        "topics": "Memory Management – Swapping – Contiguous Memory Allocation – Paging – Segmentation – Virtual Memory – Demand Paging – Page Replacement – Thrashing."
+      },
+      {
+        "module": "IV",
+        "topics": "Disk Structures – Disk Scheduling – File Systems Interface – File Concepts – Access Methods – Directory Structures – File System Implementation – File Systems Structures – Directory Implementation – Allocation Methods – Free Space Management – Distributed File Systems: Naming and Transparency, Remote File Accesses, Stateful Versus Stateless Service, File replication."
+      },
+      {
+        "module": "V",
+        "topics": "Linux System: design Principles, process Management, File Systems – MS Windows: Systems Structures, Process management, memory Management – Android OS – Virtual machine OS."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 423",
+    "subject": "Communication Skills",
+    "semester": 2,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Communication: Concepts and definition – Importance – Process of communication – Model – Types – Mode of communication – Objectives – Interpersonal and Intrapersonal Communication – Barriers – Commandments of communication."
+      },
+      {
+        "module": "II",
+        "topics": "Developing Communication Skills: Reading styles, linear reading, faster reading, reading techniques. Writing: Effective writing, report writing, speech writing, minutes, agenda writing, letters, article writing. Listening and Speaking: Art of listening, art of conversation, telephone etiquette, asking questions, brainstorming, presenting reports, speech delivery."
+      },
+      {
+        "module": "III",
+        "topics": "Interview Techniques: Types of interviews, planning for interviews, answering skills, effective communication during interviews, mock interview. Group Discussion: Purpose, process, preparation, guiding and controlling discussion, lateral thinking, participation techniques."
+      },
+      {
+        "module": "IV",
+        "topics": "Body Language: Origin, personality identification, types, desirable body language, attitude. Negotiation Techniques: Fundamentals, preparation, managing negotiation, interpersonal behaviour. Meetings: Leading and participating in meetings, success indicators, meeting process."
+      },
+      {
+        "module": "V",
+        "topics": "Management Communication Relationships: Semantics, employee and employer communication, downward and upward communication, specialist communication. Presentation: Types of presentation, understanding audience, planning and designing written and oral presentations, delivery techniques."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 511",
+    "subject": "Software Engineering",
+    "semester": 3,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Software Process Structure – Process Models & Activities – Agile Development – Requirements Engineering."
+      },
+      {
+        "module": "II",
+        "topics": "Design Concepts – Architectural Design – Component Level Design – User Interface Design – Web Application Design."
+      },
+      {
+        "module": "III",
+        "topics": "Review Techniques – Software Quality Assurance – Software Testing Strategies – Software Configuration Management – Product Metrics."
+      },
+      {
+        "module": "IV",
+        "topics": "Project Management Concepts – Process and Project Metrics – Estimation for Software Projects – Project Scheduling – Risk Management."
+      },
+      {
+        "module": "V",
+        "topics": "Reliability Engineering – Reliability and Availability – Reliability Testing – Security Requirements & Design."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 512",
+    "subject": "Internet and Web Technologies",
+    "semester": 3,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Internet Standards – Introduction to WWW – WWW Architecture – SMTP – POP3 – File Transfer Protocol – Overview of HTTP, HTTP request and response – Generation of dynamic web pages."
+      },
+      {
+        "module": "II",
+        "topics": "Markup Language (HTML & HTML5): Formatting, Fonts, Anchors, Images, Hyperlinks, Lists, Tables, Frames, HTML Forms. Cascading Style Sheet (CSS): Syntax, Inline, Embedded and External Style Sheets, Backgrounds, Text manipulation, Margins, Padding, Positioning."
+      },
+      {
+        "module": "III",
+        "topics": "Introduction to JavaScript: Core features, Data types and Variables, Operators, Expressions, Statements, Functions, Objects, Array, Date and Math Objects, Document Object Model (DOM), Event Handling, Controlling Windows and Frames, Form handling and validations."
+      },
+      {
+        "module": "IV",
+        "topics": "Advanced JavaScript: Browser and Media Management, Classes, Constructors, Object-Oriented Techniques in JavaScript, Prototyping, Subclasses and Superclasses, JSON, jQuery and AJAX."
+      },
+      {
+        "module": "V",
+        "topics": "PHP & MySQL: How web works, LAMP server environment, PHP basics, Variables, Strings, Arrays, Control structures, Functions, Reading Form Data, Embedding PHP within HTML, Connecting PHP with MySQL database."
+      }
+    ]
+  },
+  {
+    "code": "CSCA 432",
+    "subject": "Management Concepts and Strategies",
+    "semester": 3,
+    "modules": [
+      {
+        "module": "I",
+        "topics": "Management Theories: Science, Theory and Practice – Management and Society: Social Responsibility and Ethics – Nature and purpose of planning – Objectives, Strategies, Policies and planning premises."
+      },
+      {
+        "module": "II",
+        "topics": "Decision Making – Nature and purpose of organizing – Basic departmentalization – Line/Staff Authority and Decentralization – Effective Organizing and organizational culture."
+      },
+      {
+        "module": "III",
+        "topics": "Human Resource Management & Selection – Performance appraisal and career strategy – Manager and organizational development."
+      },
+      {
+        "module": "IV",
+        "topics": "Managing the Human Factor: Motivation – Leadership – Communication."
+      },
+      {
+        "module": "V",
+        "topics": "The System & Process of Controlling: Control techniques and Information Technology – Productivity and Operations Management – Overall and Preventive Control – Towards a Unified, Global management theory."
+      }
+    ]
+  }
+]

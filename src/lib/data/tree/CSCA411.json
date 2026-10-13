@@ -1,0 +1,3487 @@
+{
+  "code": "CSCA 411",
+  "subject": "Data Structures and Algorithms",
+  "semester": 1,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Foundations: Data Structures, Algorithms and Arrays",
+      "topics": [
+        {
+          "id": "CSCA411-M1-01",
+          "title": "Data Structures: Basic Terminologies",
+          "kind": "topic",
+          "definition": "A data structure is a way of arranging data in memory so that it can be used quickly and neatly.",
+          "children": [
+            {
+              "id": "CSCA411-M1-01-s1",
+              "title": "Data item and field",
+              "kind": "subtopic",
+              "definition": "A single value is a data item; a field is one named place that stores a value inside a record."
+            },
+            {
+              "id": "CSCA411-M1-01-s2",
+              "title": "Record and file",
+              "kind": "subtopic",
+              "definition": "A record groups related items about one entity; a file is a collection of similar records."
+            },
+            {
+              "id": "CSCA411-M1-01-s3",
+              "title": "Primitive and non-primitive structures",
+              "kind": "subtopic",
+              "definition": "Primitive structures hold single values such as int or char, while non-primitive structures are built from them, such as arrays and lists."
+            },
+            {
+              "id": "CSCA411-M1-01-s4",
+              "title": "Linear and non-linear structures",
+              "kind": "subtopic",
+              "definition": "Linear structures arrange elements in a sequence, while non-linear structures such as trees and graphs arrange them in levels or networks."
+            },
+            {
+              "id": "CSCA411-M1-01-s5",
+              "title": "Static and dynamic structures",
+              "kind": "subtopic",
+              "definition": "Static structures have a fixed size decided at compile time; dynamic structures grow and shrink at run time."
+            },
+            {
+              "id": "CSCA411-M1-01-s6",
+              "title": "Operations on data structures",
+              "kind": "subtopic",
+              "definition": "Insertion, deletion, traversal, searching, sorting and merging are the standard operations performed on any structure."
+            }
+          ],
+          "card": {
+            "explanation": "Every program keeps data somewhere, and how you keep it decides how fast you can work with it. A data structure is just that arrangement plus the rules for adding, finding and removing items. Two words appear everywhere: data item (one single value) and record (a group of related values kept together). When people say a structure is efficient, they mean the operations you need most often take less time or less memory.",
+            "example": "Think of your college bag. Books stacked flat are easy to add on top but slow to search. Books in labelled pockets are slower to fill but you can grab the right one instantly. Same books, different arrangement, different speed.",
+            "quiz": [
+              {
+                "q": "What does a data structure mainly decide?",
+                "options": [
+                  "How data is arranged in memory and which operations are fast",
+                  "The colour scheme of a program",
+                  "How many users can open the program",
+                  "The license of the programming language"
+                ],
+                "answer": 0,
+                "why": "A data structure is the arrangement plus the rules for inserting, searching and deleting."
+              },
+              {
+                "q": "A single value such as the age 21 is called a:",
+                "options": [
+                  "Record",
+                  "Data item",
+                  "Structure",
+                  "Field group"
+                ],
+                "answer": 1,
+                "why": "A single value is a data item; a group of related values stored together is a record."
+              }
+            ],
+            "examTip": "Define data structure first, then give one line each on data item and record - one mark is usually kept for the terminology.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-02",
+          "title": "Algorithms: Definition",
+          "kind": "topic",
+          "definition": "An algorithm is a finite step-by-step list of instructions that turns given input into the required output.",
+          "children": [
+            {
+              "id": "CSCA411-M1-02-s1",
+              "title": "Finiteness",
+              "kind": "subtopic",
+              "definition": "The algorithm must end after a limited number of steps."
+            },
+            {
+              "id": "CSCA411-M1-02-s2",
+              "title": "Definiteness",
+              "kind": "subtopic",
+              "definition": "Every step must be unambiguous and precisely stated."
+            },
+            {
+              "id": "CSCA411-M1-02-s3",
+              "title": "Input and output",
+              "kind": "subtopic",
+              "definition": "Zero or more inputs are supplied and at least one output is produced."
+            },
+            {
+              "id": "CSCA411-M1-02-s4",
+              "title": "Effectiveness",
+              "kind": "subtopic",
+              "definition": "Each step must be basic enough to be carried out in finite time."
+            }
+          ],
+          "card": {
+            "explanation": "An algorithm must finish after a limited number of steps, so it is finite and not an endless loop. Every step must be clear enough that anyone can follow it without guessing (that is called being unambiguous). It should take zero or more inputs and must produce at least one output. The same algorithm can be written in any language - the logic stays the same, only the spelling changes.",
+            "example": "A recipe for making tea is an algorithm: take water, boil, add tea powder, add milk, boil again, serve. Inputs are water and powder, output is tea, and each step is clear.",
+            "quiz": [
+              {
+                "q": "Which property means an algorithm must stop after a limited number of steps?",
+                "options": [
+                  "Ambiguity",
+                  "Finiteness",
+                  "Redundancy",
+                  "Modularity"
+                ],
+                "answer": 1,
+                "why": "Finiteness means the steps are limited, so execution always ends."
+              },
+              {
+                "q": "Minimum number of outputs an algorithm must produce:",
+                "options": [
+                  "Zero",
+                  "One",
+                  "Two",
+                  "As many as its inputs"
+                ],
+                "answer": 1,
+                "why": "An algorithm must produce at least one output, otherwise the work is pointless."
+              }
+            ],
+            "examTip": "Write the definition and then list five properties: finiteness, definiteness, input, output, effectiveness.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-03",
+          "title": "Algorithms: Pseudocode Representation",
+          "kind": "topic",
+          "definition": "Pseudocode is a rough, language-free way of writing an algorithm using plain words and simple keywords.",
+          "children": [
+            {
+              "id": "CSCA411-M1-03-s1",
+              "title": "Keywords used in pseudocode",
+              "kind": "subtopic",
+              "definition": "READ, PRINT, IF-ELSE, WHILE, FOR, REPEAT and RETURN express control flow in plain words."
+            },
+            {
+              "id": "CSCA411-M1-03-s2",
+              "title": "Rules for writing pseudocode",
+              "kind": "subtopic",
+              "definition": "One statement per line, indentation for nesting and no dependence on the syntax of any language."
+            },
+            {
+              "id": "CSCA411-M1-03-s3",
+              "title": "Algorithm versus flowchart versus program",
+              "kind": "subtopic",
+              "definition": "A flowchart uses symbols, pseudocode uses words and a program uses a real language - all three describe the same logic."
+            }
+          ],
+          "card": {
+            "explanation": "Pseudocode keeps the logic but drops the strict grammar of a real language, so you can focus on the steps. Common keywords are READ, PRINT, IF-ELSE, WHILE, FOR and RETURN. It cannot be run on a computer directly - it is a plan that you convert into C++ or Java later. Writing pseudocode first makes the coding stage short because the thinking is already done.",
+            "example": "A pseudocode for finding the biggest number: READ a, b; IF a > b THEN PRINT a ELSE PRINT b. That is the whole logic before any coding.",
+            "quiz": [
+              {
+                "q": "Pseudocode differs from a real program because it:",
+                "options": [
+                  "Runs faster than compiled code",
+                  "Follows no strict grammar and cannot be executed directly",
+                  "Needs a compiler",
+                  "Works only in Java"
+                ],
+                "answer": 1,
+                "why": "Pseudocode is a loose, human-readable plan that is not executable."
+              },
+              {
+                "q": "Which is NOT a typical pseudocode keyword?",
+                "options": [
+                  "READ",
+                  "WHILE",
+                  "PRINT",
+                  "import java.util"
+                ],
+                "answer": 3,
+                "why": "Import statements belong to a real language; pseudocode stays language-free."
+              }
+            ],
+            "examTip": "If a question says 'write an algorithm', pseudocode or numbered steps are both accepted - pick one style and stay consistent.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-04",
+          "title": "Time Complexity",
+          "kind": "topic",
+          "definition": "Time complexity counts how the running time of an algorithm grows when the input size grows.",
+          "children": [
+            {
+              "id": "CSCA411-M1-04-s1",
+              "title": "Basic operation count",
+              "kind": "subtopic",
+              "definition": "Count the operation that dominates, such as comparisons in a search or multiplications in a matrix product."
+            },
+            {
+              "id": "CSCA411-M1-04-s2",
+              "title": "Growth rate",
+              "kind": "subtopic",
+              "definition": "The way the operation count increases as n increases: constant, logarithmic, linear, quadratic or exponential."
+            },
+            {
+              "id": "CSCA411-M1-04-s3",
+              "title": "Asymptotic analysis for large n",
+              "kind": "subtopic",
+              "definition": "Constants and lower order terms are ignored because only the trend for large inputs matters."
+            }
+          ],
+          "card": {
+            "explanation": "It is not the stopwatch time in seconds, because that changes with every machine. Instead we count the basic operations and express them as a function of input size n. This tells you what happens when the data becomes large - doubling the input may double the work, or square it. A smaller growth rate is always preferred, because it survives big inputs better.",
+            "example": "Searching a shelf of 100 files one by one takes about 100 checks; with 1000 files it takes about 1000 checks. The work doubles when files grow ten times, so the growth is linear.",
+            "quiz": [
+              {
+                "q": "Time complexity mainly measures:",
+                "options": [
+                  "Exact seconds on your laptop",
+                  "Growth of operations as input size grows",
+                  "Number of lines in the program",
+                  "Memory used by the compiler"
+                ],
+                "answer": 1,
+                "why": "It is a growth measure as a function of input size, not wall-clock seconds."
+              },
+              {
+                "q": "If the input size doubles and the work also doubles, the growth is:",
+                "options": [
+                  "Linear",
+                  "Quadratic",
+                  "Logarithmic",
+                  "Constant"
+                ],
+                "answer": 0,
+                "why": "Work proportional to n means linear growth, written O(n)."
+              }
+            ],
+            "examTip": "Never write 'time complexity = 5 seconds' in the exam; always express it as a function of n.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-05",
+          "title": "Space Complexity",
+          "kind": "topic",
+          "definition": "Space complexity is the total memory an algorithm needs, counting both the fixed part and the extra working space.",
+          "children": [
+            {
+              "id": "CSCA411-M1-05-s1",
+              "title": "Fixed part",
+              "kind": "subtopic",
+              "definition": "Memory for the program code, constants and simple variables that does not depend on the input size."
+            },
+            {
+              "id": "CSCA411-M1-05-s2",
+              "title": "Variable part",
+              "kind": "subtopic",
+              "definition": "Memory for the data structures whose size depends on the input, such as arrays or recursion frames."
+            },
+            {
+              "id": "CSCA411-M1-05-s3",
+              "title": "Auxiliary space",
+              "kind": "subtopic",
+              "definition": "Extra working memory used beyond the input itself, which is what \"in-place\" algorithms try to minimise."
+            }
+          ],
+          "card": {
+            "explanation": "The fixed part holds code, constants and simple variables, and it never changes with input size. The variable part grows with the input, for example the array that stores n values or the extra array created during sorting. When we compare algorithms we usually talk about the extra space beyond the input, called auxiliary space. An algorithm that uses a constant amount of extra space is called in-place.",
+            "example": "Merging two sorted lists into a new list needs a second list of the same size - that extra space is the cost. Swapping two numbers needs only one small temporary variable, so it is in-place.",
+            "quiz": [
+              {
+                "q": "Auxiliary space means:",
+                "options": [
+                  "Memory for the input itself",
+                  "Extra working memory used besides the input",
+                  "Memory of the operating system",
+                  "Disk space of the program file"
+                ],
+                "answer": 1,
+                "why": "Auxiliary space is the extra memory used over and above the given input."
+              },
+              {
+                "q": "An algorithm that uses only a fixed amount of extra memory is called:",
+                "options": [
+                  "Recursive",
+                  "In-place",
+                  "Dynamic",
+                  "Static"
+                ],
+                "answer": 1,
+                "why": "In-place algorithms need O(1) extra space."
+              }
+            ],
+            "examTip": "Mention both time and space complexity for every algorithm you describe; marks are often split between them.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-06",
+          "title": "Efficiency of Algorithms (Best, Average, Worst Case)",
+          "kind": "topic",
+          "definition": "An algorithm is efficient when it solves the problem using the least time and memory, and we judge that using three cases: best, average and worst.",
+          "children": [
+            {
+              "id": "CSCA411-M1-06-s1",
+              "title": "Best case",
+              "kind": "subtopic",
+              "definition": "The input arrangement for which the algorithm finishes fastest, such as finding the target at the first position."
+            },
+            {
+              "id": "CSCA411-M1-06-s2",
+              "title": "Average case",
+              "kind": "subtopic",
+              "definition": "The expected cost over typical inputs, often calculated with probability assumptions."
+            },
+            {
+              "id": "CSCA411-M1-06-s3",
+              "title": "Worst case",
+              "kind": "subtopic",
+              "definition": "The input arrangement that forces the maximum work; it is the guarantee reported in most analyses."
+            },
+            {
+              "id": "CSCA411-M1-06-s4",
+              "title": "Why the worst case is reported",
+              "kind": "subtopic",
+              "definition": "It gives an upper limit that holds for every input, so it is the safest measure of performance."
+            }
+          ],
+          "card": {
+            "explanation": "The best case is the luckiest input, the worst case is the unluckiest input and the average case is the typical input. Worst case is the one usually reported, because it is the guarantee you can depend on. Comparing two algorithms means comparing their growth rates, not their code length. A shorter program can easily be the slower one.",
+            "example": "Linear search on a list of names: you find the name first try (best), find it in the middle (average) or scan the whole list (worst). The worst case is what you promise the user.",
+            "quiz": [
+              {
+                "q": "Which case do we normally report for an algorithm?",
+                "options": [
+                  "Best case",
+                  "Average case",
+                  "Worst case",
+                  "Any one case"
+                ],
+                "answer": 2,
+                "why": "Worst case gives the upper guarantee, so it is the standard choice."
+              },
+              {
+                "q": "Best case of linear search when the target is the first element:",
+                "options": [
+                  "O(1)",
+                  "O(log n)",
+                  "O(n)",
+                  "O(n^2)"
+                ],
+                "answer": 0,
+                "why": "One comparison is enough, so it is constant time."
+              }
+            ],
+            "examTip": "For every search or sort question, state best, average and worst complexity in one line each.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-07",
+          "title": "Big-O (O) Notation",
+          "kind": "topic",
+          "definition": "Big-O notation, read as 'order of', gives the upper limit of an algorithm's growth - the most work it will ever do for a large input.",
+          "children": [
+            {
+              "id": "CSCA411-M1-07-s1",
+              "title": "Definition of the upper bound",
+              "kind": "subtopic",
+              "definition": "f(n) = O(g(n)) means f grows no faster than g times some constant for all sufficiently large n."
+            },
+            {
+              "id": "CSCA411-M1-07-s2",
+              "title": "Dropping constants and lower terms",
+              "kind": "subtopic",
+              "definition": "3n squared + 5n + 9 becomes O(n squared), because the highest order term decides the trend."
+            },
+            {
+              "id": "CSCA411-M1-07-s3",
+              "title": "Common growth rates in increasing order",
+              "kind": "subtopic",
+              "definition": "O(1) < O(log n) < O(n) < O(n log n) < O(n squared) < O(2 to the n)."
+            }
+          ],
+          "card": {
+            "explanation": "Big-O ignores small details like constants and lower terms, because they stop mattering for large inputs. So 3n + 5 becomes simply O(n), and n squared + 100n becomes O(n squared). O stands for the ceiling: the running time will not grow faster than this. That is why O(1) beats O(log n), which beats O(n), which beats O(n squared).",
+            "example": "If a program prints every student name once, it does about n steps. Whether the class has 60 or 600 students, the pattern is the same, so we simply say O(n).",
+            "quiz": [
+              {
+                "q": "Simplify 5n + 20 to Big-O:",
+                "options": [
+                  "O(5n)",
+                  "O(n)",
+                  "O(20)",
+                  "O(n^2)"
+                ],
+                "answer": 1,
+                "why": "Constants are dropped in Big-O, so 5n + 20 is O(n)."
+              },
+              {
+                "q": "Big-O notation describes:",
+                "options": [
+                  "Lower bound",
+                  "Exact bound only",
+                  "Upper bound",
+                  "Average memory"
+                ],
+                "answer": 2,
+                "why": "Big-O gives an asymptotic upper bound on growth."
+              }
+            ],
+            "examTip": "Practise simplifying expressions fast - dropping constants is worth easy marks in the first question itself.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-08",
+          "title": "Omega and Theta Notations",
+          "kind": "topic",
+          "definition": "Omega notation gives the lower limit (the least work) and Theta notation gives a tight limit where the upper and lower growth match.",
+          "children": [
+            {
+              "id": "CSCA411-M1-08-s1",
+              "title": "Omega notation (lower bound)",
+              "kind": "subtopic",
+              "definition": "f(n) = Omega(g(n)) means f grows at least as fast as g, so g is the floor of the growth."
+            },
+            {
+              "id": "CSCA411-M1-08-s2",
+              "title": "Theta notation (tight bound)",
+              "kind": "subtopic",
+              "definition": "f(n) = Theta(g(n)) means f is bounded both above and below by g, so the growth rate is exact."
+            },
+            {
+              "id": "CSCA411-M1-08-s3",
+              "title": "Roof, floor and room",
+              "kind": "subtopic",
+              "definition": "Big-O is the roof, Omega is the floor and Theta is a room of exactly that size."
+            }
+          ],
+          "card": {
+            "explanation": "Omega, written as the Greek letter, says the running time will not grow slower than a certain function - it is the floor. Theta is used when the best and worst growth rates are of the same order, so it pins the function from both sides. In short, Big-O is the roof, Omega is the floor and Theta is a room of the same size. A function can have many upper bounds but only one tight Theta bound for a given order.",
+            "example": "For an algorithm that always does n comparisons whatever the input, you can safely say Theta(n), because the floor and roof are both n.",
+            "quiz": [
+              {
+                "q": "Which notation gives a lower bound on growth?",
+                "options": [
+                  "Big-O",
+                  "Omega",
+                  "Theta",
+                  "None of these"
+                ],
+                "answer": 1,
+                "why": "Omega is the asymptotic lower bound, the floor of the growth."
+              },
+              {
+                "q": "Theta notation is used when:",
+                "options": [
+                  "Only the worst case is known",
+                  "Upper and lower bounds have the same order",
+                  "The input is small",
+                  "Recursion is used"
+                ],
+                "answer": 1,
+                "why": "Theta needs matching upper and lower bounds, so it is a tight bound."
+              }
+            ],
+            "examTip": "Draw the roof-floor-room picture in the margin; examiners love a diagram with O, Omega and Theta labelled.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-09",
+          "title": "Arrays: One Dimensional and Multidimensional",
+          "kind": "topic",
+          "definition": "An array is a fixed-size block of memory holding items of the same type, where each item is reached by its index number.",
+          "children": [
+            {
+              "id": "CSCA411-M1-09-s1",
+              "title": "One dimensional array",
+              "kind": "subtopic",
+              "definition": "A single list of elements reached by one index, stored in consecutive memory locations."
+            },
+            {
+              "id": "CSCA411-M1-09-s2",
+              "title": "Multidimensional array",
+              "kind": "subtopic",
+              "definition": "A table-like array with two or more indices, such as a matrix with rows and columns."
+            },
+            {
+              "id": "CSCA411-M1-09-s3",
+              "title": "Address calculation in row major and column major order",
+              "kind": "subtopic",
+              "definition": "Row major stores a row at a time so address = base + (i * columns + j) * size; column major stores a column at a time."
+            },
+            {
+              "id": "CSCA411-M1-09-s4",
+              "title": "Operations on arrays",
+              "kind": "subtopic",
+              "definition": "Traversal, insertion, deletion, searching and sorting, where insertion and deletion need shifting."
+            },
+            {
+              "id": "CSCA411-M1-09-s5",
+              "title": "Advantages and limitations",
+              "kind": "subtopic",
+              "definition": "Constant time access by index is the advantage; fixed size and costly middle insertion are the limitations."
+            }
+          ],
+          "card": {
+            "explanation": "Because items sit next to each other in memory, the address of any item can be calculated directly, so reading arr[i] takes constant time. Indexing normally starts at 0, so the first item is arr[0] and the last is arr[n-1]. A one dimensional array is a simple list, while a two dimensional array is a table with rows and columns. The big limitation is that you must decide the size in advance, and inserting or deleting in the middle means shifting many items.",
+            "example": "A class attendance register is a 1D array of names. A seating chart with rows and columns is a 2D array, where seat [3][2] means row 3, column 2.",
+            "quiz": [
+              {
+                "q": "Why is arr[i] a constant-time operation?",
+                "options": [
+                  "The array is sorted first",
+                  "Address is computed directly from index and element size",
+                  "The compiler searches the array",
+                  "Arrays use hashing"
+                ],
+                "answer": 1,
+                "why": "Random access comes from the address formula base + i * size."
+              },
+              {
+                "q": "In a 1D array of size n, the last valid index is:",
+                "options": [
+                  "n",
+                  "n - 1",
+                  "n + 1",
+                  "0"
+                ],
+                "answer": 1,
+                "why": "Indexing starts at 0, so the last index is n - 1."
+              }
+            ],
+            "examTip": "Write the addressing formula for a 2D array in row-major order; it is a standard 5-mark sub-question.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M1-10",
+          "title": "Searching: Linear Search and Binary Search",
+          "kind": "topic",
+          "definition": "Searching means finding the position of a target value in a collection; linear search checks items one by one, binary search halves a sorted list each time.",
+          "children": [
+            {
+              "id": "CSCA411-M1-10-s1",
+              "title": "Linear search",
+              "kind": "subtopic",
+              "definition": "Compares the target with each element in turn; works on unsorted data and costs O(n)."
+            },
+            {
+              "id": "CSCA411-M1-10-s2",
+              "title": "Binary search",
+              "kind": "subtopic",
+              "definition": "Repeatedly halves a sorted array; costs O(log n) but requires sorted input."
+            },
+            {
+              "id": "CSCA411-M1-10-s3",
+              "title": "Complexity comparison",
+              "kind": "subtopic",
+              "definition": "For a lakh records linear search may need a lakh comparisons while binary search needs about 17."
+            },
+            {
+              "id": "CSCA411-M1-10-s4",
+              "title": "Which search to use",
+              "kind": "subtopic",
+              "definition": "Use linear search for small or unsorted data and binary search for large sorted data."
+            }
+          ],
+          "card": {
+            "explanation": "Linear search works on any array, sorted or not, and needs at most n comparisons, so it is O(n). Binary search needs the array sorted, then compares with the middle element and throws away half the list each step, giving O(log n). For small lists the difference is small, but for a lakh of records binary search finishes in about 17 steps while linear search may need a lakh. Binary search can be written with a loop or recursively, and the recursive version costs extra stack space.",
+            "example": "To find a word in a dictionary you do not read page by page; you open the middle and decide which half to keep. That is binary search. Reading from page one is linear search.",
+            "quiz": [
+              {
+                "q": "Binary search requires the array to be:",
+                "options": [
+                  "Empty",
+                  "Sorted",
+                  "Linked",
+                  "Circular"
+                ],
+                "answer": 1,
+                "why": "It decides which half to discard, so order is essential."
+              },
+              {
+                "q": "Worst case comparisons in linear search for n items:",
+                "options": [
+                  "1",
+                  "log n",
+                  "n",
+                  "n^2"
+                ],
+                "answer": 2,
+                "why": "In the worst case every element must be checked once, so O(n)."
+              }
+            ],
+            "examTip": "Always mention the sorted-input condition of binary search; skipping it is a common loss of marks.",
+            "verified": false
+          }
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Linear Structures: Stacks, Queues and Linked Lists",
+      "topics": [
+        {
+          "id": "CSCA411-M2-01",
+          "title": "Stack: Definition and Operations",
+          "kind": "topic",
+          "definition": "A stack is a linear data structure in which insertion and deletion both happen at one end called the top, so the last element added is the first one removed.",
+          "children": [
+            {
+              "id": "CSCA411-M2-01-s1",
+              "title": "LIFO (Last In First Out) principle",
+              "kind": "subtopic",
+              "definition": "The rule that the element pushed last is the element popped first, because the top is the only open end."
+            },
+            {
+              "id": "CSCA411-M2-01-s2",
+              "title": "push operation",
+              "kind": "subtopic",
+              "definition": "Adds a new element on top of the stack by first checking that the stack is not full."
+            },
+            {
+              "id": "CSCA411-M2-01-s3",
+              "title": "pop operation",
+              "kind": "subtopic",
+              "definition": "Removes and returns the top element after checking that the stack is not empty."
+            },
+            {
+              "id": "CSCA411-M2-01-s4",
+              "title": "peek or top operation",
+              "kind": "subtopic",
+              "definition": "Reads the top element without removing it, so the stack stays unchanged."
+            },
+            {
+              "id": "CSCA411-M2-01-s5",
+              "title": "isFull and isEmpty checks",
+              "kind": "subtopic",
+              "definition": "Boundary tests that stop a push into a full stack (overflow) or a pop from an empty stack (underflow)."
+            },
+            {
+              "id": "CSCA411-M2-01-s6",
+              "title": "TOP pointer",
+              "kind": "subtopic",
+              "definition": "A single index that always points to the current top element and is set to -1 for an empty stack."
+            }
+          ],
+          "card": {
+            "explanation": "Both insertion and deletion happen at the same end, the top, so a stack behaves Last In First Out - like a pile of plates where you take the last one placed. push adds at the top, pop removes the top, and peek only reads the top. Before pushing you test isFull, and before popping you test isEmpty, which prevents overflow and underflow errors. One variable named top is enough to manage the whole stack.",
+            "example": "Your phone's back button keeps the pages you visited; pressing back returns you to the most recently opened page first - exactly LIFO.",
+            "quiz": [
+              {
+                "q": "A stack follows which order of access?",
+                "options": [
+                  "FIFO - first in first out",
+                  "LIFO - last in first out",
+                  "Random access by index",
+                  "Priority order"
+                ],
+                "answer": 1,
+                "why": "Both push and pop act at the top, so the newest element leaves first."
+              },
+              {
+                "q": "Which operation returns the top element without deleting it?",
+                "options": [
+                  "pop",
+                  "push",
+                  "peek",
+                  "isFull"
+                ],
+                "answer": 2,
+                "why": "peek (also called top) reads the element only; pop is the one that removes it."
+              }
+            ],
+            "examTip": "Draw the stack as a vertical column with the top pointer marked, then label push and pop - most stack answers are marked mainly on this figure.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-02",
+          "title": "Stack Representation: Array and Linked List",
+          "kind": "topic",
+          "definition": "A stack can be stored in a fixed-size array using a top index, or built from linked nodes where the head is the top of the stack.",
+          "children": [
+            {
+              "id": "CSCA411-M2-02-s1",
+              "title": "Array representation",
+              "kind": "subtopic",
+              "definition": "Elements stay in contiguous memory, top is an integer index, and the size must be fixed in advance."
+            },
+            {
+              "id": "CSCA411-M2-02-s2",
+              "title": "Linked representation",
+              "kind": "subtopic",
+              "definition": "Each element is a node with a pointer to the node below it, so the stack grows and shrinks as needed."
+            },
+            {
+              "id": "CSCA411-M2-02-s3",
+              "title": "Comparison of the two",
+              "kind": "subtopic",
+              "definition": "The array is faster and cache friendly but fixed in size; the linked stack is flexible but needs extra memory for pointers."
+            }
+          ],
+          "card": {
+            "explanation": "With an array you reserve space in advance and keep an integer top; pushing means top = top + 1 and writing there. With a linked list, push creates a node whose next pointer is the old top, and pop removes that node - the head of the list is the top of the stack. The linked version never overflows until memory itself runs out, but every node pays the cost of one pointer. The array version is simpler and faster per operation when the maximum size is known.",
+            "example": "A canteen that always serves exactly 50 plates uses a fixed tray pile (array). A courier company whose parcel count changes every day stacks parcels on a trolley and adds more room as needed (linked list).",
+            "quiz": [
+              {
+                "q": "A linked stack overflows only when:",
+                "options": [
+                  "top equals size - 1",
+                  "the memory of the machine is exhausted",
+                  "it holds 100 nodes",
+                  "the head pointer is NULL"
+                ],
+                "answer": 1,
+                "why": "Nodes are created on demand, so there is no fixed capacity limit."
+              },
+              {
+                "q": "In a linked stack, the top of the stack is:",
+                "options": [
+                  "the last node created",
+                  "the head node of the list",
+                  "the node with the largest value",
+                  "the tail node"
+                ],
+                "answer": 1,
+                "why": "Push inserts at the head, so the head is always the newest element - the top."
+              }
+            ],
+            "examTip": "State the overflow condition (top == MAX-1) and the underflow condition (top == -1) for the array version - they are worth easy marks.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-03",
+          "title": "Stack Applications: Expression Conversion",
+          "kind": "topic",
+          "definition": "A stack converts an infix expression, where the operator sits between operands, into postfix or prefix, where the operator sits after or before them.",
+          "children": [
+            {
+              "id": "CSCA411-M2-03-s1",
+              "title": "Infix notation",
+              "kind": "subtopic",
+              "definition": "The everyday form A + B where the operator is written between its two operands and brackets are needed."
+            },
+            {
+              "id": "CSCA411-M2-03-s2",
+              "title": "Postfix notation (Reverse Polish)",
+              "kind": "subtopic",
+              "definition": "The form A B + where the operator follows its operands, so no brackets or precedence rules are needed."
+            },
+            {
+              "id": "CSCA411-M2-03-s3",
+              "title": "Prefix notation (Polish)",
+              "kind": "subtopic",
+              "definition": "The form + A B where the operator comes before its operands."
+            },
+            {
+              "id": "CSCA411-M2-03-s4",
+              "title": "Operator precedence and associativity",
+              "kind": "subtopic",
+              "definition": "The rules that decide which operator acts first: ^, then * and /, then + and -, left to right for equal rank."
+            },
+            {
+              "id": "CSCA411-M2-03-s5",
+              "title": "Algorithm for infix to postfix",
+              "kind": "subtopic",
+              "definition": "Print operands, push operators, pop while the stack top has greater or equal precedence, and empty the stack at the end."
+            }
+          ],
+          "card": {
+            "explanation": "Computers find postfix easier because the order of operations is already fixed by position, so no bracket or precedence checking is needed at run time. To convert, you scan the infix expression once: operands go straight to the output, an operator is pushed only after popping every stacked operator of higher or equal precedence, and an opening bracket is pushed while a closing bracket pops until it meets its pair. At the end the remaining operators are popped. The same idea with a small change gives prefix notation.",
+            "example": "The expression A + B * C becomes A B C * + in postfix, because multiplication is done before addition - exactly what an exam calculator does internally.",
+            "quiz": [
+              {
+                "q": "What is the postfix form of A + B * C?",
+                "options": [
+                  "A B + C *",
+                  "A B C * +",
+                  "A B * C +",
+                  "A B C + *"
+                ],
+                "answer": 1,
+                "why": "B * C is evaluated first and printed as B C *, then the addition of A gives A B C * +."
+              },
+              {
+                "q": "Postfix expressions need no brackets because:",
+                "options": [
+                  "operators are written first",
+                  "the position of the operator fixes the order of evaluation",
+                  "operands are sorted",
+                  "the stack removes them"
+                ],
+                "answer": 1,
+                "why": "In postfix, evaluation order is unambiguous from the layout alone."
+              }
+            ],
+            "examTip": "Show the stack contents after every scanned symbol in a table - examiners give step marks even if the final answer slips.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-04",
+          "title": "Stack Applications: Postfix Evaluation, Recursion and More",
+          "kind": "topic",
+          "definition": "A stack evaluates postfix expressions by pushing operands and, on meeting an operator, popping two values to apply it.",
+          "children": [
+            {
+              "id": "CSCA411-M2-04-s1",
+              "title": "Postfix evaluation with a stack",
+              "kind": "subtopic",
+              "definition": "Push every operand; for an operator pop two values, compute, and push the result, leaving one value at the end."
+            },
+            {
+              "id": "CSCA411-M2-04-s2",
+              "title": "Recursion and the call stack",
+              "kind": "subtopic",
+              "definition": "Each recursive call stores its state (parameters and return address) on the system stack and is popped when the call returns."
+            },
+            {
+              "id": "CSCA411-M2-04-s3",
+              "title": "Balanced bracket checking",
+              "kind": "subtopic",
+              "definition": "Push every opening bracket and pop for every closing bracket; a mismatch or a leftover means the expression is invalid."
+            },
+            {
+              "id": "CSCA411-M2-04-s4",
+              "title": "Backtracking and undo operations",
+              "kind": "subtopic",
+              "definition": "A stack remembers the path taken so the previous state can be restored when a choice fails or the user presses undo."
+            },
+            {
+              "id": "CSCA411-M2-04-s5",
+              "title": "Conversion of number bases",
+              "kind": "subtopic",
+              "definition": "Repeated division by the base gives remainders that are pushed and then popped to print the digits in the correct order."
+            }
+          ],
+          "card": {
+            "explanation": "Evaluation is the reverse of conversion: you scan the postfix string and use the stack as working memory. Each operand is pushed; each operator pops two operands, applies itself and pushes back one result, so a well formed expression leaves exactly one value on the stack. Recursion uses the same structure invisibly - the computer keeps every unfinished call on a call stack. Bracket matching, undo history and base conversion are further everyday uses of this one idea.",
+            "example": "When you press Ctrl+Z in a word processor, the editor pops the most recent change off an undo stack and restores the document state before it.",
+            "quiz": [
+              {
+                "q": "Evaluating the postfix expression 5 3 + 2 * gives:",
+                "options": [
+                  "16",
+                  "13",
+                  "11",
+                  "10"
+                ],
+                "answer": 0,
+                "why": "5 + 3 = 8 is pushed, then 8 * 2 = 16."
+              },
+              {
+                "q": "Recursion is naturally supported by a stack because:",
+                "options": [
+                  "the calls are stored in a queue",
+                  "each pending call keeps its state on the call stack",
+                  "the compiler sorts the calls",
+                  "recursion needs no memory"
+                ],
+                "answer": 1,
+                "why": "LIFO suits nested calls: the most recent call finishes first."
+              }
+            ],
+            "examTip": "For postfix evaluation, show the stack after each symbol as a column of values - that single table carries most of the marks.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-05",
+          "title": "Queue: Definition and Operations",
+          "kind": "topic",
+          "definition": "A queue is a linear data structure in which insertion happens at one end called the rear and deletion at the other end called the front, giving First In First Out order.",
+          "children": [
+            {
+              "id": "CSCA411-M2-05-s1",
+              "title": "FIFO (First In First Out) principle",
+              "kind": "subtopic",
+              "definition": "The element that entered first is the element that leaves first, because the two ends are separate."
+            },
+            {
+              "id": "CSCA411-M2-05-s2",
+              "title": "enqueue operation",
+              "kind": "subtopic",
+              "definition": "Inserts a new element at the rear after checking that the queue is not full."
+            },
+            {
+              "id": "CSCA411-M2-05-s3",
+              "title": "dequeue operation",
+              "kind": "subtopic",
+              "definition": "Removes and returns the element at the front after checking that the queue is not empty."
+            },
+            {
+              "id": "CSCA411-M2-05-s4",
+              "title": "front and rear pointers",
+              "kind": "subtopic",
+              "definition": "Two indices that track the two open ends; both are set to -1 in an empty queue."
+            },
+            {
+              "id": "CSCA411-M2-05-s5",
+              "title": "Queue overflow and underflow",
+              "kind": "subtopic",
+              "definition": "Overflow is an enqueue into a full queue; underflow is a dequeue from an empty queue."
+            }
+          ],
+          "card": {
+            "explanation": "A queue keeps its two ends separate - new items join at the rear and old items leave from the front - so service order is strictly first come, first served. enqueue moves the rear forward by one, dequeue moves the front forward, and both check their boundary condition first. Because nothing is removed from the middle, a queue is the natural model for any waiting line. A simple array queue wastes the space at the front after deletions, which is exactly the problem the circular queue solves.",
+            "example": "A ticket counter line: the person who joined the line first buys the ticket first, no matter how long the queue becomes.",
+            "quiz": [
+              {
+                "q": "In a queue, insertion and deletion take place at:",
+                "options": [
+                  "the same end called top",
+                  "rear and front respectively",
+                  "front and rear respectively",
+                  "any position"
+                ],
+                "answer": 1,
+                "why": "enqueue adds at the rear and dequeue removes from the front, which produces FIFO order."
+              },
+              {
+                "q": "An empty queue is indicated by:",
+                "options": [
+                  "front = rear = 0",
+                  "front = rear = -1",
+                  "front = 0, rear = -1",
+                  "top = -1"
+                ],
+                "answer": 1,
+                "why": "The standard convention sets both front and rear to -1 when no element is present."
+              }
+            ],
+            "examTip": "Write the FIFO example of a printer queue first, then the operations - real examples fetch marks in the first paragraph itself.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-06",
+          "title": "Circular Queue and Its Need",
+          "kind": "topic",
+          "definition": "A circular queue is an array queue in which the rear wraps around to the beginning using modulo arithmetic, so space freed at the front is reused.",
+          "children": [
+            {
+              "id": "CSCA411-M2-06-s1",
+              "title": "Drawback of a linear array queue",
+              "kind": "subtopic",
+              "definition": "After deletions the front space is never reused, so the queue reports overflow while empty cells still exist - the false overflow problem."
+            },
+            {
+              "id": "CSCA411-M2-06-s2",
+              "title": "Circular increment formula",
+              "kind": "subtopic",
+              "definition": "Instead of rear + 1, the next position is computed as rear = (rear + 1) % size, which wraps the index to 0 at the end."
+            },
+            {
+              "id": "CSCA411-M2-06-s3",
+              "title": "Full and empty conditions",
+              "kind": "subtopic",
+              "definition": "The queue is full when (rear + 1) % size == front, and empty when front == -1; the full test deliberately leaves one cell free."
+            },
+            {
+              "id": "CSCA411-M2-06-s4",
+              "title": "Counting the elements",
+              "kind": "subtopic",
+              "definition": "The number of items is (rear - front + size) % size plus one adjustment, which removes the need for a separate counter."
+            }
+          ],
+          "card": {
+            "explanation": "In a plain array queue, once the rear reaches the last index the queue is declared full even if deletions have left empty cells at the front - that is false overflow. The circular queue treats the array as a ring: the rear jumps back to index 0 when it passes the end, so freed cells are reused and no space is wasted. The price is that full and empty look identical when front equals rear, so one slot is deliberately kept empty to separate the two cases. Everything else, including the FIFO order, stays the same.",
+            "example": "A 40-seat canteen where, after the first four students leave, new students occupy those same four chairs instead of standing outside.",
+            "quiz": [
+              {
+                "q": "The next rear position in a circular queue of size n is:",
+                "options": [
+                  "rear + 1",
+                  "(rear + 1) % n",
+                  "rear - 1",
+                  "n - rear"
+                ],
+                "answer": 1,
+                "why": "The modulo operation wraps the index back to 0 after the last cell."
+              },
+              {
+                "q": "A circular queue of size n can hold at most:",
+                "options": [
+                  "n elements",
+                  "n - 1 elements",
+                  "n + 1 elements",
+                  "2n elements"
+                ],
+                "answer": 1,
+                "why": "One slot stays empty so that the full condition can be told apart from the empty condition."
+              }
+            ],
+            "examTip": "Mention false overflow while justifying the circular queue, then write the two conditions with the modulo formula - this is a very frequently asked 5-mark question.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-07",
+          "title": "Priority Queue and Deque",
+          "kind": "topic",
+          "definition": "A priority queue removes the element with the highest priority rather than the oldest one, and a deque allows insertion and deletion at both ends.",
+          "children": [
+            {
+              "id": "CSCA411-M2-07-s1",
+              "title": "Priority queue",
+              "kind": "subtopic",
+              "definition": "Each element carries a priority; dequeue always takes the highest priority element, breaking ties by arrival order."
+            },
+            {
+              "id": "CSCA411-M2-07-s2",
+              "title": "Implementation of a priority queue",
+              "kind": "subtopic",
+              "definition": "Commonly built with a heap, which gives O(log n) insert and delete-minimum, or with a sorted or unsorted list."
+            },
+            {
+              "id": "CSCA411-M2-07-s3",
+              "title": "Deque (double-ended queue)",
+              "kind": "subtopic",
+              "definition": "A linear structure permitting insert and delete at both the front and the rear, so it generalises both stack and queue."
+            },
+            {
+              "id": "CSCA411-M2-07-s4",
+              "title": "Input and output restricted deques",
+              "kind": "type",
+              "definition": "An input restricted deque allows insertion at one end only while deletions happen at both; an output restricted deque does the opposite."
+            }
+          ],
+          "card": {
+            "explanation": "Normal queues serve customers strictly in arrival order, but many systems must let an urgent job jump the line - that is what a priority queue does. Elements are stored with a priority value, and deletion always removes the element with the highest (or lowest) priority, so the structure is not FIFO at all. Because a heap keeps the extreme value at the root, it is the standard implementation and gives logarithmic time for insert and remove. A deque is the other generalisation: it opens both ends, so it can behave like a stack, like a queue, or like neither.",
+            "example": "In a hospital emergency room, a critical patient is treated before people who arrived earlier with minor injuries; a sliding-window maximum in data analysis is done with a deque.",
+            "quiz": [
+              {
+                "q": "A priority queue removes:",
+                "options": [
+                  "the oldest element",
+                  "the newest element",
+                  "the element with the highest priority",
+                  "a random element"
+                ],
+                "answer": 2,
+                "why": "Priority decides removal order, not arrival time."
+              },
+              {
+                "q": "Which data structure is normally used to implement a priority queue efficiently?",
+                "options": [
+                  "Array",
+                  "Heap",
+                  "Stack",
+                  "Circular list"
+                ],
+                "answer": 1,
+                "why": "A heap keeps the highest priority element at the root, giving O(log n) operations."
+              }
+            ],
+            "examTip": "Compare priority queue and deque with the plain queue in a three-row table; the differences are what examiners look for.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-08",
+          "title": "Applications of Queues",
+          "kind": "topic",
+          "definition": "Queues model any first-come-first-served waiting line: CPU scheduling, printer spooling, buffers and breadth first search.",
+          "children": [
+            {
+              "id": "CSCA411-M2-08-s1",
+              "title": "CPU and process scheduling",
+              "kind": "subtopic",
+              "definition": "The ready queue holds processes waiting for the processor, and round robin scheduling serves them in rotation."
+            },
+            {
+              "id": "CSCA411-M2-08-s2",
+              "title": "I/O and printer spooling buffers",
+              "kind": "subtopic",
+              "definition": "Jobs are queued so a slow device such as a printer receives them in the order they were submitted."
+            },
+            {
+              "id": "CSCA411-M2-08-s3",
+              "title": "Breadth First Search on graphs",
+              "kind": "subtopic",
+              "definition": "A queue stores the vertices discovered but not yet processed, which is what makes BFS explore level by level."
+            },
+            {
+              "id": "CSCA411-M2-08-s4",
+              "title": "Resource sharing in operating systems",
+              "kind": "subtopic",
+              "definition": "Requests for a single shared resource, such as a disk track or a network line, are held in a queue."
+            },
+            {
+              "id": "CSCA411-M2-08-s5",
+              "title": "Message and call centre queues",
+              "kind": "subtopic",
+              "definition": "Messages and calls are buffered in the order they arrive so that no request is lost while the system is busy."
+            }
+          ],
+          "card": {
+            "explanation": "Queues are the standard answer whenever requests must be handled in arrival order instead of instantly. Operating systems keep a ready queue of runnable processes, device driver software keeps a queue of pending jobs, and graph algorithms use a queue to explore level by level. Because all of these only ever add at one end and remove at the other, one data structure solves all of them. Recognising the FIFO pattern in a problem statement is usually enough to decide that a queue is needed.",
+            "example": "Ten documents sent to one printer are printed one after another in the order they were sent, even though the printer is slower than the computer.",
+            "quiz": [
+              {
+                "q": "Which graph traversal depends on a queue?",
+                "options": [
+                  "Depth First Search",
+                  "Breadth First Search",
+                  "Binary search",
+                  "Dijkstra with a heap"
+                ],
+                "answer": 1,
+                "why": "BFS keeps discovered vertices in a queue, which produces level-by-level order."
+              },
+              {
+                "q": "Printer spooling uses a queue because:",
+                "options": [
+                  "jobs must be printed in submission order",
+                  "jobs must be printed by size",
+                  "the printer is fast",
+                  "the printer stores sorted data"
+                ],
+                "answer": 0,
+                "why": "Spooling preserves fairness by keeping FIFO order."
+              }
+            ],
+            "examTip": "Give three standard applications with one line each - CPU scheduling, printer spooling and BFS - and no examiner will ask for more.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-09",
+          "title": "Linked List: Definition and Node Structure",
+          "kind": "topic",
+          "definition": "A linked list is a linear collection of nodes scattered in memory, where each node stores a data value and a pointer to the next node.",
+          "children": [
+            {
+              "id": "CSCA411-M2-09-s1",
+              "title": "Node structure",
+              "kind": "subtopic",
+              "definition": "A node has two fields: the information part holding the value and the link part holding the address of the next node."
+            },
+            {
+              "id": "CSCA411-M2-09-s2",
+              "title": "Head pointer",
+              "kind": "subtopic",
+              "definition": "A single external pointer that marks the first node; losing it loses the entire list."
+            },
+            {
+              "id": "CSCA411-M2-09-s3",
+              "title": "NULL terminator",
+              "kind": "subtopic",
+              "definition": "The last node stores NULL in its link field, which signals the end of the list."
+            },
+            {
+              "id": "CSCA411-M2-09-s4",
+              "title": "Dynamic memory allocation",
+              "kind": "subtopic",
+              "definition": "Nodes are created with new or malloc at run time and freed with delete or free, so the size changes as needed."
+            },
+            {
+              "id": "CSCA411-M2-09-s5",
+              "title": "No direct index access",
+              "kind": "subtopic",
+              "definition": "Items cannot be reached by position; you must follow the links from the head, so access is sequential."
+            }
+          ],
+          "card": {
+            "explanation": "An array keeps its elements side by side, so inserting in the middle forces everything after it to shift. A linked list avoids that by storing each element wherever free memory is available and joining them with pointers. The cost is that only the head is known, so reaching the k-th node means walking k links, and each node needs extra bytes for the pointer. Relying on one head pointer also means careless pointer handling can break or leak the whole list.",
+            "example": "A treasure hunt where each clue gives the location of the next clue: the clues are in unrelated places, but the chain of pointers leads you through all of them in order.",
+            "quiz": [
+              {
+                "q": "Each node of a singly linked list contains:",
+                "options": [
+                  "only data",
+                  "data and one pointer",
+                  "two pointers only",
+                  "an index and a pointer"
+                ],
+                "answer": 1,
+                "why": "One information field plus one link to the next node."
+              },
+              {
+                "q": "Access to the k-th element of a linked list takes:",
+                "options": [
+                  "O(1)",
+                  "O(log k)",
+                  "O(k)",
+                  "O(k squared)"
+                ],
+                "answer": 2,
+                "why": "Links must be followed one by one from the head, giving sequential access."
+              }
+            ],
+            "examTip": "Always draw the node as two boxes with an arrow, and mark NULL at the end - the diagram answers half the question.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-10",
+          "title": "Singly, Doubly and Circular Linked Lists",
+          "kind": "topic",
+          "definition": "Linked lists are classified by how their nodes are linked: singly, doubly, circular and doubly circular.",
+          "children": [
+            {
+              "id": "CSCA411-M2-10-s1",
+              "title": "Singly linked list",
+              "kind": "type",
+              "definition": "Each node points only to the next node, so traversal is possible in one direction and the last node points to NULL."
+            },
+            {
+              "id": "CSCA411-M2-10-s2",
+              "title": "Doubly linked list",
+              "kind": "type",
+              "definition": "Each node has both next and previous pointers, allowing two-way traversal and easy deletion when the node itself is known."
+            },
+            {
+              "id": "CSCA411-M2-10-s3",
+              "title": "Circular linked list",
+              "kind": "type",
+              "definition": "The last node points back to the first node instead of NULL, so traversal can continue around the ring endlessly."
+            },
+            {
+              "id": "CSCA411-M2-10-s4",
+              "title": "Doubly circular linked list",
+              "kind": "type",
+              "definition": "A doubly linked list whose first node's previous pointer meets the last node's next pointer, giving two-way circular movement."
+            },
+            {
+              "id": "CSCA411-M2-10-s5",
+              "title": "Choosing between the types",
+              "kind": "subtopic",
+              "definition": "Use singly for least memory, doubly when backward movement or easy deletion is needed, and circular for round-robin repetition."
+            }
+          ],
+          "card": {
+            "explanation": "The three classic forms differ only in how many pointers a node carries and where the last pointer lands. A singly linked list is the cheapest but can only move forward, so deleting a node requires its predecessor. A doubly linked list adds a previous pointer, which allows backward traversal and O(1) deletion once the node is known, at the cost of one extra pointer per node. A circular list replaces the final NULL with a jump back to the first node, which suits applications that cycle forever, such as round robin scheduling.",
+            "example": "A music player's next button alone is a singly linked list; next and previous together make it doubly linked; a 'repeat all' playlist behaves like a circular list.",
+            "quiz": [
+              {
+                "q": "Which list allows traversal in both directions?",
+                "options": [
+                  "Singly linked list",
+                  "Doubly linked list",
+                  "Circular singly linked list",
+                  "Array"
+                ],
+                "answer": 1,
+                "why": "Only the doubly linked node stores a previous pointer."
+              },
+              {
+                "q": "In a circular linked list, the last node's pointer:",
+                "options": [
+                  "is NULL",
+                  "points to itself",
+                  "points to the first node",
+                  "points to the middle node"
+                ],
+                "answer": 2,
+                "why": "The ring is closed by linking the last node back to the first."
+              }
+            ],
+            "examTip": "Draw all three forms side by side with arrows, including the circular one closing into a ring - this diagram is the answer itself.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-11",
+          "title": "Linked List Operations and Their Complexity",
+          "kind": "topic",
+          "definition": "The standard operations on a linked list are traversal, insertion, deletion, search and counting, each with its own time cost.",
+          "children": [
+            {
+              "id": "CSCA411-M2-11-s1",
+              "title": "Traversal",
+              "kind": "subtopic",
+              "definition": "Visit each node once by following the links, which is O(n) and the basis of every other operation."
+            },
+            {
+              "id": "CSCA411-M2-11-s2",
+              "title": "Insertion at the beginning",
+              "kind": "subtopic",
+              "definition": "Create a node, point it at the current head and move the head; O(1) because no walking is needed."
+            },
+            {
+              "id": "CSCA411-M2-11-s3",
+              "title": "Insertion at the end or after a node",
+              "kind": "subtopic",
+              "definition": "Requires reaching that node first, so it costs O(n) unless a tail pointer is maintained."
+            },
+            {
+              "id": "CSCA411-M2-11-s4",
+              "title": "Deletion of a node",
+              "kind": "subtopic",
+              "definition": "Bypass the node with its predecessor's pointer and free the memory; O(1) if the node or its predecessor is known."
+            },
+            {
+              "id": "CSCA411-M2-11-s5",
+              "title": "Search and count",
+              "kind": "subtopic",
+              "definition": "Both scan the list sequentially, so both are O(n) in the worst case."
+            }
+          ],
+          "card": {
+            "explanation": "All linked list work is built on one loop that walks from head to NULL. Because of that walk, operations near the head are cheap - inserting at the front is O(1) - while anything that needs a particular position costs O(n). Deletion itself is just pointer surgery, but finding the node to delete is the expensive part, which is why a doubly linked list helps. Comparing this with arrays shows the trade-off clearly: arrays win on random access, linked lists win on insertion and deletion in the middle.",
+            "example": "Adding a new student at the front of a roll-call register takes one step; finding roll number 57 in the same register means reading through the earlier names.",
+            "quiz": [
+              {
+                "q": "Inserting a node at the beginning of a singly linked list is:",
+                "options": [
+                  "O(1)",
+                  "O(log n)",
+                  "O(n)",
+                  "O(n log n)"
+                ],
+                "answer": 0,
+                "why": "Only the head pointer and one new node are touched."
+              },
+              {
+                "q": "Why is deletion in the middle of a linked list usually described as O(n)?",
+                "options": [
+                  "Pointers need sorting",
+                  "The predecessor must be located by traversal",
+                  "Memory is copied",
+                  "The list must be reversed"
+                ],
+                "answer": 1,
+                "why": "Reaching the position is the costly part, not the pointer change."
+              }
+            ],
+            "examTip": "Tabulate the time complexity of insert, delete and search for a linked list against an array - this comparison appears almost every year.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M2-12",
+          "title": "Applications of Linked Lists, Arrays versus Linked Lists",
+          "kind": "topic",
+          "definition": "Linked lists are used wherever data grows or shrinks unpredictably: polynomials, sparse matrices, free memory lists, stacks, queues and hash chains.",
+          "children": [
+            {
+              "id": "CSCA411-M2-12-s1",
+              "title": "Polynomial representation",
+              "kind": "subtopic",
+              "definition": "Each node stores a coefficient and an exponent, so only the non-zero terms of a polynomial occupy memory."
+            },
+            {
+              "id": "CSCA411-M2-12-s2",
+              "title": "Sparse matrix representation",
+              "kind": "subtopic",
+              "definition": "Only the non-zero elements are stored as nodes with row, column and value, which saves large amounts of memory."
+            },
+            {
+              "id": "CSCA411-M2-12-s3",
+              "title": "Free space and memory management",
+              "kind": "subtopic",
+              "definition": "The operating system keeps available memory blocks as a linked list of free nodes."
+            },
+            {
+              "id": "CSCA411-M2-12-s4",
+              "title": "Implementing stacks, queues and hash tables",
+              "kind": "subtopic",
+              "definition": "Linked nodes give these structures unlimited size; chaining resolves hash collisions with one list per bucket."
+            },
+            {
+              "id": "CSCA411-M2-12-s5",
+              "title": "Array versus linked list",
+              "kind": "type",
+              "definition": "Arrays give O(1) index access and less memory per element but fixed size and costly middle insertion; linked lists give flexible size and cheap insertion but sequential access and extra pointer memory."
+            }
+          ],
+          "card": {
+            "explanation": "The strength of a linked list is that nothing has to move when the data changes - only pointers are rewritten, and the size is limited only by free memory. That makes it the natural choice for dynamic collections such as polynomials, sparse matrices and hash chains, and it is how stacks and queues are often built when their maximum size is unknown. The trade-off is sequential access and one extra pointer per element. Choosing between an array and a linked list is therefore a question about which operation dominates in the application.",
+            "example": "A campus WiFi user list changes every few minutes as students connect and disconnect; a linked list simply adds and removes nodes instead of rebuilding the whole list.",
+            "quiz": [
+              {
+                "q": "Storing a polynomial as a linked list saves memory because:",
+                "options": [
+                  "only non-zero terms are stored",
+                  "it is sorted automatically",
+                  "coefficients are compressed",
+                  "it allows random access"
+                ],
+                "answer": 0,
+                "why": "Nodes exist only for terms that actually appear, so zeros cost nothing."
+              },
+              {
+                "q": "Which operation is faster in an array than in a linked list?",
+                "options": [
+                  "Insert at the front",
+                  "Access the 100th element",
+                  "Delete the head",
+                  "Grow beyond its size"
+                ],
+                "answer": 1,
+                "why": "Arrays compute the address directly, giving O(1) random access."
+              }
+            ],
+            "examTip": "Prepare a five-row array versus linked list comparison table (access, insertion, deletion, memory, size) - it can be reused in almost any question.",
+            "verified": false
+          }
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Non-linear Structures: Trees and Graphs",
+      "topics": [
+        {
+          "id": "CSCA411-M3-01",
+          "title": "Tree Terminology",
+          "kind": "topic",
+          "definition": "A tree is a non-linear hierarchical structure of nodes connected by edges with exactly one root and no cycles.",
+          "children": [
+            {
+              "id": "CSCA411-M3-01-s1",
+              "title": "Root, parent and child",
+              "kind": "subtopic",
+              "definition": "The root is the single topmost node, a parent is a node with branches below it and its children are the nodes it connects to."
+            },
+            {
+              "id": "CSCA411-M3-01-s2",
+              "title": "Sibling, ancestor and descendant",
+              "kind": "subtopic",
+              "definition": "Siblings share the same parent; ancestors lie on the path towards the root and descendants lie below a node."
+            },
+            {
+              "id": "CSCA411-M3-01-s3",
+              "title": "Leaf and internal node",
+              "kind": "subtopic",
+              "definition": "A leaf (terminal node) has no children, while an internal node has at least one child."
+            },
+            {
+              "id": "CSCA411-M3-01-s4",
+              "title": "Degree of a node and of a tree",
+              "kind": "subtopic",
+              "definition": "The degree of a node is the number of children it has; the degree of a tree is the maximum degree among its nodes."
+            },
+            {
+              "id": "CSCA411-M3-01-s5",
+              "title": "Level, depth and height",
+              "kind": "subtopic",
+              "definition": "The level or depth of a node is its distance from the root, and the height of the tree is the number of levels or the longest root-to-leaf path."
+            },
+            {
+              "id": "CSCA411-M3-01-s6",
+              "title": "Subtree and forest",
+              "kind": "subtopic",
+              "definition": "A subtree is any node together with all its descendants; removing the root leaves a forest of separate trees."
+            }
+          ],
+          "card": {
+            "explanation": "Trees describe hierarchies, so their vocabulary comes from family relations: parents above children, siblings side by side and leaves at the bottom. Two measurements matter in every tree question - degree, which counts children, and level, which counts distance from the root. These two numbers decide the shape of the tree and therefore how expensive searching it becomes. A tree with n nodes has exactly n - 1 edges, which is a fact worth remembering for numerical questions.",
+            "example": "Your college's administrative chart - Vice Chancellor, then Deans, then Heads of Department, then faculty - is a tree with the Vice Chancellor as root.",
+            "quiz": [
+              {
+                "q": "The number of edges in a tree with n nodes is:",
+                "options": [
+                  "n",
+                  "n - 1",
+                  "n + 1",
+                  "2n"
+                ],
+                "answer": 1,
+                "why": "Every node except the root has exactly one edge connecting it to its parent."
+              },
+              {
+                "q": "A node with no children is called:",
+                "options": [
+                  "Root",
+                  "Internal node",
+                  "Leaf",
+                  "Sibling"
+                ],
+                "answer": 2,
+                "why": "Terminal nodes with degree zero are leaves."
+              }
+            ],
+            "examTip": "Label a diagram with root, level, degree and height before starting the answer - terminology marks are otherwise easy to lose.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-02",
+          "title": "Binary Tree and Its Representation",
+          "kind": "topic",
+          "definition": "A binary tree is a tree in which every node has at most two children, called the left child and the right child.",
+          "children": [
+            {
+              "id": "CSCA411-M3-02-s1",
+              "title": "Left and right subtree",
+              "kind": "subtopic",
+              "definition": "Each node's two children head their own subtrees, and the two are not interchangeable - left and right have distinct meaning."
+            },
+            {
+              "id": "CSCA411-M3-02-s2",
+              "title": "Array representation",
+              "kind": "subtopic",
+              "definition": "Nodes are stored by level in a linear array where the children of index i sit at 2i (or 2i+1 depending on convention) and 2i+1."
+            },
+            {
+              "id": "CSCA411-M3-02-s3",
+              "title": "Linked representation",
+              "kind": "subtopic",
+              "definition": "Each node holds data plus left and right pointers, which uses memory in proportion to the number of nodes actually present."
+            },
+            {
+              "id": "CSCA411-M3-02-s4",
+              "title": "Maximum and minimum nodes at a level",
+              "kind": "subtopic",
+              "definition": "Level i can hold at most 2^i nodes, so a binary tree of height h has at most 2^(h+1) - 1 nodes and at least h + 1."
+            }
+          ],
+          "card": {
+            "explanation": "The rule that a node may have at most two children makes the tree predictable, and that predictability is what algorithms exploit. In the array form the position of a node immediately tells you where its children live, so no pointers are needed, but gaps appear if the tree is not complete. In the linked form each node carries a left and a right link, which fits uneven trees neatly at the cost of two pointers per node. Because level i can hold up to 2^i nodes, the number of nodes at least doubles down the tree, which is why tree height grows only logarithmically.",
+            "example": "A family tree limited to two children per couple behaves like a binary tree; 'left' and 'right' matter the same way birth order or twin order would.",
+            "quiz": [
+              {
+                "q": "The maximum number of nodes on level i of a binary tree (root at level 0) is:",
+                "options": [
+                  "i",
+                  "2i",
+                  "2^i",
+                  "i squared"
+                ],
+                "answer": 2,
+                "why": "Each node can have two children, so the count doubles at every level."
+              },
+              {
+                "q": "Which representation wastes space for a skewed binary tree?",
+                "options": [
+                  "Linked",
+                  "Array",
+                  "Both equally",
+                  "Neither"
+                ],
+                "answer": 1,
+                "why": "The array form must leave gaps for missing nodes, so a skewed tree leaves most of the array empty."
+              }
+            ],
+            "examTip": "Write the formulas 2^i per level and 2^(h+1) - 1 nodes total for a full binary tree; numerical questions come straight from them.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-03",
+          "title": "Binary Tree Traversals",
+          "kind": "topic",
+          "definition": "A traversal is a systematic way of visiting every node of a tree exactly once: inorder, preorder, postorder and level order.",
+          "children": [
+            {
+              "id": "CSCA411-M3-03-s1",
+              "title": "Inorder traversal",
+              "kind": "type",
+              "definition": "Left subtree, then root, then right subtree - visit order LNR; on a binary search tree this prints the keys in sorted order."
+            },
+            {
+              "id": "CSCA411-M3-03-s2",
+              "title": "Preorder traversal",
+              "kind": "type",
+              "definition": "Root, then left subtree, then right subtree - visit order NLR; used to copy a tree or create its prefix expression."
+            },
+            {
+              "id": "CSCA411-M3-03-s3",
+              "title": "Postorder traversal",
+              "kind": "type",
+              "definition": "Left subtree, then right subtree, then root - visit order LRN; used to delete a tree or produce a postfix expression."
+            },
+            {
+              "id": "CSCA411-M3-03-s4",
+              "title": "Level order traversal",
+              "kind": "type",
+              "definition": "Visits nodes level by level from left to right using a queue, which is breadth first search on a tree."
+            },
+            {
+              "id": "CSCA411-M3-03-s5",
+              "title": "Reconstructing a tree",
+              "kind": "subtopic",
+              "definition": "Inorder together with either preorder or postorder fixes the unique shape of a binary tree."
+            }
+          ],
+          "card": {
+            "explanation": "Traversals exist because a tree is not linear, so there is no single natural order of visiting. Inorder puts the root between the two subtrees, preorder puts it first and postorder puts it last, and each has a matching use - sorting, copying and deleting respectively. Level order is different in style: it uses a queue and sweeps the tree breadth first, which is why it pairs with BFS. Names and visit orders must be memorised exactly, because examiners swap them deliberately while testing.",
+            "example": "In a folder tree, deleting a directory (postorder) must remove the files inside it first; copying it (preorder) creates the folder before its contents.",
+            "quiz": [
+              {
+                "q": "Which traversal prints the nodes of a binary search tree in ascending order?",
+                "options": [
+                  "Preorder",
+                  "Inorder",
+                  "Postorder",
+                  "Level order"
+                ],
+                "answer": 1,
+                "why": "Inorder visits left subtree, root and right subtree, which matches key order in a BST."
+              },
+              {
+                "q": "Level order traversal uses which data structure?",
+                "options": [
+                  "Stack",
+                  "Queue",
+                  "Priority queue",
+                  "Hash table"
+                ],
+                "answer": 1,
+                "why": "A queue holds the nodes of the next level, giving FIFO level-by-level output."
+              }
+            ],
+            "examTip": "Memorise the three orders as LNR, NLR and LRN, then practise one tree drawn by hand - swapping these orders is the exam's favourite trick.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-04",
+          "title": "Types of Binary Trees",
+          "kind": "topic",
+          "definition": "Binary trees are classified by their shape: full, complete, perfect, skewed, balanced, expression, threaded and heap trees.",
+          "children": [
+            {
+              "id": "CSCA411-M3-04-s1",
+              "title": "Full or strict binary tree",
+              "kind": "type",
+              "definition": "Every node has either zero or two children - no node has exactly one child."
+            },
+            {
+              "id": "CSCA411-M3-04-s2",
+              "title": "Complete binary tree",
+              "kind": "type",
+              "definition": "All levels are completely filled except possibly the last, which is filled from left to right."
+            },
+            {
+              "id": "CSCA411-M3-04-s3",
+              "title": "Perfect binary tree",
+              "kind": "type",
+              "definition": "All internal nodes have two children and all leaves lie at the same level, giving exactly 2^(h+1) - 1 nodes."
+            },
+            {
+              "id": "CSCA411-M3-04-s4",
+              "title": "Skewed binary tree",
+              "kind": "type",
+              "definition": "Every node has only one child, so the tree degenerates into a linked list and its height becomes n."
+            },
+            {
+              "id": "CSCA411-M3-04-s5",
+              "title": "Balanced and AVL tree",
+              "kind": "type",
+              "definition": "A balanced tree keeps the heights of the two subtrees of every node within one, which AVL trees enforce by rotations and hold height at O(log n)."
+            },
+            {
+              "id": "CSCA411-M3-04-s6",
+              "title": "Expression tree",
+              "kind": "type",
+              "definition": "Leaves hold operands and internal nodes hold operators, so inorder, preorder and postorder traversal directly give infix, prefix and postfix forms."
+            },
+            {
+              "id": "CSCA411-M3-04-s7",
+              "title": "Threaded binary tree",
+              "kind": "type",
+              "definition": "NULL pointers are replaced by threads pointing to the inorder predecessor or successor, which speeds up traversal without a stack."
+            },
+            {
+              "id": "CSCA411-M3-04-s8",
+              "title": "Binary heap",
+              "kind": "type",
+              "definition": "A complete binary tree with the heap order property - each parent is larger (max heap) or smaller (min heap) than its children."
+            }
+          ],
+          "card": {
+            "explanation": "These names describe shapes, and shape decides cost: a balanced tree of n nodes has height O(log n), while a skewed tree has height n and behaves like a list. Full means every internal node has two children, complete means the levels fill from the left, and perfect combines both with all leaves at the bottom level. Balanced variants such as AVL trees rebuild themselves with rotations whenever an insertion disturbs the balance. Expression trees and heaps are shape-based structures with a special purpose - evaluating expressions and supporting priority queues.",
+            "example": "A tournament draw sheet that is completely filled to the final is a perfect binary tree; if one player receives a bye and the sheet collapses into a chain, it becomes skewed.",
+            "quiz": [
+              {
+                "q": "In a complete binary tree:",
+                "options": [
+                  "every node has two children",
+                  "all leaves are at the same level",
+                  "all levels are full except possibly the last, filled left to right",
+                  "every node has one child"
+                ],
+                "answer": 2,
+                "why": "Completeness is about filling level by level from the left, which is why arrays can store them compactly."
+              },
+              {
+                "q": "A skewed binary tree of n nodes has height:",
+                "options": [
+                  "log n",
+                  "n / 2",
+                  "n",
+                  "n squared"
+                ],
+                "answer": 2,
+                "why": "One child per node means the tree becomes a chain of n levels."
+              }
+            ],
+            "examTip": "Draw one small example for each type - full, complete, perfect, skewed - and note where the definitions differ; that is where marks are lost.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-05",
+          "title": "Applications of Trees",
+          "kind": "topic",
+          "definition": "Trees are used wherever data or work is hierarchical: searching, indexing, expression evaluation, compression, files and decisions.",
+          "children": [
+            {
+              "id": "CSCA411-M3-05-s1",
+              "title": "Searching and dictionaries",
+              "kind": "subtopic",
+              "definition": "A binary search tree keeps keys ordered so search, insert and delete cost O(log n) when the tree is balanced."
+            },
+            {
+              "id": "CSCA411-M3-05-s2",
+              "title": "Database indexing",
+              "kind": "subtopic",
+              "definition": "B-trees and B+ trees keep disk blocks sorted with a shallow, wide shape, so a record is found in very few disk reads."
+            },
+            {
+              "id": "CSCA411-M3-05-s3",
+              "title": "Expression evaluation and compilation",
+              "kind": "subtopic",
+              "definition": "Expression trees and syntax trees let a compiler evaluate arithmetic and check the grammar of a program."
+            },
+            {
+              "id": "CSCA411-M3-05-s4",
+              "title": "File systems and organisation charts",
+              "kind": "subtopic",
+              "definition": "Directories, company hierarchies and classification schemes are naturally stored as trees."
+            },
+            {
+              "id": "CSCA411-M3-05-s5",
+              "title": "Data compression with Huffman trees",
+              "kind": "subtopic",
+              "definition": "Frequent characters get short codes in a binary tree so the encoded file becomes smaller."
+            },
+            {
+              "id": "CSCA411-M3-05-s6",
+              "title": "Decision trees and priority queues",
+              "kind": "subtopic",
+              "definition": "Decision trees model choices in machine learning and expert systems, while heaps implement priority queues."
+            }
+          ],
+          "card": {
+            "explanation": "Trees earn their place because they turn a linear scan into a short walk down a hierarchy of comparisons. Ordered trees give logarithmic search, which is exactly what database indexes and dictionaries need, and B+ trees extend that idea to disk blocks. Expression trees let a compiler evaluate and rewrite formulas, and Huffman trees compress data by giving frequent symbols shorter codes. Wherever the data itself is hierarchical - folders, organisations, classifications - a tree is the honest model rather than a convenience.",
+            "example": "Searching a contact list of a lakh names: a phone book tree finds the name in about 17 comparisons, while checking names one by one could need a lakh.",
+            "quiz": [
+              {
+                "q": "Database indexes are usually built with which tree type?",
+                "options": [
+                  "AVL tree",
+                  "B+ tree",
+                  "Threaded binary tree",
+                  "Expression tree"
+                ],
+                "answer": 1,
+                "why": "B+ trees are shallow and keep many keys per node, which suits slow disk reads."
+              },
+              {
+                "q": "Huffman trees are used for:",
+                "options": [
+                  "Sorting numbers",
+                  "Data compression",
+                  "Graph colouring",
+                  "Memory paging"
+                ],
+                "answer": 1,
+                "why": "They assign shorter codes to more frequent characters."
+              }
+            ],
+            "examTip": "Give at least five different applications with one line each - search, indexing, compression, file systems, decision making.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-06",
+          "title": "Graph Terminology and Types",
+          "kind": "topic",
+          "definition": "A graph is a set of vertices joined by edges, used to model any network of relationships, with no root and no hierarchy.",
+          "children": [
+            {
+              "id": "CSCA411-M3-06-s1",
+              "title": "Vertex and edge",
+              "kind": "subtopic",
+              "definition": "Vertices (or nodes) are the objects and edges are the connections between pairs of them."
+            },
+            {
+              "id": "CSCA411-M3-06-s2",
+              "title": "Directed and undirected graph",
+              "kind": "type",
+              "definition": "An undirected edge works both ways while a directed edge (arc) has a direction, so a one-way road versus a two-way road."
+            },
+            {
+              "id": "CSCA411-M3-06-s3",
+              "title": "Weighted graph",
+              "kind": "type",
+              "definition": "Each edge carries a number such as distance, cost or time, which is what shortest path problems need."
+            },
+            {
+              "id": "CSCA411-M3-06-s4",
+              "title": "Degree of a vertex",
+              "kind": "subtopic",
+              "definition": "The number of edges touching a vertex; in a directed graph we separately count in-degree and out-degree."
+            },
+            {
+              "id": "CSCA411-M3-06-s5",
+              "title": "Path, cycle and connectedness",
+              "kind": "subtopic",
+              "definition": "A path is a sequence of adjacent vertices, a cycle returns to the starting vertex, and a graph is connected if a path exists between every pair of vertices."
+            },
+            {
+              "id": "CSCA411-M3-06-s6",
+              "title": "Component and forest",
+              "kind": "subtopic",
+              "definition": "A connected component is a maximal connected part of the graph; a graph with no cycles is a forest, and a connected forest is a tree."
+            },
+            {
+              "id": "CSCA411-M3-06-s7",
+              "title": "Other special types",
+              "kind": "type",
+              "definition": "A multigraph allows parallel edges, a self-loop joins a vertex to itself, a simple graph has neither, and a bipartite graph splits vertices into two sets with edges only between the sets."
+            }
+          ],
+          "card": {
+            "explanation": "Graphs drop the tree restrictions: there is no root, a vertex may connect to any number of others, and cycles are allowed. That freedom is what makes graphs the right model for roads, friendships, circuits and course prerequisites. The vocabulary that matters most is direction (one-way or two-way), weight (cost on an edge) and connectivity (whether everything is reachable). Trees are a special case - a connected graph with exactly n - 1 edges and no cycles.",
+            "example": "A metro map is a graph: stations are vertices, tracks are edges, interchange stations have a high degree, and a route that returns to the start is a cycle.",
+            "quiz": [
+              {
+                "q": "In a directed graph, the number of edges entering a vertex is its:",
+                "options": [
+                  "degree",
+                  "out-degree",
+                  "in-degree",
+                  "weight"
+                ],
+                "answer": 2,
+                "why": "In-degree counts incoming edges, out-degree counts outgoing ones."
+              },
+              {
+                "q": "A connected graph with n vertices and no cycles has how many edges?",
+                "options": [
+                  "n",
+                  "n - 1",
+                  "n + 1",
+                  "2n"
+                ],
+                "answer": 1,
+                "why": "That is exactly the definition of a tree, which is a special graph."
+              }
+            ],
+            "examTip": "Start the answer by distinguishing a graph from a tree - no root, cycles allowed - then list the terminology with a small figure.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-07",
+          "title": "Graph Representation",
+          "kind": "topic",
+          "definition": "A graph is stored in the computer either as an adjacency matrix or as an adjacency list, sometimes also as an incidence matrix.",
+          "children": [
+            {
+              "id": "CSCA411-M3-07-s1",
+              "title": "Adjacency matrix",
+              "kind": "subtopic",
+              "definition": "A V by V table where entry (i, j) is 1 or the edge weight if an edge exists; it uses O(V squared) space whatever the number of edges."
+            },
+            {
+              "id": "CSCA411-M3-07-s2",
+              "title": "Adjacency list",
+              "kind": "subtopic",
+              "definition": "Each vertex keeps a list of its neighbours, which uses O(V + E) space and suits sparse graphs."
+            },
+            {
+              "id": "CSCA411-M3-07-s3",
+              "title": "Incidence matrix",
+              "kind": "subtopic",
+              "definition": "A V by E table in which each column has a 1 or -1 marking the endpoints of one edge."
+            },
+            {
+              "id": "CSCA411-M3-07-s4",
+              "title": "Which representation to choose",
+              "kind": "subtopic",
+              "definition": "Use a matrix for dense graphs and for O(1) edge existence tests, a list for sparse graphs and for quickly iterating over neighbours."
+            }
+          ],
+          "card": {
+            "explanation": "The representation decides the cost of everything that follows, so it is chosen with the graph's density in mind. A matrix answers 'is there an edge between these two vertices?' in one lookup, which is why weighted algorithms often use it, but it spends V squared cells even when few edges exist. An adjacency list stores only the edges that actually exist, so it is the practical choice for real networks that are sparse. Both forms can be used with the same traversal algorithms; only the running time changes.",
+            "example": "A friendship network among a million users has only a handful of friends each, so an adjacency list is used - a million by million matrix would be absurd.",
+            "quiz": [
+              {
+                "q": "Space used by an adjacency matrix for a graph with V vertices:",
+                "options": [
+                  "O(V)",
+                  "O(V + E)",
+                  "O(V squared)",
+                  "O(E log V)"
+                ],
+                "answer": 2,
+                "why": "The matrix always has V rows and V columns, regardless of the number of edges."
+              },
+              {
+                "q": "For a sparse graph, the preferred representation is:",
+                "options": [
+                  "Adjacency matrix",
+                  "Adjacency list",
+                  "Incidence matrix",
+                  "Distance matrix"
+                ],
+                "answer": 1,
+                "why": "Adjacency lists store only the existing edges, saving both memory and traversal time."
+              }
+            ],
+            "examTip": "Show both representations for the same small graph side by side, then state the space complexity of each - that pair of sentences carries the answer.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-08",
+          "title": "Graph Traversals: BFS and DFS",
+          "kind": "topic",
+          "definition": "Breadth First Search explores a graph level by level using a queue, and Depth First Search dives as far as possible using a stack or recursion.",
+          "children": [
+            {
+              "id": "CSCA411-M3-08-s1",
+              "title": "Breadth First Search (BFS)",
+              "kind": "subtopic",
+              "definition": "Start at a vertex, visit all its neighbours, then their unvisited neighbours, keeping discovered vertices in a queue and marking them visited."
+            },
+            {
+              "id": "CSCA411-M3-08-s2",
+              "title": "Depth First Search (DFS)",
+              "kind": "subtopic",
+              "definition": "Follow one path as deep as possible, backtrack on dead ends, and use a stack (or the recursion stack) with a visited array."
+            },
+            {
+              "id": "CSCA411-M3-08-s3",
+              "title": "Time complexity of both",
+              "kind": "subtopic",
+              "definition": "Each is O(V + E) with an adjacency list and O(V squared) with a matrix, because every vertex and edge is examined once."
+            },
+            {
+              "id": "CSCA411-M3-08-s4",
+              "title": "Applications of BFS",
+              "kind": "subtopic",
+              "definition": "Shortest path in an unweighted graph, level order of a tree, finding connected components and testing bipartiteness."
+            },
+            {
+              "id": "CSCA411-M3-08-s5",
+              "title": "Applications of DFS",
+              "kind": "subtopic",
+              "definition": "Cycle detection, topological sorting, finding articulation points and bridges, and solving maze or puzzle problems."
+            }
+          ],
+          "card": {
+            "explanation": "Both traversals visit every reachable vertex once and differ only in the order they choose to expand next. BFS expands the oldest discovered vertex first, which needs a queue and produces shortest paths when all edges cost the same. DFS expands the most recently discovered vertex first, which needs a stack or recursion and naturally produces backtracking-style exploration. The visited array is essential in both, otherwise cycles would cause the same vertex to be processed forever.",
+            "example": "In a campus map, BFS finds the route with the fewest turns by spreading out in rings, while DFS is like exploring one corridor to its end before trying the next one.",
+            "quiz": [
+              {
+                "q": "Which data structure does BFS use?",
+                "options": [
+                  "Stack",
+                  "Queue",
+                  "Heap",
+                  "Hash table"
+                ],
+                "answer": 1,
+                "why": "FIFO order gives the level-by-level expansion that characterises BFS."
+              },
+              {
+                "q": "The time complexity of BFS or DFS using an adjacency list is:",
+                "options": [
+                  "O(V)",
+                  "O(E)",
+                  "O(V + E)",
+                  "O(V squared)"
+                ],
+                "answer": 2,
+                "why": "Every vertex and every edge is inspected exactly once."
+              }
+            ],
+            "examTip": "Trace BFS and DFS on the same small graph, writing the visit order and the queue or stack after each step - the trace is what is being marked.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-09",
+          "title": "Shortest Path Problem: Dijkstra's Algorithm",
+          "kind": "topic",
+          "definition": "Dijkstra's algorithm finds the shortest path from one source vertex to all other vertices when no edge weight is negative.",
+          "children": [
+            {
+              "id": "CSCA411-M3-09-s1",
+              "title": "Single source shortest path",
+              "kind": "subtopic",
+              "definition": "The problem of computing the minimum total weight path from a chosen source to every other vertex in a weighted graph."
+            },
+            {
+              "id": "CSCA411-M3-09-s2",
+              "title": "Greedy working of the algorithm",
+              "kind": "subtopic",
+              "definition": "Repeatedly pick the unvisited vertex with the smallest tentative distance, then relax its neighbours by offering a shorter route through it."
+            },
+            {
+              "id": "CSCA411-M3-09-s3",
+              "title": "Distance and visited arrays",
+              "kind": "subtopic",
+              "definition": "One array holds the best known distance from the source and another records which vertices are finalised."
+            },
+            {
+              "id": "CSCA411-M3-09-s4",
+              "title": "Why negative weights fail",
+              "kind": "subtopic",
+              "definition": "The algorithm never revisits a finalised vertex, so a negative edge could later produce a shorter path it would miss; Bellman-Ford is used instead."
+            },
+            {
+              "id": "CSCA411-M3-09-s5",
+              "title": "Time complexity",
+              "kind": "subtopic",
+              "definition": "O(V squared) with a simple array, or O((V + E) log V) using a priority queue (min heap)."
+            }
+          ],
+          "card": {
+            "explanation": "Dijkstra works because once you have found the globally closest unfinalised vertex, no other route can reach it more cheaply - so that distance can be locked in. The algorithm then relaxes the neighbours, replacing their stored distance whenever a shorter route through the current vertex appears. This greedy certainty is exactly why negative weights break it: a negative edge arriving later could beat a distance that was already locked. The priority queue version is the practical implementation for large road and network graphs.",
+            "example": "Google Maps computing the fastest route from your home to college, where each road segment carries a travel time as its weight.",
+            "quiz": [
+              {
+                "q": "Dijkstra's algorithm fails on graphs with:",
+                "options": [
+                  "cycles",
+                  "negative edge weights",
+                  "parallel edges",
+                  "disconnected vertices"
+                ],
+                "answer": 1,
+                "why": "A negative edge could improve a distance already finalised, which the greedy choice forbids."
+              },
+              {
+                "q": "Dijkstra's algorithm is which type of algorithm?",
+                "options": [
+                  "Divide and conquer",
+                  "Greedy",
+                  "Dynamic programming",
+                  "Backtracking"
+                ],
+                "answer": 1,
+                "why": "It repeatedly makes the locally cheapest choice of the nearest unfinalised vertex."
+              }
+            ],
+            "examTip": "Solve one table with columns for vertex, visited and distance, updating it after each selection - examiners mark the table, not the final numbers.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-10",
+          "title": "Topological Sorting",
+          "kind": "topic",
+          "definition": "Topological sorting arranges the vertices of a directed acyclic graph in an order where every edge points forward, so each vertex comes before the ones that depend on it.",
+          "children": [
+            {
+              "id": "CSCA411-M3-10-s1",
+              "title": "Directed acyclic graph (DAG) requirement",
+              "kind": "subtopic",
+              "definition": "Only a graph with directed edges and no cycles can be topologically sorted; a cycle means the tasks depend on each other and no order exists."
+            },
+            {
+              "id": "CSCA411-M3-10-s2",
+              "title": "DFS based method",
+              "kind": "subtopic",
+              "definition": "Run DFS and push each vertex onto a stack when its recursion finishes; popping the stack gives a topological order."
+            },
+            {
+              "id": "CSCA411-M3-10-s3",
+              "title": "Kahn's indegree method",
+              "kind": "subtopic",
+              "definition": "Repeatedly remove a vertex whose in-degree is zero, place it in the order and decrement its neighbours' in-degrees."
+            },
+            {
+              "id": "CSCA411-M3-10-s4",
+              "title": "Cycle detection and output",
+              "kind": "subtopic",
+              "definition": "If some vertices remain unprocessed at the end, the graph has a cycle and no topological order exists; several valid orders may exist."
+            },
+            {
+              "id": "CSCA411-M3-10-s5",
+              "title": "Time complexity",
+              "kind": "subtopic",
+              "definition": "Both methods run in O(V + E) with an adjacency list."
+            }
+          ],
+          "card": {
+            "explanation": "Topological sorting answers dependency questions: given tasks and prerequisites, what order lets you do everything? The graph must be acyclic, because a cycle would mean task A needs B while B needs A. The indegree method is intuitive - keep taking any task that has no pending prerequisite, then update the counts of what it unblocked. The DFS method achieves the same result by recording a vertex after all its successors have been finished. Because ties can be broken freely, a DAG usually has more than one valid order.",
+            "example": "Course prerequisites: Data Structures before Algorithms before Network Security. Any order that respects every prerequisite is a valid topological sort of your study plan.",
+            "quiz": [
+              {
+                "q": "Topological sorting is possible only for:",
+                "options": [
+                  "Undirected graphs",
+                  "Directed acyclic graphs",
+                  "Complete graphs",
+                  "Bipartite graphs"
+                ],
+                "answer": 1,
+                "why": "Any cycle would make the dependency impossible to order."
+              },
+              {
+                "q": "In Kahn's method, the next vertex chosen is one whose:",
+                "options": [
+                  "out-degree is zero",
+                  "in-degree is zero",
+                  "weight is smallest",
+                  "degree is maximum"
+                ],
+                "answer": 1,
+                "why": "Such a vertex has no pending prerequisite, so it can be placed next."
+              }
+            ],
+            "examTip": "Mention explicitly that the graph must be acyclic, then show one complete trace - students often forget the requirement and lose a mark.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M3-11",
+          "title": "Minimum Spanning Tree: Prim and Kruskal",
+          "kind": "topic",
+          "definition": "A minimum spanning tree is a set of n - 1 edges that connects all vertices of a weighted graph at the least possible total cost.",
+          "children": [
+            {
+              "id": "CSCA411-M3-11-s1",
+              "title": "Spanning tree",
+              "kind": "subtopic",
+              "definition": "A subgraph that contains all the vertices of the graph, is connected, and has exactly n - 1 edges with no cycles."
+            },
+            {
+              "id": "CSCA411-M3-11-s2",
+              "title": "Prim's algorithm",
+              "kind": "subtopic",
+              "definition": "Start from any vertex and repeatedly add the cheapest edge that joins a tree vertex to a vertex outside the tree."
+            },
+            {
+              "id": "CSCA411-M3-11-s3",
+              "title": "Kruskal's algorithm",
+              "kind": "subtopic",
+              "definition": "Sort all edges by weight and add them one by one, skipping any edge that would form a cycle, usually tested with a union-find structure."
+            },
+            {
+              "id": "CSCA411-M3-11-s4",
+              "title": "Comparison and complexity",
+              "kind": "subtopic",
+              "definition": "Prim grows one tree and suits dense graphs with its O(V squared) array form, while Kruskal works on sorted edge lists, suits sparse graphs and costs O(E log E)."
+            },
+            {
+              "id": "CSCA411-M3-11-s5",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "Laying cable or pipelines, designing road and rail links, cluster analysis and network design at minimum cost."
+            }
+          ],
+          "card": {
+            "explanation": "A spanning tree connects everything with the fewest edges, and the minimum spanning tree chooses which edges so that the total weight is smallest. Both classic algorithms are greedy but differ in what they grow: Prim always extends the single tree, while Kruskal considers edges globally in increasing weight and avoids cycles. The cut property guarantees that these locally cheap choices produce a globally minimum tree when weights are distinct. Since n - 1 edges are needed no matter what, the only real decision is which ones.",
+            "example": "Laying optical fibre to connect ten campus buildings: you must link every building, but you want the shortest total trench, so you pick the cheapest set of links with no loop.",
+            "quiz": [
+              {
+                "q": "A minimum spanning tree of a graph with n vertices has:",
+                "options": [
+                  "n edges",
+                  "n - 1 edges",
+                  "n + 1 edges",
+                  "E edges"
+                ],
+                "answer": 1,
+                "why": "A tree on n vertices always has exactly n - 1 edges."
+              },
+              {
+                "q": "Which algorithm adds edges in increasing order of weight?",
+                "options": [
+                  "Prim's",
+                  "Kruskal's",
+                  "Dijkstra's",
+                  "Floyd's"
+                ],
+                "answer": 1,
+                "why": "Kruskal sorts all edges globally and picks the cheapest usable ones."
+              }
+            ],
+            "examTip": "Run both algorithms on the same graph and show the chosen edge set with total weight - comparing them in one table usually completes the answer.",
+            "verified": false
+          }
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Algorithm Design Techniques: Divide and Conquer, Greedy Method",
+      "topics": [
+        {
+          "id": "CSCA411-M4-01",
+          "title": "Divide and Conquer: General Method",
+          "kind": "topic",
+          "definition": "Divide and conquer solves a problem by splitting it into smaller instances of the same problem, solving them recursively, and combining their answers.",
+          "children": [
+            {
+              "id": "CSCA411-M4-01-s1",
+              "title": "Divide step",
+              "kind": "subtopic",
+              "definition": "Break the input of size n into two or more smaller subproblems, usually of about half the size."
+            },
+            {
+              "id": "CSCA411-M4-01-s2",
+              "title": "Conquer step",
+              "kind": "subtopic",
+              "definition": "Solve each subproblem recursively, or directly if it is small enough to be a base case."
+            },
+            {
+              "id": "CSCA411-M4-01-s3",
+              "title": "Combine step",
+              "kind": "subtopic",
+              "definition": "Merge the subproblem solutions into the solution of the original problem."
+            },
+            {
+              "id": "CSCA411-M4-01-s4",
+              "title": "Control abstraction",
+              "kind": "subtopic",
+              "definition": "A single skeleton - divide, recurse, combine - that describes every divide and conquer algorithm; only the split and merge rules change."
+            },
+            {
+              "id": "CSCA411-M4-01-s5",
+              "title": "Recurrence relation",
+              "kind": "subtopic",
+              "definition": "The cost is written as T(n) = aT(n/b) + f(n), where a is the number of subproblems, b the shrink factor and f(n) the combine cost."
+            },
+            {
+              "id": "CSCA411-M4-01-s6",
+              "title": "Classic examples",
+              "kind": "subtopic",
+              "definition": "Binary search, merge sort, quick sort, and multiplication of large numbers (Strassen's matrix multiplication)."
+            }
+          ],
+          "card": {
+            "explanation": "The idea is old and simple: a hard problem of size n is broken into similar problems that are easier, and their answers are glued back together. Because the subproblems are of the same kind, recursion expresses the algorithm naturally, and the cost is captured by a recurrence like T(n) = 2T(n/2) + n. Splitting into halves is popular because the depth of recursion then becomes log n, which keeps the total cost low. The technique pays off when combining partial answers is cheaper than solving the whole problem directly.",
+            "example": "Finding the heaviest student in a class: split the class into two halves, find the heaviest in each half, then compare those two - the subproblems are smaller versions of the same job.",
+            "quiz": [
+              {
+                "q": "The general recurrence for a divide and conquer algorithm is:",
+                "options": [
+                  "T(n) = T(n - 1) + 1",
+                  "T(n) = aT(n/b) + f(n)",
+                  "T(n) = nT(n)",
+                  "T(n) = T(n) + f(n)"
+                ],
+                "answer": 1,
+                "why": "It has a subproblems of size n/b each, plus f(n) work to divide and combine."
+              },
+              {
+                "q": "Which step of divide and conquer is usually the most expensive?",
+                "options": [
+                  "Divide",
+                  "Conquer",
+                  "Combine",
+                  "Base case"
+                ],
+                "answer": 2,
+                "why": "Merging the partial solutions often dominates, as in merge sort's linear merge."
+              }
+            ],
+            "examTip": "Write the three steps and the general recurrence as the first three lines of any divide and conquer answer; the rest of the marks follow from applying them.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-02",
+          "title": "Binary Search as Divide and Conquer",
+          "kind": "topic",
+          "definition": "Binary search finds a key in a sorted array by comparing it with the middle element and discarding the half that cannot contain it.",
+          "children": [
+            {
+              "id": "CSCA411-M4-02-s1",
+              "title": "Precondition of sorted data",
+              "kind": "subtopic",
+              "definition": "The array must be sorted, otherwise discarding a half is not valid."
+            },
+            {
+              "id": "CSCA411-M4-02-s2",
+              "title": "Recursive procedure",
+              "kind": "subtopic",
+              "definition": "Compare the key with a[mid]; if it is equal return, if smaller recurse on the left half, if larger recurse on the right half."
+            },
+            {
+              "id": "CSCA411-M4-02-s3",
+              "title": "Iterative procedure",
+              "kind": "subtopic",
+              "definition": "Use low and high indices in a loop, updating them with mid - 1 or mid + 1, which avoids recursion stack overhead."
+            },
+            {
+              "id": "CSCA411-M4-02-s4",
+              "title": "Analysis",
+              "kind": "subtopic",
+              "definition": "The recurrence is T(n) = T(n/2) + 1, giving O(log n) comparisons in the worst case and O(1) space iteratively."
+            },
+            {
+              "id": "CSCA411-M4-02-s5",
+              "title": "Comparison with linear search",
+              "kind": "subtopic",
+              "definition": "Binary search is far faster for large sorted data, but it requires sorted input and does not work on linked lists efficiently."
+            }
+          ],
+          "card": {
+            "explanation": "Each comparison with the middle element eliminates half of the remaining items, so the search space shrinks from n to n/2, n/4 and so on until one element is left. That halving is why the cost is logarithmic - a million sorted records need only about twenty comparisons. The recursive and iterative versions are logically identical, but the iterative one avoids function call overhead. The sorted precondition is not optional: on unsorted data the algorithm silently returns wrong answers.",
+            "example": "Looking up a word in a dictionary: you open the middle, decide which half the word lies in, and repeat - never reading every page.",
+            "quiz": [
+              {
+                "q": "Worst case time complexity of binary search is:",
+                "options": [
+                  "O(1)",
+                  "O(log n)",
+                  "O(n)",
+                  "O(n log n)"
+                ],
+                "answer": 1,
+                "why": "The search space halves at every comparison, so the number of steps is logarithmic."
+              },
+              {
+                "q": "Binary search cannot be used on:",
+                "options": [
+                  "a sorted array",
+                  "an unsorted array",
+                  "a sorted list of numbers",
+                  "a sorted list of strings"
+                ],
+                "answer": 1,
+                "why": "Discarding a half is only valid when the data is ordered."
+              }
+            ],
+            "examTip": "Write the recurrence T(n) = T(n/2) + 1 and solve it in two lines - the derivation earns more marks than the final O(log n).",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-03",
+          "title": "Merge Sort",
+          "kind": "topic",
+          "definition": "Merge sort divides the array into two halves, sorts each half recursively and merges the two sorted halves into one sorted array.",
+          "children": [
+            {
+              "id": "CSCA411-M4-03-s1",
+              "title": "Divide and merge steps",
+              "kind": "subtopic",
+              "definition": "Split the array at the middle, sort both halves recursively, then merge them by repeatedly taking the smaller of the two current elements."
+            },
+            {
+              "id": "CSCA411-M4-03-s2",
+              "title": "Recurrence and analysis",
+              "kind": "subtopic",
+              "definition": "T(n) = 2T(n/2) + n gives O(n log n) in the best, average and worst cases."
+            },
+            {
+              "id": "CSCA411-M4-03-s3",
+              "title": "Space complexity",
+              "kind": "subtopic",
+              "definition": "The merge step needs an auxiliary array of size n, so merge sort is O(n) in extra space and is not in-place."
+            },
+            {
+              "id": "CSCA411-M4-03-s4",
+              "title": "Stability of merge sort",
+              "kind": "subtopic",
+              "definition": "Equal elements keep their original relative order, which matters when sorting records by one field at a time."
+            },
+            {
+              "id": "CSCA411-M4-03-s5",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "External sorting of files too large for memory, sorting linked lists, and counting inversions or other divide and conquer variants."
+            }
+          ],
+          "card": {
+            "explanation": "Merge sort trusts recursion completely: it sorts the left half, sorts the right half, and then assumes only one thing - how to merge two already sorted lists. Merging is easy and linear, comparing the front elements of both lists and always taking the smaller. Because the split is always at the middle, the recursion depth is exactly log n and every level does O(n) merging work, giving O(n log n) in every case. The price is the extra array needed for merging, and the benefit is guaranteed speed with stable output.",
+            "example": "Two teachers each sort half of the answer sheets, then one helper merges the two sorted piles by always picking the smaller top roll number.",
+            "quiz": [
+              {
+                "q": "Time complexity of merge sort in the worst case is:",
+                "options": [
+                  "O(n)",
+                  "O(n log n)",
+                  "O(n squared)",
+                  "O(log n)"
+                ],
+                "answer": 1,
+                "why": "Each of the log n levels performs O(n) merging work."
+              },
+              {
+                "q": "The main drawback of merge sort compared with quick sort is:",
+                "options": [
+                  "It is unstable",
+                  "It needs O(n) extra space",
+                  "It works only on integers",
+                  "It has quadratic worst case"
+                ],
+                "answer": 1,
+                "why": "Merging requires an auxiliary array, so it is not an in-place sort."
+              }
+            ],
+            "examTip": "Trace a small array through the recursion tree and show the merge at each level - the tree plus the merge lines is the expected answer format.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-04",
+          "title": "Quick Sort",
+          "kind": "topic",
+          "definition": "Quick sort picks an element as pivot, partitions the array so that smaller elements go left and larger go right, and then sorts both parts recursively.",
+          "children": [
+            {
+              "id": "CSCA411-M4-04-s1",
+              "title": "Pivot selection",
+              "kind": "subtopic",
+              "definition": "The pivot may be the first, last, middle or a random element; random or median-of-three choices avoid the worst case."
+            },
+            {
+              "id": "CSCA411-M4-04-s2",
+              "title": "Partition algorithm",
+              "kind": "subtopic",
+              "definition": "Two pointers move inwards, swapping misplaced elements until they cross, after which the pivot is placed at its final position."
+            },
+            {
+              "id": "CSCA411-M4-04-s3",
+              "title": "Best, average and worst case",
+              "kind": "subtopic",
+              "definition": "Balanced partitions give O(n log n), while a very unbalanced split such as always picking the smallest element gives O(n squared)."
+            },
+            {
+              "id": "CSCA411-M4-04-s4",
+              "title": "In-place and unstable",
+              "kind": "subtopic",
+              "definition": "Quick sort uses only O(log n) space for recursion and needs no extra array, but equal elements may change relative order."
+            },
+            {
+              "id": "CSCA411-M4-04-s5",
+              "title": "Merge sort versus quick sort",
+              "kind": "subtopic",
+              "definition": "Quick sort is usually faster in practice and works in place, while merge sort guarantees O(n log n) and is stable but needs extra space."
+            }
+          ],
+          "card": {
+            "explanation": "Quick sort does its heavy work before the recursion, not after: partitioning places the pivot exactly where it belongs and separates smaller from larger elements. If each partition splits the array reasonably evenly, the depth of recursion is log n and each level costs n comparisons, giving O(n log n). A bad pivot, as when the array is already sorted and you always pick the end element, creates partitions of size 0 and n - 1, which degrades to O(n squared). Choosing a random or median pivot makes that worst case very unlikely in practice.",
+            "example": "Sorting a stack of exam papers by grade: pick one paper as a reference, place better papers on one side and weaker ones on the other, then repeat on each pile.",
+            "quiz": [
+              {
+                "q": "Worst case time complexity of quick sort is:",
+                "options": [
+                  "O(n log n)",
+                  "O(n squared)",
+                  "O(n)",
+                  "O(log n)"
+                ],
+                "answer": 1,
+                "why": "Extremely unbalanced partitions make the recursion depth n with linear work per level."
+              },
+              {
+                "q": "The pivot in quick sort ends up:",
+                "options": [
+                  "at the beginning of the array",
+                  "in its final sorted position",
+                  "in the middle always",
+                  "removed from the array"
+                ],
+                "answer": 1,
+                "why": "Partitioning puts every smaller element on the left and larger on the right, which fixes the pivot's place."
+              }
+            ],
+            "examTip": "Show the partition step with two pointers and state when the worst case occurs - the reason (already sorted input with an end pivot) is the marked part.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-05",
+          "title": "Analysis of Recursive and Non-recursive Algorithms, Solving Recurrences",
+          "kind": "topic",
+          "definition": "The cost of a recursive algorithm is expressed as a recurrence relation, and solving that recurrence gives its time complexity.",
+          "children": [
+            {
+              "id": "CSCA411-M4-05-s1",
+              "title": "Step count of a non-recursive algorithm",
+              "kind": "subtopic",
+              "definition": "Count the basic operations as a function of input size, then keep only the highest order term."
+            },
+            {
+              "id": "CSCA411-M4-05-s2",
+              "title": "Setting up a recurrence",
+              "kind": "subtopic",
+              "definition": "Relate the cost of size n to the cost of smaller sizes plus the non-recursive work, and state the base case."
+            },
+            {
+              "id": "CSCA411-M4-05-s3",
+              "title": "Substitution or back substitution method",
+              "kind": "subtopic",
+              "definition": "Repeatedly expand the recurrence, spot the pattern, and sum the resulting series."
+            },
+            {
+              "id": "CSCA411-M4-05-s4",
+              "title": "Recursion tree method",
+              "kind": "subtopic",
+              "definition": "Draw one node per subproblem with its cost, then total the cost level by level and multiply by the number of levels."
+            },
+            {
+              "id": "CSCA411-M4-05-s5",
+              "title": "Master theorem",
+              "kind": "subtopic",
+              "definition": "For T(n) = aT(n/b) + f(n), compare f(n) with n raised to log base b of a to read the answer directly in one of three cases."
+            },
+            {
+              "id": "CSCA411-M4-05-s6",
+              "title": "Standard results to remember",
+              "kind": "subtopic",
+              "definition": "T(n) = T(n/2) + 1 gives log n; T(n) = 2T(n/2) + n gives n log n; T(n) = T(n - 1) + 1 gives n."
+            }
+          ],
+          "card": {
+            "explanation": "Recursive algorithms are analysed by writing down what they cost, not by running them: the recurrence captures both the recursive calls and the work done outside them. Back substitution is the simplest manual method - expand a few steps, see the pattern, and sum the series - while the recursion tree shows the same thing as a picture of costs per level. The master theorem shortcuts all of it for the common shape T(n) = aT(n/b) + f(n) by comparing the combine cost with the growth of the subproblems. Exam questions usually expect one of these three methods plus the final O result.",
+            "example": "Merge sort costs n work per level and there are log n levels, so the recursion tree is n wide at each of log n rows - total n log n.",
+            "quiz": [
+              {
+                "q": "Solving T(n) = 2T(n/2) + n gives:",
+                "options": [
+                  "O(n)",
+                  "O(n log n)",
+                  "O(n squared)",
+                  "O(log n)"
+                ],
+                "answer": 1,
+                "why": "Each of log n levels contributes n units of work."
+              },
+              {
+                "q": "The recursion tree method summarises an algorithm by:",
+                "options": [
+                  "running the code",
+                  "totalling cost level by level",
+                  "sorting the input",
+                  "counting variables"
+                ],
+                "answer": 1,
+                "why": "Each level's total cost is added and multiplied by the number of levels."
+              }
+            ],
+            "examTip": "Always state the base case along with the recurrence - a recurrence without its base case is considered incomplete.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-06",
+          "title": "Greedy Method: General Method",
+          "kind": "topic",
+          "definition": "The greedy method builds a solution step by step, always taking the choice that looks best at that moment, and never undoing a choice.",
+          "children": [
+            {
+              "id": "CSCA411-M4-06-s1",
+              "title": "Feasible and optimal solution",
+              "kind": "subtopic",
+              "definition": "A feasible solution satisfies all the constraints; the optimal solution is the feasible one with the best objective value."
+            },
+            {
+              "id": "CSCA411-M4-06-s2",
+              "title": "Objective function and constraints",
+              "kind": "subtopic",
+              "definition": "The objective function measures quality (profit, cost, distance) while constraints fix what is allowed."
+            },
+            {
+              "id": "CSCA411-M4-06-s3",
+              "title": "Selection procedure",
+              "kind": "subtopic",
+              "definition": "A rule picks the next item to consider, for example highest profit, lowest weight or best profit-to-weight ratio."
+            },
+            {
+              "id": "CSCA411-M4-06-s4",
+              "title": "Greedy choice property and optimal substructure",
+              "kind": "subtopic",
+              "definition": "The method succeeds only when a locally best choice can be part of a globally optimal solution and the problem has optimal substructure."
+            },
+            {
+              "id": "CSCA411-M4-06-s5",
+              "title": "Control abstraction of the greedy method",
+              "kind": "subtopic",
+              "definition": "Start with an empty solution, repeatedly select the next best candidate, add it if it keeps the solution feasible, and stop when done."
+            },
+            {
+              "id": "CSCA411-M4-06-s6",
+              "title": "Greedy versus dynamic programming",
+              "kind": "subtopic",
+              "definition": "Greedy makes one irreversible choice per step and is faster, while dynamic programming examines all choices and is needed when greedy fails, as in 0/1 knapsack."
+            }
+          ],
+          "card": {
+            "explanation": "The greedy method is attractive because it is simple and fast: there is no backtracking and no table of subresults, just a loop of locally best choices. That speed is only correct when the problem has the greedy choice property - taking the best-looking item now must never destroy the chance of the best overall answer. Fractional knapsack, minimum spanning trees, Huffman coding and Dijkstra's algorithm all satisfy it. Problems like 0/1 knapsack do not, and there a greedy choice can be clearly wrong, which is why dynamic programming is used instead.",
+            "example": "Withdrawing the fewest notes from an ATM: take the largest note that still fits the amount, repeat, and you end up with the minimum number of notes.",
+            "quiz": [
+              {
+                "q": "The greedy method makes decisions that are:",
+                "options": [
+                  "always globally optimal",
+                  "locally best and never reversed",
+                  "chosen randomly",
+                  "made after full search"
+                ],
+                "answer": 1,
+                "why": "It commits to the best available option at each step without backtracking."
+              },
+              {
+                "q": "Which problem cannot be solved correctly by a greedy choice alone?",
+                "options": [
+                  "Fractional knapsack",
+                  "0/1 knapsack",
+                  "Huffman coding",
+                  "Minimum spanning tree"
+                ],
+                "answer": 1,
+                "why": "An item must be taken whole or not at all, so a locally attractive choice can block the optimum."
+              }
+            ],
+            "examTip": "List the five greedy elements (candidate set, selection function, feasibility check, objective function, solution function) - this is a standard, mark-heavy question.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-07",
+          "title": "Fractional Knapsack Problem (Greedy)",
+          "kind": "topic",
+          "definition": "In the fractional knapsack problem, items can be cut, so the greedy rule of taking the highest profit-to-weight ratio first gives the optimal answer.",
+          "children": [
+            {
+              "id": "CSCA411-M4-07-s1",
+              "title": "Problem statement",
+              "kind": "subtopic",
+              "definition": "Fill a knapsack of capacity M from n items with given weights and profits, maximising total profit when fractions of items are allowed."
+            },
+            {
+              "id": "CSCA411-M4-07-s2",
+              "title": "Profit to weight ratio rule",
+              "kind": "subtopic",
+              "definition": "Compute pi/wi for each item, sort in decreasing order and take as much as possible of each item in that order."
+            },
+            {
+              "id": "CSCA411-M4-07-s3",
+              "title": "Worked greedy steps",
+              "kind": "subtopic",
+              "definition": "Take whole items while they fit, and take only the fraction that fills the remaining capacity of the last item."
+            },
+            {
+              "id": "CSCA411-M4-07-s4",
+              "title": "Why greedy is optimal here",
+              "kind": "subtopic",
+              "definition": "Because items are divisible, filling the knapsack with the best ratio per unit weight leaves no wasted capacity, so no exchange can improve the answer."
+            },
+            {
+              "id": "CSCA411-M4-07-s5",
+              "title": "Time complexity",
+              "kind": "subtopic",
+              "definition": "Dominated by sorting the items: O(n log n)."
+            }
+          ],
+          "card": {
+            "explanation": "The fractional version is easy because cutting items lets you fill every last unit of capacity with whatever is most valuable per kilogram. So you sort items by profit divided by weight, take whole items while they fit, and take a fraction of the item that crosses the capacity line. This exchange argument - any solution that does not follow the ratio order can be improved - proves the greedy answer is optimal. The problem becomes genuinely hard only when items are indivisible, which is the 0/1 knapsack of dynamic programming.",
+            "example": "Filling a 5 kg shopping bag with rice, dal and ghee: pack the item with the best value per kilogram first, and if the bag is nearly full, take only the quantity that fits.",
+            "quiz": [
+              {
+                "q": "The greedy criterion for fractional knapsack is:",
+                "options": [
+                  "highest weight first",
+                  "highest profit first",
+                  "highest profit-to-weight ratio first",
+                  "smallest weight last"
+                ],
+                "answer": 2,
+                "why": "Ratio ordering maximises value per unit of capacity, which is optimal when fractions are allowed."
+              },
+              {
+                "q": "Complexity of the fractional knapsack algorithm is:",
+                "options": [
+                  "O(n)",
+                  "O(n log n)",
+                  "O(n squared)",
+                  "O(2^n)"
+                ],
+                "answer": 1,
+                "why": "Sorting by ratio dominates the linear fill that follows."
+              }
+            ],
+            "examTip": "Show the sorted ratio table, then fill step by step and state the final profit - and mention that greedy works only because items are divisible.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-08",
+          "title": "Greedy Algorithms on Graphs: Prim, Kruskal and Dijkstra",
+          "kind": "topic",
+          "definition": "The same greedy idea powers three classic graph algorithms: Prim and Kruskal for minimum spanning trees and Dijkstra for single source shortest paths.",
+          "children": [
+            {
+              "id": "CSCA411-M4-08-s1",
+              "title": "Greedy view of Prim's algorithm",
+              "kind": "subtopic",
+              "definition": "Grow one tree by always adding the cheapest edge that leaves the current tree."
+            },
+            {
+              "id": "CSCA411-M4-08-s2",
+              "title": "Greedy view of Kruskal's algorithm",
+              "kind": "subtopic",
+              "definition": "Sort edges globally by weight and add the cheapest edge that does not create a cycle, using union-find to test."
+            },
+            {
+              "id": "CSCA411-M4-08-s3",
+              "title": "Greedy view of Dijkstra's algorithm",
+              "kind": "subtopic",
+              "definition": "Finalise the unfinalised vertex with the smallest tentative distance and relax its neighbours, so each step locks one shortest distance."
+            },
+            {
+              "id": "CSCA411-M4-08-s4",
+              "title": "Single source shortest path",
+              "kind": "subtopic",
+              "definition": "Distances from one source to all vertices, computed correctly when all edge weights are non-negative."
+            },
+            {
+              "id": "CSCA411-M4-08-s5",
+              "title": "Complexity comparison",
+              "kind": "subtopic",
+              "definition": "Prim O(V squared) or O(E log V), Kruskal O(E log E), Dijkstra O(V squared) or O((V+E) log V) with a heap."
+            }
+          ],
+          "card": {
+            "explanation": "All three algorithms look locally optimal yet produce globally optimal results, and the reason in each case is a cutting argument. Prim's tree can never be improved by a cheaper edge crossing the cut, Kruskal's sorted edge list cannot be improved by any lighter edge that avoids a cycle, and Dijkstra's finalised distance cannot be beaten because all remaining paths already cost more. The shared structure is a loop that repeatedly extracts the best remaining candidate - which is why a priority queue is the natural implementation. Note that Dijkstra, unlike the other two, requires non-negative weights.",
+            "example": "Planning fibre links between campus buildings (Prim), picking the cheapest cable contracts overall (Kruskal), and finding the fastest route from your hostel to the department (Dijkstra).",
+            "quiz": [
+              {
+                "q": "Which of these three algorithms fails with negative edge weights?",
+                "options": [
+                  "Prim's",
+                  "Kruskal's",
+                  "Dijkstra's",
+                  "None of them"
+                ],
+                "answer": 2,
+                "why": "Dijkstra finalises vertices greedily, which a negative edge could later contradict."
+              },
+              {
+                "q": "Kruskal's algorithm uses which structure to detect cycles efficiently?",
+                "options": [
+                  "Stack",
+                  "Union-find (disjoint set)",
+                  "Queue",
+                  "Hash table"
+                ],
+                "answer": 1,
+                "why": "Union-find tells in almost constant time whether two endpoints are already connected."
+              }
+            ],
+            "examTip": "Compare the three in one table - problem solved, greedy rule, data structure used and complexity - since most questions ask for exactly this comparison.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-09",
+          "title": "Scheduling: Job Sequencing with Deadlines",
+          "kind": "topic",
+          "definition": "Job sequencing with deadlines arranges unit-time jobs with profits and deadlines so that the total profit of jobs completed in time is maximum.",
+          "children": [
+            {
+              "id": "CSCA411-M4-09-s1",
+              "title": "Problem statement",
+              "kind": "subtopic",
+              "definition": "Each job takes one unit of time, must finish by its deadline and earns a profit; jobs that miss the deadline earn nothing."
+            },
+            {
+              "id": "CSCA411-M4-09-s2",
+              "title": "Greedy rule",
+              "kind": "subtopic",
+              "definition": "Sort jobs in decreasing order of profit and place each job in the latest free slot before its deadline."
+            },
+            {
+              "id": "CSCA411-M4-09-s3",
+              "title": "Feasibility check",
+              "kind": "subtopic",
+              "definition": "A set of jobs is feasible if they can all be scheduled within their deadlines; scanning slots from the deadline backwards keeps it feasible."
+            },
+            {
+              "id": "CSCA411-M4-09-s4",
+              "title": "Worked example",
+              "kind": "subtopic",
+              "definition": "For jobs with profits 100, 50, 40 and deadlines 2, 1, 2, the greedy order takes the first and third, giving a total profit of 140."
+            },
+            {
+              "id": "CSCA411-M4-09-s5",
+              "title": "Time complexity",
+              "kind": "subtopic",
+              "definition": "O(n log n) for the sort plus up to O(n squared) for slot searching, which can be reduced with union-find."
+            }
+          ],
+          "card": {
+            "explanation": "This problem is about limited time, so the greedy measure is profit rather than ratio: consider the most profitable job first. Each job must be placed somewhere, and putting it as late as possible keeps earlier slots free for others, which is what preserves feasibility. If no free slot exists before the deadline, that job is simply dropped. The sorted job order plus the latest-possible-slot rule produces an optimal schedule for unit-time jobs.",
+            "example": "Exam week with four submissions due on different days and different credit weights: do the highest-weight submission first, and each one as late as its deadline allows so urgent small ones can fit in.",
+            "quiz": [
+              {
+                "q": "In job sequencing with deadlines, jobs are considered in order of:",
+                "options": [
+                  "arrival time",
+                  "increasing deadline",
+                  "decreasing profit",
+                  "shortest processing time"
+                ],
+                "answer": 2,
+                "why": "Greedy picks the most profitable job first and then finds it a feasible slot."
+              },
+              {
+                "q": "A job is rejected during the greedy scan when:",
+                "options": [
+                  "its profit is low",
+                  "no free slot exists before its deadline",
+                  "it is the last job",
+                  "its deadline is the largest"
+                ],
+                "answer": 1,
+                "why": "Without a free slot in time it cannot be scheduled, so it is discarded."
+              }
+            ],
+            "examTip": "Draw the timeline of slots and mark each chosen job with its deadline - the timeline diagram is the answer examiners look for.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M4-10",
+          "title": "Huffman Coding",
+          "kind": "topic",
+          "definition": "Huffman coding builds an optimal binary tree in which frequently used characters get short codes and rare characters get long codes, reducing file size.",
+          "children": [
+            {
+              "id": "CSCA411-M4-10-s1",
+              "title": "Fixed length versus variable length codes",
+              "kind": "subtopic",
+              "definition": "Fixed length codes use the same number of bits for every character; variable length codes assign fewer bits to frequent characters."
+            },
+            {
+              "id": "CSCA411-M4-10-s2",
+              "title": "Prefix code property",
+              "kind": "subtopic",
+              "definition": "No code is a prefix of another, which makes decoding unambiguous without separators."
+            },
+            {
+              "id": "CSCA411-M4-10-s3",
+              "title": "Building the Huffman tree",
+              "kind": "subtopic",
+              "definition": "Put all characters in a min-heap by frequency; repeatedly remove the two smallest, join them under a new node whose frequency is their sum, and continue until one tree remains."
+            },
+            {
+              "id": "CSCA411-M4-10-s4",
+              "title": "Assigning codes and decoding",
+              "kind": "subtopic",
+              "definition": "Label left edges 0 and right edges 1; a character's code is the path from the root, and decoding walks the same tree from the root."
+            },
+            {
+              "id": "CSCA411-M4-10-s5",
+              "title": "Complexity and applications",
+              "kind": "subtopic",
+              "definition": "O(n log n) with a heap; used in file compression such as ZIP, in image formats and in data transmission."
+            }
+          ],
+          "card": {
+            "explanation": "Huffman coding exploits the fact that in normal text some letters appear far more often than others, so giving every letter eight bits wastes space. The greedy rule merges the two least frequent characters at every step, which pushes rare characters deeper into the tree and frequent ones closer to the root. The result is a prefix code, so the 0 and 1 path to each character is unambiguous and no separator is needed. Because the greedy merge is provably optimal, no other prefix code gives a shorter average length for the same frequencies.",
+            "example": "In an SMS, letters like e and a get short codes while z and q get long ones, so the same message needs fewer bits overall.",
+            "quiz": [
+              {
+                "q": "In Huffman coding, the two nodes combined at each step are the ones with:",
+                "options": [
+                  "highest frequency",
+                  "lowest frequency",
+                  "longest code",
+                  "equal frequency"
+                ],
+                "answer": 1,
+                "why": "Merging the rarest characters first pushes them deepest into the tree, which minimises total code length."
+              },
+              {
+                "q": "A prefix code means:",
+                "options": [
+                  "every code has equal length",
+                  "no code is a prefix of another code",
+                  "codes start with 1",
+                  "codes are sorted"
+                ],
+                "answer": 1,
+                "why": "This property makes decoding unambiguous while reading bits one at a time."
+              }
+            ],
+            "examTip": "Show the frequency-sorted list, then every merge step in order and the final codes in a table - the merge order itself carries most of the marks.",
+            "verified": false
+          }
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Dynamic Programming, Backtracking and Complexity Classes",
+      "topics": [
+        {
+          "id": "CSCA411-M5-01",
+          "title": "Dynamic Programming: General Method",
+          "kind": "topic",
+          "definition": "Dynamic programming solves a problem by storing the answers to overlapping subproblems and reusing them instead of recomputing.",
+          "children": [
+            {
+              "id": "CSCA411-M5-01-s1",
+              "title": "Overlapping subproblems",
+              "kind": "subtopic",
+              "definition": "The same smaller problem is needed again and again, so recomputing it wastes time."
+            },
+            {
+              "id": "CSCA411-M5-01-s2",
+              "title": "Optimal substructure",
+              "kind": "subtopic",
+              "definition": "An optimal solution contains optimal solutions of its subproblems, so small answers can be combined into the big one."
+            },
+            {
+              "id": "CSCA411-M5-01-s3",
+              "title": "Principle of optimality",
+              "kind": "subtopic",
+              "definition": "Whatever the first decision, the remaining decisions must be optimal for the state that results from it."
+            },
+            {
+              "id": "CSCA411-M5-01-s4",
+              "title": "Memoization (top-down)",
+              "kind": "subtopic",
+              "definition": "Write the recursion naturally but cache each computed result, so repeated calls return from the table."
+            },
+            {
+              "id": "CSCA411-M5-01-s5",
+              "title": "Tabulation (bottom-up)",
+              "kind": "subtopic",
+              "definition": "Fill a table iteratively from the smallest subproblems upward, which avoids recursion overhead."
+            },
+            {
+              "id": "CSCA411-M5-01-s6",
+              "title": "Dynamic programming versus greedy and divide and conquer",
+              "kind": "subtopic",
+              "definition": "Unlike greedy it considers all choices, and unlike plain divide and conquer it reuses results of overlapping subproblems instead of solving them again."
+            }
+          ],
+          "card": {
+            "explanation": "Dynamic programming is the answer when a problem has two features: the best overall solution is built from best solutions of smaller pieces, and those smaller pieces keep repeating. A plain recursive solution would recompute the same states exponentially many times, while dynamic programming computes each state once and looks it up afterwards. Memoization does that lazily from the top with the recursion kept as it is, and tabulation does it eagerly from the bottom with loops. The cost is memory for the table, and the reward is turning exponential recursion into polynomial time.",
+            "example": "Climbing a staircase of 10 steps taking 1 or 2 steps at a time: the number of ways to reach step 8 and step 9 is reused to find step 10, instead of counting from scratch each time.",
+            "quiz": [
+              {
+                "q": "Dynamic programming is preferred when a problem has:",
+                "options": [
+                  "no recursion",
+                  "overlapping subproblems and optimal substructure",
+                  "negative weights",
+                  "no solution"
+                ],
+                "answer": 1,
+                "why": "These two properties let stored subproblem answers be combined into the optimum."
+              },
+              {
+                "q": "Memoization differs from tabulation because it:",
+                "options": [
+                  "uses a table",
+                  "works top-down and caches results lazily",
+                  "is always iterative",
+                  "ignores subproblems"
+                ],
+                "answer": 1,
+                "why": "Memoization keeps recursion but stores answers the first time they are computed."
+              }
+            ],
+            "examTip": "State the principle of optimality in the very first line, then write the recurrence and the table - this sequence matches the expected answer format.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-02",
+          "title": "0/1 Knapsack Using Dynamic Programming",
+          "kind": "topic",
+          "definition": "In the 0/1 knapsack problem each item must be taken whole or left behind, so dynamic programming is used to choose the most profitable subset within the weight limit.",
+          "children": [
+            {
+              "id": "CSCA411-M5-02-s1",
+              "title": "Problem statement",
+              "kind": "subtopic",
+              "definition": "Choose a subset of n items with weights wi and profits pi such that the total weight does not exceed capacity M and the total profit is maximum."
+            },
+            {
+              "id": "CSCA411-M5-02-s2",
+              "title": "Recurrence relation",
+              "kind": "subtopic",
+              "definition": "dp[i][w] = max(dp[i-1][w], pi + dp[i-1][w - wi]) when the item fits, otherwise dp[i][w] = dp[i-1][w]."
+            },
+            {
+              "id": "CSCA411-M5-02-s3",
+              "title": "Table construction",
+              "kind": "subtopic",
+              "definition": "Build a table with items as rows and capacities as columns, filling each cell from the cell above and the cell above-left."
+            },
+            {
+              "id": "CSCA411-M5-02-s4",
+              "title": "Backtracking the chosen items",
+              "kind": "subtopic",
+              "definition": "Walk back through the table: an item was included if the value differs from the row above, which reconstructs the optimal subset."
+            },
+            {
+              "id": "CSCA411-M5-02-s5",
+              "title": "Time and space complexity",
+              "kind": "subtopic",
+              "definition": "O(nW) time and O(nW) space, reducible to O(W) space by keeping only one row; this is pseudo-polynomial, not polynomial in the input size."
+            },
+            {
+              "id": "CSCA411-M5-02-s6",
+              "title": "Contrast with fractional knapsack",
+              "kind": "subtopic",
+              "definition": "Greedy by ratio fails here because an attractive item may leave no room for a better combination later."
+            }
+          ],
+          "card": {
+            "explanation": "Because an item cannot be cut, every decision is a yes-or-no choice, and a locally attractive greedy pick can spoil the remaining capacity - so all choices are explored and remembered. The state is simply 'best profit using the first i items with capacity w', and each cell either leaves the item out or includes it and adds the column shifted left by its weight. Filling the table row by row writes every one of those answers exactly once, and the last cell holds the maximum profit. Walking backwards through the table tells you which items were actually chosen.",
+            "example": "Packing a 3 kg travel bag from items with weights 2, 2 and 3 kg and values 4, 5 and 6 - taking the 2 kg plus 1 kg is impossible because nothing can be cut, so the DP table compares whole combinations.",
+            "quiz": [
+              {
+                "q": "The 0/1 knapsack recurrence for an item that fits is:",
+                "options": [
+                  "dp[i][w] = pi + dp[i][w - wi]",
+                  "dp[i][w] = max(dp[i-1][w], pi + dp[i-1][w - wi])",
+                  "dp[i][w] = dp[i-1][w - wi]",
+                  "dp[i][w] = wi + pi"
+                ],
+                "answer": 1,
+                "why": "Either exclude the item, or include it and add the best of the remaining capacity from the previous row."
+              },
+              {
+                "q": "The complexity of the dynamic programming knapsack is:",
+                "options": [
+                  "O(n log n)",
+                  "O(nW)",
+                  "O(2^n)",
+                  "O(W squared)"
+                ],
+                "answer": 1,
+                "why": "The table has n rows and W columns, each filled in constant time."
+              }
+            ],
+            "examTip": "Draw the full dp table with rows as items and columns as capacities, then mark the included items by back-tracing - a table without the trace-back loses marks.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-03",
+          "title": "Travelling Salesman Problem",
+          "kind": "topic",
+          "definition": "The travelling salesman problem asks for the shortest tour that visits every city exactly once and returns to the starting city.",
+          "children": [
+            {
+              "id": "CSCA411-M5-03-s1",
+              "title": "Problem statement",
+              "kind": "subtopic",
+              "definition": "Given a cost matrix between n cities, find a Hamiltonian cycle of minimum total cost."
+            },
+            {
+              "id": "CSCA411-M5-03-s2",
+              "title": "Brute force and its cost",
+              "kind": "subtopic",
+              "definition": "Trying every tour needs (n - 1)! permutations, so even fifteen cities are beyond brute force."
+            },
+            {
+              "id": "CSCA411-M5-03-s3",
+              "title": "Dynamic programming formulation",
+              "kind": "subtopic",
+              "definition": "Solve subproblems defined by 'shortest path from city 1 to city j visiting exactly the set S of cities', storing them by (j, S)."
+            },
+            {
+              "id": "CSCA411-M5-03-s4",
+              "title": "Complexity of the Held-Karp method",
+              "kind": "subtopic",
+              "definition": "O(n squared times 2^n) time and O(n times 2^n) space, which is far better than factorial but still exponential."
+            },
+            {
+              "id": "CSCA411-M5-03-s5",
+              "title": "TSP is NP-hard",
+              "kind": "subtopic",
+              "definition": "No polynomial time algorithm is known, so in practice approximation and heuristic methods are used."
+            },
+            {
+              "id": "CSCA411-M5-03-s6",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "Delivery route planning, circuit board drilling, school bus routing and warehouse picking."
+            }
+          ],
+          "card": {
+            "explanation": "The TSP is deceptively small: visiting every city once is easy, but visiting them in the cheapest order means comparing an astronomical number of tours. Dynamic programming improves the search dramatically by noticing that what matters for the future is which cities remain and where you currently are, not the exact order already travelled. That shrinks the problem into states of the form 'current city plus set of visited cities', which is exponential but far smaller than factorial. Even so, no polynomial algorithm is known, which places TSP among the NP-hard problems.",
+            "example": "A delivery van must visit twelve shops and return to the depot; checking every possible order means billions of tours, so routing software uses dynamic programming or heuristics.",
+            "quiz": [
+              {
+                "q": "The number of distinct tours checked by brute force for n cities is about:",
+                "options": [
+                  "n squared",
+                  "2^n",
+                  "(n - 1)!",
+                  "n log n"
+                ],
+                "answer": 2,
+                "why": "Fixing the start leaves permutations of the remaining n - 1 cities."
+              },
+              {
+                "q": "The dynamic programming state for TSP consists of:",
+                "options": [
+                  "only the current city",
+                  "current city and the set of visited cities",
+                  "the total cost so far only",
+                  "the starting city"
+                ],
+                "answer": 1,
+                "why": "Those two pieces of information are enough to decide the rest of the tour optimally."
+              }
+            ],
+            "examTip": "Write the recurrence for the (current city, visited set) state and the complexity 2^n - examiners usually give most marks for the state definition, not the numbers.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-04",
+          "title": "Backtracking: General Method",
+          "kind": "topic",
+          "definition": "Backtracking builds a solution one component at a time and abandons a partial solution as soon as it cannot lead to a valid answer.",
+          "children": [
+            {
+              "id": "CSCA411-M5-04-s1",
+              "title": "State space tree",
+              "kind": "subtopic",
+              "definition": "Every partial solution is a node of a tree; the root is the empty solution and the leaves are complete solutions or dead ends."
+            },
+            {
+              "id": "CSCA411-M5-04-s2",
+              "title": "Promising and non-promising nodes",
+              "kind": "subtopic",
+              "definition": "A node is promising if it can still be completed into a valid solution; a non-promising node is pruned immediately."
+            },
+            {
+              "id": "CSCA411-M5-04-s3",
+              "title": "Bounding functions",
+              "kind": "subtopic",
+              "definition": "A bound estimates the best value achievable under a node; if it cannot beat the current best, the whole subtree is skipped."
+            },
+            {
+              "id": "CSCA411-M5-04-s4",
+              "title": "Control abstraction",
+              "kind": "subtopic",
+              "definition": "A recursive loop tries each candidate; if the partial solution is still promising, recurse, otherwise undo the choice and try the next."
+            },
+            {
+              "id": "CSCA411-M5-04-s5",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "n-Queens, graph colouring, Hamiltonian cycle, sum of subsets, sudoku, maze solving and constraint satisfaction problems."
+            }
+          ],
+          "card": {
+            "explanation": "Backtracking is depth first search over the space of partial solutions, with early rejection of hopeless branches - that pruning is what makes it practical. At each step you extend the current partial solution with one more decision, and you stop expanding the moment the constraints are violated. If no decision works, you undo the last one and try another, which is literally 'backtracking'. The state space tree is still exponential in the worst case, but pruning usually makes the explored part far smaller than brute force.",
+            "example": "Filling a sudoku: place a digit in a cell, and if it breaks a row or box rule, immediately erase it and try the next digit instead of finishing the whole grid wrongly.",
+            "quiz": [
+              {
+                "q": "A node in the state space tree is called promising when:",
+                "options": [
+                  "it has children",
+                  "it can still lead to a valid solution",
+                  "it is a leaf",
+                  "its cost is lowest"
+                ],
+                "answer": 1,
+                "why": "Promising nodes are worth expanding; others are pruned."
+              },
+              {
+                "q": "Backtracking is essentially:",
+                "options": [
+                  "breadth first search",
+                  "depth first search with pruning",
+                  "dynamic programming",
+                  "greedy selection"
+                ],
+                "answer": 1,
+                "why": "It dives deep into one choice and abandons it as soon as it becomes infeasible."
+              }
+            ],
+            "examTip": "Draw the state space tree with promising nodes marked and pruned branches crossed out - the crossing out is what shows the technique, not the final answer.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-05",
+          "title": "n-Queen Problem",
+          "kind": "topic",
+          "definition": "The n-Queen problem places n queens on an n by n chessboard so that no two queens share a row, a column or a diagonal.",
+          "children": [
+            {
+              "id": "CSCA411-M5-05-s1",
+              "title": "Constraints",
+              "kind": "subtopic",
+              "definition": "One queen per row and column, and no two queens on the same diagonal - which is checked by testing row plus column and row minus column values."
+            },
+            {
+              "id": "CSCA411-M5-05-s2",
+              "title": "Solution as an n-tuple",
+              "kind": "subtopic",
+              "definition": "A solution is written as (x1, x2, ..., xn) where xi is the column of the queen placed in row i, so the row constraint is automatic."
+            },
+            {
+              "id": "CSCA411-M5-05-s3",
+              "title": "Backtracking procedure",
+              "kind": "subtopic",
+              "definition": "Place a queen row by row, test each column for safety, recurse if safe, and remove the queen and try the next column if not."
+            },
+            {
+              "id": "CSCA411-M5-05-s4",
+              "title": "4-Queens example",
+              "kind": "subtopic",
+              "definition": "For n = 4 the solutions are (2, 4, 1, 3) and (3, 1, 4, 2), and the first placement (1, 3, ...) fails and is abandoned."
+            },
+            {
+              "id": "CSCA411-M5-05-s5",
+              "title": "Number of solutions",
+              "kind": "subtopic",
+              "definition": "n = 1 gives 1 solution, n = 2 and n = 3 have none, and the count grows quickly from n = 4 onwards."
+            },
+            {
+              "id": "CSCA411-M5-05-s6",
+              "title": "Complexity",
+              "kind": "subtopic",
+              "definition": "The plain search is factorial in the worst case, but pruning cuts it sharply; the time grows exponentially with n."
+            }
+          ],
+          "card": {
+            "explanation": "The chessboard rules make this a perfect backtracking problem: place queens one row at a time, and reject a column immediately if it is attacked. Because a queen attacks its entire row, column and both diagonals, you only need to check the columns and the two diagonals of the queens already placed. When a row has no safe column left, you undo the previous placement and continue from there - the classic backtrack. The solution is written as a tuple of column numbers, which is compact and lets the row constraint be satisfied for free.",
+            "example": "Arranging four wedding photographers around a square hall so that no two stand in the same line of sight, front-to-back or diagonally.",
+            "quiz": [
+              {
+                "q": "A safe queen placement is tested by checking:",
+                "options": [
+                  "only the row",
+                  "column and the two diagonals",
+                  "only the diagonals",
+                  "nothing, since rows differ"
+                ],
+                "answer": 1,
+                "why": "Rows are already distinct because one queen is placed per row, so columns and diagonals are checked."
+              },
+              {
+                "q": "How many solutions does the 4-Queens problem have?",
+                "options": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ],
+                "answer": 1,
+                "why": "The two solutions are (2,4,1,3) and (3,1,4,2)."
+              }
+            ],
+            "examTip": "Solve the 4-Queens case step by step, drawing the board at each stage and showing at least one pruned branch - that trace is the whole answer.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-06",
+          "title": "Graph Colouring Problem",
+          "kind": "topic",
+          "definition": "Graph colouring assigns colours to vertices so that no two adjacent vertices share a colour, using as few colours as possible.",
+          "children": [
+            {
+              "id": "CSCA411-M5-06-s1",
+              "title": "Chromatic number",
+              "kind": "subtopic",
+              "definition": "The minimum number of colours needed to colour a graph properly, written as the chromatic number of the graph."
+            },
+            {
+              "id": "CSCA411-M5-06-s2",
+              "title": "m-colourability",
+              "kind": "subtopic",
+              "definition": "The decision problem of whether a graph can be coloured with at most m colours."
+            },
+            {
+              "id": "CSCA411-M5-06-s3",
+              "title": "Backtracking approach",
+              "kind": "subtopic",
+              "definition": "Assign colours to vertices one by one, reject a colour that matches a coloured neighbour, backtrack when no colour works for a vertex."
+            },
+            {
+              "id": "CSCA411-M5-06-s4",
+              "title": "Bound on colours",
+              "kind": "subtopic",
+              "definition": "A graph can always be coloured with one more colour than its maximum degree, and by the four colour theorem every planar map needs at most four."
+            },
+            {
+              "id": "CSCA411-M5-06-s5",
+              "title": "Applications",
+              "kind": "subtopic",
+              "definition": "Map colouring, exam timetable and register allocation in compilers, frequency assignment in mobile networks and seating conflict problems."
+            }
+          ],
+          "card": {
+            "explanation": "Colouring is really a conflict problem: vertices that must differ are joined by an edge, and the question is how few categories can separate them all. Backtracking works through the vertices in order, trying colours one at a time and rejecting a colour as soon as a neighbour already uses it. When a vertex has no valid colour, the algorithm backtracks to the previous vertex and changes its colour. The minimum number of colours, the chromatic number, is hard to compute in general, and deciding whether three colours suffice is itself an NP-complete problem.",
+            "example": "Timetable scheduling: courses that share students must not be scheduled in the same time slot, so each time slot behaves like a colour.",
+            "quiz": [
+              {
+                "q": "The chromatic number of a graph is:",
+                "options": [
+                  "its number of vertices",
+                  "the minimum colours needed for a proper colouring",
+                  "its maximum degree",
+                  "the number of edges"
+                ],
+                "answer": 1,
+                "why": "It is the smallest number of colours such that no adjacent pair shares a colour."
+              },
+              {
+                "q": "In graph colouring, backtracking is used to:",
+                "options": [
+                  "sort vertices",
+                  "find a proper colouring by undoing bad colour choices",
+                  "compute shortest paths",
+                  "count edges"
+                ],
+                "answer": 1,
+                "why": "When a vertex cannot be coloured, the previous colour assignment is changed."
+              }
+            ],
+            "examTip": "Explain with the map colouring example, then show the backtracking tree for a small graph - state the chromatic number at the end.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-07",
+          "title": "Complexity Classes: P and NP",
+          "kind": "topic",
+          "definition": "P is the class of decision problems solvable in polynomial time, and NP is the class of problems whose proposed solutions can be verified in polynomial time.",
+          "children": [
+            {
+              "id": "CSCA411-M5-07-s1",
+              "title": "Decision problem",
+              "kind": "subtopic",
+              "definition": "A problem whose answer is yes or no, such as 'is there a tour shorter than 500 km?' - the standard form used in complexity theory."
+            },
+            {
+              "id": "CSCA411-M5-07-s2",
+              "title": "Class P",
+              "kind": "subtopic",
+              "definition": "Problems solvable by a deterministic algorithm in time O(n^k), such as sorting, searching and shortest paths."
+            },
+            {
+              "id": "CSCA411-M5-07-s3",
+              "title": "Class NP",
+              "kind": "subtopic",
+              "definition": "Problems for which a given solution can be checked quickly, even if finding it is hard; every P problem is also in NP."
+            },
+            {
+              "id": "CSCA411-M5-07-s4",
+              "title": "The P versus NP question",
+              "kind": "subtopic",
+              "definition": "Whether every problem whose solution can be verified quickly can also be solved quickly; it is open, and most researchers believe P is not equal to NP."
+            },
+            {
+              "id": "CSCA411-M5-07-s5",
+              "title": "Non-deterministic view",
+              "kind": "subtopic",
+              "definition": "NP can be described as problems that a non-deterministic machine guesses and verifies in polynomial time, which is equivalent to the certificate view."
+            }
+          ],
+          "card": {
+            "explanation": "Complexity classes group problems by how their difficulty grows with input size, which lets us say something useful even when an exact algorithm is unknown. P contains the problems we can definitely solve quickly: sorting a list, finding a shortest path, checking whether a number is prime. NP is broader: it allows problems where recognising a correct answer is easy even if discovering it is not, such as checking whether a given tour is shorter than 500 km. Since verifying can never be harder than solving, P is contained in NP, and whether the two are actually equal is the most famous open question in computer science.",
+            "example": "Solving a jigsaw is tedious, but seeing a finished jigsaw and confirming it is correct takes seconds - that gap is exactly the difference between solving and verifying.",
+            "quiz": [
+              {
+                "q": "Class P contains problems that:",
+                "options": [
+                  "can only be verified quickly",
+                  "can be solved in polynomial time",
+                  "have no solution",
+                  "need exponential space"
+                ],
+                "answer": 1,
+                "why": "P is the set of decision problems solvable in polynomial time by a deterministic algorithm."
+              },
+              {
+                "q": "Which statement is true?",
+                "options": [
+                  "P is a subset of NP",
+                  "NP is a subset of P",
+                  "P and NP are disjoint",
+                  "P equals NP"
+                ],
+                "answer": 0,
+                "why": "Anything solvable quickly can also be verified quickly, so P is contained in NP."
+              }
+            ],
+            "examTip": "Define decision problem first, then P, then NP, and finish with the containment P within NP - that is the standard five-mark structure.",
+            "verified": false
+          }
+        },
+        {
+          "id": "CSCA411-M5-08",
+          "title": "NP-Hard and NP-Complete Problems",
+          "kind": "topic",
+          "definition": "A problem is NP-hard if every NP problem reduces to it, and NP-complete if it is NP-hard and also belongs to NP.",
+          "children": [
+            {
+              "id": "CSCA411-M5-08-s1",
+              "title": "Polynomial time reduction",
+              "kind": "subtopic",
+              "definition": "Problem A reduces to B if any instance of A can be rewritten as an instance of B in polynomial time, so a solver for B also solves A."
+            },
+            {
+              "id": "CSCA411-M5-08-s2",
+              "title": "NP-hard",
+              "kind": "subtopic",
+              "definition": "A problem is NP-hard when every problem in NP reduces to it; an NP-hard problem need not itself be in NP, and it may be undecidable."
+            },
+            {
+              "id": "CSCA411-M5-08-s3",
+              "title": "NP-complete",
+              "kind": "subtopic",
+              "definition": "A problem that is both in NP and NP-hard - the hardest problems in NP, such as satisfiability, clique, vertex cover and Hamiltonian cycle."
+            },
+            {
+              "id": "CSCA411-M5-08-s4",
+              "title": "Cook's theorem",
+              "kind": "subtopic",
+              "definition": "The satisfiability problem (SAT) was the first problem proved NP-complete, which is why it anchors all further proofs."
+            },
+            {
+              "id": "CSCA411-M5-08-s5",
+              "title": "Dealing with NP-complete problems",
+              "kind": "subtopic",
+              "definition": "Use approximation algorithms, heuristics, branch and bound, or solve restricted special cases in polynomial time."
+            }
+          ],
+          "card": {
+            "explanation": "Once one hard problem is identified, others can be proved hard by translating them into it, which is the idea of reduction. A problem is NP-hard if every NP problem can be transformed into it, meaning an efficient solution would immediately solve all of NP; if it is also in NP itself, it is called NP-complete. Satisfiability is the anchor example from Cook's theorem, and clique, vertex cover, graph colouring, Hamiltonian cycle and TSP follow from it. In practice, NP-complete problems are attacked with approximation, heuristics or branch and bound rather than exact exponential search.",
+            "example": "Timetable clashes, delivery routing and exam scheduling in a college are all NP-complete in general, so colleges use heuristics that give good, not provably optimal, schedules.",
+            "quiz": [
+              {
+                "q": "A problem is NP-complete if it is:",
+                "options": [
+                  "NP-hard only",
+                  "in NP only",
+                  "NP-hard and in NP",
+                  "solvable in polynomial time"
+                ],
+                "answer": 2,
+                "why": "NP-completeness requires both membership in NP and NP-hardness."
+              },
+              {
+                "q": "Which problem was the first proved NP-complete?",
+                "options": [
+                  "Travelling salesman",
+                  "Satisfiability (SAT)",
+                  "Graph colouring",
+                  "Clique"
+                ],
+                "answer": 1,
+                "why": "Cook's theorem established SAT as the first NP-complete problem."
+              }
+            ],
+            "examTip": "Define reduction, then NP-hard, then NP-complete, and note that NP-complete means 'NP-hard and in NP' - missing that last clause is the most common mistake.",
+            "verified": false
+          }
+        }
+      ]
+    }
+  ]
+}

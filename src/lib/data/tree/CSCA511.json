@@ -1,0 +1,885 @@
+{
+  "code": "CSCA 511",
+  "subject": "Software Engineering",
+  "semester": 3,
+  "modules": [
+    {
+      "module": "I",
+      "title": "Software Process, Process Models and Requirements Engineering",
+      "topics": [
+        {
+          "id": "CSCA511-MI-T01",
+          "title": "Software Process Structure",
+          "kind": "topic",
+          "definition": "A software process is the set of activities and results needed to build a software product.",
+          "children": [
+            {
+              "id": "CSCA511-MI-T01-s1",
+              "title": "Framework activities",
+              "kind": "subtopic",
+              "definition": "Communication, planning, modelling, construction and deployment."
+            },
+            {
+              "id": "CSCA511-MI-T01-s2",
+              "title": "Umbrella activities",
+              "kind": "subtopic",
+              "definition": "Project tracking, risk management, quality assurance, configuration management and reviews that run across the whole project."
+            },
+            {
+              "id": "CSCA511-MI-T01-s3",
+              "title": "Process framework and task sets",
+              "kind": "subtopic",
+              "definition": "A generic framework is tailored by defining task sets, work products and quality checkpoints for the project."
+            },
+            {
+              "id": "CSCA511-MI-T01-s4",
+              "title": "Process patterns and assessment",
+              "kind": "subtopic",
+              "definition": "Reusable solutions to recurring process problems, checked against a capability maturity model such as CMMI."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MI-T02",
+          "title": "Process Models and Activities",
+          "kind": "topic",
+          "definition": "A process model is a strategy for organising the framework activities over the life of a project.",
+          "children": [
+            {
+              "id": "CSCA511-MI-T02-s1",
+              "title": "Waterfall model",
+              "kind": "subtopic",
+              "definition": "Sequential phases from requirements to maintenance; simple and document driven but inflexible to change."
+            },
+            {
+              "id": "CSCA511-MI-T02-s2",
+              "title": "Incremental model",
+              "kind": "subtopic",
+              "definition": "Delivers the product in increments, each adding usable functionality, which gives early feedback."
+            },
+            {
+              "id": "CSCA511-MI-T02-s3",
+              "title": "Prototyping model",
+              "kind": "subtopic",
+              "definition": "A throwaway or evolutionary prototype clarifies unclear requirements before full development."
+            },
+            {
+              "id": "CSCA511-MI-T02-s4",
+              "title": "RAD model",
+              "kind": "subtopic",
+              "definition": "Rapid Application Development uses component based construction in short cycles with heavy user involvement."
+            },
+            {
+              "id": "CSCA511-MI-T02-s5",
+              "title": "Spiral model",
+              "kind": "subtopic",
+              "definition": "Risk driven iteration through planning, risk analysis, engineering and evaluation quadrants."
+            },
+            {
+              "id": "CSCA511-MI-T02-s6",
+              "title": "V model and concurrent model",
+              "kind": "subtopic",
+              "definition": "The V model pairs each development phase with its testing phase; the concurrent model shows activities happening in parallel states."
+            },
+            {
+              "id": "CSCA511-MI-T02-s7",
+              "title": "Specialised and unified process",
+              "kind": "subtopic",
+              "definition": "Component based, formal methods and aspect oriented models, plus the iterative and incremental Rational Unified Process."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MI-T03",
+          "title": "Agile Development",
+          "kind": "topic",
+          "definition": "Agile development delivers working software in short iterations with continuous customer collaboration.",
+          "children": [
+            {
+              "id": "CSCA511-MI-T03-s1",
+              "title": "Agile manifesto and principles",
+              "kind": "subtopic",
+              "definition": "Individuals and interactions, working software, customer collaboration and response to change over processes, documentation, contracts and plans."
+            },
+            {
+              "id": "CSCA511-MI-T03-s2",
+              "title": "Extreme Programming (XP)",
+              "kind": "subtopic",
+              "definition": "Practices are planning games, small releases, simple design, test first development, pair programming and continuous integration."
+            },
+            {
+              "id": "CSCA511-MI-T03-s3",
+              "title": "Scrum",
+              "kind": "subtopic",
+              "definition": "Work is done in sprints of two to four weeks with a product backlog, sprint backlog, daily stand up, sprint review and retrospective."
+            },
+            {
+              "id": "CSCA511-MI-T03-s4",
+              "title": "Kanban and DevOps",
+              "kind": "subtopic",
+              "definition": "Kanban visualises work and limits work in progress; DevOps joins development and operations with continuous delivery."
+            },
+            {
+              "id": "CSCA511-MI-T03-s5",
+              "title": "Agile versus plan driven process",
+              "kind": "subtopic",
+              "definition": "Agile suits changing requirements and small co-located teams while plan driven suits stable requirements and contract heavy projects."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MI-T04",
+          "title": "Requirements Engineering",
+          "kind": "topic",
+          "definition": "Requirements engineering establishes what the system must do, documented so that it can be validated and used for design.",
+          "children": [
+            {
+              "id": "CSCA511-MI-T04-s1",
+              "title": "Requirement types",
+              "kind": "subtopic",
+              "definition": "Functional requirements state services, non functional requirements state quality attributes, and domain requirements come from the application area."
+            },
+            {
+              "id": "CSCA511-MI-T04-s2",
+              "title": "Elicitation techniques",
+              "kind": "subtopic",
+              "definition": "Interviews, questionnaires, observation, document study, brainstorming, prototyping and joint application development."
+            },
+            {
+              "id": "CSCA511-MI-T04-s3",
+              "title": "Analysis and negotiation",
+              "kind": "subtopic",
+              "definition": "Classifying requirements, resolving conflicts between stakeholders and prioritising with techniques such as MoSCoW."
+            },
+            {
+              "id": "CSCA511-MI-T04-s4",
+              "title": "Specification and the SRS",
+              "kind": "subtopic",
+              "definition": "The Software Requirements Specification records functional and non-functional requirements, interfaces and constraints in structured or natural language form."
+            },
+            {
+              "id": "CSCA511-MI-T04-s5",
+              "title": "Validation and requirements review",
+              "kind": "subtopic",
+              "definition": "Checking completeness, consistency, feasibility and testability, including requirement traceability."
+            },
+            {
+              "id": "CSCA511-MI-T04-s6",
+              "title": "Requirements management and change",
+              "kind": "subtopic",
+              "definition": "Baselines, traceability matrices and a change control process keep requirements under control as the project evolves."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "II",
+      "title": "Software Modelling and Design",
+      "topics": [
+        {
+          "id": "CSCA511-MII-T01",
+          "title": "Design Concepts",
+          "kind": "topic",
+          "definition": "Design concepts are the principles that make a software design understandable, changeable and reliable.",
+          "children": [
+            {
+              "id": "CSCA511-MII-T01-s1",
+              "title": "Abstraction and refinement",
+              "kind": "subtopic",
+              "definition": "Abstraction hides detail at a given level while stepwise refinement adds detail gradually."
+            },
+            {
+              "id": "CSCA511-MII-T01-s2",
+              "title": "Modularity and information hiding",
+              "kind": "subtopic",
+              "definition": "Splitting a system into modules with hidden internals so a change stays local."
+            },
+            {
+              "id": "CSCA511-MII-T01-s3",
+              "title": "Coupling and cohesion",
+              "kind": "subtopic",
+              "definition": "Low coupling between modules and high cohesion inside a module give a maintainable design."
+            },
+            {
+              "id": "CSCA511-MII-T01-s4",
+              "title": "Refactoring and design classes",
+              "kind": "subtopic",
+              "definition": "Refactoring improves internal structure without changing behaviour; design classes add detail to analysis classes."
+            },
+            {
+              "id": "CSCA511-MII-T01-s5",
+              "title": "Design model elements",
+              "kind": "subtopic",
+              "definition": "Data design, architectural design, interface design and component level design together form the design model."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MII-T02",
+          "title": "Architectural Design",
+          "kind": "topic",
+          "definition": "Architectural design defines the overall structure of the software in terms of components and their relationships.",
+          "children": [
+            {
+              "id": "CSCA511-MII-T02-s1",
+              "title": "Why architecture matters",
+              "kind": "subtopic",
+              "definition": "It supports communication, early design decisions, reuse and risk analysis."
+            },
+            {
+              "id": "CSCA511-MII-T02-s2",
+              "title": "Layered and client server styles",
+              "kind": "subtopic",
+              "definition": "Layered architecture stacks services; client server separates requesters from providers."
+            },
+            {
+              "id": "CSCA511-MII-T02-s3",
+              "title": "Model View Controller (MVC)",
+              "kind": "subtopic",
+              "definition": "Separates the model, the view and the controller so interface and logic can change independently."
+            },
+            {
+              "id": "CSCA511-MII-T02-s4",
+              "title": "Pipe and filter, repository, and call and return styles",
+              "kind": "subtopic",
+              "definition": "Pipes pass data through filters, repositories store shared data, and call and return structures use layers or main program with subprograms."
+            },
+            {
+              "id": "CSCA511-MII-T02-s5",
+              "title": "Service oriented and microservice architecture",
+              "kind": "subtopic",
+              "definition": "Independent services communicate over well defined interfaces, allowing separate deployment and scaling."
+            },
+            {
+              "id": "CSCA511-MII-T02-s6",
+              "title": "Architectural design decisions",
+              "kind": "subtopic",
+              "definition": "Choosing the style based on quality attributes such as performance, security, availability and maintainability."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MII-T03",
+          "title": "Component Level Design",
+          "kind": "topic",
+          "definition": "Component level design describes each software component precisely enough to be implemented.",
+          "children": [
+            {
+              "id": "CSCA511-MII-T03-s1",
+              "title": "Component definition and types",
+              "kind": "subtopic",
+              "definition": "A component is a modular, deployable and replaceable part of a system with well defined interfaces."
+            },
+            {
+              "id": "CSCA511-MII-T03-s2",
+              "title": "Design principles and cohesion types",
+              "kind": "subtopic",
+              "definition": "Open-closed, dependency inversion and interface segregation principles, with cohesion from functional to coincidental."
+            },
+            {
+              "id": "CSCA511-MII-T03-s3",
+              "title": "Coupling types",
+              "kind": "subtopic",
+              "definition": "Content, common, control, stamp and data coupling, from bad to acceptable."
+            },
+            {
+              "id": "CSCA511-MII-T03-s4",
+              "title": "Class based and traditional components",
+              "kind": "subtopic",
+              "definition": "Object oriented design classes versus algorithmic modules, coupled with UML component and deployment diagrams."
+            },
+            {
+              "id": "CSCA511-MII-T03-s5",
+              "title": "Designing for reuse and testing",
+              "kind": "subtopic",
+              "definition": "Component interfaces should be simple and documented so other teams and tests can use them."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MII-T04",
+          "title": "User Interface Design",
+          "kind": "topic",
+          "definition": "User interface design creates screens that allow users to work effectively with the system.",
+          "children": [
+            {
+              "id": "CSCA511-MII-T04-s1",
+              "title": "Golden rules of interface design",
+              "kind": "subtopic",
+              "definition": "Place the user in control, reduce the user memory load and make the interface consistent."
+            },
+            {
+              "id": "CSCA511-MII-T04-s2",
+              "title": "Usability and interface qualities",
+              "kind": "subtopic",
+              "definition": "Learnability, efficiency, error handling, memorability and satisfaction."
+            },
+            {
+              "id": "CSCA511-MII-T04-s3",
+              "title": "Interface design process",
+              "kind": "subtopic",
+              "definition": "Analyse users, tasks and environment; design the interface; prototype; evaluate with users and iterate."
+            },
+            {
+              "id": "CSCA511-MII-T04-s4",
+              "title": "Interface design issues",
+              "kind": "subtopic",
+              "definition": "Response time, help facilities, error messages, menu design, command labelling and accessibility."
+            },
+            {
+              "id": "CSCA511-MII-T04-s5",
+              "title": "Evaluation tools",
+              "kind": "subtopic",
+              "definition": "Heuristic evaluation, usability testing, questionnaires such as QUIS and think aloud protocols."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MII-T05",
+          "title": "Web Application Design",
+          "kind": "topic",
+          "definition": "Web application design handles content, aesthetics, architecture, navigation and interface together.",
+          "children": [
+            {
+              "id": "CSCA511-MII-T05-s1",
+              "title": "Quality attributes of web apps",
+              "kind": "subtopic",
+              "definition": "Security, availability, scalability, maintainability, time to market and usability."
+            },
+            {
+              "id": "CSCA511-MII-T05-s2",
+              "title": "Aesthetic design",
+              "kind": "subtopic",
+              "definition": "Layout, colour, typography and graphics used to create a clear visual hierarchy."
+            },
+            {
+              "id": "CSCA511-MII-T05-s3",
+              "title": "Content design",
+              "kind": "subtopic",
+              "definition": "Organising and structuring text, images, audio and video, including content objects and their relationships."
+            },
+            {
+              "id": "CSCA511-MII-T05-s4",
+              "title": "Architecture and navigation design",
+              "kind": "subtopic",
+              "definition": "Choosing a web application architecture and designing navigation with menus, links, sitemaps and breadcrumbs."
+            },
+            {
+              "id": "CSCA511-MII-T05-s5",
+              "title": "Interface design for the web",
+              "kind": "subtopic",
+              "definition": "Consistent layout templates, responsive design, form design and clear error handling."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "III",
+      "title": "Software Quality Management",
+      "topics": [
+        {
+          "id": "CSCA511-MIII-T01",
+          "title": "Review Techniques",
+          "kind": "topic",
+          "definition": "Reviews find defects early by having other people examine work products against criteria.",
+          "children": [
+            {
+              "id": "CSCA511-MIII-T01-s1",
+              "title": "Informal reviews and desk checks",
+              "kind": "subtopic",
+              "definition": "Quick, low cost examination by peers or by the author before formal review."
+            },
+            {
+              "id": "CSCA511-MIII-T01-s2",
+              "title": "Formal technical review (FTR)",
+              "kind": "subtopic",
+              "definition": "A structured meeting with roles of producer, reviewer, recorder and moderator, with a review checklist and recorded defects."
+            },
+            {
+              "id": "CSCA511-MIII-T01-s3",
+              "title": "Walkthroughs and inspections",
+              "kind": "subtopic",
+              "definition": "A walkthrough is led by the author; an inspection is led by a trained moderator and is more rigorous and measured."
+            },
+            {
+              "id": "CSCA511-MIII-T01-s4",
+              "title": "Review metrics and guidelines",
+              "kind": "subtopic",
+              "definition": "Defect density, preparation and rework time, review rate, and rules such as reviewing only a finished product and keeping tone constructive."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIII-T02",
+          "title": "Software Quality Assurance",
+          "kind": "topic",
+          "definition": "SQA is the set of planned activities that give confidence that the product meets its quality requirements.",
+          "children": [
+            {
+              "id": "CSCA511-MIII-T02-s1",
+              "title": "Quality concepts",
+              "kind": "subtopic",
+              "definition": "Quality of conformance, quality of design, fitness for purpose and the cost of quality."
+            },
+            {
+              "id": "CSCA511-MIII-T02-s2",
+              "title": "SQA activities and tasks",
+              "kind": "subtopic",
+              "definition": "Standards, reviews, audits, testing strategy, defect tracking and measurement, with an SQA plan defining them."
+            },
+            {
+              "id": "CSCA511-MIII-T02-s3",
+              "title": "Software standards",
+              "kind": "subtopic",
+              "definition": "ISO 9001 for quality management systems, ISO 25010 for product quality and IEEE standards for processes and documents."
+            },
+            {
+              "id": "CSCA511-MIII-T02-s4",
+              "title": "Capability maturity models and Six Sigma",
+              "kind": "subtopic",
+              "definition": "CMMI maturity levels 1 to 5 and Six Sigma defect reduction, with DMAIC as its improvement cycle."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIII-T03",
+          "title": "Software Testing Strategies",
+          "kind": "topic",
+          "definition": "A testing strategy organises test levels from individual units up to whole systems.",
+          "children": [
+            {
+              "id": "CSCA511-MIII-T03-s1",
+              "title": "Verification and validation",
+              "kind": "subtopic",
+              "definition": "Verification asks whether the product is built right and validation whether the right product is built."
+            },
+            {
+              "id": "CSCA511-MIII-T03-s2",
+              "title": "Unit testing and integration testing",
+              "kind": "subtopic",
+              "definition": "Units are tested in isolation; integration follows top down, bottom up, sandwich or big bang approaches."
+            },
+            {
+              "id": "CSCA511-MIII-T03-s3",
+              "title": "Validation and system testing",
+              "kind": "subtopic",
+              "definition": "Tests against requirements, including alpha and beta testing with real users."
+            },
+            {
+              "id": "CSCA511-MIII-T03-s4",
+              "title": "Regression and smoke testing",
+              "kind": "subtopic",
+              "definition": "Regression checks that changes broke nothing; smoke testing is a quick build verification."
+            },
+            {
+              "id": "CSCA511-MIII-T03-s5",
+              "title": "White box and black box testing",
+              "kind": "subtopic",
+              "definition": "White box uses internal structure with basis path and condition testing; black box uses inputs and outputs with equivalence partitioning and boundary value analysis."
+            },
+            {
+              "id": "CSCA511-MIII-T03-s6",
+              "title": "Test documentation",
+              "kind": "subtopic",
+              "definition": "A test plan, test case specification, test procedure and defect report make testing reproducible."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIII-T04",
+          "title": "Software Configuration Management",
+          "kind": "topic",
+          "definition": "Configuration management controls changes to all work products throughout the project life cycle.",
+          "children": [
+            {
+              "id": "CSCA511-MIII-T04-s1",
+              "title": "Baselines and configuration items",
+              "kind": "subtopic",
+              "definition": "A baseline is a reviewed and approved state of a work product; configuration items are the products and documents under control."
+            },
+            {
+              "id": "CSCA511-MIII-T04-s2",
+              "title": "Version control",
+              "kind": "subtopic",
+              "definition": "Repositories, check in and check out, branching and merging keep track of every change."
+            },
+            {
+              "id": "CSCA511-MIII-T04-s3",
+              "title": "Change control",
+              "kind": "subtopic",
+              "definition": "A change request is evaluated for impact and cost, then approved or rejected by a change control board."
+            },
+            {
+              "id": "CSCA511-MIII-T04-s4",
+              "title": "Release management and build",
+              "kind": "subtopic",
+              "definition": "Building, packaging and releasing consistent versions with release notes and rollback plans."
+            },
+            {
+              "id": "CSCA511-MIII-T04-s5",
+              "title": "Desirable SCM features",
+              "kind": "subtopic",
+              "definition": "Identification, version control, change control, status accounting and audit, plus integration with the build."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIII-T05",
+          "title": "Product Metrics",
+          "kind": "topic",
+          "definition": "Product metrics measure the quality and complexity of the software itself.",
+          "children": [
+            {
+              "id": "CSCA511-MIII-T05-s1",
+              "title": "Measures, metrics and indicators",
+              "kind": "subtopic",
+              "definition": "A measure is a raw value, a metric relates measures and an indicator is a metric used for decision making."
+            },
+            {
+              "id": "CSCA511-MIII-T05-s2",
+              "title": "Size oriented and function oriented metrics",
+              "kind": "subtopic",
+              "definition": "Lines of code and function points, where function points use inputs, outputs, enquiries, files and interfaces with complexity weights."
+            },
+            {
+              "id": "CSCA511-MIII-T05-s3",
+              "title": "Complexity metrics",
+              "kind": "subtopic",
+              "definition": "Cyclomatic complexity counts decision points to show the required number of test paths; Halstead metrics use operators and operands."
+            },
+            {
+              "id": "CSCA511-MIII-T05-s4",
+              "title": "Quality and reliability metrics",
+              "kind": "subtopic",
+              "definition": "Defect density, mean time between failures, usability and maintainability indices."
+            },
+            {
+              "id": "CSCA511-MIII-T05-s5",
+              "title": "Object oriented metrics",
+              "kind": "subtopic",
+              "definition": "Weighted methods per class, depth of inheritance tree, coupling between objects and lack of cohesion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "IV",
+      "title": "Managing Software Projects",
+      "topics": [
+        {
+          "id": "CSCA511-MIV-T01",
+          "title": "Project Management Concepts",
+          "kind": "topic",
+          "definition": "Software project management plans, organises and controls the people, process and product so that the project meets its goals.",
+          "children": [
+            {
+              "id": "CSCA511-MIV-T01-s1",
+              "title": "The four Ps",
+              "kind": "subtopic",
+              "definition": "People, product, process and project - the people factor is the most important."
+            },
+            {
+              "id": "CSCA511-MIV-T01-s2",
+              "title": "Stakeholders and team structures",
+              "kind": "subtopic",
+              "definition": "Stakeholders include users, customers and management; teams may be closed, random, open or use the chief programmer model."
+            },
+            {
+              "id": "CSCA511-MIV-T01-s3",
+              "title": "W5HH principle",
+              "kind": "subtopic",
+              "definition": "Why, what, when, who, where, how and how much give a complete project plan outline."
+            },
+            {
+              "id": "CSCA511-MIV-T01-s4",
+              "title": "Common project risks and causes of failure",
+              "kind": "subtopic",
+              "definition": "Unrealistic deadlines, changing requirements, weak estimation and poor communication."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIV-T02",
+          "title": "Process and Project Metrics",
+          "kind": "topic",
+          "definition": "Process metrics improve the development process while project metrics track a single project.",
+          "children": [
+            {
+              "id": "CSCA511-MIV-T02-s1",
+              "title": "Measures, metrics and indicators",
+              "kind": "subtopic",
+              "definition": "Productivity, quality, effort and time measures turned into metrics and then indicators."
+            },
+            {
+              "id": "CSCA511-MIV-T02-s2",
+              "title": "Software measurement and size",
+              "kind": "subtopic",
+              "definition": "Direct measures such as lines of code and cost, and indirect measures such as functionality, quality and complexity."
+            },
+            {
+              "id": "CSCA511-MIV-T02-s3",
+              "title": "Reconciling process and product metrics",
+              "kind": "subtopic",
+              "definition": "Private individual data is aggregated into team and project metrics carefully to avoid misuse."
+            },
+            {
+              "id": "CSCA511-MIV-T02-s4",
+              "title": "Metrics for software quality",
+              "kind": "subtopic",
+              "definition": "Correctness, maintainability, integrity and usability measured before delivery."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIV-T03",
+          "title": "Estimation for Software Projects",
+          "kind": "topic",
+          "definition": "Estimation predicts the effort, cost and duration needed to build the software.",
+          "children": [
+            {
+              "id": "CSCA511-MIV-T03-s1",
+              "title": "Estimation techniques",
+              "kind": "subtopic",
+              "definition": "Expert judgment, estimation by analogy, the Delphi method, Parkinson law and price to win."
+            },
+            {
+              "id": "CSCA511-MIV-T03-s2",
+              "title": "Lines of code based estimation",
+              "kind": "subtopic",
+              "definition": "Estimate LOC and derive effort from historical productivity; depends heavily on the language used."
+            },
+            {
+              "id": "CSCA511-MIV-T03-s3",
+              "title": "Function point based estimation",
+              "kind": "subtopic",
+              "definition": "Count unadjusted function points, adjust for complexity, then convert to lines of code using the language factor."
+            },
+            {
+              "id": "CSCA511-MIV-T03-s4",
+              "title": "Use case point estimation",
+              "kind": "subtopic",
+              "definition": "Weight actors and use cases, adjust for technical and environmental factors, then convert to effort."
+            },
+            {
+              "id": "CSCA511-MIV-T03-s5",
+              "title": "COCOMO model",
+              "kind": "subtopic",
+              "definition": "Organic, semi-detached and embedded modes estimate effort from size, with post-architecture multipliers for cost drivers."
+            },
+            {
+              "id": "CSCA511-MIV-T03-s6",
+              "title": "Estimation accuracy",
+              "kind": "subtopic",
+              "definition": "Estimation is refined as the project proceeds, so ranges and confidence limits are used rather than a single number."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIV-T04",
+          "title": "Project Scheduling",
+          "kind": "topic",
+          "definition": "Scheduling allocates work to people over time and shows how tasks depend on one another.",
+          "children": [
+            {
+              "id": "CSCA511-MIV-T04-s1",
+              "title": "Work breakdown structure",
+              "kind": "subtopic",
+              "definition": "A hierarchical decomposition of the total work into tasks that can be estimated and assigned."
+            },
+            {
+              "id": "CSCA511-MIV-T04-s2",
+              "title": "Task networks and dependencies",
+              "kind": "subtopic",
+              "definition": "Tasks are linked by finish to start, start to start and finish to finish relationships with lag where needed."
+            },
+            {
+              "id": "CSCA511-MIV-T04-s3",
+              "title": "Gantt charts",
+              "kind": "subtopic",
+              "definition": "A calendar view of tasks and durations showing overlap and progress."
+            },
+            {
+              "id": "CSCA511-MIV-T04-s4",
+              "title": "Critical path method and PERT",
+              "kind": "subtopic",
+              "definition": "Program evaluation and review technique uses optimistic, likely and pessimistic estimates to find the longest path, the critical path that fixes project duration."
+            },
+            {
+              "id": "CSCA511-MIV-T04-s5",
+              "title": "Slack, float and tracking",
+              "kind": "subtopic",
+              "definition": "Slack is spare time in non-critical tasks; earned value analysis tracks schedule and cost performance."
+            },
+            {
+              "id": "CSCA511-MIV-T04-s6",
+              "title": "Time boxing and agile scheduling",
+              "kind": "subtopic",
+              "definition": "Fixed short iterations with a flexible scope rather than a fixed scope with a flexible date."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MIV-T05",
+          "title": "Risk Management",
+          "kind": "topic",
+          "definition": "Risk management identifies what could go wrong and what will be done about it.",
+          "children": [
+            {
+              "id": "CSCA511-MIV-T05-s1",
+              "title": "Risk concepts and types",
+              "kind": "subtopic",
+              "definition": "Project risks, technical risks, business risks and known or predictable unknown risks."
+            },
+            {
+              "id": "CSCA511-MIV-T05-s2",
+              "title": "Risk identification and the risk table",
+              "kind": "subtopic",
+              "definition": "Brainstorming, checklists and past projects build a table listing risks, probability, impact and the risk factor."
+            },
+            {
+              "id": "CSCA511-MIV-T05-s3",
+              "title": "Risk projection",
+              "kind": "subtopic",
+              "definition": "Assessing probability and impact, then computing the risk exposure."
+            },
+            {
+              "id": "CSCA511-MIV-T05-s4",
+              "title": "Risk refinement and RMMM",
+              "kind": "subtopic",
+              "definition": "Risk mitigation, monitoring and management planning for each significant risk."
+            },
+            {
+              "id": "CSCA511-MIV-T05-s5",
+              "title": "Risk and the software life cycle",
+              "kind": "subtopic",
+              "definition": "Risk exposure is highest early, so risky parts are prototyped or built first."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module": "V",
+      "title": "Software Reliability and Security",
+      "topics": [
+        {
+          "id": "CSCA511-MV-T01",
+          "title": "Reliability Engineering",
+          "kind": "topic",
+          "definition": "Reliability engineering measures and improves the probability that software runs without failure for a given time.",
+          "children": [
+            {
+              "id": "CSCA511-MV-T01-s1",
+              "title": "Reliability and availability defined",
+              "kind": "subtopic",
+              "definition": "Reliability is the probability of failure free operation; availability is the fraction of time the system is usable."
+            },
+            {
+              "id": "CSCA511-MV-T01-s2",
+              "title": "Reliability measures",
+              "kind": "subtopic",
+              "definition": "MTTF (mean time to failure), MTTR (mean time to repair), MTBF (mean time between failures) and availability = MTTF / (MTTF + MTTR)."
+            },
+            {
+              "id": "CSCA511-MV-T01-s3",
+              "title": "Faults and failures",
+              "kind": "subtopic",
+              "definition": "A fault is a defect in the code, an error is an incorrect internal state and a failure is the observed wrong behaviour."
+            },
+            {
+              "id": "CSCA511-MV-T01-s4",
+              "title": "Hardware versus software reliability",
+              "kind": "subtopic",
+              "definition": "Hardware reliability falls with age due to wear, while software does not wear out but degrades as it is changed."
+            },
+            {
+              "id": "CSCA511-MV-T01-s5",
+              "title": "Reliability growth models",
+              "kind": "subtopic",
+              "definition": "Failure intensity decreases as defects are found and removed; models such as the basic execution time model predict this."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MV-T02",
+          "title": "Reliability Testing",
+          "kind": "topic",
+          "definition": "Reliability testing measures failure intensity and tracks whether reliability is improving.",
+          "children": [
+            {
+              "id": "CSCA511-MV-T02-s1",
+              "title": "Failure intensity and reliability specification",
+              "kind": "subtopic",
+              "definition": "Failures per unit time or per transaction, tied to a target such as failures per thousand hours."
+            },
+            {
+              "id": "CSCA511-MV-T02-s2",
+              "title": "Software reliability metrics",
+              "kind": "subtopic",
+              "definition": "Probability of failure on demand, rate of occurrence of failures and mean time to failure."
+            },
+            {
+              "id": "CSCA511-MV-T02-s3",
+              "title": "Statistical testing and fault injection",
+              "kind": "subtopic",
+              "definition": "Tests are drawn from an operational profile which reflects real usage, and faults are injected to measure detection ability."
+            },
+            {
+              "id": "CSCA511-MV-T02-s4",
+              "title": "Reliability improvement cycles",
+              "kind": "subtopic",
+              "definition": "Track failure data, fix the worst faults, re-measure and continue until reliability targets are met."
+            }
+          ]
+        },
+        {
+          "id": "CSCA511-MV-T03",
+          "title": "Security Requirements and Design",
+          "kind": "topic",
+          "definition": "Secure engineering builds security in from requirements and design rather than adding it after coding.",
+          "children": [
+            {
+              "id": "CSCA511-MV-T03-s1",
+              "title": "Security requirement categories",
+              "kind": "subtopic",
+              "definition": "Confidentiality, integrity, availability, authentication, authorisation, non-repudiation and auditing."
+            },
+            {
+              "id": "CSCA511-MV-T03-s2",
+              "title": "Security requirements elicitation",
+              "kind": "subtopic",
+              "definition": "Identify assets, threats, attackers and attack surfaces; misuse cases and threat modelling record what must be defended."
+            },
+            {
+              "id": "CSCA511-MV-T03-s3",
+              "title": "Threat modelling techniques",
+              "kind": "subtopic",
+              "definition": "STRIDE categories - spoofing, tampering, repudiation, information disclosure, denial of service and elevation of privilege - with attack trees."
+            },
+            {
+              "id": "CSCA511-MV-T03-s4",
+              "title": "Secure design principles",
+              "kind": "subtopic",
+              "definition": "Least privilege, separation of duties, fail safe defaults, defence in depth, complete mediation and economy of mechanism."
+            },
+            {
+              "id": "CSCA511-MV-T03-s5",
+              "title": "Security patterns",
+              "kind": "subtopic",
+              "definition": "Reusable solutions such as authentication, authorisation, secure session and security logger patterns."
+            },
+            {
+              "id": "CSCA511-MV-T03-s6",
+              "title": "Security testing and review",
+              "kind": "subtopic",
+              "definition": "Static analysis, penetration testing, fuzzing, secure code review and vulnerability management after release."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
