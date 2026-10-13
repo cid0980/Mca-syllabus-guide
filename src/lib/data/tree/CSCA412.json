@@ -31,7 +31,59 @@
               "kind": "subtopic",
               "definition": "C is procedural with no classes, while C++ supports objects, function overloading, references, namespaces and the standard template library."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "C++ was created by Bjarne Stroustrup at Bell Labs, first as C with Classes and released under the name C++ in 1985. It keeps everything C can do, including pointers, direct memory control and close contact with the hardware, and adds classes, objects, overloading, inheritance and templates on top. Because a C++ program is compiled into machine code before it runs, it executes quickly and uses little memory at runtime. That combination is why it is used for game engines, parts of operating systems, embedded devices and competitive programming, while work that cares more about developer speed than machine speed often prefers Java or Python.",
+            "example": "A live cricket scoreboard that must refresh sixty times a second cannot afford slow code. The same job written in C++ needs far fewer machine instructions than an interpreted language, so the scoreboard keeps up on cheap hardware.",
+            "quiz": [
+              {
+                "q": "Who developed C++?",
+                "options": [
+                  "Dennis Ritchie",
+                  "James Gosling",
+                  "Guido van Rossum",
+                  "Bjarne Stroustrup"
+                ],
+                "answer": 3,
+                "why": "Stroustrup developed it at Bell Labs as C with Classes. Ritchie made C, Gosling made Java."
+              },
+              {
+                "q": "Which of these is NOT a feature that C++ adds on top of C?",
+                "options": [
+                  "Classes and objects",
+                  "Operator overloading",
+                  "Templates",
+                  "Automatic garbage collection"
+                ],
+                "answer": 3,
+                "why": "C++ has no automatic garbage collection. You release memory yourself with delete."
+              },
+              {
+                "q": "A program must run on a small microcontroller with 2 KB of memory and no operating system. Which property of C++ matters most here?",
+                "options": [
+                  "Its automatic memory management",
+                  "Its built-in database support",
+                  "Its rich graphics library",
+                  "Low-level memory control and a small runtime"
+                ],
+                "answer": 3,
+                "why": "Without an operating system the program must manage memory itself and stay small, which is what C and C++ are built for."
+              },
+              {
+                "q": "Which statement about C++ is correct?",
+                "options": [
+                  "It is an interpreted language",
+                  "It cannot use pointers",
+                  "It runs only inside a web browser",
+                  "It is a superset of C with object oriented features"
+                ],
+                "answer": 3,
+                "why": "C++ takes C as its base and adds classes, objects and the rest of the object oriented features."
+              }
+            ],
+            "examTip": "Keep three names in order: C by Ritchie, C with Classes, then C++ by Stroustrup in 1985. One mark questions ask who developed it and what it adds to C.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MI-T02",
@@ -63,7 +115,59 @@
               "kind": "subtopic",
               "definition": "Single line // comments and block /* */ comments keep the code readable and are ignored by the compiler."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Every C++ program is built from preprocessor directives, then optional class and function definitions, and finally the main function, which is where execution starts. In the usual skeleton, #include <iostream> brings in the input and output library, and a using namespace std; statement lets you write cin and cout without the std:: prefix. Statements sit inside braces and each one ends with a semicolon, and any missing semicolon stops the compiler on the next line. main returns an int, and returning 0 tells the operating system that the program finished without an error.",
+            "example": "Open any program in your practical record: the first two lines are the include and the using statement, then int main(), then braces around the statements. The same skeleton appears in every program you write this semester.",
+            "quiz": [
+              {
+                "q": "Where does execution of a C++ program begin?",
+                "options": [
+                  "At the first #include line",
+                  "At the first function written in the file",
+                  "At the last statement of the file",
+                  "In main()"
+                ],
+                "answer": 3,
+                "why": "main is the entry point; the linker looks for it when it builds the executable."
+              },
+              {
+                "q": "What does #include <iostream> do?",
+                "options": [
+                  "Runs the program",
+                  "Declares the main function",
+                  "Creates an object for you",
+                  "Copies the contents of the iostream header into the file before compilation"
+                ],
+                "answer": 3,
+                "why": "The preprocessor pastes the header text into the file so the compiler can see the declarations of cout and cin."
+              },
+              {
+                "q": "Which line of the skeleton is NOT required for a program to compile and run?",
+                "options": [
+                  "int main()",
+                  "#include <iostream>",
+                  "the closing brace of main",
+                  "using namespace std;"
+                ],
+                "answer": 3,
+                "why": "Without it you can still write std::cout, so it is a convenience rather than a requirement."
+              },
+              {
+                "q": "A student writes a full program but forgets to define main(). What does the build report?",
+                "options": [
+                  "The program runs and prints nothing",
+                  "The first function written runs instead",
+                  "main is created automatically by the compiler",
+                  "The linker reports that there is no entry point"
+                ],
+                "answer": 3,
+                "why": "Compilation succeeds, but the linker needs a main to start from and stops with an error."
+              }
+            ],
+            "examTip": "Write the skeleton from memory in the practical exam: include, using namespace, int main, braces, statements, return 0.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MI-T03",
@@ -95,7 +199,59 @@
               "kind": "subtopic",
               "definition": "Syntax errors are caught by the compiler while logic errors surface only while running, so debugging with breakpoints is used."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Turning a source file into a running program takes four stages. The preprocessor handles lines beginning with #, such as #include and #define, and produces one expanded file; the compiler translates that file into assembly for the target processor; the assembler turns the assembly into an object file of machine code; and the linker joins your object file with the library code it uses, such as the code behind cout, to produce the executable. The stages also explain the three kinds of mistake: a missing semicolon stops the compiler, an undefined function stops the linker, and a wrong calculation is only seen when the program runs.",
+            "example": "Running g++ hello.cpp -o hello on the lab machine silently performs all four stages: cpp expands the file, cc1plus compiles it, as assembles it, ld links it, and the file hello is what you run.",
+            "quiz": [
+              {
+                "q": "Which stage joins your object file with the library code the program uses?",
+                "options": [
+                  "Preprocessor",
+                  "Compiler",
+                  "Assembler",
+                  "Linker"
+                ],
+                "answer": 3,
+                "why": "The linker is the last stage; it resolves calls such as cout to the code in the library."
+              },
+              {
+                "q": "A program calls sqrt() but forgets to include <cmath>. Which stage reports the error?",
+                "options": [
+                  "Preprocessor",
+                  "Linker",
+                  "Compiler",
+                  "Runtime"
+                ],
+                "answer": 2,
+                "why": "Without the declaration the compiler cannot check the call, so it stops before any object file is made."
+              },
+              {
+                "q": "The file produced by the assembler is called a:",
+                "options": [
+                  "preprocessed file",
+                  "assembly file",
+                  "executable file",
+                  "object file"
+                ],
+                "answer": 3,
+                "why": "Assembly (.s) is the compiler's output and the assembler's input; the assembler produces the object file (.o)."
+              },
+              {
+                "q": "A program compiles and links cleanly but divides by zero when it runs. This is a:",
+                "options": [
+                  "syntax error",
+                  "linker error",
+                  "runtime error",
+                  "preprocessor error"
+                ],
+                "answer": 2,
+                "why": "Nothing is wrong with the text of the program, so only execution reveals the fault."
+              }
+            ],
+            "examTip": "Learn the order with the tool names that perform it: preprocess with cpp, compile with cc1plus, assemble with as, link with ld.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MI-T04",
@@ -133,7 +289,59 @@
               "kind": "subtopic",
               "definition": "Stream operators >> and << read from the keyboard and write to the screen."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The smallest unit the compiler recognises is a token: keywords such as int and return, identifiers such as marks, literals such as 21 and 'A', operators such as + and ==, and separators such as ; and the braces. Tokens are combined into expressions using variables, which reserve memory of a stated type such as int, float, double, char or bool, and constants, whose value cannot change once it is set. Control statements then decide the order in which things happen: if and switch choose a branch, for and while repeat a block, and break and continue alter those loops. Input and output are carried by cin and cout, which take values from the keyboard and send them to the screen.",
+            "example": "In the line int marks = 21; the compiler sees five tokens, int, marks, =, 21 and ;, of which one is a keyword, one is an identifier you chose, one is a literal and one is an operator.",
+            "quiz": [
+              {
+                "q": "Which of these is a keyword in C++?",
+                "options": [
+                  "marks",
+                  "total_marks",
+                  "int",
+                  "MaxMarks"
+                ],
+                "answer": 2,
+                "why": "int is reserved by the language; the others are identifiers chosen by the programmer."
+              },
+              {
+                "q": "Which statement about a constant is correct?",
+                "options": [
+                  "It can be given a new value later in the program",
+                  "It must always be of type float",
+                  "Its value cannot be changed after initialisation",
+                  "It cannot be used inside an expression"
+                ],
+                "answer": 2,
+                "why": "That is the whole meaning of a constant; the compiler refuses any later assignment to it."
+              },
+              {
+                "q": "Which control statement repeats a block while a condition stays true?",
+                "options": [
+                  "if",
+                  "switch",
+                  "break",
+                  "while"
+                ],
+                "answer": 3,
+                "why": "while tests its condition before each pass; break leaves a loop rather than repeating one."
+              },
+              {
+                "q": "Which statement about tokens is NOT correct?",
+                "options": [
+                  "A keyword is a token",
+                  "An identifier you choose is a token",
+                  "Every token must be exactly one character long",
+                  "A literal such as 21 is a token"
+                ],
+                "answer": 2,
+                "why": "A token can be many characters long: total_marks is one single identifier token."
+              }
+            ],
+            "examTip": "Be ready to split one line of code into tokens and to name the five token families with an example of each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MI-T05",
@@ -159,7 +367,59 @@
               "kind": "subtopic",
               "definition": "Reusing tested library code shortens development time and reduces programming errors."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "C++ ships with a standard library whose functions are grouped into headers: iostream for input and output, cmath for mathematics, cstring for C style strings and cstdlib for conversions and random numbers, among others. You bring a header in with #include and then call its functions directly instead of writing that code yourself. Library functions are already tested and optimised, so using them makes a program shorter and less likely to carry a bug of your own. The trade is that you must know which header holds each function and how it behaves at the edges, for example that strlen does not count the terminating null character.",
+            "example": "To find a square root you include <cmath> and call sqrt(49). That saves writing and debugging the whole numerical method yourself.",
+            "quiz": [
+              {
+                "q": "Which header must be included to use sqrt()?",
+                "options": [
+                  "iostream",
+                  "cstring",
+                  "cmath",
+                  "cstdlib"
+                ],
+                "answer": 2,
+                "why": "The mathematical functions, including sqrt and pow, live in cmath."
+              },
+              {
+                "q": "strlen(\"MCA\") returns:",
+                "options": [
+                  "2",
+                  "4",
+                  "3",
+                  "0"
+                ],
+                "answer": 2,
+                "why": "It counts the characters up to, but not including, the null character that ends the string."
+              },
+              {
+                "q": "Why does using a library function save time?",
+                "options": [
+                  "It makes the program run on any computer",
+                  "It removes the need for main()",
+                  "It deletes syntax errors automatically",
+                  "The function is already written and tested, so you reuse it instead of writing it"
+                ],
+                "answer": 3,
+                "why": "Reuse of tested code is the point of a library; portability and error removal are not its promises."
+              },
+              {
+                "q": "Which function reads a whole line of text typed by the user into a string?",
+                "options": [
+                  "sqrt(name)",
+                  "strlen(name)",
+                  "getline(cin, name)",
+                  "atoi(name)"
+                ],
+                "answer": 2,
+                "why": "getline takes the stream and the string; cin >> name would stop at the first space."
+              }
+            ],
+            "examTip": "Memorise four headers with one function each: iostream for cout, cmath for sqrt, cstring for strlen, cstdlib for atoi.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MI-T06",
@@ -191,7 +451,59 @@
               "kind": "subtopic",
               "definition": "Default values let some arguments be omitted, and inline functions expand the body at the call site to avoid call overhead."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A user defined function is a block of code with a name, a parameter list and a return type, written once so a task can be called as many times as needed. A declaration, or prototype, tells the compiler the name, the parameter types and the return type before the function is used; the definition supplies the body; and the call runs it with real values. The names in the declaration are formal parameters and the values passed at the call are actual parameters, and anything the function hands back travels through the return statement. A void function performs an action and returns nothing, while default arguments let the caller leave the last parameters out, and an inline function asks the compiler to place the body at the call instead of jumping to it.",
+            "example": "A function that computes a student's average is written once and then called for all fifty students of a class. One body, fifty calls, and no repeated code to keep in step.",
+            "quiz": [
+              {
+                "q": "What is the purpose of a function prototype?",
+                "options": [
+                  "To tell the compiler the name, parameter types and return type before the function is used",
+                  "To run the function",
+                  "To reserve memory for the function body",
+                  "To print the result"
+                ],
+                "answer": 0,
+                "why": "With the prototype in front of it, the compiler can check every call it later meets."
+              },
+              {
+                "q": "A function declared void show() must:",
+                "options": [
+                  "return an int",
+                  "take no arguments",
+                  "be called only once",
+                  "return nothing"
+                ],
+                "answer": 3,
+                "why": "void is the return type and it means the function hands nothing back to the caller."
+              },
+              {
+                "q": "Which statement about default arguments is NOT correct?",
+                "options": [
+                  "They let the caller leave out the last arguments of a call",
+                  "They must be the rightmost parameters in the list",
+                  "A parameter with a default may be followed by one without a default",
+                  "They are written in the prototype"
+                ],
+                "answer": 2,
+                "why": "Once one parameter has a default, every parameter after it must have one too, otherwise a call could not be matched."
+              },
+              {
+                "q": "In int add(int a, int b), the names a and b are called:",
+                "options": [
+                  "formal parameters",
+                  "actual parameters",
+                  "return values",
+                  "default arguments"
+                ],
+                "answer": 0,
+                "why": "Formal parameters appear in the definition; the values supplied at the call are the actual parameters."
+              }
+            ],
+            "examTip": "Tell the three part story in order: prototype before main, definition with the body, call inside main. Then swap formal and actual parameters in one written line.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MI-T07",
@@ -223,7 +535,59 @@
               "kind": "subtopic",
               "definition": "Use call by value for small read only data and call by reference for large objects or when results must come back through parameters."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "When a function is called, C++ normally copies the argument into the parameter, so the function works on its own copy and the caller's variable stays as it was: that is call by value. If the function must change the caller's variable, you pass it by reference using &, or by address using a pointer, and both give the function the original object instead of a copy. Both work, and the difference is in what they make visible: a reference is written like an ordinary variable and cannot be null, while a pointer shows at the call site that an address is handed over and can be tested for null. The choice also affects speed, because copying a large object costs time while a reference simply refers to the object that already exists.",
+            "example": "A swap function written as swap(int &a, int &b) really exchanges the caller's two numbers, while the same function written with plain int parameters swaps two copies and the caller sees no change at all.",
+            "quiz": [
+              {
+                "q": "Which function can change the variable in the caller?",
+                "options": [
+                  "void f(int x)",
+                  "void f(int x) called twice with f(n)",
+                  "void f(int &x)",
+                  "void f(const int x)"
+                ],
+                "answer": 2,
+                "why": "The & makes the parameter another name for the caller's variable, so writing to it writes to the original."
+              },
+              {
+                "q": "In call by value, the parameter and the argument:",
+                "options": [
+                  "share one memory location",
+                  "are the same variable",
+                  "must both be pointers",
+                  "are stored in separate memory locations"
+                ],
+                "answer": 3,
+                "why": "The value is copied into the parameter, which is why changes inside the function are lost on return."
+              },
+              {
+                "q": "A large structure is passed to a function that only reads it and never changes it. The cheapest correct choice is:",
+                "options": [
+                  "pass it by reference without allowing changes",
+                  "pass it by value",
+                  "copy it inside the function",
+                  "make it a global variable"
+                ],
+                "answer": 0,
+                "why": "A reference avoids the copy while still protecting the original if it is marked const."
+              },
+              {
+                "q": "Which statement about pointers is NOT correct?",
+                "options": [
+                  "A pointer stores an address",
+                  "A pointer can hold a null value",
+                  "A pointer is dereferenced with the & operator",
+                  "A pointer parameter lets the function change the caller's variable"
+                ],
+                "answer": 2,
+                "why": "& takes the address of a variable and * dereferences a pointer; the two operators do opposite jobs."
+              }
+            ],
+            "examTip": "One line decides the mark: value copies, reference and pointer both reach the original. Write a two line swap to prove it.",
+            "verified": false
+          }
         }
       ]
     },
@@ -261,7 +625,59 @@
               "kind": "subtopic",
               "definition": "Used in simulation, GUI software, databases, CAD systems and large business applications."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Object oriented programming builds a program out of objects, where each object keeps its own data and the functions that work on that data. The style rests on a few ideas: encapsulation keeps data and code together and hides what the outside does not need; abstraction shows only the essential behaviour of a thing; inheritance lets one class reuse and extend another; and polymorphism lets the same call behave differently for different objects. In the procedural style, data and functions are separate and the data is passed from function to function, so any function can change anything. Keeping the responsibility inside the class that owns the data is what makes an object oriented program easier to extend without breaking what already works.",
+            "example": "In a college portal, a Student object holds its own roll number and marks and knows how to print its own result. The portal never needs to know how student data is stored, only that it can ask the object for a result.",
+            "quiz": [
+              {
+                "q": "Which feature keeps data and the functions that operate on it inside one unit?",
+                "options": [
+                  "Recursion",
+                  "Compilation",
+                  "Encapsulation",
+                  "Indexing"
+                ],
+                "answer": 2,
+                "why": "Encapsulation is exactly that bundling, and it also decides what the outside may see."
+              },
+              {
+                "q": "Which of these is NOT one of the four pillars of object oriented programming?",
+                "options": [
+                  "Recursion",
+                  "Encapsulation",
+                  "Polymorphism",
+                  "Inheritance"
+                ],
+                "answer": 0,
+                "why": "Recursion is a programming technique found in every style; the pillars are encapsulation, abstraction, inheritance and polymorphism."
+              },
+              {
+                "q": "In the procedural style, data and the functions that use it are usually:",
+                "options": [
+                  "kept inside one class",
+                  "always hidden from the program",
+                  "separate, with the data passed to the functions",
+                  "stored inside objects"
+                ],
+                "answer": 2,
+                "why": "Procedural programs keep data in variables and pass it to functions; keeping them together is the object oriented answer."
+              },
+              {
+                "q": "A program adds a new type of bank account without touching the existing account classes. Which two object oriented features make that possible?",
+                "options": [
+                  "Preprocessor directives and headers",
+                  "Compilation and linking",
+                  "Data hiding on its own",
+                  "Inheritance and polymorphism"
+                ],
+                "answer": 3,
+                "why": "The new class inherits the common behaviour and can be used wherever the base type was expected."
+              }
+            ],
+            "examTip": "Learn the four pillars with one line and one example each; questions usually ask you to name them and match a definition to each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MII-T02",
@@ -293,7 +709,59 @@
               "kind": "subtopic",
               "definition": "A hidden pointer inside every member function that refers to the object on which the function was called."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A class is a user defined type that declares data members and member functions together, and an object is one instance of that class, with its own copy of the data members. Access specifiers decide who may see what: private members are reachable only inside the class, public members form its interface to the rest of the program, and protected members are for the class and the classes derived from it. A member function written inside the class definition is implicitly inline, while one defined outside uses the scope resolution operator :: as in Box::volume(). Inside a member function the this pointer holds the address of the object on which the function was called, which is how the function knows whose data to use when two objects of the same class both exist.",
+            "example": "class Student { private: int roll; public: void setRoll(int r) { roll = r; } }; gives one class, and then Student s1, s2 creates two objects, each carrying its own roll number.",
+            "quiz": [
+              {
+                "q": "What is the default access for members of a class (not a struct)?",
+                "options": [
+                  "private",
+                  "public",
+                  "protected",
+                  "there is no default"
+                ],
+                "answer": 0,
+                "why": "In a class the default is private, which is the opposite of a struct where it is public."
+              },
+              {
+                "q": "Which operator is used to define a member function outside the class?",
+                "options": [
+                  "the scope resolution operator ::",
+                  "the dot operator",
+                  "the arrow operator ->",
+                  "the hash symbol #"
+                ],
+                "answer": 0,
+                "why": "void Box::volume() tells the compiler which class the function belongs to."
+              },
+              {
+                "q": "Which statement about the this pointer is NOT correct?",
+                "options": [
+                  "It points to the object that called the member function",
+                  "It is available inside every non-static member function",
+                  "It must be declared by the programmer inside the class",
+                  "It is used when a parameter name hides a member name"
+                ],
+                "answer": 2,
+                "why": "this is supplied automatically by the compiler; you never declare it."
+              },
+              {
+                "q": "A class has two int members and one double member. How much memory does one object need, taking int as 4 bytes and double as 8 bytes and ignoring padding?",
+                "options": [
+                  "8 bytes",
+                  "12 bytes",
+                  "16 bytes",
+                  "20 bytes"
+                ],
+                "answer": 2,
+                "why": "Two ints take 8 bytes and the double takes 8 more, so 16 bytes in total."
+              }
+            ],
+            "examTip": "Write a small class from memory with private data and public getters and setters; one mark is kept for the correct access specifiers and one for the operator used outside the class.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MII-T03",
@@ -319,7 +787,59 @@
               "kind": "subtopic",
               "definition": "Counting the number of objects created, keeping shared configuration values and implementing utility functions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Normally every object of a class has its own copy of each data member, but a static data member belongs to the class itself and is shared by all objects. It is declared inside the class with the keyword static and then defined once outside the class, because the declaration alone does not set aside storage. A static member function is also tied to the class rather than to an object, so it can be called as ClassName::function() before any object exists, and for that reason it has no this pointer and cannot use non-static members directly. The usual purpose is shared bookkeeping, such as counting how many objects exist or holding one setting that every object must obey.",
+            "example": "A Counter class with a static integer count increases count in its constructor and decreases it in its destructor, so the class can always say how many Counter objects are alive at that moment, no matter which object is asked.",
+            "quiz": [
+              {
+                "q": "A class has ten objects and one static data member. How many copies of that member exist?",
+                "options": [
+                  "Ten",
+                  "None until it is used",
+                  "One",
+                  "One copy per module"
+                ],
+                "answer": 2,
+                "why": "A static member belongs to the class, so all ten objects share the single copy."
+              },
+              {
+                "q": "A static member function can directly use:",
+                "options": [
+                  "any member of any object",
+                  "the this pointer",
+                  "private members of other classes",
+                  "only static members of the class"
+                ],
+                "answer": 3,
+                "why": "Without an object there is no this, so only members that belong to the class itself are reachable."
+              },
+              {
+                "q": "Which statement about static members is NOT correct?",
+                "options": [
+                  "Each object keeps its own private copy of a static data member",
+                  "A static data member is shared by all objects of the class",
+                  "A static data member is defined outside the class",
+                  "A static member function can be called without an object"
+                ],
+                "answer": 0,
+                "why": "That is the definition of a non-static member; the whole point of static is that there is one shared copy."
+              },
+              {
+                "q": "Which job suits a static member best?",
+                "options": [
+                  "Storing each student's marks",
+                  "Drawing a window on the screen",
+                  "Reading one line from a file",
+                  "Counting how many objects of the class have been created"
+                ],
+                "answer": 3,
+                "why": "A count that all objects must update is exactly the shared state a static member exists for."
+              }
+            ],
+            "examTip": "Never forget the outside definition. static int count; inside the class and nothing outside gives a linker error, a favourite one mark question.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MII-T04",
@@ -363,7 +883,59 @@
               "kind": "subtopic",
               "definition": "Several constructors with different parameter lists let objects be built in different ways."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A constructor is a special member function with the same name as its class, no return type at all, which runs automatically when an object is created so that the object starts in a valid state. A class may have several constructors, a default one with no arguments, a parameterised one, a copy constructor, and a dynamic one that allocates memory with new, and the compiler picks whichever matches the arguments. The copy constructor takes a reference to another object of the same class and is used when an object is initialised from an existing one, including when an object is passed or returned by value. A destructor is written with a leading tilde and takes no arguments; it runs automatically when the object goes out of scope or is deleted, and it is where memory or open files are released, with destructors running in the reverse order of construction.",
+            "example": "A BankAccount constructor takes the opening balance, so no account can ever be created with an unknown balance, and the destructor writes the closing entry to a file when the object is destroyed.",
+            "quiz": [
+              {
+                "q": "Which is true of a constructor?",
+                "options": [
+                  "It must be declared as returning void",
+                  "It has no return type at all",
+                  "It must be private",
+                  "It can be called by name after the object exists"
+                ],
+                "answer": 1,
+                "why": "A constructor is not allowed to state a return type, not even void, and it is called automatically at creation."
+              },
+              {
+                "q": "The copy constructor is called when:",
+                "options": [
+                  "an object is initialised from another object of the same class",
+                  "a static data member is defined",
+                  "the class is compiled",
+                  "a private member is read by a friend function"
+                ],
+                "answer": 0,
+                "why": "That includes passing an object by value and returning one by value, both of which build a copy."
+              },
+              {
+                "q": "Which statement about destructors is NOT correct?",
+                "options": [
+                  "A destructor takes no arguments",
+                  "A destructor cannot be overloaded",
+                  "A destructor must specify a return type of int",
+                  "A destructor can release memory obtained with new"
+                ],
+                "answer": 2,
+                "why": "Like a constructor, a destructor has no return type; it only runs the cleanup code you write."
+              },
+              {
+                "q": "A class defines only a parameterised constructor. What happens to the default constructor?",
+                "options": [
+                  "The compiler still creates one",
+                  "It no longer exists unless you write one yourself",
+                  "It is inherited from the base class",
+                  "It becomes static"
+                ],
+                "answer": 1,
+                "why": "Declaring any constructor stops the automatic default constructor, so writing new Student() would fail."
+              }
+            ],
+            "examTip": "Three lines answer most constructor questions: same name as the class, no return type, called automatically. Add the copy constructor situations as a second point.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MII-T05",
@@ -395,7 +967,59 @@
               "kind": "subtopic",
               "definition": "Conversion between basic and user defined types is done by constructor conversion and by conversion operator functions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Operator overloading gives an existing operator such as + or << a meaning for a user defined type, so that Complex c3 = c1 + c2; reads exactly like ordinary arithmetic. The function is named with the keyword operator followed by the symbol, and is written either as a member function, where the left operand is the calling object and only the right operand is a parameter, or as a friend function taking both operands. The rules are strict: no new operators can be invented, and the precedence, associativity and number of operands of an existing operator cannot be changed, while at least one operand must be of a user defined type so that built-in types keep their normal meaning. Conversions work alongside it, since a constructor with one argument can turn a basic value into a class object and a conversion function can turn a class object back into a basic value.",
+            "example": "A Matrix class that overloads + and * lets a program multiply two matrices as A * B, which reads like the algebra in the textbook instead of a nest of function calls.",
+            "quiz": [
+              {
+                "q": "Which operator cannot be overloaded in C++?",
+                "options": [
+                  "+",
+                  "::",
+                  "<<",
+                  "=="
+                ],
+                "answer": 1,
+                "why": "The scope resolution operator, along with the dot operator, .*, ?: and sizeof, is on the forbidden list."
+              },
+              {
+                "q": "Overloading an operator can change:",
+                "options": [
+                  "its precedence",
+                  "its number of operands",
+                  "what the operator means for a user defined type",
+                  "its associativity"
+                ],
+                "answer": 2,
+                "why": "Precedence, associativity and arity are fixed by the language; only the meaning for your own type changes."
+              },
+              {
+                "q": "Which statement about overloaded operators is NOT correct?",
+                "options": [
+                  "At least one operand must be of a user defined type",
+                  "A member operator+ takes one explicit parameter",
+                  "A friend operator+ takes two parameters",
+                  "Overloading can change how + behaves for two ints"
+                ],
+                "answer": 3,
+                "why": "Built-in types keep their meaning, which is why at least one operand must be a class or structure type."
+              },
+              {
+                "q": "The statement Complex c = 5; works when the class has:",
+                "options": [
+                  "a default constructor",
+                  "a constructor taking one argument",
+                  "a destructor",
+                  "a static data member"
+                ],
+                "answer": 1,
+                "why": "The single argument constructor converts the int into a Complex object, which is the basic to class conversion."
+              }
+            ],
+            "examTip": "Two lines cover most questions: the five operators you cannot overload, and the rule that precedence, associativity and arity stay as they are.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MII-T06",
@@ -433,7 +1057,59 @@
               "kind": "subtopic",
               "definition": "Normal calls are resolved at compile time while virtual calls are resolved at run time through the vtable."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Function overloading lets several functions share one name as long as their parameter lists differ in number, type or order of parameters; changing only the return type is not enough. A friend function is not a member of the class but is granted access to its private and protected members, which is useful for an operator such as << whose left operand is the stream and not your object. A virtual function is one whose binding is delayed until the program runs: calling it through a pointer or reference to the base class runs the version belonging to the object that is actually there, which is runtime polymorphism, while a non-virtual call is fixed at compile time from the type of the pointer. A pure virtual function, written with = 0, has no body at all and makes the class abstract, so no object of that class can be created even though pointers of that type can still be used.",
+            "example": "A Shape base class with a pure virtual area(), and Circle and Rectangle that override it. One loop over Shape pointers prints the correct area for each shape without a single if statement to check the kind.",
+            "quiz": [
+              {
+                "q": "Two functions can share the same name only when they differ in:",
+                "options": [
+                  "the return type alone",
+                  "the number, type or order of their parameters",
+                  "the access specifier",
+                  "whether they are static"
+                ],
+                "answer": 1,
+                "why": "The compiler chooses by matching arguments, so the parameter list must be different."
+              },
+              {
+                "q": "A friend function of a class:",
+                "options": [
+                  "is a member of that class",
+                  "can access the private members of the class that declares it",
+                  "must be declared static",
+                  "is inherited by derived classes"
+                ],
+                "answer": 1,
+                "why": "Friendship grants access without membership, and it is not inherited."
+              },
+              {
+                "q": "Which statement about virtual functions is NOT correct?",
+                "options": [
+                  "They give runtime polymorphism",
+                  "They run the version belonging to the actual object behind a base pointer",
+                  "A pure virtual function makes a class abstract",
+                  "A virtual function cannot be overridden in a derived class"
+                ],
+                "answer": 3,
+                "why": "Overriding in the derived class is exactly how a virtual function becomes useful."
+              },
+              {
+                "q": "Dynamic binding means the function to run is decided:",
+                "options": [
+                  "at compile time",
+                  "at runtime, from the actual type of the object",
+                  "by the linker",
+                  "by the preprocessor"
+                ],
+                "answer": 1,
+                "why": "The virtual table is used at runtime, which is why the pointer type does not decide the outcome."
+              }
+            ],
+            "examTip": "One line tells the trio apart: overloading is one name with different parameters, friend is access without membership, virtual is binding at run time.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MII-T07",
@@ -489,7 +1165,59 @@
               "kind": "subtopic",
               "definition": "Code reuse, building class libraries and frameworks, and modelling taxonomies such as Shape and Circle."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Inheritance builds a new class from an existing one: the derived class automatically has the members of the base class and may add its own, which expresses an is-a relationship such as a Manager is an Employee. C++ supports single inheritance, multiple inheritance from two or more bases, multilevel inheritance in a chain, hierarchical inheritance with one base and many children, and hybrid combinations of these. When two base classes share a common ancestor, the derived object ends up holding two copies of that ancestor and the compiler cannot decide which to use, which is the diamond problem, and it is solved by making the common ancestor a virtual base class. Constructors run base first and then derived, while destructors run in the opposite order, so a derived object is always built on a base that is already complete.",
+            "example": "Vehicle as the base, with Car and Bike derived from it, and ElectricCar derived from Car. The wheels and engine members are written once in Vehicle and reused down the chain instead of being repeated in every class.",
+            "quiz": [
+              {
+                "q": "Inheritance expresses which kind of relationship?",
+                "options": [
+                  "is-a",
+                  "has-a",
+                  "uses-a",
+                  "part-of"
+                ],
+                "answer": 0,
+                "why": "A derived object is a kind of the base object, such as a Car is a Vehicle."
+              },
+              {
+                "q": "The diamond problem in multiple inheritance is solved by:",
+                "options": [
+                  "making the common base class a virtual base class",
+                  "adding a friend function to the derived class",
+                  "overloading the constructor",
+                  "making all members private"
+                ],
+                "answer": 0,
+                "why": "A virtual base gives the derived object one shared copy of the common ancestor instead of two."
+              },
+              {
+                "q": "Which statement about construction order is NOT correct?",
+                "options": [
+                  "The base class constructor runs before the derived class constructor",
+                  "The derived class destructor runs before the base class destructor",
+                  "Constructors and destructors of a hierarchy run in the same order",
+                  "The base part of a derived object is completed first"
+                ],
+                "answer": 2,
+                "why": "Construction goes from base to derived and destruction runs backwards, from derived to base."
+              },
+              {
+                "q": "A base class has ten members and a derived class adds two int members. An object of the derived class contains:",
+                "options": [
+                  "only the two new members",
+                  "all the base members plus the new members",
+                  "only the public members of the base",
+                  "a separate base object that is not part of it"
+                ],
+                "answer": 1,
+                "why": "A derived object carries its own base part, so all the base members are present in it."
+              }
+            ],
+            "examTip": "Draw the five inheritance shapes as small trees, and remember the pair diamond problem and virtual base class; that is the usual two mark part.",
+            "verified": false
+          }
         }
       ]
     },
@@ -527,7 +1255,59 @@
               "kind": "subtopic",
               "definition": "Browsers removed plugin support, so applets are replaced by Java Web Start and modern web technologies."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "An applet was a small Java program that was embedded in a web page and run inside the browser, with no main method of its own, because the browser called its life cycle methods instead. That cycle runs init() once when the applet is loaded, start() every time it becomes visible, paint() whenever it must be drawn, stop() when it is hidden and destroy() when it is removed for good. The browser supplied the Java plugin, so the same bytecode ran on any operating system. Browsers have removed that plugin and the applet tag has gone from HTML, the HyperText Markup Language that web pages are written in, which is why applets are obsolete and the same work is now done by servlets on the server and JavaScript in the page, but the life cycle and the paint model are still standard exam material.",
+            "example": "An old college website showed a scrolling banner as an applet. Opening the page called start() and switching to another tab called stop(), so the animation paused instead of wasting the processor.",
+            "quiz": [
+              {
+                "q": "Which method of an applet runs exactly once when it is loaded?",
+                "options": [
+                  "start()",
+                  "init()",
+                  "paint()",
+                  "stop()"
+                ],
+                "answer": 1,
+                "why": "init() does one time setup; start() may run many times as the applet is shown and hidden."
+              },
+              {
+                "q": "paint() in an applet is called:",
+                "options": [
+                  "by the programmer whenever drawing is needed",
+                  "by the system when the applet has to be drawn or redrawn",
+                  "once at compilation time",
+                  "only when the applet is destroyed"
+                ],
+                "answer": 1,
+                "why": "Your code calls repaint(), which asks the system to call paint() when it is ready."
+              },
+              {
+                "q": "Which statement about applets is NOT correct?",
+                "options": [
+                  "An applet runs inside a browser",
+                  "An applet needs a main method to start",
+                  "An applet's life cycle begins with init()",
+                  "Applets are obsolete because browsers removed the Java plugin"
+                ],
+                "answer": 1,
+                "why": "There is no main in an applet; the browser drives it through the life cycle methods."
+              },
+              {
+                "q": "Which applet method is called when the applet is about to be removed permanently?",
+                "options": [
+                  "destroy()",
+                  "stop()",
+                  "init()",
+                  "repaint()"
+                ],
+                "answer": 0,
+                "why": "stop() only pauses a hidden applet; destroy() releases whatever it was using."
+              }
+            ],
+            "examTip": "Memorise the life cycle order init, start, paint, stop, destroy. That one line answers most applet questions.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIII-T02",
@@ -559,7 +1339,59 @@
               "kind": "subtopic",
               "definition": "Shapes are redrawn in a loop after a delay, usually inside the paint method, to create movement."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Java draws on a component through a Graphics object, which the system passes to paint(Graphics g) whenever the component needs to be drawn. The coordinate system begins at the top left of the component: x grows to the right and y grows downwards, so (0,0) is the top left corner and not the bottom left. The class offers primitives for outlines such as drawLine, drawRect, drawOval, drawPolygon and drawString, and the matching fillRect, fillOval and fillPolygon for filled shapes, together with setColor and setFont to control appearance. Animation is produced by changing the values you draw with and then calling repaint(), which asks the system to call paint() again as soon as it can, because the program must never call paint() directly.",
+            "example": "A ball animation moves the ball five pixels to the right on each pass: the program changes the x coordinate, calls repaint(), and the next paint() draws the oval at its new place.",
+            "quiz": [
+              {
+                "q": "In Java graphics, the point (0,0) is at the:",
+                "options": [
+                  "centre of the component",
+                  "bottom left corner",
+                  "top left corner",
+                  "bottom right corner"
+                ],
+                "answer": 2,
+                "why": "x increases to the right and y increases downwards, so the origin is the top left."
+              },
+              {
+                "q": "Which method draws a filled circle (oval)?",
+                "options": [
+                  "drawOval",
+                  "fillOval",
+                  "drawRect",
+                  "drawString"
+                ],
+                "answer": 1,
+                "why": "The draw methods give outlines and the fill methods give solid shapes."
+              },
+              {
+                "q": "Which statement about repaint() is NOT correct?",
+                "options": [
+                  "It asks the system to call paint()",
+                  "It can be called from your own code",
+                  "It draws the shape immediately, all by itself",
+                  "It is the usual way to produce animation"
+                ],
+                "answer": 2,
+                "why": "repaint() only requests a redraw; the drawing is done later by paint()."
+              },
+              {
+                "q": "The call g.drawString(\"MCA\", 20, 50) places the text with its baseline at:",
+                "options": [
+                  "x = 20 and y = 50",
+                  "x = 50 and y = 20",
+                  "the centre of the component",
+                  "always the top left corner"
+                ],
+                "answer": 0,
+                "why": "drawString takes x first and then y, and y marks the baseline of the text."
+              }
+            ],
+            "examTip": "Write down the origin convention and the draw and fill pair for each shape. The direction of the y axis is a favourite trick question.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIII-T03",
@@ -591,7 +1423,59 @@
               "kind": "subtopic",
               "definition": "File operations throw IOException, so try, catch and finally blocks are required."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Java treats every file as a stream of data and splits the classes into byte streams for raw binary data and character streams for text. FileInputStream and FileOutputStream move bytes, while FileReader and FileWriter move characters, and BufferedReader and BufferedWriter wrap those so that you can read or write a whole line at a time and with fewer calls to the disk. You name the file with a File object, wrap it in the stream you need and close it when the work is done, usually in a finally block or with try with resources, so it is closed even when something fails in between. Almost every file operation can throw IOException, which is a checked exception and so must be handled or declared by the compiler.",
+            "example": "A marks file is read line by line with BufferedReader in = new BufferedReader(new FileReader(\"marks.txt\")); each readLine() returns one line and returns null when the file has no more lines.",
+            "quiz": [
+              {
+                "q": "Which class is a character stream for reading a text file?",
+                "options": [
+                  "FileInputStream",
+                  "FileReader",
+                  "FileOutputStream",
+                  "DataOutputStream"
+                ],
+                "answer": 1,
+                "why": "Reader and Writer classes work in characters, which is what text files hold."
+              },
+              {
+                "q": "What does BufferedReader.readLine() return when the end of the file is reached?",
+                "options": [
+                  "an empty string",
+                  "null",
+                  "-1",
+                  "it always throws IOException"
+                ],
+                "answer": 1,
+                "why": "A null return is the standard signal that there is nothing more to read."
+              },
+              {
+                "q": "Which statement about Java file handling is NOT correct?",
+                "options": [
+                  "IOException is a checked exception",
+                  "FileWriter writes characters",
+                  "FileInputStream reads bytes",
+                  "The file closes automatically as soon as a read statement finishes"
+                ],
+                "answer": 3,
+                "why": "You must close the stream yourself, or use try with resources so Java closes it for you."
+              },
+              {
+                "q": "Wrapping a FileReader inside a BufferedReader is done mainly to:",
+                "options": [
+                  "read a line at a time and cut down the number of reads",
+                  "convert bytes into characters",
+                  "compress the file",
+                  "lock the file from other programs"
+                ],
+                "answer": 0,
+                "why": "Buffering collects the data in one place, and with a reader you gain the handy readLine()."
+              }
+            ],
+            "examTip": "Practise the exact two line idiom, a FileReader wrapped in a BufferedReader, and mention try or try with resources so the file is certainly closed.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIII-T04",
@@ -635,7 +1519,59 @@
               "kind": "subtopic",
               "definition": "Collections resize automatically, hold objects and provide algorithms such as sort and search through the Collections class."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The Java collections framework is a set of ready made containers that share common interfaces, so you can pick the right structure instead of writing one yourself. A List keeps an ordered sequence and allows duplicates, a Set keeps elements unique, a Map stores each key with one value and a Queue arranges elements for processing in order. Each interface has several implementations with different costs: ArrayList gives fast access by index, LinkedList is quicker when you insert or remove in the middle, HashSet is unordered and fast for lookup, and TreeSet keeps its elements sorted. Any collection can be walked with an Iterator or the for each loop, which makes the same loop work for every container, while an array has a fixed length and needs an index, which is why these classes are the normal choice.",
+            "example": "A student list held in an ArrayList grows as new admissions arrive, and a HashMap from roll number to marks answers the question \"what did roll 21 score?\" without searching through the whole list.",
+            "quiz": [
+              {
+                "q": "Which collection type stores key and value pairs?",
+                "options": [
+                  "List",
+                  "Set",
+                  "Map",
+                  "Queue"
+                ],
+                "answer": 2,
+                "why": "A Map looks up a value by its key, which is what a roll number to marks lookup needs."
+              },
+              {
+                "q": "Which implementation keeps its elements in sorted order?",
+                "options": [
+                  "ArrayList",
+                  "HashSet",
+                  "TreeSet",
+                  "LinkedList"
+                ],
+                "answer": 2,
+                "why": "Tree based collections keep things ordered; HashSet gives speed instead of order."
+              },
+              {
+                "q": "Which statement about the collections framework is NOT correct?",
+                "options": [
+                  "A List may contain duplicates",
+                  "A Set cannot contain duplicates",
+                  "A Map can hold two different values under the same key",
+                  "An ArrayList grows as elements are added"
+                ],
+                "answer": 2,
+                "why": "One key maps to one value, and putting a value again replaces the earlier one."
+              },
+              {
+                "q": "A program inserts and deletes at the front of a long list very often. The better choice is:",
+                "options": [
+                  "ArrayList",
+                  "LinkedList",
+                  "TreeSet",
+                  "HashMap"
+                ],
+                "answer": 1,
+                "why": "An ArrayList has to shift every later element, while a linked list only changes a few links."
+              }
+            ],
+            "examTip": "Learn one line for each interface: List ordered with duplicates, Set unique, Map key to value, Queue in order of processing. Then name one implementation for each.",
+            "verified": false
+          }
         }
       ]
     },
@@ -679,7 +1615,59 @@
               "kind": "subtopic",
               "definition": "Determining the source and performing the required action such as validating a form or closing a window."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Java handles user actions with the delegation event model: the component where something happens is the source, it creates an event object, and every object registered with it as a listener for that event type is told about it. Registration is a call such as button.addActionListener(this), and the listener must implement the matching interface, ActionListener for a button, MouseListener for the mouse, WindowListener for window events, whose method is then called. Adapter classes such as MouseAdapter and WindowAdapter provide empty versions of every method in the interface, so you can extend the adapter and override only the one or two methods you care about. The handler receives the event object itself, for example ActionEvent, which carries the source and any command text, so a single handler can serve many buttons.",
+            "example": "A calculator registers one actionPerformed method for all twenty buttons. The handler asks getActionCommand() and so knows which digit or operator was pressed, without twenty separate methods.",
+            "quiz": [
+              {
+                "q": "Which model does Java use for handling events?",
+                "options": [
+                  "delegation",
+                  "inheritance",
+                  "polling",
+                  "compilation"
+                ],
+                "answer": 0,
+                "why": "The source passes the event to whichever listeners registered for it, which is delegation."
+              },
+              {
+                "q": "Which method must a class implementing ActionListener write?",
+                "options": [
+                  "actionPerformed(ActionEvent e)",
+                  "mouseClicked(MouseEvent e)",
+                  "paint(Graphics g)",
+                  "windowClosing(WindowEvent e)"
+                ],
+                "answer": 0,
+                "why": "Each listener interface declares its own method, and ActionListener declares actionPerformed."
+              },
+              {
+                "q": "Which statement about adapter classes is NOT correct?",
+                "options": [
+                  "MouseAdapter supplies empty versions of all mouse methods",
+                  "You extend an adapter so you override only what you need",
+                  "Using an adapter removes the need to register a listener",
+                  "MouseListener on its own lists every mouse method, not just the one you want"
+                ],
+                "answer": 2,
+                "why": "An adapter only saves you from writing empty methods; registration is still done with addMouseListener."
+              },
+              {
+                "q": "A class that wants to act when the user closes the window must register a:",
+                "options": [
+                  "WindowListener",
+                  "ActionListener",
+                  "ItemListener",
+                  "TextListener"
+                ],
+                "answer": 0,
+                "why": "Closing the window is a window event, so a WindowListener or WindowAdapter is needed."
+              }
+            ],
+            "examTip": "Write the three steps in order: implement the listener interface, register with addXListener(), do the work in the handler method. Name one adapter as the example.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIV-T02",
@@ -711,7 +1699,59 @@
               "kind": "subtopic",
               "definition": "drawString plus the Font and FontMetrics classes position and measure text."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The Abstract Window Toolkit, or AWT, is Java's original window toolkit, built from heavyweight components, each of which uses a real window provided by the operating system. A Frame is a top level window with a title bar: you create it, set its size and layout, add components to it and make it visible, and it stays until the program ends or you dispose of it. A component draws itself by overriding paint(Graphics g) and using the drawing methods of the Graphics object, and text is drawn with drawString together with a Font object that carries a name, a style and a size. Since the operating system also decides when repainting is needed, drawing belongs in paint() and not in the constructor, and actions such as closing the frame are handled by registering a listener.",
+            "example": "A marks entry window is a Frame with setSize(400, 300), a Label, two TextFields and a Button added before setVisible(true). Change that last call to false and the window never appears at all.",
+            "quiz": [
+              {
+                "q": "Which AWT class creates a top level window with a title bar?",
+                "options": [
+                  "Panel",
+                  "Frame",
+                  "Label",
+                  "Canvas"
+                ],
+                "answer": 1,
+                "why": "Frame, Window and Dialog are the top level containers; Panel must sit inside one of them."
+              },
+              {
+                "q": "Where should drawing code be written so that it survives a resize or another window covering your window?",
+                "options": [
+                  "in main()",
+                  "in paint(Graphics g)",
+                  "in the constructor",
+                  "in actionPerformed()"
+                ],
+                "answer": 1,
+                "why": "The system calls paint() again whenever the window must be drawn afresh."
+              },
+              {
+                "q": "Which statement about a Frame program is NOT correct?",
+                "options": [
+                  "setSize() sets the size of the window",
+                  "setVisible(true) makes the window appear",
+                  "paint() is called by the system when the window needs drawing",
+                  "A Frame is a lightweight component drawn by Java itself"
+                ],
+                "answer": 3,
+                "why": "AWT components are heavyweights because each one uses a native window; lightweight drawing is Swing's specialty."
+              },
+              {
+                "q": "A Font object is created with three pieces of information:",
+                "options": [
+                  "name, style and size",
+                  "colour, width and height",
+                  "x, y and z coordinates",
+                  "name, colour and file format"
+                ],
+                "answer": 0,
+                "why": "new Font(\"Serif\", Font.BOLD, 16) is the usual form, and colour is set separately with setColor."
+              }
+            ],
+            "examTip": "Remember the four lines in order: create the Frame, setSize, add the components, setVisible(true).",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIV-T03",
@@ -743,7 +1783,59 @@
               "kind": "subtopic",
               "definition": "Scrollbar values generate adjustment events and are used for sliders or scrolling."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The Abstract Window Toolkit, or AWT, supplies standard controls for user input, and each is a class that you create, configure, add to a container and connect to a listener. A Label shows text the user cannot edit, a Button fires an ActionEvent, a TextField holds a single line and a TextArea holds several lines, a Checkbox gives a tick box while several Checkboxes placed in the same CheckboxGroup behave as radio buttons, a Choice is a drop down list and a List shows rows that scroll, while a Scrollbar reports its value through an AdjustmentListener. The important distinction is between Component, which is anything that can be displayed, and Container, which is itself a Component that can hold other components inside it, such as Frame, Window and Panel.",
+            "example": "A login form is a Frame holding two Labels for the prompts, two TextFields for the entries, a Button to submit and a Checkbox for remember me, all added before the frame is made visible.",
+            "quiz": [
+              {
+                "q": "Which control gives a drop down list of choices?",
+                "options": [
+                  "List",
+                  "Choice",
+                  "Checkbox",
+                  "TextArea"
+                ],
+                "answer": 1,
+                "why": "Choice shows one selected item and drops down for the rest; List shows several rows at once."
+              },
+              {
+                "q": "Radio button behaviour is obtained by placing Checkboxes inside the same:",
+                "options": [
+                  "Panel",
+                  "CheckboxGroup",
+                  "List",
+                  "Scrollbar"
+                ],
+                "answer": 1,
+                "why": "A CheckboxGroup allows only one of its members to stay selected."
+              },
+              {
+                "q": "Which statement about components and containers is NOT correct?",
+                "options": [
+                  "Every Container is also a Component",
+                  "A Panel can hold other components",
+                  "A Button can hold other components inside it",
+                  "A Frame is a Container"
+                ],
+                "answer": 2,
+                "why": "A Button is a leaf control; only containers such as Frame and Panel hold other components."
+              },
+              {
+                "q": "A multi line box for a student's address should be a:",
+                "options": [
+                  "TextField",
+                  "TextArea",
+                  "Label",
+                  "Choice"
+                ],
+                "answer": 1,
+                "why": "TextField takes one line only, so more than one line needs a TextArea."
+              }
+            ],
+            "examTip": "Sketch one form and label every control with its class name; the Choice against List and the CheckboxGroup points are asked often.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIV-T04",
@@ -781,7 +1873,59 @@
               "kind": "subtopic",
               "definition": "A frame holds one menu bar, each menu holds items, and selecting an item raises an action event."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A layout manager decides the position and size of every component inside a container, so the same program still looks sensible when the window is resized or run on another platform. FlowLayout places components left to right and wraps to the next row; BorderLayout divides the container into North, South, East, West and Center; GridLayout gives equal sized cells in a stated number of rows and columns; CardLayout shows one component at a time from a stack, which is how step by step forms are built; and GridBagLayout gives exact control through constraint objects. A Frame uses BorderLayout by default and a Panel uses FlowLayout, and calling setLayout replaces that default. Menus follow their own hierarchy: a MenuBar attached to the frame with setMenuBar contains Menus, and each Menu contains MenuItems, which fire an ActionEvent when chosen.",
+            "example": "A four function calculator lays its buttons out with new GridLayout(4, 4), while a text editor puts the text area in the Center and a status label in the South of a BorderLayout.",
+            "quiz": [
+              {
+                "q": "Which layout arranges components in five regions, North, South, East, West and Center?",
+                "options": [
+                  "FlowLayout",
+                  "BorderLayout",
+                  "GridLayout",
+                  "CardLayout"
+                ],
+                "answer": 1,
+                "why": "BorderLayout names its five areas, and the Center takes whatever space is left."
+              },
+              {
+                "q": "Which layout shows only one component at a time?",
+                "options": [
+                  "GridLayout",
+                  "CardLayout",
+                  "FlowLayout",
+                  "GridBagLayout"
+                ],
+                "answer": 1,
+                "why": "CardLayout keeps components in a stack and shows the top card, which suits multi step forms."
+              },
+              {
+                "q": "Which statement about layout defaults is NOT correct?",
+                "options": [
+                  "The default layout of a Frame is BorderLayout",
+                  "The default layout of a Panel is FlowLayout",
+                  "GridLayout gives every cell the same size",
+                  "CardLayout places components one below the other"
+                ],
+                "answer": 3,
+                "why": "CardLayout stacks components on top of each other and shows one, rather than placing them in a column."
+              },
+              {
+                "q": "Choosing File and then Open from a menu means Open is a:",
+                "options": [
+                  "MenuItem",
+                  "MenuBar",
+                  "Frame",
+                  "Layout"
+                ],
+                "answer": 0,
+                "why": "The MenuBar holds Menus, and the clickable entries inside a Menu are MenuItems."
+              }
+            ],
+            "examTip": "Draw each layout as a small box with arrows, and learn the default layout of Frame and Panel plus the five BorderLayout regions.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MIV-T05",
@@ -807,7 +1951,59 @@
               "kind": "subtopic",
               "definition": "Pixel arrays from PixelGrabber allow filters, cropping and resizing."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Java loads an image as an Image object, most simply with getImage() in an applet or with ImageIcon in Swing, and the picture arrives asynchronously, so the program may have to wait before all of it is available. To show it you call drawImage(image, x, y, observer) inside paint, where the observer argument lets Java repaint the area as more of the image arrives. Because an image is only a grid of pixels, it can also be processed directly: PixelGrabber copies the pixel values into an array of integers, you change those values, for example swapping red and green, and MemoryImageSource turns the changed array back into an image that can be drawn. The MediaTracker class exists to check that an image has finished loading before the program uses it.",
+            "example": "A photo viewer that turns a picture into greyscale reads the pixels with PixelGrabber, averages the colour of each pixel, builds a new image with MemoryImageSource and shows it with drawImage.",
+            "quiz": [
+              {
+                "q": "Which Swing class is commonly used to load an image for display on a component?",
+                "options": [
+                  "ImageIcon",
+                  "PixelGrabber",
+                  "MediaTracker",
+                  "Graphics"
+                ],
+                "answer": 0,
+                "why": "ImageIcon loads the file and can be given straight to a JLabel or a JButton."
+              },
+              {
+                "q": "drawImage() needs an observer argument because:",
+                "options": [
+                  "the image may still be loading and Java repaints as more of it arrives",
+                  "the image must be resized first",
+                  "the colours have to be converted",
+                  "the file must be closed afterwards"
+                ],
+                "answer": 0,
+                "why": "The observer is told when a new part of the image is ready, which triggers another repaint."
+              },
+              {
+                "q": "Which statement about image handling in Java is NOT correct?",
+                "options": [
+                  "An image is a grid of pixels",
+                  "PixelGrabber copies pixels into an array",
+                  "MemoryImageSource builds an image from an array of pixels",
+                  "drawImage must be called from main()"
+                ],
+                "answer": 3,
+                "why": "Drawing belongs in paint(), which the system calls; main() is not a drawing method."
+              },
+              {
+                "q": "Changing every pixel of an image requires access to:",
+                "options": [
+                  "the pixel array",
+                  "the file name",
+                  "the Font object",
+                  "the layout manager"
+                ],
+                "answer": 0,
+                "why": "PixelGrabber hands you the pixels as an int array, which is what you edit and turn back into an image."
+              }
+            ],
+            "examTip": "One line each for the three names: getImage or ImageIcon to load, drawImage to show, PixelGrabber with MemoryImageSource to process.",
+            "verified": false
+          }
         }
       ]
     },
@@ -851,7 +2047,59 @@
               "kind": "subtopic",
               "definition": "JMenuBar, JMenu and JMenuItem together with JToolBar create the standard application interface."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Swing is a library of graphical components that builds on AWT, the Abstract Window Toolkit that Java started with, but is lightweight, meaning the components are drawn by Java itself instead of each one asking the operating system for its own window, so they look the same everywhere and allow a pluggable look and feel. Its classes carry the J prefix, JFrame, JPanel, JButton, JTextField, JLabel, JTable and JList among them, and they follow a container hierarchy in which a top level container such as JFrame holds a content pane and that pane holds the components. Compared with the AWT Frame, a JFrame offers getContentPane(), a default BorderLayout and buttons that can show an icon as well as text. Ready made dialogs come from JOptionPane, and menus use JMenuBar, JMenu and JMenuItem, with the menu bar set on the frame.",
+            "example": "A marks entry screen in Swing: a JFrame holding a JPanel, JLabels and JTextFields arranged in a GridLayout, a JButton to save, and JOptionPane.showMessageDialog to confirm that the marks were saved.",
+            "quiz": [
+              {
+                "q": "Which of these is a Swing top level container?",
+                "options": [
+                  "Frame",
+                  "JFrame",
+                  "Container",
+                  "Graphics"
+                ],
+                "answer": 1,
+                "why": "Swing containers begin with J; Frame and Container come from AWT."
+              },
+              {
+                "q": "Swing components are called lightweight because:",
+                "options": [
+                  "they use less memory than any other library",
+                  "they are drawn by Java instead of by the operating system",
+                  "they cannot display text",
+                  "they need no layout manager"
+                ],
+                "answer": 1,
+                "why": "Light and heavy refer to who draws the component, not to how much memory it uses."
+              },
+              {
+                "q": "Which statement about Swing and AWT is NOT correct?",
+                "options": [
+                  "Swing component names start with J",
+                  "Swing supports a pluggable look and feel",
+                  "Swing is built on top of AWT",
+                  "Swing components are heavyweight native windows"
+                ],
+                "answer": 3,
+                "why": "Being lightweight is the whole difference from AWT, which uses native windows."
+              },
+              {
+                "q": "A short confirmation message with an OK button is shown with:",
+                "options": [
+                  "JOptionPane.showMessageDialog",
+                  "paint()",
+                  "System.out.println",
+                  "setVisible(true)"
+                ],
+                "answer": 0,
+                "why": "JOptionPane supplies the standard dialogs, including message, input and confirm."
+              }
+            ],
+            "examTip": "Learn five J classes by name with a one line role for each, and be ready for the standard AWT against Swing short question.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MV-T02",
@@ -889,7 +2137,59 @@
               "kind": "subtopic",
               "definition": "Reusability, visual assembly and configuration through properties."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A Java Bean is a reusable software component built to a fixed shape, so that tools can inspect it and use it without knowing your program: it has a public constructor with no arguments so it can be created automatically, private fields reached through public accessor methods that follow the get and set naming pattern, and it implements the Serializable interface so its state can be saved and restored. A builder tool examines the methods and works out the bean's properties, and this discovery is called introspection. Beans also communicate through events, and a bound property fires a property change event whenever its value changes so that other objects can react. The Bean Development Kit was the tool supplied to test and inspect beans, and the point of all the conventions is that a designed bean can be dropped into a visual editor and wired together without writing code.",
+            "example": "A numeric keypad bean built once for a college project is dropped into the fee counter screen, the library issue screen and the attendance screen, each time with a different label and a different action to perform.",
+            "quiz": [
+              {
+                "q": "Which pair of names marks the bean property called marks?",
+                "options": [
+                  "getMarks and setMarks",
+                  "marksGet and marksSet",
+                  "readMarks on its own",
+                  "Marks() and Marks(int)"
+                ],
+                "answer": 0,
+                "why": "The get and set convention is what allows a tool to discover the property by name."
+              },
+              {
+                "q": "A Java Bean must normally have:",
+                "options": [
+                  "a public constructor with no arguments",
+                  "a main method",
+                  "a paint method",
+                  "at least one static data member"
+                ],
+                "answer": 0,
+                "why": "The tool creates the bean itself before setting properties, so it needs an argument free constructor."
+              },
+              {
+                "q": "Introspection means:",
+                "options": [
+                  "a tool discovering the properties, methods and events of a bean",
+                  "the bean reading its own configuration file",
+                  "converting a bean into a servlet",
+                  "hiding the fields of a bean from the program"
+                ],
+                "answer": 0,
+                "why": "The class is examined at work time rather than known in advance, which is what makes visual assembly possible."
+              },
+              {
+                "q": "Which statement about beans is NOT correct?",
+                "options": [
+                  "Beans are reusable components",
+                  "A bound property notifies listeners when its value changes",
+                  "The Bean Development Kit was used to test beans",
+                  "A bean must contain a graphical window"
+                ],
+                "answer": 3,
+                "why": "A bean may have no user interface at all; reuse and conventions are what make it a bean."
+              }
+            ],
+            "examTip": "Answer bean questions with the four conventions: an argument free public constructor, get and set accessors, Serializable and event support.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA412-MV-T03",
@@ -933,7 +2233,59 @@
               "kind": "subtopic",
               "definition": "A web.xml descriptor or annotations map URLs to servlet classes inside a web container such as Tomcat."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A servlet is a Java class that runs inside a web server, strictly inside a servlet container such as Apache Tomcat, and answers HTTP, the HyperText Transfer Protocol that web browsers speak, so the page is built on the server instead of inside the browser as it was with an applet. Its life cycle has three stages: the container calls init() once when the servlet is loaded, then service() for every request, which passes the work to doGet() or doPost() depending on the request method, and finally destroy() once before the servlet is removed. The request and response arrive as HttpServletRequest and HttpServletResponse, and because HTTP itself remembers nothing between requests, state is carried by session tracking, using cookies, URL, the Uniform Resource Locator that names a page, rewriting, hidden form fields or the HttpSession API, the application programming interface the container keeps for the session. Compared with CGI, the Common Gateway Interface that runs a separate program for each request, where every single request starts a whole new process, a servlet stays loaded and serves requests on threads, which is faster and easier to scale, and it is deployed through a web.xml descriptor or an annotation.",
+            "example": "A college results page: the student submits a roll number in a GET request, which asks the server for a page and carries the data in the address line, doGet() reads the parameter, fetches the marks and writes back HTML (HyperText Markup Language, what browsers render), all inside one servlet that keeps running for every student who asks.",
+            "quiz": [
+              {
+                "q": "Which servlet method runs exactly once when the servlet is first loaded?",
+                "options": [
+                  "init()",
+                  "service()",
+                  "doGet()",
+                  "destroy()"
+                ],
+                "answer": 0,
+                "why": "init() does one time setup; service() and doGet() run again for every request."
+              },
+              {
+                "q": "A form submitted with method = \"post\" is handled by:",
+                "options": [
+                  "doGet()",
+                  "doPost()",
+                  "init()",
+                  "destroy()"
+                ],
+                "answer": 1,
+                "why": "service() checks the HTTP method and forwards a POST to doPost()."
+              },
+              {
+                "q": "Which statement about session tracking is NOT correct?",
+                "options": [
+                  "A cookie can carry a session identifier",
+                  "URL rewriting can carry a session identifier",
+                  "A hidden form field can carry a session identifier",
+                  "HTTP remembers each client's earlier requests by itself"
+                ],
+                "answer": 3,
+                "why": "HTTP is stateless, which is exactly why one of the tracking techniques is needed."
+              },
+              {
+                "q": "A servlet is faster than CGI mainly because:",
+                "options": [
+                  "it uses no memory at all",
+                  "it stays loaded and serves requests with threads instead of starting a process each time",
+                  "it compiles faster",
+                  "it runs inside the browser"
+                ],
+                "answer": 1,
+                "why": "One process with many threads beats one process per request, which is what CGI does."
+              }
+            ],
+            "examTip": "Three lists to memorise: the life cycle init, service, destroy, the four ways of session tracking, and the servlet against CGI comparison of thread against process.",
+            "verified": false
+          }
         }
       ]
     }

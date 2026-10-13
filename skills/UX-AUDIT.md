@@ -82,6 +82,8 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 53 | A blue circle around 411 read as "finished" while nothing had been read (reported 2026-10-13) | The course ring is now the progress itself: dashed accent = cards waiting, solid accent arc = the share marked read, grey = nothing to track yet. Same treatment on Home and Syllabus | fixed |
 | 54 | OpenRouter answered with its own billing text: "you requested up to 700 tokens, but can only afford 615 - upgrade to a paid account" (reported 2026-10-13) | The request now asks for 400 tokens, which is still twice what a 120-word answer needs; a refusal of that kind is translated into plain words with the three ways out (add credit, use a `:free` model, switch provider); OpenRouter's free models are listed first and tagged in Settings | fixed |
 
+| 55 | Nine of ten subjects had no cards at all, so their feeds were empty and every tile said "defs" (asked 2026-10-13) | Cards are now being written subject by subject in the 411 shape. CSCA 412 (Object Oriented Programming) is complete: 26 cards, 104 questions, answers spread 26/26/26/26, every card verified: false until reviewed | fixed |
+
 ## Still planned
 
 | # | Item | Why |
