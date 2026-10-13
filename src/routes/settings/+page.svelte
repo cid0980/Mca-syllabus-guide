@@ -15,6 +15,7 @@
 	import { PROVIDERS, type ProviderId } from '$lib/ai/providers';
 	import { listModels } from '$lib/ai/client';
 	import { clearAnswers, countAnswers } from '$lib/ai/cache';
+	import { clearThreads, countThreads } from '$lib/ai/threads';
 	import { totals, plural } from '$lib/content';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
@@ -35,6 +36,7 @@
 	let busy: Partial<Record<ProviderId, 'models' | 'test' | null>> = {};
 	let status: Partial<Record<ProviderId, { ok: boolean; text: string } | null>> = {};
 	let cachedCount = 0;
+	let threadCount = 0;
 	let confirmClear = false;
 	let toast = '';
 	let toastTimer: ReturnType<typeof setTimeout>;
@@ -44,6 +46,7 @@
 
 	onMount(async () => {
 		cachedCount = await countAnswers();
+		threadCount = await countThreads();
 	});
 
 	function notify(message: string) {
@@ -109,8 +112,10 @@
 
 	async function clearCache() {
 		await clearAnswers();
+		await clearThreads();
 		cachedCount = 0;
-		notify('Cached answers cleared');
+		threadCount = 0;
+		notify('Answers and chats cleared');
 	}
 
 	function resetProgress() {
@@ -269,13 +274,23 @@
 			</div>
 		{/if}
 
-		<p class="section-label">Answer cache</p>
+		<p class="section-label">AI answers and chats</p>
 		<div class="group">
-			<ListRow title="Saved AI answers" value={String(cachedCount)} lines={1} />
+			<ListRow title="Saved answers" value={String(cachedCount)} lines={1} />
+			<ListRow
+				title="Card chats kept"
+				value={String(threadCount)}
+				subtitle="Chats stay on this device, so closing the app or the chat never loses a question."
+				lines={2}
+			/>
 		</div>
 		<div class="gutter">
-			<button class="btn btn--secondary btn--sm danger-gap" on:click={clearCache} disabled={cachedCount === 0}>
-				<RefreshCw size={14} /> Clear cached answers
+			<button
+				class="btn btn--secondary btn--sm danger-gap"
+				on:click={clearCache}
+				disabled={cachedCount === 0 && threadCount === 0}
+			>
+				<RefreshCw size={14} /> Clear answers and chats
 			</button>
 		</div>
 	{/if}
@@ -294,7 +309,7 @@
 
 	<p class="section-label">Your data in this browser</p>
 	<div class="group">
-		<ListRow title="Cards seen" value={$hydrated ? `${seenCount} of ${totals.cards}` : '—'} lines={1} />
+		<ListRow title="Cards marked read" value={$hydrated ? `${seenCount} of ${totals.cards}` : '—'} lines={1} />
 		<ListRow title="Quiz answers recorded" value={$hydrated ? String(answered) : '—'} lines={1} />
 		<ListRow title="Saved items" value={$hydrated ? String($bookmarks.length) : '—'} lines={1} />
 		<ListRow title="Day streak" value={$hydrated ? String($streak.count) : '—'} lines={1} />
@@ -305,10 +320,15 @@
 	<p class="section-label">Reset</p>
 	<div class="group">
 		{#if !confirmClear}
-			<button class="danger-row pressable" on:click={() => (confirmClear = true)}>Clear progress and streak</button>
+			<button class="danger-row pressable" on:click={() => (confirmClear = true)}>
+				Clear progress, streak and continue point
+			</button>
 		{:else}
 			<div class="confirm">
-				<p class="confirm-text">This erases every card you have seen and all quiz results. There is no undo.</p>
+				<p class="confirm-text">
+					This erases every card you marked as read, all quiz results, the quiz run log, your streak
+					and the Continue point on Home. Saved cards and API keys are not touched. There is no undo.
+				</p>
 				<div class="row-actions">
 					<button class="btn btn--secondary btn--sm" on:click={() => (confirmClear = false)}>Keep my progress</button>
 					<button class="btn btn--danger btn--sm" on:click={resetProgress}>Erase progress</button>

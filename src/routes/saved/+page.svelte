@@ -80,7 +80,7 @@
 						href={`/topic/${item.id}`}
 						title={item.title}
 						subtitle={item.definition}
-						meta={`${item.subject} · Module ${item.module}${item.seen ? '' : ' · not seen yet'}`}
+						meta={`${item.subject} · Module ${item.module}${item.seen ? '' : ' · not marked read yet'}`}
 						chevron
 					/>
 				{/each}

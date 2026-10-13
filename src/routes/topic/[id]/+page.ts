@@ -5,6 +5,7 @@ export interface TopicData {
 	found: true;
 	code: string;
 	subject: string;
+	semester: number;
 	module: { module: string; title: string };
 	node: TopicNode & { card?: CardContent };
 	parent: { id: string; title: string } | null;
@@ -25,6 +26,7 @@ export const load: PageLoad = async ({ params }) => {
 		found: true,
 		code: tree.code,
 		subject: tree.subject,
+		semester: tree.semester,
 		module: { module: hit.module.module, title: hit.module.title },
 		node: hit.node,
 		parent: hit.parent ? { id: hit.parent.id, title: hit.parent.title } : null,

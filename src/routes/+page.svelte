@@ -3,13 +3,11 @@
 	import { indexSubject, subjectsOfSemester, semesterLabel, totals, plural } from '$lib/content';
 	import { shortName } from '$lib/labels';
 	import { progress, percentSeenByIds, streak } from '$lib/stores/progress';
-	import { KEYS, readJSON } from '$lib/storage';
+	import { lastOpened } from '$lib/stores/lastOpened';
 	import { hydrated } from '$lib/stores/hydrate';
 
 	let semester = 1;
-	let last: { code: string; module: string } | null = null;
 
-	$: if ($hydrated) last = readJSON<{ code: string; module: string } | null>(KEYS.lastOpened, null);
 	$: semesterSubjects = subjectsOfSemester(semester);
 
 	/** The deck the "Study the first deck" button links to. */
@@ -74,11 +72,18 @@
 		</a>
 	</div>
 
-	{#if last}
+	<!-- only a real study action sets this, so it never points at a deck that was only opened -->
+	{#if $hydrated && $lastOpened}
+		{@const last = $lastOpened}
 		{@const subject = indexSubject(last.code)}
-		{#if subject}
-			{@const pct = $hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}
-			<a class="continue" href={`/feed/${encodeURIComponent(last.code)}/${last.module}`}>
+		{@const moduleInfo = subject?.modules.find((m) => m.module === last.module)}
+		{@const cardPosition = moduleInfo ? moduleInfo.cardIds.indexOf(last.cardId) + 1 : 0}
+		{#if subject && cardPosition > 0}
+			{@const pct = percentSeenByIds(subject.cardIds, $progress)}
+			<a
+				class="continue"
+				href={`/feed/${encodeURIComponent(last.code)}/${last.module}?card=${encodeURIComponent(last.cardId)}`}
+			>
 				<span class="continue-ring">
 					<svg viewBox="0 0 40 40" width="44" height="44" aria-hidden="true">
 						<circle cx="20" cy="20" r="18" fill="none" stroke="var(--fill)" stroke-width="3" />
@@ -102,7 +107,9 @@
 				<span class="grow">
 					<span class="continue-label">Continue studying</span>
 					<span class="continue-title truncate">{subject.subject}</span>
-					<span class="continue-sub">Module {last.module} · {plural(cardsIn(last.code, last.module), 'card')}</span>
+					<span class="continue-sub">
+						Module {last.module} · card {cardPosition} of {moduleInfo?.cardIds.length ?? 0}
+					</span>
 				</span>
 				<span class="chev"><ChevronRight size={18} /></span>
 			</a>
@@ -134,7 +141,7 @@
 						{plural(subject.counts.topics, 'topic')} · {plural(subject.counts.subtopics, 'subtopic')}
 					</span>
 					<span class="subj-meta nums">
-						{subject.counts.cards ? `${subject.counts.cards} cards · ${pct}% seen` : 'definitions ready · cards pending'}
+						{subject.counts.cards ? `${subject.counts.cards} cards · ${pct}% marked read` : 'definitions ready · cards pending'}
 					</span>
 				</span>
 				<span class="chev"><ChevronRight size={18} /></span>

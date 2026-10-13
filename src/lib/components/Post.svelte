@@ -17,19 +17,23 @@
 		RotateCcw,
 		CircleCheck,
 		CircleX,
-		Lightbulb
+		Lightbulb,
+		Check
 	} from 'lucide-svelte';
 	import type { DeckCard } from '$lib/content';
 	import { shortName } from '$lib/labels';
-	import { recordQuiz } from '$lib/stores/progress';
+	import { recordQuiz, setSeen } from '$lib/stores/progress';
+	import { rememberCard } from '$lib/stores/lastOpened';
 
-	const dispatch = createEventDispatcher<{ save: boolean; ask: void }>();
+	const dispatch = createEventDispatcher<{ save: boolean; ask: void; read: boolean }>();
 
 	export let card: DeckCard;
 	export let examMode = false;
 	export let saved = false;
 	export let index = 0;
 	export let total = 1;
+	/** the student marked this card as read (only they can set it) */
+	export let read = false;
 
 	let face: 'front' | 'back' = 'front';
 	let picked: number[] = [];
@@ -48,6 +52,16 @@
 		if (picked[qi] !== -1) return;
 		picked = picked.map((v, i) => (i === qi ? oi : v));
 		recordQuiz(card.id, oi === answer);
+		// answering is studying the card, so remember where the student was
+		rememberCard(card.subjectCode, card.module, card.id);
+	}
+
+	/** The only place a card becomes "read" — and it can be taken back. */
+	function toggleRead() {
+		const next = !read;
+		setSeen(card.id, next);
+		if (next) rememberCard(card.subjectCode, card.module, card.id);
+		dispatch('read', next);
 	}
 
 	function flip() {
@@ -165,6 +179,22 @@
 			</p>
 
 			{#if !examMode}
+				<button
+					class="read-toggle"
+					class:on={read}
+					on:click|stopPropagation={toggleRead}
+					aria-pressed={read}
+				>
+					{#if read}
+						<Check size={16} />
+						<span class="grow">Marked as read</span>
+						<span class="read-hint">tap to undo</span>
+					{:else}
+						<CircleCheck size={16} />
+						<span class="grow">Mark as read</span>
+					{/if}
+				</button>
+
 				<button class="quiz-cta" on:click|stopPropagation={flip}>
 					<ListChecks size={16} />
 					<span class="grow">Take the quiz · {card.quiz.length} question{card.quiz.length === 1 ? '' : 's'}</span>
@@ -280,6 +310,38 @@
 
 	.inline-tag.accent {
 		color: var(--accent);
+	}
+
+	/* reading is the student's call: outlined until marked, accent when marked */
+	.read-toggle {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-2);
+		width: 100%;
+		min-height: 44px;
+		padding: var(--sp-2) var(--sp-3);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		font-size: var(--fs-small);
+		font-weight: 600;
+		color: var(--fg-muted);
+		transition: transform var(--dur-press) var(--ease-standard), color var(--dur-press) var(--ease-standard),
+			border-color var(--dur-press) var(--ease-standard);
+	}
+
+	.read-toggle:active {
+		transform: scale(0.985);
+	}
+
+	.read-toggle.on {
+		color: var(--accent);
+		border-color: var(--accent);
+	}
+
+	.read-hint {
+		font-size: var(--fs-caption);
+		font-weight: 400;
+		color: var(--fg-subtle);
 	}
 
 	/* the way into the quiz is a labelled control, visible without scrolling */

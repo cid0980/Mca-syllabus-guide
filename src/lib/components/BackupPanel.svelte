@@ -194,7 +194,7 @@
 	{/if}
 
 	<p class="note">
-		The file is plain JSON: your % seen, saved cards, quiz accuracy, streak and theme. Your AI API
+		The file is plain JSON: your cards marked read, saved cards, quiz accuracy, streak and theme. Your AI API
 		keys are never included. Keep it in Drive, or email it to yourself, then import it on a new
 		phone or after clearing browser data. No account and no server are involved.
 	</p>

@@ -26,7 +26,7 @@
 			<ProgressRing percent={$hydrated && allCardIds.length ? Math.round((overallSeen / allCardIds.length) * 100) : 0} size={52} stroke={4} />
 			<div>
 				<p class="tile-value nums">{overallSeen}/{allCardIds.length}</p>
-				<p class="tile-label">cards seen</p>
+				<p class="tile-label">cards read</p>
 			</div>
 		</div>
 		<div class="tile">

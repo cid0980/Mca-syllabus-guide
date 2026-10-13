@@ -16,6 +16,7 @@
 		Target
 	} from 'lucide-svelte';
 	import { recordQuiz } from '$lib/stores/progress';
+	import { rememberCard } from '$lib/stores/lastOpened';
 	import {
 		recordSession,
 		scoreMessage,
@@ -111,6 +112,8 @@
 		const correct = oi === current.question.answer;
 		answers = [...answers, { item: current, chosen: oi, correct }];
 		recordQuiz(current.cardId, correct);
+		// answering a question is real study, so the deck becomes the continue point
+		rememberCard(current.subjectCode, current.module, current.cardId);
 	}
 
 	function next() {

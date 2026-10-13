@@ -4,6 +4,12 @@
  */
 const DB = 'studyfeed';
 const STORE = 'aiAnswers';
+const STORE_THREADS = 'aiThreads';
+/** v2 adds the chat threads store; v1 databases upgrade in place and keep their answers. */
+const VERSION = 2;
+
+/** Both IndexedDB stores, so callers never hardcode a name. */
+export const AI_STORES = { answers: STORE, threads: STORE_THREADS } as const;
 const memory = new Map<string, string>();
 
 let dbPromise: Promise<IDBDatabase | null> | null = null;
@@ -13,10 +19,12 @@ function db(): Promise<IDBDatabase | null> {
 	if (!dbPromise) {
 		dbPromise = new Promise((resolve) => {
 			try {
-				const req = indexedDB.open(DB, 1);
+				const req = indexedDB.open(DB, VERSION);
 				req.onupgradeneeded = () => {
 					const d = req.result;
 					if (!d.objectStoreNames.contains(STORE)) d.createObjectStore(STORE, { keyPath: 'key' });
+					if (!d.objectStoreNames.contains(STORE_THREADS))
+						d.createObjectStore(STORE_THREADS, { keyPath: 'cardId' });
 				};
 				req.onsuccess = () => resolve(req.result);
 				req.onerror = () => resolve(null);
@@ -26,6 +34,11 @@ function db(): Promise<IDBDatabase | null> {
 		});
 	}
 	return dbPromise;
+}
+
+/** Shared with $lib/ai/threads.ts so one connection serves both stores. */
+export function openDb(): Promise<IDBDatabase | null> {
+	return db();
 }
 
 export function cacheKey(parts: (string | undefined)[]): string {

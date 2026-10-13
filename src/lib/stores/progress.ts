@@ -11,7 +11,8 @@
 import { browser } from '$app/environment';
 import { get, writable } from 'svelte/store';
 import type { ProgressMap, StreakState } from '$lib/types';
-import { KEYS, daysBetween, readJSON, todayKey, writeJSON } from '$lib/storage';
+import { KEYS, daysBetween, readJSON, removeKey, todayKey, writeJSON } from '$lib/storage';
+import { forgetLastOpened } from '$lib/stores/lastOpened';
 
 export const progress = writable<ProgressMap>({});
 export const streak = writable<StreakState>({ count: 0, lastDay: '' });
@@ -26,34 +27,53 @@ export function initProgress(): void {
 	refreshStreak();
 	// debounced: writing on every card view was showing up as jank while scrolling
 	let saveTimer: ReturnType<typeof setTimeout> | undefined;
-	const flush = () => writeJSON(KEYS.progress, get(progress));
 	progress.subscribe(() => {
 		clearTimeout(saveTimer);
-		saveTimer = setTimeout(flush, 300);
+		saveTimer = setTimeout(flushProgress, 300);
 	});
-	streak.subscribe((v) => {
+	streak.subscribe(() => {
 		clearTimeout(saveTimer);
-		saveTimer = setTimeout(() => {
-			writeJSON(KEYS.progress, get(progress));
-			writeJSON(KEYS.streak, v);
-		}, 300);
+		saveTimer = setTimeout(flushProgress, 300);
+	});
+
+	/**
+	 * A phone can kill the tab without warning, and the 300ms write delay is enough to lose the last
+	 * thing the student did. Flush when the page is hidden or unloaded.
+	 */
+	const flushNow = () => flushProgress();
+	globalThis.addEventListener('pagehide', flushNow);
+	document.addEventListener('visibilitychange', () => {
+		if (document.visibilityState === 'hidden') flushProgress();
 	});
 }
 
-export function markSeen(nodeId: string): void {
+/** Writes progress and streak to localStorage immediately, skipping the debounce. */
+export function flushProgress(): void {
+	writeJSON(KEYS.progress, get(progress));
+	writeJSON(KEYS.streak, get(streak));
+}
+
+/**
+ * Marks a card read, or takes the mark back.
+ *
+ * This is only ever called from the button on the card. Scrolling past a card used to mark it, which
+ * made the completion numbers meaningless, so the decision belongs to the student.
+ */
+export function setSeen(nodeId: string, seen: boolean): void {
 	progress.update((map) => {
 		const prev = map[nodeId];
 		return {
 			...map,
 			[nodeId]: {
-				seen: true,
+				seen,
 				lastSeen: Date.now(),
 				quizCorrect: prev?.quizCorrect ?? 0,
 				quizWrong: prev?.quizWrong ?? 0
 			}
 		};
 	});
-	touchStreak();
+	// unmarking must not count as a study day
+	if (seen) touchStreak();
 }
 
 export function recordQuiz(nodeId: string, correct: boolean): void {
@@ -123,7 +143,17 @@ export function accuracyByIds(ids: string[], map: ProgressMap = {}): Accuracy {
 	return { correct, wrong, answered, percent: answered ? Math.round((correct / answered) * 100) : 0 };
 }
 
+/**
+ * Erases everything the student produced by studying, and nothing else.
+ *
+ * The write is immediate: the debounced writer used to leave the old values in localStorage for a
+ * moment, so clearing and reloading quickly brought the numbers back. The quiz run log and the
+ * continue point go too - they are study history as well. Saved cards and AI keys are not touched.
+ */
 export function clearProgress(): void {
 	progress.set({});
 	streak.set({ count: 0, lastDay: '' });
+	removeKey(KEYS.quiz);
+	forgetLastOpened();
+	flushProgress();
 }

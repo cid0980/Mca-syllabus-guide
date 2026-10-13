@@ -1,21 +1,19 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
 	import { ChevronLeft, ChevronRight, ListTree, GitBranch, Layers } from 'lucide-svelte';
 	import type { DeckCard } from '$lib/content';
-	import { markSeen, progress } from '$lib/stores/progress';
+	import { progress } from '$lib/stores/progress';
 	import { bookmarks, toggleBookmark } from '$lib/stores/bookmarks';
 	import { hydrated } from '$lib/stores/hydrate';
+	import { goto } from '$app/navigation';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Post from '$lib/components/Post.svelte';
-	import AskSheet from '$lib/components/AskSheet.svelte';
 	import ErrorState from '$lib/components/ErrorState.svelte';
 
 	export let data: PageData;
 
 	let toast = '';
 	let toastTimer: ReturnType<typeof setTimeout>;
-	let askOpen = false;
 
 	$: card = deckCard(data);
 	$: saved = data.found ? $bookmarks.includes(data.node.id) : false;
@@ -25,7 +23,7 @@
 		return {
 			id: d.node.id,
 			subjectCode: d.code,
-			semester: 1,
+			semester: d.semester,
 			module: d.module.module,
 			topic: d.node.title,
 			definition: d.node.definition,
@@ -49,9 +47,10 @@
 		notify(next ? 'Saved' : 'Removed');
 	}
 
-	onMount(() => {
-		if (data.found && data.node.card) markSeen(data.node.id);
-	});
+	/** The ask page carries the card and the way back to this page. */
+	function openAsk(id: string) {
+		goto(`/ask?card=${encodeURIComponent(id)}&from=${encodeURIComponent(`/topic/${id}`)}`);
+	}
 </script>
 
 <svelte:head><title>{data.found ? data.node.title : 'Topic'} — StudyFeed</title></svelte:head>
@@ -142,8 +141,10 @@
 					{saved}
 					index={0}
 					total={1}
+					read={$progress[node.id]?.seen ?? false}
 					on:save={(e) => save(e.detail)}
-					on:ask={() => (askOpen = true)}
+					on:read={(e) => notify(e.detail ? 'Marked as read' : 'Mark removed')}
+					on:ask={() => openAsk(node.id)}
 				/>
 			</div>
 			<div class="gutter">
@@ -179,12 +180,12 @@
 		</nav>
 
 		<p class="footnote">
-			{$hydrated && $progress[node.id]?.seen ? 'Marked as seen.' : 'Opening this page marks it as seen.'}
+			{$hydrated && $progress[node.id]?.seen
+				? 'You marked this card as read.'
+				: 'Reading this page does not mark anything. Use the button on the card when you have understood it.'}
 		</p>
 	</main>
 {/if}
-
-<AskSheet open={askOpen} card={card} on:close={() => (askOpen = false)} />
 
 {#if toast}<div class="toast" role="status">{toast}</div>{/if}
 

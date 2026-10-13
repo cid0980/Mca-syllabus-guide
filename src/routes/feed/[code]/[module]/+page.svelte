@@ -1,19 +1,17 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { plural } from '$lib/content';
-	import { KEYS, readJSON, writeJSON } from '$lib/storage';
+	import { KEYS, readJSON } from '$lib/storage';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Feed from '$lib/components/Feed.svelte';
 
 	export let data: PageData;
 
-	onMount(() => {
-		writeJSON(KEYS.lastOpened, { code: data.code, module: data.module, at: Date.now() });
-	});
-
-	/** `?card=<id>` jumps straight to one card; otherwise resume at the first unseen card. */
+	/**
+	 * `?card=<id>` jumps straight to one card (that is how Continue comes back to the exact card);
+	 * otherwise resume at the first card not yet marked as read. Opening a deck records nothing.
+	 */
 	function startIndex(): number {
 		if (!browser) return 0;
 		const requested = new URLSearchParams(location.search).get('card');

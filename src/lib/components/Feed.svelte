@@ -11,12 +11,13 @@
 	 */
 	import { onMount } from 'svelte';
 	import { ChevronDown, ChevronUp } from 'lucide-svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import type { DeckCard } from '$lib/content';
-	import { markSeen } from '$lib/stores/progress';
+	import { progress } from '$lib/stores/progress';
 	import { bookmarks, toggleBookmark } from '$lib/stores/bookmarks';
 	import { hydrated } from '$lib/stores/hydrate';
 	import Post from '$lib/components/Post.svelte';
-	import AskSheet from '$lib/components/AskSheet.svelte';
 
 	export let cards: DeckCard[] = [];
 	export let initialIndex = 0;
@@ -27,10 +28,10 @@
 	let io: IntersectionObserver | null = null;
 	let toast = '';
 	let toastTimer: ReturnType<typeof setTimeout>;
-	let askOpen = false;
 
 	$: total = cards.length;
-	$: currentCard = cards[active] ?? null;
+	/** the bar shows how much of this deck the student has actually marked, not scroll position */
+	$: readCount = $hydrated ? cards.filter((c) => $progress[c.id]?.seen).length : 0;
 
 	onMount(() => {
 		globalThis.addEventListener('keydown', onKey);
@@ -52,9 +53,18 @@
 		};
 	});
 
+	/**
+	 * Only tracks which card is on screen, for the jump buttons and the keyboard. Marking a card as
+	 * read is the student's tap on the card itself.
+	 */
 	function setActive(i: number) {
 		active = i;
-		if (cards[i]) markSeen(cards[i].id);
+	}
+
+	/** The ask page needs the card and the way back to it, and both go in the URL. */
+	function openAsk(cardId: string) {
+		const from = `${$page.url.pathname}?card=${encodeURIComponent(cardId)}`;
+		goto(`/ask?card=${encodeURIComponent(cardId)}&from=${encodeURIComponent(from)}`);
 	}
 
 	function notify(message: string) {
@@ -93,7 +103,7 @@
 
 <div class="feed" bind:this={scroller} aria-label="Study cards">
 	<div class="bar">
-		<div class="track"><div class="fill" style={`width:${total ? ((active + 1) / total) * 100 : 0}%`}></div></div>
+		<div class="track"><div class="fill" style={`width:${total ? (readCount / total) * 100 : 0}%`}></div></div>
 	</div>
 
 	{#each cards as card, i (card.id)}
@@ -105,8 +115,10 @@
 					index={i}
 					{total}
 					saved={$bookmarks.includes(card.id)}
+					read={$progress[card.id]?.seen ?? false}
 					on:save={() => onSave(card.id)}
-					on:ask={() => (askOpen = true)}
+					on:read={(e) => notify(e.detail ? 'Marked as read' : 'Mark removed')}
+					on:ask={() => openAsk(card.id)}
 				/>
 			{:else}
 				<div class="stub"></div>
@@ -125,8 +137,6 @@
 		</button>
 	</div>
 {/if}
-
-<AskSheet open={askOpen} card={currentCard} on:close={() => (askOpen = false)} />
 
 {#if toast}<div class="toast" role="status">{toast}</div>{/if}
 

@@ -11,6 +11,7 @@ import { initProgress } from '$lib/stores/progress';
 import { initBookmarks } from '$lib/stores/bookmarks';
 import { initSettings } from '$lib/stores/settings';
 import { initAi } from '$lib/stores/ai';
+import { initLastOpened } from '$lib/stores/lastOpened';
 
 export const hydrated = writable(false);
 
@@ -23,5 +24,6 @@ export function hydrateAll(): void {
 	initBookmarks();
 	initSettings();
 	initAi();
+	initLastOpened();
 	hydrated.set(true);
 }
