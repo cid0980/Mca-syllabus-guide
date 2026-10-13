@@ -72,7 +72,13 @@
 			subtitle={`Module ${data.module} · ${plural(data.cards.length, 'card')}`}
 			back={`/subject/${encodeURIComponent(data.code)}`}
 		/>
-		<Feed cards={data.cards} initialIndex={startIndex()} />
+		<Feed
+			cards={data.cards}
+			initialIndex={startIndex()}
+			current={data.current}
+			prev={data.prev}
+			next={data.next}
+		/>
 	</div>
 {/if}
 

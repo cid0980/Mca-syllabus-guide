@@ -1,5 +1,13 @@
 import type { PageLoad } from './$types';
-import { loadTree, cardsOfModule, indexSubject, type DeckCard } from '$lib/content';
+import {
+	loadTree,
+	cardsOfModule,
+	indexSubject,
+	moduleNeighbours,
+	moduleRef,
+	type DeckCard,
+	type ModuleRef
+} from '$lib/content';
 
 export interface FeedModule {
 	module: string;
@@ -17,5 +25,17 @@ export const load: PageLoad = async ({ params }) => {
 		.map((m) => ({ module: m.module, title: m.title, cards: cardsOfModule(tree, m.module).length }))
 		.filter((m) => m.cards > 0 && m.module !== module);
 
-	return { code, module, summary: summary ?? null, cards, otherModules };
+	// the end of the deck hands the student straight to the neighbouring written module
+	const { prev, next } = moduleNeighbours(code, module);
+
+	return {
+		code,
+		module,
+		summary: summary ?? null,
+		cards,
+		otherModules,
+		current: moduleRef(code, module),
+		prev,
+		next
+	};
 };

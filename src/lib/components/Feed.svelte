@@ -10,10 +10,12 @@
 	 *  - the progress bar is sticky, so it stays visible on tall cards
 	 */
 	import { onMount } from 'svelte';
-	import { ChevronDown, ChevronUp } from 'lucide-svelte';
+	import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import type { DeckCard } from '$lib/content';
+	import { plural } from '$lib/content';
+	import type { DeckCard, ModuleRef } from '$lib/content';
+	import { shortName } from '$lib/labels';
 	import { progress } from '$lib/stores/progress';
 	import { bookmarks, toggleBookmark } from '$lib/stores/bookmarks';
 	import { hydrated } from '$lib/stores/hydrate';
@@ -22,6 +24,10 @@
 	export let cards: DeckCard[] = [];
 	export let initialIndex = 0;
 	export let examMode = false;
+	/** the module this deck belongs to, and the written modules before and after it */
+	export let current: ModuleRef | null = null;
+	export let prev: ModuleRef | null = null;
+	export let next: ModuleRef | null = null;
 
 	let scroller: HTMLDivElement;
 	let active = 0;
@@ -30,6 +36,8 @@
 	let toastTimer: ReturnType<typeof setTimeout>;
 
 	$: total = cards.length;
+	/** cards run 0..total-1 and the end of module block sits at total, so the jump buttons reach it */
+	$: lastStop = total;
 	/** the bar shows how much of this deck the student has actually marked, not scroll position */
 	$: readCount = $hydrated ? cards.filter((c) => $progress[c.id]?.seen).length : 0;
 
@@ -81,8 +89,8 @@
 	}
 
 	function step(by: number) {
-		const next = Math.min(total - 1, Math.max(0, active + by));
-		if (next !== active) goTo(next);
+		const target = Math.min(lastStop, Math.max(0, active + by));
+		if (target !== active) goTo(target);
 	}
 
 	function onKey(e: KeyboardEvent) {
@@ -127,12 +135,69 @@
 	{/each}
 </div>
 
+<!--
+	The end of a deck used to be a dead end: the student had to go back to the subject page and hunt
+	for the next module. This block names where the next tap goes, and shows what was read.
+-->
+{#if current}
+	<section class="end" aria-label={`End of Module ${current.module}`}>
+		<p class="end-label">End of Module {current.module}</p>
+		<h2 class="end-title">{current.title}</h2>
+		<p class="end-status">
+			{#if total > 0 && readCount === total}
+				All {plural(total, 'card')} marked read.
+			{:else}
+				You marked {readCount} of {total} cards read.
+			{/if}
+		</p>
+
+		<div class="end-actions">
+			{#if prev}
+				<a class="end-btn" href={`/feed/${encodeURIComponent(prev.code)}/${prev.module}`}>
+					<ChevronLeft size={18} />
+					<span class="grow">
+						<span class="end-btn-title">Previous module</span>
+						<span class="end-btn-sub truncate">
+							{prev.code !== current.code ? `${shortName(prev.code)} · ` : ''}Module {prev.module} · {prev.title}
+						</span>
+					</span>
+				</a>
+			{/if}
+
+			{#if next}
+				<a
+					class="end-btn end-btn--primary"
+					href={`/feed/${encodeURIComponent(next.code)}/${next.module}`}
+				>
+					<span class="grow">
+						<span class="end-btn-title">
+							{next.code === current.code ? 'Next module' : 'Next subject'}
+						</span>
+						<span class="end-btn-sub truncate">
+							{next.code !== current.code ? `${shortName(next.code)} · ` : ''}Module {next.module} · {next.title}
+						</span>
+					</span>
+					<ChevronRight size={18} />
+				</a>
+			{:else}
+				<a class="end-btn" href={`/subject/${encodeURIComponent(current.code)}`}>
+					<span class="grow">
+						<span class="end-btn-title">All modules of {shortName(current.code)}</span>
+						<span class="end-btn-sub">No written module follows this one yet</span>
+					</span>
+					<ChevronRight size={18} />
+				</a>
+			{/if}
+		</div>
+	</section>
+{/if}
+
 {#if total > 1}
 	<div class="jump">
 		<button class="jump-btn" disabled={active === 0} on:click={() => step(-1)} aria-label="Previous card">
 			<ChevronUp size={18} />
 		</button>
-		<button class="jump-btn" disabled={active >= total - 1} on:click={() => step(1)} aria-label="Next card">
+		<button class="jump-btn" disabled={active >= lastStop} on:click={() => step(1)} aria-label="Next card">
 			<ChevronDown size={18} />
 		</button>
 	</div>
@@ -187,6 +252,87 @@
 
 	.snap + .snap {
 		border-top: 1px solid var(--border);
+	}
+
+	/* ---------- end of module ---------- */
+
+	.end {
+		min-height: 60%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: var(--sp-2);
+		padding: var(--sp-6) var(--sp-4) var(--sp-8);
+	}
+
+	.end-label {
+		font-size: var(--fs-caption);
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--fg-subtle);
+	}
+
+	.end-title {
+		font-size: var(--fs-title);
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	.end-status {
+		font-size: var(--fs-small);
+		color: var(--fg-muted);
+	}
+
+	.end-actions {
+		display: grid;
+		gap: var(--sp-2);
+		margin-top: var(--sp-3);
+	}
+
+	.end-btn {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-3);
+		min-height: 56px;
+		padding: var(--sp-3) var(--sp-4);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		color: var(--fg);
+		transition: transform var(--dur-press) var(--ease-standard), background-color var(--dur-press) var(--ease-standard);
+	}
+
+	.end-btn:active {
+		transform: scale(0.99);
+		background: var(--fill);
+	}
+
+	.end-btn--primary {
+		background: var(--accent);
+		border-color: var(--accent);
+		color: var(--accent-fg);
+	}
+
+	.end-btn--primary:active {
+		background: var(--accent);
+		opacity: 0.9;
+	}
+
+	.end-btn-title {
+		display: block;
+		font-size: var(--fs-body);
+		font-weight: 600;
+	}
+
+	.end-btn-sub {
+		display: block;
+		font-size: var(--fs-caption);
+		color: var(--fg-subtle);
+	}
+
+	.end-btn--primary .end-btn-sub {
+		color: var(--accent-fg);
+		opacity: 0.85;
 	}
 
 	.stub {

@@ -84,6 +84,64 @@ export function semesterLabel(n: number): string {
 	return n === 1 ? '1st Semester' : n === 2 ? '2nd Semester' : n === 3 ? '3rd Semester' : `${n}th Semester`;
 }
 
+/* ---------------- module chain ---------------- */
+
+export interface ModuleRef {
+	code: string;
+	subject: string;
+	module: string;
+	title: string;
+	cards: number;
+}
+
+/** One module as a reference: enough to label a link and build its feed address. */
+export function moduleRef(code: string, module: string): ModuleRef | null {
+	const subject = indexSubject(code);
+	const m = subject?.modules.find((x) => x.module === module);
+	if (!subject || !m) return null;
+	return {
+		code: subject.code,
+		subject: subject.subject,
+		module: m.module,
+		title: m.title,
+		cards: m.cards
+	};
+}
+
+/**
+ * Every module that has cards, as one list in study order: subjects in semester order (1st, 2nd,
+ * 3rd), modules in their own order inside each subject. Modules with no cards are left out, so the
+ * previous and next buttons in a deck always land on something readable.
+ */
+export function moduleChain(): ModuleRef[] {
+	const chain: ModuleRef[] = [];
+	const semesters = [...new Set(subjects.map((s) => s.semester))].sort((a, b) => a - b);
+	for (const semester of semesters) {
+		for (const subject of subjectsOfSemester(semester)) {
+			for (const m of subject.modules) {
+				if (m.cards > 0) {
+					chain.push({
+						code: subject.code,
+						subject: subject.subject,
+						module: m.module,
+						title: m.title,
+						cards: m.cards
+					});
+				}
+			}
+		}
+	}
+	return chain;
+}
+
+/** The written module before this one and after it, for the end of a deck. */
+export function moduleNeighbours(code: string, module: string): { prev: ModuleRef | null; next: ModuleRef | null } {
+	const chain = moduleChain();
+	const i = chain.findIndex((m) => m.code === code && m.module === module);
+	if (i < 0) return { prev: null, next: null };
+	return { prev: chain[i - 1] ?? null, next: chain[i + 1] ?? null };
+}
+
 /* ---------------- id helpers ---------------- */
 
 /** ids look like CSCA411-M1-01 / CSCA411-M1-01-s2 — module numbers are arabic in ids. */
