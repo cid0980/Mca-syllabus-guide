@@ -20,6 +20,7 @@
 	import { onMount } from 'svelte';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import ListRow from '$lib/components/ListRow.svelte';
+	import BackupPanel from '$lib/components/BackupPanel.svelte';
 	import { hydrated } from '$lib/stores/hydrate';
 
 	const themes = [
@@ -298,6 +299,8 @@
 		<ListRow title="Saved items" value={$hydrated ? String($bookmarks.length) : '—'} lines={1} />
 		<ListRow title="Day streak" value={$hydrated ? String($streak.count) : '—'} lines={1} />
 	</div>
+
+	<BackupPanel />
 
 	<p class="section-label">Reset</p>
 	<div class="group">

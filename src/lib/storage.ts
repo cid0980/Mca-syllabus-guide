@@ -10,7 +10,9 @@ export const KEYS = {
 	streak: 'sf:streak',
 	settings: 'sf:settings',
 	lastOpened: 'sf:lastOpened',
-	ai: 'sf:ai'
+	ai: 'sf:ai',
+	/** finished quiz runs; also written by $lib/quiz.ts, which uses this same key */
+	quiz: 'sf:quiz'
 } as const;
 
 export function readJSON<T>(key: string, fallback: T): T {

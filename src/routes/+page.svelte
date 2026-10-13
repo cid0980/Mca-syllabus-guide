@@ -11,6 +11,18 @@
 	$: if ($hydrated) last = readJSON<{ code: string; module: string } | null>(KEYS.lastOpened, null);
 	$: semesterSubjects = subjectsOfSemester(semester);
 
+	/** The deck the "Study the first deck" button links to. */
+	const FIRST_DECK = { code: 'CSCA 411', module: 'I' };
+
+	/**
+	 * Card count for ONE module, straight from index.json.
+	 * Never use the subject total here: CSCA 411 has 51 cards across five modules,
+	 * Module I alone has 10.
+	 */
+	function cardsIn(code: string, module: string): number {
+		return indexSubject(code)?.modules.find((m) => m.module === module)?.cards ?? 0;
+	}
+
 	/** story ring state — like an unwatched / watched story */
 	function ringState(cards: number, pct: number): 'accent' | 'muted' | 'done' {
 		if (cards === 0) return 'muted';
@@ -80,7 +92,7 @@
 				<span class="grow">
 					<span class="continue-label">Continue studying</span>
 					<span class="continue-title truncate">{subject.subject}</span>
-					<span class="continue-sub">Module {last.module} · {plural(subject.counts.cards, 'card')}</span>
+					<span class="continue-sub">Module {last.module} · {plural(cardsIn(last.code, last.module), 'card')}</span>
 				</span>
 				<span class="chev"><ChevronRight size={18} /></span>
 			</a>
@@ -128,12 +140,16 @@
 			</span>
 			<span class="chev"><ChevronRight size={18} /></span>
 		</a>
-		<a class="subj pressable" href="/feed/CSCA%20411/I">
+		<a class="subj pressable" href={`/feed/${encodeURIComponent(FIRST_DECK.code)}/${FIRST_DECK.module}`}>
 			<span class="avatar" aria-hidden="true"><BookOpen size={18} /></span>
 			<span class="grow">
 				<span class="subj-title">Study the first deck</span>
-				<span class="subj-sub">Data Structures and Algorithms · Module I</span>
-				<span class="subj-meta nums">{totals.cards} cards written</span>
+				<span class="subj-sub">
+					{indexSubject(FIRST_DECK.code)?.subject ?? FIRST_DECK.code} · Module {FIRST_DECK.module}
+				</span>
+				<span class="subj-meta nums">
+					{plural(cardsIn(FIRST_DECK.code, FIRST_DECK.module), 'card')} written
+				</span>
 			</span>
 			<span class="chev"><ChevronRight size={18} /></span>
 		</a>

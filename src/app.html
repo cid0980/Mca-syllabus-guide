@@ -10,7 +10,14 @@
 		<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
 		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<!--
+			"default", not "black-translucent": black-translucent draws the page under the status bar
+			and forces WHITE status-bar text, so on the light theme (#ffffff) the clock and battery
+			disappear. "default" lets iOS paint a status bar that matches the current appearance, so
+			the text is always readable. The two theme-color lines above keep the browser chrome in
+			step with light and dark.
+		-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 		<meta name="apple-mobile-web-app-title" content="StudyFeed" />
 		<meta name="description" content="Personal study cards and syllabus browser for the Pondicherry University MCA." />
 		<title>StudyFeed</title>
