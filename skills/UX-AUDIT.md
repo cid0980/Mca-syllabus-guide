@@ -1,0 +1,59 @@
+# UX audit — every discomfort we know about
+
+A living list. Anything found by the user or by testing goes here with the fix, so the same
+complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
+
+## Navigation and orientation
+
+| # | Where a person gets stuck | Fix | Status |
+|---|---|---|---|
+| 1 | Tab bar doesn't follow the page (bar frozen on Home) | Active tab derived in a `$:` statement, compared in the template; tapped tab lights up before the route changes | fixed |
+| 2 | Can't tell if a tap registered | 110ms pressed state on tabs, rows and buttons; haptic tick on Android | fixed |
+| 3 | Deep in a topic, no sense of place | Breadcrumb row in the app bar (`subject / module`) plus prev/next topic buttons | fixed |
+| 4 | Back goes somewhere unexpected | App bar back button names its destination (compares subject vs syllabus) | fixed |
+| 5 | Settings has no obvious way back | App bar back button on every non-tab screen | fixed |
+
+## The feed and cards
+
+| # | Where a person gets stuck | Fix | Status |
+|---|---|---|---|
+| 6 | A card's content overlapped the next card | Cards are natural height inside one scroll container; the card body no longer has its own scroll area | fixed |
+| 7 | Scrolling got trapped between cards | `scroll-snap-type: y proximity` instead of `mandatory`, and no `scroll-snap-stop: always` | fixed |
+| 8 | Accidental flip while scrolling | Tap only flips if the finger moved less than 8px and no scroll happened in the last 120ms | fixed |
+| 9 | After opening the quiz there was no way back | A labelled "Back to card" control sits under the quiz **and** in the action row; the last answer reveals a "Back to card" primary button | fixed |
+| 10 | Quiz felt like a dead end after answering | Each answer reveals the explanation immediately, and a completion line counts the score with the next action offered | fixed |
+| 11 | Couldn't tell which subject/module a card belongs to | Post header shows the course avatar, subject code and module | fixed |
+| 12 | Progress through a deck was invisible | Sticky progress bar at the top of the feed plus an "n/total" counter in the action row | fixed |
+| 13 | Asking something about the card did nothing | Ask opens the AI panel with the card already as context | fixed |
+
+## Trust, data and errors
+
+| # | Where a person gets stuck | Fix | Status |
+|---|---|---|---|
+| 14 | Empty screens with no way forward | Every empty state names what is missing and offers a next tap | fixed |
+| 15 | A failed load left a blank page | `ErrorState` with what failed, why, and a retry that shows its own spinner | fixed |
+| 16 | No idea whether study progress is safe | Settings lists exactly what is stored in this browser; reset asks twice | fixed |
+| 17 | AI answers would be lost on reload | Answers cached in IndexedDB (`aiAnswers`) keyed by provider + model + question + card | fixed |
+| 18 | A pasted API key is scary | Keys stay in this browser, are never bundled into the site, and can be cleared with one tap; the panel says which provider receives the request | fixed |
+| 19 | No AI key configured and the Ask button did nothing | The panel detects the missing key and links straight to Settings | fixed |
+
+## Reading and comfort
+
+| # | Where a person gets stuck | Fix | Status |
+|---|---|---|---|
+| 20 | Long definitions hard to scan | Definition is the lead line in 17px semibold; explanation is muted body text; example and exam tip are labelled blocks | fixed |
+| 21 | Small tap targets | 44px minimum on every control, 48–56px rows, 40px icon buttons with a 4px ring | fixed |
+| 22 | White flash or theme flicker on load | Theme applied pre-paint from `sf:settings`; dark is `#000` and light is `#fff`, following the system by default | fixed |
+| 23 | Content pops in and looks broken for a moment | Skeletons are shaped like the real content and cross-fade in 150ms | fixed |
+| 24 | Typography feels cramped on a phone | One Inter variable stack, 4/8/12/16/24/32/48 spacing scale, 1.3–1.6 line heights | fixed |
+| 25 | Panels appear with no explanation | Sheets slide from the bottom edge, menus grow from their trigger, per `skills/MOTION.md` | fixed |
+
+## Still planned
+
+| # | Item | Why |
+|---|---|---|
+| 26 | Export / import of progress and bookmarks | Browsers clear storage silently; a JSON file is the only real backup (build step 7) |
+| 27 | Streak calendar view | The streak number alone doesn't show gaps |
+| 28 | Offline indicator | The PWA works offline, but nothing tells the user they are offline |
+| 29 | Full quiz runner with ordered question banks and a wrong-answer review list | Build step 4 |
+| 30 | Verified-card review flow | Draft cards are marked; there is no screen yet to tick them off in bulk |

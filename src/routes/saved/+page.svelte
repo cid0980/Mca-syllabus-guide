@@ -46,7 +46,7 @@
 
 <AppBar title="Saved" subtitle={$bookmarks.length ? `${$bookmarks.length} saved` : undefined} />
 
-<main class="page">
+<main class="page page-in">
 	{#if !$hydrated}
 		<p class="section-label">Loading your saved items</p>
 		<Skeleton variant="rows" count={4} />

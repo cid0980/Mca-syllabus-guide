@@ -19,7 +19,7 @@
 	back="/"
 />
 
-<main class="page">
+<main class="page page-in">
 	{#if !data.found}
 		<ErrorState
 			title="Subject not found"

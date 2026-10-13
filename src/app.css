@@ -49,6 +49,17 @@
 	--bar-h: 48px;
 	--nav-h: 50px;
 
+	/* motion (see skills/MOTION.md) */
+	--dur-press: 110ms;
+	--dur-quick: 150ms;
+	--dur-enter: 240ms;
+	--dur-exit: 180ms;
+	--dur-page: 240ms;
+	--dur-slow: 320ms;
+	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
+	--ease-enter: cubic-bezier(0.05, 0.7, 0.1, 1);
+	--ease-exit: cubic-bezier(0.3, 0, 0.8, 0.15);
+
 	color-scheme: light;
 }
 
@@ -249,7 +260,7 @@ ol {
 	font-weight: 600;
 	background: var(--fill);
 	color: var(--fg);
-	transition: background-color 0.12s ease, opacity 0.12s ease, transform 0.12s ease;
+	transition: background-color var(--dur-press) var(--ease-standard), opacity var(--dur-press) var(--ease-standard), transform var(--dur-press) var(--ease-standard);
 	white-space: nowrap;
 	touch-action: manipulation;
 }
@@ -310,7 +321,7 @@ ol {
 	height: 40px;
 	border-radius: var(--radius-full);
 	color: var(--fg);
-	transition: background-color 0.12s ease, opacity 0.12s ease, transform 0.12s ease;
+	transition: background-color var(--dur-press) var(--ease-standard), opacity var(--dur-press) var(--ease-standard), transform var(--dur-press) var(--ease-standard);
 	touch-action: manipulation;
 }
 
@@ -357,7 +368,7 @@ ol {
 	font-size: var(--fs-small);
 	font-weight: 600;
 	color: var(--fg-muted);
-	transition: background-color 0.12s ease, color 0.12s ease;
+	transition: background-color var(--dur-press) var(--ease-standard), color var(--dur-press) var(--ease-standard);
 }
 
 .seg button:active {
@@ -500,5 +511,150 @@ ol {
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.001ms !important;
+		/* keep the end state: a sheet must still end up on screen */
+		animation-fill-mode: both !important;
 	}
+}
+
+/* ---------- overlays: bottom sheets ---------- */
+
+.backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.45);
+	z-index: 80;
+	animation: backdrop-in var(--dur-quick) linear both;
+}
+
+.backdrop.closing {
+	animation: backdrop-out var(--dur-exit) linear both;
+}
+
+@keyframes backdrop-in {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes backdrop-out {
+	to {
+		opacity: 0;
+	}
+}
+
+/* the sheet travels up from the bottom edge — it never appears out of nowhere */
+.sheet {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 85;
+	display: flex;
+	flex-direction: column;
+	max-height: 88dvh;
+	background: var(--bg);
+	border-top-left-radius: var(--radius-lg);
+	border-top-right-radius: var(--radius-lg);
+	box-shadow: var(--shadow-pop);
+	transform-origin: bottom center;
+	animation: sheet-in var(--dur-enter) var(--ease-enter) both;
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.sheet.closing {
+	animation: sheet-out var(--dur-exit) var(--ease-exit) both;
+}
+
+@keyframes sheet-in {
+	from {
+		transform: translate3d(0, 100%, 0);
+	}
+}
+
+@keyframes sheet-out {
+	to {
+		transform: translate3d(0, 100%, 0);
+	}
+}
+
+.sheet-head {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	padding: var(--sp-3) var(--sp-4) var(--sp-2);
+	border-bottom: 1px solid var(--border);
+	flex: 0 0 auto;
+}
+
+.sheet-grip {
+	width: 36px;
+	height: 4px;
+	border-radius: var(--radius-full);
+	background: var(--fill-strong);
+	margin: 0 auto var(--sp-2);
+}
+
+.sheet-body {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding: var(--sp-4);
+}
+
+.sheet-foot {
+	flex: 0 0 auto;
+	padding: var(--sp-3) var(--sp-4) var(--sp-4);
+	border-top: 1px solid var(--border);
+}
+
+.sheet-title {
+	font-size: var(--fs-body);
+	font-weight: 700;
+}
+
+.sheet-sub {
+	font-size: var(--fs-caption);
+	color: var(--fg-subtle);
+	margin-top: 1px;
+}
+
+/* ---------- content transitions ---------- */
+
+/* page content settles in instead of appearing fully formed */
+.page-in {
+	animation: page-in var(--dur-page) var(--ease-enter) both;
+}
+
+@keyframes page-in {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 6px, 0);
+	}
+}
+
+/* a section that opens in place, e.g. the quiz under a card */
+.expand-in {
+	animation: expand-in var(--dur-enter) var(--ease-enter) both;
+}
+
+@keyframes expand-in {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -8px, 0);
+	}
+}
+
+/* skeleton -> content: cross-fade, no jump */
+.fade-in {
+	animation: fade-in var(--dur-quick) linear both;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+/* busy state inside a button */
+.btn .spin {
+	display: inline-flex;
 }

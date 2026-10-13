@@ -8,12 +8,14 @@
 	import { hydrated } from '$lib/stores/hydrate';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Post from '$lib/components/Post.svelte';
+	import AskSheet from '$lib/components/AskSheet.svelte';
 	import ErrorState from '$lib/components/ErrorState.svelte';
 
 	export let data: PageData;
 
 	let toast = '';
 	let toastTimer: ReturnType<typeof setTimeout>;
+	let askOpen = false;
 
 	$: card = deckCard(data);
 	$: saved = data.found ? $bookmarks.includes(data.node.id) : false;
@@ -56,7 +58,7 @@
 
 {#if !data.found}
 	<AppBar title="Topic not found" back="/explore" />
-	<main class="page">
+	<main class="page page-in">
 		<ErrorState
 			title="Topic not found"
 			message="This id is not part of the stored syllabus. It may have been renamed."
@@ -80,7 +82,7 @@
 		]}
 	/>
 
-	<main class="page">
+	<main class="page page-in">
 		<section class="head gutter">
 			<div class="tags">
 				<span class="badge">{node.kind === 'type' ? 'Type' : node.kind === 'subtopic' ? 'Subtopic' : 'Topic'}</span>
@@ -141,7 +143,7 @@
 					index={0}
 					total={1}
 					on:save={(e) => save(e.detail)}
-					on:ask={() => notify('Ask AI arrives in build step 6')}
+					on:ask={() => (askOpen = true)}
 				/>
 			</div>
 			<div class="gutter">
@@ -181,6 +183,8 @@
 		</p>
 	</main>
 {/if}
+
+<AskSheet open={askOpen} card={card} on:close={() => (askOpen = false)} />
 
 {#if toast}<div class="toast" role="status">{toast}</div>{/if}
 

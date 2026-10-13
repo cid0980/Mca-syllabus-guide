@@ -9,7 +9,8 @@ export const KEYS = {
 	bookmarks: 'sf:bookmarks',
 	streak: 'sf:streak',
 	settings: 'sf:settings',
-	lastOpened: 'sf:lastOpened'
+	lastOpened: 'sf:lastOpened',
+	ai: 'sf:ai'
 } as const;
 
 export function readJSON<T>(key: string, fallback: T): T {

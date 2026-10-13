@@ -7,7 +7,7 @@ swipeable card: **definition -> explanation -> real-world example -> quiz -> exa
 - SvelteKit + TypeScript, mobile-first, dark mode by default
 - Installable PWA, works offline once installed
 - No login, no database — progress lives in your browser
-- One server route (`/api/ask`) keeps the Claude API key off the client
+- AI answers come only from saved cards, through `/api/ask`, with your own provider key
 
 Repository: <https://github.com/cid0980/Mca-syllabus-guide> · Hosted on Vercel.
 
@@ -38,6 +38,8 @@ The UI rules live in [`skills/`](skills/) and are the source of truth for every 
 | `skills/MOBILE-UX.md` | 48px touch targets, full-bleed rows, the scroll-snap feed, skeleton and error rules, performance budget |
 | `skills/CONTENT-STYLE.md` | How a card is written (used by `scripts/generate-cards.ts`) |
 | `skills/DATA.md` | Tree schema, `index.json` shape, storage keys |
+| `skills/MOTION.md` | Duration and easing tokens, and where every panel is allowed to come from |
+| `skills/UX-AUDIT.md` | Every known discomfort with its fix and status (30 items) |
 
 The visual language is derived from Instagram's: a plain background, hairline dividers, one accent
 blue (`#0095f6`), full-contrast text with a single muted grey for secondary lines, and solid icons
@@ -67,6 +69,35 @@ What that means in code:
 `static/logo.svg` is the app mark: two overlapping cards (the feed) with a solid accent face.
 `static/favicon.svg`, `icon-192.png`, `icon-512.png`, `maskable-512.png` and `apple-touch-icon.png`
 are generated from the same geometry by `scripts/make-icons.py`.
+
+---
+
+## AI helper (your own key)
+
+Ask any question about a card and get an answer built **only from the saved card text**. Keys are
+yours and live in this browser (`sf:ai`), never in the bundle.
+
+| Provider | Endpoint | Where to get a key |
+|---|---|---|
+| Google Gemini | `generativelanguage.googleapis.com/v1beta/models/{model}:generateContent` | aistudio.google.com/apikey |
+| OpenRouter | `openrouter.ai/api/v1/chat/completions` | openrouter.ai/settings/keys |
+| NVIDIA NIM | `integrate.api.nvidia.com/v1/chat/completions` | build.nvidia.com/settings/api-keys |
+| This app's server | any of the above, using the host's environment variables | set `STUDYFEED_AI_KEY` on Vercel |
+
+In **Settings -> AI helper** you pick a provider, paste a key, then tap **Fetch models** to list what
+that key can use and **Test** to confirm it works — model ids change often, so nothing is hardcoded
+and the model field stays editable. Server-side alternative:
+
+```
+STUDYFEED_AI_PROVIDER=gemini      # or openrouter | nvidia
+STUDYFEED_AI_KEY=...
+STUDYFEED_AI_MODEL=               # optional
+```
+
+How a request flows: card text + question -> `POST /api/ask` -> your provider -> answer.
+Answers are cached in IndexedDB (`aiAnswers`) keyed by provider + model + question + card, so the
+same question is never paid for twice. The key is never logged, and the prompt tells the model to
+refuse anything the saved card does not cover.
 
 ---
 
@@ -123,7 +154,7 @@ produced by `scripts/generate-cards.ts` (build step 5), which needs your `ANTHRO
 | `/progress` | Cards seen, quiz accuracy, day streak, per-subject and per-module breakdowns |
 | `/quiz` | Question-bank overview (step 4 adds the full quiz runner) |
 | `/exam/[code]/[module]` | Exam mode: definitions and tips only, no quiz reveal |
-| `/settings` | Theme (dark / light / system), data summary, reset progress and saved items |
+| `/settings` | AI provider keys with fetch-models and test, answer cache, theme (dark / light / system), data summary, reset |
 
 Keyboard for desktop testing: `←` `->` move, `Space` flip, `B` bookmark.
 A topic card links straight into the feed: `/feed/CSCA 411/II?card=CSCA411-M2-06`.
@@ -153,7 +184,7 @@ A topic card links straight into the feed: `/feed/CSCA 411/II?card=CSCA411-M2-06
 | 3 | Saved screen, Progress screen, streak view | built — needs your test |
 | 4 | Quiz mode and Exam mode | pending: exam mode done, quiz runner next |
 | 5 | `generate-cards.ts`: card content for the other nine subjects | pending: needs API key |
-| 6 | `/api/ask`, keyword search, Ask AI panel, answer cache | pending |
+| 6 | `/api/ask` with Gemini / OpenRouter / NVIDIA keys, Ask panel, IndexedDB answer cache | done — needs your test |
 | 7 | Export / Import, offline check, polish | pending |
 
 Search across the whole tree already works on `/explore`; the AI panel comes in step 6.
@@ -169,6 +200,7 @@ Search across the whole tree already works on `/explore`; the AI panel comes in 
 | `sf:streak` | `{ count, lastDay }` |
 | `sf:settings` | `{ theme }` |
 | `sf:lastOpened` | last subject + module for the continue card |
+| `sf:ai` | chosen AI provider + your API keys + model per provider (never sent anywhere except the provider you picked) |
 
 IndexedDB `aiAnswers` caches AI answers so the same question is never paid for twice.
 

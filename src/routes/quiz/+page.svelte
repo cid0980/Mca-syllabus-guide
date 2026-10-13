@@ -27,7 +27,7 @@
 
 <AppBar title="Quiz" subtitle="Questions come from the saved cards" />
 
-<main class="page">
+<main class="page page-in">
 	<Notice
 		tone="accent"
 		title="Quiz mode is build step 4"

@@ -1,8 +1,13 @@
 <script lang="ts">
 	/**
-	 * Instagram-style vertical feed: one card per screen, native scroll-snap, no per-frame
-	 * JavaScript. An IntersectionObserver reports which card is on screen; everything else
-	 * (progress bar, seen-marking, next/prev buttons) follows from that.
+	 * Vertical feed: one card per screen, natural heights, ONE scroll container.
+	 *
+	 * Changes from user feedback:
+	 *  - cards are no longer forced to exactly 100% height, so a long card can never overlap the
+	 *    next one and nothing scrolls inside a card
+	 *  - `scroll-snap-type: y proximity` instead of `mandatory`: snapping still aligns cards, but
+	 *    the scroll can never be trapped or yanked while reading
+	 *  - the progress bar is sticky, so it stays visible on tall cards
 	 */
 	import { onMount } from 'svelte';
 	import { ChevronDown, ChevronUp } from 'lucide-svelte';
@@ -11,43 +16,39 @@
 	import { bookmarks, toggleBookmark } from '$lib/stores/bookmarks';
 	import { hydrated } from '$lib/stores/hydrate';
 	import Post from '$lib/components/Post.svelte';
+	import AskSheet from '$lib/components/AskSheet.svelte';
 
 	export let cards: DeckCard[] = [];
 	export let initialIndex = 0;
 	export let examMode = false;
-	export let onAsk: (() => void) | undefined = undefined;
 
 	let scroller: HTMLDivElement;
 	let active = 0;
 	let io: IntersectionObserver | null = null;
 	let toast = '';
 	let toastTimer: ReturnType<typeof setTimeout>;
+	let askOpen = false;
 
 	$: total = cards.length;
-	$: current = cards[active];
+	$: currentCard = cards[active] ?? null;
 
 	onMount(() => {
-		window.addEventListener('keydown', onKey);
+		globalThis.addEventListener('keydown', onKey);
 		io = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
-					if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-						const i = Number((entry.target as HTMLElement).dataset.i ?? 0);
-						setActive(i);
+					if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+						setActive(Number((entry.target as HTMLElement).dataset.i ?? 0));
 					}
 				}
 			},
-			{ root: scroller, threshold: [0.6] }
+			{ root: scroller, threshold: [0.5] }
 		);
 		for (const el of Array.from(scroller.querySelectorAll('[data-i]'))) io.observe(el);
-
-		if (initialIndex > 0) {
-			// jump without animation so the first paint is already on the right card
-			requestAnimationFrame(() => goTo(initialIndex, false));
-		}
+		if (initialIndex > 0) requestAnimationFrame(() => goTo(initialIndex, false));
 		return () => {
 			io?.disconnect();
-			window.removeEventListener('keydown', onKey);
+			globalThis.removeEventListener('keydown', onKey);
 		};
 	});
 
@@ -75,7 +76,8 @@
 	}
 
 	function onKey(e: KeyboardEvent) {
-		if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+		if (e.target instanceof HTMLElement && e.target.closest('input, textarea')) return;
+		if (e.key === 'ArrowDown' || e.key === 'PageDown') {
 			e.preventDefault();
 			step(1);
 		} else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
@@ -84,9 +86,8 @@
 		}
 	}
 
-	function onSave(id: string, next: boolean) {
-		const added = toggleBookmark(id);
-		notify(added ? 'Saved' : 'Removed');
+	function onSave(id: string) {
+		notify(toggleBookmark(id) ? 'Saved' : 'Removed');
 	}
 </script>
 
@@ -104,26 +105,28 @@
 					index={i}
 					{total}
 					saved={$bookmarks.includes(card.id)}
-					on:save={(e) => onSave(card.id, e.detail)}
-					on:ask={() => (onAsk ? onAsk() : notify('Ask AI arrives in build step 6'))}
+					on:save={() => onSave(card.id)}
+					on:ask={() => (askOpen = true)}
 				/>
 			{:else}
 				<div class="stub"></div>
 			{/if}
 		</section>
 	{/each}
-
-	{#if total > 1}
-		<div class="jump">
-			<button class="jump-btn" disabled={active === 0} on:click={() => step(-1)} aria-label="Previous card">
-				<ChevronUp size={18} />
-			</button>
-			<button class="jump-btn" disabled={active >= total - 1} on:click={() => step(1)} aria-label="Next card">
-				<ChevronDown size={18} />
-			</button>
-		</div>
-	{/if}
 </div>
+
+{#if total > 1}
+	<div class="jump">
+		<button class="jump-btn" disabled={active === 0} on:click={() => step(-1)} aria-label="Previous card">
+			<ChevronUp size={18} />
+		</button>
+		<button class="jump-btn" disabled={active >= total - 1} on:click={() => step(1)} aria-label="Next card">
+			<ChevronDown size={18} />
+		</button>
+	</div>
+{/if}
+
+<AskSheet open={askOpen} card={currentCard} on:close={() => (askOpen = false)} />
 
 {#if toast}<div class="toast" role="status">{toast}</div>{/if}
 
@@ -134,21 +137,20 @@
 		min-height: 0;
 		overflow-y: auto;
 		overscroll-behavior-y: contain;
-		scroll-snap-type: y mandatory;
+		/* proximity: never trap or yank the scroll, but still align cards */
+		scroll-snap-type: y proximity;
 		-webkit-overflow-scrolling: touch;
 		scrollbar-width: none;
-		outline: none;
 	}
 
 	.feed::-webkit-scrollbar {
 		display: none;
 	}
 
+	/* sticky so tall cards still show how far along you are */
 	.bar {
-		position: absolute;
+		position: sticky;
 		top: 0;
-		left: 0;
-		right: 0;
 		height: 2px;
 		z-index: 5;
 		pointer-events: none;
@@ -162,16 +164,15 @@
 	.fill {
 		height: 100%;
 		background: var(--accent);
-		transition: width 0.18s ease-out;
+		transition: width var(--dur-quick) var(--ease-standard);
 	}
 
+	/* natural height: as tall as the card needs, at least a screen */
 	.snap {
-		height: 100%;
+		min-height: 100%;
 		scroll-snap-align: start;
-		scroll-snap-stop: always;
 		display: flex;
 		flex-direction: column;
-		min-height: 0;
 	}
 
 	.snap + .snap {
@@ -179,20 +180,20 @@
 	}
 
 	.stub {
-		flex: 1;
+		min-height: 60vh;
 		margin: var(--sp-4);
 		border-radius: var(--radius-lg);
 		background: var(--fill);
 	}
 
 	.jump {
-		position: absolute;
+		position: fixed;
 		right: var(--sp-3);
-		bottom: var(--sp-4);
+		bottom: calc(var(--nav-h) + var(--sp-4) + env(safe-area-inset-bottom));
 		display: flex;
 		flex-direction: column;
 		gap: var(--sp-2);
-		z-index: 6;
+		z-index: 45;
 	}
 
 	.jump-btn {
@@ -204,7 +205,7 @@
 		background: var(--fill);
 		color: var(--fg);
 		box-shadow: var(--shadow-pop);
-		transition: transform 0.12s ease, opacity 0.12s ease;
+		transition: transform var(--dur-press) var(--ease-standard), opacity var(--dur-press) var(--ease-standard);
 	}
 
 	.jump-btn:active {

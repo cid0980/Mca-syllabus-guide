@@ -1,11 +1,24 @@
 <script lang="ts">
 	/**
-	 * One card, laid out like an Instagram post: header (avatar + who), body, action row,
-	 * and an optional quiz that replaces the body when flipped.
-	 * Tap the body to flip, double tap to save.
+	 * One card in the feed, laid out like an Instagram post.
+	 *
+	 * Fixes from user feedback:
+	 *  - the card is natural height; nothing overlaps the next card and nothing scrolls inside it
+	 *  - tapping only flips when the finger did not move (scrolling must not change the face)
+	 *  - the quiz always offers a labelled way back to the card, and after the last answer it
+	 *    shows the score with the next actions
 	 */
 	import { createEventDispatcher } from 'svelte';
-	import { Bookmark, BookmarkCheck, MessageSquare, ListChecks, RotateCcw, CircleCheck, CircleX, Lightbulb } from 'lucide-svelte';
+	import {
+		Bookmark,
+		BookmarkCheck,
+		MessageSquare,
+		ListChecks,
+		RotateCcw,
+		CircleCheck,
+		CircleX,
+		Lightbulb
+	} from 'lucide-svelte';
 	import type { DeckCard } from '$lib/content';
 	import { recordQuiz } from '$lib/stores/progress';
 
@@ -13,12 +26,11 @@
 
 	export let card: DeckCard;
 	export let examMode = false;
-	export let initialFace: 'front' | 'back' = 'front';
 	export let saved = false;
 	export let index = 0;
 	export let total = 1;
 
-	let face: 'front' | 'back' = initialFace;
+	let face: 'front' | 'back' = 'front';
 	let picked: number[] = [];
 	let burst = false;
 	let lastTap = 0;
@@ -27,6 +39,9 @@
 
 	$: if (card) picked = card.quiz.map(() => -1);
 	$: avatar = card ? card.subjectCode.replace('CSCA ', '') : '';
+	$: answered = picked.filter((v) => v !== -1).length;
+	$: correct = card ? picked.filter((v, i) => v !== -1 && v === card.quiz[i].answer).length : 0;
+	$: allDone = card ? picked.length > 0 && answered === card.quiz.length : false;
 
 	function choose(qi: number, oi: number, answer: number) {
 		if (picked[qi] !== -1) return;
@@ -37,6 +52,7 @@
 	function flip() {
 		if (examMode) return;
 		face = face === 'front' ? 'back' : 'front';
+		if (face === 'back') picked = card.quiz.map(() => -1);
 	}
 
 	function save() {
@@ -46,10 +62,18 @@
 		burstTimer = setTimeout(() => (burst = false), 620);
 	}
 
-	/** Tap = flip, double tap = save. Buttons handle their own clicks. */
-	function tap(e: PointerEvent | MouseEvent) {
+	/** Tap = flip, double tap = save — but never while the user is scrolling. */
+	let downAt = { x: 0, y: 0, t: 0 };
+
+	function onDown(e: PointerEvent) {
+		downAt = { x: e.clientX, y: e.clientY, t: Date.now() };
+	}
+
+	function onClick(e: MouseEvent) {
 		const target = e.target as HTMLElement | null;
-		if (target?.closest('button, a')) return;
+		if (target?.closest('button, a, input, textarea')) return;
+		const moved = Math.abs(e.clientX - downAt.x) + Math.abs(e.clientY - downAt.y);
+		if (moved > 8) return; // that was a scroll, not a tap
 		const now = Date.now();
 		if (now - lastTap < 320) {
 			clearTimeout(tapTimer);
@@ -70,58 +94,86 @@
 <article class="post">
 	<header class="head">
 		<span class="avatar" aria-hidden="true">{avatar}</span>
-		<div class="who grow">
-			<p class="who-title truncate">{card.subjectCode.replace('CSCA ', 'CSCA ')}</p>
+		<div class="grow">
+			<p class="who-title truncate">{card.subjectCode}</p>
 			<p class="who-sub truncate">
-				Module {card.module} · {examMode ? 'definitions' : face === 'back' ? 'quiz' : 'card'}
+				Module {card.module} · {examMode ? 'definitions only' : face === 'back' ? `quiz · ${answered}/${card.quiz.length}` : 'study card'}
 			</p>
 		</div>
 		{#if !card.verified}<span class="badge draft">draft</span>{/if}
 	</header>
 
-	<div class="body" role="button" tabindex="0" aria-label="Tap to show the quiz" on:click={tap} on:keydown={(e) => e.key === 'Enter' && flip()}>
+	<div
+		class="body"
+		on:pointerdown={onDown}
+		on:click={onClick}
+		role="button"
+		tabindex="0"
+		aria-label={face === 'back' ? 'Tap to go back to the card' : 'Tap to open the quiz'}
+		on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && flip()}
+	>
+		<h2 class="topic">{card.topic}</h2>
+		<p class="definition">{card.definition}</p>
+
 		{#if face === 'back' && !examMode}
-			<h2 class="topic">{card.topic}</h2>
-			{#each card.quiz as q, qi}
-				<div class="quiz">
-					<p class="q-text">{q.q}</p>
-					<div class="options">
-						{#each q.options as option, oi}
-							{@const answered = picked[qi] !== -1}
-							<button
-								class="option"
-								class:correct={answered && oi === q.answer}
-								class:wrong={answered && oi === picked[qi] && oi !== q.answer}
-								class:dim={answered && oi !== q.answer && oi !== picked[qi]}
-								disabled={answered}
-								on:click|stopPropagation={() => choose(qi, oi, q.answer)}
-							>
-								<span class="letter">{'ABCD'[oi]}</span>
-								<span class="grow">{option}</span>
-								{#if answered && oi === q.answer}<span class="mark ok"><CircleCheck size={16} /></span>{/if}
-								{#if answered && oi === picked[qi] && oi !== q.answer}<span class="mark no"><CircleX size={16} /></span>{/if}
-							</button>
-						{/each}
+			<div class="quiz expand-in">
+				{#each card.quiz as q, qi}
+					<div class="q">
+						<p class="q-text">{q.q}</p>
+						<div class="options">
+							{#each q.options as option, oi}
+								{@const done = picked[qi] !== -1}
+								<button
+									class="option"
+									class:correct={done && oi === q.answer}
+									class:wrong={done && oi === picked[qi] && oi !== q.answer}
+									class:dim={done && oi !== q.answer && oi !== picked[qi]}
+									disabled={done}
+									on:click|stopPropagation={() => choose(qi, oi, q.answer)}
+								>
+									<span class="letter">{'ABCD'[oi]}</span>
+									<span class="grow">{option}</span>
+									{#if done && oi === q.answer}<span class="mark ok"><CircleCheck size={16} /></span>{/if}
+									{#if done && oi === picked[qi] && oi !== q.answer}<span class="mark no"><CircleX size={16} /></span>{/if}
+								</button>
+							{/each}
+						</div>
+						{#if picked[qi] !== -1}
+							<p class="why">
+								<strong>{picked[qi] === q.answer ? 'Correct.' : 'Not quite.'}</strong> {q.why}
+							</p>
+						{/if}
 					</div>
-					{#if picked[qi] !== -1}
-						<p class="why"><strong>{picked[qi] === q.answer ? 'Correct.' : 'Not quite.'}</strong> {q.why}</p>
-					{/if}
-				</div>
-			{/each}
+				{/each}
+
+				{#if allDone}
+					<div class="score">
+						<span class="grow nums">You got {correct}/{card.quiz.length} right.</span>
+						<button class="btn btn--secondary btn--sm" on:click|stopPropagation={flip}>
+							<RotateCcw size={13} /> Back to card
+						</button>
+					</div>
+				{/if}
+			</div>
 		{:else}
-			<h2 class="topic">{card.topic}</h2>
-			<p class="definition">{card.definition}</p>
 			<p class="text">{card.explanation}</p>
 			<p class="text example"><span class="inline-tag">Example</span> {card.example}</p>
 			<p class="text tip">
 				<span class="tip-icon"><Lightbulb size={13} /></span>
 				<span class="inline-tag accent">Exam tip</span> {card.examTip}
 			</p>
+
+			{#if !examMode}
+				<button class="quiz-cta" on:click|stopPropagation={flip}>
+					<ListChecks size={16} />
+					<span class="grow">Take the quiz · {card.quiz.length} question{card.quiz.length === 1 ? '' : 's'}</span>
+				</button>
+			{/if}
 		{/if}
 	</div>
 
 	<div class="actions">
-		<button class="act" class:on={saved} on:click|stopPropagation={save} aria-pressed={saved} aria-label="Save card">
+		<button class="act" class:on={saved} on:click|stopPropagation={save} aria-pressed={saved} aria-label={saved ? 'Remove from saved' : 'Save card'}>
 			{#if saved}<BookmarkCheck size={22} />{:else}<Bookmark size={22} />{/if}
 		</button>
 		<button class="act" on:click|stopPropagation={() => dispatch('ask')} aria-label="Ask about this card">
@@ -168,16 +220,20 @@
 		margin-top: 1px;
 	}
 
+	/* natural height: the card grows, the page scrolls, nothing overlaps */
 	.body {
-		flex: 1;
-		min-height: 0;
 		padding: var(--sp-1) var(--sp-4) var(--sp-3);
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
 		display: flex;
 		flex-direction: column;
 		gap: var(--sp-3);
 		outline: none;
+		cursor: pointer;
+	}
+
+	.body:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: -2px;
+		border-radius: var(--radius);
 	}
 
 	.topic {
@@ -205,11 +261,6 @@
 		padding-left: var(--sp-3);
 	}
 
-	.tip {
-		display: block;
-		color: var(--fg-muted);
-	}
-
 	.tip-icon {
 		display: inline-flex;
 		vertical-align: -1px;
@@ -230,9 +281,35 @@
 		color: var(--accent);
 	}
 
+	/* the way into the quiz is a labelled control, visible without scrolling */
+	.quiz-cta {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-2);
+		width: 100%;
+		min-height: 44px;
+		padding: var(--sp-2) var(--sp-3);
+		background: var(--fill);
+		border-radius: var(--radius);
+		font-size: var(--fs-small);
+		font-weight: 600;
+		transition: transform var(--dur-press) var(--ease-standard), background-color var(--dur-press) var(--ease-standard);
+	}
+
+	.quiz-cta:active {
+		transform: scale(0.985);
+		background: var(--fill-strong);
+	}
+
 	/* ---------- quiz ---------- */
 
 	.quiz {
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-4);
+	}
+
+	.q {
 		display: flex;
 		flex-direction: column;
 		gap: var(--sp-2);
@@ -261,7 +338,7 @@
 		border-radius: var(--radius);
 		font-size: var(--fs-small);
 		line-height: 1.45;
-		transition: background-color 0.12s ease, transform 0.12s ease;
+		transition: background-color var(--dur-press) var(--ease-standard), transform var(--dur-press) var(--ease-standard);
 	}
 
 	.option:not(:disabled):active {
@@ -313,6 +390,17 @@
 		font-weight: 600;
 	}
 
+	.score {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-2);
+		padding: var(--sp-2) var(--sp-3);
+		background: var(--fill);
+		border-radius: var(--radius);
+		font-size: var(--fs-small);
+		font-weight: 600;
+	}
+
 	/* ---------- action row ---------- */
 
 	.actions {
@@ -331,7 +419,8 @@
 		height: 42px;
 		border-radius: var(--radius-full);
 		color: var(--fg);
-		transition: background-color 0.12s ease, transform 0.12s ease, opacity 0.12s ease;
+		transition: background-color var(--dur-press) var(--ease-standard), transform var(--dur-press) var(--ease-standard),
+			opacity var(--dur-press) var(--ease-standard);
 	}
 
 	.act:active {
@@ -363,7 +452,7 @@
 		text-transform: uppercase;
 		padding: var(--sp-1) var(--sp-3);
 		border-radius: var(--radius-full);
-		animation: burst 0.62s ease-out forwards;
+		animation: burst var(--dur-slow) var(--ease-standard) both;
 		pointer-events: none;
 	}
 
