@@ -69,6 +69,18 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 45 | A subject with no cards looked the same as a written one | A "Syllabus only" tag on the row, shown only while `counts.cards === 0`, so it disappears by itself once cards are added | fixed |
 | 46 | No way to see how a module went before starting it again | "Best 38/47" on each module row, read from the existing `sf:quiz` run log at the deck's current question count; nothing shown when there is no matching run | fixed |
 
+## Truthful progress and reading (2026-10-13)
+
+| # | Where a person gets stuck | Fix | Status |
+|---|---|---|---|
+| 47 | Scrolling a deck marked every card as read, so the completion numbers meant nothing | Reading is a decision: the card carries a Mark-as-read toggle, and the feed header counts marked cards out of the total | fixed |
+| 48 | "Continue" appeared for a deck that was only opened to check | The Continue point is written by two actions only - marking a card read, or answering a question - and it points at that exact card | fixed |
+| 49 | Clearing progress still showed the old numbers after a fast reload | Clearing also removes the quiz run log and the Continue point, and writes immediately, so nothing can come back from a debounce window | fixed |
+| 50 | Ask AI closed on an accidental tap and lost the whole conversation | Ask is a page (`/ask?card=…`) with one thread per card in IndexedDB; Back, reload and app close all restore it | fixed |
+| 51 | A question lost because the request failed | The question is saved before the request is sent, and a failed answer offers Retry with the same text | fixed |
+| 52 | Counting was called "seen" while the mark was manual | Every label now says "marked read" (Home, Syllabus, Progress, Saved, Settings, backup copy) | fixed |
+| 53 | A blue circle around 411 read as "finished" while nothing had been read (reported 2026-10-13) | The course ring is now the progress itself: dashed accent = cards waiting, solid accent arc = the share marked read, grey = nothing to track yet. Same treatment on Home and Syllabus | fixed |
+
 ## Still planned
 
 | # | Item | Why |

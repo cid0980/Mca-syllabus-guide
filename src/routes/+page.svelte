@@ -2,6 +2,7 @@
 	import { Settings, ListTree, ChevronRight, BookOpen, Flame } from 'lucide-svelte';
 	import { indexSubject, subjectsOfSemester, semesterLabel, totals, plural } from '$lib/content';
 	import { shortName } from '$lib/labels';
+	import ProgressRing from '$lib/components/ProgressRing.svelte';
 	import { progress, percentSeenByIds, streak } from '$lib/stores/progress';
 	import { lastOpened } from '$lib/stores/lastOpened';
 	import { hydrated } from '$lib/stores/hydrate';
@@ -23,10 +24,6 @@
 	}
 
 	/** story ring state — like an unwatched / watched story */
-	function ringState(cards: number, pct: number): 'accent' | 'muted' | 'done' {
-		if (cards === 0) return 'muted';
-		return pct >= 100 ? 'done' : 'accent';
-	}
 </script>
 
 <svelte:head><title>StudyFeed</title></svelte:head>
@@ -52,22 +49,34 @@
 </header>
 
 <main class="page">
-	<!-- subject "stories": a coloured ring means there is something to study -->
+	<!--
+		subject "stories": the ring is the progress itself. A dashed accent ring means cards are
+		waiting to be read, a solid accent arc is the share already marked read, and a plain grey
+		ring means there is nothing to track yet.
+	-->
 	<div class="stories">
 		{#each semesterSubjects as subject}
 			{@const pct = $hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}
-			{@const state = ringState(subject.counts.cards, pct)}
+
 			<a class="story pressable" href={`/subject/${encodeURIComponent(subject.code)}`}>
-				<span class="ring" class:accent={state === 'accent'} class:done={state === 'done'}>
+				<ProgressRing
+					percent={pct}
+					size={60}
+					stroke={2.5}
+					pending={subject.counts.cards > 0}
+					ariaLabel={subject.counts.cards
+						? `${shortName(subject.code)}: ${pct}% of cards marked read`
+						: `${shortName(subject.code)}: definitions only, no cards yet`}
+				>
 					<span class="avatar nums">{subject.code.replace('CSCA ', '')}</span>
-				</span>
+				</ProgressRing>
 				<span class="story-label" title={subject.subject}>{shortName(subject.code)}</span>
 			</a>
 		{/each}
 		<a class="story pressable" href="/explore">
-			<span class="ring muted">
+			<ProgressRing percent={0} size={60} stroke={2.5} ariaLabel="Browse the whole syllabus">
 				<span class="avatar"><ListTree size={18} /></span>
-			</span>
+			</ProgressRing>
 			<span class="story-label">All</span>
 		</a>
 	</div>
@@ -242,30 +251,10 @@
 		border-radius: var(--radius);
 	}
 
-	.ring {
-		display: grid;
-		place-items: center;
-		width: 60px;
-		height: 60px;
-		border-radius: var(--radius-full);
-		padding: 2px;
-		border: 2px solid var(--border);
-		transition: border-color 0.12s ease;
-	}
-
-	/* unwatched = coloured ring, finished or empty = grey, exactly like a story ring */
-	.ring.accent {
-		border-color: var(--accent);
-	}
-
-	.ring.done,
-	.ring.muted {
-		border-color: var(--border);
-	}
-
-	.ring .avatar {
-		width: 100%;
-		height: 100%;
+	/* the ring around the disc is the progress arc; the disc stays 52px inside a 60px ring */
+	.story .avatar {
+		width: 52px;
+		height: 52px;
 		font-size: var(--fs-small);
 	}
 

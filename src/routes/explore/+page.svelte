@@ -3,6 +3,8 @@
 	import { indexSubject, subjectsOfSemester, semesterLabel, totals, searchNodes, type SearchHit } from '$lib/content';
 	import { progress, percentSeenByIds } from '$lib/stores/progress';
 	import { hydrated } from '$lib/stores/hydrate';
+	import { shortName } from '$lib/labels';
+	import ProgressRing from '$lib/components/ProgressRing.svelte';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Skeleton from '$lib/components/Skeleton.svelte';
 	import ErrorState from '$lib/components/ErrorState.svelte';
@@ -117,9 +119,17 @@
 				{@const pct = $hydrated ? percentSeenByIds(subject.cardIds, $progress) : 0}
 				<a class="tile" href={`/explore/${encodeURIComponent(subject.code)}`}>
 					<span class="tile-top">
-						<span class="ring" class:accent={subject.counts.cards > 0 && pct < 100}>
+						<ProgressRing
+							percent={pct}
+							size={46}
+							stroke={2.5}
+							pending={subject.counts.cards > 0}
+							ariaLabel={subject.counts.cards
+								? `${shortName(subject.code)}: ${pct}% of cards marked read`
+								: `${shortName(subject.code)}: definitions only, no cards yet`}
+						>
 							<span class="avatar nums">{subject.code.replace('CSCA ', '')}</span>
-						</span>
+						</ProgressRing>
 						{#if subject.counts.cards}
 							<span class="badge nums">{pct}%</span>
 						{:else}
@@ -196,25 +206,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-
-	.ring {
-		display: grid;
-		place-items: center;
-		width: 42px;
-		height: 42px;
-		border-radius: var(--radius-full);
-		padding: 2px;
-		border: 2px solid var(--border);
-	}
-
-	.ring.accent {
-		border-color: var(--accent);
-	}
-
-	.ring .avatar {
-		width: 100%;
-		height: 100%;
 	}
 
 	.tile-name {
