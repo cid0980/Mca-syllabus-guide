@@ -20,6 +20,7 @@
 		Lightbulb
 	} from 'lucide-svelte';
 	import type { DeckCard } from '$lib/content';
+	import { shortName } from '$lib/labels';
 	import { recordQuiz } from '$lib/stores/progress';
 
 	const dispatch = createEventDispatcher<{ save: boolean; ask: void }>();
@@ -38,7 +39,7 @@
 	let burstTimer: ReturnType<typeof setTimeout> | undefined;
 
 	$: if (card) picked = card.quiz.map(() => -1);
-	$: avatar = card ? card.subjectCode.replace('CSCA ', '') : '';
+	$: avatar = card ? shortName(card.subjectCode) : '';
 	$: answered = picked.filter((v) => v !== -1).length;
 	$: correct = card ? picked.filter((v, i) => v !== -1 && v === card.quiz[i].answer).length : 0;
 	$: allDone = card ? picked.length > 0 && answered === card.quiz.length : false;

@@ -206,6 +206,36 @@ export function lastSession(): QuizSession | null {
 	return readSessions()[0] ?? null;
 }
 
+export interface BestScore {
+	correct: number;
+	total: number;
+}
+
+/** The scope string a module deck records its finished runs under. */
+export function moduleScope(code: string, module: string): string {
+	return `${code} Module ${module}`;
+}
+
+/**
+ * Best completed run for one module, at the question count the deck asks today.
+ *
+ * `sf:progress` counts answers per card cumulatively, so it cannot rebuild a single run's score.
+ * `sf:quiz` already stores one record per finished run (`at`, `scope`, `correct`, `total`), which
+ * is exactly a score, so nothing new is stored and the format is untouched.
+ *
+ * Only runs of exactly `total` questions count. That keeps two things out of the way: runs from
+ * before a card set grew (an old "19/20" on a deck that now asks 47), and retry-missed runs, which
+ * share the module's scope but ask only the questions that were missed.
+ */
+export function bestSessionFor(sessions: QuizSession[], scope: string, total: number): BestScore | null {
+	let best: QuizSession | null = null;
+	for (const session of sessions) {
+		if (session.scope !== scope || session.total !== total) continue;
+		if (!best || session.correct > best.correct) best = session;
+	}
+	return best ? { correct: best.correct, total: best.total } : null;
+}
+
 export function scoreMessage(correct: number, total: number): string {
 	if (total === 0) return '';
 	const pct = correct / total;

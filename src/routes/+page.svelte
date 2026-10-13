@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Settings, ListTree, ChevronRight, BookOpen } from 'lucide-svelte';
+	import { Settings, ListTree, ChevronRight, BookOpen, Flame } from 'lucide-svelte';
 	import { indexSubject, subjectsOfSemester, semesterLabel, totals, plural } from '$lib/content';
+	import { shortName } from '$lib/labels';
 	import { progress, percentSeenByIds, streak } from '$lib/stores/progress';
 	import { KEYS, readJSON } from '$lib/storage';
 	import { hydrated } from '$lib/stores/hydrate';
@@ -37,7 +38,16 @@
 		<img src="/logo.svg" alt="" width="24" height="24" />
 		<h1 class="wordmark grow">StudyFeed</h1>
 		{#if $hydrated && $streak.count > 0}
-			<span class="streak nums">{$streak.count}d</span>
+			<!-- the pill counts consecutive study days (sf:streak), so the flame sits inside it -->
+			<span
+				class="streak"
+				role="img"
+				title="Daily study streak"
+				aria-label={`${$streak.count} day study streak`}
+			>
+				<Flame size={14} aria-hidden="true" />
+				<span class="nums" aria-hidden="true">{$streak.count}d</span>
+			</span>
 		{/if}
 		<a class="icon-btn" href="/settings" aria-label="Settings"><Settings size={20} /></a>
 	</div>
@@ -53,7 +63,7 @@
 				<span class="ring" class:accent={state === 'accent'} class:done={state === 'done'}>
 					<span class="avatar nums">{subject.code.replace('CSCA ', '')}</span>
 				</span>
-				<span class="story-label nums">{pct > 0 && pct < 100 ? `${pct}%` : subject.code.replace('CSCA ', '')}</span>
+				<span class="story-label" title={subject.subject}>{shortName(subject.code)}</span>
 			</a>
 		{/each}
 		<a class="story pressable" href="/explore">
@@ -114,7 +124,12 @@
 			<a class="subj pressable" href={`/subject/${encodeURIComponent(subject.code)}`}>
 				<span class="avatar" aria-hidden="true">{subject.code.replace('CSCA ', '')}</span>
 				<span class="grow">
-					<span class="subj-title">{subject.subject}</span>
+					<span class="subj-head">
+						<span class="subj-title">{subject.subject}</span>
+						{#if subject.counts.cards === 0}
+							<span class="badge">Syllabus only</span>
+						{/if}
+					</span>
 					<span class="subj-sub truncate">
 						{plural(subject.counts.topics, 'topic')} · {plural(subject.counts.subtopics, 'subtopic')}
 					</span>
@@ -183,11 +198,17 @@
 	}
 
 	.streak {
-		font-size: var(--fs-small);
-		font-weight: 700;
+		display: inline-flex;
+		align-items: center;
+		gap: var(--sp-1);
+		height: 24px;
+		padding: 0 var(--sp-2) 0 6px;
 		background: var(--fill);
 		border-radius: var(--radius-full);
-		padding: 2px 10px;
+		font-size: var(--fs-small);
+		font-weight: 700;
+		color: var(--fg-muted);
+		flex: 0 0 auto;
 	}
 
 	/* ---------- story row ---------- */
@@ -319,11 +340,21 @@
 		padding: var(--sp-3) var(--sp-4);
 	}
 
+	.subj-head {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-2);
+	}
+
 	.subj-title {
-		display: block;
 		font-size: var(--fs-body);
 		font-weight: 600;
 		line-height: 1.35;
+		min-width: 0;
+	}
+
+	.subj-head .badge {
+		flex: 0 0 auto;
 	}
 
 	.subj-sub {

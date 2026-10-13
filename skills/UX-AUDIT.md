@@ -64,6 +64,10 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 40 | "Retry what I missed" jumping back to question one after each answer | The pool keeps a stable identity; it was rebuilt on every progress write, which restarted the run | fixed |
 | 41 | A card answered twice always opening with the same question | The starting question rotates with the card's existing answer counters | fixed |
 | 42 | Guessing by position worked (B held 73 of 102 correct answers) | Answers are spread across A, B, C and D (63/63/62/62 of 250) and every new question's distractors are written to the answer's length | fixed |
+| 43 | Home printed the course number twice: inside the circle and again below it | The circle keeps the number, the label below it is the short name from `$lib/labels` (DSA, OOP, DBMS, Maths) | fixed |
+| 44 | The "1d" pill never said what it counted | Flame icon inside the pill plus a `title` and an `aria-label` spelling out "N day study streak"; it counts `sf:streak` consecutive study days | fixed |
+| 45 | A subject with no cards looked the same as a written one | A "Syllabus only" tag on the row, shown only while `counts.cards === 0`, so it disappears by itself once cards are added | fixed |
+| 46 | No way to see how a module went before starting it again | "Best 38/47" on each module row, read from the existing `sf:quiz` run log at the deck's current question count; nothing shown when there is no matching run | fixed |
 
 ## Still planned
 

@@ -4,7 +4,13 @@
 	import { plural, totals } from '$lib/content';
 	import { progress } from '$lib/stores/progress';
 	import { hydrated } from '$lib/stores/hydrate';
-	import { lastSession } from '$lib/quiz';
+	import {
+		lastSession,
+		readSessions,
+		bestSessionFor,
+		moduleScope,
+		type QuizSession
+	} from '$lib/quiz';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Notice from '$lib/components/Notice.svelte';
 
@@ -15,6 +21,13 @@
 		.filter(([, p]) => p.quizWrong > 0)
 		.map(([id]) => id);
 	$: last = $hydrated ? lastSession() : null;
+
+	/**
+	 * Finished runs live in the browser, so this waits for hydration - rendering it on the server
+	 * would mean a different first paint. Nothing here writes storage.
+	 */
+	let sessions: QuizSession[] = [];
+	$: sessions = $hydrated ? readSessions() : [];
 
 	const sizes = [5, 10, 0];
 	function sizeLabel(n: number): string {
@@ -83,6 +96,7 @@
 		<p class="section-label">By module</p>
 		<div class="group">
 			{#each data.decks as deck}
+				{@const best = bestSessionFor(sessions, moduleScope(deck.code, deck.module), deck.questions)}
 				<a class="deck pressable" href={`/quiz/${encodeURIComponent(deck.code)}/${deck.module}`}>
 					<span class="avatar" aria-hidden="true">{deck.module}</span>
 					<span class="grow">
@@ -91,6 +105,9 @@
 							{deck.code} · {plural(deck.questions, 'question')} from {plural(deck.cards, 'card')}
 						</span>
 					</span>
+					{#if best}
+						<span class="best nums">Best {best.correct}/{best.total}</span>
+					{/if}
 					<span class="chev"><ChevronRight size={18} /></span>
 				</a>
 			{/each}
@@ -192,6 +209,12 @@
 
 	.chev {
 		display: inline-flex;
+		color: var(--fg-subtle);
+		flex: 0 0 auto;
+	}
+
+	.best {
+		font-size: var(--fs-caption);
 		color: var(--fg-subtle);
 		flex: 0 0 auto;
 	}
