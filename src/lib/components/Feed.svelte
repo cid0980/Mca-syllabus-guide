@@ -34,6 +34,8 @@
 	let io: IntersectionObserver | null = null;
 	let toast = '';
 	let toastTimer: ReturnType<typeof setTimeout>;
+	/** true while the deck is scrolled to the very bottom, where the end block lives */
+	let atEnd = false;
 
 	$: total = cards.length;
 	/** cards run 0..total-1 and the end of module block sits at total, so the jump buttons reach it */
@@ -81,6 +83,11 @@
 		toastTimer = setTimeout(() => (toast = ''), 1400);
 	}
 
+	function onScroll() {
+		if (!scroller) return;
+		atEnd = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 24;
+	}
+
 	function goTo(i: number, smooth = true) {
 		const el = scroller?.querySelector<HTMLElement>(`[data-i="${i}"]`);
 		if (!el) return;
@@ -109,7 +116,7 @@
 	}
 </script>
 
-<div class="feed" bind:this={scroller} aria-label="Study cards">
+<div class="feed" bind:this={scroller} on:scroll={onScroll} aria-label="Study cards">
 	<div class="bar">
 		<div class="track"><div class="fill" style={`width:${total ? (readCount / total) * 100 : 0}%`}></div></div>
 	</div>
@@ -133,14 +140,13 @@
 			{/if}
 		</section>
 	{/each}
-</div>
 
 <!--
 	The end of a deck used to be a dead end: the student had to go back to the subject page and hunt
 	for the next module. This block names where the next tap goes, and shows what was read.
 -->
 {#if current}
-	<section class="end" aria-label={`End of Module ${current.module}`}>
+	<section class="snap end" data-i={total} aria-label={`End of Module ${current.module}`}>
 		<p class="end-label">End of Module {current.module}</p>
 		<h2 class="end-title">{current.title}</h2>
 		<p class="end-status">
@@ -192,7 +198,9 @@
 	</section>
 {/if}
 
-{#if total > 1}
+</div>
+
+{#if total > 1 && !atEnd}
 	<div class="jump">
 		<button class="jump-btn" disabled={active === 0} on:click={() => step(-1)} aria-label="Previous card">
 			<ChevronUp size={18} />
@@ -254,15 +262,25 @@
 		border-top: 1px solid var(--border);
 	}
 
+	.snap.end {
+		scroll-snap-align: start;
+		border-top: 1px solid var(--border);
+	}
+
 	/* ---------- end of module ---------- */
 
 	.end {
-		min-height: 60%;
+		min-height: 70%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		gap: var(--sp-2);
 		padding: var(--sp-6) var(--sp-4) var(--sp-8);
+	}
+
+	/* a flex child will not shrink below its content unless it is allowed to */
+	.end-btn .grow {
+		min-width: 0;
 	}
 
 	.end-label {
