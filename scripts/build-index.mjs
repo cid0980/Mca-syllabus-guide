@@ -20,6 +20,7 @@ const subjects = [];
 const totals = { subjects: 0, modules: 0, topics: 0, subtopics: 0, types: 0, cards: 0 };
 const seenIds = new Set();
 const problems = [];
+const warnings = [];
 
 for (const file of files) {
 	const tree = JSON.parse(await readFile(join(treeDir, file), 'utf8'));
@@ -99,10 +100,23 @@ function checkCard(card, id) {
 	if (!card.examTip) problems.push(`${id}: card without examTip`);
 	if (typeof card.verified !== 'boolean') problems.push(`${id}: verified must be boolean`);
 	if (!Array.isArray(card.quiz) || card.quiz.length === 0) problems.push(`${id}: card without quiz`);
+
+	// Every card is meant to carry four questions (five where the topic has a real count or cost).
+	// This is a warning rather than an error so the subjects still being written can be filled in
+	// gradually without breaking the build.
+	if (Array.isArray(card.quiz) && card.quiz.length > 0 && card.quiz.length < 4) {
+		warnings.push(`${id}: ${card.quiz.length} quiz questions, four or more expected`);
+	}
+
+	const stems = new Set();
 	for (const [i, q] of (card.quiz ?? []).entries()) {
 		if (!q.q || !q.why) problems.push(`${id} q${i}: missing question or why`);
 		if (!Array.isArray(q.options) || q.options.length !== 4) problems.push(`${id} q${i}: needs 4 options`);
 		if (!(q.answer >= 0 && q.answer <= 3)) problems.push(`${id} q${i}: answer index out of range`);
+		if (stems.has(q.q)) problems.push(`${id} q${i}: duplicate question text`);
+		stems.add(q.q);
+		const options = (q.options ?? []).map((o) => String(o).toLowerCase());
+		if (new Set(options).size !== options.length) problems.push(`${id} q${i}: duplicate option text`);
 	}
 }
 
@@ -113,6 +127,11 @@ if (problems.length) {
 	console.error(`index: ${problems.length} content problems:`);
 	for (const p of problems.slice(0, 25)) console.error('  -', p);
 	process.exitCode = 1;
+}
+
+if (warnings.length) {
+	console.warn(`index: ${warnings.length} content warnings:`);
+	for (const w of warnings.slice(0, 25)) console.warn('  -', w);
 }
 
 await writeFile(

@@ -58,12 +58,18 @@ complaint can never come back. Status: `fixed`, `planned`, `wontfix`.
 | 34 | Questions repeating in the same order | Order is shuffled once the page is live (never during hydration, which would break the server-rendered first question) | fixed |
 | 35 | No keyboard path on desktop | Keys 1-4 or A-D answer, Enter or Space advances, Escape leaves the sheet | fixed |
 | 36 | Recording a wrong answer twice | Each question records once; the option buttons lock after answering | fixed |
+| 37 | The same card asked twice inside one 10 or 20 question run | `pickQuestions` hands out one question per card per round (0 repeats in 300 trials at 5, 10 and 20) | fixed |
+| 38 | A quiz that ignores which cards I keep failing | Bands from the existing `sf:progress` signals - wrong first, then never opened, then revision - with a "Picked for you" line so the reason is visible | fixed |
+| 39 | Refusing to say why these questions were chosen | The first question of a prioritised run names the counts ("4 cards you answered wrongly, 12 not opened yet") | fixed |
+| 40 | "Retry what I missed" jumping back to question one after each answer | The pool keeps a stable identity; it was rebuilt on every progress write, which restarted the run | fixed |
+| 41 | A card answered twice always opening with the same question | The starting question rotates with the card's existing answer counters | fixed |
+| 42 | Guessing by position worked (B held 73 of 102 correct answers) | Answers are spread across A, B, C and D (63/63/62/62 of 250) and every new question's distractors are written to the answer's length | fixed |
 
 ## Still planned
 
 | # | Item | Why |
 |---|---|---|
-| 26 | Export / import of progress and bookmarks | Browsers clear storage silently; a JSON file is the only real backup (build step 7) |
+| 26 | Export / import of progress and bookmarks | Settings exports one JSON file and imports it back, with validation and a blocked-storage warning (build step 7) | fixed |
 | 27 | Streak calendar view | The streak number alone doesn't show gaps |
 | 28 | Offline indicator | The PWA works offline, but nothing tells the user they are offline |
 | 29 | ~~Full quiz runner with ordered question banks and a wrong-answer review list~~ | Done: `/quiz` picker (mixed 10/20, retry-missed, per-module decks), `/quiz/mixed` and `/quiz/[code]/[module]` runners with immediate feedback, score, review list and retry-missed | fixed |

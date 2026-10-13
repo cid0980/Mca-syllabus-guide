@@ -12,3 +12,7 @@ dev-dist
 
 # local Vercel CLI state
 .vercel
+
+# python bytecode from the one-off content scripts
+__pycache__/
+*.pyc

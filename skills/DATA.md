@@ -85,6 +85,45 @@ The index must always be regenerated after content changes (the build script doe
 Any screen that touches a tree shows a skeleton while loading and an `ErrorState` with retry if the
 import fails (offline first load, corrupted file).
 
+## Quiz questions
+
+Questions live on the card, inside `card.quiz`, and nowhere else. The stored shape never changed:
+
+```jsonc
+{ "q": "question text", "options": ["a", "b", "c", "d"], "answer": 0, "why": "one line of reasoning" }
+```
+
+- `options` is always exactly four and `answer` is the index 0-3 of the correct option.
+- There is no question id. A question is identified by its card plus its position in the array.
+- Every written card carries **four or five** questions: recall, a "which is NOT" (three true
+  statements from that card plus one false statement that belongs to a sibling topic), a short
+  scenario, and - where the topic has a real count, capacity, cost or complexity - a numeric one.
+- Distractors are written at about the same length as the correct option, and correct answers are
+  spread evenly across A, B, C and D. `scripts/archive/_rebalance_answers.py` rotates the options of
+  every question to keep that spread even; it never changes the wording, only the order.
+- A batch is authored as `{ cardId: [question, ...] }` and appended with
+  `python3 scripts/archive/_append_questions.py scripts/archive/_batch_mX.py`, which refuses duplicate
+  question text, wrong option counts and out-of-range answer indexes. `verified` stays `false` until
+  the card has been checked against the textbook.
+
+### How a run is built (`src/lib/quiz.ts`)
+
+`pickQuestions(items, limit, progress)` orders the pool before the first question appears:
+
+| Band | Cards | Why |
+|---|---|---|
+| 0 | `quizWrong > 0` | mistakes are the point of a quiz |
+| 1 | never seen | new material |
+| 2 | seen and not wrong | revision |
+
+Inside a band the card seen longest ago comes first. Questions are then handed out **one per card per
+round**, so a 10 or 20 question mixed run cannot ask the same card twice while cards remain, and a
+module run using every question spreads a card's four or five questions apart instead of sitting them
+in a row. A card's opening question rotates with its existing `quizCorrect + quizWrong` counters, so
+the priority and rotation features store nothing new. `scripts/build-index.mjs` warns (does not fail)
+when a card has fewer than four questions, so the subjects still being written can be filled in
+gradually; duplicate question or option text is treated as a hard error.
+
 ## Progress keys
 
 | Key | Shape | Written by |
