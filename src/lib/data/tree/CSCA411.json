@@ -57,45 +57,45 @@
               {
                 "q": "What does a data structure mainly decide?",
                 "options": [
-                  "How data is arranged in memory and which operations are fast",
-                  "The colour scheme of a program",
                   "How many users can open the program",
-                  "The license of the programming language"
+                  "The license of the programming language",
+                  "How data is arranged in memory and which operations are fast",
+                  "The colour scheme of a program"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "A data structure is the arrangement plus the rules for inserting, searching and deleting."
               },
               {
                 "q": "A single value such as the age 21 is called a:",
                 "options": [
-                  "Record",
                   "Data item",
                   "Structure",
-                  "Field group"
+                  "Field group",
+                  "Record"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "A single value is a data item; a group of related values stored together is a record."
               },
               {
                 "q": "Which statement about data structure terms is NOT correct?",
                 "options": [
-                  "A data item is one single value kept on its own",
                   "A record is a group of related values kept together",
                   "A structure is only for storing data, never for finding it",
-                  "Efficiency means the operations you use most are fast"
+                  "Efficiency means the operations you use most are fast",
+                  "A data item is one single value kept on its own"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "A data structure is the arrangement plus the rules for adding, finding and removing items, so finding data is part of its job."
               },
               {
                 "q": "A team keeps student marks in a plain list and finds one student by checking from the top every time. According to the card, what is the real problem?",
                 "options": [
-                  "The arrangement makes their most used operation slow",
                   "The marks are grouped as records instead of data items",
                   "The list holds more data items than memory allows",
-                  "The language they use has no built-in array type"
+                  "The language they use has no built-in array type",
+                  "The arrangement makes their most used operation slow"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "The same data arranged differently would make the operation they repeat most take less time, and that choice is the data structure."
               }
             ],
@@ -141,45 +141,45 @@
               {
                 "q": "Which property means an algorithm must stop after a limited number of steps?",
                 "options": [
-                  "Ambiguity",
                   "Finiteness",
                   "Redundancy",
-                  "Modularity"
+                  "Modularity",
+                  "Ambiguity"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Finiteness means the steps are limited, so execution always ends."
               },
               {
                 "q": "Minimum number of outputs an algorithm must produce:",
                 "options": [
-                  "Zero",
                   "One",
                   "Two",
-                  "As many as its inputs"
+                  "As many as its inputs",
+                  "Zero"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "An algorithm must produce at least one output, otherwise the work is pointless."
               },
               {
                 "q": "Which of these is NOT a property that an algorithm must have?",
                 "options": [
+                  "Brevity, so it is written in the fewest possible lines",
                   "Finiteness, so it stops after a limited number of steps",
                   "Definiteness, so every step is clear and unambiguous",
-                  "Effectiveness, so each step is simple enough to carry out",
-                  "Brevity, so it is written in the fewest possible lines"
+                  "Effectiveness, so each step is simple enough to carry out"
                 ],
-                "answer": 3,
+                "answer": 0,
                 "why": "There is no brevity property; an algorithm may be long as long as it is finite, definite, effective and produces output."
               },
               {
                 "q": "A friend writes steps to find the largest of three numbers, but one step says only 'compare them properly'. Which property does that step break?",
                 "options": [
-                  "Definiteness, because the step is not unambiguous",
-                  "Finiteness, because the steps must come to an end",
                   "Input, because the numbers are already given",
-                  "Effectiveness, because the answer must be printed"
+                  "Effectiveness, because the answer must be printed",
+                  "Definiteness, because the step is not unambiguous",
+                  "Finiteness, because the steps must come to an end"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "Every step has to be clear enough to follow without guessing, and 'compare them properly' leaves the reader guessing."
               }
             ],
@@ -230,34 +230,34 @@
               {
                 "q": "Which is NOT a typical pseudocode keyword?",
                 "options": [
-                  "READ",
                   "WHILE",
                   "PRINT",
-                  "import java.util"
+                  "import java.util",
+                  "READ"
                 ],
-                "answer": 3,
+                "answer": 2,
                 "why": "Import statements belong to a real language; pseudocode stays language-free."
               },
               {
                 "q": "Which of these is NOT something pseudocode does?",
                 "options": [
-                  "Keeps the algorithm's logic in plain readable words",
-                  "Uses simple keywords such as READ, WHILE and PRINT",
                   "Runs on the computer without being translated first",
-                  "Shortens the coding stage because the thinking is done"
+                  "Shortens the coding stage because the thinking is done",
+                  "Keeps the algorithm's logic in plain readable words",
+                  "Uses simple keywords such as READ, WHILE and PRINT"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Pseudocode cannot be executed directly; it is a plan that you translate into a language such as C++ or Java later."
               },
               {
                 "q": "You must show the logic of a payroll program to a teacher who does not know Java. What should you hand over?",
                 "options": [
-                  "Pseudocode using plain steps and simple keywords",
                   "The complete Java source with comments added",
                   "Only the final printed output of the program",
-                  "A list of the input files the program reads"
+                  "A list of the input files the program reads",
+                  "Pseudocode using plain steps and simple keywords"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Pseudocode keeps the logic and drops the strict grammar, so a reader who does not know Java can still check the steps."
               }
             ],
@@ -308,45 +308,45 @@
               {
                 "q": "If the input size doubles and the work also doubles, the growth is:",
                 "options": [
+                  "Constant",
                   "Linear",
                   "Quadratic",
-                  "Logarithmic",
-                  "Constant"
+                  "Logarithmic"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "Work proportional to n means linear growth, written O(n)."
               },
               {
                 "q": "Which statement about time complexity is NOT correct?",
                 "options": [
-                  "It counts basic operations as a function of input size",
                   "It is the stopwatch time measured on the lab computer",
                   "It shows how the work grows as the data becomes large",
-                  "A smaller growth rate survives a large input better"
+                  "A smaller growth rate survives a large input better",
+                  "It counts basic operations as a function of input size"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Stopwatch time changes with every machine; time complexity counts operations against n so the comparison is portable."
               },
               {
                 "q": "Your teacher raises the test data from 1,000 to 10,000 records and the running time grows about a hundred times. What does that show?",
                 "options": [
-                  "The work grows with the square of the input size",
                   "The work grows in a straight line with the input",
                   "The work stays the same for every input size",
-                  "The work grows more slowly than the input"
+                  "The work grows more slowly than the input",
+                  "The work grows with the square of the input size"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Ten times the input producing a hundred times the work is the n squared pattern, not a linear one."
               },
               {
                 "q": "An algorithm always performs 4n + 20 basic operations. About how many operations does it perform for n = 100?",
                 "options": [
-                  "About 420",
                   "About 120",
                   "About 4,020",
-                  "About 10,400"
+                  "About 10,400",
+                  "About 420"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "4 x 100 + 20 = 420; the growth is written O(n), but the actual count still uses the real expression."
               }
             ],
@@ -397,23 +397,23 @@
               {
                 "q": "An algorithm that uses only a fixed amount of extra memory is called:",
                 "options": [
-                  "Recursive",
                   "In-place",
                   "Dynamic",
-                  "Static"
+                  "Static",
+                  "Recursive"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "In-place algorithms need O(1) extra space."
               },
               {
                 "q": "Which of these is NOT counted as auxiliary space?",
                 "options": [
+                  "The memory holding the input array itself",
                   "A temporary array created while sorting the input",
                   "A second list built while merging two sorted lists",
-                  "One small variable used to swap two values",
-                  "The memory holding the input array itself"
+                  "One small variable used to swap two values"
                 ],
-                "answer": 3,
+                "answer": 0,
                 "why": "Auxiliary space is the extra working memory beyond the input, so the input array is not part of it."
               },
               {
@@ -481,45 +481,45 @@
               {
                 "q": "Which case do we normally report for an algorithm?",
                 "options": [
-                  "Best case",
-                  "Average case",
                   "Worst case",
-                  "Any one case"
+                  "Any one case",
+                  "Best case",
+                  "Average case"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Worst case gives the upper guarantee, so it is the standard choice."
               },
               {
                 "q": "Best case of linear search when the target is the first element:",
                 "options": [
-                  "O(1)",
                   "O(log n)",
                   "O(n)",
-                  "O(n^2)"
+                  "O(n^2)",
+                  "O(1)"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "One comparison is enough, so it is constant time."
               },
               {
                 "q": "Which statement about the three cases is NOT correct?",
                 "options": [
+                  "Comparing algorithms means comparing code length",
                   "Best case is the luckiest input and worst the unluckiest",
                   "Worst case is reported because it is a guarantee",
-                  "Average case is the typical input seen in practice",
-                  "Comparing algorithms means comparing code length"
+                  "Average case is the typical input seen in practice"
                 ],
-                "answer": 3,
+                "answer": 0,
                 "why": "Algorithms are compared by growth rate, not by how short the code is; a shorter program can easily be the slower one."
               },
               {
                 "q": "Two programs solve the same problem. One is 40 lines and the other is 200 lines. How should you compare them?",
                 "options": [
-                  "By their growth rates, not by their line counts",
                   "By line count, because shorter code is always faster",
                   "By the best case only, because that is the target",
-                  "By which language they happen to be written in"
+                  "By which language they happen to be written in",
+                  "By their growth rates, not by their line counts"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "The card states that comparing algorithms means comparing growth rates, and code length says nothing about how the work grows."
               },
               {
@@ -570,56 +570,56 @@
               {
                 "q": "Simplify 5n + 20 to Big-O:",
                 "options": [
+                  "O(n^2)",
                   "O(5n)",
                   "O(n)",
-                  "O(20)",
-                  "O(n^2)"
+                  "O(20)"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Constants are dropped in Big-O, so 5n + 20 is O(n)."
               },
               {
                 "q": "Big-O notation describes:",
                 "options": [
-                  "Lower bound",
-                  "Exact bound only",
                   "Upper bound",
-                  "Average memory"
+                  "Average memory",
+                  "Lower bound",
+                  "Exact bound only"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Big-O gives an asymptotic upper bound on growth."
               },
               {
                 "q": "Which statement about Big-O notation is NOT correct?",
                 "options": [
-                  "It gives the upper limit of growth for a large input",
-                  "It drops constants, so 3n + 5 becomes O(n)",
                   "It keeps the smaller terms, so n squared + 100n stays as it is",
-                  "O(1) is better than O(n), which is better than O(n squared)"
+                  "O(1) is better than O(n), which is better than O(n squared)",
+                  "It gives the upper limit of growth for a large input",
+                  "It drops constants, so 3n + 5 becomes O(n)"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Smaller terms are dropped as well, so n squared + 100n simplifies to O(n squared) because the squared term dominates."
               },
               {
                 "q": "Your program does 3n + 5 operations and your friend writes it as O(3n + 5). What should you write instead?",
                 "options": [
-                  "O(n), because constants and lower terms are dropped",
-                  "O(3n), because the constant 3 has to stay",
                   "O(5), because 5 is the smallest part of it",
-                  "O(n squared), because terms are multiplied"
+                  "O(n squared), because terms are multiplied",
+                  "O(n), because constants and lower terms are dropped",
+                  "O(3n), because the constant 3 has to stay"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "Big-O keeps only the fastest growing term with its constant removed, so 3n + 5 simplifies to O(n)."
               },
               {
                 "q": "For a very large input, which of these orders needs the fewest operations?",
                 "options": [
-                  "O(1)",
                   "O(log n)",
                   "O(n squared)",
-                  "O(n)"
+                  "O(n)",
+                  "O(1)"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Constant time does not grow at all, so O(1) beats O(log n), which beats O(n), which beats O(n squared)."
               }
             ],
@@ -659,56 +659,56 @@
               {
                 "q": "Which notation gives a lower bound on growth?",
                 "options": [
+                  "None of these",
                   "Big-O",
                   "Omega",
-                  "Theta",
-                  "None of these"
+                  "Theta"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Omega is the asymptotic lower bound, the floor of the growth."
               },
               {
                 "q": "Theta notation is used when:",
                 "options": [
-                  "Only the worst case is known",
-                  "Upper and lower bounds have the same order",
                   "The input is small",
-                  "Recursion is used"
+                  "Recursion is used",
+                  "Only the worst case is known",
+                  "Upper and lower bounds have the same order"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "Theta needs matching upper and lower bounds, so it is a tight bound."
               },
               {
                 "q": "Which statement about the three notations is NOT correct?",
                 "options": [
-                  "Omega gives the least work an algorithm can do",
-                  "Theta is used when the two bounds have the same order",
                   "Big-O is the floor and Omega is the roof of growth",
-                  "A function can have many upper bounds but one tight Theta"
+                  "A function can have many upper bounds but one tight Theta",
+                  "Omega gives the least work an algorithm can do",
+                  "Theta is used when the two bounds have the same order"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "It is the other way round: Big-O is the roof (upper bound) and Omega is the floor (lower bound)."
               },
               {
                 "q": "An algorithm performs exactly n comparisons for every input of size n. Which statement can you write?",
                 "options": [
+                  "O(n squared), because that is the safest bound",
                   "Theta(n), because the floor and the roof are both n",
                   "Only O(1), because the work per item is fixed",
-                  "Only Omega(1), because the work never grows",
-                  "O(n squared), because that is the safest bound"
+                  "Only Omega(1), because the work never grows"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "When the lower and upper bounds have the same order, Theta pins the function from both sides: Theta(n)."
               },
               {
                 "q": "An algorithm's work always lies between 2n and 5n. Which notation describes it exactly?",
                 "options": [
-                  "Theta(n), because both bounds have the same order",
                   "Theta(2n), because 2n is the lower bound",
                   "Theta(5n), because 5n is the upper bound",
-                  "Theta(n squared), because 5n is more than n"
+                  "Theta(n squared), because 5n is more than n",
+                  "Theta(n), because both bounds have the same order"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Theta ignores the constants on both sides and keeps the order that both bounds share, which is n."
               }
             ],
@@ -771,45 +771,45 @@
               {
                 "q": "In a 1D array of size n, the last valid index is:",
                 "options": [
-                  "n",
                   "n - 1",
                   "n + 1",
-                  "0"
+                  "0",
+                  "n"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Indexing starts at 0, so the last index is n - 1."
               },
               {
                 "q": "Which of these is NOT a property of an array as described on the card?",
                 "options": [
-                  "Items of the same type sit next to each other in memory",
-                  "Any item is reached directly by its index number",
                   "The size grows and shrinks freely while the program runs",
-                  "Inserting in the middle means shifting the later items"
+                  "Inserting in the middle means shifting the later items",
+                  "Items of the same type sit next to each other in memory",
+                  "Any item is reached directly by its index number"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "An array is a fixed-size block, so its size is decided in advance and the shifting cost is the price of inserting in the middle."
               },
               {
                 "q": "You keep 30 students' marks in an array and read marks[17] instantly. What makes that instant read possible?",
                 "options": [
-                  "The address is computed from the index and element size",
                   "The array keeps a sorted copy of every element",
                   "The array searches itself in logarithmic steps",
-                  "The compiler keeps a table of every index"
+                  "The compiler keeps a table of every index",
+                  "The address is computed from the index and element size"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Because the elements sit next to each other, the address of arr[i] is calculated directly, so the read is constant time."
               },
               {
                 "q": "In a 2D array a[4][5] stored in row-major order, which element comes immediately after a[2][4]?",
                 "options": [
-                  "a[3][0]",
-                  "a[2][5]",
                   "a[3][4]",
-                  "a[1][4]"
+                  "a[1][4]",
+                  "a[3][0]",
+                  "a[2][5]"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "Row 2 ends at column 4 (5 columns means 0 to 4), so the next element is the first column of the next row, a[3][0]."
               }
             ],
@@ -855,12 +855,12 @@
               {
                 "q": "Binary search requires the array to be:",
                 "options": [
-                  "Empty",
-                  "Sorted",
                   "Linked",
-                  "Circular"
+                  "Circular",
+                  "Empty",
+                  "Sorted"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "It decides which half to discard, so order is essential."
               },
               {
@@ -877,12 +877,12 @@
               {
                 "q": "Which statement about the two searches is NOT correct?",
                 "options": [
-                  "Linear search works on sorted and unsorted arrays",
                   "Binary search throws away half the list each step",
                   "Binary search needs about 17 steps for a lakh of records",
-                  "Linear search beats binary search on large sorted data"
+                  "Linear search beats binary search on large sorted data",
+                  "Linear search works on sorted and unsorted arrays"
                 ],
-                "answer": 3,
+                "answer": 2,
                 "why": "On large sorted data binary search finishes in about 17 steps while linear search may need a lakh, so linear search is slower."
               },
               {
@@ -899,12 +899,12 @@
               {
                 "q": "About how many comparisons does binary search need in the worst case for 1,024 sorted items?",
                 "options": [
+                  "About 32, since 1,024 divided by 32 is 32",
                   "About 10, since 2 raised to 10 gives 1,024",
                   "About 1,024, one comparison per item",
-                  "About 512, half of the list",
-                  "About 32, since 1,024 divided by 32 is 32"
+                  "About 512, half of the list"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "Binary search halves the list each step, so the worst case is log base 2 of 1,024, which is 10."
               }
             ],
@@ -979,12 +979,12 @@
               {
                 "q": "Which operation returns the top element without deleting it?",
                 "options": [
-                  "pop",
-                  "push",
                   "peek",
-                  "isFull"
+                  "isFull",
+                  "pop",
+                  "push"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "peek (also called top) reads the element only; pop is the one that removes it."
               },
               {
@@ -1001,12 +1001,12 @@
               {
                 "q": "A text editor must undo the most recent change first, every time. Which structure fits, and why?",
                 "options": [
-                  "A stack, because the newest change is removed first",
                   "A queue, because changes are removed in order",
                   "An array, because changes are stored in place",
-                  "A linked list, because changes are searched by value"
+                  "A linked list, because changes are searched by value",
+                  "A stack, because the newest change is removed first"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Undo needs last in first out, which is exactly what a stack gives when every edit is pushed and every undo pops."
               },
               {
@@ -1057,23 +1057,23 @@
               {
                 "q": "A linked stack overflows only when:",
                 "options": [
+                  "the head pointer is NULL",
                   "top equals size - 1",
                   "the memory of the machine is exhausted",
-                  "it holds 100 nodes",
-                  "the head pointer is NULL"
+                  "it holds 100 nodes"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Nodes are created on demand, so there is no fixed capacity limit."
               },
               {
                 "q": "In a linked stack, the top of the stack is:",
                 "options": [
-                  "the last node created",
-                  "the head node of the list",
                   "the node with the largest value",
-                  "the tail node"
+                  "the tail node",
+                  "the last node created",
+                  "the head node of the list"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "Push inserts at the head, so the head is always the newest element - the top."
               },
               {
@@ -1101,12 +1101,12 @@
               {
                 "q": "For a stack stored in an array, the underflow test before pop is:",
                 "options": [
-                  "top == -1, meaning there is nothing to remove",
-                  "top == 0, meaning the first cell is still free",
                   "top == MAX - 1, meaning the array is full",
-                  "top == MAX, meaning the top left the array"
+                  "top == MAX, meaning the top left the array",
+                  "top == -1, meaning there is nothing to remove",
+                  "top == 0, meaning the first cell is still free"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "With top starting at -1 for an empty stack, top == -1 is the signal that a pop would be an underflow."
               }
             ],
@@ -1169,23 +1169,23 @@
               {
                 "q": "Postfix expressions need no brackets because:",
                 "options": [
-                  "operators are written first",
-                  "the position of the operator fixes the order of evaluation",
                   "operands are sorted",
-                  "the stack removes them"
+                  "the stack removes them",
+                  "operators are written first",
+                  "the position of the operator fixes the order of evaluation"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "In postfix, evaluation order is unambiguous from the layout alone."
               },
               {
                 "q": "Which statement about postfix notation is NOT correct?",
                 "options": [
+                  "An operator is pushed only after popping higher or equal precedence",
                   "The operator is written after its two operands",
                   "Evaluation order is fixed by position, so brackets are not needed",
-                  "Every operand has to sit inside brackets to be evaluated",
-                  "An operator is pushed only after popping higher or equal precedence"
+                  "Every operand has to sit inside brackets to be evaluated"
                 ],
-                "answer": 2,
+                "answer": 3,
                 "why": "Postfix works precisely because position settles the order, so brackets are unnecessary and carrying them is meaningless."
               },
               {
@@ -1259,45 +1259,45 @@
               {
                 "q": "Recursion is naturally supported by a stack because:",
                 "options": [
-                  "the calls are stored in a queue",
-                  "each pending call keeps its state on the call stack",
                   "the compiler sorts the calls",
-                  "recursion needs no memory"
+                  "recursion needs no memory",
+                  "the calls are stored in a queue",
+                  "each pending call keeps its state on the call stack"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "LIFO suits nested calls: the most recent call finishes first."
               },
               {
                 "q": "Which statement about postfix evaluation is NOT correct?",
                 "options": [
-                  "Each operand is pushed onto the stack as it is read",
-                  "An operator pops two values, applies itself and pushes the result",
                   "A well formed expression leaves exactly one value behind",
-                  "Each operator is pushed onto the stack as it is read"
+                  "Each operator is pushed onto the stack as it is read",
+                  "Each operand is pushed onto the stack as it is read",
+                  "An operator pops two values, applies itself and pushes the result"
                 ],
-                "answer": 3,
+                "answer": 1,
                 "why": "Operators are applied, not stored; only operands are pushed, and each operator consumes two values from the stack."
               },
               {
                 "q": "Ctrl+Z in a word processor restores the state before the most recent edit. Which structure is the editor using?",
                 "options": [
-                  "A stack, because the newest edit is undone first",
                   "A queue, because edits are undone as they were made",
                   "A deque, because edits are undone from both ends",
-                  "A linked list, because edits are searched by text"
+                  "A linked list, because edits are searched by text",
+                  "A stack, because the newest edit is undone first"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "The card's undo example is last in first out: every edit is pushed and every Ctrl+Z pops the most recent one."
               },
               {
                 "q": "Evaluate the postfix expression 8 2 / 3 + .",
                 "options": [
+                  "5",
                   "7",
                   "13",
-                  "3",
-                  "5"
+                  "3"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "8 divided by 2 gives 4, then 4 plus 3 gives 7; both operations happen in the order the operators appear."
               }
             ],
@@ -1360,45 +1360,45 @@
               {
                 "q": "An empty queue is indicated by:",
                 "options": [
+                  "top = -1",
                   "front = rear = 0",
                   "front = rear = -1",
-                  "front = 0, rear = -1",
-                  "top = -1"
+                  "front = 0, rear = -1"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "The standard convention sets both front and rear to -1 when no element is present."
               },
               {
                 "q": "Which statement about a simple queue is NOT correct?",
                 "options": [
-                  "Insertion happens at the rear and deletion at the front",
                   "It gives first in first out service order",
                   "Items can be removed from the middle when needed",
-                  "Nothing is removed from the middle, so it models a line"
+                  "Nothing is removed from the middle, so it models a line",
+                  "Insertion happens at the rear and deletion at the front"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "A queue only ever touches its two ends, which is what keeps the service order strictly first come, first served."
               },
               {
                 "q": "A system serves requests in arrival order, but its array queue is full after a few days even though requests keep finishing. What is the cause?",
                 "options": [
-                  "The array queue wastes the space freed at the front",
-                  "The queue has been used as a stack by mistake",
                   "The queue keeps no front pointer at all",
-                  "FIFO order cannot be kept in an array"
+                  "FIFO order cannot be kept in an array",
+                  "The array queue wastes the space freed at the front",
+                  "The queue has been used as a stack by mistake"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "Deletions move the front forward and leave empty cells behind it, so the rear hits the end while free space still exists in front."
               },
               {
                 "q": "An array queue of size 5 has front = 2 and rear = 4. How many items does it hold?",
                 "options": [
-                  "3 items, at indexes 2, 3 and 4",
-                  "2 items, at indexes 3 and 4 only",
                   "5 items, because the array is of size 5",
-                  "4 items, because the rear counts from the start"
+                  "4 items, because the rear counts from the start",
+                  "3 items, at indexes 2, 3 and 4",
+                  "2 items, at indexes 3 and 4 only"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "The queue runs from the front to the rear inclusive, so indexes 2, 3 and 4 hold three items."
               }
             ],
@@ -1444,12 +1444,12 @@
               {
                 "q": "The next rear position in a circular queue of size n is:",
                 "options": [
+                  "n - rear",
                   "rear + 1",
                   "(rear + 1) % n",
-                  "rear - 1",
-                  "n - rear"
+                  "rear - 1"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "The modulo operation wraps the index back to 0 after the last cell."
               },
               {
@@ -1466,34 +1466,34 @@
               {
                 "q": "Which statement about a circular queue is NOT correct?",
                 "options": [
+                  "It keeps the same first in first out order as a plain queue",
                   "The rear wraps to the beginning using modulo arithmetic",
                   "It reuses the cells that deletions freed at the front",
-                  "It removes the need to keep one slot empty",
-                  "It keeps the same first in first out order as a plain queue"
+                  "It removes the need to keep one slot empty"
                 ],
-                "answer": 2,
+                "answer": 3,
                 "why": "Full and empty would otherwise look identical, so one slot is deliberately left empty to tell the two states apart."
               },
               {
                 "q": "In a circular queue the rear sits at the last index. Where does the very next enqueue write?",
                 "options": [
-                  "At index 0, because the rear wraps around",
                   "At the last index again, overwriting it",
                   "At the index after the front, then stop",
-                  "Nowhere, because the rear has left the array"
+                  "Nowhere, because the rear has left the array",
+                  "At index 0, because the rear wraps around"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "The modulo step sends the rear back to index 0 once it passes the end, which is what makes the array behave like a ring."
               },
               {
                 "q": "A circular queue of size 5 has front = 3 and rear = 0 after wrapping. Where does the next enqueue write?",
                 "options": [
-                  "Index 1, because the rear moves on by one modulo 5",
                   "Index 0, overwriting the element at the rear",
                   "Index 3, because that cell is empty now",
-                  "Index 4, because the array ends there"
+                  "Index 4, because the array ends there",
+                  "Index 1, because the rear moves on by one modulo 5"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "The rear advances with (rear + 1) % n, so 0 becomes 1, and the cell at index 3 is not touched because only the rear moves."
               }
             ],
@@ -1539,12 +1539,12 @@
               {
                 "q": "A priority queue removes:",
                 "options": [
+                  "a random element",
                   "the oldest element",
                   "the newest element",
-                  "the element with the highest priority",
-                  "a random element"
+                  "the element with the highest priority"
                 ],
-                "answer": 2,
+                "answer": 3,
                 "why": "Priority decides removal order, not arrival time."
               },
               {
@@ -1572,23 +1572,23 @@
               {
                 "q": "In an emergency room, a critical patient arrives after several minor cases. Who is treated first, and what does that show?",
                 "options": [
-                  "The critical patient, because removal is by priority",
-                  "The minor cases, because they arrived earlier",
                   "The critical patient, because a queue removes the last arrival",
-                  "No one, because a queue cannot hold priority values"
+                  "No one, because a queue cannot hold priority values",
+                  "The critical patient, because removal is by priority",
+                  "The minor cases, because they arrived earlier"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "This is the card's own example: a priority queue serves the element with the highest priority rather than the oldest one."
               },
               {
                 "q": "A heap-backed priority queue holds 1,000 items. About how many steps do insert and remove take?",
                 "options": [
+                  "About 1, because the root is always known",
                   "About 10, because a heap works in logarithmic steps",
                   "About 1,000, because every item is compared",
-                  "About 500, because half the items are kept",
-                  "About 1, because the root is always known"
+                  "About 500, because half the items are kept"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "Keeping the extreme value at the root gives O(log n) work, and log base 2 of 1,000 is about 10."
               }
             ],
@@ -1640,12 +1640,12 @@
               {
                 "q": "Which graph traversal depends on a queue?",
                 "options": [
-                  "Depth First Search",
-                  "Breadth First Search",
                   "Binary search",
-                  "Dijkstra with a heap"
+                  "Dijkstra with a heap",
+                  "Depth First Search",
+                  "Breadth First Search"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "BFS keeps discovered vertices in a queue, which produces level-by-level order."
               },
               {
@@ -1730,12 +1730,12 @@
               {
                 "q": "Each node of a singly linked list contains:",
                 "options": [
+                  "an index and a pointer",
                   "only data",
                   "data and one pointer",
-                  "two pointers only",
-                  "an index and a pointer"
+                  "two pointers only"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "One information field plus one link to the next node."
               },
               {
@@ -1752,34 +1752,34 @@
               {
                 "q": "Which statement about a linked list is NOT correct?",
                 "options": [
-                  "Nodes are scattered in memory and joined by pointers",
                   "Each node stores a value and a pointer to the next node",
                   "Any element can be read in one step, exactly as in an array",
-                  "Reaching the k-th node means walking k links from the head"
+                  "Reaching the k-th node means walking k links from the head",
+                  "Nodes are scattered in memory and joined by pointers"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "Only the head is known, so there is no direct address arithmetic and a position must be reached by walking the links."
               },
               {
                 "q": "After weeks of use, free memory is scattered in small pieces. Why can a linked list still hold 10,000 records without moving any of them?",
                 "options": [
+                  "The list stores only the head and rebuilds the rest on demand",
                   "Each node goes wherever space is free and pointers join them",
                   "The list reserves one large block of memory in advance",
-                  "The list sorts the nodes back into order after each change",
-                  "The list stores only the head and rebuilds the rest on demand"
+                  "The list sorts the nodes back into order after each change"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "Nodes do not have to sit next to each other, so scattered free space is fine and only the pointers need rewriting."
               },
               {
                 "q": "How many links must be followed to reach the 5th node from the head?",
                 "options": [
+                  "1 link",
                   "4 links",
                   "5 links",
-                  "3 links",
-                  "1 link"
+                  "3 links"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "The head is the 1st node, so four hops over four links land on the 5th node."
               }
             ],
@@ -1842,45 +1842,45 @@
               {
                 "q": "In a circular linked list, the last node's pointer:",
                 "options": [
-                  "is NULL",
                   "points to itself",
                   "points to the first node",
-                  "points to the middle node"
+                  "points to the middle node",
+                  "is NULL"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "The ring is closed by linking the last node back to the first."
               },
               {
                 "q": "Which statement about the forms of linked list is NOT correct?",
                 "options": [
-                  "A singly linked list can only be traversed forward",
                   "A doubly linked list stores a previous pointer as well",
                   "A circular linked list ends with NULL in its last node",
-                  "Round robin scheduling suits a circular linked list"
+                  "Round robin scheduling suits a circular linked list",
+                  "A singly linked list can only be traversed forward"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "The last node of a circular list points back to the first node instead of holding NULL, which is what closes the ring."
               },
               {
                 "q": "A music player must support next and previous, and deleting the current song should not mean walking from the start. Which form fits?",
                 "options": [
-                  "A doubly linked list, because the previous pointer is there",
-                  "A singly linked list, because it saves a pointer per song",
                   "A circular list, because it never reaches an end",
-                  "An array, because songs are reached by position"
+                  "An array, because songs are reached by position",
+                  "A doubly linked list, because the previous pointer is there",
+                  "A singly linked list, because it saves a pointer per song"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "Carrying a previous pointer gives backward movement and constant-time deletion once the node is known, which is the two things asked for."
               },
               {
                 "q": "How many pointer fields does a node of a doubly linked list carry?",
                 "options": [
+                  "None, because the list keeps an index array",
                   "Two, one to the next node and one to the previous",
                   "One, pointing to the next node only",
-                  "Three, one for each direction and one to the head",
-                  "None, because the list keeps an index array"
+                  "Three, one for each direction and one to the head"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "The extra previous pointer is exactly the memory cost that buys backward traversal and O(1) deletion."
               }
             ],
@@ -1932,56 +1932,56 @@
               {
                 "q": "Inserting a node at the beginning of a singly linked list is:",
                 "options": [
+                  "O(n log n)",
                   "O(1)",
                   "O(log n)",
-                  "O(n)",
-                  "O(n log n)"
+                  "O(n)"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "Only the head pointer and one new node are touched."
               },
               {
                 "q": "Why is deletion in the middle of a linked list usually described as O(n)?",
                 "options": [
+                  "The list must be reversed",
                   "Pointers need sorting",
                   "The predecessor must be located by traversal",
-                  "Memory is copied",
-                  "The list must be reversed"
+                  "Memory is copied"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Reaching the position is the costly part, not the pointer change."
               },
               {
                 "q": "Which statement about the cost of linked list operations is NOT correct?",
                 "options": [
-                  "Inserting at the front of the list is constant time",
-                  "Deleting a known node is constant time in a doubly linked list",
                   "Searching for a value by comparison is constant time",
-                  "Finding the predecessor is the costly part in a singly linked list"
+                  "Finding the predecessor is the costly part in a singly linked list",
+                  "Inserting at the front of the list is constant time",
+                  "Deleting a known node is constant time in a doubly linked list"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "A search has to walk the links until the value appears, so it costs O(n) even though the deletion that follows may be O(1)."
               },
               {
                 "q": "Your program deletes a given roll number from a long singly linked list. What is the dominant cost?",
                 "options": [
+                  "Recounting the length of the list every time",
                   "Walking from the head to find its predecessor",
                   "Shifting all later records one place left",
-                  "Copying the whole list into a new array",
-                  "Recounting the length of the list every time"
+                  "Copying the whole list into a new array"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "Pointer surgery itself is cheap; the expensive part is the traversal that locates the node before it, which is why a doubly linked list helps."
               },
               {
                 "q": "A singly linked list holds 1,000 nodes. About how many nodes must be visited to insert a new node after node 900?",
                 "options": [
-                  "About 900, walking from the head to that node",
                   "About 100, counting backwards from the end",
                   "About 10, using binary halving steps",
-                  "1, because insertion is always constant time"
+                  "1, because insertion is always constant time",
+                  "About 900, walking from the head to that node"
                 ],
-                "answer": 0,
+                "answer": 3,
                 "why": "Insertion is only constant time at the front; reaching a particular position needs the walk from the head, about 900 nodes here."
               }
             ],
@@ -2033,12 +2033,12 @@
               {
                 "q": "Storing a polynomial as a linked list saves memory because:",
                 "options": [
-                  "only non-zero terms are stored",
-                  "it is sorted automatically",
                   "coefficients are compressed",
-                  "it allows random access"
+                  "it allows random access",
+                  "only non-zero terms are stored",
+                  "it is sorted automatically"
                 ],
-                "answer": 0,
+                "answer": 2,
                 "why": "Nodes exist only for terms that actually appear, so zeros cost nothing."
               },
               {
@@ -2055,12 +2055,12 @@
               {
                 "q": "Which statement about choosing between arrays and linked lists is NOT correct?",
                 "options": [
+                  "Linked lists suit collections whose size changes often",
                   "A linked list never has to move its elements",
                   "An array gives direct access to any index",
-                  "A linked list uses less memory per element than an array",
-                  "Linked lists suit collections whose size changes often"
+                  "A linked list uses less memory per element than an array"
                 ],
-                "answer": 2,
+                "answer": 3,
                 "why": "Every node pays for a pointer field, so a linked list uses more memory per element than an array of the same values."
               },
               {
@@ -2077,12 +2077,12 @@
               {
                 "q": "An array of 1,000 integers and a linked list of 1,000 nodes hold the same values. Which one needs more memory?",
                 "options": [
+                  "Neither, because both hold plain numbers only",
                   "The linked list, because every node stores a pointer",
                   "The array, because it keeps its values side by side",
-                  "Both need exactly the same amount of memory",
-                  "Neither, because both hold plain numbers only"
+                  "Both need exactly the same amount of memory"
                 ],
-                "answer": 0,
+                "answer": 1,
                 "why": "The linked list carries one extra pointer per element, which is the memory trade-off accepted for not moving data."
               }
             ],
@@ -2146,12 +2146,12 @@
               {
                 "q": "The number of edges in a tree with n nodes is:",
                 "options": [
-                  "n",
                   "n - 1",
                   "n + 1",
-                  "2n"
+                  "2n",
+                  "n"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Every node except the root has exactly one edge connecting it to its parent."
               },
               {
@@ -2164,6 +2164,39 @@
                 ],
                 "answer": 2,
                 "why": "Terminal nodes with degree zero are leaves."
+              },
+              {
+                "q": "Which statement about tree terminology is NOT correct?",
+                "options": [
+                  "Every node except the root has exactly one parent",
+                  "A node that has no children at all is called a leaf",
+                  "A tree with n nodes always contains n edges",
+                  "The degree of a node counts its children"
+                ],
+                "answer": 2,
+                "why": "A tree with n nodes has exactly n - 1 edges, which is the fact numerical questions in this topic are built on."
+              },
+              {
+                "q": "Your college chart runs Vice Chancellor, then Deans, then Heads of Department, then faculty. Which node is the root, and how do the edges compare with the nodes?",
+                "options": [
+                  "The Vice Chancellor, and edges are one fewer than nodes",
+                  "The faculty, and edges equal the number of nodes",
+                  "The Deans, and edges are twice the number of nodes",
+                  "Any node, because a tree has no fixed root"
+                ],
+                "answer": 0,
+                "why": "The top of the hierarchy is the root and it has no parent, and every tree with n nodes carries n - 1 edges."
+              },
+              {
+                "q": "A tree contains 15 nodes. How many edges does it have?",
+                "options": [
+                  "15",
+                  "16",
+                  "30",
+                  "14"
+                ],
+                "answer": 3,
+                "why": "One edge leads into every node except the root, so 15 nodes give 14 edges."
               }
             ],
             "examTip": "Label a diagram with root, level, degree and height before starting the answer - terminology marks are otherwise easy to lose.",
@@ -2208,24 +2241,57 @@
               {
                 "q": "The maximum number of nodes on level i of a binary tree (root at level 0) is:",
                 "options": [
-                  "i",
-                  "2i",
                   "2^i",
-                  "i squared"
+                  "i squared",
+                  "i",
+                  "2i"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Each node can have two children, so the count doubles at every level."
               },
               {
                 "q": "Which representation wastes space for a skewed binary tree?",
                 "options": [
-                  "Linked",
                   "Array",
                   "Both equally",
-                  "Neither"
+                  "Neither",
+                  "Linked"
+                ],
+                "answer": 0,
+                "why": "The array form must leave gaps for missing nodes, so a skewed tree leaves most of the array empty."
+              },
+              {
+                "q": "Which statement about binary tree representation is NOT correct?",
+                "options": [
+                  "Every node has at most two children, left and right",
+                  "In the array form a node's children sit at fixed indexes",
+                  "The linked form handles any shape without leaving gaps",
+                  "In the array form a skewed tree wastes no space at all"
+                ],
+                "answer": 3,
+                "why": "A skewed tree fills only one side of each level, so the array form leaves the other half of every position empty."
+              },
+              {
+                "q": "A tree is a chain in which every node has only a right child. Which representation wastes memory, and why?",
+                "options": [
+                  "Neither form, because the tree has few nodes",
+                  "The array form, because of the empty left child slots",
+                  "The linked form, because it stores two pointers",
+                  "Both forms equally, because the shape is the same"
                 ],
                 "answer": 1,
-                "why": "The array form must leave gaps for missing nodes, so a skewed tree leaves most of the array empty."
+                "why": "Index arithmetic doubles down the tree, so a chain occupies positions spread far apart and leaves most cells unused."
+              },
+              {
+                "q": "The most nodes a binary tree can hold on level i is 2 raised to i. How many nodes can level 3 hold at most?",
+                "options": [
+                  "8",
+                  "6",
+                  "16",
+                  "3"
+                ],
+                "answer": 0,
+                "why": "2 raised to 3 is 8, and counting from level 0 this is the fourth level down the tree."
               }
             ],
             "examTip": "Write the formulas 2^i per level and 2^(h+1) - 1 nodes total for a full binary tree; numerical questions come straight from them.",
@@ -2276,24 +2342,57 @@
               {
                 "q": "Which traversal prints the nodes of a binary search tree in ascending order?",
                 "options": [
-                  "Preorder",
                   "Inorder",
                   "Postorder",
-                  "Level order"
+                  "Level order",
+                  "Preorder"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Inorder visits left subtree, root and right subtree, which matches key order in a BST."
               },
               {
                 "q": "Level order traversal uses which data structure?",
                 "options": [
-                  "Stack",
                   "Queue",
                   "Priority queue",
-                  "Hash table"
+                  "Hash table",
+                  "Stack"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "A queue holds the nodes of the next level, giving FIFO level-by-level output."
+              },
+              {
+                "q": "Which statement about the traversals is NOT correct?",
+                "options": [
+                  "Level order sweeps the tree breadth first using a queue",
+                  "Inorder places the root between its two subtrees",
+                  "Preorder places the root before both subtrees",
+                  "Postorder visits the root before its children"
+                ],
+                "answer": 3,
+                "why": "Postorder finishes both subtrees and visits the root last, which is why it suits deletion."
+              },
+              {
+                "q": "You are deleting a folder that contains files. Which order removes the contents before the folder itself?",
+                "options": [
+                  "Preorder, because the parent is handled first",
+                  "Inorder, because the parent sits in the middle",
+                  "Level order, because folder levels come first",
+                  "Postorder, because children are handled before the parent"
+                ],
+                "answer": 3,
+                "why": "This is the card's own example: postorder reaches the root last, so the contents are gone before the folder is removed."
+              },
+              {
+                "q": "Level order traversal of a tree with n nodes works with a queue. How many times is each node put into that queue?",
+                "options": [
+                  "Exactly once, when it is discovered",
+                  "Twice, once on discovery and once on finishing",
+                  "Once per level of the tree",
+                  "It depends only on the height of the tree"
+                ],
+                "answer": 0,
+                "why": "A node is enqueued when its parent is expanded and never again, which keeps the traversal linear in the number of nodes."
               }
             ],
             "examTip": "Memorise the three orders as LNR, NLR and LRN, then practise one tree drawn by hand - swapping these orders is the exam's favourite trick.",
@@ -2362,12 +2461,12 @@
               {
                 "q": "In a complete binary tree:",
                 "options": [
-                  "every node has two children",
                   "all leaves are at the same level",
                   "all levels are full except possibly the last, filled left to right",
-                  "every node has one child"
+                  "every node has one child",
+                  "every node has two children"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "Completeness is about filling level by level from the left, which is why arrays can store them compactly."
               },
               {
@@ -2380,6 +2479,39 @@
                 ],
                 "answer": 2,
                 "why": "One child per node means the tree becomes a chain of n levels."
+              },
+              {
+                "q": "Which statement about the types of binary tree is NOT correct?",
+                "options": [
+                  "Perfect means every leaf lies on the bottom level",
+                  "Full means every internal node has two children",
+                  "Complete means the last level fills from the left",
+                  "Skewed means the tree stays balanced as it grows"
+                ],
+                "answer": 3,
+                "why": "A skewed tree is the opposite of balanced: it collapses to one side, so its height becomes n and it behaves like a list."
+              },
+              {
+                "q": "One player gets a bye and the tournament sheet collapses into a chain of single matches. What has the tree become, and why does it matter?",
+                "options": [
+                  "Balanced, because the height stays logarithmic",
+                  "Skewed, so its height is n and search behaves like a list",
+                  "Complete, so every level is filled from the left",
+                  "Perfect, because every leaf is on the bottom level"
+                ],
+                "answer": 1,
+                "why": "A chain is the skewed shape, and losing the balance turns a logarithmic search into a linear scan."
+              },
+              {
+                "q": "A perfect binary tree has all its leaves on the bottom level. How many nodes does a perfect tree of height 3 hold?",
+                "options": [
+                  "16",
+                  "15",
+                  "7",
+                  "8"
+                ],
+                "answer": 1,
+                "why": "A perfect tree of height h holds 2 raised to h plus 1, minus 1, so height 3 gives 16 - 1 = 15 nodes."
               }
             ],
             "examTip": "Draw one small example for each type - full, complete, perfect, skewed - and note where the definitions differ; that is where marks are lost.",
@@ -2454,6 +2586,39 @@
                 ],
                 "answer": 1,
                 "why": "They assign shorter codes to more frequent characters."
+              },
+              {
+                "q": "Which of these is NOT an application of trees?",
+                "options": [
+                  "Database indexing with B+ trees",
+                  "Data compression with Huffman trees",
+                  "Keeping process queues for round robin scheduling",
+                  "Expression evaluation inside a compiler"
+                ],
+                "answer": 2,
+                "why": "Round robin scheduling is a first come first served rotation, so it belongs to a circular queue rather than a tree."
+              },
+              {
+                "q": "A phone book tree finds one name among a lakh in about 17 comparisons. Why is that possible?",
+                "options": [
+                  "Each comparison discards about half of the names left",
+                  "The tree keeps the names in ten fixed buckets",
+                  "The tree checks every name but does it faster",
+                  "The tree remembers the last name you searched"
+                ],
+                "answer": 0,
+                "why": "Searching down a balanced tree halves the remaining candidates at every step, which is what makes 17 comparisons enough for a lakh."
+              },
+              {
+                "q": "A balanced search tree holds one million names. About how many comparisons does one lookup need?",
+                "options": [
+                  "About 5",
+                  "About 20",
+                  "About 1,000",
+                  "About 100,000"
+                ],
+                "answer": 1,
+                "why": "Halving a million takes about 20 steps, since 2 raised to 20 is a little more than a million."
               }
             ],
             "examTip": "Give at least five different applications with one line each - search, indexing, compression, file systems, decision making.",
@@ -2516,12 +2681,12 @@
               {
                 "q": "In a directed graph, the number of edges entering a vertex is its:",
                 "options": [
-                  "degree",
-                  "out-degree",
                   "in-degree",
-                  "weight"
+                  "weight",
+                  "degree",
+                  "out-degree"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "In-degree counts incoming edges, out-degree counts outgoing ones."
               },
               {
@@ -2534,6 +2699,39 @@
                 ],
                 "answer": 1,
                 "why": "That is exactly the definition of a tree, which is a special graph."
+              },
+              {
+                "q": "Which statement about graphs is NOT correct?",
+                "options": [
+                  "A graph may contain cycles and has no root vertex",
+                  "The in-degree of a vertex counts edges entering it",
+                  "A connected graph with n vertices and no cycles has n edges",
+                  "An edge weight represents a cost or a distance"
+                ],
+                "answer": 2,
+                "why": "No-cycle connectivity is the definition of a tree, and a tree with n vertices has n - 1 edges, not n."
+              },
+              {
+                "q": "A metro map shows stations and tracks, and one route brings you back to the station you started from. What does that route show?",
+                "options": [
+                  "A spanning tree with no other edges present",
+                  "A directed acyclic structure with no return",
+                  "A cycle, which a tree is not allowed to contain",
+                  "A root, which every graph must contain"
+                ],
+                "answer": 2,
+                "why": "Returning to the starting vertex is a cycle, and dropping the no-cycle rule is exactly what separates a graph from a tree."
+              },
+              {
+                "q": "A connected graph has 12 vertices and no cycles. How many edges does it have?",
+                "options": [
+                  "11",
+                  "12",
+                  "13",
+                  "24"
+                ],
+                "answer": 0,
+                "why": "A connected graph with no cycle is a tree, and a tree always has one edge fewer than its vertices."
               }
             ],
             "examTip": "Start the answer by distinguishing a graph from a tree - no root, cycles allowed - then list the terminology with a small figure.",
@@ -2578,24 +2776,57 @@
               {
                 "q": "Space used by an adjacency matrix for a graph with V vertices:",
                 "options": [
-                  "O(V)",
                   "O(V + E)",
                   "O(V squared)",
-                  "O(E log V)"
+                  "O(E log V)",
+                  "O(V)"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "The matrix always has V rows and V columns, regardless of the number of edges."
               },
               {
                 "q": "For a sparse graph, the preferred representation is:",
                 "options": [
-                  "Adjacency matrix",
                   "Adjacency list",
                   "Incidence matrix",
-                  "Distance matrix"
+                  "Distance matrix",
+                  "Adjacency matrix"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Adjacency lists store only the existing edges, saving both memory and traversal time."
+              },
+              {
+                "q": "Which statement about graph representation is NOT correct?",
+                "options": [
+                  "Both forms work with the same traversal algorithms",
+                  "An adjacency matrix answers 'is there an edge' in one lookup",
+                  "An adjacency list stores only the edges that exist",
+                  "An adjacency matrix uses memory in proportion to the edges"
+                ],
+                "answer": 3,
+                "why": "A matrix always spends V squared cells whether the graph has many edges or almost none, so its memory does not follow E."
+              },
+              {
+                "q": "A friendship network has a million users with about 50 friends each. Which representation fits, and why?",
+                "options": [
+                  "An adjacency matrix, because it saves memory here",
+                  "An incidence matrix, because it keeps weights",
+                  "Neither, because a million vertices cannot be held",
+                  "An adjacency list, because the graph is sparse"
+                ],
+                "answer": 3,
+                "why": "A million by million matrix would be absurd for 50 friends per person, and a list stores only the edges that exist."
+              },
+              {
+                "q": "An adjacency matrix is built for a graph with 1,000 vertices. How many cells does it use?",
+                "options": [
+                  "About 500,000, half of the square",
+                  "Exactly twice the number of edges",
+                  "One million, because the matrix is V squared",
+                  "About 2,000, two cells for each vertex"
+                ],
+                "answer": 2,
+                "why": "Every vertex gets a row and a column, so 1,000 vertices need 1,000 x 1,000 cells regardless of the edges."
               }
             ],
             "examTip": "Show both representations for the same small graph side by side, then state the space complexity of each - that pair of sentences carries the answer.",
@@ -2664,6 +2895,39 @@
                 ],
                 "answer": 2,
                 "why": "Every vertex and every edge is inspected exactly once."
+              },
+              {
+                "q": "Which statement about the two traversals is NOT correct?",
+                "options": [
+                  "BFS expands the oldest discovered vertex first",
+                  "DFS expands the most recently discovered vertex first",
+                  "BFS needs a visited array while DFS does not",
+                  "BFS gives shortest paths when every edge costs the same"
+                ],
+                "answer": 2,
+                "why": "Both traversals need the visited array; without it a cycle would make them process the same vertex forever."
+              },
+              {
+                "q": "You must walk from the campus gate to the library with the fewest turns. Which traversal gives that route, and why?",
+                "options": [
+                  "DFS, because it keeps the turns on a stack",
+                  "BFS, because it explores the deepest corridor first",
+                  "BFS, because it spreads outward level by level",
+                  "DFS, because it dives to the end first"
+                ],
+                "answer": 2,
+                "why": "Exploring in rings means the first time a place is reached it is reached with the fewest steps, which is the BFS guarantee."
+              },
+              {
+                "q": "A graph has 50 vertices and 200 edges, stored as an adjacency list. About how many steps does one traversal take?",
+                "options": [
+                  "About 2,500, because the cost is V times E",
+                  "About 200, because only the edges are visited",
+                  "About 50, because only the vertices matter",
+                  "About 250, because the cost is V + E"
+                ],
+                "answer": 3,
+                "why": "Each vertex is expanded once and each edge is looked at once, so the total is 50 + 200 steps, written O(V + E)."
               }
             ],
             "examTip": "Trace BFS and DFS on the same small graph, writing the visit order and the queue or stack after each step - the trace is what is being marked.",
@@ -2714,12 +2978,12 @@
               {
                 "q": "Dijkstra's algorithm fails on graphs with:",
                 "options": [
-                  "cycles",
                   "negative edge weights",
                   "parallel edges",
-                  "disconnected vertices"
+                  "disconnected vertices",
+                  "cycles"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "A negative edge could improve a distance already finalised, which the greedy choice forbids."
               },
               {
@@ -2732,6 +2996,39 @@
                 ],
                 "answer": 1,
                 "why": "It repeatedly makes the locally cheapest choice of the nearest unfinalised vertex."
+              },
+              {
+                "q": "Which statement about Dijkstra's algorithm is NOT correct?",
+                "options": [
+                  "It works correctly on graphs with negative edge weights",
+                  "A priority queue version suits large road networks",
+                  "It finds shortest paths from one source to every vertex",
+                  "It locks in the closest unfinalised vertex each round"
+                ],
+                "answer": 0,
+                "why": "A negative edge arriving later can beat a distance already locked in, which is why negative weights are excluded."
+              },
+              {
+                "q": "A road graph has one negative edge because it models a toll refund. What happens if Dijkstra's algorithm is run on it?",
+                "options": [
+                  "It runs faster because some edges cost less",
+                  "It finds the shortest path exactly as usual",
+                  "It needs a plain queue instead of a priority queue",
+                  "The locked distances can be wrong, so it must not be used"
+                ],
+                "answer": 3,
+                "why": "Dijkstra's guarantee depends on distances never shrinking later, and one negative edge breaks exactly that promise."
+              },
+              {
+                "q": "Dijkstra's algorithm using a binary heap on V vertices and E edges runs in about:",
+                "options": [
+                  "O((V + E) log V), because each heap step is logarithmic",
+                  "O(V squared) only, whatever the number of edges is",
+                  "O(V + E), the same as a single traversal",
+                  "O(E squared), because each edge is relaxed twice"
+                ],
+                "answer": 0,
+                "why": "A heap keeps the closest vertex available in logarithmic time, which gives O((V + E) log V) overall."
               }
             ],
             "examTip": "Solve one table with columns for vertex, visited and distance, updating it after each selection - examiners mark the table, not the final numbers.",
@@ -2782,12 +3079,12 @@
               {
                 "q": "Topological sorting is possible only for:",
                 "options": [
-                  "Undirected graphs",
                   "Directed acyclic graphs",
                   "Complete graphs",
-                  "Bipartite graphs"
+                  "Bipartite graphs",
+                  "Undirected graphs"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Any cycle would make the dependency impossible to order."
               },
               {
@@ -2800,6 +3097,39 @@
                 ],
                 "answer": 1,
                 "why": "Such a vertex has no pending prerequisite, so it can be placed next."
+              },
+              {
+                "q": "Which statement about topological sorting is NOT correct?",
+                "options": [
+                  "A single DAG may have more than one valid order",
+                  "It orders the vertices of a directed acyclic graph",
+                  "Every edge in the result points forward",
+                  "It can also order a graph that contains a cycle"
+                ],
+                "answer": 3,
+                "why": "A cycle means A needs B while B needs A, so no order can satisfy both and topological sorting is impossible."
+              },
+              {
+                "q": "A study plan says Data Structures before Algorithms, and Algorithms before Network Security. How many valid orders exist?",
+                "options": [
+                  "Three, one starting from each subject",
+                  "None, because prerequisites make the plan cyclic",
+                  "One, because the chain fixes a single order",
+                  "Six, one for each permutation of the three subjects"
+                ],
+                "answer": 2,
+                "why": "A single chain of prerequisites leaves no freedom, so exactly one order satisfies every edge."
+              },
+              {
+                "q": "A project has 7 tasks and no prerequisites between them. How many of them have in-degree zero to begin with?",
+                "options": [
+                  "Only 1, the first task in the list",
+                  "None, because every task has a prerequisite",
+                  "6, because the last task has to wait",
+                  "All 7, because nothing has to come before them"
+                ],
+                "answer": 3,
+                "why": "In-degree zero means no unfinished prerequisite, and with no prerequisites at all every task starts ready to run."
               }
             ],
             "examTip": "Mention explicitly that the graph must be acyclic, then show one complete trace - students often forget the requirement and lose a mark.",
@@ -2850,24 +3180,57 @@
               {
                 "q": "A minimum spanning tree of a graph with n vertices has:",
                 "options": [
-                  "n edges",
-                  "n - 1 edges",
                   "n + 1 edges",
-                  "E edges"
+                  "E edges",
+                  "n edges",
+                  "n - 1 edges"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "A tree on n vertices always has exactly n - 1 edges."
               },
               {
                 "q": "Which algorithm adds edges in increasing order of weight?",
                 "options": [
+                  "Floyd's",
                   "Prim's",
                   "Kruskal's",
-                  "Dijkstra's",
-                  "Floyd's"
+                  "Dijkstra's"
+                ],
+                "answer": 2,
+                "why": "Kruskal sorts all edges globally and picks the cheapest usable ones."
+              },
+              {
+                "q": "Which statement about the minimum spanning tree is NOT correct?",
+                "options": [
+                  "Kruskal considers edges in increasing order of weight",
+                  "It keeps a cycle in the tree to lower the total cost",
+                  "It connects every vertex using n - 1 edges",
+                  "Prim grows one tree outward from a start vertex"
                 ],
                 "answer": 1,
-                "why": "Kruskal sorts all edges globally and picks the cheapest usable ones."
+                "why": "A spanning tree has no cycle by definition, and both algorithms explicitly reject an edge that would create one."
+              },
+              {
+                "q": "Ten campus buildings must all be linked by fibre with the least total trench length. What must the result be?",
+                "options": [
+                  "A complete graph with every pair of buildings linked",
+                  "A shortest path tree measured from one building",
+                  "A set of 10 links that forms one large cycle",
+                  "A minimum spanning tree with 9 links and no cycle"
+                ],
+                "answer": 3,
+                "why": "Connecting everything at the lowest total cost is the definition of a minimum spanning tree, and it needs n - 1 links."
+              },
+              {
+                "q": "A network has 8 buildings that must all be connected. How many links does any spanning tree use?",
+                "options": [
+                  "9",
+                  "16",
+                  "7",
+                  "8"
+                ],
+                "answer": 2,
+                "why": "A spanning tree always uses one link fewer than the number of vertices, so 8 buildings need 7 links."
               }
             ],
             "examTip": "Run both algorithms on the same graph and show the chosen edge set with total weight - comparing them in one table usually completes the answer.",
@@ -2930,24 +3293,57 @@
               {
                 "q": "The general recurrence for a divide and conquer algorithm is:",
                 "options": [
-                  "T(n) = T(n - 1) + 1",
-                  "T(n) = aT(n/b) + f(n)",
                   "T(n) = nT(n)",
-                  "T(n) = T(n) + f(n)"
+                  "T(n) = T(n) + f(n)",
+                  "T(n) = T(n - 1) + 1",
+                  "T(n) = aT(n/b) + f(n)"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "It has a subproblems of size n/b each, plus f(n) work to divide and combine."
               },
               {
                 "q": "Which step of divide and conquer is usually the most expensive?",
                 "options": [
-                  "Divide",
-                  "Conquer",
                   "Combine",
-                  "Base case"
+                  "Base case",
+                  "Divide",
+                  "Conquer"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Merging the partial solutions often dominates, as in merge sort's linear merge."
+              },
+              {
+                "q": "Which statement about the divide and conquer method is NOT correct?",
+                "options": [
+                  "A problem is split into smaller instances of the same problem",
+                  "Recursion expresses the method naturally",
+                  "The cost is written as a recurrence relation",
+                  "Splitting into halves makes the recursion depth n"
+                ],
+                "answer": 3,
+                "why": "Halving the problem at every step reaches the base case after about log n steps, not n, and that is why the method is cheap."
+              },
+              {
+                "q": "You must find the heaviest student in a class of 100. How does divide and conquer approach it?",
+                "options": [
+                  "Ask each student once and stop after the first answer",
+                  "Split into halves, find each half's heaviest, compare the two",
+                  "Compare every student's weight with every other student's",
+                  "Sort the class by weight and then read the last entry"
+                ],
+                "answer": 1,
+                "why": "Each half is a smaller copy of the same job, and combining the two answers costs just one comparison."
+              },
+              {
+                "q": "An algorithm has the recurrence T(n) = 2T(n/2) + n. How many levels deep does the recursion go?",
+                "options": [
+                  "Two levels only, the left half and the right half",
+                  "About log base 2 of n levels, halving each time",
+                  "About n levels, one level for each element",
+                  "About n/2 levels, one level for each pair"
+                ],
+                "answer": 1,
+                "why": "The problem size halves at every level, so the base case is reached after about log base 2 of n levels."
               }
             ],
             "examTip": "Write the three steps and the general recurrence as the first three lines of any divide and conquer answer; the rest of the marks follow from applying them.",
@@ -2998,24 +3394,57 @@
               {
                 "q": "Worst case time complexity of binary search is:",
                 "options": [
+                  "O(n log n)",
                   "O(1)",
                   "O(log n)",
-                  "O(n)",
-                  "O(n log n)"
+                  "O(n)"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "The search space halves at every comparison, so the number of steps is logarithmic."
               },
               {
                 "q": "Binary search cannot be used on:",
                 "options": [
-                  "a sorted array",
-                  "an unsorted array",
                   "a sorted list of numbers",
-                  "a sorted list of strings"
+                  "a sorted list of strings",
+                  "a sorted array",
+                  "an unsorted array"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "Discarding a half is only valid when the data is ordered."
+              },
+              {
+                "q": "Which statement about binary search is NOT correct?",
+                "options": [
+                  "It works on an unsorted array if it is scanned twice",
+                  "The recursive version pays extra function call overhead",
+                  "It compares the key with the middle element",
+                  "It discards the half that cannot hold the key"
+                ],
+                "answer": 0,
+                "why": "Halving only makes sense on sorted data; on an unsorted array binary search returns wrong answers instead of reporting a problem."
+              },
+              {
+                "q": "Binary search is run by mistake on an array that was never sorted. What happens?",
+                "options": [
+                  "It sorts the array first and then searches",
+                  "It becomes slower but stays perfectly correct",
+                  "It may return a wrong position without any error",
+                  "It reports that the array is not sorted"
+                ],
+                "answer": 2,
+                "why": "The comparison only knows which half to drop, so unsorted data gives false guidance and a silently wrong answer."
+              },
+              {
+                "q": "Starting from 1,000 items, how many items remain after three comparisons of binary search?",
+                "options": [
+                  "About 500, because only the first half is dropped",
+                  "About 1,000, because nothing is ever removed",
+                  "About 250, because only two halvings have happened",
+                  "About 125, because each step halves what is left"
+                ],
+                "answer": 3,
+                "why": "1,000 halves to 500, then to 250, then to 125, which is why the search needs about log base 2 of n comparisons in total."
               }
             ],
             "examTip": "Write the recurrence T(n) = T(n/2) + 1 and solve it in two lines - the derivation earns more marks than the final O(log n).",
@@ -3066,12 +3495,12 @@
               {
                 "q": "Time complexity of merge sort in the worst case is:",
                 "options": [
+                  "O(log n)",
                   "O(n)",
                   "O(n log n)",
-                  "O(n squared)",
-                  "O(log n)"
+                  "O(n squared)"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Each of the log n levels performs O(n) merging work."
               },
               {
@@ -3084,6 +3513,39 @@
                 ],
                 "answer": 1,
                 "why": "Merging requires an auxiliary array, so it is not an in-place sort."
+              },
+              {
+                "q": "Which statement about merge sort is NOT correct?",
+                "options": [
+                  "It needs an extra array while merging",
+                  "It splits the array in half and sorts each half recursively",
+                  "Merging two sorted lists takes linear time",
+                  "Its worst case is much worse than its average case"
+                ],
+                "answer": 3,
+                "why": "Merge sort splits exactly at the middle every time, so every case costs O(n log n) and there is no bad input."
+              },
+              {
+                "q": "Two teachers sort half of the answer sheets each. What does the merge step do, and what does it cost?",
+                "options": [
+                  "It re-sorts the combined pile from the beginning",
+                  "It leaves the two sorted piles separate at the end",
+                  "It compares the two front sheets repeatedly, in linear time",
+                  "It compares every pair of sheets, in quadratic time"
+                ],
+                "answer": 2,
+                "why": "Each comparison removes one sheet from the front of a pile, so merging n sheets together takes about n comparisons."
+              },
+              {
+                "q": "How many levels of splitting does merge sort need for an array of 64 items?",
+                "options": [
+                  "8 levels",
+                  "6 levels",
+                  "64 levels",
+                  "32 levels"
+                ],
+                "answer": 1,
+                "why": "64 halves to 1 in six steps, since 2 raised to 6 is 64, and that is why merge sort has log n levels."
               }
             ],
             "examTip": "Trace a small array through the recursion tree and show the merge at each level - the tree plus the merge lines is the expected answer format.",
@@ -3145,13 +3607,46 @@
               {
                 "q": "The pivot in quick sort ends up:",
                 "options": [
-                  "at the beginning of the array",
                   "in its final sorted position",
                   "in the middle always",
-                  "removed from the array"
+                  "removed from the array",
+                  "at the beginning of the array"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Partitioning puts every smaller element on the left and larger on the right, which fixes the pivot's place."
+              },
+              {
+                "q": "Which statement about quick sort is NOT correct?",
+                "options": [
+                  "Partitioning leaves the pivot in its final sorted position",
+                  "A bad pivot can make the recursion depth as large as n",
+                  "Its worst case is better than the worst case of merge sort",
+                  "A random pivot makes the bad case unlikely in practice"
+                ],
+                "answer": 2,
+                "why": "Quick sort's worst case is O(n squared) while merge sort stays O(n log n) in every case, so quick sort's worst case is worse."
+              },
+              {
+                "q": "The array is already sorted and the code always picks the last element as pivot. What is the result?",
+                "options": [
+                  "Perfectly even partitions, giving O(n log n) work",
+                  "The array is sorted with almost no comparisons at all",
+                  "Quick sort notices this and switches to merge sort",
+                  "Partitions of size 0 and n - 1, degrading to O(n squared)"
+                ],
+                "answer": 3,
+                "why": "The last element of a sorted array is its largest, so every partition is empty on one side and the depth becomes n."
+              },
+              {
+                "q": "Partitioning 100 elements costs about 100 comparisons. About how much do the two halves then cost together?",
+                "options": [
+                  "About 50, because the two halves are smaller",
+                  "Nothing more, because the pivot is already placed",
+                  "About 100 more, because every level costs n",
+                  "About 10,000, because the halves are squared"
+                ],
+                "answer": 2,
+                "why": "Each level of recursion partitions the whole set once, so the work per level stays about n and the total becomes n times the depth."
               }
             ],
             "examTip": "Show the partition step with two pointers and state when the worst case occurs - the reason (already sorted input with an end pivot) is the marked part.",
@@ -3208,24 +3703,57 @@
               {
                 "q": "Solving T(n) = 2T(n/2) + n gives:",
                 "options": [
-                  "O(n)",
-                  "O(n log n)",
                   "O(n squared)",
-                  "O(log n)"
+                  "O(log n)",
+                  "O(n)",
+                  "O(n log n)"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "Each of log n levels contributes n units of work."
               },
               {
                 "q": "The recursion tree method summarises an algorithm by:",
                 "options": [
-                  "running the code",
                   "totalling cost level by level",
                   "sorting the input",
-                  "counting variables"
+                  "counting variables",
+                  "running the code"
+                ],
+                "answer": 0,
+                "why": "Each level's total cost is added and multiplied by the number of levels."
+              },
+              {
+                "q": "Which statement about analysing recurrences is NOT correct?",
+                "options": [
+                  "The recursion tree adds up the cost level by level",
+                  "The master theorem applies only to non-recursive code",
+                  "A recurrence states the cost of a recursive algorithm",
+                  "Back substitution expands the recurrence and sums it"
                 ],
                 "answer": 1,
-                "why": "Each level's total cost is added and multiplied by the number of levels."
+                "why": "The master theorem solves recurrences of the form T(n) = aT(n/b) + f(n), so it is a tool for recursive algorithms."
+              },
+              {
+                "q": "Merge sort does n work on every level of its recursion tree and there are log n levels. What is the total cost?",
+                "options": [
+                  "n, because only one level is counted",
+                  "log n, because only the number of levels counts",
+                  "n log n, because each of the log n rows costs n",
+                  "n squared, because the levels multiply together"
+                ],
+                "answer": 2,
+                "why": "Adding n work over log n rows gives n log n, which is exactly what the recursion tree method is for."
+              },
+              {
+                "q": "Solving the recurrence T(n) = 2T(n/2) + 1 gives which complexity?",
+                "options": [
+                  "O(n log n)",
+                  "O(log n)",
+                  "O(n)",
+                  "O(1)"
+                ],
+                "answer": 2,
+                "why": "The subproblems grow to n while the extra work stays constant, so the total follows the number of subproblems, O(n)."
               }
             ],
             "examTip": "Always state the base case along with the recurrence - a recurrence without its base case is considered incomplete.",
@@ -3282,24 +3810,57 @@
               {
                 "q": "The greedy method makes decisions that are:",
                 "options": [
+                  "made after full search",
                   "always globally optimal",
                   "locally best and never reversed",
-                  "chosen randomly",
-                  "made after full search"
+                  "chosen randomly"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "It commits to the best available option at each step without backtracking."
               },
               {
                 "q": "Which problem cannot be solved correctly by a greedy choice alone?",
                 "options": [
-                  "Fractional knapsack",
                   "0/1 knapsack",
                   "Huffman coding",
-                  "Minimum spanning tree"
+                  "Minimum spanning tree",
+                  "Fractional knapsack"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "An item must be taken whole or not at all, so a locally attractive choice can block the optimum."
+              },
+              {
+                "q": "Which statement about the greedy method is NOT correct?",
+                "options": [
+                  "It is correct for every problem, including 0/1 knapsack",
+                  "It is fast because there is no backtracking",
+                  "It always takes the choice that looks best right now",
+                  "It never goes back and reverses a decision"
+                ],
+                "answer": 0,
+                "why": "0/1 knapsack is the classic counterexample: items are indivisible, so a locally best choice can block the optimal answer."
+              },
+              {
+                "q": "An ATM must hand out 2,700 rupees using the fewest notes. Which approach does the card describe?",
+                "options": [
+                  "Take the smallest notes until the amount runs out",
+                  "Halve the amount and withdraw it in two attempts",
+                  "Take the largest note that still fits, then repeat",
+                  "Try every possible combination of notes and pick the best"
+                ],
+                "answer": 2,
+                "why": "The greedy loop keeps taking the locally largest note that fits, and for Indian note denominations this reaches the fewest notes."
+              },
+              {
+                "q": "A greedy pass makes one decision for each of n items. Before any sorting, about how many decisions does it make?",
+                "options": [
+                  "log n decisions, halving the list each time",
+                  "2 raised to n decisions, one per subset",
+                  "n decisions, one for each item",
+                  "n squared decisions, one for each pair"
+                ],
+                "answer": 2,
+                "why": "The greedy loop walks the items once and commits each time, which is what makes it linear before any sorting cost is added."
               }
             ],
             "examTip": "List the five greedy elements (candidate set, selection function, feasibility check, objective function, solution function) - this is a standard, mark-heavy question.",
@@ -3350,24 +3911,57 @@
               {
                 "q": "The greedy criterion for fractional knapsack is:",
                 "options": [
-                  "highest weight first",
                   "highest profit first",
                   "highest profit-to-weight ratio first",
-                  "smallest weight last"
+                  "smallest weight last",
+                  "highest weight first"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "Ratio ordering maximises value per unit of capacity, which is optimal when fractions are allowed."
               },
               {
                 "q": "Complexity of the fractional knapsack algorithm is:",
                 "options": [
-                  "O(n)",
-                  "O(n log n)",
                   "O(n squared)",
-                  "O(2^n)"
+                  "O(2^n)",
+                  "O(n)",
+                  "O(n log n)"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "Sorting by ratio dominates the linear fill that follows."
+              },
+              {
+                "q": "Which statement about the fractional knapsack problem is NOT correct?",
+                "options": [
+                  "Sorting the items by ratio is the first step",
+                  "Items can be cut, so a fraction of an item may be taken",
+                  "The greedy rule works with profit divided by weight",
+                  "The greedy answer is only approximate, never optimal"
+                ],
+                "answer": 3,
+                "why": "Because items are divisible, the exchange argument proves the ratio order is optimal, so the greedy answer here is exact."
+              },
+              {
+                "q": "A 5 kg bag must hold rice, dal and ghee, and ghee has the best value per kilogram. What does the greedy rule do as the bag fills up?",
+                "options": [
+                  "Takes ghee first, and only the quantity that fits",
+                  "Takes equal quantities of all three items",
+                  "Skips ghee because only whole items may be packed",
+                  "Takes the cheapest item first to save money"
+                ],
+                "answer": 0,
+                "why": "The ratio order comes first and cutting is allowed, so the item that crosses the capacity line is taken in part."
+              },
+              {
+                "q": "An item has profit 60 and weight 4. What is its profit-to-weight ratio?",
+                "options": [
+                  "56 per kilogram, the difference of the two",
+                  "0.067 per kilogram, the weight divided by profit",
+                  "240 per kilogram, the product of the two",
+                  "15 per kilogram, which sorts it well"
+                ],
+                "answer": 3,
+                "why": "The greedy criterion is profit divided by weight, and 60 divided by 4 is 15 per kilogram."
               }
             ],
             "examTip": "Show the sorted ratio table, then fill step by step and state the final profit - and mention that greedy works only because items are divisible.",
@@ -3418,24 +4012,57 @@
               {
                 "q": "Which of these three algorithms fails with negative edge weights?",
                 "options": [
-                  "Prim's",
-                  "Kruskal's",
                   "Dijkstra's",
-                  "None of them"
+                  "None of them",
+                  "Prim's",
+                  "Kruskal's"
                 ],
-                "answer": 2,
+                "answer": 0,
                 "why": "Dijkstra finalises vertices greedily, which a negative edge could later contradict."
               },
               {
                 "q": "Kruskal's algorithm uses which structure to detect cycles efficiently?",
                 "options": [
+                  "Hash table",
                   "Stack",
                   "Union-find (disjoint set)",
-                  "Queue",
-                  "Hash table"
+                  "Queue"
+                ],
+                "answer": 2,
+                "why": "Union-find tells in almost constant time whether two endpoints are already connected."
+              },
+              {
+                "q": "Which statement about these three greedy graph algorithms is NOT correct?",
+                "options": [
+                  "Dijkstra works correctly with negative edge weights",
+                  "All three repeatedly take the best remaining candidate",
+                  "Prim grows one tree outward from a start vertex",
+                  "Kruskal uses union-find to detect cycles"
+                ],
+                "answer": 0,
+                "why": "Dijkstra finalises a distance as soon as it is the closest, and a negative edge arriving later can still beat it."
+              },
+              {
+                "q": "You must find the fastest route from the hostel to the department on a road map carrying travel times. Which algorithm fits?",
+                "options": [
+                  "Either Prim's or Kruskal's, since both find routes",
+                  "Dijkstra's, because it finds shortest paths from one source",
+                  "Prim's, because it grows a tree across the map",
+                  "Kruskal's, because it sorts the roads by weight"
                 ],
                 "answer": 1,
-                "why": "Union-find tells in almost constant time whether two endpoints are already connected."
+                "why": "A single source with weighted edges and a destination is exactly the shortest path problem Dijkstra's algorithm solves."
+              },
+              {
+                "q": "Kruskal's algorithm sorts the edges before scanning them. For 300 edges, about how many comparisons does a good sort need?",
+                "options": [
+                  "About 300, since each edge is read once",
+                  "About 90,000, since every pair is compared",
+                  "About 8, since the depth is logarithmic",
+                  "About 2,400, since a good sort is n log n"
+                ],
+                "answer": 3,
+                "why": "300 edges need about 300 times log base 2 of 300, which is roughly 2,400 comparisons, and that sorting cost dominates the algorithm."
               }
             ],
             "examTip": "Compare the three in one table - problem solved, greedy rule, data structure used and complexity - since most questions ask for exactly this comparison.",
@@ -3486,24 +4113,57 @@
               {
                 "q": "In job sequencing with deadlines, jobs are considered in order of:",
                 "options": [
-                  "arrival time",
                   "increasing deadline",
                   "decreasing profit",
-                  "shortest processing time"
+                  "shortest processing time",
+                  "arrival time"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "Greedy picks the most profitable job first and then finds it a feasible slot."
               },
               {
                 "q": "A job is rejected during the greedy scan when:",
                 "options": [
+                  "its deadline is the largest",
                   "its profit is low",
                   "no free slot exists before its deadline",
-                  "it is the last job",
-                  "its deadline is the largest"
+                  "it is the last job"
+                ],
+                "answer": 2,
+                "why": "Without a free slot in time it cannot be scheduled, so it is discarded."
+              },
+              {
+                "q": "Which statement about job sequencing with deadlines is NOT correct?",
+                "options": [
+                  "Jobs are considered in decreasing order of profit",
+                  "Each job is placed as late as its deadline allows",
+                  "A job is dropped even when a free slot is available",
+                  "The result maximises the profit of the jobs finished in time"
+                ],
+                "answer": 2,
+                "why": "A job is dropped only when no free slot exists before its deadline; if a slot exists, the job is scheduled there."
+              },
+              {
+                "q": "Four submissions are due on different days with different credit weights. How does the greedy scan schedule them?",
+                "options": [
+                  "Earliest deadline first, in the order they are due",
+                  "Shortest job first, ignoring the credit weight",
+                  "Alphabetical order, filling the first free day each time",
+                  "Highest profit first, each as late as its deadline allows"
+                ],
+                "answer": 3,
+                "why": "Profit decides the order and the latest possible slot keeps earlier slots free, which is what protects feasibility."
+              },
+              {
+                "q": "Two unit-time jobs both carry profit, with deadlines 1 and 2. How many can be finished in time?",
+                "options": [
+                  "Both, but only if they run on the same day",
+                  "Both, because there are two slots before the deadlines",
+                  "Only one, because both jobs need day 1",
+                  "Neither, because the deadlines are too close"
                 ],
                 "answer": 1,
-                "why": "Without a free slot in time it cannot be scheduled, so it is discarded."
+                "why": "The deadline 1 job goes into slot 1 and the deadline 2 job into slot 2, so both fit before their deadlines."
               }
             ],
             "examTip": "Draw the timeline of slots and mark each chosen job with its deadline - the timeline diagram is the answer examiners look for.",
@@ -3554,12 +4214,12 @@
               {
                 "q": "In Huffman coding, the two nodes combined at each step are the ones with:",
                 "options": [
+                  "equal frequency",
                   "highest frequency",
                   "lowest frequency",
-                  "longest code",
-                  "equal frequency"
+                  "longest code"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Merging the rarest characters first pushes them deepest into the tree, which minimises total code length."
               },
               {
@@ -3572,6 +4232,39 @@
                 ],
                 "answer": 1,
                 "why": "This property makes decoding unambiguous while reading bits one at a time."
+              },
+              {
+                "q": "Which statement about Huffman coding is NOT correct?",
+                "options": [
+                  "The two least frequent nodes are merged at each step",
+                  "Frequent characters end up deeper in the tree",
+                  "The code is a prefix code, so no separator is needed",
+                  "Frequent characters receive the shorter codes"
+                ],
+                "answer": 1,
+                "why": "Merging the rarest characters first pushes them deep into the tree, so frequent characters stay near the root with short codes."
+              },
+              {
+                "q": "In an SMS, the letter e appears far more often than q. What does Huffman coding do about that?",
+                "options": [
+                  "It gives e a shorter code and q a longer one",
+                  "It gives both letters the same eight bit code",
+                  "It removes the rare letters from the message",
+                  "It gives q the shorter code because q is rarer"
+                ],
+                "answer": 0,
+                "why": "Shorter codes for frequent characters is the whole idea, and it lowers the average number of bits per character."
+              },
+              {
+                "q": "Five characters have frequencies 5, 7, 10, 15 and 20. Which two are merged first?",
+                "options": [
+                  "The 15 and the 20, the two largest",
+                  "The 10 and the 15, the middle pair",
+                  "The 5 and the 20, the extremes",
+                  "The 5 and the 7, the two smallest"
+                ],
+                "answer": 3,
+                "why": "Huffman always merges the two lowest frequencies first, so 5 and 7 combine into a node of weight 12."
               }
             ],
             "examTip": "Show the frequency-sorted list, then every merge step in order and the final codes in a table - the merge order itself carries most of the marks.",
@@ -3634,24 +4327,57 @@
               {
                 "q": "Dynamic programming is preferred when a problem has:",
                 "options": [
-                  "no recursion",
-                  "overlapping subproblems and optimal substructure",
                   "negative weights",
-                  "no solution"
+                  "no solution",
+                  "no recursion",
+                  "overlapping subproblems and optimal substructure"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "These two properties let stored subproblem answers be combined into the optimum."
               },
               {
                 "q": "Memoization differs from tabulation because it:",
                 "options": [
-                  "uses a table",
-                  "works top-down and caches results lazily",
                   "is always iterative",
-                  "ignores subproblems"
+                  "ignores subproblems",
+                  "uses a table",
+                  "works top-down and caches results lazily"
+                ],
+                "answer": 3,
+                "why": "Memoization keeps recursion but stores answers the first time they are computed."
+              },
+              {
+                "q": "Which statement about dynamic programming is NOT correct?",
+                "options": [
+                  "It spends memory on the table to avoid repeated work",
+                  "It stores answers to overlapping subproblems",
+                  "Memoization is top-down and tabulation bottom-up",
+                  "It recomputes every state each time it is needed"
+                ],
+                "answer": 3,
+                "why": "Each state is computed once and looked up afterwards, which is what turns exponential recursion into polynomial time."
+              },
+              {
+                "q": "You must count the ways to climb 10 steps taking 1 or 2 steps at a time. What does dynamic programming do differently from plain recursion?",
+                "options": [
+                  "It converts the count into a greedy choice",
+                  "It stores the counts for smaller steps and reuses them",
+                  "It tries every order of steps again from the beginning",
+                  "It guesses a pattern and multiplies it out"
                 ],
                 "answer": 1,
-                "why": "Memoization keeps recursion but stores answers the first time they are computed."
+                "why": "The counts for step 8 and step 9 are needed repeatedly, so caching them removes the exponential repetition of plain recursion."
+              },
+              {
+                "q": "A dynamic programming table has one state for each item and each capacity. For 5 items and capacity 10, how many states are there?",
+                "options": [
+                  "15 states, because items and capacities are added",
+                  "32 states, one for every subset of items",
+                  "100 states, because the items are squared",
+                  "50 states, because every item is paired with every capacity"
+                ],
+                "answer": 3,
+                "why": "The table is the product of the two dimensions, so 5 items across 10 capacities gives 50 states, written O(nW)."
               }
             ],
             "examTip": "State the principle of optimality in the very first line, then write the recurrence and the table - this sequence matches the expected answer format.",
@@ -3708,12 +4434,12 @@
               {
                 "q": "The 0/1 knapsack recurrence for an item that fits is:",
                 "options": [
-                  "dp[i][w] = pi + dp[i][w - wi]",
-                  "dp[i][w] = max(dp[i-1][w], pi + dp[i-1][w - wi])",
                   "dp[i][w] = dp[i-1][w - wi]",
-                  "dp[i][w] = wi + pi"
+                  "dp[i][w] = wi + pi",
+                  "dp[i][w] = pi + dp[i][w - wi]",
+                  "dp[i][w] = max(dp[i-1][w], pi + dp[i-1][w - wi])"
                 ],
-                "answer": 1,
+                "answer": 3,
                 "why": "Either exclude the item, or include it and add the best of the remaining capacity from the previous row."
               },
               {
@@ -3726,6 +4452,39 @@
                 ],
                 "answer": 1,
                 "why": "The table has n rows and W columns, each filled in constant time."
+              },
+              {
+                "q": "Which statement about the 0/1 knapsack problem is NOT correct?",
+                "options": [
+                  "The state records the best profit for the first i items and capacity w",
+                  "Greedy order by profit-to-weight ratio is always optimal here",
+                  "The table is filled row by row and the last cell holds the answer",
+                  "Each item is taken whole or left behind"
+                ],
+                "answer": 1,
+                "why": "Ratio greedy is optimal only in the fractional version; with indivisible items a good ratio can block a better combination."
+              },
+              {
+                "q": "Items weigh 2, 2 and 3 kg with values 4, 5 and 6, and the bag holds 4 kg. Why can the bag not be filled to exactly 4 kg?",
+                "options": [
+                  "Because the three values are all different",
+                  "Because the table needs a fifth column",
+                  "Because the capacity must be an even number",
+                  "Because an item may not be cut into a fraction"
+                ],
+                "answer": 3,
+                "why": "The 0/1 rule allows only whole items, so 2 + 2 = 4 kg is used and the 3 kg item cannot be split to top up the last kilogram."
+              },
+              {
+                "q": "A knapsack table is built with one row per item and one column per capacity, for 4 items and capacity 8. How many cells does that give?",
+                "options": [
+                  "64 cells, because the size is squared",
+                  "16 cells, one for every subset",
+                  "32 cells, four rows of eight",
+                  "12 cells, four plus eight"
+                ],
+                "answer": 2,
+                "why": "Rows times columns gives 4 times 8, which is 32 cells, and that count is exactly why the algorithm is O(nW)."
               }
             ],
             "examTip": "Draw the full dp table with rows as items and columns as capacities, then mark the included items by back-tracing - a table without the trace-back loses marks.",
@@ -3793,13 +4552,46 @@
               {
                 "q": "The dynamic programming state for TSP consists of:",
                 "options": [
+                  "the starting city",
                   "only the current city",
                   "current city and the set of visited cities",
-                  "the total cost so far only",
-                  "the starting city"
+                  "the total cost so far only"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "Those two pieces of information are enough to decide the rest of the tour optimally."
+              },
+              {
+                "q": "Which statement about the travelling salesman problem is NOT correct?",
+                "options": [
+                  "The tour visits every city once and returns to the start",
+                  "Brute force checks about (n - 1) factorial tours",
+                  "Dynamic programming solves it in polynomial time",
+                  "No polynomial time algorithm is known for it"
+                ],
+                "answer": 2,
+                "why": "Dynamic programming shrinks the search to states of current city plus visited set, but that is still exponential, so TSP stays NP-hard."
+              },
+              {
+                "q": "A delivery van must visit twelve shops and return to the depot. Why is comparing every possible order useless in practice?",
+                "options": [
+                  "The depot cannot be visited again at the end",
+                  "Routes must be arranged alphabetically, not cheapest",
+                  "Twelve cities mean billions of tours to compare",
+                  "Twelve cities cannot fit in the computer's memory"
+                ],
+                "answer": 2,
+                "why": "The number of tours grows factorially, so eleven factorial orders is in the billions even for a small map."
+              },
+              {
+                "q": "For 5 cities, about how many distinct tours does brute force have to check?",
+                "options": [
+                  "24, because it is 4 factorial",
+                  "5, one tour starting from each city",
+                  "120, because it is 5 factorial",
+                  "10, because each pair of cities is counted once"
+                ],
+                "answer": 0,
+                "why": "The starting city is fixed, so the remaining 4 cities can be ordered in 4 factorial ways, which is 24 tours."
               }
             ],
             "examTip": "Write the recurrence for the (current city, visited set) state and the complexity 2^n - examiners usually give most marks for the state definition, not the numbers.",
@@ -3850,24 +4642,57 @@
               {
                 "q": "A node in the state space tree is called promising when:",
                 "options": [
-                  "it has children",
                   "it can still lead to a valid solution",
                   "it is a leaf",
-                  "its cost is lowest"
+                  "its cost is lowest",
+                  "it has children"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Promising nodes are worth expanding; others are pruned."
               },
               {
                 "q": "Backtracking is essentially:",
                 "options": [
-                  "breadth first search",
                   "depth first search with pruning",
                   "dynamic programming",
-                  "greedy selection"
+                  "greedy selection",
+                  "breadth first search"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "It dives deep into one choice and abandons it as soon as it becomes infeasible."
+              },
+              {
+                "q": "Which statement about backtracking is NOT correct?",
+                "options": [
+                  "It builds a solution one component at a time",
+                  "A partial solution is abandoned as soon as it cannot work",
+                  "It explores the state space tree breadth first",
+                  "Its worst case is still exponential without pruning"
+                ],
+                "answer": 2,
+                "why": "Backtracking is depth first search over partial solutions; going breadth first would lose the undo-the-last-choice behaviour it relies on."
+              },
+              {
+                "q": "While filling a sudoku you place a digit that breaks a box rule. What does backtracking do next?",
+                "options": [
+                  "Starts the grid again from the first cell",
+                  "Leaves the cell empty and moves on for good",
+                  "Erases that digit and tries the next one",
+                  "Fills the whole grid and fixes mistakes at the end"
+                ],
+                "answer": 2,
+                "why": "The violated constraint prunes that branch immediately, so the choice is undone and the next value is tried - the backtrack."
+              },
+              {
+                "q": "A state space tree has two choices at every step and a depth of 10. About how many nodes exist if nothing is pruned?",
+                "options": [
+                  "About 20, two choices per level",
+                  "About 100, ten levels of ten branches",
+                  "About 10, one node per level",
+                  "About 1,000, since 2 raised to 10 is 1,024"
+                ],
+                "answer": 3,
+                "why": "Unpruned branching doubles at every level, so ten levels give roughly a thousand nodes, which is why pruning matters."
               }
             ],
             "examTip": "Draw the state space tree with promising nodes marked and pruned branches crossed out - the crossing out is what shows the technique, not the final answer.",
@@ -3924,12 +4749,12 @@
               {
                 "q": "A safe queen placement is tested by checking:",
                 "options": [
-                  "only the row",
                   "column and the two diagonals",
                   "only the diagonals",
-                  "nothing, since rows differ"
+                  "nothing, since rows differ",
+                  "only the row"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "Rows are already distinct because one queen is placed per row, so columns and diagonals are checked."
               },
               {
@@ -3942,6 +4767,39 @@
                 ],
                 "answer": 1,
                 "why": "The two solutions are (2,4,1,3) and (3,1,4,2)."
+              },
+              {
+                "q": "Which statement about the n-Queen problem is NOT correct?",
+                "options": [
+                  "A solution is written by listing the row of each queen",
+                  "When a row has no safe column, the previous row is undone",
+                  "No two queens may share a row, a column or a diagonal",
+                  "Queens are placed one row at a time during backtracking"
+                ],
+                "answer": 0,
+                "why": "A solution is written as a tuple of column numbers, one per row, which makes the row constraint free."
+              },
+              {
+                "q": "While placing queens you reach row 4 and find every column attacked. What does the algorithm do?",
+                "options": [
+                  "Places the queen in an attacked column anyway",
+                  "Restarts the board from row 1 in a new order",
+                  "Stops, because it has proved that no solution exists",
+                  "Undoes the placement in row 3 and tries another column there"
+                ],
+                "answer": 3,
+                "why": "A dead end in one row means the previous choice was wrong, so it is undone and the next alternative is tried."
+              },
+              {
+                "q": "In the 4-Queens problem, one queen is placed in each row. How many ways are there to assign the columns before any diagonal check?",
+                "options": [
+                  "256, because every square is chosen independently",
+                  "24, because the four columns can be ordered in 4 factorial ways",
+                  "4, because there are four rows to fill",
+                  "16, because it is four rows of four squares"
+                ],
+                "answer": 1,
+                "why": "One queen per row means the four distinct columns can be permuted in 4 factorial = 24 ways, and the diagonal rules cut that down to 2."
               }
             ],
             "examTip": "Solve the 4-Queens case step by step, drawing the board at each stage and showing at least one pruned branch - that trace is the whole answer.",
@@ -3992,24 +4850,57 @@
               {
                 "q": "The chromatic number of a graph is:",
                 "options": [
-                  "its number of vertices",
                   "the minimum colours needed for a proper colouring",
                   "its maximum degree",
-                  "the number of edges"
+                  "the number of edges",
+                  "its number of vertices"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "It is the smallest number of colours such that no adjacent pair shares a colour."
               },
               {
                 "q": "In graph colouring, backtracking is used to:",
                 "options": [
+                  "count edges",
                   "sort vertices",
                   "find a proper colouring by undoing bad colour choices",
-                  "compute shortest paths",
-                  "count edges"
+                  "compute shortest paths"
                 ],
-                "answer": 1,
+                "answer": 2,
                 "why": "When a vertex cannot be coloured, the previous colour assignment is changed."
+              },
+              {
+                "q": "Which statement about graph colouring is NOT correct?",
+                "options": [
+                  "No two adjacent vertices may share a colour",
+                  "The chromatic number is the minimum number of colours needed",
+                  "Adjacent vertices may share a colour if they are far apart",
+                  "Deciding whether three colours are enough is NP-complete"
+                ],
+                "answer": 2,
+                "why": "Sharing a colour is forbidden exactly when two vertices are adjacent, and distance on the page has nothing to do with it."
+              },
+              {
+                "q": "Courses that share students must not be held in the same slot. What does each time slot represent?",
+                "options": [
+                  "A vertex, with lecture halls as the edges",
+                  "An edge weight, counting the shared students",
+                  "The chromatic number of the timetable",
+                  "A colour, with clashing courses as adjacent vertices"
+                ],
+                "answer": 3,
+                "why": "This is the card's own example: slots behave like colours and two courses that cannot clash are joined by an edge."
+              },
+              {
+                "q": "A graph joins every pair of its 5 vertices, so every pair is adjacent. How many colours does a proper colouring need?",
+                "options": [
+                  "2, because every complete graph is bipartite",
+                  "10, because there are ten edges to colour",
+                  "5, because no two vertices may share a colour",
+                  "1, because one colour covers all five vertices"
+                ],
+                "answer": 2,
+                "why": "In a complete graph every vertex touches every other, so each one needs its own colour and the chromatic number equals the vertex count."
               }
             ],
             "examTip": "Explain with the map colouring example, then show the backtracking tree for a small graph - state the chromatic number at the end.",
@@ -4060,24 +4951,57 @@
               {
                 "q": "Class P contains problems that:",
                 "options": [
-                  "can only be verified quickly",
                   "can be solved in polynomial time",
                   "have no solution",
-                  "need exponential space"
+                  "need exponential space",
+                  "can only be verified quickly"
                 ],
-                "answer": 1,
+                "answer": 0,
                 "why": "P is the set of decision problems solvable in polynomial time by a deterministic algorithm."
               },
               {
                 "q": "Which statement is true?",
                 "options": [
+                  "P equals NP",
                   "P is a subset of NP",
                   "NP is a subset of P",
-                  "P and NP are disjoint",
-                  "P equals NP"
+                  "P and NP are disjoint"
+                ],
+                "answer": 1,
+                "why": "Anything solvable quickly can also be verified quickly, so P is contained in NP."
+              },
+              {
+                "q": "Which statement about the classes P and NP is NOT correct?",
+                "options": [
+                  "Verifying a solution is never harder than finding one",
+                  "P contains the problems solvable in polynomial time",
+                  "NP allows easy verification even when solving is hard",
+                  "P is known to be a strictly smaller class than NP"
+                ],
+                "answer": 3,
+                "why": "Whether P equals NP is still open; all we know for certain is that P is contained in NP."
+              },
+              {
+                "q": "A classmate hands you a finished jigsaw and you can see at once that it fits together. What does that show about NP?",
+                "options": [
+                  "Checking an answer can be easy even if finding it was hard",
+                  "Solving must be just as easy as checking",
+                  "The problem cannot be solved by any algorithm",
+                  "The problem is in P but not in NP"
                 ],
                 "answer": 0,
-                "why": "Anything solvable quickly can also be verified quickly, so P is contained in NP."
+                "why": "This is the card's own picture of NP: verification is cheap even when the search that produced the answer was expensive."
+              },
+              {
+                "q": "Sorting n numbers with a good algorithm costs n log n comparisons. Which class does that place sorting in?",
+                "options": [
+                  "NP-complete, because everything reduces to it",
+                  "P, because n log n is polynomial time",
+                  "NP-hard, because sorting uses comparisons",
+                  "Neither P nor NP, because it is a sorting task"
+                ],
+                "answer": 1,
+                "why": "Polynomial time solvability is the definition of P, and n log n grows more slowly than n squared."
               }
             ],
             "examTip": "Define decision problem first, then P, then NP, and finish with the containment P within NP - that is the standard five-mark structure.",
@@ -4128,24 +5052,57 @@
               {
                 "q": "A problem is NP-complete if it is:",
                 "options": [
-                  "NP-hard only",
                   "in NP only",
                   "NP-hard and in NP",
-                  "solvable in polynomial time"
+                  "solvable in polynomial time",
+                  "NP-hard only"
                 ],
-                "answer": 2,
+                "answer": 1,
                 "why": "NP-completeness requires both membership in NP and NP-hardness."
               },
               {
                 "q": "Which problem was the first proved NP-complete?",
                 "options": [
-                  "Travelling salesman",
-                  "Satisfiability (SAT)",
                   "Graph colouring",
-                  "Clique"
+                  "Clique",
+                  "Travelling salesman",
+                  "Satisfiability (SAT)"
+                ],
+                "answer": 3,
+                "why": "Cook's theorem established SAT as the first NP-complete problem."
+              },
+              {
+                "q": "Which statement about NP-hard and NP-complete problems is NOT correct?",
+                "options": [
+                  "A problem in NP that is NP-hard is NP-complete",
+                  "An NP-hard problem must itself belong to NP",
+                  "Reduction is the tool used to prove other problems hard",
+                  "Every NP problem reduces to an NP-hard problem"
                 ],
                 "answer": 1,
-                "why": "Cook's theorem established SAT as the first NP-complete problem."
+                "why": "NP-hard problems need not be in NP at all; only when they are also in NP do they earn the name NP-complete."
+              },
+              {
+                "q": "A college must build a clash-free timetable. Why do colleges use heuristics instead of an exact answer?",
+                "options": [
+                  "Heuristics always return the optimal timetable",
+                  "The problem is NP-complete, so a good schedule is used",
+                  "The problem is in P, so heuristics are merely faster",
+                  "Timetables have no constraints left to check"
+                ],
+                "answer": 1,
+                "why": "Timetabling is NP-complete, so colleges settle for schedules that are good rather than provably optimal."
+              },
+              {
+                "q": "An NP-complete problem is reduced to a new problem in polynomial time. What does that prove about the new problem?",
+                "options": [
+                  "It is NP-hard, because every NP problem reduces to it",
+                  "It is in P, because the reduction itself runs quickly",
+                  "It has no solution under any circumstances",
+                  "It is easier than the problem it came from"
+                ],
+                "answer": 0,
+                "why": "A reduction from a known hard problem carries the hardness across, so the new problem is NP-hard and NP-complete if it is also in NP."
               }
             ],
             "examTip": "Define reduction, then NP-hard, then NP-complete, and note that NP-complete means 'NP-hard and in NP' - missing that last clause is the most common mistake.",
