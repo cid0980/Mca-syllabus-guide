@@ -112,31 +112,37 @@ subject -> module -> topic -> subtopic -> type
 Every node — including every subtopic and every "types of ..." entry — carries its **own one-line
 definition**. Counts right now:
 
-| Subject | Modules | Topics | Subtopics & types | Full cards |
-|---|---|---|---|---|
-| CSCA 411 Data Structures and Algorithms | 5 | 51 | 252 | **51** |
-| CSCA 412 Object Oriented Programming | 5 | 26 | 116 | 0 |
-| CSCA 413 Database Management Systems | 5 | 33 | 155 | 0 |
-| CSCA 421 Computer Networks | 5 | 28 | 146 | 0 |
-| CSCA 422 Operating Systems | 5 | 27 | 148 | 0 |
-| CSCA 423 Communication Skills | 5 | 15 | 87 | 0 |
-| CSCA 431 Mathematics for Computer Science | 5 | 21 | 120 | 0 |
-| CSCA 432 Management Concepts and Strategies | 5 | 20 | 109 | 0 |
-| CSCA 511 Software Engineering | 5 | 22 | 112 | 0 |
-| CSCA 512 Internet and Web Technologies | 5 | 34 | 167 | 0 |
-| **Total** | **50** | **277** | **1412** | **51** |
+| Subject | Modules | Topics | Subtopics & types | Full cards | Quiz questions |
+|---|---|---|---|---|---|
+| CSCA 411 Data Structures and Algorithms | 5 | 51 | 252 | **51** | **250** |
+| CSCA 412 Object Oriented Programming | 5 | 26 | 116 | **26** | **104** |
+| CSCA 413 Database Management Systems | 5 | 33 | 155 | **33** | **152** |
+| CSCA 431 Mathematics for Computer Science | 5 | 21 | 120 | **21** | **105** |
+| CSCA 421 Computer Networks | 5 | 28 | 146 | **28** | **134** |
+| CSCA 422 Operating Systems | 5 | 27 | 148 | **27** | **135** |
+| CSCA 423 Communication Skills | 5 | 15 | 87 | **15** | **75** |
+| CSCA 432 Management Concepts and Strategies | 5 | 20 | 109 | **20** | **100** |
+| CSCA 511 Software Engineering | 5 | 22 | 112 | **22** | **110** |
+| CSCA 512 Internet and Web Technologies | 5 | 34 | 167 | **34** | **170** |
+| **Total** | **50** | **277** | **1412** | **277** | **1335** |
 
-**1689 syllabus entries, each with a definition, and no subject or module left out.**
+**All 277 topics have a full card** — definition, explanation, real-world example, quiz and
+exam tip — so every subject and every module is studyable, not just readable.
+**1689 syllabus entries, each with a definition. 277 cards and 1335 quiz questions.**
 
 Data files: `src/lib/data/tree/<CODE>.json` (one per subject) plus `src/lib/data/index.json`, which
 carries the totals, per-module counts and card ids so Home, Saved, Progress and Quiz can render
 without touching a full tree.
 
-### Why some cards exist and others do not
+### How the cards were written
 
-CSCA 411 is written out completely (51 cards, examples, 2 MCQs each with a *why*, exam tips).
-The other nine subjects are fully **mapped** with definitions at every level, and their cards are
-produced by `scripts/generate-cards.ts` (build step 5), which needs your `ANTHROPIC_API_KEY`.
+Every card follows the same shape as the subjects that were written by hand: a one-line definition,
+a short explanation, a local real-world example, four or five quiz questions (each with a *why*),
+and one exam tip. The batch scripts in `scripts/archive/` wrote them, and each card is checked
+before it lands: four or five questions, four options, a valid answer index, no duplicated question
+or option text, no emoji, no filler words, and sentences of at most 25 words.
+
+Run `npm run data:index` to rebuild `index.json`, and `npm run check` to type check the app.
 
 ---
 
@@ -148,7 +154,7 @@ produced by `scripts/generate-cards.ts` (build step 5), which needs your `ANTHRO
 | `/explore` | Tile grid of subjects + **search** across every topic, subtopic and type |
 | `/explore/[code]` | Full drill-down: modules -> topics -> subtopics -> types, expand all / collapse all, module rings |
 | `/topic/[id]` | **Detail page**: definition, subtopics and types with definitions, full card, quiz, exam tip, prev/next, bookmark |
-| `/subject/[code]` | Progress ring, module rows with counts, start studying / syllabus |
+| `/subject/[code]` | Progress ring, module rows with counts, start studying / quiz me / **exam mode** |
 | `/feed/[code]/[module]` | Instagram-style vertical feed: one card per screen, native scroll-snap, **tap to flip to the quiz**, **double tap to save**, progress bar, next/previous buttons |
 | `/saved` | Bookmarked topics and cards, resolved from the trees, with next-step links when empty |
 | `/progress` | Cards seen, quiz accuracy, day streak, per-subject and per-module breakdowns |
