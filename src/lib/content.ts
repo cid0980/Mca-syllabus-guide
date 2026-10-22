@@ -144,8 +144,12 @@ export function moduleNeighbours(code: string, module: string): { prev: ModuleRe
 
 /* ---------------- id helpers ---------------- */
 
-/** ids look like CSCA411-M1-01 / CSCA411-M1-01-s2 — module numbers are arabic in ids. */
-const ID_RE = /^([A-Z]{4})(\d{3})-M(\d+)/;
+/**
+ * ids look like CSCA411-M1-01 / CSCA411-M1-01-s2, but the module number is not always arabic:
+ * CSCA 411 uses M1..MV while the other nine trees carry the roman number directly (CSCA512-MV-T07).
+ * Both shapes have to parse, or the whole topic route fails for most of the syllabus.
+ */
+const ID_RE = /^([A-Z]{4})(\d{3})-M(\d+|[IVX]+)/;
 
 const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
 
@@ -155,12 +159,16 @@ export function codeFromId(id: string): string | null {
 	return m ? `${m[1]} ${m[2]}` : null;
 }
 
-/** Module label as used by the feed routes ("I", "II") from "CSCA411-M1-01". */
+/**
+ * Module label as used by the feed routes ("I", "II") from "CSCA411-M1-01" or "CSCA512-MV-T07".
+ * An arabic number is looked up in ROMAN; a tree that already stores the roman number keeps it.
+ */
 export function moduleFromId(id: string): string | null {
 	const m = ID_RE.exec(id);
 	if (!m) return null;
-	const n = Number(m[3]);
-	return ROMAN[n - 1] ?? m[3];
+	const raw = m[3];
+	if (/^\d+$/.test(raw)) return ROMAN[Number(raw) - 1] ?? raw;
+	return raw;
 }
 
 /** "CSCA 411" -> "CSCA411" (icon / file naming) */
