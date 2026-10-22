@@ -4,11 +4,33 @@
 
 	import { onMount } from 'svelte';
 	import { page, navigating } from '$app/stores';
+	import { goto } from '$app/navigation';
 	import BottomNav from '$lib/components/BottomNav.svelte';
 	import { hydrateAll } from '$lib/stores/hydrate';
 
 	onMount(async () => {
 		hydrateAll();
+
+		/**
+		 * Offline shell fallback.
+		 *
+		 * Pages that are prerendered are served straight from the service worker cache. A page
+		 * that is NOT prerendered (a topic definition, say) reaches the worker with no network,
+		 * so the worker serves the prerendered home page instead. The address bar still shows
+		 * the real URL, but the markup is the home page.
+		 *
+		 * SvelteKit keeps the route the server rendered in `$page.route.id`, so a home-page
+		 * route under any other pathname means the fallback was served. Re-running the router in
+		 * the browser fixes it: every load function is universal (+page.ts), so it runs here from
+		 * the cached data chunks and the right page appears with no network at all.
+		 */
+		if ($page.route.id === '/' && $page.url.pathname !== '/') {
+			goto($page.url.pathname + $page.url.search, { replaceState: true, noScroll: true }).catch(
+				() => {
+					/* route could not be resolved offline - the shell stays on screen */
+				}
+			);
+		}
 
 		if (import.meta.env.DEV) {
 			// earlier builds registered a dev service worker; it caches stale assets and makes

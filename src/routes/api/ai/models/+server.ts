@@ -69,3 +69,5 @@ export const POST: RequestHandler = async ({ request }) => {
 		return json({ error: (err as Error).message }, { status: 500 });
 	}
 };
+
+export const prerender = false;

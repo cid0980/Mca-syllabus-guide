@@ -49,7 +49,70 @@
               "kind": "subtopic",
               "definition": "Small footprint systems for appliances, phones such as Android, and IoT devices."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Operating systems are grouped by how they handle jobs, users and deadlines. A batch system collects similar jobs and runs them with no interaction, which leaves the processor idle during input and output. Multiprogramming keeps several jobs in memory so the processor switches to another while one waits, which raises utilisation. Time sharing switches fast enough that each user feels they have the machine, which is what interactive terminals needed. Real time systems must meet deadlines, hard ones strictly and soft ones usually. Distributed systems present many machines as one, while embedded and mobile systems fit into phones and appliances.",
+            "example": "A college exam result job that runs overnight with no one watching is batch work. The lab terminals that must answer every keystroke at once are time sharing.",
+            "quiz": [
+              {
+                "q": "Which system keeps several jobs in memory so the CPU switches while one waits for I/O?",
+                "options": [
+                  "Multiprogramming",
+                  "Real time",
+                  "Embedded",
+                  "Batch"
+                ],
+                "answer": 0,
+                "why": "Keeping more than one job ready is what stops the processor idling during input and output."
+              },
+              {
+                "q": "Which system must meet strict deadlines?",
+                "options": [
+                  "Time sharing system",
+                  "Real time system",
+                  "Network operating system",
+                  "Batch system"
+                ],
+                "answer": 1,
+                "why": "Hard real time systems must never miss a deadline, as in aircraft or medical control."
+              },
+              {
+                "q": "Which statement about OS types is NOT correct?",
+                "options": [
+                  "Batch systems run without user interaction",
+                  "Time sharing gives each user a slice of time",
+                  "Multiprogramming keeps only one job in memory at a time",
+                  "Distributed systems present many machines as one"
+                ],
+                "answer": 2,
+                "why": "Holding several jobs in memory at once is the whole point of multiprogramming."
+              },
+              {
+                "q": "Android is an example of which kind of operating system?",
+                "options": [
+                  "Network",
+                  "Batch",
+                  "Real time",
+                  "Mobile and embedded"
+                ],
+                "answer": 3,
+                "why": "Android is built for phones, which means a small footprint and tight power limits."
+              },
+              {
+                "q": "What is the difference between hard and soft real time?",
+                "options": [
+                  "Hard real time must never miss a deadline, soft may occasionally",
+                  "Soft real time is used in aircraft",
+                  "There is no difference",
+                  "Hard real time is slower"
+                ],
+                "answer": 0,
+                "why": "Missing a hard deadline is a system failure, while missing a soft one only degrades quality."
+              }
+            ],
+            "examTip": "List the six types with one line each, and underline the difference between multiprogramming and time sharing.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MI-T02",
@@ -87,7 +150,70 @@
               "kind": "subtopic",
               "definition": "A layer of software presents several virtual copies of the hardware to different operating systems."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Structure is how the pieces of an operating system are arranged. A monolithic kernel is one large program in which any procedure can call any other, which is fast but hard to maintain. A layered system is built in levels, each using only the level below, which is easier to debug and slower in practice. A microkernel keeps only the essentials in the kernel and runs the rest as user processes. That improves reliability, because a failed service can be restarted. Modular and hybrid designs load parts of the kernel at run time, and a virtual machine layer offers several copies of the hardware.",
+            "example": "Linux is monolithic but modular, so drivers can be loaded while it runs. A microkernel system runs the file system and the drivers outside the kernel as ordinary processes.",
+            "quiz": [
+              {
+                "q": "Which structure keeps only essential services in the kernel?",
+                "options": [
+                  "Layered",
+                  "Microkernel",
+                  "Virtual machine",
+                  "Monolithic"
+                ],
+                "answer": 1,
+                "why": "Everything else runs as a user process, so a crash there does not bring down the kernel."
+              },
+              {
+                "q": "What is the main advantage of a layered structure?",
+                "options": [
+                  "It needs no hardware support",
+                  "It is the fastest",
+                  "It is easier to debug and verify",
+                  "It uses the least memory"
+                ],
+                "answer": 2,
+                "why": "Each level uses only the one below, so a fault can usually be traced to one layer."
+              },
+              {
+                "q": "Which statement about structures is NOT correct?",
+                "options": [
+                  "A monolithic kernel is fast but hard to maintain",
+                  "A microkernel improves reliability",
+                  "Loadable modules let a kernel grow at run time",
+                  "A monolithic kernel cannot support device drivers"
+                ],
+                "answer": 3,
+                "why": "Monolithic kernels hold the drivers inside the kernel, which is why they are large."
+              },
+              {
+                "q": "What does a virtual machine structure present to the guest?",
+                "options": [
+                  "An illusion of complete hardware",
+                  "A new file system",
+                  "A faster processor",
+                  "A copy of the source code"
+                ],
+                "answer": 0,
+                "why": "Each guest operating system believes it owns the machine, which is the point of the layer."
+              },
+              {
+                "q": "Why is a microkernel considered more secure?",
+                "options": [
+                  "It uses encryption",
+                  "Fewer services run with full privilege, so the trusted core is smaller",
+                  "It is written in a safer language",
+                  "It has more lines of code"
+                ],
+                "answer": 1,
+                "why": "A smaller privileged core means less code that could damage the whole system."
+              }
+            ],
+            "examTip": "Draw the four structures in a row and write one advantage and one disadvantage under each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MI-T03",
@@ -131,7 +257,70 @@
               "kind": "subtopic",
               "definition": "User interfaces, program execution, I/O and file operations versus resource allocation, accounting and error detection."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "An operating system is best understood by the components it holds. Process management creates, schedules, synchronises and terminates processes and threads. Memory management tracks what memory is used, allocates and frees it and runs virtual memory. File and storage management organises files and directories on disk and decides who may reach them. Input output is handled through device drivers with buffering, caching and spooling, and networking adds the protocols. Protection and security run across all of them, controlling who may use what.",
+            "example": "Printing a project report uses spooling. The file is queued to disk so the program finishes at once, and the printer takes it at its own pace.",
+            "quiz": [
+              {
+                "q": "Which component decides which process runs on the CPU next?",
+                "options": [
+                  "Device management",
+                  "Memory management",
+                  "Process management",
+                  "File management"
+                ],
+                "answer": 2,
+                "why": "Creating, scheduling and terminating processes and threads is the process manager's work."
+              },
+              {
+                "q": "What is spooling used for?",
+                "options": [
+                  "Encrypting files",
+                  "Routing packets",
+                  "Faster memory access",
+                  "Holding output for a slow device such as a printer"
+                ],
+                "answer": 3,
+                "why": "The queue on disk frees the program at once instead of making it wait for the device."
+              },
+              {
+                "q": "Which statement about components is NOT correct?",
+                "options": [
+                  "Networking is handled entirely by the application layer",
+                  "Memory management handles virtual memory",
+                  "File management organises directories",
+                  "Device drivers are part of I/O management"
+                ],
+                "answer": 0,
+                "why": "The operating system implements the protocol stack, and applications reach it through sockets."
+              },
+              {
+                "q": "Which of these is a user service rather than a system service?",
+                "options": [
+                  "Accounting",
+                  "Program execution",
+                  "Error detection",
+                  "Resource allocation"
+                ],
+                "answer": 1,
+                "why": "Program execution, I/O and file operations are offered to users; allocation and accounting run behind them."
+              },
+              {
+                "q": "Which component decides who may read a file?",
+                "options": [
+                  "Memory management",
+                  "Networking",
+                  "Protection and security",
+                  "Process management"
+                ],
+                "answer": 2,
+                "why": "Access control is a protection duty, and it applies to files, memory and devices alike."
+              }
+            ],
+            "examTip": "List the six components with one duty each, then split the services into the user and system groups.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MI-T04",
@@ -169,7 +358,70 @@
               "kind": "subtopic",
               "definition": "Efficiency, reliability, maintainability and a clear interface between mechanism and policy."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A system call is the doorway through which a program asks the kernel to do something for it. The call traps, which switches the processor to kernel mode, the service routine runs, and control returns with a result. Calls fall into groups: process control, file management, device management, information maintenance, communication and protection. Privileged instructions may run only in kernel mode, which is what keeps a user program from damaging the system. System programs such as compilers, editors and shells sit above the calls, and the design goal is to separate mechanism from policy.",
+            "example": "A program calling open on a file does not read the disk itself. It traps into the kernel, which checks the permission and returns a file descriptor.",
+            "quiz": [
+              {
+                "q": "What switches the processor from user mode to kernel mode?",
+                "options": [
+                  "A page fault only",
+                  "A device driver",
+                  "A function call inside the program",
+                  "A trap or software interrupt"
+                ],
+                "answer": 3,
+                "why": "The trap raises the privilege level so the kernel routine can run safely."
+              },
+              {
+                "q": "Why are privileged instructions restricted to kernel mode?",
+                "options": [
+                  "They could change the state of the whole machine",
+                  "They need more memory",
+                  "They are rarely used",
+                  "They are slower"
+                ],
+                "answer": 0,
+                "why": "Instructions that touch the hardware or the memory map must not be reachable by user code."
+              },
+              {
+                "q": "Which of these is NOT a category of system calls?",
+                "options": [
+                  "Device management",
+                  "Routing table design",
+                  "Process control",
+                  "File management"
+                ],
+                "answer": 1,
+                "why": "The categories are process control, file, device, information, communication and protection."
+              },
+              {
+                "q": "Which is a system program rather than a system call?",
+                "options": [
+                  "fork",
+                  "open",
+                  "A shell",
+                  "read"
+                ],
+                "answer": 2,
+                "why": "A shell is a program built on top of the calls, while fork, open and read are calls themselves."
+              },
+              {
+                "q": "What does separating mechanism from policy mean?",
+                "options": [
+                  "Hiding the API",
+                  "Running two kernels",
+                  "Writing the kernel twice",
+                  "Providing the tool in the kernel but leaving the decision to higher levels"
+                ],
+                "answer": 3,
+                "why": "The kernel supplies how something can be done, and policy decides when it should be done."
+              }
+            ],
+            "examTip": "Describe the trap sequence in three steps, list the call categories, and state the kernel and user mode rule.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MI-T05",
@@ -219,7 +471,70 @@
               "kind": "subtopic",
               "definition": "Independent processes do not affect each other while co-operating ones share data through shared memory or message passing, including pipes and sockets."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A program is passive code on disk, while a process is that program in execution with a program counter and data. Everything the kernel knows about a process is kept in its process control block. That holds the identifier, the state, the registers, the memory limits and the open files. A process moves through the states new, ready, running, waiting and terminated. Queues hold the processes at each stage, and the long term, short term and medium term schedulers move them along. Switching from one running process to another is a context switch, which does no useful work.",
+            "example": "Opening a browser and a text editor gives two processes. The kernel keeps a control block for each and swaps between them, saving the registers of one and loading the other.",
+            "quiz": [
+              {
+                "q": "What is the difference between a program and a process?",
+                "options": [
+                  "A program is passive code, a process is that code in execution",
+                  "A process is stored on disk",
+                  "A program has a program counter",
+                  "They are the same"
+                ],
+                "answer": 0,
+                "why": "Only the running instance has a program counter, registers and a current state."
+              },
+              {
+                "q": "What does the process control block hold?",
+                "options": [
+                  "Only the process id",
+                  "State, program counter, registers, memory limits and open files",
+                  "Only the memory limits",
+                  "Only the open files"
+                ],
+                "answer": 1,
+                "why": "It is the complete description the kernel needs to stop and restart the process."
+              },
+              {
+                "q": "Which statement about processes is NOT correct?",
+                "options": [
+                  "A context switch saves and restores process state",
+                  "The short term scheduler picks the next process to run",
+                  "A context switch does useful work for the user",
+                  "Processes may be new, ready, running, waiting or terminated"
+                ],
+                "answer": 2,
+                "why": "A context switch is pure overhead, because no application work happens while it runs."
+              },
+              {
+                "q": "Which scheduler decides which process is admitted to memory first?",
+                "options": [
+                  "Medium term scheduler",
+                  "Dispatcher",
+                  "Short term scheduler",
+                  "Long term scheduler"
+                ],
+                "answer": 3,
+                "why": "The long term scheduler controls the degree of multiprogramming by admitting jobs."
+              },
+              {
+                "q": "Which mechanism lets two processes exchange data through the kernel?",
+                "options": [
+                  "Message passing",
+                  "A page fault",
+                  "A system boot",
+                  "A context switch"
+                ],
+                "answer": 0,
+                "why": "Shared memory and message passing, including pipes and sockets, are the two classic ways."
+              }
+            ],
+            "examTip": "Draw the five state diagram with the transition labels, then list what the process control block stores.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MI-T06",
@@ -275,7 +590,70 @@
               "kind": "subtopic",
               "definition": "Load sharing, processor affinity and symmetric multiprocessing decide how threads are spread over CPUs."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Scheduling is judged on utilisation, throughput, turnaround time, waiting time and response time. First come first served runs jobs in arrival order, which is fair but lets one long job hold up the rest, the convoy effect. Shortest job first picks the smallest burst and gives the lowest average waiting time, but the burst length has to be predicted. Round robin gives each process a quantum in turn, which suits time sharing and makes the quantum size matter. Priority scheduling risks starvation, which ageing prevents, and multilevel feedback queues move jobs between queues.",
+            "example": "With a quantum of 20 ms, five processes each get a turn within 100 ms, which feels instant to a user. With a quantum of 1 ms, most of the time goes into switching instead of working.",
+            "quiz": [
+              {
+                "q": "Which scheduling algorithm gives the lowest average waiting time?",
+                "options": [
+                  "FCFS",
+                  "SJF",
+                  "Round Robin",
+                  "Priority"
+                ],
+                "answer": 1,
+                "why": "Running the shortest burst first is provably optimal for average waiting time."
+              },
+              {
+                "q": "What problem does a long job at the front of the queue cause in FCFS?",
+                "options": [
+                  "Thrashing",
+                  "Starvation",
+                  "The convoy effect",
+                  "Deadlock"
+                ],
+                "answer": 2,
+                "why": "Short jobs queue behind one long job, so all their waiting times rise together."
+              },
+              {
+                "q": "Which statement about scheduling is NOT correct?",
+                "options": [
+                  "Round robin gives each process a time quantum",
+                  "SJF needs the burst length to be known or predicted",
+                  "A very small quantum increases context switch overhead",
+                  "Priority scheduling cannot cause starvation"
+                ],
+                "answer": 3,
+                "why": "A low priority process can wait indefinitely, which is why ageing raises its priority over time."
+              },
+              {
+                "q": "What does a multilevel feedback queue allow?",
+                "options": [
+                  "A job to move between queues based on its behaviour",
+                  "Unlimited priority",
+                  "No preemption",
+                  "Only one queue of jobs"
+                ],
+                "answer": 0,
+                "why": "Jobs that use up their whole quantum drop to a lower queue, which favours interactive work."
+              },
+              {
+                "q": "Which is the preemptive version of shortest job first?",
+                "options": [
+                  "FCFS",
+                  "SRTF",
+                  "Round Robin",
+                  "Priority"
+                ],
+                "answer": 1,
+                "why": "Shortest remaining time first takes the processor away when a shorter job arrives."
+              }
+            ],
+            "examTip": "Write the five criteria, then give each algorithm in one line with its advantage and its weakness.",
+            "verified": false
+          }
         }
       ]
     },
@@ -313,7 +691,70 @@
               "kind": "subtopic",
               "definition": "Disabling interrupts, test and set, and compare and swap instructions provide atomic primitives."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "When two processes share data, the part of each that touches that data is its critical section. If both run at once the result depends on the timing, which is a race condition. A correct solution must guarantee three things. Mutual exclusion means only one process is inside at a time, and progress means the system is not stuck. Bounded waiting puts a limit on how long a process may wait to enter. Peterson's solution meets all three for two processes using a flag array and a turn variable. Hardware helps with atomic instructions such as test and set and compare and swap.",
+            "example": "Two processes both add one to a shared counter. The result can be one less than it should be, because both read the old value before either writes the new one.",
+            "quiz": [
+              {
+                "q": "What is a race condition?",
+                "options": [
+                  "A deadlock caused by semaphores",
+                  "Two processes finishing at the same time",
+                  "A result that depends on the timing of unsynchronised access to shared data",
+                  "A process that never gets the CPU"
+                ],
+                "answer": 2,
+                "why": "The outcome changes with the interleaving, which is exactly what synchronisation removes."
+              },
+              {
+                "q": "Which is NOT one of the three requirements of a solution?",
+                "options": [
+                  "Mutual exclusion",
+                  "Progress",
+                  "Bounded waiting",
+                  "Preemption"
+                ],
+                "answer": 3,
+                "why": "The three are mutual exclusion, progress and bounded waiting; preemption is a different idea."
+              },
+              {
+                "q": "Which statement about the critical section problem is NOT correct?",
+                "options": [
+                  "Disabling interrupts is a safe solution on a multiprocessor",
+                  "The critical section is the code that touches shared data",
+                  "Mutual exclusion allows one process at a time",
+                  "Peterson's solution handles two processes"
+                ],
+                "answer": 0,
+                "why": "Disabling interrupts stops only the local processor, so it fails when several share memory."
+              },
+              {
+                "q": "Which hardware instruction tests a value and sets it in one atomic step?",
+                "options": [
+                  "load and clear",
+                  "test and set",
+                  "fetch and add",
+                  "compare and store"
+                ],
+                "answer": 1,
+                "why": "Test and set is the classic atomic primitive, and compare and swap is the other."
+              },
+              {
+                "q": "What does bounded waiting guarantee?",
+                "options": [
+                  "Only one process may wait",
+                  "The process finishes quickly",
+                  "There is a limit on how long a process waits to enter the section",
+                  "The system never deadlocks"
+                ],
+                "answer": 2,
+                "why": "It stops a process being overtaken forever by others, which is what starvation means."
+              }
+            ],
+            "examTip": "State the three requirements in one line each, then give Peterson's solution or a hardware primitive as the example.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MII-T02",
@@ -345,7 +786,70 @@
               "kind": "subtopic",
               "definition": "Wrong ordering of waits can deadlock, and unfair scheduling can starve a process."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A semaphore is an integer that may only be changed through two atomic operations, wait and signal. Wait decrements the value and blocks the process if the result would be negative, and signal increments it and wakes one waiting process. A binary semaphore takes only zero and one, so it works as a lock. A counting semaphore tracks how many units of a resource are free. The first implementations used busy waiting, so blocking implementations put waiting processes in a queue instead. Used wrongly they still cause trouble: waits in the wrong order deadlock, and an unfair wake policy starves.",
+            "example": "A printing pool with three printers is a counting semaphore starting at 3. Each job waits before printing and signals when it finishes, so the fourth job waits its turn.",
+            "quiz": [
+              {
+                "q": "What does the wait operation do?",
+                "options": [
+                  "Resets the semaphore",
+                  "Wakes a waiting process",
+                  "Increments the value",
+                  "Decrements the value and blocks if it would go negative"
+                ],
+                "answer": 3,
+                "why": "Wait is the request side of the pair, and it blocks when the resource is not available."
+              },
+              {
+                "q": "What is a binary semaphore used as?",
+                "options": [
+                  "A lock with values 0 and 1",
+                  "A message queue",
+                  "A page table entry",
+                  "A counter of free resources"
+                ],
+                "answer": 0,
+                "why": "Two values are enough to say locked or unlocked, which is what mutual exclusion needs."
+              },
+              {
+                "q": "Which statement about semaphores is NOT correct?",
+                "options": [
+                  "Busy waiting wastes processor time",
+                  "Semaphores remove the possibility of deadlock entirely",
+                  "wait and signal must be atomic",
+                  "A counting semaphore tracks a pool of resources"
+                ],
+                "answer": 1,
+                "why": "Two processes waiting on each other's semaphore still deadlock, so the ordering must be right."
+              },
+              {
+                "q": "Why is a blocking semaphore better than a busy waiting one?",
+                "options": [
+                  "It works without a queue",
+                  "It is easier to write",
+                  "Waiting processes use no processor time",
+                  "It never deadlocks"
+                ],
+                "answer": 2,
+                "why": "A blocked process is put in a queue and woken later, instead of spinning in a loop."
+              },
+              {
+                "q": "A semaphore starts at 3. After five waits and two signals, what is its value?",
+                "options": [
+                  "2",
+                  "-3",
+                  "0",
+                  "-2"
+                ],
+                "answer": 3,
+                "why": "Three minus five plus two gives zero, and two processes are blocked waiting."
+              }
+            ],
+            "examTip": "Write wait and signal in pseudo code, then give one binary and one counting example.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MII-T03",
@@ -377,7 +881,70 @@
               "kind": "subtopic",
               "definition": "Further classical models used to study waiting, blocking and fairness."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Three problems are used to test any synchronisation tool. In the bounded buffer problem producers wait when the buffer is full and consumers when it is empty. Three semaphores do the work: empty, full and mutex. In the readers writers problem many readers may share the data, but a writer needs it alone; a solution either favours readers or writers. In the dining philosophers problem five philosophers share five forks, and taking one fork each deadlocks everyone. The fixes are asymmetry, a limit on how many may sit, or a waiter who grants permission.",
+            "example": "A canteen counter is a bounded buffer: the cooks stop when the tray rack is full and the students wait when it is empty. The rack itself needs a mutex so two hands do not take the same tray.",
+            "quiz": [
+              {
+                "q": "In the bounded buffer problem, which semaphore makes a producer wait?",
+                "options": [
+                  "empty",
+                  "mutex",
+                  "count",
+                  "full"
+                ],
+                "answer": 0,
+                "why": "The producer waits on empty, because there is no slot left to put a new item into."
+              },
+              {
+                "q": "What happens if every philosopher picks up the left fork at once?",
+                "options": [
+                  "Everyone eats",
+                  "Deadlock, because each waits for the right fork",
+                  "One philosopher starves only",
+                  "Nothing, the problem is solved"
+                ],
+                "answer": 1,
+                "why": "Each holds one resource and waits for another, which is the circular wait condition."
+              },
+              {
+                "q": "Which statement about the classical problems is NOT correct?",
+                "options": [
+                  "Several readers may read at the same time",
+                  "The bounded buffer uses empty, full and mutex semaphores",
+                  "The dining philosophers problem has no workable solution",
+                  "A writer needs exclusive access to the shared data"
+                ],
+                "answer": 2,
+                "why": "Several solutions exist, including asymmetry, limiting the number at the table and a waiter."
+              },
+              {
+                "q": "What does the mutex semaphore protect in the bounded buffer?",
+                "options": [
+                  "The consumer",
+                  "The producer",
+                  "The empty slots",
+                  "The buffer itself, so only one process touches it at a time"
+                ],
+                "answer": 3,
+                "why": "Empty and full count the slots, while mutex guards the shared structure itself."
+              },
+              {
+                "q": "Which variant of the readers writers problem can starve a writer?",
+                "options": [
+                  "The readers preference solution",
+                  "The writers preference solution",
+                  "Neither variant",
+                  "Both variants equally"
+                ],
+                "answer": 0,
+                "why": "If readers keep arriving, a waiting writer may never get exclusive access."
+              }
+            ],
+            "examTip": "Give the semaphore solution to the bounded buffer, then state the deadlock in dining philosophers and two fixes.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MII-T04",
@@ -409,7 +976,70 @@
               "kind": "subtopic",
               "definition": "Processes synchronise by exchanging messages with send and receive primitives instead of sharing memory."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Semaphores are flexible but easy to get wrong, so languages offer higher level tools. A conditional critical region declares the shared variable and the condition under which it may be touched, and the compiler adds the mutual exclusion. A monitor goes further. It is a module holding shared data and the procedures that work on it. Only one process may be inside at a time. Condition variables inside a monitor give the wait and signal operations, so a process can wait for a condition without holding the lock. Message passing is the alternative for systems without shared memory.",
+            "example": "A monitor for a bank account holds the balance and the deposit and withdraw procedures. Only one caller can be inside either procedure, so the balance is never read half updated.",
+            "quiz": [
+              {
+                "q": "What does a monitor guarantee automatically?",
+                "options": [
+                  "Deadlock freedom",
+                  "Mutual exclusion, because only one process may be inside at a time",
+                  "Fast execution",
+                  "Message delivery"
+                ],
+                "answer": 1,
+                "why": "The compiler or runtime enforces the single entry rule, so the programmer cannot forget it."
+              },
+              {
+                "q": "What are condition variables used for inside a monitor?",
+                "options": [
+                  "Counting the procedures",
+                  "Storing the shared data",
+                  "Waiting for a condition without holding the lock",
+                  "Choosing which process runs next"
+                ],
+                "answer": 2,
+                "why": "Wait releases the monitor so another process can enter, and signal wakes a waiter later."
+              },
+              {
+                "q": "Which statement about monitors is NOT correct?",
+                "options": [
+                  "A monitor holds shared data and its procedures",
+                  "Only one process may be active inside a monitor",
+                  "Condition variables provide wait and signal",
+                  "Monitors remove the need to think about synchronisation at all"
+                ],
+                "answer": 3,
+                "why": "The exclusion is automatic, but which conditions to wait on is still the programmer's job."
+              },
+              {
+                "q": "When is message passing preferred over shared memory?",
+                "options": [
+                  "When processes run on different machines with no shared memory",
+                  "When speed matters most",
+                  "When there is only one process",
+                  "On a single processor only"
+                ],
+                "answer": 0,
+                "why": "Without shared memory, sending a message through the kernel or the network is the only option."
+              },
+              {
+                "q": "What does a conditional critical region add to a plain critical region?",
+                "options": [
+                  "A message queue",
+                  "A condition that must hold before the region may be entered",
+                  "A faster lock",
+                  "A second lock"
+                ],
+                "answer": 1,
+                "why": "The process waits until the condition is true, which is what the bounded buffer needs."
+              }
+            ],
+            "examTip": "Contrast semaphores and monitors in two lines, then give wait and signal on a condition variable.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MII-T05",
@@ -459,7 +1089,70 @@
               "kind": "subtopic",
               "definition": "Some systems assume deadlocks are rare and handle them manually, as UNIX often does."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A deadlock needs four conditions at once: mutual exclusion, hold and wait, no preemption and circular wait. Break any one of them and deadlock cannot occur, which is the prevention approach. A resource allocation graph draws processes and resources as nodes, and a cycle in the graph means deadlock is possible. Avoidance refuses an allocation that would leave the system in an unsafe state, and the Banker's algorithm is the standard test for that. Detection lets deadlocks happen, finds them with a wait for graph, then recovers by aborting a process or taking a resource back.",
+            "example": "Two processes each hold a printer and ask for the scanner the other holds. The resource allocation graph has a cycle, and neither process can finish.",
+            "quiz": [
+              {
+                "q": "Which of the following is NOT a necessary condition for deadlock?",
+                "options": [
+                  "Mutual exclusion",
+                  "Hold and wait",
+                  "Preemption of resources",
+                  "Circular wait"
+                ],
+                "answer": 2,
+                "why": "The condition is no preemption, so allowing resources to be taken away is a prevention method."
+              },
+              {
+                "q": "What does the Banker's algorithm test?",
+                "options": [
+                  "Which process to abort",
+                  "How much memory is free",
+                  "Whether a deadlock has already happened",
+                  "Whether granting a request leaves the system in a safe state"
+                ],
+                "answer": 3,
+                "why": "A safe state is one in which some order lets every process still finish."
+              },
+              {
+                "q": "Which statement about deadlocks is NOT correct?",
+                "options": [
+                  "Detection is impossible once a deadlock has occurred",
+                  "A cycle in the resource allocation graph signals possible deadlock",
+                  "Prevention breaks one of the four conditions",
+                  "Imposing a resource ordering prevents circular wait"
+                ],
+                "answer": 0,
+                "why": "Detection works with a wait for graph, and recovery then aborts or preempts to break it."
+              },
+              {
+                "q": "How can circular wait be prevented?",
+                "options": [
+                  "By allowing preemption",
+                  "By imposing a total ordering on resource types",
+                  "By ignoring the problem",
+                  "By adding more processes"
+                ],
+                "answer": 1,
+                "why": "If every process asks in the same order, no cycle can form in the graph."
+              },
+              {
+                "q": "What is a safe state?",
+                "options": [
+                  "One with a single process",
+                  "One in which no process is running",
+                  "One in which some sequence lets every process finish",
+                  "One with no shared resources"
+                ],
+                "answer": 2,
+                "why": "Safety is about the existence of a completion order, which is what the Banker's algorithm checks."
+              }
+            ],
+            "examTip": "List the four conditions, then give one handling method for each: prevention, avoidance, detection and recovery.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MII-T06",
@@ -509,7 +1202,70 @@
               "kind": "subtopic",
               "definition": "Thread libraries such as POSIX threads, Java threads and threading models of Windows and Linux."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A thread is a unit of execution inside a process, lighter to create and switch than a whole process. Each thread keeps its own program counter, registers and stack, but shares the code, the data and the open files with its siblings. Threads make an application responsive, because one can keep the interface alive while another does the work. User level threads are managed by a library with no kernel involvement, while kernel level threads are scheduled by the operating system. The three mapping models are many to one, one to one and many to many.",
+            "example": "A word processor keeps one thread for typing, one for spell checking and one for autosave. All three share the same document in memory, which is why threads cost less than separate processes.",
+            "quiz": [
+              {
+                "q": "What does a thread NOT share with its sibling threads?",
+                "options": [
+                  "The global data",
+                  "The code section",
+                  "The open files",
+                  "Its registers and stack"
+                ],
+                "answer": 3,
+                "why": "Each thread needs its own execution state, while code, data and files are shared."
+              },
+              {
+                "q": "Which model maps many user threads onto one kernel thread?",
+                "options": [
+                  "Many to one",
+                  "Many to many",
+                  "Two level",
+                  "One to one"
+                ],
+                "answer": 0,
+                "why": "It is fast, but one blocking system call stops every thread in the process."
+              },
+              {
+                "q": "Which statement about threads is NOT correct?",
+                "options": [
+                  "The one to one model gives true concurrency on several processors",
+                  "User level threads are scheduled directly by the kernel",
+                  "Threads share memory within a process",
+                  "Creating a thread costs less than creating a process"
+                ],
+                "answer": 1,
+                "why": "User threads are managed by a library in user space, so the kernel cannot schedule them individually."
+              },
+              {
+                "q": "Why is the one to one model more expensive?",
+                "options": [
+                  "It requires special hardware",
+                  "It uses more memory for registers",
+                  "Each user thread needs its own kernel thread, which costs overhead",
+                  "It cannot run in parallel"
+                ],
+                "answer": 2,
+                "why": "Every thread becomes a kernel object, so creating and switching them costs more."
+              },
+              {
+                "q": "Which benefit comes from giving the user interface its own thread?",
+                "options": [
+                  "Fewer page faults",
+                  "Automatic deadlock prevention",
+                  "Smaller code",
+                  "Responsiveness, because the interface keeps working during a long task"
+                ],
+                "answer": 3,
+                "why": "A blocking task on another thread leaves the interface thread free to answer clicks."
+              }
+            ],
+            "examTip": "Draw the three mapping models, then write two lines on user threads versus kernel threads.",
+            "verified": false
+          }
         }
       ]
     },
@@ -553,7 +1309,70 @@
               "kind": "subtopic",
               "definition": "Overlays keep only needed sections of a large program in memory, while base and limit registers protect processes from each other."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Memory management tracks who is using which bytes and hands memory out as processes need it. An address can be bound at compile time, at load time or during execution, and the later the binding, the more flexible the system. The CPU generates logical addresses, and the memory unit sees physical ones; the memory management unit converts one into the other. Typically it adds a base value from a relocation register to each logical address. Base and limit registers also protect processes from one another, and dynamic loading and linking bring in code only when it is needed.",
+            "example": "A program compiled to start at address 0 can run anywhere in memory. The relocation register holds the real starting address, and every logical address is adjusted by it.",
+            "quiz": [
+              {
+                "q": "What converts a logical address into a physical address?",
+                "options": [
+                  "The memory management unit",
+                  "The linker",
+                  "The process scheduler",
+                  "The compiler"
+                ],
+                "answer": 0,
+                "why": "The MMU sits between the CPU and memory and translates on every reference."
+              },
+              {
+                "q": "Which binding time gives the most flexibility?",
+                "options": [
+                  "Load time",
+                  "Execution time",
+                  "Assembly time",
+                  "Compile time"
+                ],
+                "answer": 1,
+                "why": "Binding during execution lets a process be moved in memory while it runs."
+              },
+              {
+                "q": "Which statement about memory management is NOT correct?",
+                "options": [
+                  "A physical address is what the memory unit sees",
+                  "Base and limit registers give protection",
+                  "Dynamic linking loads the whole program before it starts",
+                  "A logical address is generated by the CPU"
+                ],
+                "answer": 2,
+                "why": "Dynamic linking defers the linking until the routine is called, which saves memory."
+              },
+              {
+                "q": "What do base and limit registers do?",
+                "options": [
+                  "Count page faults",
+                  "Manage the disk cache",
+                  "Speed up the processor",
+                  "Define the legal address range of a process"
+                ],
+                "answer": 3,
+                "why": "Any address outside the range causes a trap, stopping one process reaching another's memory."
+              },
+              {
+                "q": "What problem do overlays solve?",
+                "options": [
+                  "Running a program larger than the memory available",
+                  "Address translation",
+                  "Fragmentation inside a page",
+                  "Slow disks"
+                ],
+                "answer": 0,
+                "why": "Only the needed sections are kept in memory, and the rest are brought in over them."
+              }
+            ],
+            "examTip": "Draw the CPU, MMU and memory with the logical and physical addresses labelled, then list the three binding times.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIII-T02",
@@ -591,7 +1410,70 @@
               "kind": "subtopic",
               "definition": "A whole process moves to disk and back, which is slow but frees memory for others."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "In contiguous allocation each process sits in one unbroken block of memory. Fixed partitioning cuts memory into set sizes, which wastes space inside a partition. Variable partitioning creates a hole sized for each process as it arrives. Placing a process means choosing a hole: first fit takes the first one big enough, best fit the tightest, and worst fit the largest. Over time small unusable holes appear, which is external fragmentation. Compaction pushes the processes together to merge the holes, and swapping moves a whole process out to disk to free memory.",
+            "example": "A 20 KB process in a 24 KB fixed partition wastes 4 KB, which is internal fragmentation. Several small free holes that no job fits into are external fragmentation.",
+            "quiz": [
+              {
+                "q": "Which placement strategy picks the smallest hole that is still big enough?",
+                "options": [
+                  "First fit",
+                  "Best fit",
+                  "Worst fit",
+                  "Next fit"
+                ],
+                "answer": 1,
+                "why": "Best fit leaves the smallest leftover, though it tends to create many tiny holes."
+              },
+              {
+                "q": "What is internal fragmentation?",
+                "options": [
+                  "Disk space used by swap",
+                  "A page table that is too large",
+                  "Wasted space inside an allocated block",
+                  "Small holes between processes"
+                ],
+                "answer": 2,
+                "why": "The process did not need all of the block it was given, and the rest cannot be used."
+              },
+              {
+                "q": "Which statement about allocation is NOT correct?",
+                "options": [
+                  "First fit takes the first suitable hole",
+                  "Compaction merges free holes together",
+                  "External fragmentation leaves unusable gaps between processes",
+                  "Swapping moves a single page to disk"
+                ],
+                "answer": 3,
+                "why": "Swapping moves a whole process, while paging is the scheme that moves single pages."
+              },
+              {
+                "q": "What is the drawback of compaction?",
+                "options": [
+                  "It costs time and needs relocatable code",
+                  "It deletes processes",
+                  "It requires larger disks",
+                  "It wastes memory"
+                ],
+                "answer": 0,
+                "why": "Moving processes while they run is expensive, and any absolute addresses must be adjustable."
+              },
+              {
+                "q": "What is the backing store used for?",
+                "options": [
+                  "Holding pages only",
+                  "Holding whole processes swapped out to disk",
+                  "Storing the page table",
+                  "Caching files"
+                ],
+                "answer": 1,
+                "why": "A swapped process waits on the backing store until memory frees up again."
+              }
+            ],
+            "examTip": "Contrast internal and external fragmentation with an example of each, then give the three fit strategies.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIII-T03",
@@ -635,7 +1517,70 @@
               "kind": "subtopic",
               "definition": "Hierarchical tables handle large address spaces while an inverted table keeps one entry per frame."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Paging cuts physical memory into frames and logical memory into pages of the same size, so a process need not be stored contiguously. Each process keeps a page table that maps each page number to a frame number. A logical address splits into a page number and an offset; the table gives the frame and the offset locates the byte. Looking the table up on every reference would be slow, so a translation lookaside buffer caches recent translations. Protection and sharing bits sit in the table, and large address spaces use multilevel or inverted tables.",
+            "example": "With 4 KB pages, the logical address 8196 lies in page 2 at offset 4. If the page table puts page 2 in frame 7, the physical address is 7 times 4096 plus 4.",
+            "quiz": [
+              {
+                "q": "What does a page table hold?",
+                "options": [
+                  "The instruction pointer",
+                  "The list of free frames",
+                  "The mapping from page number to frame number",
+                  "The list of open files"
+                ],
+                "answer": 2,
+                "why": "There is one entry per page, and the entry names the frame holding that page."
+              },
+              {
+                "q": "What is the purpose of the translation lookaside buffer?",
+                "options": [
+                  "To protect pages from writes",
+                  "To count page faults",
+                  "To store pages on disk",
+                  "To cache recent address translations so lookups are fast"
+                ],
+                "answer": 3,
+                "why": "A TLB hit skips the extra memory read that a page table lookup would cost."
+              },
+              {
+                "q": "Which statement about paging is NOT correct?",
+                "options": [
+                  "A TLB makes translation slower",
+                  "Protection bits live in the page table",
+                  "Pages and frames are the same size",
+                  "Paging removes external fragmentation"
+                ],
+                "answer": 0,
+                "why": "A TLB speeds translation up, because most references hit in the cache."
+              },
+              {
+                "q": "With 4 KB pages, how many bits of the address are needed for the offset?",
+                "options": [
+                  "10",
+                  "12",
+                  "14",
+                  "16"
+                ],
+                "answer": 1,
+                "why": "4 KB is 2 to the power 12 bytes, so 12 bits locate the byte inside the page."
+              },
+              {
+                "q": "What is an inverted page table?",
+                "options": [
+                  "A table kept on disk",
+                  "A table with one entry per process",
+                  "A table with one entry per physical frame",
+                  "A backwards address"
+                ],
+                "answer": 2,
+                "why": "It scales with memory size rather than process count, which saves space."
+              }
+            ],
+            "examTip": "Draw the translation from logical to physical address, then state the TLB hit ratio effect on access time.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIII-T04",
@@ -667,7 +1612,70 @@
               "kind": "subtopic",
               "definition": "Paging is invisible to the programmer and fixed size, segmentation reflects program structure and is variable size."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Segmentation splits a program into units the programmer recognises: code, data, stack and so on. Each segment has a name, a length and a base address, all held in the segment table. An address is given as a segment number and an offset, and the hardware checks that the offset is inside the segment limit. Because segments vary in size, memory develops external fragmentation again. Combining the two schemes avoids that: each segment is paged, which keeps the logical structure and removes the fragmentation.",
+            "example": "A program has a code segment, a data segment and a stack segment. The hardware refuses any access past the end of a segment, which catches an out of range array index at once.",
+            "quiz": [
+              {
+                "q": "What does each entry in a segment table hold?",
+                "options": [
+                  "A file name",
+                  "A process id",
+                  "A page number",
+                  "A base address and a limit"
+                ],
+                "answer": 3,
+                "why": "The base says where the segment starts, and the limit says how far it reaches."
+              },
+              {
+                "q": "Why is segmentation visible to the programmer while paging is not?",
+                "options": [
+                  "Segments match the logical structure of the program",
+                  "Pages are larger",
+                  "Paging needs no hardware",
+                  "Segments are always fixed size"
+                ],
+                "answer": 0,
+                "why": "Code, data and stack are named units in the program, while pages are an invisible mechanism."
+              },
+              {
+                "q": "Which statement about segmentation is NOT correct?",
+                "options": [
+                  "Segmentation suffers external fragmentation",
+                  "Segmentation removes external fragmentation completely",
+                  "Segments vary in size",
+                  "The offset is checked against the segment limit"
+                ],
+                "answer": 1,
+                "why": "Variable sized segments leave holes, which is why segmentation is often combined with paging."
+              },
+              {
+                "q": "What does segmentation with paging combine?",
+                "options": [
+                  "Two segment tables",
+                  "Virtual memory with swapping",
+                  "The logical structure of segments with the fixed size of pages",
+                  "Two page tables"
+                ],
+                "answer": 2,
+                "why": "The segment table points at a page table, so the structure survives and the holes do not."
+              },
+              {
+                "q": "If the offset in an address is larger than the segment limit, what happens?",
+                "options": [
+                  "The next segment is used",
+                  "The value zero is returned",
+                  "The address wraps around",
+                  "A trap is raised for an addressing error"
+                ],
+                "answer": 3,
+                "why": "The limit check is a hardware protection, and it catches out of range accesses at once."
+              }
+            ],
+            "examTip": "Draw the segment table translation, then write a two line comparison of paging and segmentation.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIII-T05",
@@ -705,7 +1713,70 @@
               "kind": "subtopic",
               "definition": "The very high cost of a fault dominates the average access time, so fault rates must stay low."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Virtual memory lets a program run when only part of it is in memory, and it makes a program larger than physical memory possible. Under demand paging a page is brought in only when it is referenced, and the valid invalid bit records which pages are really present. A reference to a missing page causes a page fault. The operating system finds the page on disk, gets a free frame and reads it in. It then updates the table and restarts the instruction. A fault costs so much that even a small fault rate ruins performance.",
+            "example": "Opening a large application starts at once, because only the first few pages are loaded. The rest arrive as the user reaches the features that need them.",
+            "quiz": [
+              {
+                "q": "What marks whether a page is currently in memory?",
+                "options": [
+                  "The valid invalid bit",
+                  "The reference bit",
+                  "The protection bit",
+                  "The dirty bit"
+                ],
+                "answer": 0,
+                "why": "A valid entry means the page is resident; an invalid one means a reference will fault."
+              },
+              {
+                "q": "What is the last step of handling a page fault?",
+                "options": [
+                  "Flushing the cache",
+                  "Restarting the instruction that caused the fault",
+                  "Terminating the process",
+                  "Rebooting the system"
+                ],
+                "answer": 1,
+                "why": "The instruction could not complete, so it runs again once the page is in place."
+              },
+              {
+                "q": "Which statement about virtual memory is NOT correct?",
+                "options": [
+                  "Pages are loaded only when referenced",
+                  "More processes can fit in memory at once",
+                  "Virtual memory removes the need for a disk",
+                  "A program larger than physical memory can run"
+                ],
+                "answer": 2,
+                "why": "The disk holds the pages that are not resident, so it is essential to the scheme."
+              },
+              {
+                "q": "What does copy on write do?",
+                "options": [
+                  "Writes every page to disk at once",
+                  "Backs up the page table",
+                  "Copies the whole process on every fork",
+                  "Shares pages until one side writes, then copies that page"
+                ],
+                "answer": 3,
+                "why": "Most pages are never written after a fork, so deferring the copy saves time and memory."
+              },
+              {
+                "q": "Why must the page fault rate stay very low?",
+                "options": [
+                  "A fault costs thousands of times a normal memory access",
+                  "The TLB overflows",
+                  "The process ends after a few faults",
+                  "The disk is small"
+                ],
+                "answer": 0,
+                "why": "Servicing a fault means disk I/O, so even one fault in ten thousand references hurts throughput."
+              }
+            ],
+            "examTip": "List the steps of page fault handling in order, then note why the fault rate dominates access time.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIII-T06",
@@ -749,7 +1820,70 @@
               "kind": "subtopic",
               "definition": "Equal, proportional and priority based allocation of frames among processes."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "When memory is full and a page must come in, the system has to choose a victim. FIFO replaces the oldest page, which is simple but can show Belady's anomaly, where giving a process more frames actually raises the fault count. The optimal algorithm replaces the page used farthest in the future. It gives the lowest possible fault rate, but it cannot be implemented. LRU replaces the least recently used page and approximates the optimal well. Cheaper approximations use a reference bit and the clock or second chance algorithm, and stack algorithms such as LRU never show Belady's anomaly.",
+            "example": "With the reference string 1, 2, 3, 1, 2 and three frames, no replacement is needed. With two frames the system must evict one, and how it chooses decides the fault count.",
+            "quiz": [
+              {
+                "q": "Which algorithm gives the lowest possible page fault rate?",
+                "options": [
+                  "FIFO",
+                  "Optimal",
+                  "LRU",
+                  "Clock"
+                ],
+                "answer": 1,
+                "why": "Knowing the future lets it pick the victim that will not be needed for longest."
+              },
+              {
+                "q": "What is Belady's anomaly?",
+                "options": [
+                  "A page that is never used",
+                  "A frame that is always free",
+                  "More frames causing more page faults",
+                  "Fewer frames causing fewer faults"
+                ],
+                "answer": 2,
+                "why": "It is counter intuitive, and algorithms keeping a stack of pages such as LRU do not show it."
+              },
+              {
+                "q": "Which statement about replacement is NOT correct?",
+                "options": [
+                  "LRU approximates the optimal algorithm",
+                  "The clock algorithm approximates LRU cheaply",
+                  "FIFO can suffer Belady's anomaly",
+                  "The optimal algorithm is used in most real systems"
+                ],
+                "answer": 3,
+                "why": "The future reference string is unknown at run time, so optimal is only a benchmark."
+              },
+              {
+                "q": "How does the second chance or clock algorithm work?",
+                "options": [
+                  "It gives a page with its reference bit set a second chance and clears the bit",
+                  "It replaces a random page",
+                  "It never replaces a dirty page",
+                  "It always replaces the oldest page"
+                ],
+                "answer": 0,
+                "why": "The hand sweeps the frames, clearing bits and evicting the first page whose bit is clear."
+              },
+              {
+                "q": "Which counting algorithm replaces the page used least often?",
+                "options": [
+                  "FIFO",
+                  "LFU",
+                  "MFU",
+                  "LRU"
+                ],
+                "answer": 1,
+                "why": "LFU counts references and evicts the lowest count, while MFU argues the other way."
+              }
+            ],
+            "examTip": "Work one reference string through FIFO, optimal and LRU with three frames, and compare the fault counts.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIII-T07",
@@ -781,7 +1915,70 @@
               "kind": "subtopic",
               "definition": "Programs tend to reuse a small set of pages, which is why working set control works."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Thrashing is what happens when the system spends more time paging than doing real work. Too many processes compete for too few frames, so each one faults as soon as it starts. The faulting process is suspended while its page is fetched. Throughput collapses while the operator sees frantic disk activity. The working set model fixes this by tracking the pages a process used in a recent window. The process is given at least that many frames. Page fault frequency control does the same by watching each process's fault rate.",
+            "example": "A machine with eight heavy programs open and too little memory grinds to a halt. The disk light stays on and nothing finishes, because every process waits for a page.",
+            "quiz": [
+              {
+                "q": "What causes thrashing?",
+                "options": [
+                  "A processor that is too slow",
+                  "Too much cache memory",
+                  "Too many processes competing for too few frames",
+                  "A disk that is too fast"
+                ],
+                "answer": 2,
+                "why": "Each process lacks the frames it needs, so it faults constantly and spends its time waiting."
+              },
+              {
+                "q": "What is a working set?",
+                "options": [
+                  "All the pages of a process",
+                  "The free frames in the system",
+                  "The pages on disk",
+                  "The pages a process used in a recent window of references"
+                ],
+                "answer": 3,
+                "why": "It captures the pages a process is actively using, which is what must stay resident."
+              },
+              {
+                "q": "Which statement about thrashing is NOT correct?",
+                "options": [
+                  "Adding more processes is the usual cure",
+                  "Throughput collapses while disk activity stays high",
+                  "The working set model gives each process enough frames",
+                  "Locality of reference is why working sets stay small"
+                ],
+                "answer": 0,
+                "why": "The cure is the opposite: suspend some processes so the rest get enough frames to work."
+              },
+              {
+                "q": "What does page fault frequency control do?",
+                "options": [
+                  "Stops paging entirely",
+                  "Adds frames to a process with a high fault rate and takes them from one with a low rate",
+                  "Gives every process the same number of frames",
+                  "Removes all frames"
+                ],
+                "answer": 1,
+                "why": "The fault rate is the signal, and frames move to where they are doing the most good."
+              },
+              {
+                "q": "Why does the working set model work at all?",
+                "options": [
+                  "Because disks are fast",
+                  "Because programs use only one page",
+                  "Because of locality of reference",
+                  "Because memory is always large enough"
+                ],
+                "answer": 2,
+                "why": "Programs reuse a small set of pages for a while, so that set can be identified and kept."
+              }
+            ],
+            "examTip": "Define thrashing, give its cause, then explain the working set model and the page fault frequency fix.",
+            "verified": false
+          }
         }
       ]
     },
@@ -837,7 +2034,70 @@
               "kind": "subtopic",
               "definition": "Choice depends on load, fairness requirements and whether seek time dominates."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A disk holds data on spinning platters divided into tracks, and each track into sectors. Reading a block costs three things: seek time to move the head, rotational latency to wait for the sector, and transfer time to read it. Seek time usually dominates, so the order requests are served in matters a great deal. First come first served is fair but lets the head wander. Shortest seek time first picks the nearest request, which is fast but can starve a far one. SCAN sweeps the head back and forth like an elevator, and C-SCAN returns without serving to even out the wait.",
+            "example": "With requests at cylinders 98, 183, 37 and 122 starting from 53, FCFS moves the head a long way. SSTF would serve 37 first, cutting the total head movement sharply.",
+            "quiz": [
+              {
+                "q": "Which component of disk access time usually dominates?",
+                "options": [
+                  "Interrupt handling",
+                  "Transfer time",
+                  "Rotational latency",
+                  "Seek time"
+                ],
+                "answer": 3,
+                "why": "Moving the arm mechanically is far slower than spinning or transferring, so seek decides the order."
+              },
+              {
+                "q": "How does C-SCAN differ from SCAN?",
+                "options": [
+                  "C-SCAN serves in one direction and returns without serving",
+                  "C-SCAN is always slower",
+                  "C-SCAN only works on solid state drives",
+                  "C-SCAN serves in both directions"
+                ],
+                "answer": 0,
+                "why": "Serving in one direction only makes the waiting time more even for requests at the edges."
+              },
+              {
+                "q": "Which statement about disk scheduling is NOT correct?",
+                "options": [
+                  "LOOK reverses at the last request instead of the disk edge",
+                  "FCFS gives the shortest total head movement",
+                  "SCAN works like an elevator sweeping back and forth",
+                  "SSTF can starve a request far from the head"
+                ],
+                "answer": 1,
+                "why": "FCFS is the fair but wasteful one; SSTF and SCAN cut head movement dramatically."
+              },
+              {
+                "q": "A disk queue has requests at 10, 90 and 30, and the head is at 50 moving upward. Which does SCAN serve first?",
+                "options": [
+                  "10",
+                  "30",
+                  "90",
+                  "None of these"
+                ],
+                "answer": 2,
+                "why": "The head is moving up, so the next request above it, at 90, is served first."
+              },
+              {
+                "q": "What does LOOK do differently from SCAN?",
+                "options": [
+                  "It serves every request twice",
+                  "It ignores far requests",
+                  "It sorts by sector instead of cylinder",
+                  "It reverses at the last request, not at the disk edge"
+                ],
+                "answer": 3,
+                "why": "Reversing at the last request saves the wasted sweep to the end of the disk."
+              }
+            ],
+            "examTip": "List seek time, latency and transfer time, then work one queue through FCFS, SSTF and SCAN and compare movement.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIV-T02",
@@ -875,7 +2135,70 @@
               "kind": "subtopic",
               "definition": "Access rights, access control lists and permission bits decide who may read, write or execute."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A file is a named collection of information stored on secondary storage. It carries attributes such as a name, an identifier, a type, a location, a size, protection and timestamps. The operations a program can ask for are create, open, read, write, seek, delete and truncate. Data can be reached sequentially, directly by block number, or through an index of keys. Directories hold the names and let them be organised as a single level list, a two level list, a tree or an acyclic graph. Protection decides who may read, write or execute.",
+            "example": "Reading a database table record by record is sequential access. Jumping straight to the row with a known key, as an index allows, is direct access.",
+            "quiz": [
+              {
+                "q": "Which of these is NOT a file operation?",
+                "options": [
+                  "route",
+                  "create",
+                  "truncate",
+                  "seek"
+                ],
+                "answer": 0,
+                "why": "The operations are create, open, read, write, seek, delete and truncate; routing is a network idea."
+              },
+              {
+                "q": "Which access method jumps straight to a record with a known key?",
+                "options": [
+                  "Direct access",
+                  "Indexed access",
+                  "Serial access",
+                  "Sequential access"
+                ],
+                "answer": 1,
+                "why": "Indexed access keeps an index of keys pointing at blocks, which is how a database finds one row."
+              },
+              {
+                "q": "Which statement about directories is NOT correct?",
+                "options": [
+                  "A tree directory allows subdirectories",
+                  "An acyclic graph directory allows sharing",
+                  "A two level directory gives every user the same directory",
+                  "A single level directory holds all files in one list"
+                ],
+                "answer": 2,
+                "why": "Two level directories give each user their own directory, which is the point of the scheme."
+              },
+              {
+                "q": "Which file attribute records when the file was last changed?",
+                "options": [
+                  "Location",
+                  "Identifier",
+                  "Type",
+                  "Timestamp"
+                ],
+                "answer": 3,
+                "why": "Timestamps record creation, last modification and last access, which backup tools rely on."
+              },
+              {
+                "q": "What does the protection attribute control?",
+                "options": [
+                  "Who may read, write or execute the file",
+                  "The file location on disk",
+                  "The file name length",
+                  "The file size"
+                ],
+                "answer": 0,
+                "why": "Access rights, permission bits and access control lists are all ways of expressing it."
+              }
+            ],
+            "examTip": "List the seven attributes and the seven operations, then give the three access methods with an example each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIV-T03",
@@ -931,7 +2254,70 @@
               "kind": "subtopic",
               "definition": "Caching, buffering, read ahead and careful block size choice improve throughput."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "On disk a file system needs a boot control block, a volume control block, the directory structure and a control block for each file. In memory it keeps a mount table, a directory cache, a system wide open file table and a per process table. Three allocation methods exist. Contiguous allocation is fast and simple but cannot grow and fragments the disk. Linked allocation removes external fragmentation but only supports slow sequential access. Indexed allocation keeps an index block of pointers, which supports direct access at the cost of the index.",
+            "example": "Unix inodes are indexed allocation: one block holds the attributes and a list of pointers to the data blocks, with indirect blocks for large files.",
+            "quiz": [
+              {
+                "q": "Which allocation method suffers external fragmentation and cannot grow a file easily?",
+                "options": [
+                  "Hashed",
+                  "Contiguous",
+                  "Linked",
+                  "Indexed"
+                ],
+                "answer": 1,
+                "why": "A file needs one unbroken run of blocks, so it cannot grow past its neighbours."
+              },
+              {
+                "q": "What does an inode hold?",
+                "options": [
+                  "The directory tree",
+                  "Only the file name",
+                  "The file attributes and the pointers to its data blocks",
+                  "The free space map"
+                ],
+                "answer": 2,
+                "why": "The name lives in the directory entry, which points at the inode holding everything else."
+              },
+              {
+                "q": "Which statement about implementation is NOT correct?",
+                "options": [
+                  "A bit vector is one way to track free space",
+                  "A directory can be a linear list or a hash table",
+                  "Indexed allocation supports direct access",
+                  "Linked allocation gives the fastest random access"
+                ],
+                "answer": 3,
+                "why": "Following a chain of pointers means sequential access only, which is its main weakness."
+              },
+              {
+                "q": "What is a mount table used for?",
+                "options": [
+                  "Recording which file systems are mounted where",
+                  "Storing the free blocks",
+                  "Caching directory names",
+                  "Listing the open files"
+                ],
+                "answer": 0,
+                "why": "It ties each mounted volume to its mount point in the directory tree."
+              },
+              {
+                "q": "Which method tracks free space with one bit per block?",
+                "options": [
+                  "A linked list",
+                  "A bit vector",
+                  "Grouping",
+                  "Counting"
+                ],
+                "answer": 1,
+                "why": "A bit vector is compact and makes finding a run of free blocks easy."
+              }
+            ],
+            "examTip": "Draw the on disk and in memory structures, then compare contiguous, linked and indexed allocation in a table.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MIV-T04",
@@ -969,7 +2355,70 @@
               "kind": "subtopic",
               "definition": "The network file system and the Andrew file system illustrate caching and session semantics."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A distributed file system makes files on other machines look local. Naming turns a name into a location. Location transparency hides where the file sits, and location independence lets it move without the name changing. Access is either remote service, where every request goes to the server, or caching, where a copy is held locally and consistency must be managed. A stateful server remembers clients between requests, which is faster but needs crash recovery. A stateless server keeps nothing, so a restart is cheap. Replication copies files for availability, at the price of update propagation.",
+            "example": "A lab mounts the department file server over NFS, so every machine sees the same home directories. The server is stateless enough that a reboot loses no client state.",
+            "quiz": [
+              {
+                "q": "What does location transparency mean?",
+                "options": [
+                  "The file is encrypted",
+                  "The file has no name",
+                  "The user need not know where the file physically is",
+                  "The file never moves"
+                ],
+                "answer": 2,
+                "why": "The name stays the same whatever machine the file is actually stored on."
+              },
+              {
+                "q": "Which statement about distributed file systems is NOT correct?",
+                "options": [
+                  "Caching keeps a local copy for speed",
+                  "A stateless server keeps no client state between requests",
+                  "Replication needs update propagation",
+                  "A stateful server needs no crash recovery at all"
+                ],
+                "answer": 3,
+                "why": "Remembering client state is exactly what makes recovery necessary after a crash."
+              },
+              {
+                "q": "What is the main cost of file replication?",
+                "options": [
+                  "More disk space and the need to propagate updates",
+                  "Slower reads",
+                  "No gain in availability",
+                  "Longer file names"
+                ],
+                "answer": 0,
+                "why": "Every copy has to be kept in step, and that is the hard part of replication."
+              },
+              {
+                "q": "Which is a distributed file system named in the syllabus?",
+                "options": [
+                  "NTFS",
+                  "NFS",
+                  "ext4",
+                  "FAT32"
+                ],
+                "answer": 1,
+                "why": "NFS, the network file system, and AFS, the Andrew file system, are the two case studies."
+              },
+              {
+                "q": "Why might a stateless design be preferred?",
+                "options": [
+                  "It supports larger files",
+                  "It is always faster",
+                  "A server crash loses no client state, so recovery is simple",
+                  "It uses less bandwidth"
+                ],
+                "answer": 2,
+                "why": "With nothing remembered, the server restarts and the clients carry on."
+              }
+            ],
+            "examTip": "Define transparency, contrast stateful and stateless service, then name NFS and AFS with one line each.",
+            "verified": false
+          }
         }
       ]
     },
@@ -1019,7 +2468,70 @@
               "kind": "subtopic",
               "definition": "root and ordinary users, file permission bits and the sudo mechanism for privilege."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Linux is a free, open source, UNIX like kernel that is monolithic but modular. Loadable kernel modules let drivers be added while the system runs, so the kernel grows without a rebuild. Processes are created with fork and exec, and the scheduler uses a fair priority scheme. Its virtual file system layer supports many file systems such as ext4 and XFS through one interface, with inodes, directories, links and mount points underneath. Memory uses demand paging with swap space, and devices appear as special files. Users, groups and permission bits control access, with sudo for privilege.",
+            "example": "A driver for a new webcam can be inserted while the machine runs, and removed again without a reboot. That is what loadable kernel modules make possible.",
+            "quiz": [
+              {
+                "q": "How does Linux create a new process?",
+                "options": [
+                  "With a single spawn call",
+                  "With a boot loader",
+                  "With CreateProcess only",
+                  "With fork followed by exec"
+                ],
+                "answer": 3,
+                "why": "Fork copies the process and exec replaces its program, which is the classic UNIX pair."
+              },
+              {
+                "q": "What does the virtual file system layer do?",
+                "options": [
+                  "Gives one interface over several different file systems",
+                  "Manages the swap space",
+                  "Loads kernel modules",
+                  "Encrypts all files"
+                ],
+                "answer": 0,
+                "why": "Programs use one set of calls whether the disk holds ext4, XFS or something else."
+              },
+              {
+                "q": "Which statement about Linux is NOT correct?",
+                "options": [
+                  "It uses demand paging with swap",
+                  "It is a microkernel with everything running as a user process",
+                  "Kernel modules can be loaded at run time",
+                  "Devices appear as special files"
+                ],
+                "answer": 1,
+                "why": "Linux is monolithic; it only borrows modular loading from microkernel designs."
+              },
+              {
+                "q": "What does sudo do?",
+                "options": [
+                  "Formats a disk",
+                  "Shuts the system down",
+                  "Runs one command with root privilege",
+                  "Creates a new user"
+                ],
+                "answer": 2,
+                "why": "It grants a single command the rights of root without logging in as root."
+              },
+              {
+                "q": "Which file system is commonly used on Linux today?",
+                "options": [
+                  "FAT32",
+                  "HFS",
+                  "NTFS",
+                  "ext4"
+                ],
+                "answer": 3,
+                "why": "ext4 is the standard Linux file system, and XFS and Btrfs are also supported."
+              }
+            ],
+            "examTip": "Write the design principles, then one line each on processes, the VFS layer, memory and permissions.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MV-T02",
@@ -1057,7 +2569,70 @@
               "kind": "subtopic",
               "definition": "NTFS with journaling, compression and encryption, and an access token based security model."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Windows is a commercial system built around a layered, object oriented design with a hybrid kernel. At the bottom sits a hardware abstraction layer, then the kernel, then executive services, then device drivers and subsystems, with the user environment on top. The executive works with objects, and programs reach them through handles rather than names. Configuration lives in the registry instead of in scattered text files. Processes are containers for threads, and the dispatcher schedules threads by priority with preemption. NTFS provides journaling, compression and encryption, and security uses access tokens.",
+            "example": "A Windows program opens a file and receives a handle. Every later read and write passes that handle, so the object it points at can be renamed without breaking the program.",
+            "quiz": [
+              {
+                "q": "What does the hardware abstraction layer do?",
+                "options": [
+                  "Hides differences between hardware platforms from the kernel above",
+                  "Manages the registry",
+                  "Formats disks",
+                  "Runs applications"
+                ],
+                "answer": 0,
+                "why": "The rest of the system sees one machine, which is what makes Windows portable across hardware."
+              },
+              {
+                "q": "How do Windows programs refer to executive objects?",
+                "options": [
+                  "By name every time",
+                  "Through handles",
+                  "By memory address",
+                  "By process id"
+                ],
+                "answer": 1,
+                "why": "A handle is an indirect reference the kernel resolves, so objects can be moved or renamed."
+              },
+              {
+                "q": "Which statement about Windows is NOT correct?",
+                "options": [
+                  "The registry holds system configuration",
+                  "NTFS supports journaling and encryption",
+                  "Windows uses a pure microkernel with no kernel mode services",
+                  "The scheduler works on threads, not processes"
+                ],
+                "answer": 2,
+                "why": "Windows has a hybrid kernel, with many services still running in kernel mode."
+              },
+              {
+                "q": "What is an access token used for?",
+                "options": [
+                  "Encrypting files",
+                  "Naming a handle",
+                  "Logging in to a website",
+                  "Carrying the security identity and privileges of a user or process"
+                ],
+                "answer": 3,
+                "why": "Every process carries a token, and the system checks it against the object's access rules."
+              },
+              {
+                "q": "Which file system does Windows use by default today?",
+                "options": [
+                  "NTFS",
+                  "XFS",
+                  "ext4",
+                  "FAT32"
+                ],
+                "answer": 0,
+                "why": "NTFS adds journaling, compression, encryption and access control to the older FAT designs."
+              }
+            ],
+            "examTip": "Draw the layer stack from the hardware abstraction layer up, then add a line on handles, the registry and NTFS.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MV-T03",
@@ -1095,7 +2670,70 @@
               "kind": "subtopic",
               "definition": "Each app runs in its own sandbox under a unique user id and requests permissions for sensitive operations."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Android is a mobile system built on a modified Linux kernel. Its layers are the kernel, a hardware abstraction layer, native libraries with the runtime, the application framework and the applications themselves. An app is built from four kinds of component: activities, services, broadcast receivers and content providers. An activity moves through a life cycle of callbacks: onCreate, onStart, onResume, onPause, onStop and onDestroy. That lets the system reclaim memory at any point. Old versions ran Dalvik, which compiled during execution, while ART compiles ahead of time.",
+            "example": "Rotating the phone destroys and recreates the activity, so onCreate runs again. Saving state in onPause is what keeps the user's place from being lost.",
+            "quiz": [
+              {
+                "q": "Which of these is NOT an Android application component?",
+                "options": [
+                  "Broadcast Receiver",
+                  "Servlet",
+                  "Activity",
+                  "Service"
+                ],
+                "answer": 1,
+                "why": "The four components are Activity, Service, Broadcast Receiver and Content Provider."
+              },
+              {
+                "q": "What replaced Dalvik in later Android versions?",
+                "options": [
+                  "LLVM",
+                  "NTFS",
+                  "ART",
+                  "JVM"
+                ],
+                "answer": 2,
+                "why": "The Android runtime compiles applications ahead of time instead of during execution."
+              },
+              {
+                "q": "Which statement about Android is NOT correct?",
+                "options": [
+                  "It is built on a modified Linux kernel",
+                  "Each app runs in its own sandbox with a unique user id",
+                  "An activity has a life cycle the system controls",
+                  "Apps share one user id so they can read each other's files freely"
+                ],
+                "answer": 3,
+                "why": "Each app gets its own id, which is what keeps one app out of another's data."
+              },
+              {
+                "q": "Which callback runs when the activity becomes visible and interactive?",
+                "options": [
+                  "onResume",
+                  "onDestroy",
+                  "onCreate",
+                  "onStart"
+                ],
+                "answer": 0,
+                "why": "onResume is where the activity is in the foreground and the user can interact with it."
+              },
+              {
+                "q": "How does an app get permission to use the camera?",
+                "options": [
+                  "It asks the kernel directly",
+                  "It declares the permission and the user grants it at install or run time",
+                  "It edits the registry",
+                  "It opens a socket"
+                ],
+                "answer": 1,
+                "why": "Permissions are declared in the manifest and granted by the user, which is the sandbox model."
+              }
+            ],
+            "examTip": "Draw the five layers of the stack, list the four components, and give the activity life cycle in order.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA422-MV-T04",
@@ -1133,7 +2771,70 @@
               "kind": "subtopic",
               "definition": "Containers share the host kernel and isolate processes, which is lighter but less isolated than a full virtual machine."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A virtual machine is software that looks like a complete computer to the operating system running inside it. The layer that does this is called a hypervisor. A type 1 hypervisor runs directly on the hardware, which is what data centres use. A type 2 hypervisor runs as an application on a host operating system. Three things must be virtualised. The processor is handled by trapping privileged instructions, and memory by mapping guest addresses through shadow or nested page tables. Devices are emulated or passed through. Containers are the lighter alternative, sharing the host kernel.",
+            "example": "One physical server can host ten virtual machines. Each runs its own operating system and believes it owns the whole machine.",
+            "quiz": [
+              {
+                "q": "Which type of hypervisor runs directly on the hardware?",
+                "options": [
+                  "Type 3",
+                  "Type 4",
+                  "Type 1",
+                  "Type 2"
+                ],
+                "answer": 2,
+                "why": "A bare metal hypervisor sits on the hardware, and the guest systems run above it."
+              },
+              {
+                "q": "How is memory virtualised?",
+                "options": [
+                  "By swapping to disk",
+                  "By compressing pages",
+                  "By encrypting it",
+                  "By mapping guest addresses through shadow or nested page tables"
+                ],
+                "answer": 3,
+                "why": "An extra level of address translation turns a guest physical address into a real one."
+              },
+              {
+                "q": "Which statement about virtualisation is NOT correct?",
+                "options": [
+                  "A virtual machine gives weaker isolation than a container",
+                  "Containers share the host kernel",
+                  "A type 2 hypervisor runs on a host operating system",
+                  "Snapshots make testing and rollback easy"
+                ],
+                "answer": 0,
+                "why": "A virtual machine isolates at the hardware boundary, which is stronger than a shared kernel."
+              },
+              {
+                "q": "What happens when a guest runs a privileged instruction?",
+                "options": [
+                  "It is ignored",
+                  "It is trapped and handled by the hypervisor",
+                  "It reboots the guest",
+                  "It always runs at full speed"
+                ],
+                "answer": 1,
+                "why": "Trapping is what lets the hypervisor keep control of the real hardware."
+              },
+              {
+                "q": "Why are containers lighter than virtual machines?",
+                "options": [
+                  "They cannot be networked",
+                  "They need more memory",
+                  "They share the host kernel and carry no full guest operating system",
+                  "They run slower"
+                ],
+                "answer": 2,
+                "why": "No full guest operating system means faster start up and far less overhead."
+              }
+            ],
+            "examTip": "Contrast type 1 and type 2 hypervisors, name the three things virtualised, then compare containers with virtual machines.",
+            "verified": false
+          }
         }
       ]
     }

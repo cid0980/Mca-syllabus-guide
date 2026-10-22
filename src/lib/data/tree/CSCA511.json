@@ -37,7 +37,70 @@
               "kind": "subtopic",
               "definition": "Reusable solutions to recurring process problems, checked against a capability maturity model such as CMMI."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A software process is the set of activities and results needed to build a software product. Its framework activities are communication, planning, modelling, construction and deployment, in that broad order. Umbrella activities run alongside all of them for the whole project: tracking, risk management, quality assurance, configuration management and reviews. A generic framework is made specific by choosing task sets, the work products each task produces and the quality checkpoints it must pass. Process patterns then capture solutions to problems that recur from project to project. Process assessment, often against CMMI, asks how mature and repeatable the process actually is.",
+            "example": "Two teams can build the same app. The one that tracks risk and holds reviews from the first week usually ships with fewer surprises.",
+            "quiz": [
+              {
+                "q": "Which is a framework activity?",
+                "options": [
+                  "Construction",
+                  "Quality assurance",
+                  "Risk management",
+                  "Configuration management"
+                ],
+                "answer": 0,
+                "why": "Construction is one of the five framework activities, while the others listed are umbrella activities."
+              },
+              {
+                "q": "Which is an umbrella activity?",
+                "options": [
+                  "Modelling",
+                  "Software quality assurance",
+                  "Communication",
+                  "Deployment"
+                ],
+                "answer": 1,
+                "why": "Umbrella activities run across the whole project rather than belonging to one phase."
+              },
+              {
+                "q": "Which statement about the software process is NOT correct?",
+                "options": [
+                  "Umbrella activities run throughout the project",
+                  "Task sets tailor the framework to a project",
+                  "A process pattern is a design pattern for code",
+                  "Framework activities include planning and modelling"
+                ],
+                "answer": 2,
+                "why": "Process patterns solve recurring process problems, while design patterns solve code structure problems."
+              },
+              {
+                "q": "What does CMMI assess?",
+                "options": [
+                  "The size of the team",
+                  "The price of the product",
+                  "The speed of the compiler",
+                  "The maturity of an organisation's processes"
+                ],
+                "answer": 3,
+                "why": "Maturity levels describe how well defined, managed and improved the process is."
+              },
+              {
+                "q": "What does a task set define?",
+                "options": [
+                  "The tasks, work products and quality checkpoints for a project",
+                  "The office layout",
+                  "The marketing plan",
+                  "The team's salaries"
+                ],
+                "answer": 0,
+                "why": "Choosing a task set is how a generic framework is fitted to a real project."
+              }
+            ],
+            "examTip": "Name the five framework activities, five umbrella activities, and define task sets and process patterns.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MI-T02",
@@ -87,7 +150,70 @@
               "kind": "subtopic",
               "definition": "Component based, formal methods and aspect oriented models, plus the iterative and incremental Rational Unified Process."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A process model is a strategy for arranging the framework activities across the life of a project. The waterfall model moves through requirements, design, code, test and maintenance in order, which is clear but poor at handling change. The incremental model delivers the product in parts, each part adding working functionality and giving early feedback. The prototyping model builds a quick version first, either thrown away or evolved, to settle unclear requirements. The spiral model is risk driven, cycling through planning, risk analysis, engineering and evaluation. The V model pairs each development phase with the test that checks it, and the concurrent model shows activities running in parallel states.",
+            "example": "A government form processing system with fixed rules suits waterfall. A startup app whose requirements change weekly does not.",
+            "quiz": [
+              {
+                "q": "Which model is risk driven and iterative?",
+                "options": [
+                  "Waterfall",
+                  "Spiral",
+                  "RAD",
+                  "V model"
+                ],
+                "answer": 1,
+                "why": "Each loop of the spiral begins with risk analysis, which decides what happens next."
+              },
+              {
+                "q": "What does the V model pair?",
+                "options": [
+                  "Each module with a document",
+                  "Each developer with a tester",
+                  "Each development phase with its matching test phase",
+                  "Each requirement with a budget"
+                ],
+                "answer": 2,
+                "why": "Requirements match acceptance testing, design matches system testing, and so on down the V."
+              },
+              {
+                "q": "Which statement about process models is NOT correct?",
+                "options": [
+                  "Waterfall handles change poorly",
+                  "Incremental delivery gives early feedback",
+                  "Prototyping helps clarify unclear requirements",
+                  "RAD is slow and needs no user involvement"
+                ],
+                "answer": 3,
+                "why": "RAD is built for speed through components and short cycles, and it needs heavy user involvement."
+              },
+              {
+                "q": "Which model delivers working functionality in parts?",
+                "options": [
+                  "Incremental model",
+                  "Prototyping model",
+                  "Spiral model",
+                  "Waterfall"
+                ],
+                "answer": 0,
+                "why": "Each increment is a usable slice of the product, not another document."
+              },
+              {
+                "q": "What is a throwaway prototype?",
+                "options": [
+                  "A prototype rewritten in another language",
+                  "A quick model built to learn the requirements, then discarded",
+                  "The final product",
+                  "A test harness"
+                ],
+                "answer": 1,
+                "why": "Its value is the understanding it produces, not the code itself."
+              }
+            ],
+            "examTip": "Compare waterfall, incremental, prototyping and spiral with one strength and one weakness each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MI-T03",
@@ -125,7 +251,70 @@
               "kind": "subtopic",
               "definition": "Agile suits changing requirements and small co-located teams while plan driven suits stable requirements and contract heavy projects."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Agile development delivers working software in short iterations, with the customer involved throughout. The manifesto values individuals and interactions, working software, customer collaboration and response to change over the opposite four. Extreme Programming is one agile method, built on planning games, small releases, simple design, test first development, pair programming and continuous integration. Scrum works in sprints of two to four weeks, with a product backlog, a sprint backlog, a daily stand up, a review and a retrospective. Kanban visualises the work and limits work in progress, and DevOps joins development to operations for continuous delivery. Agile suits changing requirements and small teams.",
+            "example": "A team releases a working build every two weeks and shows it to the client. The client's reaction becomes the next sprint's plan.",
+            "quiz": [
+              {
+                "q": "How long is a Scrum sprint?",
+                "options": [
+                  "One year",
+                  "One day",
+                  "Two to four weeks",
+                  "Six months"
+                ],
+                "answer": 2,
+                "why": "The sprint is short enough to keep feedback frequent and long enough to finish real work."
+              },
+              {
+                "q": "Which is an Extreme Programming practice?",
+                "options": [
+                  "Monthly releases",
+                  "Big design up front",
+                  "A separate test team only",
+                  "Pair programming"
+                ],
+                "answer": 3,
+                "why": "Two people work at one machine, which spreads knowledge and catches defects early."
+              },
+              {
+                "q": "Which statement about agile is NOT correct?",
+                "options": [
+                  "It forbids any documentation or planning",
+                  "It welcomes changing requirements",
+                  "It values working software over documents",
+                  "It suits small co-located teams"
+                ],
+                "answer": 0,
+                "why": "The manifesto prefers working software, it does not ban documents or plans."
+              },
+              {
+                "q": "What does Kanban limit?",
+                "options": [
+                  "Team size",
+                  "Work in progress",
+                  "Number of meetings",
+                  "Lines of code"
+                ],
+                "answer": 1,
+                "why": "Capping unfinished work exposes bottlenecks and keeps the flow steady."
+              },
+              {
+                "q": "What happens in a sprint retrospective?",
+                "options": [
+                  "The budget is set",
+                  "The product is shipped",
+                  "The team reviews how it worked and what to improve",
+                  "Requirements are frozen"
+                ],
+                "answer": 2,
+                "why": "It is the team's own review of its process, held after the review of the product."
+              }
+            ],
+            "examTip": "State the four agile values, name three XP practices and the five Scrum events.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MI-T04",
@@ -169,7 +358,70 @@
               "kind": "subtopic",
               "definition": "Baselines, traceability matrices and a change control process keep requirements under control as the project evolves."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Requirements engineering establishes what the system must do, and writes it so it can be checked and used for design. Requirements come in three kinds: functional, non functional and domain. Functional requirements describe services, and non functional ones describe qualities such as speed or security. Elicitation gathers them through interviews, questionnaires, observation, document study, brainstorming, prototyping and joint application development. Conflict between stakeholders is then resolved by negotiation and prioritisation, using schemes such as MoSCoW. The results go into the Software Requirements Specification, which is then validated for completeness, consistency, feasibility and testability.",
+            "example": "The system must respond within two seconds is a non functional requirement. The system must issue a library card describes a function.",
+            "quiz": [
+              {
+                "q": "Which requirement states a quality such as speed or security?",
+                "options": [
+                  "Domain",
+                  "Interface",
+                  "Functional",
+                  "Non functional"
+                ],
+                "answer": 3,
+                "why": "Non functional requirements constrain how the system behaves rather than what it does."
+              },
+              {
+                "q": "What is the SRS?",
+                "options": [
+                  "The Software Requirements Specification document",
+                  "The test plan",
+                  "The project schedule",
+                  "The source code"
+                ],
+                "answer": 0,
+                "why": "It records functional and non functional requirements, interfaces and constraints."
+              },
+              {
+                "q": "Which statement about requirements is NOT correct?",
+                "options": [
+                  "Conflicts between stakeholders are negotiated",
+                  "Requirements are frozen the day they are written",
+                  "Elicitation uses interviews and observation",
+                  "Requirements must be testable"
+                ],
+                "answer": 1,
+                "why": "Change is expected, which is why baselines and change control exist."
+              },
+              {
+                "q": "What does MoSCoW stand for?",
+                "options": [
+                  "Money, scope, cost, work",
+                  "A city",
+                  "Must, should, could, won't have this time",
+                  "Most, some, certain, others"
+                ],
+                "answer": 2,
+                "why": "It is a prioritisation scheme that forces a decision on every requirement."
+              },
+              {
+                "q": "What is requirements traceability?",
+                "options": [
+                  "Counting the requirements",
+                  "Sorting them by date",
+                  "Sending them by email",
+                  "Tracking each requirement to its source and to the tests that check it"
+                ],
+                "answer": 3,
+                "why": "Traceability shows that every requirement is tested and every test serves a requirement."
+              }
+            ],
+            "examTip": "Define the three requirement types, list four elicitation techniques and four validation checks.",
+            "verified": false
+          }
         }
       ]
     },
@@ -213,7 +465,70 @@
               "kind": "subtopic",
               "definition": "Data design, architectural design, interface design and component level design together form the design model."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Design concepts are the principles that make a design understandable, changeable and reliable. Abstraction hides detail at a chosen level, and stepwise refinement adds that detail back gradually. Modularity splits the system into parts, and information hiding keeps each part's internals private so that a change stays local. Two measures show whether the split was good. Coupling between modules should be low, and cohesion inside a module should be high. Refactoring improves the internal structure without changing what the software does. The design model itself has four parts: data design, architectural design, interface design and component level design.",
+            "example": "A module that reads a file, formats it and emails it has low cohesion. Splitting it into three modules raises cohesion and lowers coupling.",
+            "quiz": [
+              {
+                "q": "What combination gives a maintainable design?",
+                "options": [
+                  "Low coupling, high cohesion",
+                  "High coupling, high cohesion",
+                  "Low coupling, low cohesion",
+                  "High coupling, low cohesion"
+                ],
+                "answer": 0,
+                "why": "Modules that depend little on each other can be changed one at a time without surprises."
+              },
+              {
+                "q": "What is information hiding?",
+                "options": [
+                  "Encrypting the database",
+                  "Keeping a module's internals private behind its interface",
+                  "Hiding the source code from users",
+                  "Removing comments"
+                ],
+                "answer": 1,
+                "why": "Callers depend on the interface, so the internals can change without breaking them."
+              },
+              {
+                "q": "Which statement about design is NOT correct?",
+                "options": [
+                  "Abstraction hides detail at a level",
+                  "Stepwise refinement adds detail gradually",
+                  "Refactoring changes the external behaviour",
+                  "Design has data, architectural, interface and component parts"
+                ],
+                "answer": 2,
+                "why": "Refactoring improves internal structure while the behaviour stays exactly the same."
+              },
+              {
+                "q": "What is cohesion?",
+                "options": [
+                  "How fast the module runs",
+                  "How many lines it has",
+                  "How many modules exist",
+                  "How closely the parts inside one module belong together"
+                ],
+                "answer": 3,
+                "why": "High cohesion means the module does one coherent job and does it completely."
+              },
+              {
+                "q": "What is stepwise refinement?",
+                "options": [
+                  "Adding detail to a design a level at a time",
+                  "Rewriting the whole program",
+                  "Removing unused code",
+                  "Compiling in stages"
+                ],
+                "answer": 0,
+                "why": "Each pass adds a layer of detail until the design can be implemented directly."
+              }
+            ],
+            "examTip": "Define abstraction, modularity, coupling and cohesion, and give the four parts of the design model.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MII-T02",
@@ -257,7 +572,70 @@
               "kind": "subtopic",
               "definition": "Choosing the style based on quality attributes such as performance, security, availability and maintainability."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Architectural design defines the overall structure of the software: the components and how they relate. It matters because it fixes the early decisions that are expensive to change later, and it lets everyone discuss the system. Common styles include layered architecture, where services are stacked, and client server, where requesters are separated from providers. Model View Controller splits a system into the data, the display and the control logic so each can change alone. Other styles are pipe and filter, where data passes through a chain of transformations, and the repository style, where components share stored data. Microservices go further, with independent services on defined interfaces.",
+            "example": "A banking app keeps its account data in a model, shows it in several views, and routes every user action through a controller.",
+            "quiz": [
+              {
+                "q": "What does MVC separate?",
+                "options": [
+                  "Client and server",
+                  "The model, the view and the controller",
+                  "The database and the network",
+                  "Compiling and running"
+                ],
+                "answer": 1,
+                "why": "Data, presentation and control can then be changed without affecting the other two."
+              },
+              {
+                "q": "Which architecture style stacks services in levels?",
+                "options": [
+                  "Microservices",
+                  "Pipe and filter",
+                  "Layered architecture",
+                  "Repository"
+                ],
+                "answer": 2,
+                "why": "Each layer offers services to the one above and uses the one below."
+              },
+              {
+                "q": "Which statement about architecture is NOT correct?",
+                "options": [
+                  "It enables reuse",
+                  "It allows early risk analysis",
+                  "It supports communication among stakeholders",
+                  "It is cheap and easy to change late in the project"
+                ],
+                "answer": 3,
+                "why": "Architecture fixes the early decisions, which is why mistakes there are expensive."
+              },
+              {
+                "q": "In the pipe and filter style, what does a filter do?",
+                "options": [
+                  "Transforms the data passing through it",
+                  "Stores the data",
+                  "Draws the interface",
+                  "Deletes records"
+                ],
+                "answer": 0,
+                "why": "Each filter takes input from a pipe, changes it and sends it on."
+              },
+              {
+                "q": "What is the main benefit of microservices?",
+                "options": [
+                  "A single codebase",
+                  "Independent deployment and scaling of each service",
+                  "No need for interfaces",
+                  "Fewer servers"
+                ],
+                "answer": 1,
+                "why": "Teams can release and scale one service without touching the others."
+              }
+            ],
+            "examTip": "List four architectural styles with a one line description, and say why architecture matters.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MII-T03",
@@ -295,7 +673,70 @@
               "kind": "subtopic",
               "definition": "Component interfaces should be simple and documented so other teams and tests can use them."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Component level design describes each part of the system closely enough for someone to implement it. A component is a modular, deployable and replaceable part with well defined interfaces. The open-closed principle says a component is open for extension but closed for modification. Dependency inversion says depend on abstractions rather than on details. Cohesion is graded from functional, the best, down to coincidental, the worst. Coupling is graded from content coupling, the worst, through common, control and stamp, to data coupling, which is acceptable. Good interfaces are simple and documented, so other teams and tests can use them.",
+            "example": "A payment component that takes an amount and returns a receipt can be swapped for another provider. The rest of the system never notices the change.",
+            "quiz": [
+              {
+                "q": "What does the open-closed principle say?",
+                "options": [
+                  "Closed to all change",
+                  "Open for modification, closed for extension",
+                  "Open for extension, closed for modification",
+                  "Open source only"
+                ],
+                "answer": 2,
+                "why": "New behaviour is added by extension, so working code is not edited and broken."
+              },
+              {
+                "q": "Which is the weakest form of cohesion?",
+                "options": [
+                  "Functional",
+                  "Sequential",
+                  "Communicational",
+                  "Coincidental"
+                ],
+                "answer": 3,
+                "why": "Coincidental cohesion means the parts have no meaningful relationship at all."
+              },
+              {
+                "q": "Which statement about components is NOT correct?",
+                "options": [
+                  "Content coupling is the preferred form",
+                  "A component is deployable and replaceable",
+                  "Interfaces should be simple and documented",
+                  "Data coupling is the most acceptable form"
+                ],
+                "answer": 0,
+                "why": "Content coupling, where one module reaches into another's internals, is the worst kind."
+              },
+              {
+                "q": "What does dependency inversion recommend?",
+                "options": [
+                  "Avoid all dependencies",
+                  "Depend on abstractions rather than details",
+                  "Depend on the database directly",
+                  "Depend on the user interface"
+                ],
+                "answer": 1,
+                "why": "Depending on abstractions lets the details be replaced without changing the caller."
+              },
+              {
+                "q": "Which principle says a client should not depend on methods it does not use?",
+                "options": [
+                  "Liskov substitution",
+                  "Open-closed",
+                  "Interface segregation",
+                  "Single responsibility"
+                ],
+                "answer": 2,
+                "why": "Interface segregation splits a fat interface into the narrow ones each client needs."
+              }
+            ],
+            "examTip": "Define a component, state the open-closed and dependency inversion principles, and rank the coupling types.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MII-T04",
@@ -333,7 +774,70 @@
               "kind": "subtopic",
               "definition": "Heuristic evaluation, usability testing, questionnaires such as QUIS and think aloud protocols."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "User interface design creates screens that let people work with the system effectively. Three golden rules guide it: keep the user in control, reduce the load on their memory, and make the interface consistent. Usability is judged on learnability, efficiency, error handling, memorability and satisfaction. The design process studies the users, their tasks and their environment first, then builds and evaluates a prototype with real users. Recurring issues are response time, help facilities, error messages, menu design, labelling and accessibility. Evaluation uses heuristic evaluation, usability testing, questionnaires such as QUIS and think aloud protocols.",
+            "example": "An error message that says something went wrong tells the user nothing. One that says enter the date as DD/MM/YYYY tells them what to do.",
+            "quiz": [
+              {
+                "q": "Which is one of the three golden rules of interface design?",
+                "options": [
+                  "Hide the system state",
+                  "Require training",
+                  "Use as many colours as possible",
+                  "Place the user in control"
+                ],
+                "answer": 3,
+                "why": "Users need to feel they are driving, with the ability to undo and to interrupt."
+              },
+              {
+                "q": "Which quality measures how easily a new user learns the interface?",
+                "options": [
+                  "Learnability",
+                  "Memorability",
+                  "Satisfaction",
+                  "Efficiency"
+                ],
+                "answer": 0,
+                "why": "Learnability is about the first encounter, while memorability is about returning after a gap."
+              },
+              {
+                "q": "Which statement about interface design is NOT correct?",
+                "options": [
+                  "Reducing memory load helps users",
+                  "Error messages should be vague to avoid blame",
+                  "Accessibility must be considered",
+                  "Consistency helps users predict behaviour"
+                ],
+                "answer": 1,
+                "why": "Error messages must say what happened and what the user should do next."
+              },
+              {
+                "q": "What is heuristic evaluation?",
+                "options": [
+                  "Asking the developers",
+                  "Timing the user",
+                  "Experts judge the interface against known usability rules",
+                  "Counting the colours"
+                ],
+                "answer": 2,
+                "why": "A small group of evaluators checks the design against established heuristics."
+              },
+              {
+                "q": "What is the think aloud protocol?",
+                "options": [
+                  "The developer explains the code",
+                  "The tester reads the test plan",
+                  "Users read the manual aloud",
+                  "Users say what they are thinking while doing a task"
+                ],
+                "answer": 3,
+                "why": "Hearing the user's reasoning shows exactly where the interface misleads them."
+              }
+            ],
+            "examTip": "State the three golden rules, five usability qualities and two evaluation methods.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MII-T05",
@@ -371,7 +875,70 @@
               "kind": "subtopic",
               "definition": "Consistent layout templates, responsive design, form design and clear error handling."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A web application has to be designed on five fronts at once: content, aesthetics, architecture, navigation and interface. Its quality attributes include security, availability, scalability, maintainability, time to market and usability. Aesthetic design covers layout, colour, typography and graphics, and it should produce a clear visual hierarchy. Content design organises text, images, audio and video into content objects and shows how they relate. Architecture and navigation design decide how the pages are built and how people move between them, using menus, links, sitemaps and breadcrumbs. The interface layer adds consistent templates, responsive layout, usable forms and clear error handling.",
+            "example": "Breadcrumbs on a shopping site show the path back to the category. Without them, a user who lands deep in a catalogue has to start again.",
+            "quiz": [
+              {
+                "q": "Which of these is a web application quality attribute?",
+                "options": [
+                  "Scalability",
+                  "Font size",
+                  "Page count",
+                  "Number of colours used"
+                ],
+                "answer": 0,
+                "why": "Scalability decides whether the application still responds when traffic grows."
+              },
+              {
+                "q": "What is the purpose of breadcrumbs?",
+                "options": [
+                  "To decorate the page",
+                  "To show where the user is and give a path back",
+                  "To speed up loading",
+                  "To store cookies"
+                ],
+                "answer": 1,
+                "why": "They make the location visible within the site hierarchy, which supports navigation."
+              },
+              {
+                "q": "Which statement about web design is NOT correct?",
+                "options": [
+                  "Visual hierarchy guides the eye",
+                  "Responsive design adapts to screen size",
+                  "Security is handled only after launch",
+                  "Content, aesthetics and navigation are designed together"
+                ],
+                "answer": 2,
+                "why": "Security is a design-time quality attribute, not an afterthought."
+              },
+              {
+                "q": "What does content design produce?",
+                "options": [
+                  "The server configuration",
+                  "The navigation menu only",
+                  "The colour palette",
+                  "Content objects and the relationships between them"
+                ],
+                "answer": 3,
+                "why": "Modelling content as objects makes it reusable across pages and devices."
+              },
+              {
+                "q": "Which is an interface design concern for the web?",
+                "options": [
+                  "Designing usable forms and clear error handling",
+                  "Buying a domain",
+                  "Writing the server log",
+                  "Choosing a hosting provider"
+                ],
+                "answer": 0,
+                "why": "Forms and error messages are where most users either succeed or give up."
+              }
+            ],
+            "examTip": "Name the five design dimensions of a web app and four quality attributes.",
+            "verified": false
+          }
         }
       ]
     },
@@ -409,7 +976,70 @@
               "kind": "subtopic",
               "definition": "Defect density, preparation and rework time, review rate, and rules such as reviewing only a finished product and keeping tone constructive."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Reviews find defects early by having other people examine a work product against agreed criteria. The cheapest kind is the desk check, where the author reads their own work before anyone else sees it. Informal reviews are quick peer looks, while a walkthrough is led by the author, who presents the work and collects comments. An inspection is more rigorous: a trained moderator leads it, reviewers prepare in advance, and defects are recorded and counted. A formal technical review assigns roles of producer, reviewer, recorder and moderator and works from a checklist. Useful metrics come out of it: defect density, preparation time, rework time and review rate.",
+            "example": "Finding a wrong formula in the design document costs an hour. Finding the same error after release costs a patch and a customer call.",
+            "quiz": [
+              {
+                "q": "Who leads an inspection?",
+                "options": [
+                  "The author",
+                  "A trained moderator",
+                  "The project manager",
+                  "The customer"
+                ],
+                "answer": 1,
+                "why": "The moderator is not the author, which keeps the review independent and measured."
+              },
+              {
+                "q": "What is a desk check?",
+                "options": [
+                  "A budget audit",
+                  "A review by the quality department",
+                  "The author examining their own work before review",
+                  "A hardware test"
+                ],
+                "answer": 2,
+                "why": "It is the cheapest filter, and it removes obvious errors before others spend time on them."
+              },
+              {
+                "q": "Which statement about reviews is NOT correct?",
+                "options": [
+                  "Walkthroughs are led by the author",
+                  "Inspections record and count defects",
+                  "Reviews find defects earlier than testing",
+                  "Reviews should examine unfinished work to save time"
+                ],
+                "answer": 3,
+                "why": "Reviewing unfinished work wastes everyone's time, which is a standard review guideline."
+              },
+              {
+                "q": "What does defect density measure?",
+                "options": [
+                  "Defects per unit of product size",
+                  "The time spent in review",
+                  "The number of reviewers",
+                  "The cost of the project"
+                ],
+                "answer": 0,
+                "why": "Defects per thousand lines or per page lets two products be compared fairly."
+              },
+              {
+                "q": "Which review type is the most formal and measured?",
+                "options": [
+                  "Walkthrough",
+                  "Inspection",
+                  "Desk check",
+                  "Informal review"
+                ],
+                "answer": 1,
+                "why": "Inspections have defined roles, preparation, checklists and recorded defect data."
+              }
+            ],
+            "examTip": "Compare desk check, walkthrough and inspection, name the four FTR roles and three review metrics.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIII-T02",
@@ -441,7 +1071,70 @@
               "kind": "subtopic",
               "definition": "CMMI maturity levels 1 to 5 and Six Sigma defect reduction, with DMAIC as its improvement cycle."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Software quality assurance is the set of planned activities that give confidence the product meets its quality requirements. Quality has two faces: design and conformance. Quality of design is what the specification asks for, and conformance is how faithfully the product meets it. SQA work includes standards, reviews, audits, a test strategy, defect tracking and measurement, all written into an SQA plan. Standards come from bodies such as ISO and IEEE: ISO 9001 covers quality management systems and ISO 25010 describes product quality. Process maturity is graded by CMMI across five levels, from initial to optimising. Six Sigma is a related improvement programme built on the DMAIC cycle.",
+            "example": "Two products can both work. The one that meets its specification exactly shows better quality of conformance.",
+            "quiz": [
+              {
+                "q": "What is the difference between quality of design and quality of conformance?",
+                "options": [
+                  "Design is about testing",
+                  "They are the same thing",
+                  "Design is what is specified, conformance is how faithfully it is met",
+                  "Conformance is about the user interface"
+                ],
+                "answer": 2,
+                "why": "A product can be well made and still be the wrong product, or right but badly made."
+              },
+              {
+                "q": "What does ISO 9001 cover?",
+                "options": [
+                  "Network protocols",
+                  "Database design",
+                  "Programming languages",
+                  "Quality management systems"
+                ],
+                "answer": 3,
+                "why": "It certifies the management system behind the work, not the product itself."
+              },
+              {
+                "q": "Which statement about SQA is NOT correct?",
+                "options": [
+                  "Six Sigma uses the PDCA cycle",
+                  "An SQA plan defines the activities",
+                  "Reviews and audits are SQA activities",
+                  "CMMI has five maturity levels"
+                ],
+                "answer": 0,
+                "why": "Six Sigma uses DMAIC: define, measure, analyse, improve and control."
+              },
+              {
+                "q": "What is the highest CMMI maturity level?",
+                "options": [
+                  "Defined",
+                  "Optimising",
+                  "Initial",
+                  "Managed"
+                ],
+                "answer": 1,
+                "why": "At level five the organisation improves its own process using measured data."
+              },
+              {
+                "q": "What makes up the cost of quality?",
+                "options": [
+                  "The licence fee of the tools",
+                  "The price of the software",
+                  "Prevention, appraisal and failure costs together",
+                  "The salary of the testers"
+                ],
+                "answer": 2,
+                "why": "Spending on prevention usually lowers the far larger failure costs."
+              }
+            ],
+            "examTip": "Define SQA, distinguish the two kinds of quality, and name two standards and one maturity model.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIII-T03",
@@ -485,7 +1178,70 @@
               "kind": "subtopic",
               "definition": "A test plan, test case specification, test procedure and defect report make testing reproducible."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A testing strategy organises the levels of testing, from single units up to the whole system. Two questions drive it: verification asks whether the product was built right, and validation asks whether the right product was built. Unit testing checks one module in isolation, and integration testing then joins them, top down, bottom up, sandwich or all at once. System testing checks the product against its requirements, and alpha and beta testing put it in front of real users. White box testing uses the internal structure, while black box testing uses only inputs and outputs. Equivalence partitioning and boundary value analysis are the black box techniques used most often.",
+            "example": "For a field that accepts ages 18 to 60, boundary value analysis tests 17, 18, 60 and 61 rather than every number.",
+            "quiz": [
+              {
+                "q": "What is the difference between verification and validation?",
+                "options": [
+                  "Validation happens only in testing",
+                  "Verification happens only at release",
+                  "They are identical",
+                  "Verification checks the product was built right, validation checks the right product was built"
+                ],
+                "answer": 3,
+                "why": "Reviews and unit tests verify, while user acceptance work validates."
+              },
+              {
+                "q": "Which integration approach needs stubs?",
+                "options": [
+                  "Top down",
+                  "Big bang",
+                  "Regression",
+                  "Bottom up"
+                ],
+                "answer": 0,
+                "why": "Top down integration calls lower modules that are not ready, so stubs stand in for them."
+              },
+              {
+                "q": "Which statement about testing is NOT correct?",
+                "options": [
+                  "Regression testing checks that changes broke nothing",
+                  "Smoke testing is a full test of every function",
+                  "Unit testing checks a module in isolation",
+                  "Alpha testing happens at the developer's site"
+                ],
+                "answer": 1,
+                "why": "A smoke test is a shallow check that the build is stable enough to test properly."
+              },
+              {
+                "q": "Which technique tests values at the edges of a range?",
+                "options": [
+                  "Condition testing",
+                  "Equivalence partitioning",
+                  "Boundary value analysis",
+                  "Basis path testing"
+                ],
+                "answer": 2,
+                "why": "Errors collect at the edges of ranges, so 17, 18, 60 and 61 catch most of them."
+              },
+              {
+                "q": "Which of these is a white box technique?",
+                "options": [
+                  "Beta testing",
+                  "Equivalence partitioning",
+                  "Boundary value analysis",
+                  "Basis path testing"
+                ],
+                "answer": 3,
+                "why": "Basis path testing uses the control flow graph of the code to design the tests."
+              }
+            ],
+            "examTip": "Define verification and validation, list four integration approaches, and give two black box and two white box techniques.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIII-T04",
@@ -523,7 +1279,70 @@
               "kind": "subtopic",
               "definition": "Identification, version control, change control, status accounting and audit, plus integration with the build."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Software configuration management controls changes to every work product for the whole life of the project. A configuration item is any product or document placed under control, and a baseline is a reviewed, approved state of one. Version control records every change through a repository, with check in, check out, branching and merging. Change control then decides what gets in. A change request is assessed for impact and cost, and a change control board approves or rejects it. Release management builds, packages and ships consistent versions, with release notes and a way to roll back. Good configuration management gives identification, control, status accounting and audit.",
+            "example": "A team keeps release 2.1 as a tagged baseline. When a bug appears in the field, they can rebuild exactly that version.",
+            "quiz": [
+              {
+                "q": "What is a baseline?",
+                "options": [
+                  "A reviewed and approved state of a work product",
+                  "The first draft of code",
+                  "The final release",
+                  "The project plan"
+                ],
+                "answer": 0,
+                "why": "Once baselined, any change must go through change control rather than being made freely."
+              },
+              {
+                "q": "What does a change control board do?",
+                "options": [
+                  "Writes the code",
+                  "Approves or rejects change requests after assessing impact",
+                  "Tests the release",
+                  "Hires the team"
+                ],
+                "answer": 1,
+                "why": "It weighs the cost and risk of the change against the benefit before deciding."
+              },
+              {
+                "q": "Which statement about configuration management is NOT correct?",
+                "options": [
+                  "Version control tracks every change",
+                  "Branching lets two lines of work proceed together",
+                  "A baseline changes freely at any time",
+                  "Status accounting records the state of configuration items"
+                ],
+                "answer": 2,
+                "why": "A baseline is fixed on purpose, and changing it requires formal approval."
+              },
+              {
+                "q": "What is the purpose of a rollback plan?",
+                "options": [
+                  "To undo a merge",
+                  "To close the repository",
+                  "To delete old code",
+                  "To restore the previous version if a release fails"
+                ],
+                "answer": 3,
+                "why": "If a release misbehaves, the fastest safe action is to return to the known good version."
+              },
+              {
+                "q": "Which activity confirms that a baseline contains what it should?",
+                "options": [
+                  "Configuration audit",
+                  "Change control",
+                  "Release management",
+                  "Version control"
+                ],
+                "answer": 0,
+                "why": "The audit compares the documented configuration with what is actually in the baseline."
+              }
+            ],
+            "examTip": "Define configuration item and baseline, and list the four SCM activities with one line each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIII-T05",
@@ -561,7 +1380,70 @@
               "kind": "subtopic",
               "definition": "Weighted methods per class, depth of inheritance tree, coupling between objects and lack of cohesion."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Product metrics measure the software itself rather than the way it was built. A measure is a raw value, and a metric relates two or more measures. An indicator is a metric used to take a decision. Size is counted in lines of code or in function points. Function points are built from inputs, outputs, enquiries, files and interfaces with complexity weights. Cyclomatic complexity counts the decision points in a module and gives the number of independent paths that tests must cover. Halstead metrics use the counts of operators and operands to estimate length and difficulty. Quality is then tracked with defect density, mean time between failures and maintainability indices.",
+            "example": "A function with six if statements has cyclomatic complexity seven, so at least seven test paths are needed to cover it.",
+            "quiz": [
+              {
+                "q": "What is the difference between a measure and a metric?",
+                "options": [
+                  "They are identical",
+                  "A measure is a raw value, a metric relates measures",
+                  "A metric is always larger",
+                  "A measure is always a percentage"
+                ],
+                "answer": 1,
+                "why": "Lines of code is a measure, and defects per thousand lines is a metric."
+              },
+              {
+                "q": "What does cyclomatic complexity indicate?",
+                "options": [
+                  "The cost of the project",
+                  "The number of lines",
+                  "The number of independent paths that tests should cover",
+                  "The number of developers"
+                ],
+                "answer": 2,
+                "why": "Each decision point adds a path, so complexity and required testing rise together."
+              },
+              {
+                "q": "Which statement about function points is NOT correct?",
+                "options": [
+                  "They are an indirect measure of size",
+                  "They count inputs, outputs and enquiries",
+                  "They use complexity weights",
+                  "They depend on the programming language used"
+                ],
+                "answer": 3,
+                "why": "Function points are language independent, unlike lines of code, which is their main advantage."
+              },
+              {
+                "q": "Which of these is an object oriented metric?",
+                "options": [
+                  "Depth of inheritance tree",
+                  "Boundary value analysis",
+                  "Defect density",
+                  "Cyclomatic complexity"
+                ],
+                "answer": 0,
+                "why": "It counts how deep a class sits in the inheritance hierarchy, and deep trees raise complexity."
+              },
+              {
+                "q": "What does defect density measure?",
+                "options": [
+                  "The severity of a defect",
+                  "Defects per unit of product size",
+                  "The time taken to fix a defect",
+                  "The number of testers"
+                ],
+                "answer": 1,
+                "why": "Normalising by size lets teams compare quality across components of different sizes."
+              }
+            ],
+            "examTip": "Define measure, metric and indicator, give the function point components, and state what cyclomatic complexity means.",
+            "verified": false
+          }
         }
       ]
     },
@@ -599,7 +1481,70 @@
               "kind": "subtopic",
               "definition": "Unrealistic deadlines, changing requirements, weak estimation and poor communication."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Software project management plans, organises and controls the people, the process and the product. It is often summarised as the four Ps: people, product, process and project, with people the most important of them. Stakeholders must be identified early: the users, the customers, the developers and the management who fund the work. Team structures vary too, from a closed team with a clear hierarchy to an open or random team that suits research work. The W5HH principle gives a compact plan outline: why, what, when, who, where, how and how much. Most failures trace back to the same causes: unrealistic deadlines, changing requirements, weak estimation and poor communication.",
+            "example": "A manager who can answer why, what, when, who, where, how and how much has a plan others can follow.",
+            "quiz": [
+              {
+                "q": "Which of the four Ps is considered the most important?",
+                "options": [
+                  "Process",
+                  "Project",
+                  "People",
+                  "Product"
+                ],
+                "answer": 2,
+                "why": "Skilled, motivated people are what make the other three work at all."
+              },
+              {
+                "q": "What does the W5HH principle provide?",
+                "options": [
+                  "A coding standard",
+                  "A hiring process",
+                  "A testing method",
+                  "A compact outline of a project plan"
+                ],
+                "answer": 3,
+                "why": "Answering why, what, when, who, where, how and how much leaves little unplanned."
+              },
+              {
+                "q": "Which statement about project management is NOT correct?",
+                "options": [
+                  "Changing requirements have no effect on a project",
+                  "Stakeholders include users and customers",
+                  "A closed team has a clear hierarchy",
+                  "Unrealistic deadlines cause project failure"
+                ],
+                "answer": 0,
+                "why": "Changing requirements is one of the four standard causes of software project failure."
+              },
+              {
+                "q": "Which team structure suits research style work?",
+                "options": [
+                  "Closed",
+                  "Random",
+                  "Chief programmer",
+                  "Hierarchical"
+                ],
+                "answer": 1,
+                "why": "A random team relies on individual initiative and works well when the problem is open ended."
+              },
+              {
+                "q": "In the chief programmer team, what does the backup programmer do?",
+                "options": [
+                  "Manages the budget",
+                  "Tests the code",
+                  "Supports the chief programmer and can take over",
+                  "Writes the documentation"
+                ],
+                "answer": 2,
+                "why": "The backup programmer is second in command, ready to replace the chief if needed."
+              }
+            ],
+            "examTip": "Name the four Ps, list four stakeholders, write out W5HH and give three causes of project failure.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIV-T02",
@@ -631,7 +1576,70 @@
               "kind": "subtopic",
               "definition": "Correctness, maintainability, integrity and usability measured before delivery."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Process metrics describe how well the development process works, while project metrics track one project at a time. Both rest on the same chain: raw measures become metrics, and metrics that guide a decision are called indicators. Direct measures are counted straight from the work, such as lines of code, cost and elapsed time. Indirect measures are derived, such as functionality, quality and complexity, and they are usually more useful to managers. Process metrics are averaged across many projects, so private individual data must be aggregated carefully and never used to judge a person. Quality metrics before delivery cover correctness, maintainability, integrity and usability.",
+            "example": "Counting each developer's defects sounds useful. Used to compare people, it stops them reporting defects at all.",
+            "quiz": [
+              {
+                "q": "What is an indicator?",
+                "options": [
+                  "A test result",
+                  "A project plan",
+                  "A raw count",
+                  "A metric used to take a decision"
+                ],
+                "answer": 3,
+                "why": "The chain runs measure to metric to indicator, and only the last informs action."
+              },
+              {
+                "q": "Which is an indirect measure?",
+                "options": [
+                  "Complexity",
+                  "Lines of code",
+                  "Cost",
+                  "Elapsed time"
+                ],
+                "answer": 0,
+                "why": "Complexity is derived from other counts rather than measured directly."
+              },
+              {
+                "q": "Which statement about metrics is NOT correct?",
+                "options": [
+                  "Individual metrics should never be used to judge people",
+                  "Process metrics describe a single project only",
+                  "Direct measures include cost and time",
+                  "Indirect measures include quality"
+                ],
+                "answer": 1,
+                "why": "Process metrics are computed across many projects, while project metrics track one."
+              },
+              {
+                "q": "Which quality metric is measured before delivery?",
+                "options": [
+                  "Server cost",
+                  "Mean time between failures",
+                  "Correctness",
+                  "Number of users"
+                ],
+                "answer": 2,
+                "why": "Correctness, maintainability, integrity and usability are the four pre-delivery quality metrics."
+              },
+              {
+                "q": "Why must private individual data be aggregated carefully?",
+                "options": [
+                  "It is illegal to store",
+                  "It is always wrong",
+                  "It takes too long to collect",
+                  "Misuse makes people game the numbers and destroys trust"
+                ],
+                "answer": 3,
+                "why": "Metrics used against individuals stop being measurements and become targets."
+              }
+            ],
+            "examTip": "Define measure, metric and indicator, give two direct and two indirect measures, and name the four quality metrics.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIV-T03",
@@ -675,7 +1683,70 @@
               "kind": "subtopic",
               "definition": "Estimation is refined as the project proceeds, so ranges and confidence limits are used rather than a single number."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Estimation predicts the effort, cost and duration a project will need. Common techniques include expert judgement, estimation by analogy and the Delphi method. Two techniques to avoid are Parkinson's law and price to win. Size based estimation starts from lines of code and converts them to effort using historical productivity, but the answer depends on the language. Function point estimation counts unadjusted function points, adjusts for complexity and converts to code using a language factor. Use case point estimation weights actors and use cases and adjusts for technical and environmental factors. COCOMO estimates effort from size across organic, semi-detached and embedded modes with cost driver multipliers.",
+            "example": "Estimating a house by its floor area and a local rate per square foot is analogous to function point estimation.",
+            "quiz": [
+              {
+                "q": "What is the Delphi method of estimation?",
+                "options": [
+                  "Experts estimate in rounds and converge towards agreement",
+                  "The manager sets the number",
+                  "The customer chooses the cost",
+                  "One expert decides"
+                ],
+                "answer": 0,
+                "why": "Each round feeds back a summary, which narrows the spread without group pressure."
+              },
+              {
+                "q": "What is price to win estimation?",
+                "options": [
+                  "The cheapest possible estimate",
+                  "Estimating what it takes to win the contract, not what the work costs",
+                  "The market price",
+                  "The cost plus profit"
+                ],
+                "answer": 1,
+                "why": "It is a technique to avoid, because the number is set by the bid rather than the work."
+              },
+              {
+                "q": "Which statement about estimation is NOT correct?",
+                "options": [
+                  "Lines of code estimation depends on the language",
+                  "COCOMO has organic, semi-detached and embedded modes",
+                  "Estimation is exact once the project has started",
+                  "Function points allow for complexity"
+                ],
+                "answer": 2,
+                "why": "Estimates are refined as the project proceeds, so ranges and confidence limits are used."
+              },
+              {
+                "q": "What does a function point count?",
+                "options": [
+                  "Number of developers",
+                  "Number of test cases",
+                  "Lines of code",
+                  "Inputs, outputs, enquiries, files and interfaces"
+                ],
+                "answer": 3,
+                "why": "These five components are weighted by complexity to give the unadjusted count."
+              },
+              {
+                "q": "What is the main weakness of lines of code based estimation?",
+                "options": [
+                  "The same function gives different counts in different languages",
+                  "It needs a computer",
+                  "It cannot be measured",
+                  "It takes too long"
+                ],
+                "answer": 0,
+                "why": "A line is not a fixed unit of work, so the estimate depends on the language chosen."
+              }
+            ],
+            "examTip": "Name three estimation techniques, describe function point estimation, and name the three COCOMO modes.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIV-T04",
@@ -719,7 +1790,70 @@
               "kind": "subtopic",
               "definition": "Fixed short iterations with a flexible scope rather than a fixed scope with a flexible date."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Scheduling allocates work to people over time and shows how the tasks depend on one another. It begins with a work breakdown structure, which breaks the total work into tasks small enough to estimate and assign. Tasks are then linked in a task network by finish to start, start to start and finish to finish relationships. A Gantt chart shows the same plan against a calendar, making overlap and progress easy to see. The critical path is the longest chain of dependent tasks, and it fixes the earliest finish date for the whole project. PERT uses optimistic, likely and pessimistic estimates, and earned value analysis tracks schedule and cost together.",
+            "example": "If testing cannot start until coding finishes, and coding cannot start until design finishes, that chain sets the shortest possible duration.",
+            "quiz": [
+              {
+                "q": "What is the critical path?",
+                "options": [
+                  "The shortest route through the plan",
+                  "The longest chain of dependent tasks, which fixes project duration",
+                  "The most expensive task",
+                  "The first task in the plan"
+                ],
+                "answer": 1,
+                "why": "Any delay on the critical path delays the whole project, which is why it is watched closely."
+              },
+              {
+                "q": "What is slack or float?",
+                "options": [
+                  "The project end date",
+                  "The budget reserve",
+                  "Spare time in a non critical task",
+                  "The number of workers"
+                ],
+                "answer": 2,
+                "why": "A task with slack can slip by that much without moving the finish date."
+              },
+              {
+                "q": "Which statement about scheduling is NOT correct?",
+                "options": [
+                  "A work breakdown structure decomposes the work",
+                  "A Gantt chart shows tasks against a calendar",
+                  "PERT uses three time estimates",
+                  "Finish to start means both tasks finish together"
+                ],
+                "answer": 3,
+                "why": "Finish to start means the second task cannot start until the first has finished."
+              },
+              {
+                "q": "What does PERT stand for?",
+                "options": [
+                  "Program evaluation and review technique",
+                  "Project effort and resource tracking",
+                  "Planned evaluation of real time",
+                  "Program error reporting tool"
+                ],
+                "answer": 0,
+                "why": "It uses three estimates per task and works out an expected duration from them."
+              },
+              {
+                "q": "What is time boxing in agile scheduling?",
+                "options": [
+                  "Working overtime near a deadline",
+                  "Fixing the iteration length and letting the scope adjust",
+                  "Extending the deadline",
+                  "Measuring the team's time"
+                ],
+                "answer": 1,
+                "why": "The date is fixed and the scope flexes, which is the opposite of the traditional approach."
+              }
+            ],
+            "examTip": "Define work breakdown structure, critical path and slack, and explain PERT and earned value analysis.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MIV-T05",
@@ -757,7 +1891,70 @@
               "kind": "subtopic",
               "definition": "Risk exposure is highest early, so risky parts are prototyped or built first."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Risk management identifies what could go wrong and decides in advance what to do about it. Risks fall into project risks, technical risks and business risks, and some are predictable while others are unknown. Identification uses brainstorming, checklists and the record of past projects, and the results go into a risk table. Each row lists the risk, its probability, its impact and the risk factor that combines them. Risk projection then estimates the exposure, the expected loss if the risk occurs. Risk mitigation, monitoring and management, shortened to RMMM, plans how to reduce each significant risk and how to watch it. Exposure is highest early, so risky parts are built first.",
+            "example": "A team unsure whether a new library can handle the load builds a small test with it in week one rather than week ten.",
+            "quiz": [
+              {
+                "q": "What is risk exposure?",
+                "options": [
+                  "The time spent in risk meetings",
+                  "The number of risks",
+                  "The expected loss, combining probability and impact",
+                  "The project budget"
+                ],
+                "answer": 2,
+                "why": "A likely risk with small impact and a rare one with huge impact can have equal exposure."
+              },
+              {
+                "q": "What does RMMM stand for?",
+                "options": [
+                  "Resource, method and money management",
+                  "Review, modify, measure, maintain",
+                  "Risk measurement, modelling and management",
+                  "Risk mitigation, monitoring and management"
+                ],
+                "answer": 3,
+                "why": "It is the plan for what to do about each significant risk, not only the list of risks."
+              },
+              {
+                "q": "Which statement about risk is NOT correct?",
+                "options": [
+                  "Unknown risks can be fully planned for in advance",
+                  "Brainstorming helps identify risks",
+                  "A risk table lists probability and impact",
+                  "Risk exposure is highest early in the project"
+                ],
+                "answer": 0,
+                "why": "Unknown risks cannot be planned in detail, which is why contingency reserves exist."
+              },
+              {
+                "q": "Why are risky components often built first?",
+                "options": [
+                  "They are the easiest",
+                  "To discover early whether the approach works at all",
+                  "Because the team prefers them",
+                  "To use up the budget"
+                ],
+                "answer": 1,
+                "why": "Failing early is cheap, while failing late can sink the schedule."
+              },
+              {
+                "q": "Which category covers the risk that the chosen technology will not perform?",
+                "options": [
+                  "Legal risk",
+                  "Project risk",
+                  "Technical risk",
+                  "Business risk"
+                ],
+                "answer": 2,
+                "why": "Technical risks concern design, implementation, interfaces and performance."
+              }
+            ],
+            "examTip": "Define risk, list the three categories, describe the risk table and explain RMMM.",
+            "verified": false
+          }
         }
       ]
     },
@@ -801,7 +1998,70 @@
               "kind": "subtopic",
               "definition": "Failure intensity decreases as defects are found and removed; models such as the basic execution time model predict this."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Reliability is the probability that software runs without failure for a stated time in a stated environment. Availability is different: it is the fraction of time the system is usable, and it equals MTTF divided by MTTF plus MTTR. Three terms must be kept apart. A fault is a defect in the code. An error is a wrong internal state. A failure is the wrong behaviour a user sees. Hardware and software fail differently. Hardware wears out with age, while software does not wear out at all but degrades each time it is changed. Reliability growth models describe the other direction: as defects are found and removed, failure intensity falls.",
+            "example": "A payment gateway that is up 99.9 percent of the time is down for about 43 minutes a month.",
+            "quiz": [
+              {
+                "q": "How is availability calculated from MTTF and MTTR?",
+                "options": [
+                  "MTTR divided by MTTF",
+                  "MTTF multiplied by MTTR",
+                  "MTTF plus MTTR",
+                  "MTTF divided by MTTF plus MTTR"
+                ],
+                "answer": 3,
+                "why": "The fraction of total time the system is running gives the availability figure."
+              },
+              {
+                "q": "What is the difference between a fault and a failure?",
+                "options": [
+                  "A fault is a defect in the code, a failure is the wrong behaviour observed",
+                  "A failure is always worse than a fault",
+                  "A fault is found by users",
+                  "They are identical"
+                ],
+                "answer": 0,
+                "why": "A fault that is never executed stays a fault and never becomes a failure."
+              },
+              {
+                "q": "Which statement about reliability is NOT correct?",
+                "options": [
+                  "Hardware reliability falls with age because of wear",
+                  "Reliability and availability mean the same thing",
+                  "Software does not wear out with age",
+                  "Software reliability can degrade when the code is changed"
+                ],
+                "answer": 1,
+                "why": "Availability includes repair time, so a system can be unreliable yet highly available."
+              },
+              {
+                "q": "What does MTTR measure?",
+                "options": [
+                  "Mean time to release",
+                  "Mean time to failure",
+                  "Mean time to repair",
+                  "Mean time between releases"
+                ],
+                "answer": 2,
+                "why": "It is the average time needed to restore service after a failure occurs."
+              },
+              {
+                "q": "What does a reliability growth model show?",
+                "options": [
+                  "Cost rising over time",
+                  "Staff numbers growing over time",
+                  "Errors growing over time",
+                  "Failure intensity falling as defects are found and removed"
+                ],
+                "answer": 3,
+                "why": "The curve is measured during testing and used to predict when a target will be reached."
+              }
+            ],
+            "examTip": "Define reliability and availability, distinguish fault, error and failure, and give the availability formula.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MV-T02",
@@ -833,7 +2093,70 @@
               "kind": "subtopic",
               "definition": "Track failure data, fix the worst faults, re-measure and continue until reliability targets are met."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Reliability testing measures failure intensity and shows whether reliability is improving. Failure intensity counts failures per unit of time or per transaction. A specification fixes a target, such as failures per thousand hours. Common metrics are probability of failure on demand, rate of occurrence of failures and mean time to failure. Statistical testing draws its test cases from an operational profile, which describes how the software is really used. That matters, because a rare path tested as often as a common one gives a misleading answer. Fault injection adds known defects on purpose to see how many the tests catch. Improvement then runs in cycles: measure, fix the worst faults, and measure again.",
+            "example": "If 80 percent of users place an order and 2 percent refund one, the test suite should spend most of its effort on placing orders.",
+            "quiz": [
+              {
+                "q": "What is an operational profile?",
+                "options": [
+                  "A description of how the software is used, which drives test selection",
+                  "The system architecture",
+                  "The test schedule",
+                  "A list of developers"
+                ],
+                "answer": 0,
+                "why": "Testing in proportion to real usage makes the reliability figure meaningful."
+              },
+              {
+                "q": "What is probability of failure on demand?",
+                "options": [
+                  "The repair time",
+                  "The chance that a request fails when it is made",
+                  "The number of users",
+                  "The uptime percentage"
+                ],
+                "answer": 1,
+                "why": "It suits systems that act on requests rather than running continuously."
+              },
+              {
+                "q": "Which statement about reliability testing is NOT correct?",
+                "options": [
+                  "Test cases should follow real usage",
+                  "Fault injection checks how many faults the tests detect",
+                  "Testing every path equally gives the best reliability estimate",
+                  "It measures failure intensity"
+                ],
+                "answer": 2,
+                "why": "Equal effort on every path overstates rare paths and skews the result."
+              },
+              {
+                "q": "What is fault injection?",
+                "options": [
+                  "Removing all bugs",
+                  "Adding users to the system",
+                  "Deleting test cases",
+                  "Introducing known defects to check whether the tests find them"
+                ],
+                "answer": 3,
+                "why": "The proportion of injected faults that are caught measures the strength of the test set."
+              },
+              {
+                "q": "How does reliability improvement proceed?",
+                "options": [
+                  "Cycles of measuring, fixing the worst faults and measuring again",
+                  "By adding more servers",
+                  "By rewriting the requirements",
+                  "One large final test"
+                ],
+                "answer": 0,
+                "why": "Each cycle removes the most damaging faults first, which raises reliability fastest."
+              }
+            ],
+            "examTip": "Define failure intensity, name three reliability metrics, and explain operational profiles and fault injection.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA511-MV-T03",
@@ -877,7 +2200,70 @@
               "kind": "subtopic",
               "definition": "Static analysis, penetration testing, fuzzing, secure code review and vulnerability management after release."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Secure engineering builds security in at the requirements and design stage rather than bolting it on later. Requirements fall into categories: confidentiality, integrity, availability, authentication, authorisation, non-repudiation and auditing. Elicitation starts by listing the assets, the threats, the attackers and the attack surfaces, and misuse cases record what must be defended against. STRIDE is a useful checklist: spoofing, tampering, repudiation, information disclosure, denial of service and elevation of privilege, often worked through with attack trees. Design then applies principles such as least privilege, fail safe defaults, defence in depth and complete mediation. Testing finishes the job with static analysis, penetration testing, fuzzing and secure code review.",
+            "example": "A password reset page that reveals whether an account exists is an information disclosure problem, the I in STRIDE.",
+            "quiz": [
+              {
+                "q": "What does the S in STRIDE stand for?",
+                "options": [
+                  "Security",
+                  "Spoofing",
+                  "Storage",
+                  "Session"
+                ],
+                "answer": 1,
+                "why": "Spoofing means pretending to be another user or system, which authentication defends against."
+              },
+              {
+                "q": "What is a misuse case?",
+                "options": [
+                  "A bug report",
+                  "A wrongly written use case",
+                  "A scenario showing how an attacker might abuse the system",
+                  "A test that fails"
+                ],
+                "answer": 2,
+                "why": "Writing attacks as scenarios forces the team to design a defence for each one."
+              },
+              {
+                "q": "Which statement about secure design is NOT correct?",
+                "options": [
+                  "Least privilege gives each part the minimum access it needs",
+                  "Fail safe defaults deny access when something goes wrong",
+                  "Defence in depth uses several layers of control",
+                  "Security testing can wait until after release"
+                ],
+                "answer": 3,
+                "why": "Static analysis, penetration testing and code review all run before release."
+              },
+              {
+                "q": "What does non-repudiation provide?",
+                "options": [
+                  "Proof that a party cannot deny having performed an action",
+                  "Data encryption at rest",
+                  "Backup of the database",
+                  "Faster logins"
+                ],
+                "answer": 0,
+                "why": "Digital signatures and audit logs are the usual mechanisms behind it."
+              },
+              {
+                "q": "What does complete mediation require?",
+                "options": [
+                  "Checking access only for administrators",
+                  "Checking every access request, every time",
+                  "Checking access only at login",
+                  "Checking access once a day"
+                ],
+                "answer": 1,
+                "why": "Caching an authorisation decision can leave a revoked user still able to act."
+              }
+            ],
+            "examTip": "List the seven security requirement categories, expand STRIDE, and give four secure design principles.",
+            "verified": false
+          }
         }
       ]
     }

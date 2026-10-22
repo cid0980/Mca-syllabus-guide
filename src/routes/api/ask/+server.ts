@@ -209,3 +209,5 @@ export const POST: RequestHandler = async ({ request }) => {
 		clearTimeout(timer);
 	}
 };
+
+export const prerender = false;

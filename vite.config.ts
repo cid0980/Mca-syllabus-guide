@@ -7,7 +7,12 @@ export default defineConfig({
 		host: '0.0.0.0',
 		port: 5173,
 		// allows the app to be opened through a proxy / tunnel host as well as localhost
-		allowedHosts: true
+		allowedHosts: true,
+		watch: {
+			// `npm run build` writes ~270 files into build/ and .svelte-kit/output while the dev
+			// server is running; without this every one of them triggers a full page reload
+			ignored: ['**/build/**', '**/.svelte-kit/output/**']
+		}
 	},
 	preview: {
 		host: '0.0.0.0',

@@ -31,7 +31,59 @@
               "kind": "subtopic",
               "definition": "Small single user applications with simple fixed data may not justify the cost and complexity of a DBMS."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "In the file processing approach every application owns its own files. The same student address then sits in the library file and again in the accounts file. That copying is redundancy, and when one copy is edited and the other is not, the data becomes inconsistent. Two users editing one file at the same time can overwrite each other, and access is granted for the whole file or not at all. A DBMS keeps the data in one place, lets many programs share it under rules called integrity constraints, and handles backup and recovery. The gain is smaller for a small program used by one person with fixed data, where a DBMS costs more than it returns.",
+            "example": "A college stores fees in one spreadsheet and exam marks in another, and both hold the student phone number. When a student changes the number, only one sheet gets edited, and the office rings the old one.",
+            "quiz": [
+              {
+                "q": "In file processing, what makes the same address appear differently in two files?",
+                "options": [
+                  "Editing one copy and leaving the other alone",
+                  "The absence of a search key",
+                  "Two users opening the file at once",
+                  "Program data independence"
+                ],
+                "answer": 0,
+                "why": "Redundancy means several copies exist, and updating only one of them is what produces inconsistency."
+              },
+              {
+                "q": "Which of these is an advantage a DBMS brings over file processing?",
+                "options": [
+                  "Every user keeping a private copy of the data",
+                  "Controlled redundancy with integrity constraints",
+                  "Faster programs because no software layer sits between",
+                  "No need for any backup procedure"
+                ],
+                "answer": 1,
+                "why": "A DBMS permits redundancy only where it is needed and enforces rules so the copies stay consistent."
+              },
+              {
+                "q": "A shopkeeper keeps one file of items on a single computer that nothing else reads. What does the card advise?",
+                "options": [
+                  "Appoint a database administrator to control access",
+                  "Add a foreign key to every item",
+                  "A DBMS may not be worth the cost here",
+                  "Move to a three schema architecture"
+                ],
+                "answer": 2,
+                "why": "Small single user applications with simple fixed data usually cost less to run on plain files."
+              },
+              {
+                "q": "Which statement about file processing is NOT correct?",
+                "options": [
+                  "Security is applied at the whole file level",
+                  "The same data is often stored in several files",
+                  "Concurrent access is difficult to control",
+                  "Files give data independence from the program code"
+                ],
+                "answer": 3,
+                "why": "Program data dependence is the drawback: change the file layout and every program reading it must change too."
+              }
+            ],
+            "examTip": "Write the five drawbacks of file processing in one line each, then the six DBMS advantages opposite them; this comparison is a repeated question.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MI-T02",
@@ -69,7 +121,59 @@
               "kind": "subtopic",
               "definition": "A conceptual, diagrammatic model of entities, attributes and relationships used before implementation."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A data model is the set of ideas used to describe data before it is stored. The hierarchical model arranges records as a tree where every child has one parent, so one to many data is fast. The network model allows several parents through sets and pointers, but programs must navigate the links step by step. The relational model puts everything in tables whose rows are linked by matching key values, which is why it replaced both. Object based and object relational models add classes and inheritance, and the ER model is the diagram drawn before any of them is implemented.",
+            "example": "A library keeps one member and many books borrowed by that member, which fits the hierarchical model neatly. A university where one student belongs to two departments does not, which is where the network model was used.",
+            "quiz": [
+              {
+                "q": "Which model organises data as a tree where each child has exactly one parent?",
+                "options": [
+                  "Hierarchical model",
+                  "Relational model",
+                  "Entity relationship model",
+                  "Network model"
+                ],
+                "answer": 0,
+                "why": "The hierarchical model is a tree of parent and child records with a single parent for each child."
+              },
+              {
+                "q": "Which model is drawn as a diagram of entities and relationships before implementation?",
+                "options": [
+                  "Object relational model",
+                  "Entity relationship model",
+                  "Hierarchical model",
+                  "Network model"
+                ],
+                "answer": 1,
+                "why": "The ER model is the conceptual, diagrammatic model used at design time, before any table is created."
+              },
+              {
+                "q": "Why did the relational model replace the hierarchical and network models?",
+                "options": [
+                  "It allows a child record to have several parents",
+                  "It uses classes and inheritance",
+                  "Rows are linked by matching key values instead of pointers",
+                  "It stores data as a single tree"
+                ],
+                "answer": 2,
+                "why": "Matching values in columns replace the pointers of the older models, so queries no longer have to follow links."
+              },
+              {
+                "q": "Which statement about data models is NOT correct?",
+                "options": [
+                  "Object relational models add inheritance to tables",
+                  "The network model uses sets and pointers",
+                  "The hierarchical model struggles with many to many data",
+                  "The ER model is implemented directly as the stored records"
+                ],
+                "answer": 3,
+                "why": "The ER model is a conceptual design diagram, not a storage structure; it is mapped into tables later."
+              }
+            ],
+            "examTip": "Draw the three classic models side by side and name one structure each: tree, graph and table. Add the line that the ER model is conceptual.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MI-T03",
@@ -101,7 +205,59 @@
               "kind": "subtopic",
               "definition": "DDL defines structures, DML manipulates data, DCL controls privileges and TCL manages transactions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A DBMS is built in three levels so that a change in one place does not spread everywhere. The external or view level is what one user or one application sees. The conceptual level holds the logical design, the tables and the constraints for the whole organisation. The internal level describes how the records are actually laid out on disk. The database administrator, or DBA, owns the schema and the access rights, and four language groups let each role work at its own level.",
+            "example": "A student sees only her own marks in the college portal, while the office sees every student's marks. Both are views over one conceptual table, and neither knows whether the file is hashed or indexed.",
+            "quiz": [
+              {
+                "q": "Which level of the three schema architecture describes physical storage on disk?",
+                "options": [
+                  "Internal level",
+                  "External level",
+                  "View level",
+                  "Conceptual level"
+                ],
+                "answer": 0,
+                "why": "The internal level is the physical schema, describing record layout, indexes and storage structures."
+              },
+              {
+                "q": "Which language group is used to grant and revoke privileges?",
+                "options": [
+                  "DML",
+                  "DCL",
+                  "TCL",
+                  "DDL"
+                ],
+                "answer": 1,
+                "why": "DCL is the data control language used for GRANT and REVOKE; TCL carries COMMIT and ROLLBACK."
+              },
+              {
+                "q": "Who designs the schema and controls access in an organisation?",
+                "options": [
+                  "System analyst",
+                  "End user",
+                  "Database administrator",
+                  "Application programmer"
+                ],
+                "answer": 2,
+                "why": "The DBA defines the schema, sets the access rights and looks after backup and recovery."
+              },
+              {
+                "q": "Which statement about DBMS architecture is NOT correct?",
+                "options": [
+                  "Data abstraction hides storage detail from the user",
+                  "The external level holds individual user views",
+                  "DDL is used to define the schema",
+                  "Every user sees the whole conceptual schema"
+                ],
+                "answer": 3,
+                "why": "Abstraction means each user sees only their own view, never the entire conceptual schema."
+              }
+            ],
+            "examTip": "Sketch the three boxes external, conceptual and internal with the two mappings between them, and write one line on each level.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MI-T04",
@@ -127,7 +283,59 @@
               "kind": "subtopic",
               "definition": "By keeping separate schema levels and mapping each level to the next."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Data independence is the reason a database can be changed without rewriting every program. Logical independence means the conceptual schema can change, for example by adding a column, while the existing views keep working. Physical independence means the storage can change, for example by adding an index, without touching the conceptual schema. Both work because each level is defined separately and a mapping connects it to the next. Physical independence is the easier of the two, because storage details are already hidden from the design.",
+            "example": "The college adds an Aadhaar column to the student table. The existing report programs keep running, because their views still ask only for the old columns.",
+            "quiz": [
+              {
+                "q": "Adding a new column to the conceptual schema without changing existing applications is an example of:",
+                "options": [
+                  "Logical data independence",
+                  "Physical data independence",
+                  "Referential integrity",
+                  "Concurrency control"
+                ],
+                "answer": 0,
+                "why": "Logical independence protects external views and programs when the conceptual schema changes."
+              },
+              {
+                "q": "Adding an index to speed up searches without altering the table design is an example of:",
+                "options": [
+                  "Logical data independence",
+                  "Physical data independence",
+                  "Both kinds acting together",
+                  "No independence, because the schema changed"
+                ],
+                "answer": 1,
+                "why": "Physical independence means changes at the internal level do not reach the conceptual schema."
+              },
+              {
+                "q": "How is data independence actually achieved?",
+                "options": [
+                  "By storing every table in one file",
+                  "By giving every user a private copy of the data",
+                  "By keeping separate schema levels and mapping each to the next",
+                  "By rewriting the applications after every change"
+                ],
+                "answer": 2,
+                "why": "The mappings between the external, conceptual and internal levels are what absorb the change."
+              },
+              {
+                "q": "Which statement about data independence is NOT correct?",
+                "options": [
+                  "A view can hide a newly added column from an old program",
+                  "Physical independence means storage changes do not reach the conceptual schema",
+                  "Separate schema levels with mappings make independence possible",
+                  "Logical independence means the internal file layout can change freely"
+                ],
+                "answer": 3,
+                "why": "Changing the internal file layout is physical independence; logical independence is about the conceptual schema."
+              }
+            ],
+            "examTip": "Write two definitions, one for each kind, with one example each: adding a column is logical, adding an index is physical.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MI-T05",
@@ -183,7 +391,59 @@
               "kind": "subtopic",
               "definition": "Rectangles for entities, ellipses for attributes, diamonds for relationships, double lines for total participation."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The ER model is drawn before any table exists. An entity is a real object such as one student, and an entity set is the collection of all students. Attributes describe an entity and may be simple, composite, single valued, multivalued, derived or a key. A relationship such as enrols links two entity sets. Cardinality says whether it is one to one, one to many, many to one or many to many. Participation says whether every entity must take part. An entity set with no key of its own is a weak entity set, identified through its owner and a partial key.",
+            "example": "In a college, Student and Course are entity sets and Enrols is a many to many relationship between them. A fee receipt means nothing without the student it belongs to, so it is a weak entity set.",
+            "quiz": [
+              {
+                "q": "In an ER diagram, which shape is used to show a relationship?",
+                "options": [
+                  "Diamond",
+                  "Double line",
+                  "Rectangle",
+                  "Ellipse"
+                ],
+                "answer": 0,
+                "why": "Rectangles are entities, ellipses are attributes, diamonds are relationships and double lines show total participation."
+              },
+              {
+                "q": "A fee receipt cannot be identified without the student it belongs to. What is it called?",
+                "options": [
+                  "A multivalued attribute",
+                  "A weak entity set",
+                  "A composite attribute",
+                  "A derived attribute"
+                ],
+                "answer": 1,
+                "why": "A weak entity set has no key of its own and is identified through its owner plus a partial key."
+              },
+              {
+                "q": "Which attribute type is calculated from another attribute rather than stored?",
+                "options": [
+                  "Multivalued attribute",
+                  "Key attribute",
+                  "Derived attribute",
+                  "Composite attribute"
+                ],
+                "answer": 2,
+                "why": "Age worked out from a date of birth is the usual example; it is computed, not kept on disk."
+              },
+              {
+                "q": "Which statement about ER modelling is NOT correct?",
+                "options": [
+                  "A foreign key links one entity set to another",
+                  "Cardinality may be one to one, one to many, many to one or many to many",
+                  "Total participation means every entity of the set takes part",
+                  "Degree is the number of attributes an entity has"
+                ],
+                "answer": 3,
+                "why": "Degree counts the entity sets taking part in a relationship, not the attributes of an entity."
+              }
+            ],
+            "examTip": "Practise the notation: rectangle, ellipse, diamond, double rectangle, double ellipse, double line. Most questions ask for a full ER diagram.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MI-T06",
@@ -221,7 +481,59 @@
               "kind": "subtopic",
               "definition": "A subclass whose members come from a union of several different superclasses, shown with a union circle."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Enhanced ER adds ideas from object oriented thinking to the plain ER diagram. Specialisation splits a superclass into subclasses, while generalisation does the reverse and combines similar entities. A subclass inherits every attribute of its superclass and adds its own. The splitting can be constrained as disjoint or overlapping, and as total or partial. Aggregation treats a whole relationship as one higher level entity so it can join another relationship. A category collects its members from several different superclasses.",
+            "example": "In a college, Person generalises Student and Teacher, and Student specialises into Undergraduate and Postgraduate. A student who also works as a lab assistant belongs to two subclasses at once, which makes the specialisation overlapping.",
+            "quiz": [
+              {
+                "q": "Combining several similar entity sets into one higher level entity set is called:",
+                "options": [
+                  "Generalisation",
+                  "Aggregation",
+                  "Categorisation",
+                  "Specialisation"
+                ],
+                "answer": 0,
+                "why": "Generalisation works bottom up, while specialisation works top down from a superclass to its subclasses."
+              },
+              {
+                "q": "What does a subclass receive from its superclass?",
+                "options": [
+                  "Only the relationships, never the attributes",
+                  "All of its attributes, through attribute inheritance",
+                  "Only the key attribute",
+                  "Nothing, because subclasses are independent"
+                ],
+                "answer": 1,
+                "why": "Attribute inheritance gives the subclass every superclass attribute plus whatever it adds itself."
+              },
+              {
+                "q": "Treating a relationship as a higher level entity so it can take part in another relationship is called:",
+                "options": [
+                  "Generalisation",
+                  "Union type",
+                  "Aggregation",
+                  "Specialisation"
+                ],
+                "answer": 2,
+                "why": "Aggregation lets a relationship such as Enrols become an entity that can join another relationship."
+              },
+              {
+                "q": "Which statement about enhanced ER is NOT correct?",
+                "options": [
+                  "Generalisation moves from several entity sets to one superclass",
+                  "A subclass may be constrained as disjoint or overlapping",
+                  "A category is a union type drawn with a circle marked U",
+                  "Specialisation requires every superclass entity to sit in some subclass"
+                ],
+                "answer": 3,
+                "why": "Requiring every entity to belong is the total constraint, which is optional; partial specialisation allows an entity in no subclass."
+              }
+            ],
+            "examTip": "Draw the superclass with the ISA triangle, mark disjoint or overlapping, mark total or partial, then add one example.",
+            "verified": false
+          }
         }
       ]
     },
@@ -265,7 +577,70 @@
               "kind": "subtopic",
               "definition": "Twelve rules described by E F Codd that a full relational DBMS should satisfy."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The relational model keeps everything in one structure, the relation, which looks like a table. A tuple is one row, an attribute is one named column and a domain is the set of values that column may hold. Degree counts the attributes and cardinality counts the tuples. Keys identify rows: a super key is any unique set of attributes, and a candidate key is a minimal super key. One candidate key is chosen as the primary key, and a foreign key points at a primary key in another relation. Two rules guard the data: entity integrity forbids a null primary key, and referential integrity forbids a foreign key with no matching primary key.",
+            "example": "A Student table with four columns has degree 4, and with 900 rows it has cardinality 900. RollNo is the primary key, and DeptID in the same table is a foreign key pointing at Department.",
+            "quiz": [
+              {
+                "q": "What is the term for one row of a relation?",
+                "options": [
+                  "Tuple",
+                  "Domain",
+                  "Degree",
+                  "Attribute"
+                ],
+                "answer": 0,
+                "why": "A tuple is a row, an attribute is a column and a domain is the set of allowed values."
+              },
+              {
+                "q": "A relation has 6 columns and 240 rows. What are its degree and cardinality?",
+                "options": [
+                  "Degree 240, cardinality 6",
+                  "Degree 6, cardinality 240",
+                  "Degree 6, cardinality 6",
+                  "Degree 240, cardinality 240"
+                ],
+                "answer": 1,
+                "why": "Degree counts the attributes or columns, and cardinality counts the tuples or rows."
+              },
+              {
+                "q": "Which rule is broken when a row holds a foreign key value that no primary key contains?",
+                "options": [
+                  "The Codd rule on nulls",
+                  "Entity integrity",
+                  "Referential integrity",
+                  "Domain constraint"
+                ],
+                "answer": 2,
+                "why": "Referential integrity requires every non null foreign key to match a primary key that exists."
+              },
+              {
+                "q": "Which statement about keys is NOT correct?",
+                "options": [
+                  "One candidate key is chosen as the primary key",
+                  "A candidate key is a minimal super key",
+                  "A relation may have more than one candidate key",
+                  "A foreign key must be unique within its own table"
+                ],
+                "answer": 3,
+                "why": "A foreign key is often repeated, because many rows may point at the same parent row."
+              },
+              {
+                "q": "How many rules did E F Codd describe for a full relational DBMS?",
+                "options": [
+                  "12",
+                  "15",
+                  "6",
+                  "9"
+                ],
+                "answer": 0,
+                "why": "Codd gave twelve rules, sometimes numbered from zero, that a relational system should satisfy."
+              }
+            ],
+            "examTip": "Start with relation, tuple, attribute and domain, then give degree and cardinality, then the two integrity rules. Marks are usually split this way.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T02",
@@ -303,7 +678,70 @@
               "kind": "subtopic",
               "definition": "The rho operator renames relations or attributes and the assignment operator names intermediate results."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Relational algebra is procedural, which means a query says which operators to apply and in what order. Selection, written sigma, keeps the rows that satisfy a condition, and projection, written pi, keeps only the columns named. Union, intersection, set difference and Cartesian product combine two relations whose schemas match. A join puts matching rows from two relations together. A theta join allows any comparison, an equi join uses equality, and a natural join drops the duplicate column. Outer joins keep unmatched rows and pad the missing side with null. Division answers the all questions, such as students who took every course, and the rho operator renames relations or attributes.",
+            "example": "To list the names of students in the CSE department, first select the rows where Dept equals CSE, then project the Name column. To find students who took every course, divide the enrolment table by the course table.",
+            "quiz": [
+              {
+                "q": "Which operator keeps only the rows that satisfy a condition?",
+                "options": [
+                  "Projection",
+                  "Selection",
+                  "Union",
+                  "Division"
+                ],
+                "answer": 1,
+                "why": "Selection, written sigma, filters rows, while projection, written pi, picks columns."
+              },
+              {
+                "q": "Which operator answers the question students who enrolled in every course?",
+                "options": [
+                  "Natural join",
+                  "Cartesian product",
+                  "Division",
+                  "Set difference"
+                ],
+                "answer": 2,
+                "why": "Division returns the tuples that match every tuple of a second relation."
+              },
+              {
+                "q": "What does a natural join do that an equi join does not?",
+                "options": [
+                  "It keeps unmatched rows padded with null",
+                  "It requires the two schemas to be identical",
+                  "It allows comparisons other than equality",
+                  "It removes the duplicate join column"
+                ],
+                "answer": 3,
+                "why": "Both match on equality, but the natural join shows the shared column only once."
+              },
+              {
+                "q": "Which statement about relational algebra is NOT correct?",
+                "options": [
+                  "Projection always increases the number of rows",
+                  "An outer join keeps unmatched rows with null padding",
+                  "Every operator takes relations and returns a relation",
+                  "Set operations need the two relations to be union compatible"
+                ],
+                "answer": 0,
+                "why": "Projection can reduce the row count, because duplicate rows are removed once columns are dropped."
+              },
+              {
+                "q": "Which operator gives a name to a relation or to one of its attributes?",
+                "options": [
+                  "Delta",
+                  "Rho",
+                  "Sigma",
+                  "Pi"
+                ],
+                "answer": 1,
+                "why": "Rho is the rename operator; sigma selects and pi projects."
+              }
+            ],
+            "examTip": "Write the symbol for each operator first, then one line on what it returns. Questions usually ask for an expression, so keep the order of operations visible.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T03",
@@ -359,7 +797,70 @@
               "kind": "subtopic",
               "definition": "NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK and DEFAULT enforce rules at the schema level."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "SQL is declarative, so a query describes the result wanted and the system decides how to fetch it. The language has four parts: DDL defines structures, DML reads and changes rows, DCL grants privileges and TCL commits or rolls back work. A basic query names the columns to return, the table to read and a WHERE condition. DISTINCT, ORDER BY, BETWEEN, IN and LIKE shape the result. Aggregates such as COUNT and SUM work on groups made by GROUP BY, and HAVING filters the groups themselves. Joins bring rows from two tables together, and a subquery is a SELECT inside another SELECT. A view stores the query itself and acts as a virtual table for the user.",
+            "example": "To find departments with more than 60 students, group by DeptID and count the rows. Put the condition on the count in HAVING, not in WHERE.",
+            "quiz": [
+              {
+                "q": "Which clause filters the groups produced by GROUP BY?",
+                "options": [
+                  "DISTINCT",
+                  "WHERE",
+                  "HAVING",
+                  "ORDER BY"
+                ],
+                "answer": 2,
+                "why": "WHERE filters individual rows before grouping, and HAVING filters the groups after counting."
+              },
+              {
+                "q": "GRANT and REVOKE belong to which part of SQL?",
+                "options": [
+                  "TCL",
+                  "DDL",
+                  "DML",
+                  "DCL"
+                ],
+                "answer": 3,
+                "why": "DCL is the data control language; TCL holds COMMIT, ROLLBACK and SAVEPOINT."
+              },
+              {
+                "q": "Which statement about SQL is NOT correct?",
+                "options": [
+                  "A subquery may appear only in the SELECT clause",
+                  "A view stores the query, not a separate copy of the rows",
+                  "HAVING is applied after GROUP BY",
+                  "WHERE is applied before any grouping takes place"
+                ],
+                "answer": 0,
+                "why": "A subquery can appear in SELECT, FROM, WHERE and HAVING clauses, and with EXISTS, ANY and ALL."
+              },
+              {
+                "q": "A report must list every department and show null where a department has no students. Which join is needed?",
+                "options": [
+                  "Inner join",
+                  "Left outer join",
+                  "Right outer join",
+                  "Natural join"
+                ],
+                "answer": 1,
+                "why": "A left outer join keeps every row of the left table and pads the missing right side with null."
+              },
+              {
+                "q": "Which keyword removes duplicate rows from a result?",
+                "options": [
+                  "DEFAULT",
+                  "UNIQUE",
+                  "DISTINCT",
+                  "ORDER BY"
+                ],
+                "answer": 2,
+                "why": "DISTINCT removes repeated rows from the result; UNIQUE is a constraint written on a column."
+              }
+            ],
+            "examTip": "For a query question, write the SELECT and FROM line first, then WHERE, then GROUP BY and HAVING, then ORDER BY. Note that HAVING needs GROUP BY.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T04",
@@ -385,7 +886,59 @@
               "kind": "subtopic",
               "definition": "Both calculi are equivalent in power to relational algebra; safe expressions avoid infinite results."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Relational calculus is non procedural, so a query states the condition the answer must satisfy instead of listing operators. Tuple relational calculus asks for the set of tuples t for which a predicate is true, written as t such that P of t. Domain relational calculus does the same by naming the domain variables for the columns and putting conditions on them. Both are equal in expressive power to relational algebra, so anything written in one can be written in the other. Safe expressions are required, because an unsafe one can produce an infinite set of tuples.",
+            "example": "Ask for every student whose department is CSE, rather than saying filter the file and then pick the name column. The system chooses the operators itself.",
+            "quiz": [
+              {
+                "q": "What kind of language is relational calculus?",
+                "options": [
+                  "Imperative",
+                  "Object oriented",
+                  "Procedural",
+                  "Non procedural"
+                ],
+                "answer": 3,
+                "why": "It says what is wanted; relational algebra says which operators to apply and in what order."
+              },
+              {
+                "q": "Tuple relational calculus is written in which form?",
+                "options": [
+                  "t such that P of t",
+                  "SELECT FROM WHERE",
+                  "X determines Y",
+                  "Pi followed by sigma"
+                ],
+                "answer": 0,
+                "why": "The result is the set of tuples t for which the predicate P is true."
+              },
+              {
+                "q": "Which statement about the two calculi is NOT correct?",
+                "options": [
+                  "An unsafe expression can return an infinite set of tuples",
+                  "A calculus query must list the operators used to reach the answer",
+                  "Tuple calculus and domain calculus have the same expressive power",
+                  "Both are equivalent in power to relational algebra"
+                ],
+                "answer": 1,
+                "why": "Listing the operators is what relational algebra does; calculus states only the condition."
+              },
+              {
+                "q": "Why is the safety condition imposed on calculus expressions?",
+                "options": [
+                  "To force the use of an index",
+                  "To make the query run faster",
+                  "To stop the result from being an infinite set",
+                  "To allow null values in the answer"
+                ],
+                "answer": 2,
+                "why": "A safe expression can only draw values from the database or from the constants written in it."
+              }
+            ],
+            "examTip": "Contrast the two in one table: algebra is procedural with operators, calculus is declarative with predicates. Add that both have equal expressive power.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T05",
@@ -411,7 +964,59 @@
               "kind": "subtopic",
               "definition": "Widely used open source systems, one favoured for web applications and the other for standards compliance."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Every commercial system implements standard SQL and then adds its own extensions on top. Oracle and SQL Server are enterprise products with the PL/SQL and T-SQL procedural languages and a wide set of administration tools. MySQL and PostgreSQL are open source; MySQL is common behind web applications and PostgreSQL is known for following the standards closely. Choosing between them means comparing storage limits, concurrency control, recovery, partitioning, security, replication and licence cost. DB2 is IBM's system and is found mostly in large established installations.",
+            "example": "A startup building a web application with no licence budget usually starts on MySQL or PostgreSQL. A bank replacing a mainframe system pays for Oracle or DB2 and expects the administration tools that come with it.",
+            "quiz": [
+              {
+                "q": "Which procedural language belongs to Oracle?",
+                "options": [
+                  "PL/pgSQL",
+                  "Transact SQL",
+                  "T-SQL",
+                  "PL/SQL"
+                ],
+                "answer": 3,
+                "why": "Oracle uses PL/SQL, while SQL Server uses T-SQL."
+              },
+              {
+                "q": "Which two of these systems are open source?",
+                "options": [
+                  "MySQL and PostgreSQL",
+                  "DB2 and MySQL",
+                  "Oracle and DB2",
+                  "SQL Server and Oracle"
+                ],
+                "answer": 0,
+                "why": "MySQL and PostgreSQL are the widely used open source systems; the others carry licence costs."
+              },
+              {
+                "q": "Which statement about choosing an RDBMS is NOT correct?",
+                "options": [
+                  "Recovery and concurrency control affect the choice",
+                  "Every system behaves identically because all of them implement SQL",
+                  "Licence cost is one of the features compared",
+                  "Replication and partitioning affect the choice"
+                ],
+                "answer": 1,
+                "why": "Vendor extensions, storage limits and administration tools differ, so the systems are not interchangeable in practice."
+              },
+              {
+                "q": "A team needs a standards compliant open source database for a college project with no budget. Which fits best?",
+                "options": [
+                  "Oracle",
+                  "DB2",
+                  "PostgreSQL",
+                  "SQL Server"
+                ],
+                "answer": 2,
+                "why": "PostgreSQL is open source and is known for following the standards closely."
+              }
+            ],
+            "examTip": "Answer comparison questions with a table: system, vendor, licence, procedural language and one typical use.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T06",
@@ -461,7 +1066,70 @@
               "kind": "subtopic",
               "definition": "Splitting a relation into smaller relations, checked for lossless join and dependency preservation."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A functional dependency says that if two rows agree on X, they must also agree on Y, written X arrow Y. Finding the dependencies in a table shows where the same fact is stored more than once. A partial dependency uses only part of a composite key, and a transitive dependency reaches a non key attribute through another non key attribute. Armstrong's axioms of reflexivity, augmentation and transitivity generate every dependency that follows from a given set. The closure of an attribute set is everything it determines, and a minimal set whose closure covers the whole relation is a candidate key. Splitting a table is called decomposition, and a good one keeps the join lossless and the dependencies preserved.",
+            "example": "In a table holding RollNo, StudentName and DeptHead, RollNo determines StudentName and DeptHead. RollNo also determines Dept, and Dept determines DeptHead, so DeptHead is transitively dependent on the key.",
+            "quiz": [
+              {
+                "q": "What does the functional dependency X arrow Y mean?",
+                "options": [
+                  "Y determines X",
+                  "X and Y together form the primary key",
+                  "X and Y must always hold the same value",
+                  "Any two rows agreeing on X must also agree on Y"
+                ],
+                "answer": 3,
+                "why": "The left side fixes the right side, so two rows with the same X cannot carry different Y values."
+              },
+              {
+                "q": "Which of these is a derived rule rather than one of Armstrong's basic axioms?",
+                "options": [
+                  "Pseudotransitivity",
+                  "Reflexivity",
+                  "Augmentation",
+                  "Transitivity"
+                ],
+                "answer": 0,
+                "why": "Union, decomposition and pseudotransitivity are proved from the three basic axioms."
+              },
+              {
+                "q": "Which statement about dependencies is NOT correct?",
+                "options": [
+                  "The closure of a set is everything that set determines",
+                  "A candidate key must contain every attribute of the relation",
+                  "A partial dependency depends on part of a composite key",
+                  "A transitive dependency passes through a non key attribute"
+                ],
+                "answer": 1,
+                "why": "A candidate key is a minimal attribute set whose closure covers the whole relation, not the relation itself."
+              },
+              {
+                "q": "A table is split into two. Which property says that joining them back returns exactly the original rows?",
+                "options": [
+                  "Attribute closure",
+                  "Dependency preservation",
+                  "Lossless join",
+                  "Canonical cover"
+                ],
+                "answer": 2,
+                "why": "A lossless decomposition guarantees that no spurious rows appear when the tables are joined again."
+              },
+              {
+                "q": "What is a canonical cover?",
+                "options": [
+                  "The set of all candidate keys",
+                  "A decomposition with no transitive dependency",
+                  "A cover containing every possible dependency",
+                  "A minimal equivalent set of dependencies with nothing redundant"
+                ],
+                "answer": 3,
+                "why": "Extraneous attributes and redundant dependencies are removed, but the closure stays the same."
+              }
+            ],
+            "examTip": "List the dependencies, compute each closure, mark the candidate key, then name the dependency that breaks 2NF or 3NF.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T07",
@@ -517,7 +1185,70 @@
               "kind": "subtopic",
               "definition": "Deliberately relaxing normal forms to reduce joins and improve read performance in reporting systems."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A table that is not normalised repeats the same fact in many rows, which causes insertion, update and deletion anomalies. First normal form requires every attribute to hold one atomic value, so no repeating groups or multivalued cells. Second normal form removes partial dependencies on part of a composite key, and third normal form removes transitive dependencies on the key. BCNF is stricter: for every non trivial dependency, the left side must be a super key. Fourth normal form removes multivalued dependencies, fifth normal form removes join dependencies, and denormalisation deliberately steps back to make reporting faster.",
+            "example": "A row storing CSE and IT together in one Department column is not in first normal form. Splitting it into two rows fixes the cell and makes counting departments possible.",
+            "quiz": [
+              {
+                "q": "Which normal form requires every attribute to hold a single atomic value?",
+                "options": [
+                  "1NF",
+                  "2NF",
+                  "3NF",
+                  "BCNF"
+                ],
+                "answer": 0,
+                "why": "First normal form removes repeating groups and multivalued attributes."
+              },
+              {
+                "q": "A relation is in 1NF and has no partial dependency on part of a candidate key. Which form is it in?",
+                "options": [
+                  "1NF",
+                  "2NF",
+                  "3NF",
+                  "BCNF"
+                ],
+                "answer": 1,
+                "why": "Removing partial dependencies on a composite key is exactly the step from 1NF to 2NF."
+              },
+              {
+                "q": "How does BCNF differ from 3NF?",
+                "options": [
+                  "BCNF is a weaker form than 3NF",
+                  "BCNF allows transitive dependencies that 3NF forbids",
+                  "BCNF requires the left side of every dependency to be a super key",
+                  "BCNF applies only to single attribute keys"
+                ],
+                "answer": 2,
+                "why": "That single condition makes BCNF stricter, and some relations in 3NF still fail it."
+              },
+              {
+                "q": "Which statement about normalisation is NOT correct?",
+                "options": [
+                  "Denormalisation is sometimes chosen to speed up reporting",
+                  "Higher normal forms reduce redundancy and anomalies",
+                  "A relation in 4NF is free of multivalued dependencies",
+                  "A relation in 3NF is always in BCNF as well"
+                ],
+                "answer": 3,
+                "why": "BCNF is stricter than 3NF, so there are relations in 3NF that still violate BCNF."
+              },
+              {
+                "q": "Which of these is NOT one of the three classic update anomalies?",
+                "options": [
+                  "Concurrency anomaly",
+                  "Insertion anomaly",
+                  "Deletion anomaly",
+                  "Update anomaly"
+                ],
+                "answer": 0,
+                "why": "Insertion, deletion and update anomalies come from redundancy; concurrency is handled by transaction control."
+              }
+            ],
+            "examTip": "Give one line per form: 1NF atomic, 2NF no partial, 3NF no transitive, BCNF super key.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MII-T08",
@@ -555,7 +1286,59 @@
               "kind": "subtopic",
               "definition": "Push selections down, then projections, and perform the most restrictive operations first."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A query passes through several steps before a single row is read. The parser checks the syntax and the validator checks that the tables and columns exist. The translator then turns the statement into a relational algebra expression. The optimiser compares equivalent expressions and access paths and picks the cheapest plan it can find. Cost is estimated mainly in block transfers and disk seeks. The estimate uses statistics such as the number of tuples, the blocking factor and the selectivity of a condition. Simple heuristics help too: push selections down before joins, and do the most restrictive operation first.",
+            "example": "A selection that keeps 5 rows out of 100,000 should run before the join, not after it. Pushing it down means the join works on 5 rows instead of 100,000.",
+            "quiz": [
+              {
+                "q": "Which step checks that the tables and columns named in a query really exist?",
+                "options": [
+                  "Parsing",
+                  "Validation",
+                  "Optimisation",
+                  "Execution"
+                ],
+                "answer": 1,
+                "why": "Validation checks the query against the catalogue, after the syntax has been accepted."
+              },
+              {
+                "q": "What is query cost usually measured in?",
+                "options": [
+                  "Number of users connected",
+                  "Lines of SQL and number of joins",
+                  "Block transfers and disk seeks",
+                  "Processor clock speed only"
+                ],
+                "answer": 2,
+                "why": "Disk access dominates query time, so the estimate counts blocks moved and seeks performed."
+              },
+              {
+                "q": "Which heuristic rule helps most when optimising by hand?",
+                "options": [
+                  "Sort every table before reading it",
+                  "Read the largest table first",
+                  "Perform joins before selections",
+                  "Perform selections and projections as early as possible"
+                ],
+                "answer": 3,
+                "why": "Pushing selections and projections down shrinks the data before the expensive join runs."
+              },
+              {
+                "q": "Which statement about query processing is NOT correct?",
+                "options": [
+                  "The optimiser always finds the cheapest possible plan",
+                  "The translator produces a relational algebra expression",
+                  "The optimiser compares several equivalent plans",
+                  "Selectivity helps estimate how many rows a condition returns"
+                ],
+                "answer": 0,
+                "why": "Optimisers search a limited space of plans, so they aim for a good plan rather than a guaranteed best one."
+              }
+            ],
+            "examTip": "Draw the pipeline as parse, validate, translate, optimise, execute, and add the note that cost means block transfers plus seeks.",
+            "verified": false
+          }
         }
       ]
     },
@@ -593,7 +1376,70 @@
               "kind": "subtopic",
               "definition": "Fine granularity of data items and protection from crashes and concurrent interference."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A transaction is one logical unit of work, such as transferring money between two accounts. Its basic operations are read item and write item, and it ends with commit or rollback. Four properties are required: atomicity, consistency, isolation and durability, remembered as ACID. Atomicity means all or nothing, and consistency means the database still obeys its rules at the end. Isolation means a transaction never sees another's partial work, and durability means committed work survives a crash. A transaction moves through the states active, partially committed, committed, failed and aborted.",
+            "example": "Transferring 500 rupees between two accounts needs a debit and a credit. If the power fails after the debit, atomicity rolls the half done work back so the money is not lost.",
+            "quiz": [
+              {
+                "q": "Which ACID property says that a transaction is all or nothing?",
+                "options": [
+                  "Durability",
+                  "Atomicity",
+                  "Consistency",
+                  "Isolation"
+                ],
+                "answer": 1,
+                "why": "Atomicity means every operation of the transaction happens, or none of them does."
+              },
+              {
+                "q": "Which ACID property guarantees that committed work survives a crash?",
+                "options": [
+                  "Consistency",
+                  "Isolation",
+                  "Durability",
+                  "Atomicity"
+                ],
+                "answer": 2,
+                "why": "Durability is what keeps a committed transaction on stable storage after a failure."
+              },
+              {
+                "q": "A transaction has written its last statement but the system has not confirmed it yet. Which state is it in?",
+                "options": [
+                  "Aborted",
+                  "Failed",
+                  "Active",
+                  "Partially committed"
+                ],
+                "answer": 3,
+                "why": "The partially committed state sits between the final write and the commit record."
+              },
+              {
+                "q": "Which statement about transactions is NOT correct?",
+                "options": [
+                  "Isolation lets a transaction read another's uncommitted changes",
+                  "A transaction moves the database from one consistent state to another",
+                  "Read item and write item are the basic operations",
+                  "Rollback undoes the work of the current transaction"
+                ],
+                "answer": 0,
+                "why": "Isolation hides uncommitted work from other transactions; reading it is the dirty read problem."
+              },
+              {
+                "q": "Which pair of operations marks the two ways a transaction can end?",
+                "options": [
+                  "Read item and write item",
+                  "Commit and rollback",
+                  "Checkpoint and shadow paging",
+                  "Shared lock and exclusive lock"
+                ],
+                "answer": 1,
+                "why": "Commit makes the changes permanent and rollback undoes them; the others are internal steps."
+              }
+            ],
+            "examTip": "Expand ACID one word at a time with a line each, then draw the five states with arrows into committed and aborted.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T02",
@@ -625,7 +1471,70 @@
               "kind": "subtopic",
               "definition": "A schedule is recoverable if a transaction commits only after all transactions it read from have committed; cascading rollback is avoided by strict schedules."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A schedule is the order in which the operations of several transactions actually run. A serial schedule runs one transaction to the end before starting the next, which is correct but slow, so systems interleave them instead. An interleaved schedule is conflict serializable when it can be swapped into some serial order by exchanging non conflicting operations. The test is the precedence graph: if it has no cycle, the schedule is conflict serializable. View serializability is a weaker test that compares who read what and who wrote the final value. A schedule is recoverable if a transaction commits only after every transaction it read from has committed.",
+            "example": "T1 reads an account and T2 writes it, so T1 must come before T2 in the precedence graph. If T2 also reads something T1 writes, the graph has a cycle and the schedule is not serializable.",
+            "quiz": [
+              {
+                "q": "What is a schedule called when transactions run one after another with no interleaving?",
+                "options": [
+                  "Strict schedule",
+                  "Recoverable schedule",
+                  "Serial schedule",
+                  "Conflict schedule"
+                ],
+                "answer": 2,
+                "why": "A serial schedule runs each transaction to completion before the next begins, so it is always correct."
+              },
+              {
+                "q": "How is conflict serializability tested?",
+                "options": [
+                  "By comparing the final values only",
+                  "By locking every item until commit",
+                  "By counting the reads and writes in the schedule",
+                  "By checking the precedence graph for a cycle"
+                ],
+                "answer": 3,
+                "why": "An acyclic precedence graph means the operations can be reordered into some serial schedule."
+              },
+              {
+                "q": "Which statement about serializability is NOT correct?",
+                "options": [
+                  "A serial schedule interleaves operations from several transactions",
+                  "Every conflict serializable schedule is also view serializable",
+                  "View serializability is the weaker of the two conditions",
+                  "A cyclic precedence graph rules out conflict serializability"
+                ],
+                "answer": 0,
+                "why": "Interleaving is what a non serial schedule does; a serial schedule keeps the transactions apart."
+              },
+              {
+                "q": "T1 reads a value written by T2 and commits before T2 commits. Which property is missing?",
+                "options": [
+                  "View serializability",
+                  "Recoverability",
+                  "Atomicity",
+                  "Conflict serializability"
+                ],
+                "answer": 1,
+                "why": "A recoverable schedule makes a transaction wait to commit until everything it read from has committed."
+              },
+              {
+                "q": "Which schedule avoids cascading rollback by forbidding reads of uncommitted writes?",
+                "options": [
+                  "View serializable schedule",
+                  "Recoverable schedule",
+                  "Cascadeless schedule",
+                  "Serial schedule"
+                ],
+                "answer": 2,
+                "why": "A cascadeless schedule allows a read only after the transaction that wrote the value has committed."
+              }
+            ],
+            "examTip": "Draw the precedence graph for the given schedule, list the edges, then state the verdict from the cycle.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T03",
@@ -657,7 +1566,70 @@
               "kind": "subtopic",
               "definition": "Dirty read, non repeatable read and phantom read."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "SQL lets a programmer control a transaction directly instead of leaving it to the system. COMMIT makes the changes permanent and ROLLBACK undoes them, taking the database back to where the transaction began. SAVEPOINT marks a point inside the transaction, so a rollback can return there and keep the earlier work. Four isolation levels trade correctness for concurrency: read uncommitted, read committed, repeatable read and serializable. The lower levels allow dirty reads, non repeatable reads and phantom rows, which the higher levels prevent at the cost of waiting.",
+            "example": "A batch job inserts 500 rows and fails at row 480. A savepoint placed every 100 rows lets the job roll back to row 400 and carry on instead of losing everything.",
+            "quiz": [
+              {
+                "q": "Which statement undoes the work of the current transaction?",
+                "options": [
+                  "SAVEPOINT",
+                  "GRANT",
+                  "COMMIT",
+                  "ROLLBACK"
+                ],
+                "answer": 3,
+                "why": "ROLLBACK returns the database to the state before the transaction began; COMMIT makes the work permanent."
+              },
+              {
+                "q": "What is a SAVEPOINT used for?",
+                "options": [
+                  "To mark a point that a rollback can return to",
+                  "To lock a table until commit",
+                  "To raise the isolation level",
+                  "To commit part of the transaction permanently"
+                ],
+                "answer": 0,
+                "why": "A rollback to a savepoint keeps the work done before the mark and discards only what came after it."
+              },
+              {
+                "q": "Which isolation level is the strictest?",
+                "options": [
+                  "Repeatable read",
+                  "Serializable",
+                  "Read uncommitted",
+                  "Read committed"
+                ],
+                "answer": 1,
+                "why": "Serializable gives the effect of running transactions one at a time, which costs the most concurrency."
+              },
+              {
+                "q": "A transaction reads a row, and a second read in the same transaction returns a different value. What is this called?",
+                "options": [
+                  "Lost update",
+                  "Dirty read",
+                  "Non repeatable read",
+                  "Phantom read"
+                ],
+                "answer": 2,
+                "why": "A non repeatable read happens when another transaction commits an update between the two reads."
+              },
+              {
+                "q": "Which statement about isolation levels is NOT correct?",
+                "options": [
+                  "Higher levels reduce the amount of concurrency",
+                  "Read uncommitted allows a dirty read",
+                  "Repeatable read stops a value changing between two reads",
+                  "Serializable permits phantom rows to appear"
+                ],
+                "answer": 3,
+                "why": "Serializable is the level that prevents phantom rows; the lower levels are the ones that allow them."
+              }
+            ],
+            "examTip": "List the four levels in order and name the problem each one removes: dirty read, non repeatable read, phantom read.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T04",
@@ -701,7 +1673,70 @@
               "kind": "subtopic",
               "definition": "Upgrading a shared lock to exclusive or downgrading it the other way, which must respect the two phases."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Locking makes a transaction ask permission before it touches a data item. A shared lock allows many readers at once, while an exclusive lock gives one writer the item and blocks everyone else. Two phase locking is the rule that guarantees conflict serializability. It has a growing phase that takes locks and a shrinking phase that releases them, and no lock is taken after the first release. Strict two phase locking holds exclusive locks until commit, which keeps recovery simple. Two problems remain: deadlock, where transactions wait for each other in a circle, and starvation, where one transaction keeps losing the competition.",
+            "example": "Two clerks edit the same row at once, and the first takes an exclusive lock so the second waits. If each then waits for the item the other holds, the system must abort one of them.",
+            "quiz": [
+              {
+                "q": "Which lock allows many transactions to read the same item at once?",
+                "options": [
+                  "Shared lock",
+                  "Intention exclusive lock",
+                  "Binary lock",
+                  "Exclusive lock"
+                ],
+                "answer": 0,
+                "why": "A shared lock is for reading, so several transactions may hold it together; an exclusive lock is for one writer."
+              },
+              {
+                "q": "What does two phase locking guarantee?",
+                "options": [
+                  "Deadlock freedom",
+                  "Conflict serializability",
+                  "Recoverability on its own",
+                  "Freedom from starvation"
+                ],
+                "answer": 1,
+                "why": "Growing then shrinking, with no new lock after the first release, gives a serializable order."
+              },
+              {
+                "q": "Which statement about two phase locking is NOT correct?",
+                "options": [
+                  "The shrinking phase only releases locks",
+                  "Strict 2PL holds exclusive locks until commit",
+                  "Two phase locking can never produce a deadlock",
+                  "The growing phase only acquires locks"
+                ],
+                "answer": 2,
+                "why": "Two phase locking guarantees serializability, not deadlock freedom; waiting for locks can still form a cycle."
+              },
+              {
+                "q": "T1 holds a lock on A and wants B, while T2 holds B and wants A. What has happened?",
+                "options": [
+                  "Lost update",
+                  "Phantom read",
+                  "Starvation",
+                  "Deadlock"
+                ],
+                "answer": 3,
+                "why": "A circular wait for locks is a deadlock, and one of the transactions must be rolled back."
+              },
+              {
+                "q": "Upgrading a shared lock to an exclusive one is called:",
+                "options": [
+                  "Lock conversion",
+                  "Lock escalation",
+                  "Lock granularity",
+                  "Lock compatibility"
+                ],
+                "answer": 0,
+                "why": "Conversion changes the mode of a lock, and it may only happen during the growing phase."
+              }
+            ],
+            "examTip": "State the two phase rule, then draw a transaction with an up arrow for growing and a down arrow for shrinking, marking the lock point.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T05",
@@ -733,7 +1768,70 @@
               "kind": "subtopic",
               "definition": "Timestamp and validation methods avoid deadlock because they never make a transaction wait for a lock."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Timestamp ordering gives every transaction a start time and forces conflicting operations to obey that order. Each item remembers who last read and wrote it, and an operation that arrives too late is refused and its transaction restarted. The Thomas write rule is a saving: an obsolete write is ignored instead of causing a restart. Validation based control is optimistic, because transactions run freely and are checked only at commit, in the read, validation and write phases. The gain over locking is that neither method makes a transaction wait, so no deadlock can form.",
+            "example": "Two transactions start together and the one with the smaller timestamp is treated as older. If a younger transaction has already overwritten the item, the older transaction's late write is ignored rather than forced to restart.",
+            "quiz": [
+              {
+                "q": "What happens to a transaction whose operation arrives after a younger one has already used the item?",
+                "options": [
+                  "It waits for the younger one to finish",
+                  "It is restarted with a new timestamp",
+                  "It is allowed to proceed",
+                  "It downgrades its lock"
+                ],
+                "answer": 1,
+                "why": "Timestamp ordering never waits; the late transaction is rolled back and started again."
+              },
+              {
+                "q": "What does the Thomas write rule do?",
+                "options": [
+                  "Forces all writes to wait for a lock",
+                  "Converts a shared lock into an exclusive lock",
+                  "Ignores an obsolete write instead of restarting the transaction",
+                  "Rejects every late read"
+                ],
+                "answer": 2,
+                "why": "If a younger transaction has already overwritten the value, the older write is obsolete and can be skipped."
+              },
+              {
+                "q": "Which statement about concurrency methods is NOT correct?",
+                "options": [
+                  "Timestamp ordering can cause restarts but not deadlock",
+                  "Validation methods check for conflicts at commit time",
+                  "Optimistic control has read, validation and write phases",
+                  "Locking methods are free of deadlock because they never wait"
+                ],
+                "answer": 3,
+                "why": "Locking is the method that waits for locks, and that waiting is exactly what allows a deadlock to form."
+              },
+              {
+                "q": "What are the three phases of validation based concurrency control?",
+                "options": [
+                  "Read, validation, write",
+                  "Parse, optimise, execute",
+                  "Analysis, redo, undo",
+                  "Grow, shrink, commit"
+                ],
+                "answer": 0,
+                "why": "The transaction reads freely, is validated against the others at commit, then writes if it passes."
+              },
+              {
+                "q": "Which method never makes a transaction wait for another?",
+                "options": [
+                  "Two phase locking",
+                  "Timestamp ordering",
+                  "Strict two phase locking",
+                  "Multiple granularity locking"
+                ],
+                "answer": 1,
+                "why": "Timestamp and validation methods refuse and restart instead of blocking, so no waiting cycle appears."
+              }
+            ],
+            "examTip": "Compare locking, timestamp ordering and validation in one table with the columns waiting, deadlock, restarts and when the check happens.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T06",
@@ -765,7 +1863,59 @@
               "kind": "subtopic",
               "definition": "The compatibility matrix decides which combinations may be granted at the same time."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Granularity is how big the piece is that a lock covers. A small unit such as one row lets many transactions work at once, but the system must track a great many locks. A large unit such as a whole table is cheap to track and blocks almost everything, so concurrency suffers. Multiple granularity locking lets a transaction lock at the level it needs, using a hierarchy from database down to record. Intention locks mark the ancestors of the item being locked: IS means a descendant will be read, IX means one will be written. A compatibility matrix then decides which combinations may be granted together.",
+            "example": "Updating one row out of ten thousand should lock that row, not the table. Reading a whole report may lock the table once, which is cheaper than ten thousand row locks.",
+            "quiz": [
+              {
+                "q": "What does a coarse granularity give?",
+                "options": [
+                  "No locking at all",
+                  "High concurrency and high lock overhead",
+                  "Low lock overhead and low concurrency",
+                  "High concurrency and low overhead"
+                ],
+                "answer": 2,
+                "why": "One big lock is cheap to track, but it blocks transactions that only wanted a different part of the data."
+              },
+              {
+                "q": "What does an intention shared (IS) lock signal?",
+                "options": [
+                  "The whole database is locked exclusively",
+                  "The lock has been released already",
+                  "The item itself is locked for writing",
+                  "A descendant of this item will be locked in shared mode"
+                ],
+                "answer": 3,
+                "why": "Intention locks are taken on ancestors to announce what is going to be locked below them."
+              },
+              {
+                "q": "Which statement about granularity is NOT correct?",
+                "options": [
+                  "The database level is the finest granularity available",
+                  "Fine granularity increases concurrency",
+                  "Fine granularity increases the number of locks to track",
+                  "Intention locks are taken on the ancestors of an item"
+                ],
+                "answer": 0,
+                "why": "The whole database is the coarsest unit; a single field or one record is the finest."
+              },
+              {
+                "q": "A transaction wants to update a few rows deep inside one table. Which choice is best?",
+                "options": [
+                  "Lock the whole database for reading",
+                  "Take an IX lock on the table and X locks on the rows",
+                  "Take a shared lock on the whole table",
+                  "Take no locks and rely on timestamps"
+                ],
+                "answer": 1,
+                "why": "The intention exclusive lock on the table announces the writes, and the row locks keep the rest available."
+              }
+            ],
+            "examTip": "Draw the hierarchy database, table, page, record as a tree, and write IS, IX, S and X at the levels involved.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T07",
@@ -809,7 +1959,70 @@
               "kind": "subtopic",
               "definition": "Uses write ahead logging, repeating history and fuzzy checkpoints in analysis, redo and undo passes."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Recovery brings the database back to a consistent state after something goes wrong. Failures fall into four kinds: the transaction itself fails, the system crashes, the media is lost, or the site is destroyed. The log is the main tool, because it records before images, after images and the events of each transaction. With it, undo rolls back a transaction that never committed and redo repeats one that did. Checkpoints shorten recovery, because work before the checkpoint is already known to be safe. ARIES is the common algorithm, using write ahead logging, repeating history and fuzzy checkpoints in three passes: analysis, redo and undo.",
+            "example": "A power cut during a fee payment leaves some rows half updated. The log tells recovery which transactions had committed, so their writes are repeated and the others are undone.",
+            "quiz": [
+              {
+                "q": "Which pass of ARIES repeats the writes of committed transactions?",
+                "options": [
+                  "Checkpoint",
+                  "Analysis",
+                  "Redo",
+                  "Undo"
+                ],
+                "answer": 2,
+                "why": "Redo repeats history so that every committed write is on disk, whatever happened before the crash."
+              },
+              {
+                "q": "What is the purpose of a checkpoint?",
+                "options": [
+                  "To encrypt the log",
+                  "To convert shared locks to exclusive locks",
+                  "To stop deadlocks from forming",
+                  "To shorten recovery by flushing the log and buffers"
+                ],
+                "answer": 3,
+                "why": "Everything before the checkpoint is already safe, so recovery starts from there instead of from the beginning."
+              },
+              {
+                "q": "Which statement about recovery is NOT correct?",
+                "options": [
+                  "A media failure is handled in the same way as a transaction failure",
+                  "Stable storage is meant to survive any single failure",
+                  "Shadow paging avoids a log but fragments storage",
+                  "Write ahead logging puts the log record on disk before the data page"
+                ],
+                "answer": 0,
+                "why": "Media loss needs the last backup plus the archived log, while a transaction failure only needs undo."
+              },
+              {
+                "q": "Which technique keeps a current and a shadow page table and switches between them on commit?",
+                "options": [
+                  "Checkpointing",
+                  "Shadow paging",
+                  "Write ahead logging",
+                  "Deferred update"
+                ],
+                "answer": 1,
+                "why": "Shadow paging makes commit atomic by switching page tables, at the cost of scattered pages on disk."
+              },
+              {
+                "q": "In deferred update, when are changes written to the database?",
+                "options": [
+                  "Only when the buffer is full",
+                  "Immediately, before the log record is written",
+                  "Only after the transaction commits",
+                  "At every checkpoint"
+                ],
+                "answer": 2,
+                "why": "Deferred update keeps changes in the log until commit, so an aborted transaction needs no undo at all."
+              }
+            ],
+            "examTip": "Name the four failure types, then say what each needs: undo, redo, or the backup plus archived log.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIII-T08",
@@ -841,7 +2054,70 @@
               "kind": "subtopic",
               "definition": "Statistical queries must not allow inference of individual values; techniques include query restriction, perturbation and auditing."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Database security keeps data away from people who should not read or change it. Discretionary access control lets the owner of an object grant privileges to others, while mandatory access control assigns security levels and compares them. A view is a simple tool: give a user only the view, and they see only the rows and columns it holds. Encryption protects data in storage and while it travels across a network, and an audit trail records who did what and when. Statistical databases need their own care, because averages and counts can be combined to reveal one person's value.",
+            "example": "A clerk is given a view showing only customer names and cities, never the account balances. Running one query on five people and another on four can reveal the fifth person's salary, which is the inference problem.",
+            "quiz": [
+              {
+                "q": "Which control model lets the owner of a table grant privileges to other users?",
+                "options": [
+                  "Role based encryption",
+                  "Audit based control",
+                  "Mandatory access control",
+                  "Discretionary access control"
+                ],
+                "answer": 3,
+                "why": "Discretionary control is based on the owner's decision to grant or revoke a privilege."
+              },
+              {
+                "q": "How does a view improve security?",
+                "options": [
+                  "It exposes only the rows and columns the view contains",
+                  "It makes the table read faster",
+                  "It removes the need for an audit trail",
+                  "It encrypts the underlying table"
+                ],
+                "answer": 0,
+                "why": "The user queries the view and never reaches the columns that were left out of it."
+              },
+              {
+                "q": "Which statement about database security is NOT correct?",
+                "options": [
+                  "Statistical queries can leak an individual value by inference",
+                  "Mandatory access control lets any owner grant away their privileges",
+                  "An audit trail records who accessed what and when",
+                  "Encryption protects data in storage and in transit"
+                ],
+                "answer": 1,
+                "why": "Granting privileges at the owner's discretion is discretionary control; mandatory control compares fixed security levels."
+              },
+              {
+                "q": "A user counts all employees, then counts all but one, and works out the missing salary. What is this called?",
+                "options": [
+                  "A replay attack",
+                  "A brute force attack",
+                  "An inference attack on a statistical database",
+                  "A denial of service attack"
+                ],
+                "answer": 2,
+                "why": "Query restriction, perturbation and output auditing are the usual defences against this kind of leak."
+              },
+              {
+                "q": "Which of these is NOT a usual defence for statistical database security?",
+                "options": [
+                  "Query restriction",
+                  "Data perturbation",
+                  "Auditing the queries that were answered",
+                  "Granting every user full read access"
+                ],
+                "answer": 3,
+                "why": "The three defences limit what may be asked, add noise to the answer, or watch what has been released."
+              }
+            ],
+            "examTip": "Write the four headings access control, views, encryption and auditing, then add the inference problem with its three defences.",
+            "verified": false
+          }
         }
       ]
     },
@@ -885,7 +2161,70 @@
               "kind": "subtopic",
               "definition": "Fixed or variable length records are packed into blocks, and the blocking factor is the records per block."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A file is a collection of records held in blocks on disk, and the organisation decides what is fast and what is slow. The four operations are insertion, deletion, modification and retrieval of a record found by its search key. In a heap file records go wherever there is free space, so insertion is quick and search is slow. A sequential file keeps the records ordered by the search key, so search and ordered listing are fast while insertion needs the file rearranged. Hashing and indexing compute the location instead, trading extra space and maintenance for speed.",
+            "example": "Mark sheets pinned into a folder in the order they arrive make a heap file. Sorted by roll number they become a sequential file, and finding one student becomes quick.",
+            "quiz": [
+              {
+                "q": "Which file organisation gives fast insertion but slow search?",
+                "options": [
+                  "Heap file",
+                  "Indexed file",
+                  "Hashed file",
+                  "Sequential file"
+                ],
+                "answer": 0,
+                "why": "A heap file places each new record wherever there is room, so there is no order to search on."
+              },
+              {
+                "q": "What is the blocking factor?",
+                "options": [
+                  "The time taken to read one record",
+                  "The number of records that fit in one block",
+                  "The number of blocks in the file",
+                  "The size of the search key"
+                ],
+                "answer": 1,
+                "why": "Blocking factor is records per block, and it decides how many disk accesses a full scan needs."
+              },
+              {
+                "q": "Which statement about file organisation is NOT correct?",
+                "options": [
+                  "Sequential files keep records ordered by the search key",
+                  "Hashed files find a record by computing its address",
+                  "Sequential files make insertion cheap because no order is kept",
+                  "Heap files keep no order among the records"
+                ],
+                "answer": 2,
+                "why": "Keeping the order is what makes insertion expensive in a sequential file, since records must be moved."
+              },
+              {
+                "q": "A file holds 10,000 records of 100 bytes each in blocks of 1,000 bytes. What is the blocking factor?",
+                "options": [
+                  "100",
+                  "1,000",
+                  "10,000",
+                  "10"
+                ],
+                "answer": 3,
+                "why": "Blocking factor is the block size divided by the record size, so 1,000 divided by 100 gives 10."
+              },
+              {
+                "q": "Which key is used to identify the record being searched for?",
+                "options": [
+                  "Search key",
+                  "Candidate key",
+                  "Sort key",
+                  "Primary key"
+                ],
+                "answer": 0,
+                "why": "Any field used to locate a record is a search key, whether or not its values are unique."
+              }
+            ],
+            "examTip": "List the four operations, then give one line each on heap, sequential, hashed and indexed with what is fast and what is slow.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIV-T02",
@@ -917,7 +2256,70 @@
               "kind": "subtopic",
               "definition": "Hashing is excellent for equality searches but useless for range queries, where indexes are preferred."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Hashing runs the search key through a function and uses the answer as a bucket address. In static hashing the number of buckets is fixed in advance, so a growing file develops long overflow chains. A collision is when a record lands in a bucket that is already full, handled by open addressing, chaining or a second hash function. Extendible hashing lets the directory grow and shrink, splitting one bucket at a time as the file grows. Hashing is excellent for finding one exact record, but it cannot answer a range query at all, which is where an index wins.",
+            "example": "A library hashes the book accession number to a shelf number, so one book is found directly. Asking for every book added last month cannot use the hash, because the buckets hold books in no useful order.",
+            "quiz": [
+              {
+                "q": "What happens in static hashing as the file keeps growing?",
+                "options": [
+                  "The buckets split automatically",
+                  "The overflow chains get longer",
+                  "The hash function changes",
+                  "The records are sorted inside each bucket"
+                ],
+                "answer": 1,
+                "why": "The bucket count is fixed, so extra records pile into overflow and searches slow down."
+              },
+              {
+                "q": "Which of these is NOT a way of handling a collision?",
+                "options": [
+                  "Chaining within the bucket",
+                  "Multiple hashing",
+                  "Sorting the whole file again",
+                  "Open addressing"
+                ],
+                "answer": 2,
+                "why": "Open addressing, chaining and a second hash function resolve collisions; sorting does not."
+              },
+              {
+                "q": "Why is hashing unsuitable for a range query?",
+                "options": [
+                  "Hash tables cannot hold many records",
+                  "The directory would grow too large",
+                  "The hash function is too slow",
+                  "Buckets hold records in no order that matches the key"
+                ],
+                "answer": 3,
+                "why": "The hash scatters keys across buckets, so nearby keys are not stored near each other."
+              },
+              {
+                "q": "What does extendible hashing do when a bucket overflows?",
+                "options": [
+                  "It splits that bucket and grows the directory",
+                  "It moves the record to overflow and leaves it there",
+                  "It switches over to a B+ tree",
+                  "It rebuilds the whole table with more buckets"
+                ],
+                "answer": 0,
+                "why": "Only the overflowing bucket is split, and the directory uses one more bit for that part."
+              },
+              {
+                "q": "Which operation is hashing best at?",
+                "options": [
+                  "Finding every record in a key range",
+                  "Finding one record with a known exact key",
+                  "Listing the records in sorted order",
+                  "Finding the smallest key in the file"
+                ],
+                "answer": 1,
+                "why": "An exact match goes straight to one bucket, which is usually a single disk access."
+              }
+            ],
+            "examTip": "Draw a bucket directory with two bits of the hash, then show one split. Finish with the line that hashing cannot do range queries.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIV-T03",
@@ -961,7 +2363,70 @@
               "kind": "subtopic",
               "definition": "Composite indexes order by the concatenation of keys, and grid or partitioned hashing handles multiattribute equality queries."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "An index is a small auxiliary file holding key and pointer pairs, so a record can be found without scanning the whole data file. A primary index is built on the ordering key field of a sequential file and holds one entry per block. A clustering index is built on an ordering field that is not a key, so several records may share one index entry. A secondary index is built on a field with no order at all, and it needs one entry per distinct value. A dense index has an entry for every search key value, while a sparse index has entries for only some of them. When an index itself grows too large to scan, it is indexed again, which gives a multilevel structure such as an ISAM tree.",
+            "example": "The index at the back of a book is a secondary index. It maps each term to page numbers, and the pages themselves are not ordered by that term.",
+            "quiz": [
+              {
+                "q": "Which index is built on the ordering key field of a sequential file?",
+                "options": [
+                  "Dense index",
+                  "Secondary index",
+                  "Primary index",
+                  "Clustering index"
+                ],
+                "answer": 2,
+                "why": "A primary index follows the ordering key of the file and holds one entry for each block."
+              },
+              {
+                "q": "How does a dense index differ from a sparse index?",
+                "options": [
+                  "A dense index is stored on disk and a sparse one in memory",
+                  "A sparse index holds more entries than a dense one",
+                  "A dense index can only be built on a primary key",
+                  "A dense index has an entry for every search key value"
+                ],
+                "answer": 3,
+                "why": "A sparse index saves space by holding entries for only some key values, one per block."
+              },
+              {
+                "q": "Which statement about indexes is NOT correct?",
+                "options": [
+                  "A primary index can only be built on an unordered file",
+                  "A multilevel index puts an index on the index",
+                  "A clustering index is built on an ordering non key field",
+                  "A secondary index needs one entry per distinct value"
+                ],
+                "answer": 0,
+                "why": "A primary index needs the file to be ordered on that key; an unordered file needs a secondary index."
+              },
+              {
+                "q": "An index has grown so large that scanning it is slow. What is the usual answer?",
+                "options": [
+                  "Sort the data file again",
+                  "Build an index on the index",
+                  "Convert the file into a hash file",
+                  "Split the data file into two"
+                ],
+                "answer": 1,
+                "why": "Indexing the index gives a multilevel structure, which is how ISAM and tree indexes work."
+              },
+              {
+                "q": "Which index suits a field where many records share the same value and the file is ordered on it?",
+                "options": [
+                  "Dense index",
+                  "Primary index",
+                  "Clustering index",
+                  "Secondary index"
+                ],
+                "answer": 2,
+                "why": "A clustering index is built on an ordering field that is not unique, so one entry points at a cluster."
+              }
+            ],
+            "examTip": "Give one line each on primary, clustering and secondary, then add dense versus sparse. Sketch the multilevel index if the question carries marks for a diagram.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MIV-T04",
@@ -1005,7 +2470,70 @@
               "kind": "subtopic",
               "definition": "A high fan-out keeps the tree shallow, so a record is found in three or four disk accesses even for millions of records."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A B tree is a balanced search tree built for disk, where every leaf sits at the same level. Each node holds many keys, and one node is sized to fill a disk block. One read then brings in a whole set of comparisons. A node with k keys has k plus one children, and every node except the root must be at least half full. A B+ tree keeps data pointers only in the leaves and joins those leaves in a linked list. That makes the fan-out higher and the range scan a straight walk along the list, which is why databases use B+ trees.",
+            "example": "With a fan-out of 100, a B+ tree of three levels already holds a million keys. Finding one record then costs three disk reads instead of scanning a million rows.",
+            "quiz": [
+              {
+                "q": "Where does a B+ tree keep the pointers to the actual records?",
+                "options": [
+                  "In a separate hash directory",
+                  "In the root node only",
+                  "In both the internal nodes and the leaves",
+                  "Only in the leaves"
+                ],
+                "answer": 3,
+                "why": "Internal nodes hold only keys and pointers to lower nodes, so all data pointers sit in the linked leaves."
+              },
+              {
+                "q": "A node in a B tree holds k keys. How many children does it have?",
+                "options": [
+                  "k plus one",
+                  "k minus one",
+                  "2k",
+                  "k"
+                ],
+                "answer": 0,
+                "why": "Keys separate the children, so k keys split the node into k plus one subtrees."
+              },
+              {
+                "q": "Which statement about B+ trees is NOT correct?",
+                "options": [
+                  "Every node except the root is at least half full",
+                  "A B+ tree stores record pointers in its internal nodes",
+                  "All the leaves are at the same level",
+                  "The leaves are linked for fast range scans"
+                ],
+                "answer": 1,
+                "why": "Keeping internal nodes free of data pointers is what raises the fan-out and keeps the tree shallow."
+              },
+              {
+                "q": "A leaf is full and a new key must go into it. What happens?",
+                "options": [
+                  "The key is rejected",
+                  "The key is placed in an overflow area",
+                  "The leaf is split and the middle key moves up",
+                  "The whole tree is rebuilt"
+                ],
+                "answer": 2,
+                "why": "Splitting can cascade upwards, and splitting the root is how the tree gains a level."
+              },
+              {
+                "q": "What happens when a deletion leaves a node below the minimum occupancy?",
+                "options": [
+                  "The key is put back where it was",
+                  "The tree switches to a hash file",
+                  "The tree is rebuilt from scratch",
+                  "Keys are shared with a sibling, or the nodes are merged"
+                ],
+                "answer": 3,
+                "why": "Redistribution is tried first, and merging two nodes is the fallback when a sibling cannot spare a key."
+              }
+            ],
+            "examTip": "Sketch a B+ tree with linked leaves, then note the two reasons it wins: higher fan-out and a straight walk along the leaves.",
+            "verified": false
+          }
         }
       ]
     },
@@ -1049,7 +2577,59 @@
               "kind": "subtopic",
               "definition": "Excellent for complex data and navigational access, but weak for ad hoc queries and lacking a common standard."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "An object oriented database stores objects, with their state and their methods, instead of rows in tables. It exists because applications such as computer aided design, multimedia and geographic systems hold data too complex to flatten. The mismatch between program objects and table rows is called the impedance mismatch, and an OODBMS removes it. Object identity, encapsulation, inheritance, polymorphism and persistence are all supported directly by the database. The cost is weaker support for ad hoc queries and the absence of one common standard, which kept these systems out of the mainstream.",
+            "example": "A circuit design holds thousands of connected parts, each with its own behaviour. Storing it as objects keeps the connections and the code together, while flattening it into tables would need dozens of joined tables.",
+            "quiz": [
+              {
+                "q": "What is the impedance mismatch?",
+                "options": [
+                  "The gap between program objects and table rows",
+                  "A fault in the network cable",
+                  "The extra cost of a licence",
+                  "The delay between two disks"
+                ],
+                "answer": 0,
+                "why": "Objects carry identity, nesting and methods, which do not map cleanly onto flat rows and columns."
+              },
+              {
+                "q": "Which of these is NOT a feature of an object oriented database?",
+                "options": [
+                  "Encapsulation of state and methods",
+                  "One query standard agreed by every vendor",
+                  "Object identity",
+                  "Inheritance and polymorphism"
+                ],
+                "answer": 1,
+                "why": "The features are native, but the lack of a common standard is the main weakness of these systems."
+              },
+              {
+                "q": "Which application area pushed the need for object oriented databases?",
+                "options": [
+                  "Plain text storage",
+                  "Simple payroll processing",
+                  "Computer aided design and geographic systems",
+                  "A single table stock list"
+                ],
+                "answer": 2,
+                "why": "Complex, deeply connected data is hard to flatten into tables, which is where these systems help."
+              },
+              {
+                "q": "Which statement about an OODBMS is NOT correct?",
+                "options": [
+                  "It stores objects together with their methods",
+                  "It suits navigational access through references",
+                  "It is weaker than a relational system for ad hoc queries",
+                  "It replaced the relational model in most commercial products"
+                ],
+                "answer": 3,
+                "why": "Relational systems stayed dominant, and object relational features were added to them instead."
+              }
+            ],
+            "examTip": "Define OODBMS, give the impedance mismatch as the reason, list five features, then write two advantages and two disadvantages.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MV-T02",
@@ -1075,7 +2655,59 @@
               "kind": "subtopic",
               "definition": "RDBMS flatten complex data, OODBMS lose SQL simplicity and ORDBMS keep both, which is why commercial systems follow this route."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "An object relational system keeps the relational model and adds object features to it. Tables can use user defined types, hold collections such as arrays and nested tables, and carry references and object identifiers. Methods can be attached to a type, so a value knows what it can do. This lets a program's objects be stored as rows without throwing away SQL, which is what object relational mapping does. It is the middle way: relational systems flatten complex data, object oriented systems lose SQL, and object relational systems keep both.",
+            "example": "An address can be one user defined type holding street, city and pin code. It sits in a customer row as one column, and reports still run plain SQL.",
+            "quiz": [
+              {
+                "q": "What does an object relational DBMS add to the relational model?",
+                "options": [
+                  "User defined types, collections, references and methods",
+                  "A replacement for SQL",
+                  "A hash based storage engine only",
+                  "Nothing, it is only a new name"
+                ],
+                "answer": 0,
+                "why": "These additions let complex values sit inside a row while SQL still works on the table."
+              },
+              {
+                "q": "What is object relational mapping?",
+                "options": [
+                  "Drawing an ER diagram for an object model",
+                  "Persisting program objects as rows and columns",
+                  "Converting a table into a hash file",
+                  "Splitting a table into two for normalisation"
+                ],
+                "answer": 1,
+                "why": "The mapping layer moves data between the objects a program uses and the rows a database stores."
+              },
+              {
+                "q": "Which statement about the three approaches is NOT correct?",
+                "options": [
+                  "Object oriented systems give up the simplicity of SQL",
+                  "Object relational systems keep tables and add object features",
+                  "Object relational systems cannot run SQL at all",
+                  "Relational systems flatten complex data into tables"
+                ],
+                "answer": 2,
+                "why": "Keeping SQL is the whole point of the object relational route, which is why vendors followed it."
+              },
+              {
+                "q": "Which kind of value can be stored as one column in an object relational table?",
+                "options": [
+                  "An integer only",
+                  "A fixed length string only",
+                  "A date only",
+                  "A nested table or an array"
+                ],
+                "answer": 3,
+                "why": "Collections such as arrays and nested tables are part of what the object relational model added."
+              }
+            ],
+            "examTip": "Compare RDBMS, OODBMS and ORDBMS in one table with the columns storage unit, query language, complex data and typical use.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MV-T03",
@@ -1107,7 +2739,70 @@
               "kind": "subtopic",
               "definition": "Documents may be stored as CLOB values, shredded into tables or kept in native XML columns."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "XML is a text format where the tags travel with the data, so a document describes itself. A well formed document has a prolog, one root element and properly nested elements with attributes and text. A DTD or an XML Schema says which elements and attributes are allowed, so a document can be checked before it is used. Programs read a document with a DOM parser, which builds a tree in memory, or a SAX parser, which reports events as it reads. XPath and XQuery select parts of a document, and XSLT transforms it. A database may store the document whole, shred it into tables or keep it in a native XML column.",
+            "example": "A college sends a student list to the university as XML, with one element per student and an attribute for the roll number. The receiving system reads it even though it runs different software.",
+            "quiz": [
+              {
+                "q": "Which part of an XML document declares which elements and attributes are allowed?",
+                "options": [
+                  "A DTD or an XML Schema",
+                  "The root element",
+                  "An XSLT stylesheet",
+                  "The prolog"
+                ],
+                "answer": 0,
+                "why": "A DTD or a schema is the grammar of the document, and it is what validation is checked against."
+              },
+              {
+                "q": "Which parser builds a full tree of the document in memory?",
+                "options": [
+                  "SAX",
+                  "DOM",
+                  "XPath",
+                  "XSLT"
+                ],
+                "answer": 1,
+                "why": "DOM holds the whole tree so any node can be revisited; SAX reports events once and keeps nothing."
+              },
+              {
+                "q": "Which statement about storing XML is NOT correct?",
+                "options": [
+                  "A document can be shredded into relational tables",
+                  "A document can be kept in a native XML column",
+                  "A document must be shredded, because no other option exists",
+                  "A document can be stored whole as a large character object"
+                ],
+                "answer": 2,
+                "why": "All three storage choices exist, and the right one depends on how the data will be queried."
+              },
+              {
+                "q": "Which language is used to select nodes from an XML document?",
+                "options": [
+                  "HTML",
+                  "SQL on its own",
+                  "DTD",
+                  "XPath"
+                ],
+                "answer": 3,
+                "why": "XPath addresses nodes by path and condition; XQuery extends it and XSLT transforms the result."
+              },
+              {
+                "q": "What makes XML self describing?",
+                "options": [
+                  "The tags travel with the data",
+                  "Only one program can read it",
+                  "It needs a schema before it can be read",
+                  "It is stored in binary form"
+                ],
+                "answer": 0,
+                "why": "The element names sit inside the file, so a reader understands the structure without outside help."
+              }
+            ],
+            "examTip": "Show a four line XML sample, then name the DTD or schema for validation, the two parsers, and the query languages.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MV-T04",
@@ -1139,7 +2834,70 @@
               "kind": "subtopic",
               "definition": "Banking audit trails, medical records, insurance history and employee service records."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A conventional database keeps only the current value, so an old value is lost the moment it is overwritten. A temporal database keeps time with the data and answers questions about the past. Valid time is when a fact was true in the real world, and transaction time is when the database recorded it. A bitemporal database keeps both, so it can say what was true on a date and what the system believed at the time. Queries then use interval operators such as overlaps, contains, precedes and during. Typical uses are banking audit trails, medical records, insurance history and employee service records.",
+            "example": "A salary changed in April but the record was corrected in June. Valid time says April and transaction time says June, so the database can show both what was true and when it was learned.",
+            "quiz": [
+              {
+                "q": "What is valid time?",
+                "options": [
+                  "When the database stored the record",
+                  "When the fact was true in the real world",
+                  "When the user logged in",
+                  "When the record was deleted"
+                ],
+                "answer": 1,
+                "why": "Valid time is about the real world; transaction time is about when the system recorded it."
+              },
+              {
+                "q": "What does a bitemporal database keep?",
+                "options": [
+                  "Valid time only",
+                  "Transaction time only",
+                  "Both valid time and transaction time",
+                  "The current value only"
+                ],
+                "answer": 2,
+                "why": "Keeping both lets a query ask what was true and what the system knew, as two separate questions."
+              },
+              {
+                "q": "Which statement about temporal databases is NOT correct?",
+                "options": [
+                  "They answer questions about past states of the data",
+                  "Banking audit trails are a typical use",
+                  "Interval operators include overlaps and during",
+                  "They store only the latest value of every fact"
+                ],
+                "answer": 3,
+                "why": "Storing only the latest value is what a conventional database does; a temporal one keeps the history."
+              },
+              {
+                "q": "Which operator tests whether two time intervals share any period?",
+                "options": [
+                  "Overlaps",
+                  "Contains",
+                  "Equals",
+                  "Precedes"
+                ],
+                "answer": 0,
+                "why": "Overlaps is true when the two intervals have at least one instant in common."
+              },
+              {
+                "q": "A correction is made in June to a salary that changed in April. Which times differ?",
+                "options": [
+                  "Both stay the same",
+                  "Valid time is April, transaction time is June",
+                  "Valid time is June, transaction time is April",
+                  "Neither can be recorded"
+                ],
+                "answer": 1,
+                "why": "The real world change and the moment the system learned of it are two separate facts."
+              }
+            ],
+            "examTip": "Define valid time and transaction time with one example each, then say that a bitemporal database keeps both and give two applications.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MV-T05",
@@ -1165,7 +2923,59 @@
               "kind": "subtopic",
               "definition": "Long lived, location dependent transactions require relaxed ACID properties in some systems."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A mobile database lives on a portable device and syncs with a central server over a wireless link. The assumptions of a fixed network no longer hold. The device is often disconnected, the bandwidth is limited, the battery is small and the memory is tight. Changes are therefore made on the device and reconciled with the server later, which is what synchronisation and replication do. That reconciliation can produce conflicts, so rules are needed to decide which change wins. Mobile transactions are long lived and location dependent, and some systems relax the ACID rules to let them finish.",
+            "example": "A sales representative records orders on a tablet with no signal. At the office the orders are reconciled with the central database, and a rule settles any clash with a newer price.",
+            "quiz": [
+              {
+                "q": "Which is NOT listed as a challenge for mobile databases?",
+                "options": [
+                  "Limited bandwidth",
+                  "Low battery and small memory",
+                  "Too many indexes on the server",
+                  "Frequent disconnection"
+                ],
+                "answer": 2,
+                "why": "The challenges come from the device and the link: disconnection, bandwidth, battery and memory."
+              },
+              {
+                "q": "What happens when a device reconnects after working offline?",
+                "options": [
+                  "The server is rebuilt from the device",
+                  "Nothing, because the two stay separate",
+                  "Its changes are discarded",
+                  "Its changes are reconciled with the central database"
+                ],
+                "answer": 3,
+                "why": "Synchronisation compares the two copies, applies the differences and resolves conflicts as it goes."
+              },
+              {
+                "q": "Why are mobile transactions described as long lived?",
+                "options": [
+                  "They may stay open across disconnections and movement between cells",
+                  "They always take more than an hour",
+                  "They are never committed",
+                  "They run on older hardware"
+                ],
+                "answer": 0,
+                "why": "A transaction can span a journey and several network cells, so it runs far longer than a desktop one."
+              },
+              {
+                "q": "Which statement about mobile databases is NOT correct?",
+                "options": [
+                  "Replication keeps a copy of the data on the device",
+                  "A mobile database needs a constant wired connection to work",
+                  "Conflicts need resolution rules during synchronisation",
+                  "Some systems relax the ACID properties for mobile work"
+                ],
+                "answer": 1,
+                "why": "Working while disconnected is the whole point, and it is what makes synchronisation necessary."
+              }
+            ],
+            "examTip": "List the four challenges, then explain synchronisation and conflict resolution, then add why ACID is sometimes relaxed.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MV-T06",
@@ -1191,7 +3001,70 @@
               "kind": "subtopic",
               "definition": "Geographic information systems, maps, navigation, urban planning and location based services."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A spatial database stores geometric objects and answers questions about where things are. The basic types are point, line and region, and the queries ask things like finding every hospital within five kilometres. Ordinary indexes do not help, because they order values along one dimension while spatial data covers two. Spatial indexes such as R trees, quad trees and grid files organise the data by area. A region query then visits only the blocks it overlaps. Typical uses are geographic information systems, maps, navigation, urban planning and location based services.",
+            "example": "A delivery app asks for every driver within three kilometres of a pickup point. An R tree groups nearby drivers into rectangles, so the search reads only a few blocks instead of every row.",
+            "quiz": [
+              {
+                "q": "Which is NOT a basic spatial data type?",
+                "options": [
+                  "Line",
+                  "Region",
+                  "Integer",
+                  "Point"
+                ],
+                "answer": 2,
+                "why": "Point, line and region are the geometric types; integer is a plain relational type."
+              },
+              {
+                "q": "Why does a normal B+ tree index work poorly for spatial data?",
+                "options": [
+                  "It is too slow to build",
+                  "It cannot be stored on disk",
+                  "It cannot hold numbers",
+                  "It orders values along one dimension only"
+                ],
+                "answer": 3,
+                "why": "Spatial data covers two dimensions, so an index that sorts along one axis loses the neighbour information."
+              },
+              {
+                "q": "Which index organises spatial objects by grouping nearby ones into rectangles?",
+                "options": [
+                  "R tree",
+                  "Hash table",
+                  "Bitmap index",
+                  "B+ tree"
+                ],
+                "answer": 0,
+                "why": "An R tree groups objects by their bounding rectangles, which suits area and nearest neighbour queries."
+              },
+              {
+                "q": "Which statement about spatial databases is NOT correct?",
+                "options": [
+                  "Quad trees and grid files are spatial indexes",
+                  "They store only text descriptions of places",
+                  "They answer location based queries",
+                  "Navigation apps are a typical use"
+                ],
+                "answer": 1,
+                "why": "They store real geometry, which is what makes distance and containment queries possible."
+              },
+              {
+                "q": "Which application is least likely to need a spatial database?",
+                "options": [
+                  "A city map service",
+                  "A flood risk model for a district",
+                  "A payroll system for office staff",
+                  "A bus route planner"
+                ],
+                "answer": 2,
+                "why": "Payroll has no geometry in it, so a plain relational design is enough."
+              }
+            ],
+            "examTip": "Name the three spatial types, one example query, three index structures and three applications.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA413-MV-T07",
@@ -1223,7 +3096,70 @@
               "kind": "subtopic",
               "definition": "Monitor performance, rebuild indexes, back up regularly and handle schema evolution."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A case study runs one application through every stage the syllabus has covered. Requirement analysis lists the entities, attributes, relationships, constraints and the reports the users expect. Conceptual design turns that list into an ER diagram. Logical design maps the diagram into relations, picks the keys and normalises up to 3NF or BCNF. Physical design chooses the file organisation, the indexes, the constraints, the views, the triggers and the privileges each role needs. After release the work continues: watch the performance, rebuild the indexes, back up on a schedule and manage changes to the schema.",
+            "example": "A college library project starts from the list of books, members and loans. It ends with normalised tables, an index on the accession number, a view for the student portal and a weekly backup.",
+            "quiz": [
+              {
+                "q": "What is produced during conceptual design?",
+                "options": [
+                  "The backup schedule",
+                  "The user privileges",
+                  "The file organisation and the indexes",
+                  "An ER diagram of entities and relationships"
+                ],
+                "answer": 3,
+                "why": "Conceptual design is the diagram; physical design is what chooses indexes, files and privileges."
+              },
+              {
+                "q": "At which stage are the tables normalised up to 3NF or BCNF?",
+                "options": [
+                  "Logical design",
+                  "Physical design",
+                  "Maintenance",
+                  "Requirement analysis"
+                ],
+                "answer": 0,
+                "why": "Logical design maps the ER diagram into relations, chooses the keys and removes the anomalies."
+              },
+              {
+                "q": "Which statement about the stages is NOT correct?",
+                "options": [
+                  "Maintenance includes rebuilding indexes and backing up",
+                  "Conceptual design decides the storage layout on disk",
+                  "Requirement analysis lists the entities and the reports needed",
+                  "Physical design chooses indexes and file organisation"
+                ],
+                "answer": 1,
+                "why": "Storage layout belongs to physical design; conceptual design is still a diagram of entities."
+              },
+              {
+                "q": "Which of these belongs to maintenance rather than to initial implementation?",
+                "options": [
+                  "Choosing the primary key",
+                  "Drawing the ER diagram",
+                  "Rebuilding an index after heavy updates",
+                  "Deciding the privileges of a role"
+                ],
+                "answer": 2,
+                "why": "Rebuilding indexes and monitoring performance are ongoing jobs that start after release."
+              },
+              {
+                "q": "What is the usual order of the stages in a database project?",
+                "options": [
+                  "Logical, physical, requirements, conceptual",
+                  "Conceptual, requirements, physical, logical",
+                  "Physical, logical, conceptual, requirements",
+                  "Requirements, conceptual, logical, physical"
+                ],
+                "answer": 3,
+                "why": "Each stage feeds the next: what is needed, what it looks like, how it is stored, how it is tuned."
+              }
+            ],
+            "examTip": "Write the four stages as headings and put two bullet points under each. Case study marks usually come from showing the order.",
+            "verified": false
+          }
         }
       ]
     }

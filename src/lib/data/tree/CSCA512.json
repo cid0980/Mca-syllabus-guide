@@ -37,7 +37,70 @@
               "kind": "subtopic",
               "definition": "Interoperability, portability and the ability of any browser to talk to any server."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Internet standards are agreed specifications that let systems from different vendors work together. They begin as requests for comments, the working documents of the Internet Engineering Task Force. A specification moves through maturity levels: proposed standard, draft standard and then Internet standard, while some stay experimental or become historic. Other bodies matter too: W3C standardises web technologies, ISO covers information technology broadly, and IEEE standardises local area networks. The point of all of it is interoperability. Any browser can talk to any server because both follow the same written rules.",
+            "example": "A phone from one maker loads a page hosted on another because HTTP and HTML are written down and agreed by everyone.",
+            "quiz": [
+              {
+                "q": "What is an RFC?",
+                "options": [
+                  "A request for comments, the working document of the IETF",
+                  "A router configuration file",
+                  "A radio frequency channel",
+                  "A registered file company"
+                ],
+                "answer": 0,
+                "why": "Every Internet protocol is published as an RFC before it can become a standard."
+              },
+              {
+                "q": "Which organisation standardises web technologies such as HTML and CSS?",
+                "options": [
+                  "ISO",
+                  "W3C",
+                  "ITU",
+                  "IEEE"
+                ],
+                "answer": 1,
+                "why": "The World Wide Web Consortium publishes the specifications that browsers implement."
+              },
+              {
+                "q": "Which statement about Internet standards is NOT correct?",
+                "options": [
+                  "They let equipment from different vendors interoperate",
+                  "IEEE standardises local area networks",
+                  "A standard is final the moment it is first written",
+                  "They pass through proposed and draft stages"
+                ],
+                "answer": 2,
+                "why": "Maturity levels exist so a specification is tested in practice before it becomes final."
+              },
+              {
+                "q": "Which maturity level comes after draft standard?",
+                "options": [
+                  "Experimental",
+                  "Historic",
+                  "Proposed standard",
+                  "Internet standard"
+                ],
+                "answer": 3,
+                "why": "The sequence runs proposed, then draft, then Internet standard."
+              },
+              {
+                "q": "Why do standards matter most?",
+                "options": [
+                  "They give interoperability between products from different vendors",
+                  "They reduce the number of protocols",
+                  "They make the Internet faster",
+                  "They make equipment cheaper to manufacture"
+                ],
+                "answer": 0,
+                "why": "Interoperability is why a browser and a server written by different teams can communicate."
+              }
+            ],
+            "examTip": "Define RFC, give the roles of IETF, W3C, ISO and IEEE, and list the maturity levels in order.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MI-T02",
@@ -69,7 +132,70 @@
               "kind": "subtopic",
               "definition": "From read only pages to social and interactive applications to semantic and decentralised ideas."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The web is an information system of linked hypertext documents reached over the Internet. A web page is one document, a website is a collection of related pages, and hyperlinks connect them. The browser requests and renders content, while the web server stores it and sends it when asked. Pages may be static, stored ready made and sent unchanged, or dynamic, built for each request. The web has moved through three broad stages: read only pages, then social and interactive applications, then semantic and decentralised ideas.",
+            "example": "A college notice page that never changes is static. The same site's results page, built when you enter a roll number, is dynamic.",
+            "quiz": [
+              {
+                "q": "What is the difference between a web page and a website?",
+                "options": [
+                  "They are the same",
+                  "A page is one document, a site is a collection of related pages",
+                  "A site is one file",
+                  "A page contains many sites"
+                ],
+                "answer": 1,
+                "why": "The site is the container and each page is a document inside it."
+              },
+              {
+                "q": "Which statement about static pages is NOT correct?",
+                "options": [
+                  "They are stored ready made",
+                  "They are sent unchanged to every visitor",
+                  "They are generated separately for each request",
+                  "They suit content that rarely changes"
+                ],
+                "answer": 2,
+                "why": "Building a page for each request is what a dynamic page does."
+              },
+              {
+                "q": "What is the role of a web server?",
+                "options": [
+                  "To connect the user to the Internet",
+                  "To write the HTML",
+                  "To display pages to the user",
+                  "To store content and deliver it when requested"
+                ],
+                "answer": 3,
+                "why": "The server waits for requests, and the browser is what renders the response."
+              },
+              {
+                "q": "Which describes Web 2.0?",
+                "options": [
+                  "Social and interactive applications",
+                  "Semantic and decentralised ideas",
+                  "Static HTML only",
+                  "Read only pages"
+                ],
+                "answer": 0,
+                "why": "Web 2.0 is the stage where users create content as well as read it."
+              },
+              {
+                "q": "What connects one document to another on the web?",
+                "options": [
+                  "A server",
+                  "A hyperlink",
+                  "A browser tab",
+                  "A cookie"
+                ],
+                "answer": 1,
+                "why": "Hyperlinks are what make the web a web rather than a pile of documents."
+              }
+            ],
+            "examTip": "Define web page, website and hyperlink, contrast static and dynamic pages, and name the three web stages.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MI-T03",
@@ -101,7 +227,70 @@
               "kind": "subtopic",
               "definition": "Forward and reverse proxies plus content delivery networks reduce latency and server load."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Web architecture describes how browsers, servers and the network cooperate to deliver content. The web uses the client server model: the browser is the client and the web server is the server. HTTP carries the requests and responses between them. Larger applications add a three tier structure, with a presentation tier, an application logic tier and a data tier. Common server software includes Apache, Nginx and IIS, all serving files from a document root with configuration for virtual hosts. Caching shortens the journey: forward and reverse proxies and content delivery networks keep copies closer to the user.",
+            "example": "A news site uses a CDN so that a reader in Chennai loads images from a nearby server rather than one in another country.",
+            "quiz": [
+              {
+                "q": "What are the three tiers of web architecture?",
+                "options": [
+                  "HTML, CSS, JavaScript",
+                  "Client, server, network",
+                  "Presentation, application logic and data",
+                  "Browser, router, database"
+                ],
+                "answer": 2,
+                "why": "Separating interface, rules and storage lets each tier be changed alone."
+              },
+              {
+                "q": "Which is a web server?",
+                "options": [
+                  "Windows",
+                  "MySQL",
+                  "Chrome",
+                  "Nginx"
+                ],
+                "answer": 3,
+                "why": "Nginx, Apache and IIS are server software; the others are a browser, an operating system and a database."
+              },
+              {
+                "q": "Which statement about web architecture is NOT correct?",
+                "options": [
+                  "A CDN makes the origin server unnecessary",
+                  "The browser acts as the client",
+                  "HTTP carries requests and responses",
+                  "A reverse proxy sits in front of the servers"
+                ],
+                "answer": 0,
+                "why": "A CDN caches copies, but the origin server still holds the authoritative content."
+              },
+              {
+                "q": "What is the document root?",
+                "options": [
+                  "The database folder",
+                  "The folder the server serves files from",
+                  "The user's home directory",
+                  "The browser cache"
+                ],
+                "answer": 1,
+                "why": "A URL path is mapped to a file inside that directory on the server."
+              },
+              {
+                "q": "What does a forward proxy do?",
+                "options": [
+                  "Encrypts the disk",
+                  "Hides the server from clients",
+                  "Acts on behalf of clients, often for caching and filtering",
+                  "Stores the database"
+                ],
+                "answer": 2,
+                "why": "It stands between users and the Internet, which lets an organisation cache and control traffic."
+              }
+            ],
+            "examTip": "Draw the client server model, name the three tiers, two servers and two caching mechanisms.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MI-T04",
@@ -133,7 +322,70 @@
               "kind": "subtopic",
               "definition": "Headers plus body defined by RFC 822, with MIME allowing attachments and non-ASCII content."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Email is delivered by push protocols and retrieved by pull protocols. SMTP is the push protocol: it runs on port 25 and moves mail from a client to a server and between servers. POP3 is a pull protocol on port 110 that downloads messages and usually deletes them from the server. IMAP, on port 143, keeps the mail on the server, supports folders and synchronises across devices. A message itself has headers and a body defined by RFC 822, and MIME extends it so that attachments and non-ASCII content can travel.",
+            "example": "Reading office mail on a phone and a laptop with the same folders is IMAP at work. POP3 would have emptied the server on the first device.",
+            "quiz": [
+              {
+                "q": "Which protocol sends mail from a client to a server?",
+                "options": [
+                  "HTTP",
+                  "POP3",
+                  "IMAP",
+                  "SMTP"
+                ],
+                "answer": 3,
+                "why": "SMTP pushes the message onward, which is why it is called a push protocol."
+              },
+              {
+                "q": "Which protocol keeps mail on the server and synchronises across devices?",
+                "options": [
+                  "IMAP",
+                  "SMTP",
+                  "FTP",
+                  "POP3"
+                ],
+                "answer": 0,
+                "why": "IMAP manages folders on the server, so every device sees the same state."
+              },
+              {
+                "q": "Which statement about email protocols is NOT correct?",
+                "options": [
+                  "IMAP uses port 143",
+                  "POP3 is the best choice for reading mail on several devices",
+                  "SMTP uses port 25",
+                  "POP3 uses port 110"
+                ],
+                "answer": 1,
+                "why": "POP3 downloads and often deletes, which leaves other devices without the messages."
+              },
+              {
+                "q": "What does MIME add to email?",
+                "options": [
+                  "Spam filtering",
+                  "Faster delivery",
+                  "Support for attachments and non-ASCII content",
+                  "Encryption by default"
+                ],
+                "answer": 2,
+                "why": "MIME extends the plain text format of RFC 822 with multipart bodies and encodings."
+              },
+              {
+                "q": "Which port does IMAP use?",
+                "options": [
+                  "21",
+                  "25",
+                  "110",
+                  "143"
+                ],
+                "answer": 3,
+                "why": "Port 143 is the standard IMAP port, with 993 used for IMAP over TLS."
+              }
+            ],
+            "examTip": "Compare SMTP, POP3 and IMAP with port numbers and one behaviour each, and mention MIME.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MI-T05",
@@ -165,7 +417,70 @@
               "kind": "subtopic",
               "definition": "SFTP over SSH and FTPS over TLS replace plain FTP for confidential transfers."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "FTP moves files between a client and a server using two separate connections. The control connection on port 21 carries the commands, and a second data connection carries the file itself. In active mode the server opens the data connection back to the client, which firewalls often block. In passive mode the client opens the data connection instead, which works through most firewalls. The commands are simple: USER, PASS, RETR, STOR, LIST and QUIT, each answered with a three digit reply code. Because FTP sends everything in the clear, SFTP over SSH and FTPS over TLS are used where the transfer must stay private.",
+            "example": "A designer uploads a site with an FTP client. When the client sits behind a firewall, switching to passive mode usually fixes a stalled transfer.",
+            "quiz": [
+              {
+                "q": "Which port carries FTP commands?",
+                "options": [
+                  "21",
+                  "25",
+                  "110",
+                  "20"
+                ],
+                "answer": 0,
+                "why": "Port 21 is the control connection, while the data connection uses another port."
+              },
+              {
+                "q": "Which mode works better through a firewall?",
+                "options": [
+                  "Active mode",
+                  "Passive mode",
+                  "Both work equally well",
+                  "Neither works at all"
+                ],
+                "answer": 1,
+                "why": "Passive mode has the client open the data connection, which outbound rules usually allow."
+              },
+              {
+                "q": "Which statement about FTP is NOT correct?",
+                "options": [
+                  "RETR downloads a file",
+                  "STOR uploads a file",
+                  "FTP encrypts the data by default",
+                  "It uses two connections"
+                ],
+                "answer": 2,
+                "why": "Plain FTP sends credentials and files unencrypted, which is why SFTP and FTPS exist."
+              },
+              {
+                "q": "What does the FTP command LIST do?",
+                "options": [
+                  "Deletes a file",
+                  "Renames a file",
+                  "Downloads a file",
+                  "Lists the files in the current directory"
+                ],
+                "answer": 3,
+                "why": "It returns a directory listing over the data connection."
+              },
+              {
+                "q": "What is FTPS?",
+                "options": [
+                  "FTP over TLS",
+                  "A faster version of FTP",
+                  "A file type",
+                  "FTP over SSH"
+                ],
+                "answer": 0,
+                "why": "FTPS adds TLS encryption to FTP, while SFTP runs over SSH instead."
+              }
+            ],
+            "examTip": "Describe the two FTP connections, compare active and passive mode, and name two secure alternatives.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MI-T06",
@@ -209,7 +524,70 @@
               "kind": "subtopic",
               "definition": "HTTP over TLS encrypts traffic and verifies the server identity with certificates."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "HTTP is the request response protocol of the web, and it is stateless: the server keeps no memory of earlier requests. A request has a request line with the method and URL, headers, a blank line and an optional body. A response has a status line, headers such as content type and length, a blank line and the body. The common methods are GET, POST, PUT, DELETE, PATCH, HEAD and OPTIONS, and status codes fall into classes from 1xx to 5xx. Headers carry metadata, and cookies let a stateful session be built on a stateless protocol. Keep alive lets many requests share one TCP connection, and HTTPS puts the whole exchange inside TLS.",
+            "example": "A 404 means the page was not found and a 500 means the server failed. Both are three digit codes in the status line.",
+            "quiz": [
+              {
+                "q": "What does HTTP status code 404 mean?",
+                "options": [
+                  "The request succeeded",
+                  "The resource was not found",
+                  "The server had an error",
+                  "The request was redirected"
+                ],
+                "answer": 1,
+                "why": "Codes in the 4xx class report a problem with the request, and 404 is the familiar one."
+              },
+              {
+                "q": "Which method asks the server for a resource without changing anything?",
+                "options": [
+                  "POST",
+                  "PUT",
+                  "GET",
+                  "DELETE"
+                ],
+                "answer": 2,
+                "why": "GET retrieves, while POST, PUT and DELETE are meant to change something."
+              },
+              {
+                "q": "Which statement about HTTP is NOT correct?",
+                "options": [
+                  "HTTPS runs HTTP over TLS",
+                  "It is a request response protocol",
+                  "A request has a request line, headers and an optional body",
+                  "Cookies make the protocol stateful by themselves"
+                ],
+                "answer": 3,
+                "why": "HTTP stays stateless; cookies are data the client returns so a session can be rebuilt."
+              },
+              {
+                "q": "What is the purpose of the Keep Alive header?",
+                "options": [
+                  "To reuse one TCP connection for several requests",
+                  "To store cookies",
+                  "To compress the body",
+                  "To keep the server running"
+                ],
+                "answer": 0,
+                "why": "Reusing the connection avoids the cost of a new handshake for every resource."
+              },
+              {
+                "q": "Which status class indicates a server error?",
+                "options": [
+                  "4xx",
+                  "5xx",
+                  "2xx",
+                  "3xx"
+                ],
+                "answer": 1,
+                "why": "5xx codes mean the server failed, while 4xx codes mean the request was at fault."
+              }
+            ],
+            "examTip": "Sketch a request and a response, name five methods and the five status classes, and explain cookies and HTTPS.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MI-T07",
@@ -241,7 +619,70 @@
               "kind": "subtopic",
               "definition": "Reusable fragments and templates are combined with data to build the final page."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Dynamic pages are built when the request arrives, on the server, on the client or on both. The oldest approach is the Common Gateway Interface, where the server starts a separate program for each request, which is simple but slow. Server side scripting is the usual answer now. PHP, JSP, ASP.NET, Python or Node.js builds the HTML on the server before it is sent. Client side scripting works the other way, with JavaScript in the browser updating the page without a full reload. Templating and server side includes tie it together, combining reusable fragments with data to produce the final page.",
+            "example": "A weather page built by PHP on the server shows fresh data on every load. The same page can then update one number with JavaScript, without reloading.",
+            "quiz": [
+              {
+                "q": "What is the main drawback of CGI?",
+                "options": [
+                  "It works only on Windows",
+                  "It is too secure",
+                  "A new process starts for every request, which is slow",
+                  "It cannot produce HTML"
+                ],
+                "answer": 2,
+                "why": "Process creation costs time and memory, so CGI scales poorly."
+              },
+              {
+                "q": "Which runs on the server and is invisible to the user?",
+                "options": [
+                  "CSS",
+                  "HTML",
+                  "JavaScript",
+                  "PHP"
+                ],
+                "answer": 3,
+                "why": "The server executes PHP and sends only the resulting HTML, so the source never reaches the browser."
+              },
+              {
+                "q": "Which statement about dynamic pages is NOT correct?",
+                "options": [
+                  "Every dynamic page needs a database",
+                  "They can be built on the server",
+                  "They can be built in the browser",
+                  "Templates combine fragments with data"
+                ],
+                "answer": 0,
+                "why": "A page can be dynamic from a clock, a file or an API, not only from a database."
+              },
+              {
+                "q": "What does client side scripting avoid?",
+                "options": [
+                  "Using a server",
+                  "A full page reload",
+                  "Writing JavaScript",
+                  "Sending any request"
+                ],
+                "answer": 1,
+                "why": "JavaScript updates part of the page, so the user does not wait for a new document."
+              },
+              {
+                "q": "Which of these is a server side technology?",
+                "options": [
+                  "The DOM",
+                  "Cookies",
+                  "ASP.NET",
+                  "CSS"
+                ],
+                "answer": 2,
+                "why": "ASP.NET, PHP, JSP and Node.js all run on the server before the response is sent."
+              }
+            ],
+            "examTip": "Define a dynamic page, describe CGI and its drawback, and contrast server side and client side scripting.",
+            "verified": false
+          }
         }
       ]
     },
@@ -285,7 +726,70 @@
               "kind": "subtopic",
               "definition": "h1 to h6 for hierarchy and p, br and hr for text blocks and breaks."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "HTML is the markup language that gives structure and meaning to web content. A document opens with a DOCTYPE, then an html element containing a head and a body. The head holds the title and meta tags, and the body holds everything the reader sees. Elements are written with an opening tag, content and a closing tag, and attributes such as id, class and src configure them. HTML5 added semantic elements: header, nav, main, section, article, aside, figure and footer each say what their part is. It also added native audio and video, canvas, SVG, local storage, web workers and better form inputs.",
+            "example": "Writing nav around the menu links tells a screen reader that this block is navigation, not ordinary text.",
+            "quiz": [
+              {
+                "q": "Which element holds the visible content of a page?",
+                "options": [
+                  "meta",
+                  "head",
+                  "title",
+                  "body"
+                ],
+                "answer": 3,
+                "why": "The head carries metadata, and everything the reader sees sits in the body."
+              },
+              {
+                "q": "Which HTML5 element marks the main navigation block?",
+                "options": [
+                  "nav",
+                  "section",
+                  "aside",
+                  "div"
+                ],
+                "answer": 0,
+                "why": "Semantic elements describe the role of a block, which helps browsers and assistive tools."
+              },
+              {
+                "q": "Which statement about HTML is NOT correct?",
+                "options": [
+                  "The DOCTYPE declares the document type",
+                  "HTML5 removed every formatting element such as b and i",
+                  "Elements usually have opening and closing tags",
+                  "Attributes such as id and class configure elements"
+                ],
+                "answer": 1,
+                "why": "Elements such as b and i still exist, though CSS is the preferred way to style text."
+              },
+              {
+                "q": "Which HTML5 feature draws graphics with script?",
+                "options": [
+                  "nav",
+                  "meta",
+                  "canvas",
+                  "footer"
+                ],
+                "answer": 2,
+                "why": "The canvas element gives a drawing surface that JavaScript can paint on."
+              },
+              {
+                "q": "What does a meta tag do?",
+                "options": [
+                  "Creates a link",
+                  "Adds an image",
+                  "Displays a heading",
+                  "Carries metadata such as character set and viewport"
+                ],
+                "answer": 3,
+                "why": "Meta tags describe the document itself rather than displaying content."
+              }
+            ],
+            "examTip": "Sketch the document skeleton, name four semantic elements and four HTML5 features.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MII-T02",
@@ -317,7 +821,70 @@
               "kind": "subtopic",
               "definition": "Background colour and images were set with attributes in old HTML and are set with CSS today."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Formatting elements change the appearance or the meaning of text. The b and i elements make text bold and italic. The strong and em elements carry importance and emphasis, which matters to screen readers. Other elements include u, sub, sup, mark, small and del. Comments let a developer leave notes in the file, and the browser ignores them completely. Old HTML set fonts and colours with the font tag and with attributes on the body element. Modern pages use CSS instead, with font-family, size and colour, which keeps presentation separate from content.",
+            "example": "Using strong instead of b means a screen reader can stress the word rather than ignore the styling.",
+            "quiz": [
+              {
+                "q": "Which element indicates importance rather than bold styling?",
+                "options": [
+                  "strong",
+                  "i",
+                  "u",
+                  "b"
+                ],
+                "answer": 0,
+                "why": "strong carries meaning, while b only changes the appearance."
+              },
+              {
+                "q": "What happens to an HTML comment in the browser?",
+                "options": [
+                  "It is shown in small text",
+                  "It is ignored and never rendered",
+                  "It is printed at the top of the page",
+                  "It becomes a tooltip"
+                ],
+                "answer": 1,
+                "why": "Comments exist for the people reading the source, not for the reader of the page."
+              },
+              {
+                "q": "Which statement about formatting is NOT correct?",
+                "options": [
+                  "mark highlights text",
+                  "sup raises text above the line",
+                  "The font tag is the recommended way to set type",
+                  "CSS is preferred for fonts and colours"
+                ],
+                "answer": 2,
+                "why": "The font element is obsolete, and CSS replaced it."
+              },
+              {
+                "q": "Which element marks text that has been deleted?",
+                "options": [
+                  "small",
+                  "mark",
+                  "sub",
+                  "del"
+                ],
+                "answer": 3,
+                "why": "del carries the meaning of removal, which is why it suits edit histories."
+              },
+              {
+                "q": "How is text coloured in a modern page?",
+                "options": [
+                  "With the CSS color property",
+                  "With the body attribute",
+                  "With the title tag",
+                  "With the font tag"
+                ],
+                "answer": 0,
+                "why": "CSS separates presentation from content, so one change updates every page."
+              }
+            ],
+            "examTip": "List four formatting elements, explain strong versus b, and say why CSS replaced the font tag.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MII-T03",
@@ -355,7 +922,70 @@
               "kind": "subtopic",
               "definition": "Map regions of one image to different links and use figure with figcaption for captions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The a element creates a link, and its href attribute says where the link goes. That destination may be another page, a section of the same page, an email address or a file to download. Links are internal when they stay inside the site and external when they leave it. A fragment link jumps to an element with a matching id. The target attribute decides where the result opens, such as in a new tab. Images use the img element with src for the file and alt for the text alternative. Formats differ in purpose: JPEG suits photographs and PNG suits sharp graphics. GIF suits simple animation, SVG suits scalable drawings and WebP gives smaller files.",
+            "example": "An image with a missing alt attribute leaves a screen reader with nothing to announce. A short description fixes that.",
+            "quiz": [
+              {
+                "q": "Which attribute holds the destination of a link?",
+                "options": [
+                  "src",
+                  "href",
+                  "alt",
+                  "target"
+                ],
+                "answer": 1,
+                "why": "href names the target resource, while src is used for embedded files such as images."
+              },
+              {
+                "q": "What is a fragment link?",
+                "options": [
+                  "A link that opens a file",
+                  "A broken link",
+                  "A link to a section of the same page using an id",
+                  "A link to another site"
+                ],
+                "answer": 2,
+                "why": "The URL ends with a hash and the element id, so the browser scrolls to that place."
+              },
+              {
+                "q": "Which statement about images is NOT correct?",
+                "options": [
+                  "WebP usually produces smaller files than JPEG",
+                  "src names the image file",
+                  "alt provides a text alternative",
+                  "SVG loses quality when enlarged"
+                ],
+                "answer": 3,
+                "why": "SVG is vector based, so it stays sharp at any size."
+              },
+              {
+                "q": "Which attribute opens a link in a new tab?",
+                "options": [
+                  "target",
+                  "rel",
+                  "alt",
+                  "href"
+                ],
+                "answer": 0,
+                "why": "Setting target makes the browser open the result in a new tab or a named frame."
+              },
+              {
+                "q": "Which image format suits a logo that must scale?",
+                "options": [
+                  "GIF",
+                  "SVG",
+                  "WebP",
+                  "JPEG"
+                ],
+                "answer": 1,
+                "why": "SVG describes shapes rather than pixels, so it scales without losing sharpness."
+              }
+            ],
+            "examTip": "Write an anchor tag with href and target, list three link types, and compare four image formats.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MII-T04",
@@ -393,7 +1023,70 @@
               "kind": "subtopic",
               "definition": "Framesets split a window into panes and are obsolete; iframe embeds another document inside a page."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Lists group related items, and there are three kinds. An ordered list numbers its items and an unordered list marks them with bullets. A definition list pairs a term with its description. Each item is written with li, and lists may be nested inside one another. Tables arrange data in rows and columns using table, tr, th and td, with caption, thead and tbody giving structure. A cell can span several rows or columns with rowspan and colspan. Framesets once split a window into panes but are obsolete now, while the iframe element embeds another document inside a page.",
+            "example": "A timetable needs a table with th for the days and td for each subject. A list would lose the row and column structure.",
+            "quiz": [
+              {
+                "q": "Which list pairs a term with its description?",
+                "options": [
+                  "ol",
+                  "ul",
+                  "dl",
+                  "li"
+                ],
+                "answer": 2,
+                "why": "A definition list uses dl with dt for the term and dd for the description."
+              },
+              {
+                "q": "Which element marks a header cell in a table?",
+                "options": [
+                  "tr",
+                  "caption",
+                  "td",
+                  "th"
+                ],
+                "answer": 3,
+                "why": "th marks a header cell and td an ordinary data cell, and browsers style them differently."
+              },
+              {
+                "q": "Which statement about tables is NOT correct?",
+                "options": [
+                  "Tables should be used to lay out a whole page",
+                  "thead groups the header rows",
+                  "colspan makes a cell span columns",
+                  "rowspan makes a cell span rows"
+                ],
+                "answer": 0,
+                "why": "Layout is a CSS job, and tables are meant for data with rows and columns."
+              },
+              {
+                "q": "Which element embeds another document inside a page?",
+                "options": [
+                  "frameset",
+                  "iframe",
+                  "frame",
+                  "div"
+                ],
+                "answer": 1,
+                "why": "The iframe element is still supported, while framesets were removed from HTML5."
+              },
+              {
+                "q": "Which element gives a table a title?",
+                "options": [
+                  "title",
+                  "legend",
+                  "caption",
+                  "thead"
+                ],
+                "answer": 2,
+                "why": "caption is placed inside the table element and describes what the table shows."
+              }
+            ],
+            "examTip": "Name the three list types with their tags, the table tags, and explain rowspan, colspan and iframe.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MII-T05",
@@ -431,7 +1124,70 @@
               "kind": "subtopic",
               "definition": "required, pattern, min, max and maxlength check input before submission, with HTML5 validation messages."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A form collects user input and sends it to a server for processing. The form element names the processing URL with action and the sending method with method, usually GET or POST. Inside it, the input element covers many types: text, password, email, number, date, radio, checkbox, file, hidden, submit and reset. Drop down lists use select with option, longer text uses textarea, and button gives a clickable control. Every control should have a name, because that is what the server reads. Labels and fieldsets improve accessibility, and attributes such as required, pattern, min and max validate input in the browser before submission.",
+            "example": "A signup form with required on the email field stops an empty submission before any request reaches the server.",
+            "quiz": [
+              {
+                "q": "Which attribute names the script that will process a form?",
+                "options": [
+                  "name",
+                  "id",
+                  "method",
+                  "action"
+                ],
+                "answer": 3,
+                "why": "action gives the destination URL, while method says how the data will be sent."
+              },
+              {
+                "q": "When should POST be used instead of GET?",
+                "options": [
+                  "For sensitive or large data, sent in the request body",
+                  "For links between pages",
+                  "For loading images",
+                  "For short search terms"
+                ],
+                "answer": 0,
+                "why": "GET puts data in the URL, which is visible and limited in size."
+              },
+              {
+                "q": "Which statement about forms is NOT correct?",
+                "options": [
+                  "select creates a drop down list",
+                  "Client side validation is enough on its own",
+                  "A control needs a name to be submitted",
+                  "textarea suits multi-line text"
+                ],
+                "answer": 1,
+                "why": "Browser validation can be bypassed, so the server must validate as well."
+              },
+              {
+                "q": "Which element ties a caption to a control?",
+                "options": [
+                  "span",
+                  "legend",
+                  "label",
+                  "fieldset"
+                ],
+                "answer": 2,
+                "why": "A label with a for attribute makes the caption clickable and helps screen readers."
+              },
+              {
+                "q": "Which input type shows dots instead of characters?",
+                "options": [
+                  "hidden",
+                  "number",
+                  "text",
+                  "password"
+                ],
+                "answer": 3,
+                "why": "The password type masks what is typed, though it does not encrypt the value sent."
+              }
+            ],
+            "examTip": "Write a form tag with action and method, list five input types, and explain labels and validation.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MII-T06",
@@ -475,7 +1231,70 @@
               "kind": "subtopic",
               "definition": "Later, more specific rules win, and inheritable properties pass from parent to child."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "CSS separates presentation from content and controls layout, colour and typography. It is needed because one stylesheet keeps a whole site consistent, makes maintenance easier and keeps HTML smaller. A rule has a selector and a declaration block of property value pairs, each ending with a semicolon. There are three ways to apply it. An inline style goes in the style attribute of one element and has the highest priority. An embedded sheet sits in a style element in the head and applies to one page. An external sheet is linked with the link element, and one file then styles an entire site.",
+            "example": "Changing a colour in one linked stylesheet updates every page at once. Copying that change into fifty files would take hours.",
+            "quiz": [
+              {
+                "q": "Which type of stylesheet affects an entire site?",
+                "options": [
+                  "External",
+                  "Imported",
+                  "Inline",
+                  "Embedded"
+                ],
+                "answer": 0,
+                "why": "One external file is linked from every page, so a single edit updates them all."
+              },
+              {
+                "q": "What are the two parts of a CSS rule?",
+                "options": [
+                  "A tag and an attribute",
+                  "A selector and a declaration block",
+                  "A class and an id",
+                  "A head and a body"
+                ],
+                "answer": 1,
+                "why": "The selector chooses the elements and the declarations say what to change."
+              },
+              {
+                "q": "Which statement about CSS is NOT correct?",
+                "options": [
+                  "More specific selectors override less specific ones",
+                  "Some properties are inherited from parent to child",
+                  "External styles always override inline styles",
+                  "Inline styles have the highest priority"
+                ],
+                "answer": 2,
+                "why": "Inline styles win over external ones, which is why they are used sparingly."
+              },
+              {
+                "q": "Which element links an external stylesheet?",
+                "options": [
+                  "script",
+                  "meta",
+                  "style",
+                  "link"
+                ],
+                "answer": 3,
+                "why": "The link element with rel stylesheet and an href points to the CSS file."
+              },
+              {
+                "q": "Why is CSS preferred over formatting tags?",
+                "options": [
+                  "It keeps presentation separate from content",
+                  "It is required by HTML5",
+                  "It works without a browser",
+                  "It loads faster than HTML"
+                ],
+                "answer": 0,
+                "why": "Separation means the look can change without touching the structure or the text."
+              }
+            ],
+            "examTip": "Explain why CSS is needed, write a rule, and compare inline, embedded and external stylesheets.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MII-T07",
@@ -525,7 +1344,70 @@
               "kind": "subtopic",
               "definition": "Percentages, flexible units and media queries adapt one layout to phones, tablets and desktops."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "CSS controls typography, colour, spacing and the position of every element. Text is shaped with font-family, font-size, font-weight, line-height, letter-spacing, text-align and text-decoration. Backgrounds take a colour, a gradient or an image, and borders get rounded corners and shadows. The box model is the key idea: content, padding, border and margin. Box-sizing decides whether padding counts towards the declared width. Position can be static, relative, absolute, fixed or sticky, with z-index setting the stacking order. Layout uses floats for wrapping text, flexbox for one dimension and grid for two. Media queries adapt the layout to smaller screens.",
+            "example": "A card with 20 pixels of padding and a 1 pixel border is 42 pixels wider than its content unless box-sizing is set to border-box.",
+            "quiz": [
+              {
+                "q": "What is the correct order of the box model from the inside out?",
+                "options": [
+                  "Content, margin, border, padding",
+                  "Content, padding, border, margin",
+                  "Padding, content, border, margin",
+                  "Border, padding, content, margin"
+                ],
+                "answer": 1,
+                "why": "Padding is inside the border, and margin is the space outside it."
+              },
+              {
+                "q": "Which positioning value keeps an element in place while the page scrolls?",
+                "options": [
+                  "relative",
+                  "absolute",
+                  "fixed",
+                  "static"
+                ],
+                "answer": 2,
+                "why": "Fixed positioning removes the element from the flow and pins it to the viewport."
+              },
+              {
+                "q": "Which statement about layout is NOT correct?",
+                "options": [
+                  "Flexbox handles one dimension at a time",
+                  "Grid handles rows and columns together",
+                  "Media queries support responsive design",
+                  "Floats are the best tool for a full page layout"
+                ],
+                "answer": 3,
+                "why": "Floats suit wrapping text around an image, while flexbox and grid handle real layouts."
+              },
+              {
+                "q": "What does box-sizing border-box do?",
+                "options": [
+                  "Includes padding and border in the declared width",
+                  "Removes the margin",
+                  "Centres the element",
+                  "Adds a border"
+                ],
+                "answer": 0,
+                "why": "Without it, padding and border are added on top of the width you set."
+              },
+              {
+                "q": "What does z-index control?",
+                "options": [
+                  "The zoom level",
+                  "The stacking order of overlapping elements",
+                  "The font size",
+                  "The page width"
+                ],
+                "answer": 1,
+                "why": "A higher z-index draws an element in front of one with a lower value."
+              }
+            ],
+            "examTip": "Draw the box model, list the five position values, and compare float, flexbox and grid.",
+            "verified": false
+          }
         }
       ]
     },
@@ -563,7 +1445,70 @@
               "kind": "subtopic",
               "definition": "Inline handlers, the script element inside head or body, and external .js files with defer or async."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "JavaScript is the scripting language of the browser, and it is what makes a page interactive. It can also run outside the browser nowadays, on a server through Node.js. The language is interpreted, dynamically typed and object based, and it is event driven with a single thread and an event loop. Code reaches a page in three ways: inline handlers, a script element, or an external file. External files are preferred, and defer or async control when the code runs. Its strengths are instant validation and rich interfaces. Its limits are browser differences and the fact that the user can see the code.",
+            "example": "A page that checks a mobile number as you type is using JavaScript. The same check could run on the server, but not instantly.",
+            "quiz": [
+              {
+                "q": "Where can JavaScript run besides the browser?",
+                "options": [
+                  "Inside a database",
+                  "Only in the browser",
+                  "On a server through Node.js",
+                  "Inside a CSS file"
+                ],
+                "answer": 2,
+                "why": "Node.js runs the same language outside the browser, which is why it is used for servers."
+              },
+              {
+                "q": "What does defer do on a script tag?",
+                "options": [
+                  "Loads the script twice",
+                  "Compresses the script",
+                  "Stops the script running",
+                  "Runs the script after the document is parsed"
+                ],
+                "answer": 3,
+                "why": "Deferred scripts run in order once the page structure exists, so they can find elements."
+              },
+              {
+                "q": "Which statement about JavaScript is NOT correct?",
+                "options": [
+                  "It is the same language as Java",
+                  "It is event driven",
+                  "It is dynamically typed",
+                  "It uses a single thread with an event loop"
+                ],
+                "answer": 0,
+                "why": "The shared name is a historical accident; the two languages are quite different."
+              },
+              {
+                "q": "Which is a limitation of client side JavaScript?",
+                "options": [
+                  "It cannot validate forms",
+                  "The user can see and modify the code",
+                  "It cannot respond to events",
+                  "It cannot change the page"
+                ],
+                "answer": 1,
+                "why": "Anything that runs in the browser is under the user's control, so the server must recheck."
+              },
+              {
+                "q": "What is the preferred way to add JavaScript to a page?",
+                "options": [
+                  "A style attribute",
+                  "A meta tag",
+                  "An external file",
+                  "An inline handler"
+                ],
+                "answer": 2,
+                "why": "An external file can be cached, reused across pages and kept out of the markup."
+              }
+            ],
+            "examTip": "Say where JavaScript runs, list its core features, the three ways to include it, and one limit.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T02",
@@ -601,7 +1546,70 @@
               "kind": "subtopic",
               "definition": "Implicit conversion by operators and explicit conversion with Number, String and Boolean."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "JavaScript values are either primitive or objects. The primitive types are string, number, bigint, boolean, undefined, null and symbol, and everything else, including arrays and functions, is an object. Variables are declared with var, let or const, and the difference matters. var is function scoped and hoisted, let is block scoped, and const cannot be reassigned. Operators build expressions out of values: arithmetic, comparison, logical, assignment, ternary and typeof. Comparison has a trap, because the double equals operator converts types before comparing while the triple equals does not. Control flow uses if, else, switch, for, while, do while, for of and for in, with break, continue and try catch finally.",
+            "example": "The expression 5 == '5' is true, but 5 === '5' is false. That difference causes a surprising number of bugs.",
+            "quiz": [
+              {
+                "q": "What is the difference between let and var?",
+                "options": [
+                  "var cannot be reassigned",
+                  "let is the older keyword",
+                  "They are identical",
+                  "let is block scoped, var is function scoped and hoisted"
+                ],
+                "answer": 3,
+                "why": "Block scoping keeps a variable inside the braces where it was declared, which avoids surprises."
+              },
+              {
+                "q": "Which of these is a primitive type?",
+                "options": [
+                  "Symbol",
+                  "Function",
+                  "Array",
+                  "Object"
+                ],
+                "answer": 0,
+                "why": "Arrays, objects and functions are object types, while symbol is one of the primitives."
+              },
+              {
+                "q": "Which statement about JavaScript is NOT correct?",
+                "options": [
+                  "The triple equals operator compares without converting types",
+                  "undefined and null are the same value",
+                  "const prevents reassignment of the binding",
+                  "typeof returns the type of a value"
+                ],
+                "answer": 1,
+                "why": "undefined means a variable has no value, while null is a value meaning no object."
+              },
+              {
+                "q": "What does the ternary operator do?",
+                "options": [
+                  "Converts a string",
+                  "Loops over an array",
+                  "Chooses one of two values based on a condition",
+                  "Declares a variable"
+                ],
+                "answer": 2,
+                "why": "It is a compact form of if and else that produces a value."
+              },
+              {
+                "q": "Which loop iterates over the values of an array?",
+                "options": [
+                  "while",
+                  "switch",
+                  "for in",
+                  "for of"
+                ],
+                "answer": 3,
+                "why": "for of gives the values, while for in walks the property names of an object."
+              }
+            ],
+            "examTip": "List the primitive types, compare var, let and const, explain == versus ===, and name four loops.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T03",
@@ -639,7 +1647,70 @@
               "kind": "subtopic",
               "definition": "Modern syntax for flexible argument lists and copying or expanding arrays and objects."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A function is a reusable block of code that may take parameters and return a value. A function declaration is hoisted, so it can be called before it appears in the file. A function expression assigned to a variable cannot be called that way. Parameters receive the arguments, the arguments object holds them all, and return sends a value back, with undefined as the default. Scope decides what a function can see. A closure is a function that remembers the variables of the one that created it. Arrow functions give shorter syntax with lexical this, so they are common as callbacks. Modern syntax adds rest, spread and default parameters.",
+            "example": "A counter built with a closure keeps its own count. Two counters made the same way never share that number.",
+            "quiz": [
+              {
+                "q": "What is a closure?",
+                "options": [
+                  "A function that remembers the variables of the function that created it",
+                  "A syntax error",
+                  "A type of loop",
+                  "A way to end a function"
+                ],
+                "answer": 0,
+                "why": "The inner function keeps a reference to the outer scope, so the value survives the call."
+              },
+              {
+                "q": "What does a function return if there is no return statement?",
+                "options": [
+                  "null",
+                  "undefined",
+                  "0",
+                  "An empty string"
+                ],
+                "answer": 1,
+                "why": "Every function returns something, and without a return the value is undefined."
+              },
+              {
+                "q": "Which statement about functions is NOT correct?",
+                "options": [
+                  "Arrow functions have lexical this",
+                  "A function expression can be stored in a variable",
+                  "Parameters and scope are the same thing",
+                  "Function declarations are hoisted"
+                ],
+                "answer": 2,
+                "why": "Parameters are the names receiving arguments, while scope is about what is visible inside."
+              },
+              {
+                "q": "What does the rest parameter do?",
+                "options": [
+                  "Repeats the function",
+                  "Returns the last value",
+                  "Stops the function",
+                  "Collects the remaining arguments into an array"
+                ],
+                "answer": 3,
+                "why": "It lets a function accept any number of arguments without naming them all."
+              },
+              {
+                "q": "Why is an arrow function often used as a callback?",
+                "options": [
+                  "It keeps the surrounding this value instead of rebinding it",
+                  "It can return nothing",
+                  "It is hoisted",
+                  "It always runs faster"
+                ],
+                "answer": 0,
+                "why": "Lexical this avoids the old workaround of storing this in another variable."
+              }
+            ],
+            "examTip": "Compare declaration and expression, define closure and arrow function, and explain return, rest and spread.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T04",
@@ -683,7 +1754,70 @@
               "kind": "subtopic",
               "definition": "Patterns used with test, match, replace and split for validation and searching."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "JavaScript supplies built-in objects for structured data, dates and mathematics. An object stores key value pairs, and its properties and methods are reached with a dot or with square brackets. An array is an ordered collection with two families of methods. push, pop, shift, unshift and splice change the array itself. slice, map, filter and reduce return something new. Strings have their own methods, including length, indexOf, slice, split, replace and trim. The Date object handles dates and times, and the Math object supplies round, floor, ceil, abs, pow, sqrt, random, min and max. Regular expressions add pattern matching through test, match, replace and split.",
+            "example": "Filtering a list of marks above 60 is one line with filter. Sorting needs a compare function, because sort compares strings by default.",
+            "quiz": [
+              {
+                "q": "Which array method returns a new array instead of changing the original?",
+                "options": [
+                  "splice",
+                  "map",
+                  "pop",
+                  "push"
+                ],
+                "answer": 1,
+                "why": "map, filter and slice leave the original alone, which makes them safer to use."
+              },
+              {
+                "q": "How are object properties accessed?",
+                "options": [
+                  "With a colon",
+                  "Only with a dot",
+                  "With a dot or with square brackets",
+                  "Only with parentheses"
+                ],
+                "answer": 2,
+                "why": "Bracket notation also allows a property name held in a variable."
+              },
+              {
+                "q": "Which statement about built-in objects is NOT correct?",
+                "options": [
+                  "sort arranges elements in place",
+                  "Math.random returns a number below one",
+                  "Date objects can be compared by subtraction",
+                  "split joins array elements into a string"
+                ],
+                "answer": 3,
+                "why": "split breaks a string into an array, while join does the opposite."
+              },
+              {
+                "q": "Which Math method rounds down to the nearest integer?",
+                "options": [
+                  "Math.floor",
+                  "Math.ceil",
+                  "Math.abs",
+                  "Math.round"
+                ],
+                "answer": 0,
+                "why": "floor rounds down, ceil rounds up and round goes to the nearest."
+              },
+              {
+                "q": "Which method tests whether a string matches a pattern?",
+                "options": [
+                  "match",
+                  "test",
+                  "replace",
+                  "slice"
+                ],
+                "answer": 1,
+                "why": "A regular expression's test method returns true or false, which suits validation."
+              }
+            ],
+            "examTip": "List four array methods of each family, four string methods, and the roles of Date, Math and regex.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T05",
@@ -721,7 +1855,70 @@
               "kind": "subtopic",
               "definition": "parentNode, children, firstElementChild, nextElementSibling and closest."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The DOM is a tree representation of the page that JavaScript can read and change. Elements, attributes and text become nodes in a hierarchy under the document node. Elements are found with getElementById, getElementsByClassName, getElementsByTagName, querySelector and querySelectorAll. Content is then changed with innerHTML, textContent and setAttribute, while classList and style handle appearance. New nodes are built with createElement and placed with appendChild or insertBefore, and removed with removeChild. Traversal moves around the tree using parentNode, children, firstElementChild, nextElementSibling and closest.",
+            "example": "A shopping list app adds an item by creating an li element, setting its text and appending it to the ul.",
+            "quiz": [
+              {
+                "q": "Which method returns the first element matching a CSS selector?",
+                "options": [
+                  "getElementsByTagName",
+                  "getElementById",
+                  "querySelector",
+                  "querySelectorAll"
+                ],
+                "answer": 2,
+                "why": "querySelector takes any CSS selector and returns the first match, or null."
+              },
+              {
+                "q": "Which property should be used to insert plain text safely?",
+                "options": [
+                  "value",
+                  "outerHTML",
+                  "innerHTML",
+                  "textContent"
+                ],
+                "answer": 3,
+                "why": "textContent treats the value as text, so it cannot inject markup the way innerHTML can."
+              },
+              {
+                "q": "Which statement about the DOM is NOT correct?",
+                "options": [
+                  "The DOM is the same thing as the HTML source file",
+                  "The DOM is a tree of nodes",
+                  "createElement makes a new element",
+                  "appendChild attaches a node to a parent"
+                ],
+                "answer": 0,
+                "why": "The DOM is the live object the browser builds from the source, and script can change it."
+              },
+              {
+                "q": "Which method removes a node from its parent?",
+                "options": [
+                  "createElement",
+                  "removeChild",
+                  "cloneNode",
+                  "insertBefore"
+                ],
+                "answer": 1,
+                "why": "removeChild is called on the parent and takes the node to be removed."
+              },
+              {
+                "q": "What does closest do?",
+                "options": [
+                  "Finds the previous sibling",
+                  "Finds the nearest child",
+                  "Walks up to the nearest ancestor matching a selector",
+                  "Compares two nodes"
+                ],
+                "answer": 2,
+                "why": "It starts at the element and searches upwards, which is handy in event handlers."
+              }
+            ],
+            "examTip": "Explain the DOM tree, list three selection methods, three change methods and three traversal properties.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T06",
@@ -765,7 +1962,70 @@
               "kind": "subtopic",
               "definition": "preventDefault is used to stop submission while custom validation runs."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Event handling lets a page respond to clicks, typing, scrolling and the rest. The browser passes an event object that carries the type, the target, the coordinates, the key pressed and any modifier keys. Handlers can be attached as an inline attribute, a property, or with addEventListener. addEventListener is preferred, because several listeners can then coexist. Events travel in three phases: capture down to the target, the target itself, then bubble back up. Calling stopPropagation ends that journey. Event delegation puts one listener on a parent and lets it handle events from many children. Form work often calls preventDefault to stop submission while validation runs.",
+            "example": "One listener on a table can handle clicks on any row. Adding a listener to every row would waste memory and break for new rows.",
+            "quiz": [
+              {
+                "q": "Why is addEventListener preferred over onclick?",
+                "options": [
+                  "It works without a browser",
+                  "It is the only one that fires",
+                  "It is faster",
+                  "Several listeners can be attached and removed cleanly"
+                ],
+                "answer": 3,
+                "why": "A property holds one handler at a time, while listeners accumulate and can be removed."
+              },
+              {
+                "q": "What is event delegation?",
+                "options": [
+                  "One listener on a parent handling events from many children",
+                  "Writing events in HTML",
+                  "Blocking an event",
+                  "Passing an event to the server"
+                ],
+                "answer": 0,
+                "why": "Events bubble up, so the parent can inspect the target and act accordingly."
+              },
+              {
+                "q": "Which statement about events is NOT correct?",
+                "options": [
+                  "preventDefault stops the default action",
+                  "Bubbling happens before the capture phase",
+                  "The event object carries the target",
+                  "Events bubble back up the tree"
+                ],
+                "answer": 1,
+                "why": "Capture runs first on the way down, then the target, then bubbling on the way up."
+              },
+              {
+                "q": "Which event fires while a user types in a field?",
+                "options": [
+                  "scroll",
+                  "click",
+                  "input",
+                  "load"
+                ],
+                "answer": 2,
+                "why": "input fires on every change to the value, which suits live validation."
+              },
+              {
+                "q": "What does stopPropagation do?",
+                "options": [
+                  "Deletes the handler",
+                  "Cancels the default action",
+                  "Reloads the page",
+                  "Stops the event travelling further through the tree"
+                ],
+                "answer": 3,
+                "why": "It halts capture and bubbling, while preventDefault stops the browser's own action."
+              }
+            ],
+            "examTip": "Name three ways to attach a handler, the three event phases, and explain delegation and preventDefault.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T07",
@@ -797,7 +2057,70 @@
               "kind": "subtopic",
               "definition": "setTimeout and setInterval drive repeated updates and simple animations."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The window object is the top of the browser object model, and it can open, close, move and resize windows. It also supplies the dialogs alert, confirm and prompt, and the timers setTimeout and setInterval. Around it sit other useful objects: navigator describes the browser, screen the display, history the visited pages and location the current URL. Assigning to location.href redirects the browser to a new page. Frames and iframes are reachable as collections. A script may reach into the document of a frame from the same origin. Timers are what drive repeated updates and simple animation.",
+            "example": "A page that asks for confirmation before deleting uses confirm. A banner that changes every five seconds uses setInterval.",
+            "quiz": [
+              {
+                "q": "Which object holds the current URL?",
+                "options": [
+                  "location",
+                  "navigator",
+                  "screen",
+                  "history"
+                ],
+                "answer": 0,
+                "why": "location exposes the URL, and assigning to its href navigates somewhere else."
+              },
+              {
+                "q": "What is the difference between setTimeout and setInterval?",
+                "options": [
+                  "They are the same",
+                  "setTimeout runs once after a delay, setInterval repeats",
+                  "setInterval is faster",
+                  "setTimeout cannot be cancelled"
+                ],
+                "answer": 1,
+                "why": "setTimeout fires once, while setInterval keeps firing until it is cleared."
+              },
+              {
+                "q": "Which statement about windows is NOT correct?",
+                "options": [
+                  "confirm returns true or false",
+                  "prompt asks for text input",
+                  "Scripts may freely read any frame from any site",
+                  "alert shows a message box"
+                ],
+                "answer": 2,
+                "why": "The same origin policy blocks access to documents from a different origin."
+              },
+              {
+                "q": "Which object describes the display size?",
+                "options": [
+                  "history",
+                  "document",
+                  "navigator",
+                  "screen"
+                ],
+                "answer": 3,
+                "why": "screen reports the display, while navigator reports the browser itself."
+              },
+              {
+                "q": "What does history.back do?",
+                "options": [
+                  "Goes to the previous page in the session history",
+                  "Closes the window",
+                  "Clears the cache",
+                  "Reloads the page"
+                ],
+                "answer": 0,
+                "why": "The history object lets scripts move backwards and forwards through visited pages."
+              }
+            ],
+            "examTip": "List five window methods, describe navigator, screen, history and location, and give the same origin rule.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIII-T08",
@@ -829,7 +2152,70 @@
               "kind": "subtopic",
               "definition": "Fast feedback, but it can be bypassed, so server side validation is still required."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Forms are checked in the browser before submission, which saves the server work and gives the user instant feedback. A script reaches the controls through document.forms, element names or a selector. It then reads value, checked or the selected options. Validation checks the usual things: empty fields, lengths, patterns with regular expressions and numeric ranges. The checks are wired to events such as onsubmit, onblur and oninput, and error messages are placed next to the field that failed. Client side validation is fast and helpful, but it can be bypassed, so the server must validate every value again.",
+            "example": "A form that checks the PIN code with a regular expression can warn about the format the moment the user leaves the field.",
+            "quiz": [
+              {
+                "q": "Why is client side validation still not enough?",
+                "options": [
+                  "It is too slow",
+                  "It can be bypassed, so the server must check again",
+                  "It cannot read values",
+                  "It works only on phones"
+                ],
+                "answer": 1,
+                "why": "Anything in the browser is under the user's control, including the checks themselves."
+              },
+              {
+                "q": "Which event fires when a field loses focus?",
+                "options": [
+                  "onload",
+                  "onsubmit",
+                  "onblur",
+                  "oninput"
+                ],
+                "answer": 2,
+                "why": "onblur is the usual place to validate one field as soon as the user leaves it."
+              },
+              {
+                "q": "Which statement about form validation is NOT correct?",
+                "options": [
+                  "Values are read with the value property",
+                  "Regular expressions can test a pattern",
+                  "Error messages belong near the field",
+                  "Server validation is optional if the browser checks"
+                ],
+                "answer": 3,
+                "why": "Server side validation is mandatory, because the browser's checks can be turned off."
+              },
+              {
+                "q": "How is the state of a checkbox read?",
+                "options": [
+                  "With the checked property",
+                  "With the name attribute",
+                  "With the action attribute",
+                  "With value"
+                ],
+                "answer": 0,
+                "why": "checked is a boolean, while value is the text sent when the box is ticked."
+              },
+              {
+                "q": "What does preventDefault do in a submit handler?",
+                "options": [
+                  "Clears the form",
+                  "Stops the form submitting so the script can decide",
+                  "Reloads the page",
+                  "Sends the data twice"
+                ],
+                "answer": 1,
+                "why": "The handler can then allow submission only if every check passes."
+              }
+            ],
+            "examTip": "Describe reading form values, name three checks and three events, and say why server validation is required.",
+            "verified": false
+          }
         }
       ]
     },
@@ -873,7 +2259,70 @@
               "kind": "subtopic",
               "definition": "The geolocation API, drag and drop, and the file reader API extend browser behaviour."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The browser object model gathers the objects the browser exposes: window, document, navigator, screen, history and location. Storage comes in two flavours. Cookies are small pieces of data sent with every request. localStorage and sessionStorage keep data in the browser only. Media is handled by elements and objects too. Images, audio and video can be played, paused, moved with currentTime and set to a volume. Graphics come in two styles: canvas draws pixels through a two dimensional context, while SVG describes vector shapes as XML. Beyond that, geolocation, drag and drop and the file reader API extend what a page can do.",
+            "example": "A quiz site keeps unfinished answers in localStorage so a student can close the tab and return to them later.",
+            "quiz": [
+              {
+                "q": "What is the difference between cookies and localStorage?",
+                "options": [
+                  "Cookies always hold more data",
+                  "They are identical",
+                  "Cookies are sent with every request, localStorage stays in the browser",
+                  "localStorage expires after a day"
+                ],
+                "answer": 2,
+                "why": "Cookies travel to the server each time, while web storage never leaves the browser."
+              },
+              {
+                "q": "Which draws vector graphics as XML?",
+                "options": [
+                  "WebGL",
+                  "WebP",
+                  "canvas",
+                  "SVG"
+                ],
+                "answer": 3,
+                "why": "SVG describes shapes that stay sharp, while canvas paints pixels that are then fixed."
+              },
+              {
+                "q": "Which statement about browser storage is NOT correct?",
+                "options": [
+                  "Web storage data is sent to the server with each request",
+                  "Cookies are limited in size",
+                  "sessionStorage is cleared when the tab closes",
+                  "localStorage persists until it is cleared"
+                ],
+                "answer": 0,
+                "why": "Avoiding that round trip is the point of web storage, which is why it suits larger data."
+              },
+              {
+                "q": "Which API reports the user's position?",
+                "options": [
+                  "The file reader API",
+                  "The geolocation API",
+                  "The history API",
+                  "The canvas API"
+                ],
+                "answer": 1,
+                "why": "Geolocation asks permission and then returns coordinates to the page."
+              },
+              {
+                "q": "Which collection of objects makes up the BOM?",
+                "options": [
+                  "table, tr and td",
+                  "class, id and style",
+                  "window, document, navigator, screen, history and location",
+                  "head, body and title"
+                ],
+                "answer": 2,
+                "why": "These objects describe the browser and the page rather than the HTML tags."
+              }
+            ],
+            "examTip": "Name the BOM objects, compare cookies with web storage, and describe canvas, SVG and media control.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIV-T02",
@@ -917,7 +2366,70 @@
               "kind": "subtopic",
               "definition": "A subclass may replace a parent method, and the most derived version is called."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "JavaScript objects are built on prototypes, and modern class syntax sits on top of that foundation. The older way uses a constructor function called with new. Inside it, this refers to the new object and shared methods go on the prototype. Every object links up a prototype chain to Object.prototype, and that chain is how properties are inherited. Encapsulation is achieved with closures or with private fields written with a hash prefix. The class keyword gives a cleaner syntax with a constructor, methods, getters and setters, and static members. Inheritance uses extends and super, and a subclass may override a parent method, with the most derived version being called.",
+            "example": "A Student class extends Person. Calling super in the constructor sets the name, and the subclass adds a roll number.",
+            "quiz": [
+              {
+                "q": "What does the new keyword do?",
+                "options": [
+                  "Imports a module",
+                  "Copies a class",
+                  "Creates a variable",
+                  "Creates an object and calls the constructor with this bound to it"
+                ],
+                "answer": 3,
+                "why": "new makes a fresh object, sets its prototype and returns it from the constructor."
+              },
+              {
+                "q": "How is inheritance written with class syntax?",
+                "options": [
+                  "With extends and super",
+                  "With the new keyword only",
+                  "With a getter",
+                  "With the prototype keyword"
+                ],
+                "answer": 0,
+                "why": "extends creates the subclass and super calls the parent constructor or method."
+              },
+              {
+                "q": "Which statement about JavaScript objects is NOT correct?",
+                "options": [
+                  "Private fields are written with a hash prefix",
+                  "Every object has its own copy of every method",
+                  "Objects inherit through a prototype chain",
+                  "class syntax is sugar over prototypes"
+                ],
+                "answer": 1,
+                "why": "Methods live on the prototype and are shared, which is why they are defined there."
+              },
+              {
+                "q": "What is polymorphism in this context?",
+                "options": [
+                  "A method with many parameters",
+                  "Many classes in one file",
+                  "A subclass replacing a parent method with its own version",
+                  "A class with many constructors"
+                ],
+                "answer": 2,
+                "why": "The same call reaches different code depending on the object it is made on."
+              },
+              {
+                "q": "What does a static member belong to?",
+                "options": [
+                  "The prototype chain",
+                  "The window object",
+                  "One instance",
+                  "The class itself rather than an instance"
+                ],
+                "answer": 3,
+                "why": "A static member is reached through the class name, not through an object made from it."
+              }
+            ],
+            "examTip": "Explain prototypes, compare constructors and class syntax, and describe inheritance and overriding.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIV-T03",
@@ -949,7 +2461,70 @@
               "kind": "subtopic",
               "definition": "REST services send and receive JSON, which is the standard format of modern web APIs."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "JSON is a text format for exchanging structured data between a browser and a server. Its syntax is deliberately small: objects with quoted keys, arrays, strings, numbers, and the literals true, false and null. Functions and comments are not allowed, and keys must be written in double quotes. Two methods do the conversion: JSON.parse turns a JSON string into a JavaScript object, and JSON.stringify does the reverse. Compared with XML it is lighter, easier to read and native to JavaScript, while XML still offers schemas, attributes and namespaces. Nearly every modern web API sends and receives JSON.",
+            "example": "A weather API returns a JSON object with a temperature field. One parse call turns it into something a script can read.",
+            "quiz": [
+              {
+                "q": "Which method turns a JSON string into an object?",
+                "options": [
+                  "JSON.parse",
+                  "JSON.toString",
+                  "JSON.encode",
+                  "JSON.stringify"
+                ],
+                "answer": 0,
+                "why": "parse reads the text and builds the matching JavaScript value."
+              },
+              {
+                "q": "Which of these is NOT valid in JSON?",
+                "options": [
+                  "An array",
+                  "A function value",
+                  "null",
+                  "A quoted key"
+                ],
+                "answer": 1,
+                "why": "JSON carries data only, so functions and comments cannot appear in it."
+              },
+              {
+                "q": "Which statement about JSON is NOT correct?",
+                "options": [
+                  "It supports true, false and null",
+                  "It is native to JavaScript",
+                  "It supports comments for documentation",
+                  "Keys must use double quotes"
+                ],
+                "answer": 2,
+                "why": "Comments were removed from the format deliberately, to keep it simple."
+              },
+              {
+                "q": "Compared with XML, JSON is:",
+                "options": [
+                  "Able to use attributes and namespaces",
+                  "Required for SOAP services",
+                  "Heavier and harder to parse",
+                  "Lighter and easier to parse in JavaScript"
+                ],
+                "answer": 3,
+                "why": "Its size and direct mapping to JavaScript objects are why APIs prefer it."
+              },
+              {
+                "q": "What does JSON.stringify produce?",
+                "options": [
+                  "A JSON text string",
+                  "An array",
+                  "A schema",
+                  "A JavaScript object"
+                ],
+                "answer": 0,
+                "why": "It serialises a value into the text form that can be sent over the network."
+              }
+            ],
+            "examTip": "State the JSON syntax rules, give both conversion methods, and compare JSON with XML.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIV-T04",
@@ -987,7 +2562,70 @@
               "kind": "subtopic",
               "definition": "Cross browser convenience and a large plugin base versus extra download size and reduced need today."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "jQuery is a small library that simplifies DOM traversal, events, animation and AJAX. Its central idea is the jQuery function, usually written with a dollar sign, which selects elements with CSS style selectors. Methods can then be chained, so several operations read as one line. Manipulation covers text, html, attr, addClass, append and remove, and effects include show, hide, fadeIn and slideToggle. Events are handled with on, click, hover and ready, the last of which waits for the document. AJAX helpers wrap XMLHttpRequest in short calls: get, post and ajax. The trade off is an extra download, and much of what it offered is now built into the browser.",
+            "example": "Hiding all error messages takes one line in jQuery. The same work in plain DOM code needs a loop.",
+            "quiz": [
+              {
+                "q": "What does the dollar sign function do in jQuery?",
+                "options": [
+                  "Creates a variable",
+                  "Selects elements with CSS style selectors",
+                  "Starts an AJAX call",
+                  "Loads a plugin"
+                ],
+                "answer": 1,
+                "why": "Selection is the entry point to everything else, and the result can be chained."
+              },
+              {
+                "q": "Which jQuery method waits until the document is ready?",
+                "options": [
+                  "on",
+                  "click",
+                  "ready",
+                  "hover"
+                ],
+                "answer": 2,
+                "why": "Running code only after the document is parsed avoids null element errors."
+              },
+              {
+                "q": "Which statement about jQuery is NOT correct?",
+                "options": [
+                  "Methods can be chained",
+                  "It simplifies AJAX calls",
+                  "It adds an extra file to download",
+                  "It is required for modern JavaScript to run"
+                ],
+                "answer": 3,
+                "why": "Browsers now provide querySelector, fetch and classList, so the library is often unnecessary."
+              },
+              {
+                "q": "Which is a jQuery effect method?",
+                "options": [
+                  "fadeIn",
+                  "addClass",
+                  "append",
+                  "attr"
+                ],
+                "answer": 0,
+                "why": "fadeIn animates visibility, while the others change content or attributes."
+              },
+              {
+                "q": "What does the jQuery ajax method wrap?",
+                "options": [
+                  "The fetch API",
+                  "XMLHttpRequest",
+                  "The DOM",
+                  "Web storage"
+                ],
+                "answer": 1,
+                "why": "It hides the details of creating a request object and reading its state."
+              }
+            ],
+            "examTip": "Describe selection and chaining, name four effect methods, and give one advantage and one drawback.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MIV-T05",
@@ -1025,7 +2663,70 @@
               "kind": "subtopic",
               "definition": "Smoother interfaces and less data transfer, but bookmarking, history and search engine indexing become harder."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "AJAX updates part of a page by exchanging data with the server in the background, without reloading the page. The sequence is always the same. Script sends an asynchronous request, the server replies with data, and the page updates from it. With XMLHttpRequest the steps are to create the object, open the request and set a callback. The handler then checks readyState and status before reading the response. The fetch API is the modern alternative: it returns a promise and is usually written with async and await. One rule governs cross site requests: the same origin policy blocks them unless the server allows them with CORS headers.",
+            "example": "Typing in a search box and seeing suggestions appear, with the page never reloading, is AJAX at work.",
+            "quiz": [
+              {
+                "q": "What does AJAX allow a page to do?",
+                "options": [
+                  "Store data locally",
+                  "Reload faster",
+                  "Update part of the page using server data without a reload",
+                  "Run without a server"
+                ],
+                "answer": 2,
+                "why": "The request happens in the background and only the changed part is redrawn."
+              },
+              {
+                "q": "What does the fetch API return?",
+                "options": [
+                  "An event",
+                  "A callback",
+                  "A string",
+                  "A promise"
+                ],
+                "answer": 3,
+                "why": "The promise resolves to a response, whose json method gives the parsed data."
+              },
+              {
+                "q": "Which statement about AJAX is NOT correct?",
+                "options": [
+                  "AJAX requires the page to reload to show new data",
+                  "The request is asynchronous",
+                  "readyState and status are checked in the handler",
+                  "CORS headers let a server permit cross origin requests"
+                ],
+                "answer": 0,
+                "why": "Avoiding that reload is the entire purpose of the technique."
+              },
+              {
+                "q": "What does the same origin policy restrict?",
+                "options": [
+                  "The size of a request",
+                  "Requests to a different origin unless CORS allows them",
+                  "The number of requests",
+                  "The use of JSON"
+                ],
+                "answer": 1,
+                "why": "It is a browser security rule, and the server relaxes it by sending CORS headers."
+              },
+              {
+                "q": "Which method actually sends an XMLHttpRequest?",
+                "options": [
+                  "onreadystatechange",
+                  "open",
+                  "send",
+                  "readyState"
+                ],
+                "answer": 2,
+                "why": "open configures the request and send transmits it."
+              }
+            ],
+            "examTip": "Describe the AJAX cycle, the XMLHttpRequest steps, fetch with promises, and same origin with CORS.",
+            "verified": false
+          }
         }
       ]
     },
@@ -1063,7 +2764,70 @@
               "kind": "subtopic",
               "definition": "PHP code is written inside the opening and closing PHP tags and can be mixed with HTML."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP is a server side scripting language that runs on the web server and outputs HTML. The browser requests a page ending in php. The server executes the script and sends back only the generated HTML. The classic stack for this is LAMP: Linux, Apache, MySQL and PHP. XAMPP or WAMP gives the same combination on a local machine. The key contrast is with client side script. PHP runs on the server and the user never sees it, while JavaScript runs in the browser and is visible. PHP code sits inside its own opening and closing tags and can be mixed freely with markup.",
+            "example": "Viewing the source of a PHP page in a browser shows HTML, never the PHP. That is the clearest proof of where it runs.",
+            "quiz": [
+              {
+                "q": "What does LAMP stand for?",
+                "options": [
+                  "Local Apache, Main PHP",
+                  "Linux Application Management Platform",
+                  "Link, Apache, Module, PHP",
+                  "Linux, Apache, MySQL, PHP"
+                ],
+                "answer": 3,
+                "why": "The four components are the operating system, the server, the database and the language."
+              },
+              {
+                "q": "Where does PHP code run?",
+                "options": [
+                  "On the web server",
+                  "In the database",
+                  "On the network",
+                  "In the browser"
+                ],
+                "answer": 0,
+                "why": "The server executes the script and sends only the result to the browser."
+              },
+              {
+                "q": "Which statement about PHP is NOT correct?",
+                "options": [
+                  "It can be mixed with markup",
+                  "The user can read the PHP source in the browser",
+                  "XAMPP provides a local development stack",
+                  "It outputs HTML"
+                ],
+                "answer": 1,
+                "why": "Only the generated HTML is sent, so the source stays on the server."
+              },
+              {
+                "q": "Which tags surround PHP code?",
+                "options": [
+                  "Square brackets",
+                  "Double quotes",
+                  "Angle brackets with a question mark and php",
+                  "Curly braces"
+                ],
+                "answer": 2,
+                "why": "The opening tag is the php marker and the closing tag ends the block."
+              },
+              {
+                "q": "Why can PHP keep a database password secret?",
+                "options": [
+                  "Because browsers cannot read text",
+                  "Because PHP is compiled",
+                  "Because it encrypts files",
+                  "Because the code runs on the server and is never sent"
+                ],
+                "answer": 3,
+                "why": "Anything in the browser is visible, but server side code never reaches the client."
+              }
+            ],
+            "examTip": "Describe the request cycle with PHP, expand LAMP, and contrast PHP with client side JavaScript.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MV-T02",
@@ -1095,7 +2859,70 @@
               "kind": "subtopic",
               "definition": "String, integer, float, boolean, array, object, null and resource, with automatic conversion in expressions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP scripts use loosely typed variables, each written with a dollar sign in front of the name. Statements end with a semicolon, and comments use double slashes, a hash or block syntax. Variable names are case sensitive, which catches beginners out. Scope has three levels: local inside a function, global outside it, and static, which keeps a value between calls. Constants are created with define or const and cannot change. PHP supplies predefined constants such as the version and the current file. Values have types such as string, integer, float, boolean, array, object, null and resource, and PHP converts between them automatically in expressions.",
+            "example": "A variable named count and one named Count are different things in PHP, which is not true of keywords.",
+            "quiz": [
+              {
+                "q": "How is a PHP variable written?",
+                "options": [
+                  "With a dollar sign before the name",
+                  "With a hash before the name",
+                  "With an at sign",
+                  "With a name only"
+                ],
+                "answer": 0,
+                "why": "The dollar sign is required on every variable, including when it is declared."
+              },
+              {
+                "q": "Which keyword keeps a local variable's value between function calls?",
+                "options": [
+                  "global",
+                  "static",
+                  "const",
+                  "define"
+                ],
+                "answer": 1,
+                "why": "A static variable is initialised once and then remembers its value."
+              },
+              {
+                "q": "Which statement about PHP is NOT correct?",
+                "options": [
+                  "Statements end with a semicolon",
+                  "Variable names are case sensitive",
+                  "Constants can be redefined at any time",
+                  "PHP converts types automatically in expressions"
+                ],
+                "answer": 2,
+                "why": "A constant is fixed once it is defined, which is the point of using one."
+              },
+              {
+                "q": "Which function creates a constant?",
+                "options": [
+                  "echo",
+                  "isset",
+                  "const",
+                  "define"
+                ],
+                "answer": 3,
+                "why": "define creates a constant at run time, while const is used at compile time."
+              },
+              {
+                "q": "Which of these is a PHP data type?",
+                "options": [
+                  "resource",
+                  "tuple",
+                  "pointer",
+                  "struct"
+                ],
+                "answer": 0,
+                "why": "A resource holds a handle to something external, such as an open database connection."
+              }
+            ],
+            "examTip": "Show a variable declaration, list the variable scopes, and explain constants and type conversion.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MV-T03",
@@ -1127,7 +2954,70 @@
               "kind": "subtopic",
               "definition": "Short echo tags and heredoc syntax mix dynamic values into markup."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP sends content to the browser with several statements. echo can take several arguments and is marginally faster. print takes one argument and returns a value, so it can appear in an expression. For debugging, print_r shows an array or object in readable form, and var_dump goes further by adding types and lengths. Formatted output uses printf with placeholders for strings, integers and floating point numbers. Output is usually mixed into the page. Short echo tags and heredoc syntax let dynamic values sit inside markup without constant opening and closing of tags.",
+            "example": "Printing a price to two decimal places is one printf call with a float placeholder, rather than manual rounding.",
+            "quiz": [
+              {
+                "q": "What is the difference between echo and print?",
+                "options": [
+                  "They are identical",
+                  "echo takes several arguments and returns nothing, print returns a value",
+                  "print is faster",
+                  "echo cannot output strings"
+                ],
+                "answer": 1,
+                "why": "Because print returns a value it can be used in an expression, while echo cannot."
+              },
+              {
+                "q": "Which function is best for debugging an array?",
+                "options": [
+                  "echo",
+                  "print",
+                  "print_r",
+                  "printf"
+                ],
+                "answer": 2,
+                "why": "print_r shows the structure, while var_dump adds the type and length of each value."
+              },
+              {
+                "q": "Which statement about output is NOT correct?",
+                "options": [
+                  "var_dump shows types and lengths",
+                  "printf formats values with placeholders",
+                  "Heredoc helps mix values into markup",
+                  "echo can print only one value at a time"
+                ],
+                "answer": 3,
+                "why": "echo accepts several comma separated arguments, which is one of its small advantages."
+              },
+              {
+                "q": "Which placeholder would printf use for a whole number?",
+                "options": [
+                  "An integer placeholder",
+                  "A float placeholder",
+                  "A boolean placeholder",
+                  "A string placeholder"
+                ],
+                "answer": 0,
+                "why": "The integer placeholder prints a rounded whole number from the value given."
+              },
+              {
+                "q": "What does var_dump add beyond print_r?",
+                "options": [
+                  "Colours",
+                  "The type and length of each value",
+                  "A timestamp",
+                  "The file name"
+                ],
+                "answer": 1,
+                "why": "Seeing the type is often what reveals why a comparison did not behave as expected."
+              }
+            ],
+            "examTip": "Compare echo, print, print_r and var_dump, and give one use of printf and heredoc.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MV-T04",
@@ -1171,7 +3061,70 @@
               "kind": "subtopic",
               "definition": "count, sort, ksort, array_push, array_pop, array_merge, array_keys, array_values and foreach traversal."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP gives a large set of string functions: strlen, strpos, substr, str_replace, strtoupper, trim, explode, implode and nl2br. Interpolation is a useful detail. Double quoted strings expand variables in place, while single quoted strings do not. Arrays come in three kinds. An indexed array uses numeric keys. An associative array uses named keys, like a record. A multidimensional array holds arrays inside arrays, for tables of data. Traversal is usually done with foreach, and the common functions are count, sort, ksort, array_push, array_pop, array_merge, array_keys and array_values.",
+            "example": "A row from a database arrives as an associative array, so a value is read by column name rather than position.",
+            "quiz": [
+              {
+                "q": "Which function splits a string into an array?",
+                "options": [
+                  "trim",
+                  "implode",
+                  "explode",
+                  "substr"
+                ],
+                "answer": 2,
+                "why": "explode breaks a string at a separator, and implode joins the pieces back together."
+              },
+              {
+                "q": "Which array uses named keys?",
+                "options": [
+                  "A numeric array",
+                  "A stacked array",
+                  "An indexed array",
+                  "An associative array"
+                ],
+                "answer": 3,
+                "why": "Named keys let a value be read by field name, which suits a database row."
+              },
+              {
+                "q": "Which statement about PHP strings is NOT correct?",
+                "options": [
+                  "strlen changes the case of a string",
+                  "Double quoted strings expand variables",
+                  "Single quoted strings do not expand variables",
+                  "str_replace substitutes text"
+                ],
+                "answer": 0,
+                "why": "strlen returns the length, while strtoupper is the function that changes case."
+              },
+              {
+                "q": "Which function counts the elements of an array?",
+                "options": [
+                  "array_merge",
+                  "count",
+                  "sort",
+                  "ksort"
+                ],
+                "answer": 1,
+                "why": "count returns the number of elements and is the usual guard before a loop."
+              },
+              {
+                "q": "How does ksort differ from sort?",
+                "options": [
+                  "ksort sorts strings only",
+                  "sort orders by key, ksort by value",
+                  "ksort orders by key and keeps it, sort reindexes by value",
+                  "They are identical"
+                ],
+                "answer": 2,
+                "why": "ksort is what you want for an associative array, because sort would discard the keys."
+              }
+            ],
+            "examTip": "Name five string functions, explain single and double quotes, and describe the three array kinds.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MV-T05",
@@ -1215,7 +3168,70 @@
               "kind": "subtopic",
               "definition": "GET, POST, REQUEST, SERVER, COOKIE and SESSION carry data between requests."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP supports the usual operators, with two worth remembering. The dot joins strings, and the null coalescing operator gives a default when a value is missing. Comparison has loose and strict forms: double equals converts types, triple equals does not. Branching uses if, else, elseif and switch, and modern PHP also has the match expression. Loops include for, while, do while and foreach, with break and continue. Functions are declared with the function keyword. They may take defaults, variadic arguments, type hints and a declared return type. Other files are pulled in with include or require. require stops the script when the file is missing, while include only warns.",
+            "example": "Requiring a database configuration file at the top of every page is standard, because a missing config should stop everything.",
+            "quiz": [
+              {
+                "q": "Which operator joins two strings in PHP?",
+                "options": [
+                  "The comma",
+                  "The ampersand",
+                  "The plus sign",
+                  "The dot"
+                ],
+                "answer": 3,
+                "why": "The dot is concatenation, since plus is reserved for arithmetic."
+              },
+              {
+                "q": "What does the null coalescing operator do?",
+                "options": [
+                  "Provides a default when a value is missing or null",
+                  "Removes null values",
+                  "Joins strings with null",
+                  "Compares two nulls"
+                ],
+                "answer": 0,
+                "why": "It shortens the common pattern of testing whether a key exists before using it."
+              },
+              {
+                "q": "Which statement about PHP is NOT correct?",
+                "options": [
+                  "include and require both insert another file",
+                  "switch and match behave identically in every way",
+                  "Triple equals compares without converting types",
+                  "foreach suits arrays"
+                ],
+                "answer": 1,
+                "why": "match returns a value and uses strict comparison, while switch uses loose comparison."
+              },
+              {
+                "q": "What is the difference between include and require?",
+                "options": [
+                  "include cannot be used twice",
+                  "They are identical",
+                  "include warns and continues, require stops the script on failure",
+                  "require runs faster"
+                ],
+                "answer": 2,
+                "why": "A missing required file is a fatal error, which is what you want for configuration."
+              },
+              {
+                "q": "Which loop is used to walk through an array?",
+                "options": [
+                  "do while",
+                  "for",
+                  "while",
+                  "foreach"
+                ],
+                "answer": 3,
+                "why": "foreach gives each key and value without the bookkeeping of an index counter."
+              }
+            ],
+            "examTip": "Name the string and null coalescing operators, compare == and ===, and explain include versus require.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MV-T06",
@@ -1253,7 +3269,70 @@
               "kind": "subtopic",
               "definition": "setcookie stores small data on the client while session_start keeps server side state with a session id."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP reads user input from forms, URLs and cookies to build its response. The two methods differ sharply. GET places data in the URL, where it is visible and limited in size. POST sends it in the request body and suits sensitive or large data. A script reads each field through the POST or GET superglobal, using the control's name. Every value must then be validated and sanitised. trim, htmlspecialchars and filter_var defend against bad input, cross site scripting and SQL injection. Uploads arrive in the FILES superglobal and are stored with move_uploaded_file after checking type and size. State across requests is kept with cookies or sessions.",
+            "example": "A contact form that posts to itself shows errors above the fields on the first attempt, then thanks the user.",
+            "quiz": [
+              {
+                "q": "When should GET be used?",
+                "options": [
+                  "For harmless data that can live in the URL, such as a search term",
+                  "For file uploads",
+                  "For large forms",
+                  "For passwords"
+                ],
+                "answer": 0,
+                "why": "GET data is visible and has a length limit, so it suits searches and links."
+              },
+              {
+                "q": "Which function helps prevent cross site scripting when printing user input?",
+                "options": [
+                  "trim",
+                  "htmlspecialchars",
+                  "strlen",
+                  "explode"
+                ],
+                "answer": 1,
+                "why": "It escapes the characters that would otherwise become markup in the page."
+              },
+              {
+                "q": "Which statement about reading input is NOT correct?",
+                "options": [
+                  "Files arrive in the FILES superglobal",
+                  "Sessions keep state on the server",
+                  "GET is the safe way to send a password",
+                  "POST data travels in the request body"
+                ],
+                "answer": 2,
+                "why": "A password in the URL is visible in the address bar, in logs and in browser history."
+              },
+              {
+                "q": "Which function stores an uploaded file?",
+                "options": [
+                  "file_get_contents",
+                  "fopen",
+                  "copy",
+                  "move_uploaded_file"
+                ],
+                "answer": 3,
+                "why": "It checks that the file really came from an upload before moving it into place."
+              },
+              {
+                "q": "What starts a session in PHP?",
+                "options": [
+                  "session_start",
+                  "setcookie",
+                  "session_open",
+                  "start_session"
+                ],
+                "answer": 0,
+                "why": "session_start must run before any output, because it sends a session cookie header."
+              }
+            ],
+            "examTip": "Compare GET and POST, name three superglobals, and list three sanitising functions.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA512-MV-T07",
@@ -1303,7 +3382,70 @@
               "kind": "subtopic",
               "definition": "A student form that inserts a record and lists all students joins HTML forms, PHP and MySQL end to end."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "PHP connects to MySQL to store and retrieve data with SQL statements. A connection is made with mysqli_connect or by creating a PDO object. Both take the host, user, password and database name, and both can fail. Queries then run through mysqli_query or a prepared statement, whether they are SELECT, INSERT, UPDATE or DELETE. Results come back as rows fetched with mysqli_fetch_assoc or fetch_all. They are usually printed into a table inside a loop. Prepared statements matter most. Binding parameters keeps user input out of the SQL and prevents injection. After a change, affected rows and the insert id confirm what happened. The connection is then closed.",
+            "example": "A student form inserts a record, reads back the new id and then lists every student in a table.",
+            "quiz": [
+              {
+                "q": "Which practice prevents SQL injection?",
+                "options": [
+                  "Escaping the output with trim",
+                  "Prepared statements with bound parameters",
+                  "Using SELECT instead of INSERT",
+                  "Closing the connection quickly"
+                ],
+                "answer": 1,
+                "why": "The statement is sent first and the values separately, so input cannot change the SQL."
+              },
+              {
+                "q": "Which function fetches a result row as an associative array?",
+                "options": [
+                  "mysqli_close",
+                  "mysqli_query",
+                  "mysqli_fetch_assoc",
+                  "mysqli_connect"
+                ],
+                "answer": 2,
+                "why": "It returns one row at a time with column names as keys, which suits a loop."
+              },
+              {
+                "q": "Which statement about PHP and MySQL is NOT correct?",
+                "options": [
+                  "PDO supports several database systems",
+                  "The insert id reports the key of a new row",
+                  "Affected rows counts the rows a change touched",
+                  "A connection never needs to be checked for failure"
+                ],
+                "answer": 3,
+                "why": "Connection failures are common, and an unchecked one produces confusing errors later."
+              },
+              {
+                "q": "Which value tells you how many rows an UPDATE changed?",
+                "options": [
+                  "Affected rows",
+                  "The row count of the table",
+                  "The query string",
+                  "The insert id"
+                ],
+                "answer": 0,
+                "why": "It is the standard way to report success back to the user after an edit."
+              },
+              {
+                "q": "What is the advantage of PDO over mysqli?",
+                "options": [
+                  "It is always faster",
+                  "It works with several database systems through one interface",
+                  "It needs no connection details",
+                  "It writes the SQL for you"
+                ],
+                "answer": 1,
+                "why": "Switching database becomes a change of connection string rather than a rewrite."
+              }
+            ],
+            "examTip": "Describe connecting, running a query, fetching rows, prepared statements and closing the connection.",
+            "verified": false
+          }
         }
       ]
     }

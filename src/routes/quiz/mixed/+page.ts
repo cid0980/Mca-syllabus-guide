@@ -14,3 +14,6 @@ export const load: PageLoad = async () => {
 	}
 	return { items };
 };
+
+/** Not prerendered: this page reads its ?mode= query at render time. */
+export const prerender = false;

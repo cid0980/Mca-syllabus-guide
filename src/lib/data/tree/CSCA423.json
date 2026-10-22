@@ -31,7 +31,70 @@
               "kind": "subtopic",
               "definition": "To inform, persuade, instruct, motivate, warn, educate and build goodwill."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Communication is the exchange of information, ideas and feelings so that meaning is shared. The process has eight parts: a sender who has an idea, a message, the encoding of it, a channel, a receiver, decoding, feedback and noise. It matters because work cannot be coordinated without it, and most workplace problems trace back to a message that did not land. The objectives vary: to inform, to persuade, to instruct, to motivate, to warn, to educate and to build goodwill. A message written without knowing which objective it serves usually serves none.",
+            "example": "A notice saying the lab will be closed on Friday informs. The same notice explaining why, and asking for patience, builds goodwill as well.",
+            "quiz": [
+              {
+                "q": "How many elements does the communication process have?",
+                "options": [
+                  "Eight",
+                  "Ten",
+                  "Four",
+                  "Six"
+                ],
+                "answer": 0,
+                "why": "Sender, message, encoding, channel, receiver, decoding, feedback and noise make eight."
+              },
+              {
+                "q": "What is the channel in the communication process?",
+                "options": [
+                  "The idea in the sender's head",
+                  "The medium the message travels along",
+                  "The reply from the receiver",
+                  "The meaning the receiver builds"
+                ],
+                "answer": 1,
+                "why": "The channel is the path, whether spoken words, a letter, email or a telephone line."
+              },
+              {
+                "q": "Which statement about communication is NOT correct?",
+                "options": [
+                  "Decoding is the receiver turning the message back into meaning",
+                  "Feedback confirms that the message was understood",
+                  "Noise helps the message travel faster",
+                  "Encoding turns an idea into a message"
+                ],
+                "answer": 2,
+                "why": "Noise is anything that distorts the message, so it always works against understanding."
+              },
+              {
+                "q": "Which objective is served by a safety warning notice?",
+                "options": [
+                  "To persuade",
+                  "To entertain",
+                  "To instruct",
+                  "To warn"
+                ],
+                "answer": 3,
+                "why": "A warning aims to change behaviour by making a risk known, which is the warn objective."
+              },
+              {
+                "q": "Which of these is NOT listed as an objective of communication?",
+                "options": [
+                  "To entertain",
+                  "To build goodwill",
+                  "To inform",
+                  "To motivate"
+                ],
+                "answer": 0,
+                "why": "The objectives are to inform, persuade, instruct, motivate, warn, educate and build goodwill."
+              }
+            ],
+            "examTip": "Name the eight elements in order, then list the seven objectives with one example each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MI-T02",
@@ -63,7 +126,70 @@
               "kind": "subtopic",
               "definition": "Feedback confirms understanding while noise - physical, semantic or psychological - distorts the message."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Models are simplified pictures of communication that show where meaning can be lost. The Shannon and Weaver model is linear. A source encodes a message, it travels through a channel, and a decoder receives it at the destination. Noise may enter anywhere along the way. Berlo's SMCR model names source, message, channel and receiver, and adds that each is affected by skills, attitudes and knowledge. Neither model shows a reply, so interactive and transactional models were added. In a transactional view both people send and receive at the same time.",
+            "example": "A lecturer explaining a topic is the Shannon and Weaver chain. The students' puzzled faces are feedback, which the linear model leaves out and the transactional model includes.",
+            "quiz": [
+              {
+                "q": "Which model is linear and includes noise?",
+                "options": [
+                  "Berlo SMCR",
+                  "Shannon and Weaver",
+                  "The transactional model",
+                  "The interactive model"
+                ],
+                "answer": 1,
+                "why": "Shannon and Weaver drew the chain from source to destination with noise anywhere in between."
+              },
+              {
+                "q": "What does SMCR stand for in Berlo's model?",
+                "options": [
+                  "Sender, meaning, channel, response",
+                  "Sender, message, channel, receiver",
+                  "Source, message, channel, receiver",
+                  "Source, meaning, code, response"
+                ],
+                "answer": 2,
+                "why": "The four parts are Source, Message, Channel and Receiver, each shaped by skills and attitudes."
+              },
+              {
+                "q": "Which statement about models is NOT correct?",
+                "options": [
+                  "Linear models do not show feedback",
+                  "Noise can enter at any point in the channel",
+                  "A transactional model has both parties sending and receiving",
+                  "Berlo's model ignores the people and studies only the channel"
+                ],
+                "answer": 3,
+                "why": "Berlo's model is the one that examines the people, through skills, attitudes and knowledge."
+              },
+              {
+                "q": "What type of noise is caused by a word having two meanings?",
+                "options": [
+                  "Semantic noise",
+                  "Psychological noise",
+                  "Mechanical noise",
+                  "Physical noise"
+                ],
+                "answer": 0,
+                "why": "Semantic noise comes from the meaning of words, while physical noise is sound and psychological noise is bias."
+              },
+              {
+                "q": "Which model treats communication as simultaneous rather than one way?",
+                "options": [
+                  "Berlo SMCR",
+                  "Transactional",
+                  "Aristotle's model",
+                  "Shannon and Weaver"
+                ],
+                "answer": 1,
+                "why": "In a transactional view both parties are senders and receivers at the same moment."
+              }
+            ],
+            "examTip": "Draw the Shannon and Weaver chain, label where noise enters, then list SMCR and what shapes each part.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MI-T03",
@@ -101,7 +227,70 @@
               "kind": "subtopic",
               "definition": "Two way communication includes feedback and therefore reduces misunderstanding."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Communication is grouped by the medium and by the direction the message travels. Verbal communication uses words, while non verbal uses tone, gestures, expression and posture, and the two must agree. Oral communication is fast and gives immediate feedback, while written communication is permanent, precise and easy to check later. Formal communication follows the official chain of command, and the informal grapevine runs alongside it. Interpersonal communication happens between people, and intrapersonal is the conversation you have with yourself before you speak.",
+            "example": "A circular from the principal is formal and written. Two students discussing it in the corridor afterwards is informal and oral, and it usually travels faster.",
+            "quiz": [
+              {
+                "q": "Which type of communication is permanent and easy to check later?",
+                "options": [
+                  "Intrapersonal",
+                  "Oral",
+                  "Written",
+                  "Non verbal"
+                ],
+                "answer": 2,
+                "why": "A written record can be reread and produced as evidence, which is why contracts are written."
+              },
+              {
+                "q": "What is the informal channel of communication called?",
+                "options": [
+                  "The circular",
+                  "The notice board",
+                  "The chain of command",
+                  "The grapevine"
+                ],
+                "answer": 3,
+                "why": "The grapevine carries unofficial news quickly, and it exists in every organisation."
+              },
+              {
+                "q": "Which statement about types is NOT correct?",
+                "options": [
+                  "One way communication is always more accurate than two way",
+                  "Non verbal signals include tone and posture",
+                  "Oral communication gives immediate feedback",
+                  "Intrapersonal communication happens within one person"
+                ],
+                "answer": 0,
+                "why": "Two way communication allows feedback, and that is what reduces misunderstanding."
+              },
+              {
+                "q": "Communication between two or more people is called:",
+                "options": [
+                  "Intrapersonal",
+                  "Interpersonal",
+                  "Vertical",
+                  "Diagonal"
+                ],
+                "answer": 1,
+                "why": "Inter means between people, while intra means within one person."
+              },
+              {
+                "q": "Why must verbal and non verbal messages agree?",
+                "options": [
+                  "Because gestures are louder",
+                  "Because it is expected politeness",
+                  "Because the receiver trusts the non verbal signal when the two clash",
+                  "Because words are always clearer"
+                ],
+                "answer": 2,
+                "why": "When the two disagree, people believe the body language, and credibility is lost."
+              }
+            ],
+            "examTip": "List the five pairs of types and give one workplace example of each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MI-T04",
@@ -139,7 +328,70 @@
               "kind": "subtopic",
               "definition": "Be clear, concise, complete, correct, courteous, concrete and considerate - the seven C principles."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Barriers are anything that distorts or blocks a message. Physical barriers are noise, distance, a poor network connection or an uncomfortable room. Semantic barriers come from jargon, a thin vocabulary, bad grammar and words with more than one meaning. Psychological barriers include prejudice, fear, stress, distrust and plain inattention. Organisational and cultural barriers are long chains of command, information overload, status gaps and cultural difference. The antidote is the seven C principles: clear, concise, complete, correct, courteous, concrete and considerate.",
+            "example": "A message full of technical jargon sent to a non technical client hits a semantic barrier. Rewriting it in plain words removes the barrier at once.",
+            "quiz": [
+              {
+                "q": "Which barrier is caused by jargon and words with several meanings?",
+                "options": [
+                  "Psychological",
+                  "Organisational",
+                  "Physical",
+                  "Semantic"
+                ],
+                "answer": 3,
+                "why": "Semantic barriers arise from the meaning of the words, not from the channel used."
+              },
+              {
+                "q": "How many C principles are there in good communication?",
+                "options": [
+                  "Seven",
+                  "Eight",
+                  "Five",
+                  "Six"
+                ],
+                "answer": 0,
+                "why": "The seven are clear, concise, complete, correct, courteous, concrete and considerate."
+              },
+              {
+                "q": "Which statement about barriers is NOT correct?",
+                "options": [
+                  "A long chain of command is an organisational barrier",
+                  "Information overload improves the accuracy of a message",
+                  "Noise and distance are physical barriers",
+                  "Prejudice and stress are psychological barriers"
+                ],
+                "answer": 1,
+                "why": "Too much information is a barrier, because the receiver stops attending to any of it."
+              },
+              {
+                "q": "Which principle is followed when a message avoids unnecessary words?",
+                "options": [
+                  "Courtesy",
+                  "Correctness",
+                  "Conciseness",
+                  "Completeness"
+                ],
+                "answer": 2,
+                "why": "Conciseness means saying what is needed in as few words as possible."
+              },
+              {
+                "q": "A receiver distrusts the sender and ignores the message. What kind of barrier is this?",
+                "options": [
+                  "Cultural",
+                  "Physical",
+                  "Semantic",
+                  "Psychological"
+                ],
+                "answer": 3,
+                "why": "Distrust is an emotional or psychological barrier, and clarity alone will not remove it."
+              }
+            ],
+            "examTip": "Name the four barrier groups with two examples each, then write the seven C principles in full.",
+            "verified": false
+          }
         }
       ]
     },
@@ -177,7 +429,70 @@
               "kind": "subtopic",
               "definition": "SQ3R - survey, question, read, recite and review - along with note making, underlining and summarising."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Reading is an active skill, not a passive one, and it can be made faster with practice. Before starting, decide the purpose and what information you actually need, then skim the layout to see where things are. Four styles cover most needs: skimming for the gist, scanning for one fact, intensive reading for full detail and extensive reading for pleasure. Faster reading depends on controlling eye movement and dropping the habit of saying words silently to yourself. The SQ3R method ties it together: survey, question, read, recite and review.",
+            "example": "Looking for one date in a textbook is scanning. Reading a whole chapter to answer an exam question is intensive reading, and SQ3R suits it best.",
+            "quiz": [
+              {
+                "q": "What does SQ3R stand for?",
+                "options": [
+                  "Survey, question, read, recite, review",
+                  "Scan, query, read, recall, revise",
+                  "Study, question, read, recite, review",
+                  "Survey, quote, read, review, repeat"
+                ],
+                "answer": 0,
+                "why": "The five steps are survey, question, read, recite and review, in that order."
+              },
+              {
+                "q": "Which reading style is used to find one specific fact quickly?",
+                "options": [
+                  "Skimming",
+                  "Scanning",
+                  "Intensive reading",
+                  "Extensive reading"
+                ],
+                "answer": 1,
+                "why": "Scanning moves the eye down the page looking for a known word or number."
+              },
+              {
+                "q": "Which statement about reading is NOT correct?",
+                "options": [
+                  "Skimming gives the gist of a passage",
+                  "Intensive reading is for full detail",
+                  "Sub-vocalisation speeds up reading",
+                  "Deciding the purpose first saves time"
+                ],
+                "answer": 2,
+                "why": "Saying words silently holds reading to speaking speed, which is why faster reading drops the habit."
+              },
+              {
+                "q": "What is the first step of SQ3R?",
+                "options": [
+                  "Review",
+                  "Read",
+                  "Question",
+                  "Survey"
+                ],
+                "answer": 3,
+                "why": "Survey means looking over the headings, introduction and summary before reading properly."
+              },
+              {
+                "q": "Reading a novel for enjoyment is an example of:",
+                "options": [
+                  "Extensive reading",
+                  "Skimming",
+                  "Scanning",
+                  "Intensive reading"
+                ],
+                "answer": 0,
+                "why": "Extensive reading covers long texts for pleasure and general understanding."
+              }
+            ],
+            "examTip": "Name the four reading styles with a use for each, then write out the five SQ3R steps.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MII-T02",
@@ -233,7 +548,70 @@
               "kind": "subtopic",
               "definition": "Write when a record, precision or evidence is needed; speak when urgency or discussion is needed."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Effective writing is clear, correct and organised for a reader you have in mind. The principles are clarity, brevity, accuracy, coherence and a tone that suits the reader, arranged as an introduction, a body and a conclusion. Different documents have fixed shapes: a report carries terms of reference, procedure, findings, conclusions and recommendations. A speech is written to be heard, so it needs a strong opening and a memorable close. Minutes record decisions and action points, while the agenda lists what will be discussed beforehand.",
+            "example": "An email that buries the request in the fourth paragraph fails on coherence. Putting the request in the first line and the reason after it usually gets a faster reply.",
+            "quiz": [
+              {
+                "q": "Which section of a report states what the report was asked to examine?",
+                "options": [
+                  "Findings",
+                  "Terms of reference",
+                  "Recommendations",
+                  "Conclusion"
+                ],
+                "answer": 1,
+                "why": "The terms of reference fix the scope, which is why they come near the beginning."
+              },
+              {
+                "q": "What is the difference between an agenda and minutes?",
+                "options": [
+                  "Minutes are used only in courts",
+                  "The agenda is written after, the minutes before",
+                  "The agenda lists what will be discussed, the minutes record what was decided",
+                  "They are the same document"
+                ],
+                "answer": 2,
+                "why": "The agenda goes out before the meeting, and the minutes are the record taken during it."
+              },
+              {
+                "q": "Which statement about writing is NOT correct?",
+                "options": [
+                  "A speech is written to be heard, not read",
+                  "A report ends with recommendations",
+                  "A formal letter follows a fixed layout",
+                  "The body of a document should raise points in random order"
+                ],
+                "answer": 3,
+                "why": "Coherence means the points are ordered so the reader can follow the argument."
+              },
+              {
+                "q": "When should you choose speaking over writing?",
+                "options": [
+                  "When urgency or discussion is needed",
+                  "When precision matters most",
+                  "When evidence must be kept",
+                  "When a permanent record is needed"
+                ],
+                "answer": 0,
+                "why": "Discussion resolves things faster, while writing suits records, precision and evidence."
+              },
+              {
+                "q": "Which is NOT one of the principles listed for effective writing?",
+                "options": [
+                  "Accuracy",
+                  "Length",
+                  "Clarity",
+                  "Brevity"
+                ],
+                "answer": 1,
+                "why": "Length is not a principle on its own; brevity covers saying what is needed in few words."
+              }
+            ],
+            "examTip": "Give the layout of a formal report in order, then a formal letter, and state when to speak rather than write.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MII-T03",
@@ -265,7 +643,70 @@
               "kind": "subtopic",
               "definition": "Distraction, premature evaluation, boredom and bias; listening tests use passages followed by questions to measure comprehension."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Listening is the conscious effort to hear and understand, and it is the communication skill people use most. Good listening builds trust, cuts errors, improves decisions and saves the time lost in doing work twice. The art of it is attention, patience, eye contact, not interrupting, and reflecting the meaning back in your own words. Types include active, passive, empathetic, critical, appreciative and discriminative listening. The common barriers are distraction, judging too early, boredom and bias, and listening tests measure comprehension with a passage followed by questions.",
+            "example": "In a listening test the passage is played once, so noting key words as you hear them is what makes the questions answerable afterwards.",
+            "quiz": [
+              {
+                "q": "Which type of listening aims to understand the speaker's feelings?",
+                "options": [
+                  "Discriminative listening",
+                  "Critical listening",
+                  "Empathetic listening",
+                  "Appreciative listening"
+                ],
+                "answer": 2,
+                "why": "Empathetic listening puts the listener in the speaker's position, which is what builds trust."
+              },
+              {
+                "q": "Which of these is NOT a barrier to listening?",
+                "options": [
+                  "Distraction",
+                  "Premature evaluation",
+                  "Bias",
+                  "Eye contact"
+                ],
+                "answer": 3,
+                "why": "Eye contact is part of good listening, while the other three block it."
+              },
+              {
+                "q": "Which statement about listening is NOT correct?",
+                "options": [
+                  "Interrupting shows you are engaged",
+                  "Good listening reduces repeated work",
+                  "It is the most used communication skill",
+                  "Reflecting the meaning back confirms understanding"
+                ],
+                "answer": 0,
+                "why": "Interrupting breaks the speaker's thread and signals that the reply matters more than the message."
+              },
+              {
+                "q": "What does a listening test usually measure?",
+                "options": [
+                  "Memory of exact wording",
+                  "Comprehension of a passage through questions",
+                  "Reading speed",
+                  "Grammar accuracy"
+                ],
+                "answer": 1,
+                "why": "The test plays or reads a passage and then asks questions to check what was understood."
+              },
+              {
+                "q": "Judging a speaker's point before they finish is which barrier?",
+                "options": [
+                  "Bias",
+                  "Distraction",
+                  "Premature evaluation",
+                  "Boredom"
+                ],
+                "answer": 2,
+                "why": "Forming a verdict early stops the rest of the message being heard at all."
+              }
+            ],
+            "examTip": "List the six types of listening, then give the four barriers and five habits of good listening.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MII-T04",
@@ -309,7 +750,70 @@
               "kind": "subtopic",
               "definition": "Choosing the right words and tone, using examples and being concise."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Speaking conveys ideas orally with clarity, confidence and a tone that suits the occasion. Conversation has a shape of its own: an opening, turns that are shared, and a close, with interest shown throughout. On the telephone, identify yourself, speak clearly, keep it brief and close politely, because the other person has only your voice to go by. Questions do different jobs: open questions invite detail, closed ones confirm a fact, and probing ones go deeper. Delivery improves when pace, pause, pitch, volume and pronunciation are controlled.",
+            "example": "Asking did you finish the report gets a yes. Asking where the report got to opens a conversation and usually tells you more.",
+            "quiz": [
+              {
+                "q": "Which type of question invites a detailed answer?",
+                "options": [
+                  "Leading question",
+                  "Rhetorical question",
+                  "Closed question",
+                  "Open question"
+                ],
+                "answer": 3,
+                "why": "Open questions begin with what, how or why, which asks the other person to explain."
+              },
+              {
+                "q": "Which statement about speaking is NOT correct?",
+                "options": [
+                  "Reading a script word for word is the best delivery",
+                  "Voice pitch and pace should vary",
+                  "Filler words weaken delivery",
+                  "Pauses help the audience follow"
+                ],
+                "answer": 0,
+                "why": "Reading aloud loses eye contact and sounds flat, which is why notes and outlines are preferred."
+              },
+              {
+                "q": "Why is telephone etiquette stricter than face to face conversation?",
+                "options": [
+                  "Calls cost money",
+                  "The listener has only the voice, with no gestures to help",
+                  "Calls are always recorded",
+                  "Telephones distort grammar"
+                ],
+                "answer": 1,
+                "why": "Without facial expression and posture, clarity and tone carry the whole message."
+              },
+              {
+                "q": "What is the first rule of brainstorming?",
+                "options": [
+                  "Let the most senior person speak first",
+                  "Judge each idea as it comes",
+                  "Generate many ideas without judging them first",
+                  "Write down only good ideas"
+                ],
+                "answer": 2,
+                "why": "Judgement stops the flow, so ideas are collected first and evaluated afterwards."
+              },
+              {
+                "q": "Which of these is NOT part of speech delivery?",
+                "options": [
+                  "Pace",
+                  "Pitch",
+                  "Volume",
+                  "Handwriting"
+                ],
+                "answer": 3,
+                "why": "Pace, pause, pitch, volume and pronunciation shape delivery, while handwriting belongs to writing."
+              }
+            ],
+            "examTip": "Give the five parts of delivery, the question types, and three rules of telephone etiquette.",
+            "verified": false
+          }
         }
       ]
     },
@@ -371,7 +875,70 @@
               "kind": "subtopic",
               "definition": "A practice session that builds confidence and exposes weak answers before the real thing."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "An interview is a planned conversation in which the employer and the candidate assess each other. It matters because it checks what a resume cannot: how you think, how you speak and how you react under pressure. Types include structured, unstructured, panel, group, stress, telephonic, video and walk in interviews. Preparation is research: learn what the organisation does and what the role needs. Have examples ready using the STAR shape: situation, task, action and result. During the interview, listen to the whole question, answer to the point, and never bluff.",
+            "example": "Asked to describe a difficulty you solved, answer with the situation, the task you were given, the action you took and the result. A story with those four parts is easy to follow and easy to remember.",
+            "quiz": [
+              {
+                "q": "What does STAR stand for when preparing interview answers?",
+                "options": [
+                  "Situation, task, action, result",
+                  "Strength, talent, ability, role",
+                  "Study, test, apply, review",
+                  "Skill, training, attitude, result"
+                ],
+                "answer": 0,
+                "why": "The four parts keep an example short and complete instead of rambling."
+              },
+              {
+                "q": "Which interview type uses a fixed set of questions for every candidate?",
+                "options": [
+                  "Unstructured",
+                  "Structured",
+                  "Stress",
+                  "Walk in"
+                ],
+                "answer": 1,
+                "why": "A structured interview asks everyone the same questions, which makes comparison fairer."
+              },
+              {
+                "q": "Which statement about interviews is NOT correct?",
+                "options": [
+                  "Posture and eye contact are part of the impression",
+                  "Research the organisation before you go",
+                  "Bluffing is better than admitting a gap",
+                  "Listen to the whole question before answering"
+                ],
+                "answer": 2,
+                "why": "A bluff is usually exposed by one follow up question, and it costs more than an honest answer."
+              },
+              {
+                "q": "What is the purpose of a mock interview?",
+                "options": [
+                  "To replace the real interview",
+                  "To test the interviewer",
+                  "To guarantee a job offer",
+                  "To practise answers and expose weak ones before the real thing"
+                ],
+                "answer": 3,
+                "why": "Practice builds confidence and shows which answers still need work."
+              },
+              {
+                "q": "Which interview type deliberately puts the candidate under pressure?",
+                "options": [
+                  "Stress interview",
+                  "Telephonic interview",
+                  "Panel interview",
+                  "Group interview"
+                ],
+                "answer": 0,
+                "why": "A stress interview tests composure with sharp or unexpected questions."
+              }
+            ],
+            "examTip": "List five interview types, then give the four STAR parts and three rules for answering.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MIII-T02",
@@ -421,7 +988,70 @@
               "kind": "subtopic",
               "definition": "Speak to the group rather than to the evaluator, build on others ideas, and practise with mock discussions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A group discussion is a timed conversation among several candidates, watched for content, communication and teamwork. It assesses knowledge, reasoning, leadership, listening and whether you can work with people who disagree with you. The process runs from the introduction of the topic, through individual opinions and agreement building, to a conclusion before the time runs out. Preparation means reading widely and keeping facts ready. Enter early but politely, speak to the group rather than to the evaluator, and build on what others have said. Lateral thinking, looking at the problem from an unexpected angle, makes a contribution memorable.",
+            "example": "On the topic of mobile phones in class, most speakers argue for or against. A lateral contribution asks what the phone is replacing, which opens a line nobody else has taken.",
+            "quiz": [
+              {
+                "q": "What is the main purpose of a group discussion?",
+                "options": [
+                  "To find the loudest speaker",
+                  "To assess knowledge, reasoning, leadership and teamwork",
+                  "To settle an argument",
+                  "To replace the interview"
+                ],
+                "answer": 1,
+                "why": "Evaluators watch how you think and how you work with the group, not only what you say."
+              },
+              {
+                "q": "Which statement about group discussion is NOT correct?",
+                "options": [
+                  "Enter early but politely",
+                  "Speak to the group rather than to the evaluator",
+                  "Interrupting others shows leadership",
+                  "Building on others' ideas is valued"
+                ],
+                "answer": 2,
+                "why": "Interrupting reads as poor teamwork, which is one of the things being assessed."
+              },
+              {
+                "q": "What does lateral thinking add to a discussion?",
+                "options": [
+                  "A longer speech",
+                  "A summary of others",
+                  "More volume",
+                  "An unexpected angle that makes the contribution memorable"
+                ],
+                "answer": 3,
+                "why": "A fresh angle stands out when everyone else has taken the same two positions."
+              },
+              {
+                "q": "Who should you address when speaking in a group discussion?",
+                "options": [
+                  "The whole group",
+                  "The person who spoke last",
+                  "Nobody in particular",
+                  "Only the evaluator"
+                ],
+                "answer": 0,
+                "why": "Addressing the group shows you are trying to build agreement, which is the point."
+              },
+              {
+                "q": "Which is a sign of a discussion going well?",
+                "options": [
+                  "One person dominating throughout",
+                  "The group reaching a conclusion within the time limit",
+                  "Nobody disagreeing at all",
+                  "Everyone speaking at once"
+                ],
+                "answer": 1,
+                "why": "A clear conclusion before time runs out shows the group worked together."
+              }
+            ],
+            "examTip": "Give the discussion stages, three participation techniques, and say what lateral thinking adds.",
+            "verified": false
+          }
         }
       ]
     },
@@ -477,7 +1107,70 @@
               "kind": "subtopic",
               "definition": "Consistency between words and body language builds credibility; mismatch signals deception."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Body language is the non verbal side of a message: posture, gestures, facial expression, eye contact and the space you keep. It developed before speech as a way to signal danger, interest and intent. Analysts divide it into areas: kinesics for gestures, proxemics for space, haptics for touch, oculesics for eye contact and paralanguage for the voice. Signals are read as open or closed, and folded arms with no eye contact reads as closed. The useful rule is consistency: when words and body agree the speaker is believed, and when they clash the body wins.",
+            "example": "A candidate saying they are confident while staring at the floor sends two messages. The panel believes the floor, not the words.",
+            "quiz": [
+              {
+                "q": "Which term covers the study of personal space?",
+                "options": [
+                  "Oculesics",
+                  "Kinesics",
+                  "Proxemics",
+                  "Haptics"
+                ],
+                "answer": 2,
+                "why": "Proxemics is space, kinesics is gesture, haptics is touch and oculesics is eye contact."
+              },
+              {
+                "q": "Which of these is a closed body language signal?",
+                "options": [
+                  "A genuine smile",
+                  "An open posture",
+                  "Steady eye contact",
+                  "Folded arms"
+                ],
+                "answer": 3,
+                "why": "Folded arms and avoiding eye contact read as defensive or closed to an observer."
+              },
+              {
+                "q": "Which statement about body language is NOT correct?",
+                "options": [
+                  "Body language matters less than words when the two disagree",
+                  "It developed before spoken language",
+                  "Paralanguage covers the voice rather than the words",
+                  "Posture can influence attitude as well as reflect it"
+                ],
+                "answer": 0,
+                "why": "When the two clash, people believe the body, which is why consistency builds credibility."
+              },
+              {
+                "q": "What does haptics study?",
+                "options": [
+                  "Gestures",
+                  "Touch",
+                  "Eye contact",
+                  "Space"
+                ],
+                "answer": 1,
+                "why": "Haptics is communication through touch, such as a handshake or a pat on the back."
+              },
+              {
+                "q": "What is paralanguage?",
+                "options": [
+                  "Foreign words in a speech",
+                  "Sign language",
+                  "The tone, pitch and pace of the voice rather than the words",
+                  "Writing in two languages"
+                ],
+                "answer": 2,
+                "why": "How something is said often carries more meaning than the words chosen."
+              }
+            ],
+            "examTip": "Name the five areas of body language analysis, then list four desirable signals for an interview.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MIV-T02",
@@ -521,7 +1214,70 @@
               "kind": "subtopic",
               "definition": "Practice sessions that reveal how concessions and tactics affect the final agreement."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Negotiation reaches an agreement between parties whose interests partly differ, over prices, salaries, contracts or resources. The fundamentals are to bargain over interests rather than fixed positions, and to find the zone where a deal is possible. Know your best alternative if the talks fail. Preparation means fixing your limits, your objective and your opening offer before you sit down. The process moves through exploring, signalling, proposing, bargaining and closing, with listening throughout. Trust, patience and emotional control decide the outcome as much as the numbers do.",
+            "example": "Two departments both want the same room. Arguing over who gets it is positional; asking what each needs the room for often reveals a timetable that suits both.",
+            "quiz": [
+              {
+                "q": "What does BATNA stand for?",
+                "options": [
+                  "Basic approach to negotiation",
+                  "Best agreed terms and arrangements",
+                  "Bargaining and trade negotiation agreement",
+                  "Best alternative to a negotiated agreement"
+                ],
+                "answer": 3,
+                "why": "Knowing your fallback is what gives you the confidence to walk away."
+              },
+              {
+                "q": "Why negotiate over interests rather than positions?",
+                "options": [
+                  "Interests reveal what each side actually needs, which opens more options",
+                  "Positions are illegal",
+                  "It avoids any compromise",
+                  "It is quicker"
+                ],
+                "answer": 0,
+                "why": "A position is one answer, while an interest can usually be met in several ways."
+              },
+              {
+                "q": "Which statement about negotiation is NOT correct?",
+                "options": [
+                  "Emotional control helps the outcome",
+                  "The opening offer should be your final limit",
+                  "Fix your limits before you begin",
+                  "Listen actively throughout"
+                ],
+                "answer": 1,
+                "why": "The opening offer leaves room to move; revealing your limit at once removes it."
+              },
+              {
+                "q": "What is the zone of possible agreement?",
+                "options": [
+                  "The gap that cannot be closed",
+                  "The room where talks are held",
+                  "The overlap between what one side will accept and the other will give",
+                  "The time limit for talks"
+                ],
+                "answer": 2,
+                "why": "A deal exists only where the two sides' acceptable ranges overlap."
+              },
+              {
+                "q": "Which stage comes last in the negotiation process?",
+                "options": [
+                  "Signalling",
+                  "Exploring",
+                  "Bargaining",
+                  "Closing"
+                ],
+                "answer": 3,
+                "why": "Closing confirms the agreement, after exploring, signalling, proposing and bargaining."
+              }
+            ],
+            "examTip": "Define the fundamentals, then list the five process stages and three personal qualities that matter.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MIV-T03",
@@ -565,7 +1321,70 @@
               "kind": "subtopic",
               "definition": "Simulated practice that builds the confidence to speak in formal settings."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A meeting is a planned gathering held to discuss and decide, and a seminar adds a presentation before the discussion. Meetings coordinate work, share information, solve problems and leave a written record of what was decided. The chair sets the agenda and keeps time, while participants prepare, contribute and listen. The process runs notice, agenda, quorum, discussion, resolution, minutes and follow up. A meeting succeeds when it ends with a clear decision, named owners for each action and a summary. It fails when there is no agenda or one person dominates.",
+            "example": "A staff meeting with no agenda drifts for an hour and decides nothing. The same meeting with three listed items finishes in twenty minutes with two actions assigned.",
+            "quiz": [
+              {
+                "q": "What is a quorum?",
+                "options": [
+                  "The minimum number of members who must be present for decisions to count",
+                  "The list of speakers",
+                  "The meeting room",
+                  "The time limit of a meeting"
+                ],
+                "answer": 0,
+                "why": "Without a quorum the meeting can talk but cannot formally decide anything."
+              },
+              {
+                "q": "Which statement about meetings is NOT correct?",
+                "options": [
+                  "Follow up is part of the process",
+                  "The agenda is written after the meeting",
+                  "The chair sets the agenda and keeps time",
+                  "Minutes record what was decided"
+                ],
+                "answer": 1,
+                "why": "The agenda goes out before the meeting so that participants can prepare."
+              },
+              {
+                "q": "What is the difference between a meeting and a seminar?",
+                "options": [
+                  "They are identical",
+                  "A seminar is longer",
+                  "A seminar adds a presentation before the discussion",
+                  "A meeting has no discussion"
+                ],
+                "answer": 2,
+                "why": "A seminar leads with a talk on a topic, then opens the floor for questions."
+              },
+              {
+                "q": "Which sign shows a meeting has succeeded?",
+                "options": [
+                  "Everyone spoke at once",
+                  "No decisions were recorded",
+                  "It ran for a long time",
+                  "It ended with named owners for each action"
+                ],
+                "answer": 3,
+                "why": "Assigned actions with names and dates are what turn discussion into results."
+              },
+              {
+                "q": "What is the usual cause of a failed meeting?",
+                "options": [
+                  "No agenda, or one person dominating",
+                  "Too much note taking",
+                  "A short duration",
+                  "Too many chairs"
+                ],
+                "answer": 0,
+                "why": "Without structure or shared airtime, the meeting produces talk rather than decisions."
+              }
+            ],
+            "examTip": "Write the seven process steps in order, then give three success indicators and two pitfalls.",
+            "verified": false
+          }
         }
       ]
     },
@@ -621,7 +1440,70 @@
               "kind": "subtopic",
               "definition": "Unions represent workers in negotiations and carry collective concerns to management."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Management communication is the flow of information that holds an organisation together. Planning, organising, leading and controlling all depend on it arriving on time and being accurate. Downward communication carries instructions, policies and feedback to those who do the work. Upward communication carries reports, suggestions and complaints back to those who decide. Lateral communication moves between departments at the same level, diagonal cuts across levels, and the informal grapevine runs beside all of them. Specialists have a particular duty: translating expert knowledge into language everyone can act on.",
+            "example": "An engineer explains a server fault to management in plain terms and one recommended action. That translation is what lets a decision be taken the same day.",
+            "quiz": [
+              {
+                "q": "Which direction carries reports, suggestions and complaints?",
+                "options": [
+                  "Downward",
+                  "Upward",
+                  "Lateral",
+                  "Diagonal"
+                ],
+                "answer": 1,
+                "why": "Upward communication brings what the front line knows back to the people who decide."
+              },
+              {
+                "q": "What is lateral communication?",
+                "options": [
+                  "From the union to management",
+                  "Between a manager and a subordinate",
+                  "Between people or departments at the same level",
+                  "From the top to the bottom"
+                ],
+                "answer": 2,
+                "why": "Lateral means sideways, between peers who must coordinate without reporting to each other."
+              },
+              {
+                "q": "Which statement about management communication is NOT correct?",
+                "options": [
+                  "Planning and controlling depend on accurate information",
+                  "The grapevine is the informal channel",
+                  "Semantics means one word can mean different things to different people",
+                  "Diagonal communication follows the strict chain of command"
+                ],
+                "answer": 3,
+                "why": "Diagonal communication deliberately cuts across levels and functions, unlike the formal chain."
+              },
+              {
+                "q": "Why is semantics a management concern?",
+                "options": [
+                  "The same word can mean different things, causing misunderstanding",
+                  "It is required by law",
+                  "It replaces feedback",
+                  "It makes documents longer"
+                ],
+                "answer": 0,
+                "why": "Meaning sits in the receiver, so a word the sender finds obvious may land differently."
+              },
+              {
+                "q": "What role do unions play in organisational communication?",
+                "options": [
+                  "They deliver the post",
+                  "They represent workers and carry collective concerns to management",
+                  "They write the minutes",
+                  "They set the agenda"
+                ],
+                "answer": 1,
+                "why": "A union gathers individual concerns into one voice for negotiation."
+              }
+            ],
+            "examTip": "Draw the directions of communication flow with an example of each, then add the specialist and union roles.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA423-MV-T02",
@@ -671,7 +1553,70 @@
               "kind": "subtopic",
               "definition": "Developing a natural style and studying a model presentation to improve delivery."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A presentation is a structured talk, usually supported by visuals, that informs, persuades or trains. Types include informative, persuasive, instructional, motivational and impromptu presentations. Everything starts with the audience: their size, knowledge, expectations and attitude decide both content and tone. Planning means fixing one objective, building a structure and choosing a visual for each part. Delivery depends on a strong opening, eye contact, voice modulation, controlled pace, purposeful gestures and a clear conclusion.",
+            "example": "Explaining a new library system to staff is an instructional presentation. Persuading them to adopt it early is a persuasive one, and it needs a different opening.",
+            "quiz": [
+              {
+                "q": "Which presentation type aims to change what the audience believes or does?",
+                "options": [
+                  "Impromptu",
+                  "Informative",
+                  "Persuasive",
+                  "Instructional"
+                ],
+                "answer": 2,
+                "why": "Persuasive talks argue for a position, while informative ones only explain."
+              },
+              {
+                "q": "Why should a presentation start from the audience?",
+                "options": [
+                  "Because it saves preparation time",
+                  "Because visuals depend on it",
+                  "Because it is polite",
+                  "Because their knowledge and expectations decide the content and tone"
+                ],
+                "answer": 3,
+                "why": "A talk that assumes the wrong level loses the audience in the first minute."
+              },
+              {
+                "q": "Which statement about presentations is NOT correct?",
+                "options": [
+                  "Reading a full script aloud is the best delivery",
+                  "A strong opening earns attention",
+                  "One clear objective keeps the talk focused",
+                  "Cue cards help the speaker stay on track"
+                ],
+                "answer": 0,
+                "why": "Reading a script loses eye contact and sounds flat, which is why outlines are preferred."
+              },
+              {
+                "q": "What is the main advantage of a written report over an oral presentation?",
+                "options": [
+                  "It cannot be questioned",
+                  "It allows detail and can be reread",
+                  "It is always shorter",
+                  "It needs no preparation"
+                ],
+                "answer": 1,
+                "why": "A reader can go back over a table or argument, which a listener cannot."
+              },
+              {
+                "q": "Which of these is NOT a delivery technique listed in the syllabus?",
+                "options": [
+                  "Controlled pace",
+                  "Eye contact",
+                  "Handwriting speed",
+                  "Voice modulation"
+                ],
+                "answer": 2,
+                "why": "Delivery is about the voice, the eyes, the pace and gesture, not about writing."
+              }
+            ],
+            "examTip": "List the five types, then give the six delivery techniques and three planning steps.",
+            "verified": false
+          }
         }
       ]
     }

@@ -4,4 +4,4 @@
  * See $lib/stores/hydrate.ts - nothing reads localStorage during the first render.
  */
 export const ssr = true;
-export const prerender = false;
+export const prerender = true;

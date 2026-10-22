@@ -43,7 +43,70 @@
               "kind": "subtopic",
               "definition": "Growing professional standards, but management remains situational and practice based."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Management is the process of getting work done through other people. It is called both an art and a science: a science because it rests on tested principles, an art because applying them needs judgement. Three levels exist. Top management sets direction and policy, middle management turns policy into plans, and supervisory management looks after daily work. Managers need three kinds of skill: technical, human and conceptual, and the mix changes with level. The functions are planning, organising, staffing, directing, coordinating and controlling.",
+            "example": "Strong technical work does not lead a team by itself. Conceptual skill is what shows where the department should be in three years.",
+            "quiz": [
+              {
+                "q": "Which level of management sets direction and policy?",
+                "options": [
+                  "Top",
+                  "Operational",
+                  "Supervisory",
+                  "Middle"
+                ],
+                "answer": 0,
+                "why": "Top management looks at the whole organisation and fixes the long term direction."
+              },
+              {
+                "q": "Which skill matters most at the supervisory level?",
+                "options": [
+                  "Conceptual skill",
+                  "Technical skill",
+                  "Political skill",
+                  "Financial skill"
+                ],
+                "answer": 1,
+                "why": "Supervisors work close to the task, so knowing how the work is done matters most there."
+              },
+              {
+                "q": "Which statement about management is NOT correct?",
+                "options": [
+                  "Conceptual skill matters more at the top",
+                  "Middle management translates policy into plans",
+                  "Management principles give the same answer in every situation",
+                  "It is both an art and a science"
+                ],
+                "answer": 2,
+                "why": "Management is situational, which is why judgement and experience remain necessary."
+              },
+              {
+                "q": "Which of these is NOT listed as a function of management?",
+                "options": [
+                  "Planning",
+                  "Staffing",
+                  "Controlling",
+                  "Programming"
+                ],
+                "answer": 3,
+                "why": "The functions are planning, organising, staffing, directing, coordinating and controlling."
+              },
+              {
+                "q": "What does controlling complete?",
+                "options": [
+                  "The cycle, by checking performance against the plan",
+                  "The budget year",
+                  "The training programme",
+                  "The hiring process"
+                ],
+                "answer": 0,
+                "why": "Planning sets the standard and controlling measures whether it was met, closing the loop."
+              }
+            ],
+            "examTip": "State the definition, the three levels with one duty each, the three skills and the six functions.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MI-T02",
@@ -81,7 +144,70 @@
               "kind": "subtopic",
               "definition": "Board accountability, transparency, green practices and triple bottom line reporting."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A business does not operate in a vacuum, so it carries obligations to employees, consumers, shareholders, government and the community. The case for social responsibility is long run survival, public goodwill and a plain moral duty. The case against is cost, a lack of skill in social matters and a dilution of the business purpose. Ethical decisions are usually tested three ways: by outcomes, by rights and by justice. In the workplace this appears as codes of conduct, whistle blowing protections and the handling of conflicts of interest.",
+            "example": "A factory that treats its effluent before discharge spends more today. It avoids a shutdown order and keeps the goodwill of the village beside it.",
+            "quiz": [
+              {
+                "q": "Which ethical approach judges an action by its consequences?",
+                "options": [
+                  "Justice approach",
+                  "Utilitarian approach",
+                  "Virtue approach",
+                  "Rights approach"
+                ],
+                "answer": 1,
+                "why": "The utilitarian test asks which choice produces the greatest good for the greatest number."
+              },
+              {
+                "q": "Which statement about social responsibility is NOT correct?",
+                "options": [
+                  "It includes obligations to employees and the community",
+                  "It can improve long run survival",
+                  "It is free of cost to the business",
+                  "Critics say it dilutes the business purpose"
+                ],
+                "answer": 2,
+                "why": "Cost is the main argument against it, and that is why the debate exists at all."
+              },
+              {
+                "q": "What is whistle blowing?",
+                "options": [
+                  "Leaving a job suddenly",
+                  "Complaining about pay",
+                  "Spreading rumours about colleagues",
+                  "Reporting wrongdoing inside the organisation to someone who can act"
+                ],
+                "answer": 3,
+                "why": "It is a formal disclosure of unethical or illegal practice, and policies exist to protect it."
+              },
+              {
+                "q": "What does the triple bottom line add to financial reporting?",
+                "options": [
+                  "Social and environmental performance alongside profit",
+                  "Three years of data",
+                  "Three auditors",
+                  "Three copies of the accounts"
+                ],
+                "answer": 0,
+                "why": "People, planet and profit together give a fuller picture of performance."
+              },
+              {
+                "q": "Which of these is a governance concern rather than an operational one?",
+                "options": [
+                  "Scheduling shifts",
+                  "Board accountability and transparency",
+                  "Setting machine speeds",
+                  "Ordering raw materials"
+                ],
+                "answer": 1,
+                "why": "Governance is about how the organisation is directed and held to account from the top."
+              }
+            ],
+            "examTip": "Give two arguments for and two against social responsibility, then name the three ethical tests.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MI-T03",
@@ -119,7 +245,70 @@
               "kind": "subtopic",
               "definition": "Uncertainty, lack of information, resistance to change, cost of planning and psychological barriers."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Planning decides in advance what to do, how to do it and when, so that effort is not wasted. It comes first among the functions, because organising, staffing and controlling all need a plan to work from. Plans come in several forms, from vision and mission at the top down to rules, programmes and budgets at the bottom. The steps run from spotting opportunities, through setting objectives and comparing alternatives, to choosing a plan and reviewing it. Management by objectives turns this into a joint exercise: manager and subordinate agree the goals together.",
+            "example": "A college planning a placement drive fixes the date, the companies, the rooms and the volunteers a month ahead. Without that, the same drive becomes a scramble on the day.",
+            "quiz": [
+              {
+                "q": "Why is planning called the primary function of management?",
+                "options": [
+                  "Because it comes last in the cycle",
+                  "Because it takes the most time",
+                  "Because the other functions depend on it",
+                  "Because only managers may plan"
+                ],
+                "answer": 2,
+                "why": "Organising, staffing and controlling all need a plan to work from, so planning comes first."
+              },
+              {
+                "q": "Which is the broadest type of plan?",
+                "options": [
+                  "A procedure",
+                  "A rule",
+                  "A budget",
+                  "Vision and mission"
+                ],
+                "answer": 3,
+                "why": "Vision and mission sit at the top and give direction to every narrower plan beneath them."
+              },
+              {
+                "q": "Which statement about MBO is NOT correct?",
+                "options": [
+                  "The manager sets objectives alone and informs the subordinate",
+                  "Objectives are agreed jointly with the subordinate",
+                  "Progress is reviewed against agreed objectives",
+                  "It links appraisal to agreed goals"
+                ],
+                "answer": 0,
+                "why": "Joint agreement is the distinguishing feature, and it is what raises commitment."
+              },
+              {
+                "q": "Which of these is an obstacle to effective planning?",
+                "options": [
+                  "Clear objectives",
+                  "Resistance to change",
+                  "Available data",
+                  "Agreed premises"
+                ],
+                "answer": 1,
+                "why": "Uncertainty, poor information, cost and resistance to change all weaken planning."
+              },
+              {
+                "q": "What is the final step in the planning process?",
+                "options": [
+                  "Setting objectives",
+                  "Choosing among alternatives",
+                  "Implementing the plan and reviewing it",
+                  "Developing premises"
+                ],
+                "answer": 2,
+                "why": "A plan that is never implemented or reviewed is not planning at all."
+              }
+            ],
+            "examTip": "List the six steps of planning in order, the plan types, and three obstacles to planning.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MI-T04",
@@ -157,7 +346,70 @@
               "kind": "subtopic",
               "definition": "The long term aspiration, the purpose of the organisation and the beliefs that guide behaviour."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Objectives are the ends that all activity aims at, and they sit in a hierarchy from the organisation's purpose down to each person's goals. Good objectives follow the SMART test: specific, measurable, achievable, relevant and time bound. Plans also rest on premises, which are assumptions about the future, both inside the organisation and outside it. Forecasting supplies those assumptions, using quantitative methods where numbers exist and qualitative judgement where they do not. Above the objectives sit the vision, the mission and the values that shape them.",
+            "example": "Increase sales is not SMART. Increase sales in Tamil Nadu by 15 percent before March gives a target anyone can measure and check.",
+            "quiz": [
+              {
+                "q": "What does the M in SMART stand for?",
+                "options": [
+                  "Material",
+                  "Motivational",
+                  "Manageable",
+                  "Measurable"
+                ],
+                "answer": 3,
+                "why": "Measurable means the objective carries a number or a test that shows whether it was met."
+              },
+              {
+                "q": "What is a planning premise?",
+                "options": [
+                  "An assumption about the future on which the plan rests",
+                  "The budget total",
+                  "The meeting where plans are approved",
+                  "The final plan"
+                ],
+                "answer": 0,
+                "why": "Premises spell out what the planner assumes will be true, so the plan can be checked later."
+              },
+              {
+                "q": "Which statement about objectives is NOT correct?",
+                "options": [
+                  "Vision and mission sit above the objectives",
+                  "Objectives should be vague so that they cannot be criticised",
+                  "They form a hierarchy from purpose down to individual goals",
+                  "SMART objectives carry a time element"
+                ],
+                "answer": 1,
+                "why": "Vagueness produces an unmeasurable objective, which is exactly what SMART avoids."
+              },
+              {
+                "q": "Which is a qualitative forecasting method?",
+                "options": [
+                  "Moving averages",
+                  "Time series analysis",
+                  "The Delphi technique",
+                  "Regression analysis"
+                ],
+                "answer": 2,
+                "why": "Delphi collects and refines expert judgement, used where no reliable numbers exist yet."
+              },
+              {
+                "q": "What does the mission statement describe?",
+                "options": [
+                  "The organisation chart",
+                  "The annual budget",
+                  "The profit target",
+                  "The purpose of the organisation and why it exists"
+                ],
+                "answer": 3,
+                "why": "Mission answers why the organisation exists, while vision describes what it wants to become."
+              }
+            ],
+            "examTip": "Write SMART in full with an example, then define premises and give one internal and one external example.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MI-T05",
@@ -201,7 +453,70 @@
               "kind": "subtopic",
               "definition": "Strategy sets long term direction while tactics deal with short term methods."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Strategy is the broad plan that matches an organisation to its environment. The process runs from defining the mission, through scanning the environment and setting objectives, to generating alternatives, choosing a strategy and implementing it. SWOT analysis sorts the findings into strengths, weaknesses, opportunities and threats. Porter described three generic strategies, cost leadership, differentiation and focus, and five forces that decide how attractive an industry is. The BCG matrix sorts a portfolio into stars, cash cows, question marks and dogs, and each calls for a different response.",
+            "example": "A low cost airline follows cost leadership. A premium coffee chain follows differentiation, and a firm selling only to mountain trekkers follows focus.",
+            "quiz": [
+              {
+                "q": "Which of Porter's strategies competes on being the cheapest producer?",
+                "options": [
+                  "Cost leadership",
+                  "Focus",
+                  "Diversification",
+                  "Differentiation"
+                ],
+                "answer": 0,
+                "why": "Cost leadership means producing at the lowest cost so the price can beat rivals."
+              },
+              {
+                "q": "In SWOT, which two are internal to the organisation?",
+                "options": [
+                  "Strengths and opportunities",
+                  "Strengths and weaknesses",
+                  "Opportunities and threats",
+                  "Weaknesses and threats"
+                ],
+                "answer": 1,
+                "why": "Strengths and weaknesses are inside the firm, while opportunities and threats come from outside."
+              },
+              {
+                "q": "Which statement about strategy is NOT correct?",
+                "options": [
+                  "The BCG matrix sorts a portfolio of businesses",
+                  "Porter's five forces include supplier and buyer power",
+                  "Retrenchment means expanding into new markets",
+                  "Strategy is long term, tactics are short term"
+                ],
+                "answer": 2,
+                "why": "Retrenchment cuts back, while growth is the strategy that expands into new markets."
+              },
+              {
+                "q": "A unit has high market share in a slow growing market. What is it called in the BCG matrix?",
+                "options": [
+                  "Question mark",
+                  "Dog",
+                  "Star",
+                  "Cash cow"
+                ],
+                "answer": 3,
+                "why": "High share in a slow market generates cash the firm can invest elsewhere."
+              },
+              {
+                "q": "Which of Porter's five forces covers the risk of new competitors arriving?",
+                "options": [
+                  "Threat of new entrants",
+                  "Buyer power",
+                  "Rivalry among existing firms",
+                  "Supplier power"
+                ],
+                "answer": 0,
+                "why": "Barriers to entry decide how easily new rivals can arrive and take share."
+              }
+            ],
+            "examTip": "Draw the BCG matrix with its four quadrants, then list the three generic strategies and the five forces.",
+            "verified": false
+          }
         }
       ]
     },
@@ -251,7 +566,70 @@
               "kind": "subtopic",
               "definition": "Encouraging new ideas and managing the risks that come with them."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Decision making is choosing among alternatives to reach an objective. Programmed decisions follow a rule and suit routine problems, while non programmed ones are novel and need thought. The rational model runs through identifying the problem, setting criteria, weighing them, developing alternatives, analysing them and choosing. In practice managers work with limited information and time, so they satisfice rather than optimise, taking the first option that is good enough. Group decisions bring more knowledge but risk groupthink, and decision trees help when probabilities are known.",
+            "example": "Reordering stock when it falls below a level is a programmed decision. Choosing whether to open a second campus is non programmed and needs analysis.",
+            "quiz": [
+              {
+                "q": "What is satisficing?",
+                "options": [
+                  "Finding the perfect answer",
+                  "Accepting the first option that is good enough",
+                  "Avoiding a decision",
+                  "Delegating the decision"
+                ],
+                "answer": 1,
+                "why": "Bounded rationality means time and information run out, so managers settle for adequate."
+              },
+              {
+                "q": "Which statement about decision making is NOT correct?",
+                "options": [
+                  "Programmed decisions suit routine problems",
+                  "The rational model sets criteria before alternatives",
+                  "Groupthink improves the quality of group decisions",
+                  "Decision trees use probabilities and expected values"
+                ],
+                "answer": 2,
+                "why": "Groupthink suppresses dissent, which lowers the quality of a decision rather than raising it."
+              },
+              {
+                "q": "Which technique collects ideas from experts without bringing them together?",
+                "options": [
+                  "The nominal group technique",
+                  "A committee vote",
+                  "Brainstorming",
+                  "The Delphi technique"
+                ],
+                "answer": 3,
+                "why": "Delphi gathers opinions in rounds and feeds back a summary, all without a meeting."
+              },
+              {
+                "q": "What does a payoff table show?",
+                "options": [
+                  "Alternatives, states of nature and the outcome for each pair",
+                  "The organisation chart",
+                  "The training budget",
+                  "Only the profits already made"
+                ],
+                "answer": 0,
+                "why": "It lays out each choice against each possible future so expected values can be compared."
+              },
+              {
+                "q": "Which step comes first in the rational decision process?",
+                "options": [
+                  "Choosing an alternative",
+                  "Identifying the problem",
+                  "Weighing the criteria",
+                  "Implementing"
+                ],
+                "answer": 1,
+                "why": "Everything else depends on stating clearly what problem is actually being solved."
+              }
+            ],
+            "examTip": "List the rational decision steps, define satisficing, and name two group techniques with their risk.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MII-T02",
@@ -289,7 +667,70 @@
               "kind": "subtopic",
               "definition": "Transferring authority and tasks, with barriers such as fear of losing control on both sides."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Organising groups the work, assigns it to positions and defines who may decide what. The result is the organisation structure, the formal pattern of relationships. Alongside it always grows an informal organisation, the network of friendships and influence that the chart does not show. Span of control asks how many people one manager can supervise, which decides whether the structure is tall or flat. Three words go together: authority is the right to decide, responsibility is the duty given, and accountability is the obligation to answer for it. Delegation passes authority down.",
+            "example": "A manager with thirty direct reports has a wide span and little time for each. Splitting them into three teams makes a taller structure with closer supervision.",
+            "quiz": [
+              {
+                "q": "What is span of control?",
+                "options": [
+                  "The size of the budget",
+                  "The number of departments",
+                  "The number of subordinates one manager can supervise",
+                  "The height of the building"
+                ],
+                "answer": 2,
+                "why": "A wide span gives a flat structure, and a narrow one gives a tall structure with more levels."
+              },
+              {
+                "q": "What is the difference between authority and responsibility?",
+                "options": [
+                  "Responsibility is higher than authority",
+                  "Authority comes from the team",
+                  "They are identical",
+                  "Authority is the right to decide, responsibility is the duty assigned"
+                ],
+                "answer": 3,
+                "why": "Authority can be delegated, but the manager keeps accountability for the result."
+              },
+              {
+                "q": "Which statement about organising is NOT correct?",
+                "options": [
+                  "Accountability can be delegated away completely",
+                  "Delegation passes authority to a lower level",
+                  "A formal structure is the official pattern of relationships",
+                  "The informal organisation exists in every workplace"
+                ],
+                "answer": 0,
+                "why": "A manager may delegate the work but stays accountable for how it turns out."
+              },
+              {
+                "q": "What is the informal organisation?",
+                "options": [
+                  "The weekend shift",
+                  "The social network that emerges among employees outside the chart",
+                  "The union branch",
+                  "The training department"
+                ],
+                "answer": 1,
+                "why": "It runs on friendships and influence, and it often moves information faster than formal channels."
+              },
+              {
+                "q": "A flat structure is produced by:",
+                "options": [
+                  "A large budget",
+                  "A narrow span of control",
+                  "A wide span of control with few levels",
+                  "Many job titles"
+                ],
+                "answer": 2,
+                "why": "More reports per manager means fewer layers between the top and the front line."
+              }
+            ],
+            "examTip": "Define authority, responsibility and accountability in one line each, then explain span of control and delegation.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MII-T03",
@@ -327,7 +768,70 @@
               "kind": "subtopic",
               "definition": "Employees report to both a functional and a project manager, which gives flexibility but creates dual authority."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Departmentalisation groups similar work into units so that it can be managed. Functional grouping collects people by what they do, such as marketing, production and finance, which builds expertise but can slow coordination. Product grouping gathers everything for one product line under one manager, which suits diversified firms. Geographical grouping suits sales and service spread across regions. Customer grouping serves one class of buyer, and process grouping follows the stages of production. A matrix structure makes people answer to both a functional and a project manager.",
+            "example": "A bank with retail, corporate and agriculture desks is grouping by customer. A car maker with separate car and truck divisions is grouping by product.",
+            "quiz": [
+              {
+                "q": "Which grouping builds specialist expertise but can slow coordination across functions?",
+                "options": [
+                  "Product",
+                  "Geographical",
+                  "Customer",
+                  "Functional"
+                ],
+                "answer": 3,
+                "why": "Specialists develop quickly, but each function may pull in its own direction."
+              },
+              {
+                "q": "What is the main drawback of a matrix structure?",
+                "options": [
+                  "Dual authority, because each person reports to two managers",
+                  "It has no managers",
+                  "It cannot be drawn",
+                  "It is too simple"
+                ],
+                "answer": 0,
+                "why": "Two bosses can give conflicting instructions, which is why communication matters so much there."
+              },
+              {
+                "q": "Which statement about departmentalisation is NOT correct?",
+                "options": [
+                  "Customer grouping serves one class of buyer",
+                  "Process grouping is used only in schools",
+                  "Product grouping suits diversified companies",
+                  "Geographical grouping suits organisations spread over regions"
+                ],
+                "answer": 1,
+                "why": "Process grouping follows production stages and is common in manufacturing, not only in schools."
+              },
+              {
+                "q": "A company with separate units for north, south and west is using:",
+                "options": [
+                  "Matrix structure",
+                  "Functional grouping",
+                  "Geographical grouping",
+                  "Process grouping"
+                ],
+                "answer": 2,
+                "why": "Grouping by territory lets each region respond to its own market conditions."
+              },
+              {
+                "q": "Which grouping follows the stages of making something?",
+                "options": [
+                  "Product grouping",
+                  "Geographical grouping",
+                  "Customer grouping",
+                  "Process grouping"
+                ],
+                "answer": 3,
+                "why": "Each department handles one step of production, passing the work along the chain."
+              }
+            ],
+            "examTip": "Name the five bases of departmentalisation with one example each, then give the strength and weakness of the matrix.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MII-T04",
@@ -365,7 +869,70 @@
               "kind": "subtopic",
               "definition": "Technology and control systems allow partial recentralisation; the right balance depends on size and environment."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Line positions carry direct command over the work, while staff positions advise and support those who do. Functional authority is a narrow exception, letting a specialist give orders on their own subject, such as safety or accounts. Conflict between line and staff is common: staff see their advice ignored, and line managers see staff as interference. Centralisation keeps decisions at the top, while decentralisation pushes them down. Decentralisation brings faster decisions and develops managers, at the cost of some control and possible duplication.",
+            "example": "A safety officer cannot run the factory, but can stop a machine that is unsafe. That narrow right to order is functional authority.",
+            "quiz": [
+              {
+                "q": "What is the difference between line and staff authority?",
+                "options": [
+                  "Line commands the work, staff advise and support",
+                  "They are the same",
+                  "Staff is always senior",
+                  "Line advises, staff commands"
+                ],
+                "answer": 0,
+                "why": "Line managers sit in the chain of command for the main work, while specialists support them."
+              },
+              {
+                "q": "What is functional authority?",
+                "options": [
+                  "Authority over every department",
+                  "A narrow right for a specialist to give orders on their own subject",
+                  "Authority given to unions",
+                  "Authority that expires each year"
+                ],
+                "answer": 1,
+                "why": "It is limited to the specialist's field, which keeps it from breaking the chain of command."
+              },
+              {
+                "q": "Which statement about decentralisation is NOT correct?",
+                "options": [
+                  "It gives faster decisions at the point of action",
+                  "It helps develop future managers",
+                  "It removes every risk of losing control",
+                  "It can cause duplication of effort"
+                ],
+                "answer": 2,
+                "why": "Lost control is the standard objection to decentralisation, which is why balance matters."
+              },
+              {
+                "q": "Centralisation keeps decisions:",
+                "options": [
+                  "With the customers",
+                  "With the unions",
+                  "With the front line workers",
+                  "With top management"
+                ],
+                "answer": 3,
+                "why": "Few people decide, which gives consistency but can be slow far from the top."
+              },
+              {
+                "q": "Why does line and staff conflict arise?",
+                "options": [
+                  "Because advice without authority can feel like interference to the line",
+                  "Because line managers are untrained",
+                  "Because there are too few staff",
+                  "Because staff earn more"
+                ],
+                "answer": 0,
+                "why": "Each side sees the other as obstructing the work, and only clear roles settle it."
+              }
+            ],
+            "examTip": "Define line, staff and functional authority with an example, then list two pros and two cons of decentralisation.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MII-T05",
@@ -403,7 +970,70 @@
               "kind": "subtopic",
               "definition": "Encouraging continuous learning, systems thinking, teamwork and sharing of knowledge."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Effective organising means avoiding the common structural mistakes. The usual ones are unclear responsibility, structures so flexible that nobody knows who decides, and delegation layered until accountability disappears. Good structure makes each position clear and each result traceable to one person. Culture is the other half: the shared values and norms that decide how people actually behave. A culture may be outcome oriented, people oriented or team oriented, and it often overrides what the chart says. A learning organisation builds on that by sharing knowledge openly.",
+            "example": "Two companies can have the same chart and behave quite differently. In one a junior engineer can stop a line; in the other nobody below a manager will speak up.",
+            "quiz": [
+              {
+                "q": "What is organisational culture?",
+                "options": [
+                  "The office dress code",
+                  "Shared values, beliefs and norms that decide how people behave",
+                  "The number of employees",
+                  "The annual report"
+                ],
+                "answer": 1,
+                "why": "Culture is what people do when nobody is watching, not what the handbook says."
+              },
+              {
+                "q": "Which statement about organising is NOT correct?",
+                "options": [
+                  "Unclear responsibility is a common structural mistake",
+                  "Flexibility should never make decision rights unclear",
+                  "The more delegation layers, the clearer the accountability",
+                  "Each result should be traceable to one person"
+                ],
+                "answer": 2,
+                "why": "Layered delegation usually hides who is answerable, which is the opposite of clear."
+              },
+              {
+                "q": "What is a learning organisation?",
+                "options": [
+                  "One with a library",
+                  "One that hires graduates",
+                  "One that runs training courses only",
+                  "One that encourages continuous learning and shares knowledge"
+                ],
+                "answer": 3,
+                "why": "Systems thinking, teamwork and open knowledge sharing are what make the term meaningful."
+              },
+              {
+                "q": "How does culture differ from formal structure?",
+                "options": [
+                  "The structure says how things should work, culture decides how they actually work",
+                  "Culture is written in the chart",
+                  "Structure is optional",
+                  "They are identical"
+                ],
+                "answer": 0,
+                "why": "The chart is the intention, and culture is the reality people experience each day."
+              },
+              {
+                "q": "Which is listed as a dimension of culture?",
+                "options": [
+                  "Building height",
+                  "Outcome orientation",
+                  "Employee age",
+                  "Office location"
+                ],
+                "answer": 1,
+                "why": "Dimensions include outcome, people and team orientation, among others."
+              }
+            ],
+            "examTip": "List three structural mistakes to avoid, define culture, and give two differences between culture and structure.",
+            "verified": false
+          }
         }
       ]
     },
@@ -453,7 +1083,70 @@
               "kind": "subtopic",
               "definition": "Introducing the new employee to the organisation and fitting them to the right job."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Human resource management looks after the people side of an organisation, from recruitment to retirement. Its functions are acquiring, developing, motivating and retaining the people the organisation needs. HR planning forecasts how many staff will be needed, and job analysis describes what each job does. Job analysis produces two documents: the job description lists the duties, and the job specification lists the qualities the person needs. Recruitment draws candidates from internal sources such as promotion and transfer, or external sources such as advertisements, campus placement and agencies. Selection then screens them through application forms, tests, interviews, reference checks and a medical examination, followed by induction.",
+            "example": "A job specification for a support engineer might ask for a degree, two years of experience and a readiness to work in shifts.",
+            "quiz": [
+              {
+                "q": "What does a job specification list?",
+                "options": [
+                  "The office hours",
+                  "The duties of the job",
+                  "The qualities the person needs",
+                  "The salary offered"
+                ],
+                "answer": 2,
+                "why": "The job description lists the duties, while the specification lists what the person must bring."
+              },
+              {
+                "q": "Which is an external source of recruitment?",
+                "options": [
+                  "Job rotation",
+                  "Promotion",
+                  "Transfer",
+                  "Campus placement"
+                ],
+                "answer": 3,
+                "why": "Campus placement brings people in from outside the organisation."
+              },
+              {
+                "q": "Which statement about selection is NOT correct?",
+                "options": [
+                  "It is the same activity as recruitment",
+                  "It includes tests and interviews",
+                  "It includes reference and medical checks",
+                  "It ends with induction of the selected person"
+                ],
+                "answer": 0,
+                "why": "Recruitment attracts candidates and selection chooses among them."
+              },
+              {
+                "q": "What is induction?",
+                "options": [
+                  "The final interview",
+                  "Introducing the new employee to the organisation and the job",
+                  "The medical test",
+                  "The probation report"
+                ],
+                "answer": 1,
+                "why": "It is the orientation step that follows selection and comes before real work begins."
+              },
+              {
+                "q": "Which test measures what a person is able to learn?",
+                "options": [
+                  "Personality test",
+                  "Interest test",
+                  "Aptitude test",
+                  "Achievement test"
+                ],
+                "answer": 2,
+                "why": "Aptitude looks forward to potential, while achievement measures what is already known."
+              }
+            ],
+            "examTip": "Define job description and job specification, list two recruitment sources of each kind, and the selection steps.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MIII-T02",
@@ -491,7 +1184,70 @@
               "kind": "subtopic",
               "definition": "Career stages, career paths, mentoring and preparing successors for key posts."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Training builds the skills a person needs now, while development prepares them for a larger job later. Training may be on the job, through coaching, job rotation and apprenticeship. It may also be off the job, through lectures, case studies and computer based lessons. Its benefits are higher productivity, better quality, improved morale, fewer accidents and less need for supervision. Performance appraisal then judges how well the person is doing. Methods include rating scales, ranking, paired comparison, critical incidents, essays, checklists, MBO based review and 360 degree feedback. Appraisal has known traps: the halo effect, leniency, central tendency and recency bias, which training and objective criteria reduce.",
+            "example": "A manager who rates everyone as average is showing central tendency. Using a scale tied to observed behaviour reduces that.",
+            "quiz": [
+              {
+                "q": "Which is an on the job training method?",
+                "options": [
+                  "Case studies",
+                  "Lectures",
+                  "Vestibule training",
+                  "Job rotation"
+                ],
+                "answer": 3,
+                "why": "Job rotation moves the learner through real jobs, which is training at the workplace."
+              },
+              {
+                "q": "What is the halo effect in appraisal?",
+                "options": [
+                  "Letting one good trait colour the whole rating",
+                  "Rating only recent events",
+                  "Rating too generously",
+                  "Rating everyone as average"
+                ],
+                "answer": 0,
+                "why": "One strong impression spreads to unrelated traits, which is why objective criteria help."
+              },
+              {
+                "q": "Which statement about training is NOT correct?",
+                "options": [
+                  "It reduces the need for close supervision",
+                  "It is meant only for new employees",
+                  "It builds skills for the current job",
+                  "It can reduce accidents"
+                ],
+                "answer": 1,
+                "why": "Training continues throughout a career, and development prepares people for future roles."
+              },
+              {
+                "q": "Which appraisal method collects feedback from peers, subordinates and superiors?",
+                "options": [
+                  "Ranking",
+                  "Paired comparison",
+                  "360 degree feedback",
+                  "Checklist"
+                ],
+                "answer": 2,
+                "why": "The name refers to feedback coming from all directions around the person."
+              },
+              {
+                "q": "What does recency bias mean?",
+                "options": [
+                  "Judging on the oldest events",
+                  "Judging on the first impression",
+                  "Judging on attendance",
+                  "Judging on the most recent events only"
+                ],
+                "answer": 3,
+                "why": "Recent behaviour crowds out the whole review period unless records are kept."
+              }
+            ],
+            "examTip": "Contrast training and development, give two methods of each, and name three appraisal errors.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MIII-T03",
@@ -529,7 +1285,70 @@
               "kind": "subtopic",
               "definition": "Motivation, recognition, career growth and a healthy work environment to reduce attrition."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Managerial development builds the capability an organisation will need in future. Common methods are understudy assignments, coaching, job rotation, special projects, committee work and university programmes. Organisation development goes wider, changing systems and culture through interventions such as survey feedback, team building, sensitivity training and process consultation. Change rarely happens without resistance, so it has to be managed openly and honestly. Lewin described change in three stages: unfreezing the old behaviour, changing, then refreezing the new pattern. Engagement and retention depend on the same things: motivation, recognition, career growth and a healthy work environment.",
+            "example": "A company that wants future general managers may rotate a promising engineer through production, sales and finance over three years.",
+            "quiz": [
+              {
+                "q": "What are Lewin's three stages of change?",
+                "options": [
+                  "Unfreezing, changing and refreezing",
+                  "Identify, decide, implement",
+                  "Hire, train, promote",
+                  "Plan, do, check"
+                ],
+                "answer": 0,
+                "why": "The old pattern is loosened, the new one is introduced and then made stable."
+              },
+              {
+                "q": "Which is an organisation development intervention?",
+                "options": [
+                  "Payroll processing",
+                  "Survey feedback",
+                  "Annual budgeting",
+                  "Machine maintenance"
+                ],
+                "answer": 1,
+                "why": "Survey feedback returns collected opinion to the group so that they can act on it."
+              },
+              {
+                "q": "Which statement about development is NOT correct?",
+                "options": [
+                  "Change must be managed openly",
+                  "Lewin's model has three stages",
+                  "Development applies only to new recruits",
+                  "Resistance to change is common"
+                ],
+                "answer": 2,
+                "why": "Development is a continuing process, for managers and for the organisation as a whole."
+              },
+              {
+                "q": "What is an understudy assignment?",
+                "options": [
+                  "A university course",
+                  "A salary review",
+                  "A training film",
+                  "Preparing a person to take over a specific senior job"
+                ],
+                "answer": 3,
+                "why": "The understudy learns the job by working beside the person who holds it."
+              },
+              {
+                "q": "Which factor reduces employee attrition?",
+                "options": [
+                  "Career growth and recognition",
+                  "Fewer appraisals",
+                  "Less feedback",
+                  "Longer working hours"
+                ],
+                "answer": 0,
+                "why": "People stay where they can grow and where their contribution is noticed."
+              }
+            ],
+            "examTip": "Name three managerial development methods, two OD interventions, and Lewin's three stages.",
+            "verified": false
+          }
         }
       ]
     },
@@ -585,7 +1404,70 @@
               "kind": "subtopic",
               "definition": "Job enrichment, flexible work, recognition, fair pay and participative management."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Motivation is the willingness to put in high effort towards organisational goals, and it is usually explained by content theories. Maslow arranged needs from the bottom up: physiological, safety, social, esteem and self actualisation, so a satisfied need stops motivating. Herzberg split the world in two: hygiene factors such as pay and conditions prevent dissatisfaction, while motivators such as achievement and growth create satisfaction. McGregor contrasted two views of people, theory X and theory Y, which lead to quite different management styles. Vroom's expectancy theory multiplies three things: expectancy, instrumentality and valence, so if any one is zero, motivation is zero.",
+            "example": "Under Herzberg, a pay rise removes dissatisfaction but does not by itself create satisfaction.",
+            "quiz": [
+              {
+                "q": "According to Maslow, which need comes first?",
+                "options": [
+                  "Safety",
+                  "Physiological",
+                  "Self actualisation",
+                  "Esteem"
+                ],
+                "answer": 1,
+                "why": "The hierarchy starts with physiological needs such as food and shelter."
+              },
+              {
+                "q": "In Herzberg's theory, pay and working conditions are:",
+                "options": [
+                  "Neither",
+                  "Motivators",
+                  "Hygiene factors",
+                  "Both motivators and hygiene factors"
+                ],
+                "answer": 2,
+                "why": "Hygiene factors prevent dissatisfaction but do not create lasting satisfaction."
+              },
+              {
+                "q": "Which statement about motivation is NOT correct?",
+                "options": [
+                  "Theory X assumes people dislike work",
+                  "McClelland named needs for achievement, power and affiliation",
+                  "Expectancy theory multiplies expectancy, instrumentality and valence",
+                  "A satisfied need continues to motivate strongly"
+                ],
+                "answer": 3,
+                "why": "In Maslow's model a satisfied need stops driving behaviour and the next level takes over."
+              },
+              {
+                "q": "What does equity theory compare?",
+                "options": [
+                  "A person's inputs and outcomes with those of others",
+                  "Effort with time",
+                  "Output with cost",
+                  "Salary with inflation"
+                ],
+                "answer": 0,
+                "why": "People judge fairness by comparing their ratio of input to outcome with a reference person."
+              },
+              {
+                "q": "What does job enrichment do?",
+                "options": [
+                  "Adds more machines",
+                  "Adds planning and responsibility to the job",
+                  "Shortens the working day",
+                  "Increases pay only"
+                ],
+                "answer": 1,
+                "why": "It is Herzberg's remedy: build motivators into the job itself."
+              }
+            ],
+            "examTip": "Sketch Maslow's hierarchy, give two examples of each Herzberg factor, and state Vroom's formula.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MIV-T02",
@@ -629,7 +1511,70 @@
               "kind": "subtopic",
               "definition": "Communication, decision making, empathy, integrity, courage and the ability to develop people."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Leadership is the ability to influence people to work willingly towards group goals. Managers rely on formal authority, while leaders rely on influence and a vision people want to follow. Early work looked for traits, then behavioural studies described two dimensions: concern for people and concern for production. Blake and Mouton's managerial grid combines them into styles, from impoverished management to team management. Contingency theories then argued that no single style is best. Fiedler matched style to the situation, and Hersey and Blanchard matched it to follower readiness. Transformational leadership goes further, inspiring people through vision and individual consideration rather than exchanging rewards for performance.",
+            "example": "A team lead who explains why the project matters and coaches each member individually is leading transformationally, not trading rewards for output.",
+            "quiz": [
+              {
+                "q": "How does leadership differ from management?",
+                "options": [
+                  "Managers have no authority",
+                  "They are identical",
+                  "Managers use formal authority, leaders use influence and vision",
+                  "Leaders never manage"
+                ],
+                "answer": 2,
+                "why": "Authority comes with the post, while leadership has to be earned from followers."
+              },
+              {
+                "q": "What do the two axes of Blake and Mouton's grid measure?",
+                "options": [
+                  "Age and experience",
+                  "Risk and return",
+                  "Cost and time",
+                  "Concern for people and concern for production"
+                ],
+                "answer": 3,
+                "why": "The grid combines the two concerns into five named styles."
+              },
+              {
+                "q": "Which statement about leadership is NOT correct?",
+                "options": [
+                  "Transformational leadership relies mainly on punishment",
+                  "Trait theory looks for inborn qualities",
+                  "Fiedler's model is a contingency model",
+                  "Situational leadership matches style to follower readiness"
+                ],
+                "answer": 0,
+                "why": "Transformational leadership works through inspiration, vision and individual consideration."
+              },
+              {
+                "q": "Which style is transactional?",
+                "options": [
+                  "Inspiring people through vision",
+                  "Exchanging rewards for agreed performance",
+                  "Coaching each member personally",
+                  "Challenging the team to invent new methods"
+                ],
+                "answer": 1,
+                "why": "Transactional leadership is the exchange of rewards for results agreed in advance."
+              },
+              {
+                "q": "What does path goal theory ask the leader to do?",
+                "options": [
+                  "Reduce the number of goals",
+                  "Set the goal and leave the team alone",
+                  "Clear the path and support followers towards the goal",
+                  "Choose the shortest route"
+                ],
+                "answer": 2,
+                "why": "The leader adjusts their style so followers can reach the goal more easily."
+              }
+            ],
+            "examTip": "Define leadership, contrast it with management, then name one trait, one behavioural and one contingency theory.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MIV-T03",
@@ -673,7 +1618,70 @@
               "kind": "subtopic",
               "definition": "Email, video conferencing, collaboration tools and their effect on speed and richness of messages."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Communication is the transfer and understanding of meaning, and every managerial function runs on it. The process is simple to state: a sender encodes a message, sends it through a medium, the receiver decodes it and sends feedback. Messages move downward as instructions and policies, upward as reports and suggestions, and sideways as coordination between peers. Barriers get in the way at each point: semantic barriers from words, psychological barriers from attitudes, and organisational barriers from hierarchy and distance. Alongside the formal channels runs the grapevine, an informal network that spreads news fast but not always accurately. Clarity, feedback, empathy and active listening reduce the noise.",
+            "example": "A notice on a board is downward communication. A suggestion box is upward, and the grapevine decides what people actually believe.",
+            "quiz": [
+              {
+                "q": "What is the last step in the communication process?",
+                "options": [
+                  "Decoding",
+                  "Encoding",
+                  "Choosing the medium",
+                  "Feedback from the receiver"
+                ],
+                "answer": 3,
+                "why": "Feedback closes the loop and tells the sender whether the meaning arrived."
+              },
+              {
+                "q": "Which direction does a report to senior management take?",
+                "options": [
+                  "Upward",
+                  "Lateral",
+                  "External",
+                  "Downward"
+                ],
+                "answer": 0,
+                "why": "Reports, suggestions and grievances travel upward through the hierarchy."
+              },
+              {
+                "q": "Which statement about communication is NOT correct?",
+                "options": [
+                  "Active listening improves understanding",
+                  "Noise is a problem only in written messages",
+                  "Semantic barriers come from words and their meanings",
+                  "The grapevine can carry inaccurate information"
+                ],
+                "answer": 1,
+                "why": "Noise affects every channel, including face to face conversation."
+              },
+              {
+                "q": "What is the grapevine?",
+                "options": [
+                  "The suggestion scheme",
+                  "The official notice board",
+                  "The informal network through which information spreads among employees",
+                  "The annual report"
+                ],
+                "answer": 2,
+                "why": "It runs on informal contacts and often carries news faster than formal channels."
+              },
+              {
+                "q": "Which of these is an organisational barrier?",
+                "options": [
+                  "Background noise in the room",
+                  "Unclear word choice",
+                  "Prejudice against the sender",
+                  "Too many hierarchical levels between sender and receiver"
+                ],
+                "answer": 3,
+                "why": "Distance and the number of levels delay and distort the message."
+              }
+            ],
+            "examTip": "Draw the communication process with its elements, name the three directions and three barriers.",
+            "verified": false
+          }
         }
       ]
     },
@@ -717,7 +1725,70 @@
               "kind": "subtopic",
               "definition": "Watch only the key deviations, which saves time and keeps attention on important matters."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Controlling measures performance against standards and corrects any deviation, so that the plan is actually achieved. It has four steps: establish standards, measure performance, compare the two and take corrective action. Control may act before the work, during it or after it, giving feedforward, concurrent and feedback control. Effective control is tailored to the work, accurate, timely, economical and accepted by the people being measured. Controlling and planning are two halves of one cycle: planning sets the standards that control then measures. Because attention is limited, managers use critical point control and management by exception, watching only the significant deviations.",
+            "example": "A monthly variance report is feedback control. Checking a supplier's certificate before the material is used is feedforward control.",
+            "quiz": [
+              {
+                "q": "What is the correct order of the control process?",
+                "options": [
+                  "Establish standards, measure, compare, correct",
+                  "Compare, correct, measure, plan",
+                  "Plan, hire, train, review",
+                  "Measure, correct, compare, standardise"
+                ],
+                "answer": 0,
+                "why": "Without a standard there is nothing to compare the measurement against."
+              },
+              {
+                "q": "Which type of control works before the activity?",
+                "options": [
+                  "Concurrent control",
+                  "Feedforward control",
+                  "Post audit",
+                  "Feedback control"
+                ],
+                "answer": 1,
+                "why": "Feedforward stops a problem before it enters the process, which is the cheapest control."
+              },
+              {
+                "q": "Which statement about controlling is NOT correct?",
+                "options": [
+                  "It completes the planning cycle",
+                  "Controls should be economical",
+                  "Management by exception watches every small deviation",
+                  "Standards must be tailored to the work"
+                ],
+                "answer": 2,
+                "why": "Management by exception deliberately ignores small deviations to save attention."
+              },
+              {
+                "q": "What is management by exception?",
+                "options": [
+                  "Outsourcing control",
+                  "Reviewing only once a year",
+                  "Punishing every error",
+                  "Attending only to significant deviations from the standard"
+                ],
+                "answer": 3,
+                "why": "Time is spent where the difference from plan is large enough to matter."
+              },
+              {
+                "q": "Which is a requirement of effective control?",
+                "options": [
+                  "It must be timely and accurate",
+                  "It must be expensive",
+                  "It must be written in the budget",
+                  "It must be applied to everyone equally"
+                ],
+                "answer": 0,
+                "why": "Late or inaccurate control data cannot support a corrective decision."
+              }
+            ],
+            "examTip": "List the four control steps, the three types of control with an example, and define management by exception.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MV-T02",
@@ -761,7 +1832,70 @@
               "kind": "subtopic",
               "definition": "ERP, databases and analytics give faster, finer control but require data accuracy and security."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Managers use budgets, ratios and information systems as their control tools. Budgetary control sets expense, revenue, cash and capital budgets, then compares actuals against them through variance analysis. A flexible budget adjusts the figures to the level of activity actually reached, which makes the comparison fair. Non budgetary techniques include statistical reports, break even analysis, ratio analysis, internal audit and personal observation. Break even analysis separates fixed and variable cost, and uses the contribution per unit to find the output where profit is zero. Information technology has sharpened all of this, and the balanced scorecard widens it to financial, customer, process and learning measures.",
+            "example": "With fixed cost of 100000 rupees and contribution of 250 rupees a unit, break even comes at 400 units.",
+            "quiz": [
+              {
+                "q": "What is the break even point?",
+                "options": [
+                  "The point of maximum profit",
+                  "The output where total revenue equals total cost",
+                  "The end of the financial year",
+                  "The point where variable cost is zero"
+                ],
+                "answer": 1,
+                "why": "Below it the firm loses money, and above it the contribution turns into profit."
+              },
+              {
+                "q": "How is the break even quantity calculated?",
+                "options": [
+                  "Profit divided by sales",
+                  "Variable cost divided by price",
+                  "Fixed cost divided by contribution per unit",
+                  "Total cost divided by sales"
+                ],
+                "answer": 2,
+                "why": "Each unit contributes its margin towards the fixed cost, so the division gives the units needed."
+              },
+              {
+                "q": "Which statement about budgets is NOT correct?",
+                "options": [
+                  "A cash budget tracks receipts and payments",
+                  "Variance analysis compares actual with budget",
+                  "A flexible budget adjusts to the activity level reached",
+                  "A capital budget covers only daily expenses"
+                ],
+                "answer": 3,
+                "why": "Capital budgets cover long term assets, while revenue and expense budgets cover day to day items."
+              },
+              {
+                "q": "Which is a non budgetary control technique?",
+                "options": [
+                  "Internal audit",
+                  "A capital budget",
+                  "A revenue budget",
+                  "A cash budget"
+                ],
+                "answer": 0,
+                "why": "Audit, ratio analysis and personal observation work outside the budget system."
+              },
+              {
+                "q": "How many perspectives does the balanced scorecard use?",
+                "options": [
+                  "Three",
+                  "Four",
+                  "One",
+                  "Two"
+                ],
+                "answer": 1,
+                "why": "Financial, customer, internal process and learning and growth together balance the view."
+              }
+            ],
+            "examTip": "Name two budget types, define variance analysis, give the break even formula, and list the four scorecard perspectives.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MV-T03",
@@ -799,7 +1933,70 @@
               "kind": "subtopic",
               "definition": "Work study, method study, automation, training and better layout."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Productivity is the ratio of output to input, and raising it means getting more value from the same resources. It can be measured in three ways: partial measures use one input, multifactor measures use several, and total measures use all of them. Quality is the other half, and total quality management treats it as fitness for purpose with continuous improvement, customer focus and employee involvement. Operations planning puts these together by forecasting demand, planning capacity, scheduling work and controlling inventory. Techniques for improvement include work study, method study, better layout, automation and training. JIT purchasing keeps stock very low, but it makes the supply chain sensitive to disruption.",
+            "example": "A kitchen that serves 200 meals with the same staff and fuel it used for 160 has raised its productivity by 25 percent.",
+            "quiz": [
+              {
+                "q": "How is productivity defined?",
+                "options": [
+                  "Profit divided by sales",
+                  "Cost divided by time",
+                  "Output divided by input",
+                  "Input divided by output"
+                ],
+                "answer": 2,
+                "why": "The ratio shows how much value is produced for each unit of resource used."
+              },
+              {
+                "q": "Which measure uses all inputs at once?",
+                "options": [
+                  "Labour productivity",
+                  "Partial productivity",
+                  "Multifactor productivity",
+                  "Total productivity"
+                ],
+                "answer": 3,
+                "why": "Total productivity combines every input, which makes it the broadest and hardest measure."
+              },
+              {
+                "q": "Which statement about TQM is NOT correct?",
+                "options": [
+                  "It inspects quality only at the end of the line",
+                  "It treats quality as fitness for purpose",
+                  "It involves every employee",
+                  "It depends on continuous improvement"
+                ],
+                "answer": 0,
+                "why": "TQM builds quality into the process rather than inspecting defects out at the end."
+              },
+              {
+                "q": "What does JIT purchasing aim to do?",
+                "options": [
+                  "Deliver late",
+                  "Keep inventory very low and receive items as needed",
+                  "Buy a year of stock at once",
+                  "Produce only once a year"
+                ],
+                "answer": 1,
+                "why": "Less stock means less money tied up, but a delayed shipment can stop production."
+              },
+              {
+                "q": "What is the bullwhip effect?",
+                "options": [
+                  "A type of inventory",
+                  "A machine fault",
+                  "Small changes in demand causing larger swings up the supply chain",
+                  "A pricing method"
+                ],
+                "answer": 2,
+                "why": "Each level orders a little more than it needs, and the distortion grows as it travels upstream."
+              }
+            ],
+            "examTip": "Define productivity, name the three measures, give two TQM principles and two improvement techniques.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA432-MV-T04",
@@ -843,7 +2040,70 @@
               "kind": "subtopic",
               "definition": "Joint family influence, jugaad innovation, family business structures and the shift to knowledge work and digitisation."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Overall control judges the total performance of the organisation rather than one department. It uses financial measures such as return on investment and profit, together with comparative analysis and benchmarking against other firms. Preventive control is the opposite of corrective control: it stops problems before they happen. It works through good planning, careful selection, training and a sound culture. Control has its own pitfalls, because over control, rigid standards and badly chosen measures can drive the wrong behaviour. Two modern views tie the subject together. The systems approach treats the organisation as an open system, and the contingency approach says the right method depends on the situation.",
+            "example": "A branch measured only on call volume may rush its customers. Adding a quality measure corrects the behaviour the first measure caused.",
+            "quiz": [
+              {
+                "q": "What is preventive control?",
+                "options": [
+                  "Auditing the accounts",
+                  "Measuring variance",
+                  "Fixing errors after they occur",
+                  "Stopping problems before they occur"
+                ],
+                "answer": 3,
+                "why": "It works through planning, selection and training rather than through correction."
+              },
+              {
+                "q": "Which measure is used for overall control of an organisation?",
+                "options": [
+                  "Return on investment",
+                  "Number of employees",
+                  "Machine capacity",
+                  "Hours worked per order"
+                ],
+                "answer": 0,
+                "why": "ROI and profit judge the whole organisation, not one function."
+              },
+              {
+                "q": "Which statement about control is NOT correct?",
+                "options": [
+                  "A badly chosen measure can reward the wrong work",
+                  "More control is always better than less",
+                  "Over control can demotivate people",
+                  "Rigid standards can encourage the wrong behaviour"
+                ],
+                "answer": 1,
+                "why": "Control has a cost, and too much of it slows work and distorts behaviour."
+              },
+              {
+                "q": "What does the systems approach treat the organisation as?",
+                "options": [
+                  "A closed department",
+                  "A machine",
+                  "An open system interacting with its environment",
+                  "A list of tasks"
+                ],
+                "answer": 2,
+                "why": "Inputs from the environment are transformed into outputs, and feedback returns."
+              },
+              {
+                "q": "What does the contingency approach say?",
+                "options": [
+                  "Control should be removed",
+                  "Standards must never change",
+                  "One best way exists for every situation",
+                  "The right method depends on the situation"
+                ],
+                "answer": 3,
+                "why": "It is the opposite of the universal principles view: what works depends on context."
+              }
+            ],
+            "examTip": "Contrast overall and preventive control, name two control pitfalls, and state the systems and contingency views.",
+            "verified": false
+          }
         }
       ]
     }

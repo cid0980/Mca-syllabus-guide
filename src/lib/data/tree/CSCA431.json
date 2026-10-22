@@ -55,7 +55,70 @@
               "kind": "subtopic",
               "definition": "An argument is valid when the conclusion must be true whenever all premises are true."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A proposition is a statement that is definitely true or definitely false, such as two plus two equals four. Connectives join propositions into larger ones: negation, conjunction, disjunction, exclusive or, implication and biconditional. A truth table lists the value of the whole statement for every combination of the variables. A statement that is always true is a tautology, one that is always false is a contradiction, and the rest are contingencies. Two statements are logically equivalent when their truth table columns match. The laws of De Morgan, distribution and absorption are used to rewrite one into the other.",
+            "example": "The statement it is raining or it is not raining is a tautology, because one half must hold. The statement it is raining and it is not raining is a contradiction.",
+            "quiz": [
+              {
+                "q": "Which connective gives a true result only when both inputs are true?",
+                "options": [
+                  "Conjunction",
+                  "Exclusive or",
+                  "Implication",
+                  "Disjunction"
+                ],
+                "answer": 0,
+                "why": "Conjunction, the and operator, is true only when both of its operands are true."
+              },
+              {
+                "q": "A statement that is true for every combination of its variables is called:",
+                "options": [
+                  "A contingency",
+                  "A tautology",
+                  "A fallacy",
+                  "A contradiction"
+                ],
+                "answer": 1,
+                "why": "A tautology is always true, a contradiction is always false, and a contingency is sometimes each."
+              },
+              {
+                "q": "Which statement about propositional logic is NOT correct?",
+                "options": [
+                  "A truth table lists every combination of the variables",
+                  "De Morgan laws relate conjunction, disjunction and negation",
+                  "An implication is true only when both of its parts are true",
+                  "A proposition has a definite truth value"
+                ],
+                "answer": 2,
+                "why": "An implication is false only when the premise is true and the conclusion is false."
+              },
+              {
+                "q": "How many rows does a truth table for three variables have?",
+                "options": [
+                  "9",
+                  "3",
+                  "6",
+                  "8"
+                ],
+                "answer": 3,
+                "why": "Each variable doubles the count, so three variables give 2 to the power 3, which is 8 rows."
+              },
+              {
+                "q": "An argument whose conclusion must be true whenever all its premises are true is called:",
+                "options": [
+                  "Valid",
+                  "Sound",
+                  "Tautological",
+                  "Equivalent"
+                ],
+                "answer": 0,
+                "why": "Validity is about the link from premises to conclusion; soundness also needs the premises to be true."
+              }
+            ],
+            "examTip": "Write the six connectives with their symbols, then draw one truth table and label the tautology and the contradiction.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MI-T02",
@@ -105,7 +168,70 @@
               "kind": "subtopic",
               "definition": "The fallacy of affirming the consequent and of denying the antecedent, which look valid but are not."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A predicate is a statement with a variable in it, such as P of x meaning x is greater than three. It becomes a proposition only once the variable is given a value or bound by a quantifier. The universal quantifier says that P holds for every element of the domain, and the existential quantifier says it holds for at least one. Negation flips them: not for all becomes there exists a counterexample, and not there exists becomes for all not. With nested quantifiers the order matters, because for all x there exists y says something different from there exists y for all x.",
+            "example": "For every student there is a subject they like is not the same as there is a subject that every student likes. Swapping the two quantifiers changes what is being claimed.",
+            "quiz": [
+              {
+                "q": "Which quantifier says that a predicate holds for every element of the domain?",
+                "options": [
+                  "Existential quantifier",
+                  "Universal quantifier",
+                  "Nested quantifier",
+                  "Bound quantifier"
+                ],
+                "answer": 1,
+                "why": "The universal quantifier, written as an upside down A, claims the predicate for all elements."
+              },
+              {
+                "q": "What is the negation of the statement every student passed?",
+                "options": [
+                  "Some student passed",
+                  "Every student failed",
+                  "At least one student did not pass",
+                  "No student passed"
+                ],
+                "answer": 2,
+                "why": "Negating a universal gives an existential, because one counterexample is enough to break the claim."
+              },
+              {
+                "q": "Which statement about quantifiers is NOT correct?",
+                "options": [
+                  "A predicate becomes a proposition once its variable is bound",
+                  "The order of nested quantifiers can change the meaning",
+                  "The negation of there exists is for all not",
+                  "For all x there exists y means the same as there exists y for all x"
+                ],
+                "answer": 3,
+                "why": "The first says each x has its own y, while the second says one single y works for every x."
+              },
+              {
+                "q": "Which of these is a valid rule of inference?",
+                "options": [
+                  "Modus ponens",
+                  "The converse of an implication",
+                  "Affirming the consequent",
+                  "Denying the antecedent"
+                ],
+                "answer": 0,
+                "why": "Modus ponens takes p and p implies q and concludes q; the other three are known fallacies."
+              },
+              {
+                "q": "Which argument form is a fallacy?",
+                "options": [
+                  "Disjunctive syllogism",
+                  "Affirming the consequent",
+                  "Modus tollens",
+                  "Hypothetical syllogism"
+                ],
+                "answer": 1,
+                "why": "From p implies q and q you cannot conclude p, because q may hold for another reason."
+              }
+            ],
+            "examTip": "Write the two quantifiers with their symbols, give the two negation rules, then show why swapping nested quantifiers changes the meaning.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MI-T03",
@@ -155,7 +281,70 @@
               "kind": "subtopic",
               "definition": "Either produce the object or prove it must exist without producing it."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A proof is a valid argument that leaves no doubt about a statement. A direct proof assumes the hypothesis and works forward with known facts until the conclusion appears. Proof by contraposition proves not q implies not p instead, which is logically the same claim. Proof by contradiction assumes the statement is false and derives something impossible, the classic example being that the square root of two is irrational. A proof by cases splits the statement into cases that cover everything, and an existence proof shows that at least one object exists.",
+            "example": "To prove that if n squared is odd then n is odd, prove the contrapositive instead. If n is even then n squared is even, which follows at once.",
+            "quiz": [
+              {
+                "q": "Which method proves not q implies not p instead of p implies q?",
+                "options": [
+                  "Proof by cases",
+                  "Direct proof",
+                  "Proof by contraposition",
+                  "Proof by contradiction"
+                ],
+                "answer": 2,
+                "why": "A conditional and its contrapositive are logically equivalent, so proving one proves the other."
+              },
+              {
+                "q": "Which classical result is proved by contradiction in most textbooks?",
+                "options": [
+                  "The binomial theorem",
+                  "The division algorithm",
+                  "The sum of the first n integers",
+                  "The irrationality of the square root of two"
+                ],
+                "answer": 3,
+                "why": "Assuming the square root of two is rational forces a common factor, which contradicts the fraction being in lowest terms."
+              },
+              {
+                "q": "Which statement about proofs is NOT correct?",
+                "options": [
+                  "A proof by cases only needs to cover the largest case",
+                  "A vacuous proof relies on the hypothesis being false",
+                  "A trivial proof relies on the conclusion being already known",
+                  "A direct proof assumes the hypothesis and derives the conclusion"
+                ],
+                "answer": 0,
+                "why": "The cases must exhaust every possibility, or a gap remains where the statement is unproved."
+              },
+              {
+                "q": "Which proof shows an object exists without producing it?",
+                "options": [
+                  "Constructive proof",
+                  "Non constructive proof",
+                  "Direct proof",
+                  "Proof by contraposition"
+                ],
+                "answer": 1,
+                "why": "A constructive proof hands you the object, while a non constructive one only shows that it must exist."
+              },
+              {
+                "q": "How many cases must a proof by cases cover?",
+                "options": [
+                  "As many as there are words in the theorem",
+                  "One representative case",
+                  "Every case that the statement allows",
+                  "Exactly two cases"
+                ],
+                "answer": 2,
+                "why": "The cases have to be exhaustive, otherwise the statement stays unproved in the gap."
+              }
+            ],
+            "examTip": "Name each method in one line with the shape of its argument, and keep the square root of two ready for the contradiction method.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MI-T04",
@@ -193,7 +382,70 @@
               "kind": "subtopic",
               "definition": "Assuming what is to be proved and skipping the base case."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Strategy is about choosing a method before writing a line. Work forward from the hypothesis, or work backward from the goal until it meets a known fact. Try small cases first, because a counterexample found early saves a long attempt at a proof. Induction proves a statement for every natural number in two steps. The base case is proved first, then the step showing that P of k implies P of k plus one. Strong induction assumes all the smaller cases instead of only the previous one. The well ordering property is why induction works at all.",
+            "example": "To prove the sum of the first n odd numbers is n squared, check n equals 1. Then show that adding the next odd number takes k squared to k plus one squared.",
+            "quiz": [
+              {
+                "q": "What are the two steps of a proof by mathematical induction?",
+                "options": [
+                  "Converse and contrapositive",
+                  "Existence and uniqueness",
+                  "Hypothesis and conclusion",
+                  "Base case and inductive step"
+                ],
+                "answer": 3,
+                "why": "The base case starts the chain and the inductive step keeps it going for every natural number."
+              },
+              {
+                "q": "How does strong induction differ from ordinary induction?",
+                "options": [
+                  "It assumes the statement for all smaller values",
+                  "It proves the statement for real numbers",
+                  "It needs two base cases",
+                  "It skips the base case"
+                ],
+                "answer": 0,
+                "why": "Strong induction may use any earlier case, which helps when the step depends on more than one predecessor."
+              },
+              {
+                "q": "Which statement about induction is NOT correct?",
+                "options": [
+                  "The well ordering property underlies induction",
+                  "Assuming the conclusion and reaching a known fact is a valid inductive step",
+                  "The base case must be proved separately",
+                  "The inductive step proves P of k implies P of k plus one"
+                ],
+                "answer": 1,
+                "why": "Assuming what you are proving is circular, and it is the most common induction mistake."
+              },
+              {
+                "q": "Which mistake breaks an induction proof?",
+                "options": [
+                  "Stating the base case explicitly",
+                  "Proving the inductive step in detail",
+                  "Omitting the base case",
+                  "Using the variable n"
+                ],
+                "answer": 2,
+                "why": "Without a base case the chain has nothing to start from, so nothing at all is proved."
+              },
+              {
+                "q": "What does the well ordering property say?",
+                "options": [
+                  "Every group has a generator",
+                  "Every relation is transitive",
+                  "Every set has a largest element",
+                  "Every non-empty set of positive integers has a least element"
+                ],
+                "answer": 3,
+                "why": "That least element is what makes the descent argument behind induction and strong induction work."
+              }
+            ],
+            "examTip": "Write the two induction steps as labelled lines, then add one sentence on the two usual mistakes: no base case and assuming the conclusion.",
+            "verified": false
+          }
         }
       ]
     },
@@ -243,7 +495,70 @@
               "kind": "subtopic",
               "definition": "The set of all ordered pairs from two sets, which underlies relations and functions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A set is an unordered collection of distinct objects, listed or given by a rule such as x such that x is even. A is a subset of B when every element of A also lies in B, and the power set holds all the subsets. The operations are union, intersection, difference, complement and symmetric difference, and the identities they obey mirror the laws of logic. The size of a set is its cardinality, and the inclusion exclusion rule stops the overlap being counted twice. The Cartesian product collects every ordered pair from two sets, which is what relations and functions are built on.",
+            "example": "A set of three students has 2 to the power 3, which is 8 subsets in its power set. That already takes a line to list, which is why the power set grows too fast to write out for large sets.",
+            "quiz": [
+              {
+                "q": "How many subsets does a set with 4 elements have?",
+                "options": [
+                  "16",
+                  "24",
+                  "4",
+                  "8"
+                ],
+                "answer": 0,
+                "why": "The power set has 2 to the power n elements, so 2 to the power 4 gives 16."
+              },
+              {
+                "q": "Which rule gives the size of the union of two overlapping sets?",
+                "options": [
+                  "|A| + |B|",
+                  "|A| + |B| - |A intersection B|",
+                  "|A| x |B|",
+                  "|A| - |B|"
+                ],
+                "answer": 1,
+                "why": "Inclusion exclusion subtracts the intersection once, because those elements were counted twice."
+              },
+              {
+                "q": "Which statement about sets is NOT correct?",
+                "options": [
+                  "The order of elements in a set does not matter",
+                  "The empty set is a subset of every set",
+                  "The power set of A has the same number of elements as A",
+                  "A set lists each element only once"
+                ],
+                "answer": 2,
+                "why": "The power set has 2 to the power n elements, which is larger than n for every non-empty set."
+              },
+              {
+                "q": "If A has 10 elements, B has 7 and their intersection has 3, what is the size of the union?",
+                "options": [
+                  "17",
+                  "20",
+                  "10",
+                  "14"
+                ],
+                "answer": 3,
+                "why": "Inclusion exclusion gives 10 + 7 - 3, which is 14."
+              },
+              {
+                "q": "What does the Cartesian product of A and B contain?",
+                "options": [
+                  "Every ordered pair with the first from A and the second from B",
+                  "Only the elements common to A and B",
+                  "The subsets shared by A and B",
+                  "Every element of A plus every element of B"
+                ],
+                "answer": 0,
+                "why": "Ordered pairs are what make relations and functions possible, and the order inside each pair matters."
+              }
+            ],
+            "examTip": "Write the set operations with their symbols, then give the inclusion exclusion formula and one worked example with numbers.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MII-T02",
@@ -287,7 +602,70 @@
               "kind": "subtopic",
               "definition": "Identity, constant, floor, ceiling, factorial and exponential functions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A function takes each element of its domain and gives back exactly one element of its codomain. The domain is the set of allowed inputs, the codomain is the declared output set and the range is what actually comes out. A function is injective when different inputs always give different outputs, and surjective when every element of the codomain is reached. A function that is both is bijective, and only then does an inverse exist. Composition applies one function after another, and the graph of a function is the set of its ordered pairs.",
+            "example": "The function that squares an integer is not injective, because 2 and minus 2 both give 4. Restricting the domain to non-negative integers makes it injective, and then an inverse exists.",
+            "quiz": [
+              {
+                "q": "What is a function that is both injective and surjective called?",
+                "options": [
+                  "A constant function",
+                  "A bijective function",
+                  "An identity function",
+                  "A floor function"
+                ],
+                "answer": 1,
+                "why": "Bijective means one to one and onto, which is exactly when an inverse function exists."
+              },
+              {
+                "q": "Which statement about functions is NOT correct?",
+                "options": [
+                  "An injective function never sends two inputs to the same output",
+                  "A surjective function reaches every element of the codomain",
+                  "Every function has an inverse",
+                  "Every input maps to exactly one output"
+                ],
+                "answer": 2,
+                "why": "An inverse needs the function to be bijective, and most functions are not."
+              },
+              {
+                "q": "The range of a function is:",
+                "options": [
+                  "The declared output set",
+                  "The graph of the function",
+                  "The set of allowed inputs",
+                  "The set of outputs actually produced"
+                ],
+                "answer": 3,
+                "why": "The codomain is what is declared up front; the range is the part of it that is really hit."
+              },
+              {
+                "q": "A function from a set of 3 elements to a set of 5 elements cannot be:",
+                "options": [
+                  "Surjective",
+                  "Well defined",
+                  "Any of these",
+                  "Injective"
+                ],
+                "answer": 0,
+                "why": "Three inputs produce at most three outputs, so two elements of the codomain are missed."
+              },
+              {
+                "q": "What does the composition of two functions do?",
+                "options": [
+                  "Adds their outputs together",
+                  "Applies one function and then the other",
+                  "Swaps their domains",
+                  "Inverts both of them"
+                ],
+                "answer": 1,
+                "why": "Composition feeds the output of one function straight into the input of the next."
+              }
+            ],
+            "examTip": "Draw two small arrow diagrams, one injective and one surjective, and write the one line condition for each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MII-T03",
@@ -325,7 +703,70 @@
               "kind": "subtopic",
               "definition": "Sigma notation, sums of constants, arithmetic series, geometric series and sums of squares and cubes."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A sequence is an ordered list of numbers following a rule, and a series adds its terms. In an arithmetic progression each term differs from the previous one by a constant. Its sum is n over 2 times the first term plus the last. In a geometric progression each term is a fixed multiple of the previous one, and the sum formula divides by r minus 1. A recurrence relation defines a term from earlier terms, as the Fibonacci rule does. Sigma notation writes a sum compactly, and the formulas for the first n integers, squares and cubes save pages of arithmetic.",
+            "example": "Saving 100 rupees more each month than the last gives an arithmetic progression. The total after a year is 12 over 2 times the first month plus the last month's amount.",
+            "quiz": [
+              {
+                "q": "What is the sum of the first 100 positive integers?",
+                "options": [
+                  "100",
+                  "5,000",
+                  "5,050",
+                  "10,000"
+                ],
+                "answer": 2,
+                "why": "The formula n times n plus 1 over 2 gives 100 times 101 over 2, which is 5,050."
+              },
+              {
+                "q": "In a geometric progression, each term is:",
+                "options": [
+                  "The sum of the two previous terms",
+                  "Reversed in order",
+                  "Increased by a constant amount",
+                  "Multiplied by a constant factor"
+                ],
+                "answer": 3,
+                "why": "A fixed multiplier defines a geometric progression, while a fixed difference defines an arithmetic one."
+              },
+              {
+                "q": "Which statement about sequences is NOT correct?",
+                "options": [
+                  "Every recurrence relation has a closed form that is easy to find",
+                  "An arithmetic progression has a constant difference",
+                  "The Fibonacci sequence is defined by a recurrence",
+                  "A geometric progression has a constant ratio"
+                ],
+                "answer": 0,
+                "why": "Many recurrences have no simple closed form, which is why they are studied in their own right."
+              },
+              {
+                "q": "Which sequence is defined by adding the two previous terms?",
+                "options": [
+                  "A geometric progression",
+                  "The Fibonacci sequence",
+                  "The triangular numbers",
+                  "An arithmetic progression"
+                ],
+                "answer": 1,
+                "why": "The Fibonacci rule takes each term as the sum of the two before it, once the first two are fixed."
+              },
+              {
+                "q": "What is the sum of the arithmetic progression 2, 5, 8, 11, 14?",
+                "options": [
+                  "30",
+                  "35",
+                  "40",
+                  "45"
+                ],
+                "answer": 2,
+                "why": "There are 5 terms, so the sum is 5 over 2 times 2 plus 14, which is 40."
+              }
+            ],
+            "examTip": "Write the two progression formulas side by side, then add the sigma formulas for the first n integers, squares and cubes.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MII-T04",
@@ -363,7 +804,70 @@
               "kind": "subtopic",
               "definition": "Entries are 0 and 1 with the join and meet operations, used to represent relations."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A matrix is a rectangular array of numbers arranged in rows and columns. It may be square, diagonal, symmetric, an identity matrix or a zero matrix, depending on its shape and its entries. Matrices of the same size add and subtract entry by entry, and multiplication follows the row by column rule. The transpose swaps rows with columns, and the trace adds the entries on the main diagonal. A square matrix has an inverse only when its determinant is not zero. A Boolean matrix uses only 0 and 1, with join and meet as its operations.",
+            "example": "Multiplying a 2 by 3 matrix by a 3 by 4 matrix gives a 2 by 4 result. The inner dimensions must match, or the product is not defined.",
+            "quiz": [
+              {
+                "q": "When can two matrices be multiplied?",
+                "options": [
+                  "When both matrices are square",
+                  "When both have the same determinant",
+                  "When they have the same number of rows",
+                  "When the columns of the first equal the rows of the second"
+                ],
+                "answer": 3,
+                "why": "The inner dimensions must match, and the result takes the two outer dimensions."
+              },
+              {
+                "q": "What is the trace of a matrix?",
+                "options": [
+                  "The sum of the entries on the main diagonal",
+                  "The product of all its entries",
+                  "The number of rows",
+                  "The determinant"
+                ],
+                "answer": 0,
+                "why": "The trace is defined only for a square matrix, and it adds the diagonal entries."
+              },
+              {
+                "q": "Which statement about matrices is NOT correct?",
+                "options": [
+                  "The transpose swaps rows and columns",
+                  "Matrix multiplication is commutative",
+                  "An inverse exists only when the determinant is non-zero",
+                  "An identity matrix has ones on the diagonal and zeros elsewhere"
+                ],
+                "answer": 1,
+                "why": "Order matters in matrix multiplication, so A times B usually differs from B times A."
+              },
+              {
+                "q": "A 2 by 3 matrix is multiplied by a 3 by 5 matrix. What is the size of the result?",
+                "options": [
+                  "5 by 2",
+                  "Not defined",
+                  "2 by 5",
+                  "3 by 3"
+                ],
+                "answer": 2,
+                "why": "The inner dimensions 3 and 3 match, and the result takes the outer dimensions 2 and 5."
+              },
+              {
+                "q": "What values does a Boolean matrix hold?",
+                "options": [
+                  "Only prime numbers",
+                  "Only negative numbers",
+                  "Any real numbers",
+                  "Only 0 and 1"
+                ],
+                "answer": 3,
+                "why": "Boolean matrices use 0 and 1 with join and meet, which is how relations are stored."
+              }
+            ],
+            "examTip": "Give the row by column rule in one line, then state the condition for an inverse and the shape rule for a product.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MII-T05",
@@ -407,7 +911,70 @@
               "kind": "subtopic",
               "definition": "Relations of degree n as tables, with primary keys as candidate keys and operations like selection and projection."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A relation from A to B is any subset of the Cartesian product A cross B, so it is a set of ordered pairs. It can be written as a list of pairs, as a zero one matrix or as a directed graph. On a single set a relation may be reflexive, symmetric, antisymmetric or transitive, and which of these hold decides what the relation is called. A relation that is reflexive, symmetric and transitive is an equivalence relation, and it cuts the set into equivalence classes. One that is reflexive, antisymmetric and transitive is a partial order, drawn as a Hasse diagram.",
+            "example": "Equality is reflexive, symmetric and transitive, so it is an equivalence relation. The divides relation on the positive integers is reflexive, antisymmetric and transitive, so it is a partial order.",
+            "quiz": [
+              {
+                "q": "Which three properties make a relation an equivalence relation?",
+                "options": [
+                  "Reflexive, symmetric and transitive",
+                  "Symmetric, antisymmetric and irreflexive",
+                  "Reflexive, irreflexive and transitive",
+                  "Reflexive, antisymmetric and transitive"
+                ],
+                "answer": 0,
+                "why": "Those three together are what partitions the set into equivalence classes."
+              },
+              {
+                "q": "Which properties define a partial order?",
+                "options": [
+                  "Reflexive, symmetric and transitive",
+                  "Reflexive, antisymmetric and transitive",
+                  "Irreflexive, symmetric and transitive",
+                  "Symmetric and transitive only"
+                ],
+                "answer": 1,
+                "why": "Antisymmetry replaces symmetry, which lets a partial order compare elements rather than group them."
+              },
+              {
+                "q": "Which statement about relations is NOT correct?",
+                "options": [
+                  "A relation can be stored as a zero one matrix",
+                  "The transitive closure is computed by Warshall algorithm",
+                  "Every reflexive relation is also symmetric",
+                  "A relation can be drawn as a directed graph"
+                ],
+                "answer": 2,
+                "why": "Reflexive and symmetric are independent properties, and neither one follows from the other."
+              },
+              {
+                "q": "What does the reflexive closure of a relation add?",
+                "options": [
+                  "The reverse of every pair",
+                  "Every pair reachable by a path",
+                  "Nothing, because closures only remove pairs",
+                  "Every missing pair a to a"
+                ],
+                "answer": 3,
+                "why": "The reflexive closure adds self loops, the symmetric one adds reverses and the transitive one adds path shortcuts."
+              },
+              {
+                "q": "Which algorithm computes the transitive closure of a relation?",
+                "options": [
+                  "Warshall algorithm",
+                  "Euclidean algorithm",
+                  "Sieve of Eratosthenes",
+                  "Dijkstra algorithm"
+                ],
+                "answer": 0,
+                "why": "Warshall works on the relation matrix and fills in every pair reachable by a path."
+              }
+            ],
+            "examTip": "List the five properties with a one line test for each, then give the property sets for equivalence and for partial order.",
+            "verified": false
+          }
         }
       ]
     },
@@ -451,7 +1018,70 @@
               "kind": "subtopic",
               "definition": "Equations ax congruent to b mod m, solvable when the gcd of a and m divides b."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The division algorithm says that a equals d times q plus r, with r between zero and d minus one. Both q and r are unique. When r is zero we say d divides a. Congruence modulo m means that m divides a minus b, which is the same as saying a and b leave the same remainder. Addition and multiplication can be done on the remainders, and the answer is taken modulo m again. That wrapping is what makes clocks, hash tables and check digits work. A linear congruence a x congruent to b modulo m has a solution exactly when the gcd of a and m divides b.",
+            "example": "If it is 10 o'clock now, then in 5 hours it is 3 o'clock. The reason is that 15 modulo 12 is 3.",
+            "quiz": [
+              {
+                "q": "What does it mean to say a is congruent to b modulo m?",
+                "options": [
+                  "a and b are equal",
+                  "m divides a minus b",
+                  "a is larger than b",
+                  "a and b are both prime"
+                ],
+                "answer": 1,
+                "why": "Congruence means the difference is a multiple of m, so both numbers leave the same remainder."
+              },
+              {
+                "q": "What is 17 modulo 5?",
+                "options": [
+                  "5",
+                  "1",
+                  "2",
+                  "3"
+                ],
+                "answer": 2,
+                "why": "17 is 3 times 5 plus 2, so the remainder is 2."
+              },
+              {
+                "q": "Which statement about modular arithmetic is NOT correct?",
+                "options": [
+                  "Clocks are an example of arithmetic modulo 12",
+                  "Addition works on remainders",
+                  "Multiplication works on remainders",
+                  "Every non-zero element has an inverse modulo any m"
+                ],
+                "answer": 3,
+                "why": "An inverse exists only when a and m are coprime, which is why prime moduli matter in cryptography."
+              },
+              {
+                "q": "When does the linear congruence a x congruent to b modulo m have a solution?",
+                "options": [
+                  "When the gcd of a and m divides b",
+                  "Never, unless b is zero",
+                  "Always",
+                  "Only when a and m are coprime"
+                ],
+                "answer": 0,
+                "why": "The gcd condition decides solvability, and the number of solutions equals that gcd."
+              },
+              {
+                "q": "In the division algorithm a = dq + r, what range does r lie in?",
+                "options": [
+                  "0 to d",
+                  "0 to d minus 1",
+                  "1 to d",
+                  "Any value at all"
+                ],
+                "answer": 1,
+                "why": "The remainder is non-negative and strictly smaller than the divisor, which is what makes q and r unique."
+              }
+            ],
+            "examTip": "State the division algorithm with the range of r, define congruence, then give one clock sum and one hash example.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MIII-T02",
@@ -495,7 +1125,70 @@
               "kind": "subtopic",
               "definition": "Equations of the form ax + by = c are solvable exactly when gcd divides c."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Computers hold integers in base two, and converting between bases uses expansion on one side and repeated division on the other. The Euclidean algorithm finds the gcd by replacing the pair with the divisor and the remainder until the remainder is zero. The extended version also records the coefficients x and y with a x plus b y equal to the gcd. Those coefficients give the modular inverse of a, which exists whenever the gcd is one. The same condition decides a linear Diophantine equation, which is solvable exactly when the gcd of a and b divides c.",
+            "example": "For 48 and 18: 48 is 2 times 18 plus 12, then 18 is 1 times 12 plus 6. Then 12 is 2 times 6 plus 0, so the gcd is 6.",
+            "quiz": [
+              {
+                "q": "What does the Euclidean algorithm compute?",
+                "options": [
+                  "The modular inverse directly",
+                  "The least common multiple",
+                  "The greatest common divisor",
+                  "The prime factorisation"
+                ],
+                "answer": 2,
+                "why": "It replaces the pair by the divisor and remainder repeatedly, and the last non-zero remainder is the gcd."
+              },
+              {
+                "q": "What extra output does the extended Euclidean algorithm give?",
+                "options": [
+                  "The remainder sequence only",
+                  "The number of divisors",
+                  "The prime factorisation",
+                  "The coefficients x and y with a x plus b y equal to the gcd"
+                ],
+                "answer": 3,
+                "why": "Those coefficients are what produce a modular inverse when the gcd is 1."
+              },
+              {
+                "q": "When does a have an inverse modulo m?",
+                "options": [
+                  "When the gcd of a and m is 1",
+                  "When m is even",
+                  "Always",
+                  "Only when a is prime"
+                ],
+                "answer": 0,
+                "why": "Being coprime to m is exactly the condition, and the extended Euclidean algorithm finds the inverse."
+              },
+              {
+                "q": "Which statement about integer algorithms is NOT correct?",
+                "options": [
+                  "A linear Diophantine equation needs the gcd to divide the constant",
+                  "The Euclidean algorithm needs the prime factorisation first",
+                  "Base conversion uses repeated division",
+                  "The Euclidean algorithm ends when the remainder is zero"
+                ],
+                "answer": 1,
+                "why": "The Euclidean algorithm needs no factorisation, which is why it stays fast on very large numbers."
+              },
+              {
+                "q": "When is a x + b y = c solvable in integers?",
+                "options": [
+                  "Always",
+                  "Only when a and b are prime",
+                  "When the gcd of a and b divides c",
+                  "Only when c is odd"
+                ],
+                "answer": 2,
+                "why": "The gcd divides the left side whatever x and y are, so it has to divide c as well."
+              }
+            ],
+            "examTip": "Show one Euclidean run as three division lines, then state two conditions: gcd 1 for an inverse, and gcd divides c for a Diophantine equation.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MIII-T03",
@@ -539,7 +1232,70 @@
               "kind": "subtopic",
               "definition": "Primes of the form 2 to the p minus 1 and Fermat numbers, with a role in primality testing."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A prime is an integer greater than one whose only positive divisors are one and itself. The fundamental theorem of arithmetic says every integer greater than one factors into primes in exactly one way, up to the order. That uniqueness is what lets the gcd and the lcm be read straight off the two factorisations. Two numbers are relatively prime when their gcd is one, and the lcm can be found from the product divided by the gcd. The sieve of Eratosthenes lists primes by crossing out multiples, and trial division tests one number by trying divisors up to its square root.",
+            "example": "12 is 2 squared times 3 and 18 is 2 times 3 squared. The gcd is 6 and the lcm is 36, read off the two factorisations.",
+            "quiz": [
+              {
+                "q": "What does the fundamental theorem of arithmetic state?",
+                "options": [
+                  "There are infinitely many primes",
+                  "Every even number is composite",
+                  "Every integer is prime",
+                  "Every integer greater than 1 factors uniquely into primes"
+                ],
+                "answer": 3,
+                "why": "Existence and uniqueness of the prime factorisation is the content of the theorem."
+              },
+              {
+                "q": "How is the lcm found from the product of two numbers?",
+                "options": [
+                  "Product divided by the gcd",
+                  "Product minus the gcd",
+                  "Product plus the gcd",
+                  "Product times the gcd"
+                ],
+                "answer": 0,
+                "why": "The gcd and lcm satisfy a times b equals gcd times lcm, so dividing gives the lcm."
+              },
+              {
+                "q": "Up to what value must trial division test divisors?",
+                "options": [
+                  "Half the number",
+                  "The square root of the number",
+                  "Twice the number",
+                  "The number itself"
+                ],
+                "answer": 1,
+                "why": "If a divisor above the square root existed, its partner below it would have been found first."
+              },
+              {
+                "q": "Which statement about primes is NOT correct?",
+                "options": [
+                  "The sieve of Eratosthenes lists primes by crossing out multiples",
+                  "A prime has exactly two positive divisors",
+                  "1 is a prime number",
+                  "Two numbers with gcd 1 are relatively prime"
+                ],
+                "answer": 2,
+                "why": "One is excluded by definition, because including it would break unique factorisation."
+              },
+              {
+                "q": "What form does a Mersenne prime have?",
+                "options": [
+                  "n squared plus 1",
+                  "2 times n plus 1",
+                  "n factorial plus 1",
+                  "2 to the p minus 1"
+                ],
+                "answer": 3,
+                "why": "Mersenne primes are one less than a power of two, and the largest known primes are of this form."
+              }
+            ],
+            "examTip": "Write the prime factorisations of two numbers, read off the gcd and lcm, then add the square root rule for trial division.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MIII-T04",
@@ -577,7 +1333,70 @@
               "kind": "subtopic",
               "definition": "RSA uses modular exponentiation, the totient function and large primes for public key encryption."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A system of linear congruences can be solved by substitution, or in one step by the Chinese remainder theorem. That theorem says a system whose moduli are pairwise relatively prime has a unique solution modulo their product. Fermat's little theorem says a to the p minus one is congruent to one modulo p. It needs p to be prime and not a divisor of a. Euler's theorem replaces p minus one with the totient phi of n, which counts the numbers up to n that are coprime to n. Both results are what make RSA work, because they let a huge exponent be reduced to a small one.",
+            "example": "To find the last digit of 3 to the 100, work modulo 10. The powers of 3 repeat with period four, and 100 is a multiple of 4, so the answer is 1.",
+            "quiz": [
+              {
+                "q": "What does the Chinese remainder theorem require of the moduli?",
+                "options": [
+                  "They must be pairwise relatively prime",
+                  "They must all be odd",
+                  "They must be equal",
+                  "They must all be prime"
+                ],
+                "answer": 0,
+                "why": "Pairwise coprime moduli give one solution modulo the product of all of them."
+              },
+              {
+                "q": "What does Fermat's little theorem say when p is prime and does not divide a?",
+                "options": [
+                  "a to the p is congruent to a mod p",
+                  "a to the p minus 1 is congruent to 1 mod p",
+                  "a is congruent to p mod a",
+                  "a squared is congruent to 1 mod p"
+                ],
+                "answer": 1,
+                "why": "That is the classic form, and it is Euler's theorem with phi of p equal to p minus 1."
+              },
+              {
+                "q": "What does the totient phi of n count?",
+                "options": [
+                  "The multiples of n",
+                  "The divisors of n",
+                  "The integers up to n that are coprime to n",
+                  "The prime factors of n"
+                ],
+                "answer": 2,
+                "why": "Phi of n is the size of the multiplicative group modulo n, which is why it appears in Euler's theorem."
+              },
+              {
+                "q": "Which statement about these theorems is NOT correct?",
+                "options": [
+                  "Euler's theorem generalises Fermat's little theorem",
+                  "The Chinese remainder theorem gives a unique solution modulo the product",
+                  "Fermat's little theorem needs p to be prime",
+                  "RSA uses the totient because phi is easy to compute for any n"
+                ],
+                "answer": 3,
+                "why": "Computing phi is easy only when the factorisation is known, and that difficulty is what keeps RSA safe."
+              },
+              {
+                "q": "For a prime p, what is phi of p?",
+                "options": [
+                  "p minus 1",
+                  "p plus 1",
+                  "1",
+                  "p"
+                ],
+                "answer": 0,
+                "why": "Every number from 1 to p minus 1 is coprime to a prime, so the count is p minus 1."
+              }
+            ],
+            "examTip": "Write the three theorems with their exact conditions, then add one line on how RSA uses the totient and large primes.",
+            "verified": false
+          }
         }
       ]
     },
@@ -627,7 +1446,70 @@
               "kind": "subtopic",
               "definition": "Groups whose elements are bijections of a set, and the dihedral groups of polygons."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A group is a set with one operation satisfying four axioms: closure, associativity, an identity element and an inverse for every element. When the operation is also commutative the group is called abelian. The integers under addition form a group, and so do the non-zero rationals under multiplication. The order of a group is the number of elements in it. The order of an element is the smallest power that returns it to the identity. A subgroup is a subset that is a group in its own right under the same operation.",
+            "example": "The integers under addition form a group with identity 0 and inverse minus n. The integers under multiplication do not, because 2 has no inverse that is still an integer.",
+            "quiz": [
+              {
+                "q": "Which four axioms define a group?",
+                "options": [
+                  "Closure, associativity, distributivity, inverse",
+                  "Closure, associativity, identity, inverse",
+                  "Closure, commutativity, identity, inverse",
+                  "Associativity, commutativity, distributivity, identity"
+                ],
+                "answer": 1,
+                "why": "Commutativity is not required, and it is what makes an abelian group a special case."
+              },
+              {
+                "q": "What is a group whose operation is commutative called?",
+                "options": [
+                  "A quotient group",
+                  "A cyclic group",
+                  "An abelian group",
+                  "A simple group"
+                ],
+                "answer": 2,
+                "why": "Abelian groups satisfy a times b equals b times a in addition to the four group axioms."
+              },
+              {
+                "q": "Which statement about groups is NOT correct?",
+                "options": [
+                  "Permutations of a set form a group under composition",
+                  "The integers under addition form a group",
+                  "The non-zero rationals under multiplication form a group",
+                  "The integers under multiplication form a group"
+                ],
+                "answer": 3,
+                "why": "Most integers have no multiplicative inverse that is an integer, so the inverse axiom fails."
+              },
+              {
+                "q": "What is the order of an element a in a group?",
+                "options": [
+                  "The smallest positive n with a to the n equal to the identity",
+                  "The number of subgroups containing a",
+                  "The inverse of a",
+                  "The number of elements in the group"
+                ],
+                "answer": 0,
+                "why": "If no such power exists the element has infinite order, as in the integers under addition."
+              },
+              {
+                "q": "What must a subgroup satisfy?",
+                "options": [
+                  "Have prime order",
+                  "Contain the identity and be closed under the operation and inverses",
+                  "Contain every element of the group",
+                  "Be commutative"
+                ],
+                "answer": 1,
+                "why": "Those conditions are exactly what makes the subset a group under the same operation."
+              }
+            ],
+            "examTip": "State the four axioms, name one abelian and one non-abelian example, then give the subgroup test.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MIV-T02",
@@ -671,7 +1553,70 @@
               "kind": "subtopic",
               "definition": "Order preservation, the kernel as a normal subgroup and the first isomorphism theorem."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A cyclic group is one where every element is a power of a single generator g. The integers under addition are cyclic with generator 1, because every integer is a multiple of 1. In a finite cyclic group the order of the group equals the order of its generator, and every subgroup of a cyclic group is cyclic. A homomorphism is a map that respects the operation, so f of a times b equals f of a times f of b. Its kernel is everything that maps to the identity, and its image is everything that is reached; both are subgroups.",
+            "example": "The integers modulo 6 under addition are cyclic, generated by 1. The element 2 generates only 0, 2 and 4, so it generates a proper subgroup.",
+            "quiz": [
+              {
+                "q": "What makes a group cyclic?",
+                "options": [
+                  "It has no proper subgroups",
+                  "It has a finite number of elements",
+                  "Every element is a power of one generator",
+                  "Every element commutes"
+                ],
+                "answer": 2,
+                "why": "One element and its powers produce the whole group, which is what generated means here."
+              },
+              {
+                "q": "What condition must a homomorphism satisfy?",
+                "options": [
+                  "f of a equals a",
+                  "f is one to one",
+                  "f is onto",
+                  "f of a times b equals f of a times f of b"
+                ],
+                "answer": 3,
+                "why": "Preserving the operation is the definition; being one to one or onto is an extra property."
+              },
+              {
+                "q": "What is the kernel of a homomorphism?",
+                "options": [
+                  "The set of elements mapping to the identity",
+                  "The set of generators",
+                  "The set of elements of order two",
+                  "The set of all outputs"
+                ],
+                "answer": 0,
+                "why": "The kernel measures how much the map collapses, and it is always a subgroup of the domain."
+              },
+              {
+                "q": "Which statement about cyclic groups is NOT correct?",
+                "options": [
+                  "The order of a finite cyclic group equals the order of its generator",
+                  "Every cyclic group is finite",
+                  "Every subgroup of a cyclic group is cyclic",
+                  "The integers under addition are cyclic with generator 1"
+                ],
+                "answer": 1,
+                "why": "The integers under addition are an infinite cyclic group, so finiteness is not part of the definition."
+              },
+              {
+                "q": "What is an isomorphism?",
+                "options": [
+                  "A map that reverses the operation",
+                  "A homomorphism with a trivial kernel",
+                  "A bijective homomorphism",
+                  "A homomorphism onto a subgroup"
+                ],
+                "answer": 2,
+                "why": "A bijective homomorphism preserves the structure both ways, so the groups differ only in names."
+              }
+            ],
+            "examTip": "Give the definition of a cyclic group with one example, then state the homomorphism condition and name the kernel and image.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MIV-T03",
@@ -715,7 +1660,70 @@
               "kind": "subtopic",
               "definition": "A quotient group is formed from the cosets of a normal subgroup; simple groups have no proper non-trivial normal subgroup."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A coset is one element multiplied by every element of a subgroup H, written aH on the left or Ha on the right. The cosets of H partition the group into blocks, and every block has exactly the size of H. The number of blocks is the index of H, which is the group order divided by the subgroup order. Lagrange's theorem says the order of a subgroup divides the order of the group, so the order of every element divides it too. A subgroup is normal when aH equals Ha for every a, and only then can the cosets be made into a quotient group.",
+            "example": "In a group of order 12, a subgroup can only have order 1, 2, 3, 4, 6 or 12. A subgroup of order 5 is impossible, because 5 does not divide 12.",
+            "quiz": [
+              {
+                "q": "What does Lagrange's theorem state?",
+                "options": [
+                  "Every group is cyclic",
+                  "The index is always prime",
+                  "Every subgroup is normal",
+                  "The order of a subgroup divides the order of the group"
+                ],
+                "answer": 3,
+                "why": "The cosets have equal size and partition the group, so the group order is a multiple of the subgroup order."
+              },
+              {
+                "q": "A group has order 12. Which of these cannot be the order of a subgroup?",
+                "options": [
+                  "5",
+                  "6",
+                  "2",
+                  "4"
+                ],
+                "answer": 0,
+                "why": "Lagrange's theorem allows only divisors of 12, and 5 is not one of them."
+              },
+              {
+                "q": "Which statement about cosets is NOT correct?",
+                "options": [
+                  "The number of cosets is called the index",
+                  "Two cosets are either disjoint or they overlap partly",
+                  "Cosets of a subgroup partition the group",
+                  "All cosets of a subgroup have the same size"
+                ],
+                "answer": 1,
+                "why": "Two cosets are either identical or completely disjoint, which is what makes them a partition."
+              },
+              {
+                "q": "When is a subgroup called normal?",
+                "options": [
+                  "When it is cyclic",
+                  "When it has prime order",
+                  "When aH equals Ha for every element a",
+                  "When it contains the identity"
+                ],
+                "answer": 2,
+                "why": "Equal left and right cosets are what let a well defined quotient group be built from them."
+              },
+              {
+                "q": "What is a simple group?",
+                "options": [
+                  "A group with one element",
+                  "A group that is cyclic",
+                  "A group of prime order with no operation",
+                  "A group with no proper non-trivial normal subgroup"
+                ],
+                "answer": 3,
+                "why": "Simple groups are the building blocks, because they cannot be broken into a smaller quotient."
+              }
+            ],
+            "examTip": "State Lagrange's theorem, give the divisor example, then define a normal subgroup with the aH equals Ha test.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MIV-T04",
@@ -759,7 +1767,70 @@
               "kind": "subtopic",
               "definition": "Rings of polynomials and their use in coding theory and cryptography; finite fields underlie AES and error correcting codes."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A ring carries two operations: it is an abelian group under addition, and multiplication is associative and distributes over addition. A commutative ring with unity is one where multiplication commutes and there is a multiplicative identity. An integral domain adds the rule that there are no zero divisors, so a product can only be zero when one factor is. A field goes further and gives every non-zero element an inverse; the rationals, the reals and the integers modulo a prime are all fields. The characteristic is the smallest number of times the identity must be added to itself to reach zero.",
+            "example": "The integers form an integral domain but not a field, because 2 has no integer inverse. The integers modulo 7 do form a field, because every non-zero class has an inverse.",
+            "quiz": [
+              {
+                "q": "What extra property makes a ring a field?",
+                "options": [
+                  "Every non-zero element has a multiplicative inverse",
+                  "There is an additive identity",
+                  "Multiplication is associative",
+                  "Multiplication commutes"
+                ],
+                "answer": 0,
+                "why": "Commutativity and associativity are already assumed; inverses for every non-zero element is the step up."
+              },
+              {
+                "q": "What is an integral domain?",
+                "options": [
+                  "A ring where every element has an inverse",
+                  "A commutative ring with unity and no zero divisors",
+                  "A ring of prime order",
+                  "A field of characteristic zero"
+                ],
+                "answer": 1,
+                "why": "No zero divisors means a product of non-zero elements is never zero, so cancellation works."
+              },
+              {
+                "q": "Which of these is a field?",
+                "options": [
+                  "The integers",
+                  "The integers modulo 6",
+                  "The integers modulo 7",
+                  "The even integers"
+                ],
+                "answer": 2,
+                "why": "A prime modulus gives a field, because every non-zero class is coprime to 7 and has an inverse."
+              },
+              {
+                "q": "Which statement about rings is NOT correct?",
+                "options": [
+                  "A field has no zero divisors",
+                  "A ring is an abelian group under addition",
+                  "Multiplication distributes over addition",
+                  "Every ring has a multiplicative identity"
+                ],
+                "answer": 3,
+                "why": "Unity is an extra condition; rings without it are valid and are called rings without unity."
+              },
+              {
+                "q": "What is the characteristic of a ring?",
+                "options": [
+                  "The smallest n with n times the identity equal to zero",
+                  "The number of its ideals",
+                  "The order of its multiplicative group",
+                  "The number of elements in it"
+                ],
+                "answer": 0,
+                "why": "If no such n exists the characteristic is zero, which is the case for the integers and the reals."
+              }
+            ],
+            "examTip": "Give the definitions in a chain: ring, commutative ring with unity, integral domain, field. Add one example at each step.",
+            "verified": false
+          }
         }
       ]
     },
@@ -803,7 +1874,70 @@
               "kind": "subtopic",
               "definition": "Counting subsets, functions between finite sets and the number of injective functions."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Counting finds how many outcomes there are without writing them all down. The product rule says that two independent choices with m and n outcomes give m times n outcomes together. The sum rule says that two cases which cannot happen together with m and n outcomes give m plus n. When the cases overlap, the subtraction rule removes the double count, which is the inclusion exclusion idea. A tree diagram draws the choices as branches, so the count is the number of leaves. The same rules count subsets, functions between finite sets and injective functions.",
+            "example": "A meal has 3 starters and 4 main courses, giving 3 times 4 which is 12 combinations. Adding 2 desserts makes it 3 times 4 times 2, which is 24.",
+            "quiz": [
+              {
+                "q": "A code has 2 letters followed by 3 digits. With 26 letters and 10 digits, how many codes are there?",
+                "options": [
+                  "26 + 10",
+                  "26 x 26 x 10 x 10 x 10",
+                  "2 x 3 x 26 x 10",
+                  "26 x 10"
+                ],
+                "answer": 1,
+                "why": "The product rule multiplies the number of choices at each of the five positions."
+              },
+              {
+                "q": "A student can take one of 4 maths courses or one of 3 physics courses, but not both. How many choices?",
+                "options": [
+                  "3",
+                  "12",
+                  "7",
+                  "4"
+                ],
+                "answer": 2,
+                "why": "The cases cannot happen together, so the sum rule applies and the counts are added."
+              },
+              {
+                "q": "Which statement about counting rules is NOT correct?",
+                "options": [
+                  "The product rule applies to a sequence of choices",
+                  "The sum rule applies to cases that cannot overlap",
+                  "The subtraction rule removes outcomes counted twice",
+                  "A tree diagram counts by multiplying the number of levels"
+                ],
+                "answer": 3,
+                "why": "A tree diagram counts by the number of leaves, which is the product of the branch counts per level."
+              },
+              {
+                "q": "How many functions are there from a set of 3 elements to a set of 5 elements?",
+                "options": [
+                  "5 to the power 3",
+                  "3 x 5",
+                  "15",
+                  "3 to the power 5"
+                ],
+                "answer": 0,
+                "why": "Each of the 3 inputs may go to any of the 5 outputs, so the choices multiply to 5 cubed."
+              },
+              {
+                "q": "In a class of 30, 18 study maths and 12 study physics, and 5 study both. How many study at least one?",
+                "options": [
+                  "30",
+                  "25",
+                  "35",
+                  "23"
+                ],
+                "answer": 1,
+                "why": "Inclusion exclusion gives 18 + 12 - 5, which is 25."
+              }
+            ],
+            "examTip": "State the product and sum rule in one line each, then show the inclusion exclusion count with numbers.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MV-T02",
@@ -835,7 +1969,70 @@
               "kind": "subtopic",
               "definition": "Any sequence of n squared + 1 distinct numbers has an increasing or decreasing subsequence of length n + 1."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The pigeonhole principle is the simple fact that more objects than boxes forces a box to hold two. In its general form, placing N objects into k boxes forces some box to hold at least the ceiling of N divided by k objects. The point of the method is choosing the boxes well, because the statement you want follows from how you set them up. Among thirteen people two share a birth month, because there are only twelve months. Among n plus 1 integers chosen from 1 to 2n, one divides another, which is proved by stripping powers of two.",
+            "example": "In any group of 367 people two share a birthday, because there are only 366 possible dates. No probability is needed to say this.",
+            "quiz": [
+              {
+                "q": "What does the simple pigeonhole principle say?",
+                "options": [
+                  "The boxes must be arranged in order",
+                  "n objects in n boxes fill every box",
+                  "n + 1 objects in n boxes force a box to hold two",
+                  "The objects must be identical"
+                ],
+                "answer": 2,
+                "why": "One more object than there are boxes makes a shared box unavoidable."
+              },
+              {
+                "q": "What does the generalised principle guarantee when N objects go into k boxes?",
+                "options": [
+                  "No box is left empty",
+                  "Some box holds exactly N divided by k",
+                  "Every box holds the same number",
+                  "Some box holds at least the ceiling of N divided by k"
+                ],
+                "answer": 3,
+                "why": "The ceiling is needed because objects are whole, so the average is rounded up."
+              },
+              {
+                "q": "How many people guarantee that two share a birth month?",
+                "options": [
+                  "13",
+                  "24",
+                  "25",
+                  "12"
+                ],
+                "answer": 0,
+                "why": "With 12 months, 13 people force a shared month by the pigeonhole principle."
+              },
+              {
+                "q": "Which statement about the pigeonhole principle is NOT correct?",
+                "options": [
+                  "Choosing the boxes well is the main skill",
+                  "It proves that some box holds at most the average",
+                  "It applies to any sequence of n squared + 1 distinct numbers",
+                  "It proves existence without identifying which box is shared"
+                ],
+                "answer": 1,
+                "why": "The principle guarantees a box holding at least the average, never at most it."
+              },
+              {
+                "q": "Any sequence of n squared + 1 distinct numbers must contain:",
+                "options": [
+                  "A number divisible by n",
+                  "Two equal numbers",
+                  "An increasing or decreasing subsequence of length n + 1",
+                  "A prime number"
+                ],
+                "answer": 2,
+                "why": "That is the classic subsequence application, proved by attaching a pair of lengths to each term."
+              }
+            ],
+            "examTip": "State both forms of the principle, then give two applications: the shared birth month and the subsequence result.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MV-T03",
@@ -879,7 +2076,70 @@
               "kind": "subtopic",
               "definition": "Cases with adjacent items, no two together, or fixed positions handled by first arranging the restricted items."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A permutation counts arrangements where the order matters, and a combination counts selections where it does not. Arranging r items chosen from n gives n factorial divided by n minus r factorial. When items may repeat, the count is n to the power r. Around a circle the count is n minus 1 factorial, because rotating the circle changes nothing. Choosing r items from n without caring about order gives n factorial over r factorial times n minus r factorial, read as n choose r. When repetition is allowed in a selection, the count becomes n plus r minus 1 choose r.",
+            "example": "Five books can be arranged on a shelf in 5 factorial, which is 120 ways. Choosing 3 of them to take home gives 5 choose 3, which is 10 ways, because the packing order does not matter.",
+            "quiz": [
+              {
+                "q": "How many ways can 3 books be chosen from 5 when order does not matter?",
+                "options": [
+                  "15",
+                  "120",
+                  "60",
+                  "10"
+                ],
+                "answer": 3,
+                "why": "It is a combination, 5 choose 3, which is 5 factorial over 3 factorial times 2 factorial, giving 10."
+              },
+              {
+                "q": "How many ways can 5 people sit around a round table?",
+                "options": [
+                  "4 factorial",
+                  "5",
+                  "25",
+                  "5 factorial"
+                ],
+                "answer": 0,
+                "why": "Rotations are the same arrangement, so one seat is fixed and the other 4 are arranged."
+              },
+              {
+                "q": "Which statement is NOT correct?",
+                "options": [
+                  "A circular permutation of n objects is n minus 1 factorial",
+                  "The number of arrangements of r from n equals n choose r",
+                  "Permutations count ordered arrangements",
+                  "Combinations count unordered selections"
+                ],
+                "answer": 1,
+                "why": "Arrangements use n factorial over n minus r factorial, while n choose r ignores the order."
+              },
+              {
+                "q": "How many 4 digit PINs can be made from 10 digits if repetition is allowed?",
+                "options": [
+                  "40",
+                  "5,040",
+                  "10,000",
+                  "210"
+                ],
+                "answer": 2,
+                "why": "Each of the four positions has 10 choices, so the count is 10 to the power 4."
+              },
+              {
+                "q": "In how many ways can the letters of the word CAT be arranged?",
+                "options": [
+                  "9",
+                  "27",
+                  "3",
+                  "6"
+                ],
+                "answer": 3,
+                "why": "There are 3 distinct letters, so the count is 3 factorial, which is 6."
+              }
+            ],
+            "examTip": "Write the four formulas side by side: permutation, with repetition, circular and combination. Note which divide by a factorial and why.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA431-MV-T04",
@@ -917,7 +2177,70 @@
               "kind": "subtopic",
               "definition": "Probability of card and dice outcomes, password strength, seat allocation and algorithm analysis."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The binomial theorem expands x plus y to the n into a sum of terms. Each term is n choose k times x to the n minus k times y to the k. The coefficients are the entries of Pascal's triangle, where each entry is the sum of the two above it. That is Pascal's identity in symbols: n choose k equals n minus 1 choose k minus 1 plus n minus 1 choose k. Two identities are used constantly: symmetry, and a row sum of 2 to the n. Symmetry says n choose k equals n choose n minus k. The multinomial theorem does the same job for a sum of several terms.",
+            "example": "Row 4 of Pascal's triangle is 1, 4, 6, 4, 1, which are the coefficients in the expansion of x plus y to the 4.",
+            "quiz": [
+              {
+                "q": "What is the sum of all binomial coefficients n choose k for a fixed n?",
+                "options": [
+                  "2 to the n",
+                  "n squared",
+                  "n",
+                  "n factorial"
+                ],
+                "answer": 0,
+                "why": "Putting x and y both equal to 1 in the binomial theorem gives 1 plus 1 to the n, which is 2 to the n."
+              },
+              {
+                "q": "Which identity does Pascal's triangle show?",
+                "options": [
+                  "n choose k equals n choose n minus k",
+                  "n choose k equals C(n-1,k-1) + C(n-1,k)",
+                  "The sum of a row is 2 to the n",
+                  "Every row is symmetric"
+                ],
+                "answer": 1,
+                "why": "Each entry is the sum of the two entries above it, which is exactly Pascal's identity."
+              },
+              {
+                "q": "What is the coefficient of x squared y squared in the expansion of (x + y) to the 4?",
+                "options": [
+                  "1",
+                  "4",
+                  "6",
+                  "12"
+                ],
+                "answer": 2,
+                "why": "It is 4 choose 2, which is 6, the middle entry of row 4 of Pascal's triangle."
+              },
+              {
+                "q": "Which statement about binomial coefficients is NOT correct?",
+                "options": [
+                  "n choose 0 equals 1",
+                  "n choose k equals n choose n minus k",
+                  "The rows of Pascal's triangle are symmetric",
+                  "n choose k is largest only when k equals n"
+                ],
+                "answer": 3,
+                "why": "The largest entries sit in the middle of a row, and n choose n is 1, the smallest value."
+              },
+              {
+                "q": "Which theorem expands a power of a sum of several terms?",
+                "options": [
+                  "The multinomial theorem",
+                  "The pigeonhole principle",
+                  "The inclusion exclusion principle",
+                  "The binomial theorem"
+                ],
+                "answer": 0,
+                "why": "Multinomial coefficients count arrangements of objects of several types, generalising the binomial case."
+              }
+            ],
+            "examTip": "Write the binomial theorem in sigma form, draw four rows of Pascal's triangle, then state the symmetry and sum identities.",
+            "verified": false
+          }
         }
       ]
     }

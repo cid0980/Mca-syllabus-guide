@@ -50,3 +50,6 @@ export const load: PageLoad = async ({ url }) => {
 		return { found: false as const, id };
 	}
 };
+
+/** Not prerendered: the chat page needs IndexedDB and a network model. */
+export const prerender = false;

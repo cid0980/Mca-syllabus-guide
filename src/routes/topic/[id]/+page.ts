@@ -38,3 +38,6 @@ export const load: PageLoad = async ({ params }) => {
 	};
 	return payload;
 };
+
+/** Not prerendered: ~1,700 topic pages would bloat the offline cache. */
+export const prerender = false;

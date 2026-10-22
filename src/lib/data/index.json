@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-13T10:26:23.575Z",
+  "generatedAt": "2026-10-22T21:36:56.450Z",
   "totals": {
     "subjects": 10,
     "modules": 50,
     "topics": 277,
     "subtopics": 1391,
     "types": 21,
-    "cards": 77
+    "cards": 277
   },
   "subjects": [
     {
@@ -301,9 +301,43 @@
         "modules": 5,
         "topics": 33,
         "subtopics": 155,
-        "cards": 0
+        "cards": 33
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA413-MI-T01",
+        "CSCA413-MI-T02",
+        "CSCA413-MI-T03",
+        "CSCA413-MI-T04",
+        "CSCA413-MI-T05",
+        "CSCA413-MI-T06",
+        "CSCA413-MII-T01",
+        "CSCA413-MII-T02",
+        "CSCA413-MII-T03",
+        "CSCA413-MII-T04",
+        "CSCA413-MII-T05",
+        "CSCA413-MII-T06",
+        "CSCA413-MII-T07",
+        "CSCA413-MII-T08",
+        "CSCA413-MIII-T01",
+        "CSCA413-MIII-T02",
+        "CSCA413-MIII-T03",
+        "CSCA413-MIII-T04",
+        "CSCA413-MIII-T05",
+        "CSCA413-MIII-T06",
+        "CSCA413-MIII-T07",
+        "CSCA413-MIII-T08",
+        "CSCA413-MIV-T01",
+        "CSCA413-MIV-T02",
+        "CSCA413-MIV-T03",
+        "CSCA413-MIV-T04",
+        "CSCA413-MV-T01",
+        "CSCA413-MV-T02",
+        "CSCA413-MV-T03",
+        "CSCA413-MV-T04",
+        "CSCA413-MV-T05",
+        "CSCA413-MV-T06",
+        "CSCA413-MV-T07"
+      ],
       "modules": [
         {
           "module": "I",
@@ -311,8 +345,15 @@
           "topics": 6,
           "subtopics": 28,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 6,
+          "cardIds": [
+            "CSCA413-MI-T01",
+            "CSCA413-MI-T02",
+            "CSCA413-MI-T03",
+            "CSCA413-MI-T04",
+            "CSCA413-MI-T05",
+            "CSCA413-MI-T06"
+          ]
         },
         {
           "module": "II",
@@ -320,8 +361,17 @@
           "topics": 8,
           "subtopics": 44,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 8,
+          "cardIds": [
+            "CSCA413-MII-T01",
+            "CSCA413-MII-T02",
+            "CSCA413-MII-T03",
+            "CSCA413-MII-T04",
+            "CSCA413-MII-T05",
+            "CSCA413-MII-T06",
+            "CSCA413-MII-T07",
+            "CSCA413-MII-T08"
+          ]
         },
         {
           "module": "III",
@@ -329,8 +379,17 @@
           "topics": 8,
           "subtopics": 36,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 8,
+          "cardIds": [
+            "CSCA413-MIII-T01",
+            "CSCA413-MIII-T02",
+            "CSCA413-MIII-T03",
+            "CSCA413-MIII-T04",
+            "CSCA413-MIII-T05",
+            "CSCA413-MIII-T06",
+            "CSCA413-MIII-T07",
+            "CSCA413-MIII-T08"
+          ]
         },
         {
           "module": "IV",
@@ -338,8 +397,13 @@
           "topics": 4,
           "subtopics": 21,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA413-MIV-T01",
+            "CSCA413-MIV-T02",
+            "CSCA413-MIV-T03",
+            "CSCA413-MIV-T04"
+          ]
         },
         {
           "module": "V",
@@ -347,8 +411,16 @@
           "topics": 7,
           "subtopics": 26,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA413-MV-T01",
+            "CSCA413-MV-T02",
+            "CSCA413-MV-T03",
+            "CSCA413-MV-T04",
+            "CSCA413-MV-T05",
+            "CSCA413-MV-T06",
+            "CSCA413-MV-T07"
+          ]
         }
       ]
     },
@@ -360,9 +432,31 @@
         "modules": 5,
         "topics": 21,
         "subtopics": 120,
-        "cards": 0
+        "cards": 21
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA431-MI-T01",
+        "CSCA431-MI-T02",
+        "CSCA431-MI-T03",
+        "CSCA431-MI-T04",
+        "CSCA431-MII-T01",
+        "CSCA431-MII-T02",
+        "CSCA431-MII-T03",
+        "CSCA431-MII-T04",
+        "CSCA431-MII-T05",
+        "CSCA431-MIII-T01",
+        "CSCA431-MIII-T02",
+        "CSCA431-MIII-T03",
+        "CSCA431-MIII-T04",
+        "CSCA431-MIV-T01",
+        "CSCA431-MIV-T02",
+        "CSCA431-MIV-T03",
+        "CSCA431-MIV-T04",
+        "CSCA431-MV-T01",
+        "CSCA431-MV-T02",
+        "CSCA431-MV-T03",
+        "CSCA431-MV-T04"
+      ],
       "modules": [
         {
           "module": "I",
@@ -370,8 +464,13 @@
           "topics": 4,
           "subtopics": 26,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA431-MI-T01",
+            "CSCA431-MI-T02",
+            "CSCA431-MI-T03",
+            "CSCA431-MI-T04"
+          ]
         },
         {
           "module": "II",
@@ -379,8 +478,14 @@
           "topics": 5,
           "subtopics": 28,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA431-MII-T01",
+            "CSCA431-MII-T02",
+            "CSCA431-MII-T03",
+            "CSCA431-MII-T04",
+            "CSCA431-MII-T05"
+          ]
         },
         {
           "module": "III",
@@ -388,8 +493,13 @@
           "topics": 4,
           "subtopics": 22,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA431-MIII-T01",
+            "CSCA431-MIII-T02",
+            "CSCA431-MIII-T03",
+            "CSCA431-MIII-T04"
+          ]
         },
         {
           "module": "IV",
@@ -397,8 +507,13 @@
           "topics": 4,
           "subtopics": 24,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA431-MIV-T01",
+            "CSCA431-MIV-T02",
+            "CSCA431-MIV-T03",
+            "CSCA431-MIV-T04"
+          ]
         },
         {
           "module": "V",
@@ -406,8 +521,13 @@
           "topics": 4,
           "subtopics": 20,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA431-MV-T01",
+            "CSCA431-MV-T02",
+            "CSCA431-MV-T03",
+            "CSCA431-MV-T04"
+          ]
         }
       ]
     },
@@ -419,9 +539,38 @@
         "modules": 5,
         "topics": 28,
         "subtopics": 146,
-        "cards": 0
+        "cards": 28
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA421-MI-T01",
+        "CSCA421-MI-T02",
+        "CSCA421-MI-T03",
+        "CSCA421-MI-T04",
+        "CSCA421-MI-T05",
+        "CSCA421-MI-T06",
+        "CSCA421-MII-T01",
+        "CSCA421-MII-T02",
+        "CSCA421-MII-T03",
+        "CSCA421-MII-T04",
+        "CSCA421-MII-T05",
+        "CSCA421-MII-T06",
+        "CSCA421-MII-T07",
+        "CSCA421-MIII-T01",
+        "CSCA421-MIII-T02",
+        "CSCA421-MIII-T03",
+        "CSCA421-MIII-T04",
+        "CSCA421-MIV-T01",
+        "CSCA421-MIV-T02",
+        "CSCA421-MIV-T03",
+        "CSCA421-MIV-T04",
+        "CSCA421-MV-T01",
+        "CSCA421-MV-T02",
+        "CSCA421-MV-T03",
+        "CSCA421-MV-T04",
+        "CSCA421-MV-T05",
+        "CSCA421-MV-T06",
+        "CSCA421-MV-T07"
+      ],
       "modules": [
         {
           "module": "I",
@@ -429,8 +578,15 @@
           "topics": 6,
           "subtopics": 30,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 6,
+          "cardIds": [
+            "CSCA421-MI-T01",
+            "CSCA421-MI-T02",
+            "CSCA421-MI-T03",
+            "CSCA421-MI-T04",
+            "CSCA421-MI-T05",
+            "CSCA421-MI-T06"
+          ]
         },
         {
           "module": "II",
@@ -438,8 +594,16 @@
           "topics": 7,
           "subtopics": 35,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA421-MII-T01",
+            "CSCA421-MII-T02",
+            "CSCA421-MII-T03",
+            "CSCA421-MII-T04",
+            "CSCA421-MII-T05",
+            "CSCA421-MII-T06",
+            "CSCA421-MII-T07"
+          ]
         },
         {
           "module": "III",
@@ -447,8 +611,13 @@
           "topics": 4,
           "subtopics": 24,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA421-MIII-T01",
+            "CSCA421-MIII-T02",
+            "CSCA421-MIII-T03",
+            "CSCA421-MIII-T04"
+          ]
         },
         {
           "module": "IV",
@@ -456,8 +625,13 @@
           "topics": 4,
           "subtopics": 23,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA421-MIV-T01",
+            "CSCA421-MIV-T02",
+            "CSCA421-MIV-T03",
+            "CSCA421-MIV-T04"
+          ]
         },
         {
           "module": "V",
@@ -465,8 +639,16 @@
           "topics": 7,
           "subtopics": 34,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA421-MV-T01",
+            "CSCA421-MV-T02",
+            "CSCA421-MV-T03",
+            "CSCA421-MV-T04",
+            "CSCA421-MV-T05",
+            "CSCA421-MV-T06",
+            "CSCA421-MV-T07"
+          ]
         }
       ]
     },
@@ -478,9 +660,37 @@
         "modules": 5,
         "topics": 27,
         "subtopics": 148,
-        "cards": 0
+        "cards": 27
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA422-MI-T01",
+        "CSCA422-MI-T02",
+        "CSCA422-MI-T03",
+        "CSCA422-MI-T04",
+        "CSCA422-MI-T05",
+        "CSCA422-MI-T06",
+        "CSCA422-MII-T01",
+        "CSCA422-MII-T02",
+        "CSCA422-MII-T03",
+        "CSCA422-MII-T04",
+        "CSCA422-MII-T05",
+        "CSCA422-MII-T06",
+        "CSCA422-MIII-T01",
+        "CSCA422-MIII-T02",
+        "CSCA422-MIII-T03",
+        "CSCA422-MIII-T04",
+        "CSCA422-MIII-T05",
+        "CSCA422-MIII-T06",
+        "CSCA422-MIII-T07",
+        "CSCA422-MIV-T01",
+        "CSCA422-MIV-T02",
+        "CSCA422-MIV-T03",
+        "CSCA422-MIV-T04",
+        "CSCA422-MV-T01",
+        "CSCA422-MV-T02",
+        "CSCA422-MV-T03",
+        "CSCA422-MV-T04"
+      ],
       "modules": [
         {
           "module": "I",
@@ -488,8 +698,15 @@
           "topics": 6,
           "subtopics": 37,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 6,
+          "cardIds": [
+            "CSCA422-MI-T01",
+            "CSCA422-MI-T02",
+            "CSCA422-MI-T03",
+            "CSCA422-MI-T04",
+            "CSCA422-MI-T05",
+            "CSCA422-MI-T06"
+          ]
         },
         {
           "module": "II",
@@ -497,8 +714,15 @@
           "topics": 6,
           "subtopics": 30,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 6,
+          "cardIds": [
+            "CSCA422-MII-T01",
+            "CSCA422-MII-T02",
+            "CSCA422-MII-T03",
+            "CSCA422-MII-T04",
+            "CSCA422-MII-T05",
+            "CSCA422-MII-T06"
+          ]
         },
         {
           "module": "III",
@@ -506,8 +730,16 @@
           "topics": 7,
           "subtopics": 35,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA422-MIII-T01",
+            "CSCA422-MIII-T02",
+            "CSCA422-MIII-T03",
+            "CSCA422-MIII-T04",
+            "CSCA422-MIII-T05",
+            "CSCA422-MIII-T06",
+            "CSCA422-MIII-T07"
+          ]
         },
         {
           "module": "IV",
@@ -515,8 +747,13 @@
           "topics": 4,
           "subtopics": 25,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA422-MIV-T01",
+            "CSCA422-MIV-T02",
+            "CSCA422-MIV-T03",
+            "CSCA422-MIV-T04"
+          ]
         },
         {
           "module": "V",
@@ -524,8 +761,13 @@
           "topics": 4,
           "subtopics": 21,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA422-MV-T01",
+            "CSCA422-MV-T02",
+            "CSCA422-MV-T03",
+            "CSCA422-MV-T04"
+          ]
         }
       ]
     },
@@ -537,9 +779,25 @@
         "modules": 5,
         "topics": 15,
         "subtopics": 87,
-        "cards": 0
+        "cards": 15
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA423-MI-T01",
+        "CSCA423-MI-T02",
+        "CSCA423-MI-T03",
+        "CSCA423-MI-T04",
+        "CSCA423-MII-T01",
+        "CSCA423-MII-T02",
+        "CSCA423-MII-T03",
+        "CSCA423-MII-T04",
+        "CSCA423-MIII-T01",
+        "CSCA423-MIII-T02",
+        "CSCA423-MIV-T01",
+        "CSCA423-MIV-T02",
+        "CSCA423-MIV-T03",
+        "CSCA423-MV-T01",
+        "CSCA423-MV-T02"
+      ],
       "modules": [
         {
           "module": "I",
@@ -547,8 +805,13 @@
           "topics": 4,
           "subtopics": 17,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA423-MI-T01",
+            "CSCA423-MI-T02",
+            "CSCA423-MI-T03",
+            "CSCA423-MI-T04"
+          ]
         },
         {
           "module": "II",
@@ -556,8 +819,13 @@
           "topics": 4,
           "subtopics": 22,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA423-MII-T01",
+            "CSCA423-MII-T02",
+            "CSCA423-MII-T03",
+            "CSCA423-MII-T04"
+          ]
         },
         {
           "module": "III",
@@ -565,8 +833,11 @@
           "topics": 2,
           "subtopics": 15,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 2,
+          "cardIds": [
+            "CSCA423-MIII-T01",
+            "CSCA423-MIII-T02"
+          ]
         },
         {
           "module": "IV",
@@ -574,8 +845,12 @@
           "topics": 3,
           "subtopics": 19,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 3,
+          "cardIds": [
+            "CSCA423-MIV-T01",
+            "CSCA423-MIV-T02",
+            "CSCA423-MIV-T03"
+          ]
         },
         {
           "module": "V",
@@ -583,8 +858,11 @@
           "topics": 2,
           "subtopics": 14,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 2,
+          "cardIds": [
+            "CSCA423-MV-T01",
+            "CSCA423-MV-T02"
+          ]
         }
       ]
     },
@@ -596,9 +874,30 @@
         "modules": 5,
         "topics": 20,
         "subtopics": 109,
-        "cards": 0
+        "cards": 20
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA432-MI-T01",
+        "CSCA432-MI-T02",
+        "CSCA432-MI-T03",
+        "CSCA432-MI-T04",
+        "CSCA432-MI-T05",
+        "CSCA432-MII-T01",
+        "CSCA432-MII-T02",
+        "CSCA432-MII-T03",
+        "CSCA432-MII-T04",
+        "CSCA432-MII-T05",
+        "CSCA432-MIII-T01",
+        "CSCA432-MIII-T02",
+        "CSCA432-MIII-T03",
+        "CSCA432-MIV-T01",
+        "CSCA432-MIV-T02",
+        "CSCA432-MIV-T03",
+        "CSCA432-MV-T01",
+        "CSCA432-MV-T02",
+        "CSCA432-MV-T03",
+        "CSCA432-MV-T04"
+      ],
       "modules": [
         {
           "module": "I",
@@ -606,8 +905,14 @@
           "topics": 5,
           "subtopics": 26,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA432-MI-T01",
+            "CSCA432-MI-T02",
+            "CSCA432-MI-T03",
+            "CSCA432-MI-T04",
+            "CSCA432-MI-T05"
+          ]
         },
         {
           "module": "II",
@@ -615,8 +920,14 @@
           "topics": 5,
           "subtopics": 26,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA432-MII-T01",
+            "CSCA432-MII-T02",
+            "CSCA432-MII-T03",
+            "CSCA432-MII-T04",
+            "CSCA432-MII-T05"
+          ]
         },
         {
           "module": "III",
@@ -624,8 +935,12 @@
           "topics": 3,
           "subtopics": 16,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 3,
+          "cardIds": [
+            "CSCA432-MIII-T01",
+            "CSCA432-MIII-T02",
+            "CSCA432-MIII-T03"
+          ]
         },
         {
           "module": "IV",
@@ -633,8 +948,12 @@
           "topics": 3,
           "subtopics": 19,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 3,
+          "cardIds": [
+            "CSCA432-MIV-T01",
+            "CSCA432-MIV-T02",
+            "CSCA432-MIV-T03"
+          ]
         },
         {
           "module": "V",
@@ -642,8 +961,13 @@
           "topics": 4,
           "subtopics": 22,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA432-MV-T01",
+            "CSCA432-MV-T02",
+            "CSCA432-MV-T03",
+            "CSCA432-MV-T04"
+          ]
         }
       ]
     },
@@ -655,9 +979,32 @@
         "modules": 5,
         "topics": 22,
         "subtopics": 112,
-        "cards": 0
+        "cards": 22
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA511-MI-T01",
+        "CSCA511-MI-T02",
+        "CSCA511-MI-T03",
+        "CSCA511-MI-T04",
+        "CSCA511-MII-T01",
+        "CSCA511-MII-T02",
+        "CSCA511-MII-T03",
+        "CSCA511-MII-T04",
+        "CSCA511-MII-T05",
+        "CSCA511-MIII-T01",
+        "CSCA511-MIII-T02",
+        "CSCA511-MIII-T03",
+        "CSCA511-MIII-T04",
+        "CSCA511-MIII-T05",
+        "CSCA511-MIV-T01",
+        "CSCA511-MIV-T02",
+        "CSCA511-MIV-T03",
+        "CSCA511-MIV-T04",
+        "CSCA511-MIV-T05",
+        "CSCA511-MV-T01",
+        "CSCA511-MV-T02",
+        "CSCA511-MV-T03"
+      ],
       "modules": [
         {
           "module": "I",
@@ -665,8 +1012,13 @@
           "topics": 4,
           "subtopics": 22,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 4,
+          "cardIds": [
+            "CSCA511-MI-T01",
+            "CSCA511-MI-T02",
+            "CSCA511-MI-T03",
+            "CSCA511-MI-T04"
+          ]
         },
         {
           "module": "II",
@@ -674,8 +1026,14 @@
           "topics": 5,
           "subtopics": 26,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA511-MII-T01",
+            "CSCA511-MII-T02",
+            "CSCA511-MII-T03",
+            "CSCA511-MII-T04",
+            "CSCA511-MII-T05"
+          ]
         },
         {
           "module": "III",
@@ -683,8 +1041,14 @@
           "topics": 5,
           "subtopics": 24,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA511-MIII-T01",
+            "CSCA511-MIII-T02",
+            "CSCA511-MIII-T03",
+            "CSCA511-MIII-T04",
+            "CSCA511-MIII-T05"
+          ]
         },
         {
           "module": "IV",
@@ -692,8 +1056,14 @@
           "topics": 5,
           "subtopics": 25,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA511-MIV-T01",
+            "CSCA511-MIV-T02",
+            "CSCA511-MIV-T03",
+            "CSCA511-MIV-T04",
+            "CSCA511-MIV-T05"
+          ]
         },
         {
           "module": "V",
@@ -701,8 +1071,12 @@
           "topics": 3,
           "subtopics": 15,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 3,
+          "cardIds": [
+            "CSCA511-MV-T01",
+            "CSCA511-MV-T02",
+            "CSCA511-MV-T03"
+          ]
         }
       ]
     },
@@ -714,9 +1088,44 @@
         "modules": 5,
         "topics": 34,
         "subtopics": 167,
-        "cards": 0
+        "cards": 34
       },
-      "cardIds": [],
+      "cardIds": [
+        "CSCA512-MI-T01",
+        "CSCA512-MI-T02",
+        "CSCA512-MI-T03",
+        "CSCA512-MI-T04",
+        "CSCA512-MI-T05",
+        "CSCA512-MI-T06",
+        "CSCA512-MI-T07",
+        "CSCA512-MII-T01",
+        "CSCA512-MII-T02",
+        "CSCA512-MII-T03",
+        "CSCA512-MII-T04",
+        "CSCA512-MII-T05",
+        "CSCA512-MII-T06",
+        "CSCA512-MII-T07",
+        "CSCA512-MIII-T01",
+        "CSCA512-MIII-T02",
+        "CSCA512-MIII-T03",
+        "CSCA512-MIII-T04",
+        "CSCA512-MIII-T05",
+        "CSCA512-MIII-T06",
+        "CSCA512-MIII-T07",
+        "CSCA512-MIII-T08",
+        "CSCA512-MIV-T01",
+        "CSCA512-MIV-T02",
+        "CSCA512-MIV-T03",
+        "CSCA512-MIV-T04",
+        "CSCA512-MIV-T05",
+        "CSCA512-MV-T01",
+        "CSCA512-MV-T02",
+        "CSCA512-MV-T03",
+        "CSCA512-MV-T04",
+        "CSCA512-MV-T05",
+        "CSCA512-MV-T06",
+        "CSCA512-MV-T07"
+      ],
       "modules": [
         {
           "module": "I",
@@ -724,8 +1133,16 @@
           "topics": 7,
           "subtopics": 30,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA512-MI-T01",
+            "CSCA512-MI-T02",
+            "CSCA512-MI-T03",
+            "CSCA512-MI-T04",
+            "CSCA512-MI-T05",
+            "CSCA512-MI-T06",
+            "CSCA512-MI-T07"
+          ]
         },
         {
           "module": "II",
@@ -733,8 +1150,16 @@
           "topics": 7,
           "subtopics": 37,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA512-MII-T01",
+            "CSCA512-MII-T02",
+            "CSCA512-MII-T03",
+            "CSCA512-MII-T04",
+            "CSCA512-MII-T05",
+            "CSCA512-MII-T06",
+            "CSCA512-MII-T07"
+          ]
         },
         {
           "module": "III",
@@ -742,8 +1167,17 @@
           "topics": 8,
           "subtopics": 39,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 8,
+          "cardIds": [
+            "CSCA512-MIII-T01",
+            "CSCA512-MIII-T02",
+            "CSCA512-MIII-T03",
+            "CSCA512-MIII-T04",
+            "CSCA512-MIII-T05",
+            "CSCA512-MIII-T06",
+            "CSCA512-MIII-T07",
+            "CSCA512-MIII-T08"
+          ]
         },
         {
           "module": "IV",
@@ -751,8 +1185,14 @@
           "topics": 5,
           "subtopics": 25,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 5,
+          "cardIds": [
+            "CSCA512-MIV-T01",
+            "CSCA512-MIV-T02",
+            "CSCA512-MIV-T03",
+            "CSCA512-MIV-T04",
+            "CSCA512-MIV-T05"
+          ]
         },
         {
           "module": "V",
@@ -760,8 +1200,16 @@
           "topics": 7,
           "subtopics": 36,
           "types": 0,
-          "cards": 0,
-          "cardIds": []
+          "cards": 7,
+          "cardIds": [
+            "CSCA512-MV-T01",
+            "CSCA512-MV-T02",
+            "CSCA512-MV-T03",
+            "CSCA512-MV-T04",
+            "CSCA512-MV-T05",
+            "CSCA512-MV-T06",
+            "CSCA512-MV-T07"
+          ]
         }
       ]
     }

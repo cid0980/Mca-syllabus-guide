@@ -49,7 +49,70 @@
               "kind": "subtopic",
               "definition": "Networks classified by reach: a room or building, a city, and a country or the world."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Topology is the arrangement of the nodes and links in a network, and it decides how a failure spreads. In a bus all nodes share one backbone cable, so one break stops the whole network while the cabling stays cheap. In a star every node runs to a central hub or switch, so a broken cable takes out one node only. In a ring the nodes form a closed loop with data circulating one way, often controlled by a token. In a mesh every node links to every other, which gives the best reliability and the highest cabling cost.",
+            "example": "A college lab wired in a star keeps working when one cable is unplugged, because only that machine drops off. The same lab on a bus would lose every machine at once.",
+            "quiz": [
+              {
+                "q": "Which topology connects every node to a central hub or switch?",
+                "options": [
+                  "Star",
+                  "Ring",
+                  "Mesh",
+                  "Bus"
+                ],
+                "answer": 0,
+                "why": "In a star each node has its own cable to the centre, so one cable failure affects only that node."
+              },
+              {
+                "q": "Which topology gives the highest reliability and the highest cabling cost?",
+                "options": [
+                  "Ring",
+                  "Mesh",
+                  "Bus",
+                  "Star"
+                ],
+                "answer": 1,
+                "why": "Full mesh links every node to every other, so there are many paths but also many cables."
+              },
+              {
+                "q": "Which statement about topologies is NOT correct?",
+                "options": [
+                  "A ring passes data in one direction around a loop",
+                  "A star isolates a failure to a single cable",
+                  "A mesh is the cheapest topology to install",
+                  "A bus shares one backbone cable among all the nodes"
+                ],
+                "answer": 2,
+                "why": "Mesh is the most expensive, because every node needs a link to every other node."
+              },
+              {
+                "q": "A lab loses the whole network when one cable breaks. Which topology is it?",
+                "options": [
+                  "Mesh",
+                  "Tree",
+                  "Star",
+                  "Bus"
+                ],
+                "answer": 3,
+                "why": "A shared backbone is the single point of failure in a bus, which is its main weakness."
+              },
+              {
+                "q": "A network covering a city is classified as a:",
+                "options": [
+                  "MAN",
+                  "WAN",
+                  "PAN",
+                  "LAN"
+                ],
+                "answer": 0,
+                "why": "Reach sets the class: a room or building is a LAN, a city a MAN, and a country a WAN."
+              }
+            ],
+            "examTip": "Draw bus, star, ring and mesh in one row, with one advantage and one disadvantage under each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MI-T02",
@@ -81,7 +144,59 @@
               "kind": "subtopic",
               "definition": "A connection oriented service agrees on a path and guarantees order, while a connectionless service sends independent packets."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Network architecture is the plan for who does what in a communication system. In the client server model a server offers a service such as web or mail, and clients ask for it. In the peer to peer model every machine can be both, which suits small networks with no central machine. Layering is the other big idea. Each layer offers services to the layer above and uses the one below, and the rules they follow are protocols. Services come in two flavours: connection oriented, which sets up a path and keeps the order, and connectionless, which sends independent packets.",
+            "example": "Opening a college website is client server, because your browser asks and the server answers. Sharing files between two laptops with no server is peer to peer.",
+            "quiz": [
+              {
+                "q": "In which model can every machine act as both client and server?",
+                "options": [
+                  "Client server",
+                  "Peer to peer",
+                  "Layered",
+                  "Connection oriented"
+                ],
+                "answer": 1,
+                "why": "Peer to peer has no central server, so each machine takes both roles."
+              },
+              {
+                "q": "What are the rules that two layers follow to talk to each other called?",
+                "options": [
+                  "A topology",
+                  "A service",
+                  "A protocol",
+                  "An interface"
+                ],
+                "answer": 2,
+                "why": "A protocol is the agreed set of formats and rules; the service is what the layer provides."
+              },
+              {
+                "q": "Which statement about services is NOT correct?",
+                "options": [
+                  "A connection oriented service keeps the order of the data",
+                  "A connectionless service sends each packet independently",
+                  "A connection oriented service sets up a path first",
+                  "A connectionless service guarantees delivery and order"
+                ],
+                "answer": 3,
+                "why": "Guaranteeing delivery and order is exactly what a connection oriented service adds."
+              },
+              {
+                "q": "Which statement about layering is NOT correct?",
+                "options": [
+                  "Every layer must know how the layer below is implemented",
+                  "Each layer uses the services of the layer below",
+                  "Each layer offers services to the layer above",
+                  "Layers on two machines talk to each other through a protocol"
+                ],
+                "answer": 0,
+                "why": "Layering hides the implementation, so a layer needs only the service, not the code below it."
+              }
+            ],
+            "examTip": "Contrast client server and peer to peer, then define a protocol and give the two service types with an example each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MI-T03",
@@ -113,7 +228,70 @@
               "kind": "subtopic",
               "definition": "Each layer adds its own header on the way down and removes it on the way up, forming a protocol data unit."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The OSI model splits networking into seven layers: physical, data link, network, transport, session, presentation and application. The TCP/IP model uses four: network access, internet, transport and application. OSI separates session and presentation, while TCP/IP folds both into the application layer. TCP/IP is what the Internet really runs. Data passes down one stack and up the other, and each layer adds a header on the way down. That wrapping is called encapsulation, and removing it on the way up is de-encapsulation.",
+            "example": "An email leaves your machine as application data, then gains a TCP header, an IP header and an Ethernet header. The receiving machine strips them in the reverse order.",
+            "quiz": [
+              {
+                "q": "How many layers does the OSI model have?",
+                "options": [
+                  "5",
+                  "7",
+                  "6",
+                  "4"
+                ],
+                "answer": 1,
+                "why": "Physical, data link, network, transport, session, presentation and application make seven."
+              },
+              {
+                "q": "Which two OSI layers does the TCP/IP model fold into its application layer?",
+                "options": [
+                  "Transport and session",
+                  "Network and transport",
+                  "Session and presentation",
+                  "Physical and data link"
+                ],
+                "answer": 2,
+                "why": "The TCP/IP application layer covers what OSI splits into application, presentation and session."
+              },
+              {
+                "q": "Which statement about the models is NOT correct?",
+                "options": [
+                  "OSI has seven layers",
+                  "TCP/IP is what the Internet actually uses",
+                  "OSI is mainly a teaching reference",
+                  "TCP/IP has a separate presentation layer"
+                ],
+                "answer": 3,
+                "why": "The presentation and session duties sit inside the TCP/IP application layer, not in their own layer."
+              },
+              {
+                "q": "What is it called when each layer adds its own header on the way down?",
+                "options": [
+                  "Encapsulation",
+                  "Multiplexing",
+                  "Switching",
+                  "Fragmentation"
+                ],
+                "answer": 0,
+                "why": "Encapsulation wraps the data at each layer, and de-encapsulation unwraps it at the receiver."
+              },
+              {
+                "q": "The data unit at the transport layer in TCP/IP is called a:",
+                "options": [
+                  "Frame",
+                  "Segment",
+                  "Datagram",
+                  "Bit"
+                ],
+                "answer": 1,
+                "why": "TCP produces segments, IP produces datagrams and the data link layer produces frames."
+              }
+            ],
+            "examTip": "Write the seven OSI layers in order with a one line duty each, then place the four TCP/IP layers beside them.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MI-T04",
@@ -145,7 +323,59 @@
               "kind": "subtopic",
               "definition": "Public switched telephone networks, cable and mobile networks, and enterprise intranets."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The Internet grew out of two research networks. ARPANET began in 1969 for US defence research and introduced packet switching along with the first host protocols. NSFNET followed in the 1980s as an academic backbone, opening the network to universities and later to commercial traffic. Today the Internet is a network of networks running TCP/IP, held together by ISPs, exchange points and standard bodies such as IETF and ICANN. Alongside it sit the telephone network, cable and mobile networks, and the private intranets of companies.",
+            "example": "A student in Chidambaram reaches a server in another country through a chain of ISPs meeting at an exchange point. No single network carries the whole path.",
+            "quiz": [
+              {
+                "q": "Which network introduced packet switching in 1969?",
+                "options": [
+                  "Ethernet",
+                  "NSFNET",
+                  "ARPANET",
+                  "The telephone network"
+                ],
+                "answer": 2,
+                "why": "ARPANET was the US defence research network that first put packet switching to work."
+              },
+              {
+                "q": "What was NSFNET?",
+                "options": [
+                  "A wireless standard",
+                  "An email protocol",
+                  "A commercial ISP",
+                  "A US academic backbone from the 1980s"
+                ],
+                "answer": 3,
+                "why": "NSFNET connected universities and later allowed commercial traffic, which led to today's Internet."
+              },
+              {
+                "q": "Which statement about the Internet is NOT correct?",
+                "options": [
+                  "A single organisation owns the whole of it",
+                  "ISPs and exchange points connect its parts",
+                  "It is a network of networks",
+                  "It runs on TCP/IP"
+                ],
+                "answer": 0,
+                "why": "Nobody owns the Internet; IETF and ICANN coordinate standards and names instead."
+              },
+              {
+                "q": "Which body coordinates Internet standards?",
+                "options": [
+                  "IEEE alone",
+                  "IETF",
+                  "ISO alone",
+                  "ITU alone"
+                ],
+                "answer": 1,
+                "why": "The IETF publishes the request for comments documents that define Internet standards."
+              }
+            ],
+            "examTip": "Give one line each on ARPANET, NSFNET and the Internet, with a year for the first two.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MI-T05",
@@ -189,7 +419,70 @@
               "kind": "subtopic",
               "definition": "Attenuation, distortion and noise degrade the signal and set limits on distance and speed."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The physical layer carries raw bits across a link and defines the voltages, the timings, the data rate and the shape of the connector. Bandwidth is the capacity of the link, data rate is the bits per second achieved and latency is the delay a signal suffers. Transmission may be simplex in one direction only, half duplex alternating, or full duplex both ways at once. Three switching methods exist: circuit switching reserves a path, message switching stores and forwards whole messages, and packet switching forwards small packets. Signals weaken with distance through attenuation, distortion and noise.",
+            "example": "A phone call on the old telephone network reserved a path for the whole conversation. A video call today sends packets that share the link with everyone else's traffic.",
+            "quiz": [
+              {
+                "q": "Which switching method reserves a path for the whole conversation?",
+                "options": [
+                  "Packet switching",
+                  "Message switching",
+                  "Circuit switching",
+                  "Store and forward"
+                ],
+                "answer": 2,
+                "why": "Circuit switching sets up and holds a path, which is how the telephone network worked."
+              },
+              {
+                "q": "Which transmission mode sends in both directions at the same time?",
+                "options": [
+                  "Multiplex",
+                  "Simplex",
+                  "Half duplex",
+                  "Full duplex"
+                ],
+                "answer": 3,
+                "why": "Full duplex carries traffic both ways at once, while half duplex has to take turns."
+              },
+              {
+                "q": "Which statement about the physical layer is NOT correct?",
+                "options": [
+                  "It decides the route a packet takes across the Internet",
+                  "It defines voltages and connectors",
+                  "Bandwidth is the capacity of the link",
+                  "Latency is the delay a signal suffers"
+                ],
+                "answer": 0,
+                "why": "Choosing a route is the network layer's job; the physical layer only moves bits across one link."
+              },
+              {
+                "q": "Which of these is NOT a transmission impairment?",
+                "options": [
+                  "Noise",
+                  "Encapsulation",
+                  "Attenuation",
+                  "Distortion"
+                ],
+                "answer": 1,
+                "why": "Attenuation, distortion and noise degrade the signal, while encapsulation is a layering action."
+              },
+              {
+                "q": "Sharing one medium among several signals by splitting it into frequency bands is called:",
+                "options": [
+                  "Circuit switching",
+                  "Flooding",
+                  "FDM",
+                  "TDM"
+                ],
+                "answer": 2,
+                "why": "Frequency division multiplexing splits by frequency, while time division splits by time slots."
+              }
+            ],
+            "examTip": "List the physical layer duties, define bandwidth and latency, then give the three switching methods in one line each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MI-T06",
@@ -233,7 +526,70 @@
               "kind": "subtopic",
               "definition": "Guided media confine the signal to a cable while unguided media transmit through free space."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Transmission media are the paths a signal travels along, either guided inside a cable or unguided through the air. Twisted pair is two insulated copper wires twisted together; it is cheap and easy to install but picks up interference. Coaxial cable adds a braided shield around the conductor, which raises the bandwidth and blocks noise better. Optical fibre carries light in a glass core, giving very high bandwidth, low attenuation and complete immunity to electrical interference. Radio, microwave, infrared and satellite links are unguided, and each trades coverage against weather, obstacles and delay.",
+            "example": "A hostel floor wired with twisted pair is cheap and quick to install. The link between two campus buildings uses fibre, because it carries more and ignores the electrical noise near the power lines.",
+            "quiz": [
+              {
+                "q": "Which medium carries light in a glass core?",
+                "options": [
+                  "Radio wave",
+                  "Twisted pair",
+                  "Coaxial cable",
+                  "Optical fibre"
+                ],
+                "answer": 3,
+                "why": "Optical fibre uses light, which gives high bandwidth and immunity to electrical interference."
+              },
+              {
+                "q": "Which statement about transmission media is NOT correct?",
+                "options": [
+                  "Fibre suffers badly from electromagnetic interference",
+                  "Satellite links cover wide areas but add delay",
+                  "Twisted pair is cheap and easy to install",
+                  "Coaxial cable has better noise immunity than twisted pair"
+                ],
+                "answer": 0,
+                "why": "Fibre is immune to electromagnetic interference, which is one of its main advantages."
+              },
+              {
+                "q": "Which medium is unguided?",
+                "options": [
+                  "Optical fibre",
+                  "Microwave",
+                  "Twisted pair",
+                  "Coaxial cable"
+                ],
+                "answer": 1,
+                "why": "Guided media confine the signal to a cable, while microwave travels through free space."
+              },
+              {
+                "q": "Satellite links are known for:",
+                "options": [
+                  "Zero cost",
+                  "Very low delay",
+                  "Wide coverage with higher delay",
+                  "Immunity to weather"
+                ],
+                "answer": 2,
+                "why": "The signal travels a long way up and back, which adds delay even though coverage is wide."
+              },
+              {
+                "q": "Why does coaxial cable resist noise better than twisted pair?",
+                "options": [
+                  "It carries light instead of electricity",
+                  "It is always shorter",
+                  "It uses thicker copper",
+                  "It has a braided shield around the conductor"
+                ],
+                "answer": 3,
+                "why": "The shield blocks outside interference, which is what gives coaxial cable its better noise immunity."
+              }
+            ],
+            "examTip": "Draw a table of the media with the columns type, guided or not, bandwidth, distance and one weakness.",
+            "verified": false
+          }
         }
       ]
     },
@@ -271,7 +627,70 @@
               "kind": "subtopic",
               "definition": "Establishing, maintaining and releasing links and identifying the physical addresses of neighbours."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The data link layer takes the raw bit stream of the physical layer and turns it into a reliable link between two neighbours. The first job is framing: marking where one frame starts and the next ends. The methods are a character count, flag bytes with stuffing, or a physical layer coding violation. Error control adds acknowledgements, timers and retransmission so damaged frames are noticed and sent again. Flow control stops a fast sender from drowning a slow receiver. Link management sets up and releases the link, and addressing names the two ends with physical addresses.",
+            "example": "A flag byte marks the start and end of each frame. If that byte appears inside the data, the sender inserts an escape byte, which is called byte stuffing.",
+            "quiz": [
+              {
+                "q": "What is the job of marking where a frame starts and ends called?",
+                "options": [
+                  "Framing",
+                  "Routing",
+                  "Multiplexing",
+                  "Switching"
+                ],
+                "answer": 0,
+                "why": "Framing turns the raw bit stream into units the receiver can recognise and check."
+              },
+              {
+                "q": "What does flow control prevent?",
+                "options": [
+                  "Frames being damaged in transit",
+                  "A fast sender overwhelming a slow receiver",
+                  "The wrong route being chosen",
+                  "Two stations transmitting together"
+                ],
+                "answer": 1,
+                "why": "Flow control matches the sending rate to what the receiver can absorb."
+              },
+              {
+                "q": "Which statement about the data link layer is NOT correct?",
+                "options": [
+                  "Framing can use flag bytes with stuffing",
+                  "Error control uses acknowledgements and timers",
+                  "It chooses the route across the whole Internet",
+                  "It delivers frames between two adjacent nodes"
+                ],
+                "answer": 2,
+                "why": "Routing across networks belongs to the network layer, not to the link between two neighbours."
+              },
+              {
+                "q": "Which technique inserts an escape byte so a flag inside the data is not read as a frame boundary?",
+                "options": [
+                  "Checksumming",
+                  "Piggybacking",
+                  "Bit stuffing",
+                  "Byte stuffing"
+                ],
+                "answer": 3,
+                "why": "Byte stuffing works on characters, while bit stuffing inserts a zero after a run of ones."
+              },
+              {
+                "q": "Which addresses does the data link layer use to identify the two ends of a link?",
+                "options": [
+                  "MAC addresses",
+                  "Domain names",
+                  "IP addresses",
+                  "Port numbers"
+                ],
+                "answer": 0,
+                "why": "Physical or MAC addresses identify devices on one link, and they stay local to that link."
+              }
+            ],
+            "examTip": "Name the four jobs framing, error control, flow control and link management, with one method under each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MII-T02",
@@ -321,7 +740,70 @@
               "kind": "subtopic",
               "definition": "The minimum number of bit changes between valid codewords decides how many errors can be detected or corrected."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A frame can arrive damaged, so extra bits are added to catch the damage. A single bit error flips one bit, while a burst error damages a run of consecutive bits. A parity bit makes the number of ones even or odd, which is cheap but misses two bit errors. Two dimensional parity checks rows and columns, so it can locate and fix a single error. A checksum adds the data words and appends the total; CRC treats the frame as a polynomial and appends a division remainder. Hamming code places check bits at power of two positions so a single error can be corrected.",
+            "example": "With even parity the byte 1010 0001 gets a 0 appended, because it already holds two ones. If one bit flips in transit the parity fails and the frame is discarded.",
+            "quiz": [
+              {
+                "q": "Which method treats the frame as a polynomial and appends the remainder of a division?",
+                "options": [
+                  "Checksum",
+                  "CRC",
+                  "Hamming code",
+                  "Parity check"
+                ],
+                "answer": 1,
+                "why": "CRC divides by a generator polynomial, catching far more error patterns than a checksum."
+              },
+              {
+                "q": "Where does Hamming code place its check bits?",
+                "options": [
+                  "In a separate frame",
+                  "At the end of the frame",
+                  "At power of two positions",
+                  "Before every data byte"
+                ],
+                "answer": 2,
+                "why": "Those positions let the receiver add up the failing checks and point at the bad bit."
+              },
+              {
+                "q": "Which statement about error methods is NOT correct?",
+                "options": [
+                  "Simple parity can miss a two bit error",
+                  "A checksum adds the data words",
+                  "Hamming code can correct a single bit error",
+                  "CRC is weaker than a simple parity check"
+                ],
+                "answer": 3,
+                "why": "CRC is much stronger than parity, which is why Ethernet and disk systems rely on it."
+              },
+              {
+                "q": "What decides how many errors a code can detect or correct?",
+                "options": [
+                  "The minimum Hamming distance between valid codewords",
+                  "The number of parity bits alone",
+                  "The transmission medium",
+                  "The frame length"
+                ],
+                "answer": 0,
+                "why": "A minimum distance of d detects d minus 1 errors and corrects about half that many."
+              },
+              {
+                "q": "An error that damages a run of consecutive bits is called:",
+                "options": [
+                  "A single bit error",
+                  "A burst error",
+                  "A parity error",
+                  "A lost frame"
+                ],
+                "answer": 1,
+                "why": "Burst errors are common on real links, which is why CRC is designed to catch them."
+              }
+            ],
+            "examTip": "List parity, checksum, CRC and Hamming with one line each on what they catch and what they miss.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MII-T03",
@@ -353,7 +835,70 @@
               "kind": "subtopic",
               "definition": "Attaching an acknowledgement to a data frame travelling in the opposite direction to save bandwidth."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The elementary protocols build reliability one step at a time. The unrestricted simplex protocol assumes a perfect channel, so the sender transmits endlessly with no flow control. Stop and wait sends one frame and waits for its acknowledgement before sending the next, which solves flow control at the cost of throughput. For a noisy channel the frames are numbered, and a timeout or a negative acknowledgement triggers a retransmission. Piggybacking saves bandwidth by attaching the acknowledgement to a data frame going the other way.",
+            "example": "Two students passing notes: stop and wait means one waits for a nod before the next note. Piggybacking means the nod rides back on the reply note instead of travelling alone.",
+            "quiz": [
+              {
+                "q": "Which protocol sends one frame and waits for its acknowledgement before the next?",
+                "options": [
+                  "Selective Repeat",
+                  "Unrestricted simplex",
+                  "Stop and wait",
+                  "Go Back N"
+                ],
+                "answer": 2,
+                "why": "Stop and wait keeps one frame outstanding, which is safe but leaves the link idle."
+              },
+              {
+                "q": "What does piggybacking do?",
+                "options": [
+                  "Retransmits a lost frame",
+                  "Numbers the frames",
+                  "Sends two frames at once",
+                  "Attaches an acknowledgement to a data frame going back"
+                ],
+                "answer": 3,
+                "why": "It avoids a separate acknowledgement frame, which saves bandwidth on both directions."
+              },
+              {
+                "q": "Which statement about the elementary protocols is NOT correct?",
+                "options": [
+                  "Piggybacking increases the number of frames on the link",
+                  "The unrestricted simplex protocol assumes a perfect channel",
+                  "Stop and wait solves flow control",
+                  "A noisy channel needs sequence numbers and timers"
+                ],
+                "answer": 0,
+                "why": "Piggybacking reduces the frame count by combining the acknowledgement with outgoing data."
+              },
+              {
+                "q": "Which mechanism tells the sender that a frame was lost on a noisy channel?",
+                "options": [
+                  "A piggyback",
+                  "A timeout",
+                  "A parity bit",
+                  "A routing table"
+                ],
+                "answer": 1,
+                "why": "If no acknowledgement arrives before the timer expires, the sender sends the frame again."
+              },
+              {
+                "q": "What is the main weakness of stop and wait?",
+                "options": [
+                  "It needs no sequence numbers",
+                  "It is too complex to implement",
+                  "The link sits idle while the sender waits",
+                  "It never detects errors"
+                ],
+                "answer": 2,
+                "why": "Only one frame is outstanding, so on a long delay path most of the capacity is wasted."
+              }
+            ],
+            "examTip": "Describe the four protocols as a ladder, saying what each one adds, and end with why piggybacking helps.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MII-T04",
@@ -391,7 +936,70 @@
               "kind": "subtopic",
               "definition": "Larger windows improve utilisation but need more sequence numbers; window size and bandwidth-delay product must match."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Stop and wait wastes a long delay link, so sliding window protocols keep several frames outstanding at once. Each side keeps a window of sequence numbers, and the window slides forward as acknowledgements arrive. A one bit window is really stop and wait with numbered frames. Go Back N lets the receiver discard out of order frames and makes the sender resend the whole window from the lost frame. Selective Repeat buffers the correct frames at the receiver and resends only the missing ones, which is efficient but needs more memory and logic.",
+            "example": "On a satellite link the round trip is long, so a window of one frame wastes almost all the capacity. A window of dozens of frames keeps the pipe full while the acknowledgements travel.",
+            "quiz": [
+              {
+                "q": "What does Go Back N do when a frame is lost?",
+                "options": [
+                  "Waits for the receiver to ask",
+                  "Closes the connection",
+                  "Resends only that frame",
+                  "Resends that frame and every frame sent after it"
+                ],
+                "answer": 3,
+                "why": "The receiver discards anything out of order, so the sender must go back to the lost frame."
+              },
+              {
+                "q": "How does Selective Repeat differ from Go Back N?",
+                "options": [
+                  "It buffers correct frames and resends only the missing ones",
+                  "It uses no sequence numbers",
+                  "It works only on wireless links",
+                  "It never retransmits"
+                ],
+                "answer": 0,
+                "why": "Buffering correct frames avoids resending work that already arrived, but costs more memory."
+              },
+              {
+                "q": "Which statement about sliding windows is NOT correct?",
+                "options": [
+                  "A one bit window behaves like stop and wait",
+                  "The window size can be chosen without regard to the delay",
+                  "The window slides forward as acknowledgements arrive",
+                  "A larger window keeps a long delay link busier"
+                ],
+                "answer": 1,
+                "why": "The window must cover the bandwidth-delay product, or the link runs partly idle."
+              },
+              {
+                "q": "With a window size of 7, how many sequence numbers does Selective Repeat need at least?",
+                "options": [
+                  "7",
+                  "8",
+                  "14",
+                  "16"
+                ],
+                "answer": 2,
+                "why": "Selective Repeat needs at least twice the window size, so 14, to keep numbers unambiguous."
+              },
+              {
+                "q": "Why does a large window improve utilisation?",
+                "options": [
+                  "It removes the need for timers",
+                  "It reduces the error rate",
+                  "It makes each frame smaller",
+                  "It keeps more frames in flight while waiting for acknowledgements"
+                ],
+                "answer": 3,
+                "why": "More frames in flight means the link keeps carrying data instead of waiting idle."
+              }
+            ],
+            "examTip": "Draw the sender window sliding, then contrast Go Back N with Selective Repeat in two lines each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MII-T05",
@@ -423,7 +1031,59 @@
               "kind": "subtopic",
               "definition": "Protocols that seem correct can deadlock or lose frames in rare interleavings, which only formal checking reveals."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A protocol that looks correct in the common cases can still fail in a rare interleaving, so it is checked formally. The finite state machine model draws each side as states and transitions, then builds the combined machine and searches it for deadlock or unspecified states. A Petri net models the flow of tokens, where tokens stand for messages and states. Channels can be modelled as bounded queues, which exposes what happens when a queue overflows or a frame is lost. The point is to find the rare sequence that a test would never hit.",
+            "example": "Two machines may both decide to open a connection at the same moment. Testing may never produce that timing, but a state machine search reaches it and shows what the protocol does there.",
+            "quiz": [
+              {
+                "q": "What does the finite state machine model search for?",
+                "options": [
+                  "Deadlock and unspecified states",
+                  "The cheapest cable",
+                  "The error rate",
+                  "The fastest route"
+                ],
+                "answer": 0,
+                "why": "Reachable states where the protocol has no defined next move are exactly the bugs worth finding."
+              },
+              {
+                "q": "What do tokens represent in a Petri net model of a protocol?",
+                "options": [
+                  "Routers",
+                  "Messages and states",
+                  "Cables",
+                  "Error bits"
+                ],
+                "answer": 1,
+                "why": "Tokens move through places and transitions, modelling how messages and states change."
+              },
+              {
+                "q": "Which statement about protocol verification is NOT correct?",
+                "options": [
+                  "Bounded queue models expose overflow behaviour",
+                  "Petri nets model the flow of messages and states",
+                  "Testing every case by hand is enough for a real protocol",
+                  "It checks rare interleavings that testing may miss"
+                ],
+                "answer": 2,
+                "why": "The number of interleavings grows too fast for hand testing, which is why formal models are used."
+              },
+              {
+                "q": "Why is verification worth the effort?",
+                "options": [
+                  "It removes the need for sequence numbers",
+                  "It is required by the physical layer",
+                  "It makes the protocol faster",
+                  "A rare interleaving can deadlock or lose data in the field"
+                ],
+                "answer": 3,
+                "why": "The failures that matter most are the rare ones that are hardest to reproduce."
+              }
+            ],
+            "examTip": "Name the three models, say what each one exposes, and finish with why testing alone is not enough.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MII-T06",
@@ -467,7 +1127,70 @@
               "kind": "subtopic",
               "definition": "Adaptive tree walk and reservation schemes balance contention and order under varying load."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "When many stations share one channel, something has to decide who may transmit. In ALOHA a station sends whenever it likes and retransmits after a collision, and slotted ALOHA doubles the throughput by forcing transmissions into time slots. CSMA makes a station listen first, with persistent and non persistent variants differing in how they retry. CSMA/CD detects a collision while transmitting and aborts early, which is classic Ethernet. Wireless cannot detect collisions, so CSMA/CA avoids them with backoff and acknowledgements. Collision free protocols such as token passing remove the problem entirely, at the cost of overhead.",
+            "example": "A classroom where everyone talks at once is pure ALOHA. Waiting for silence before speaking is CSMA. Holding a talking stick so only one person speaks is a collision free protocol.",
+            "quiz": [
+              {
+                "q": "What does slotted ALOHA do differently from pure ALOHA?",
+                "options": [
+                  "It forces transmissions to begin at a time slot boundary",
+                  "It detects collisions",
+                  "It reserves the channel",
+                  "It uses a token"
+                ],
+                "answer": 0,
+                "why": "Aligning to slots halves the vulnerable period and roughly doubles the throughput."
+              },
+              {
+                "q": "Which protocol underlies classic wired Ethernet?",
+                "options": [
+                  "CSMA/CA",
+                  "CSMA/CD",
+                  "Token passing",
+                  "Slotted ALOHA"
+                ],
+                "answer": 1,
+                "why": "Stations detect a collision while still transmitting and stop early to save channel time."
+              },
+              {
+                "q": "Why can wireless networks not use collision detection?",
+                "options": [
+                  "They use tokens instead",
+                  "They are too slow",
+                  "A station cannot hear its own transmission well enough while sending",
+                  "They have no addresses"
+                ],
+                "answer": 2,
+                "why": "The incoming signal is far weaker than what is being sent, so CSMA/CA avoids collisions instead."
+              },
+              {
+                "q": "Which statement about multiple access is NOT correct?",
+                "options": [
+                  "ALOHA retransmits after a collision",
+                  "CSMA listens before transmitting",
+                  "Token passing removes collisions entirely",
+                  "CSMA/CD is used in wireless LANs"
+                ],
+                "answer": 3,
+                "why": "Wireless LANs use CSMA/CA, because collision detection is impossible on a radio link."
+              },
+              {
+                "q": "What is the approximate maximum throughput of pure ALOHA?",
+                "options": [
+                  "18 percent",
+                  "37 percent",
+                  "50 percent",
+                  "100 percent"
+                ],
+                "answer": 0,
+                "why": "Pure ALOHA peaks at 1 over 2e, about 18 percent, and slotted ALOHA doubles that to 37 percent."
+              }
+            ],
+            "examTip": "List ALOHA, slotted ALOHA, CSMA, CSMA/CD and CSMA/CA with one line each, and state the collision rule.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MII-T07",
@@ -505,7 +1228,70 @@
               "kind": "subtopic",
               "definition": "Link layer devices that forward frames by MAC address and can separate broadcast domains."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The IEEE 802 family holds the standards for local and metropolitan networks. Ethernet, numbered 802.3, uses CSMA/CD with MAC addresses and is the dominant wired LAN technology, now mostly switched and full duplex. Token bus and token ring, numbered 802.4 and 802.5, passed a token for deterministic access and are now obsolete but still examined. Wireless LANs are 802.11, using CSMA/CA with optional RTS/CTS handshaking, in variants such as b, g, n, ac and ax. The 802.1 group covers bridging and VLAN tagging, and 802.2 covers the logical link control sublayer.",
+            "example": "A campus lab runs 802.3 Ethernet to the wall sockets and 802.11ac wireless for laptops. Its switches use VLAN tagging under 802.1Q to keep staff and student traffic apart.",
+            "quiz": [
+              {
+                "q": "Which standard defines Ethernet?",
+                "options": [
+                  "IEEE 802.1",
+                  "IEEE 802.3",
+                  "IEEE 802.5",
+                  "IEEE 802.11"
+                ],
+                "answer": 1,
+                "why": "802.3 is Ethernet, which uses CSMA/CD and MAC addressing on wired LANs."
+              },
+              {
+                "q": "Which standard covers wireless LANs?",
+                "options": [
+                  "IEEE 802.3",
+                  "IEEE 802.5",
+                  "IEEE 802.11",
+                  "IEEE 802.2"
+                ],
+                "answer": 2,
+                "why": "The 802.11 family defines wireless LANs, using CSMA/CA rather than collision detection."
+              },
+              {
+                "q": "Which statement about the 802 family is NOT correct?",
+                "options": [
+                  "802.11 uses CSMA/CA",
+                  "Token ring is numbered 802.5",
+                  "802.1 covers bridging and VLAN tagging",
+                  "802.3 uses token passing"
+                ],
+                "answer": 3,
+                "why": "Ethernet uses CSMA/CD; it was the token networks 802.4 and 802.5 that passed a token."
+              },
+              {
+                "q": "What does a switch use to decide where to forward a frame?",
+                "options": [
+                  "The MAC address",
+                  "The port number",
+                  "The domain name",
+                  "The IP address"
+                ],
+                "answer": 0,
+                "why": "A switch works at the data link layer and forwards by the MAC address it has learned."
+              },
+              {
+                "q": "What is the purpose of a VLAN?",
+                "options": [
+                  "To increase cable length",
+                  "To separate broadcast domains on one physical network",
+                  "To raise the data rate",
+                  "To replace IP addresses"
+                ],
+                "answer": 1,
+                "why": "A VLAN groups ports logically, so broadcasts stay inside the group even on shared hardware."
+              }
+            ],
+            "examTip": "List 802.3, 802.4, 802.5 and 802.11 with the access method each uses, then add a line on bridges and VLANs.",
+            "verified": false
+          }
         }
       ]
     },
@@ -549,7 +1335,59 @@
               "kind": "subtopic",
               "definition": "When offered load exceeds capacity, delay and loss grow, so the layer must manage congestion."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The network layer carries a packet from the source host to the destination host, possibly across many networks. A router stores each incoming packet, reads its header and forwards it on the chosen outgoing link. Two services can be offered upwards. A datagram service treats each packet on its own, while a virtual circuit service sets up a path first. Routing is the work of building the tables, and forwarding is the per packet decision made from them. Internetworking has to cope with different frame sizes, different addressing and different quality of service. When the offered load passes capacity, the layer must also manage congestion.",
+            "example": "A packet from a hostel laptop to a server abroad passes through a dozen routers. Each one reads only the destination address and picks the next hop.",
+            "quiz": [
+              {
+                "q": "What is the difference between routing and forwarding?",
+                "options": [
+                  "Routing happens inside one host",
+                  "They are the same thing",
+                  "Routing builds the tables, forwarding uses them per packet",
+                  "Forwarding is done by the application"
+                ],
+                "answer": 2,
+                "why": "Routing is the slower global computation, and forwarding is the fast local lookup per packet."
+              },
+              {
+                "q": "Which service sets up a path before any data is sent?",
+                "options": [
+                  "Connectionless service",
+                  "Best effort service",
+                  "Datagram service",
+                  "Virtual circuit service"
+                ],
+                "answer": 3,
+                "why": "A virtual circuit reserves a path first, while a datagram service sends each packet alone."
+              },
+              {
+                "q": "Which statement about the network layer is NOT correct?",
+                "options": [
+                  "It guarantees that no packet is ever lost",
+                  "Routers store and forward packets",
+                  "It delivers packets across many networks",
+                  "It handles congestion when load exceeds capacity"
+                ],
+                "answer": 0,
+                "why": "The Internet datagram service is best effort, so packets can be delayed, dropped or reordered."
+              },
+              {
+                "q": "Which is NOT an internetworking challenge listed in the syllabus?",
+                "options": [
+                  "Different quality of service",
+                  "The colour of the cable",
+                  "Different frame sizes",
+                  "Different addressing schemes"
+                ],
+                "answer": 1,
+                "why": "The real challenges are differences in frame size, addressing and quality of service."
+              }
+            ],
+            "examTip": "State store and forward, contrast datagram with virtual circuit, then separate routing from forwarding in one line.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MIII-T02",
@@ -593,7 +1431,70 @@
               "kind": "subtopic",
               "definition": "Areas reduce table size, flooding and spanning trees deliver broadcast, and multicast trees serve group traffic."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Routing algorithms fall into two families. Distance vector routing has each router tell its neighbours its distance to every destination, as RIP does. It is simple but converges slowly and can count to infinity. Link state routing gives every router the full topology through link state packets, then runs Dijkstra's shortest path algorithm, as OSPF does. Path vector routing, used by BGP, exchanges whole paths, which detects loops and lets policy be applied between autonomous systems. Fixed routing uses static tables, and flooding sends on every link but the incoming one.",
+            "example": "A college with three buildings can use fixed routes written by hand. A national backbone cannot, because a link failure must be noticed and routed around within seconds.",
+            "quiz": [
+              {
+                "q": "Which algorithm does OSPF use to compute paths?",
+                "options": [
+                  "Token passing",
+                  "Bellman Ford",
+                  "Dijkstra shortest path",
+                  "Flooding"
+                ],
+                "answer": 2,
+                "why": "Every router learns the full topology and then runs Dijkstra to build a least cost tree."
+              },
+              {
+                "q": "Which problem is distance vector routing prone to?",
+                "options": [
+                  "Collision",
+                  "Fragmentation",
+                  "Deadlock",
+                  "Count to infinity"
+                ],
+                "answer": 3,
+                "why": "Bad news travels slowly, so routers can keep raising a cost towards infinity after a link fails."
+              },
+              {
+                "q": "Which statement about routing is NOT correct?",
+                "options": [
+                  "Flooding is the most efficient way to route a large network",
+                  "RIP is a distance vector protocol",
+                  "OSPF is a link state protocol",
+                  "BGP exchanges full path information"
+                ],
+                "answer": 0,
+                "why": "Flooding sends copies everywhere, which wastes bandwidth badly outside small special cases."
+              },
+              {
+                "q": "Which protocol routes between autonomous systems?",
+                "options": [
+                  "OSPF",
+                  "BGP",
+                  "ARP",
+                  "RIP"
+                ],
+                "answer": 1,
+                "why": "BGP is the inter domain protocol, and it carries policy along with reachability."
+              },
+              {
+                "q": "Which method sends every packet out on all links except the one it arrived on?",
+                "options": [
+                  "Multicast routing",
+                  "Fixed routing",
+                  "Flooding",
+                  "Hierarchical routing"
+                ],
+                "answer": 2,
+                "why": "Flooding guarantees delivery if a path exists, but produces many duplicate copies."
+              }
+            ],
+            "examTip": "Contrast distance vector and link state in a table: what is exchanged, convergence speed, one protocol each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MIII-T03",
@@ -631,7 +1532,59 @@
               "kind": "subtopic",
               "definition": "Flow control protects the receiver while congestion control protects the network itself."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Congestion happens when more traffic arrives than the network can carry, and the effect is worse than the cause. Queues build, delay grows, packets are dropped, and beyond a point the throughput actually falls as the load rises. Leaky bucket and token bucket shape the traffic: the first releases at a fixed rate, the second allows bursts up to the saved credits. A congested router can send a choke packet, or mark packets, to ask the sender to slow down. Under real pressure the network sheds load by dropping packets deliberately, or refuses new flows by admission control.",
+            "example": "A hostel link shared by three hundred students slows to a crawl during exam results. The router queue is full, so packets wait and time out, and the retries make it worse.",
+            "quiz": [
+              {
+                "q": "What happens to throughput once congestion passes a certain point?",
+                "options": [
+                  "It becomes negative",
+                  "It keeps rising",
+                  "It stays flat",
+                  "It falls as load keeps rising"
+                ],
+                "answer": 3,
+                "why": "Retransmissions and timeouts waste capacity, so more offered load delivers less useful work."
+              },
+              {
+                "q": "How does a token bucket differ from a leaky bucket?",
+                "options": [
+                  "It allows bursts up to the saved credits",
+                  "It is slower",
+                  "It drops every packet",
+                  "It only works on wireless"
+                ],
+                "answer": 0,
+                "why": "The leaky bucket forces a constant output rate, while the token bucket permits a saved burst."
+              },
+              {
+                "q": "Which statement about congestion control is NOT correct?",
+                "options": [
+                  "A choke packet asks the sender to slow down",
+                  "Congestion control protects the receiver from being overwhelmed",
+                  "Load shedding drops packets deliberately under pressure",
+                  "Admission control refuses new flows"
+                ],
+                "answer": 1,
+                "why": "Protecting the receiver is flow control; congestion control protects the network itself."
+              },
+              {
+                "q": "Which technique lets a congested router warn the sender without a separate packet?",
+                "options": [
+                  "Flooding",
+                  "Load shedding",
+                  "Explicit signalling by marking packets",
+                  "Admission control"
+                ],
+                "answer": 2,
+                "why": "Marking bits in packets already flowing avoids adding more traffic to a congested link."
+              }
+            ],
+            "examTip": "Describe the collapse curve in one line, then give the four responses: shaping, signalling, shedding, admission control.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MIII-T04",
@@ -687,7 +1640,70 @@
               "kind": "subtopic",
               "definition": "RIP inside small networks, OSPF inside large ones and BGP between autonomous systems."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The Internet layer holds the whole Internet together with one addressing scheme and one packet format. An IPv4 address was historically split into classes A to E with a network part and a host part, but classless addressing replaced that. Subnetting borrows bits from the host part to make smaller networks, and CIDR aggregates prefixes so the routing tables stay small. Network address translation lets many private addresses share one public address by also using port numbers. ICMP reports errors, ARP resolves an IP address to a MAC address, and DHCP hands out addresses automatically.",
+            "example": "A home router gives every device an address like 192.168.1.10 and shows one public address to the Internet. That translation is NAT, and it is why IPv4 has lasted as long as it has.",
+            "quiz": [
+              {
+                "q": "What does ARP do?",
+                "options": [
+                  "Reports errors",
+                  "Routes between autonomous systems",
+                  "Assigns IP addresses automatically",
+                  "Resolves an IP address to a MAC address"
+                ],
+                "answer": 3,
+                "why": "ARP finds the hardware address for a known IP address on the same link."
+              },
+              {
+                "q": "What problem does CIDR solve?",
+                "options": [
+                  "The growth of routing tables by aggregating prefixes",
+                  "Collisions on a LAN",
+                  "Encryption of packets",
+                  "Address shortage inside a home"
+                ],
+                "answer": 0,
+                "why": "Aggregating prefixes means one table entry can stand for many networks."
+              },
+              {
+                "q": "Which statement about IP is NOT correct?",
+                "options": [
+                  "IPv4 addresses were historically grouped into classes",
+                  "DHCP is used to resolve IP addresses to MAC addresses",
+                  "NAT lets many private addresses share one public address",
+                  "IPv6 uses 128 bit addresses"
+                ],
+                "answer": 1,
+                "why": "Resolving addresses is ARP's job; DHCP assigns a configuration to a host automatically."
+              },
+              {
+                "q": "How many bits does an IPv6 address use?",
+                "options": [
+                  "32",
+                  "64",
+                  "128",
+                  "256"
+                ],
+                "answer": 2,
+                "why": "IPv6 moved from 32 to 128 bits, which removes the address shortage entirely."
+              },
+              {
+                "q": "Which protocol reports errors and carries the echo used by ping?",
+                "options": [
+                  "BGP",
+                  "ARP",
+                  "DHCP",
+                  "ICMP"
+                ],
+                "answer": 3,
+                "why": "ICMP carries error reports and the echo request and reply that ping uses."
+              }
+            ],
+            "examTip": "Write the IPv4 header fields as a list, then contrast subnetting, CIDR and NAT in one line each.",
+            "verified": false
+          }
         }
       ]
     },
@@ -725,7 +1741,70 @@
               "kind": "subtopic",
               "definition": "socket, bind, listen, accept, connect, send, recv and close are the standard programming calls."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The transport layer carries data between two processes, not between two machines. It offers reliable or unreliable delivery, connection management, flow control and the multiplexing of several conversations over one network link. The service is described by primitives: LISTEN, CONNECT, ACCEPT, SEND, RECEIVE, DISCONNECT and CLOSE. A socket is an IP address together with a port number, and it names one end of a conversation. The Berkeley sockets API turns those ideas into calls such as socket, bind, listen, accept, connect, send, recv and close.",
+            "example": "A web server listens on port 80 while a mail server on the same machine listens on port 25. One IP address, many services, kept apart by the port numbers.",
+            "quiz": [
+              {
+                "q": "What does a socket combine?",
+                "options": [
+                  "An IP address and a port number",
+                  "A port and a protocol name",
+                  "A domain name and a path",
+                  "A MAC address and an IP address"
+                ],
+                "answer": 0,
+                "why": "The pair names one endpoint, and a connection is named by the two sockets at its ends."
+              },
+              {
+                "q": "Which primitive does a server call first to wait for incoming connections?",
+                "options": [
+                  "CONNECT",
+                  "LISTEN",
+                  "SEND",
+                  "CLOSE"
+                ],
+                "answer": 1,
+                "why": "LISTEN puts the server into a state where it can accept connection requests."
+              },
+              {
+                "q": "Which statement about the transport layer is NOT correct?",
+                "options": [
+                  "It can offer reliable or unreliable delivery",
+                  "Ports let several conversations share one host",
+                  "It forwards packets between routers",
+                  "It communicates between processes, not machines"
+                ],
+                "answer": 2,
+                "why": "Forwarding between routers is the network layer's job; transport runs end to end between hosts."
+              },
+              {
+                "q": "Which of these is NOT a Berkeley sockets call?",
+                "options": [
+                  "bind",
+                  "listen",
+                  "accept",
+                  "route"
+                ],
+                "answer": 3,
+                "why": "Routing is not part of the socket API, whose calls include bind, listen, accept, connect and recv."
+              },
+              {
+                "q": "What is the well known port for HTTP?",
+                "options": [
+                  "80",
+                  "443",
+                  "21",
+                  "25"
+                ],
+                "answer": 0,
+                "why": "Port 80 is HTTP, 443 is HTTPS, 25 is SMTP and 21 is the FTP control connection."
+              }
+            ],
+            "examTip": "List the service primitives in the order a connection uses them, then define a socket with an example port.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MIV-T02",
@@ -769,7 +1848,70 @@
               "kind": "subtopic",
               "definition": "Retransmission timers must be set carefully, and a crashed host must not break later connections."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "A transport protocol has to solve a fixed list of problems. Addressing uses ports, and a connection identifier keeps two conversations between the same hosts apart. Establishing a connection normally takes a three way handshake, or four when both sides open at once. Releasing one needs care, because if both sides close together, data can be lost, so a two way or four way release is used. Flow control buffers data at the receiver and slides a window. Retransmission timers must be set from measured round trips, and a host that crashes must not corrupt later connections.",
+            "example": "Two friends ending a call both say goodbye and wait for the other to finish. That is a two way release; hanging up the moment you are finished would cut off the last sentence.",
+            "quiz": [
+              {
+                "q": "How many messages does the usual three way handshake use?",
+                "options": [
+                  "Two",
+                  "Three",
+                  "Four",
+                  "One"
+                ],
+                "answer": 1,
+                "why": "SYN, then SYN ACK, then ACK, which sets the sequence numbers on both sides."
+              },
+              {
+                "q": "Why is connection release harder than it looks?",
+                "options": [
+                  "The window may overflow",
+                  "The cable may break",
+                  "Both sides may close at once and lose data",
+                  "Ports may run out"
+                ],
+                "answer": 2,
+                "why": "Abrupt release can discard data still in flight, so the two sides confirm with each other."
+              },
+              {
+                "q": "Which statement about transport elements is NOT correct?",
+                "options": [
+                  "Ports identify the process at each end",
+                  "A connection identifier separates simultaneous conversations",
+                  "Timers should be set from measured round trips",
+                  "Multiplexing means one process may use only one connection"
+                ],
+                "answer": 3,
+                "why": "Multiplexing lets many processes share one network service, which is the opposite of that."
+              },
+              {
+                "q": "What happens if a retransmission timer is set too short?",
+                "options": [
+                  "Packets that were only delayed get retransmitted, wasting capacity",
+                  "The window stops sliding",
+                  "The port number changes",
+                  "Data is never sent"
+                ],
+                "answer": 0,
+                "why": "A premature timeout causes needless retransmission, adding load to an already slow path."
+              },
+              {
+                "q": "What should a host do after a crash, to stay safe?",
+                "options": [
+                  "Reuse old connection identifiers at once",
+                  "Wait out the maximum packet lifetime before reusing identifiers",
+                  "Ignore all incoming data",
+                  "Close every port permanently"
+                ],
+                "answer": 1,
+                "why": "Waiting stops an old delayed packet from being accepted as part of a new connection."
+              }
+            ],
+            "examTip": "Walk through establishment, transfer and release in order, and add the timer rule at the end.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MIV-T03",
@@ -825,7 +1967,70 @@
               "kind": "subtopic",
               "definition": "UDP is fast, simple and used for streaming, DNS and games; TCP is reliable and used for web, mail and file transfer."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The Internet offers two transport protocols. UDP wraps the data in an eight byte header with source port, destination port, length and checksum, and offers nothing more; there is no connection. TCP is the opposite: connection oriented, ordered and reliable, with sequence numbers, a sliding window and congestion control. Its header carries the ports, the sequence and acknowledgement numbers, the flags, the window size and a checksum. TCP sets up with a three way handshake, then grows its rate by slow start and backs off after loss.",
+            "example": "A cricket live score arrives over UDP, because a lost update matters less than a pause. Downloading a question paper uses TCP, because every byte has to arrive.",
+            "quiz": [
+              {
+                "q": "How large is the UDP header?",
+                "options": [
+                  "32 bytes",
+                  "4 bytes",
+                  "8 bytes",
+                  "20 bytes"
+                ],
+                "answer": 2,
+                "why": "Source port, destination port, length and checksum make eight bytes in all."
+              },
+              {
+                "q": "Which protocol is connection oriented and reliable?",
+                "options": [
+                  "ICMP",
+                  "ARP",
+                  "UDP",
+                  "TCP"
+                ],
+                "answer": 3,
+                "why": "TCP numbers the bytes, acknowledges them and retransmits whatever is missing."
+              },
+              {
+                "q": "Which statement about UDP and TCP is NOT correct?",
+                "options": [
+                  "TCP always delivers data faster than UDP",
+                  "UDP has no connection setup",
+                  "TCP orders the data it delivers",
+                  "UDP is used for DNS and streaming"
+                ],
+                "answer": 0,
+                "why": "Reliability costs setup and retransmission time, which is why streaming often prefers UDP."
+              },
+              {
+                "q": "What does the receiver advertise to control the sender's rate?",
+                "options": [
+                  "A sequence number",
+                  "A window size",
+                  "A port number",
+                  "A checksum"
+                ],
+                "answer": 1,
+                "why": "The advertised window says how much data may be outstanding before an acknowledgement comes."
+              },
+              {
+                "q": "Which TCP mechanism grows the sending rate gradually after a connection starts?",
+                "options": [
+                  "Fast recovery",
+                  "Keep alive",
+                  "Slow start",
+                  "Fast retransmit"
+                ],
+                "answer": 2,
+                "why": "Slow start begins small and grows the window until loss or a threshold is reached."
+              }
+            ],
+            "examTip": "Compare UDP and TCP in a table: header size, connection, reliability, ordering, one typical use each.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MIV-T04",
@@ -863,7 +2068,70 @@
               "kind": "subtopic",
               "definition": "Delay sensitive applications such as voice need bounded latency and jitter, which TCP does not guarantee."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Transport performance comes down to how much data can be in flight. The bandwidth-delay product of a link tells you that, and the window must be at least that large or the link runs idle. Actual throughput is then limited by the window, the round trip time and any congestion on the way. Round trip time and its variation, called jitter, are measured to set a safe retransmission timeout. Delayed acknowledgements save packets but can slow a connection, and duplicate acknowledgements are the signal TCP uses to spot loss early. Voice and video need bounded delay, which TCP does not promise.",
+            "example": "A 100 Mbps link with a 100 ms round trip holds about 1.25 MB in flight. A window smaller than that leaves the link partly empty, whatever the advertised speed says.",
+            "quiz": [
+              {
+                "q": "What is the bandwidth-delay product used for?",
+                "options": [
+                  "Setting the port number",
+                  "Counting lost packets",
+                  "Choosing the cable type",
+                  "Sizing the window so the link stays full"
+                ],
+                "answer": 3,
+                "why": "It is the amount of data in flight, so a smaller window means the link waits idle."
+              },
+              {
+                "q": "What is jitter?",
+                "options": [
+                  "The variation in delay from packet to packet",
+                  "The number of lost packets",
+                  "The size of the window",
+                  "The average delay"
+                ],
+                "answer": 0,
+                "why": "Steady delay is tolerable for voice, but variation forces a large buffer at the receiver."
+              },
+              {
+                "q": "Which statement about performance is NOT correct?",
+                "options": [
+                  "Jitter is the variation in delay",
+                  "TCP guarantees a bounded delay for voice calls",
+                  "Duplicate acknowledgements can signal a lost segment",
+                  "Throughput depends on window size and round trip time"
+                ],
+                "answer": 1,
+                "why": "TCP trades delay for reliability, so voice quality needs other arrangements."
+              },
+              {
+                "q": "Why does a receiver sometimes delay an acknowledgement?",
+                "options": [
+                  "To force a retransmission",
+                  "To slow the sender down deliberately",
+                  "To combine it with outgoing data and save a packet",
+                  "Because the timer is broken"
+                ],
+                "answer": 2,
+                "why": "Delaying briefly lets the acknowledgement ride along with a reply, cutting the packet count."
+              },
+              {
+                "q": "If the window is too small for the bandwidth-delay product, what happens?",
+                "options": [
+                  "The round trip time falls",
+                  "The connection resets",
+                  "Packets are dropped",
+                  "The link is under-used and throughput stays low"
+                ],
+                "answer": 3,
+                "why": "The sender stops while waiting for an acknowledgement, so the path carries less than it could."
+              }
+            ],
+            "examTip": "Write the bandwidth-delay product with a worked example, then state what limits throughput and why voice needs QoS.",
+            "verified": false
+          }
         }
       ]
     },
@@ -895,7 +2163,59 @@
               "kind": "subtopic",
               "definition": "Each service defines a message format and sequence of exchanges, exposed to programmers through an API."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The application layer holds the services people actually use: the web, email, file transfer and the rest. Applications follow either the client server model, where clients ask a server, or the peer to peer model, where equal machines share the work. Every service needs a way to name what it is talking about, which is why URLs, domain names and port numbers exist. Each application protocol defines the message formats and the order of the exchanges. Programmers reach all of it through an API rather than writing the protocol by hand.",
+            "example": "Typing a URL names three things at once: the host by its domain name, the service by the port, and the resource by the path. The browser then speaks HTTP to fetch it.",
+            "quiz": [
+              {
+                "q": "Which two models do applications follow?",
+                "options": [
+                  "Client server and peer to peer",
+                  "Simplex and duplex",
+                  "Circuit and packet",
+                  "Datagram and virtual circuit"
+                ],
+                "answer": 0,
+                "why": "Either a server answers requests, or equal peers share the work among themselves."
+              },
+              {
+                "q": "What does a URL name, besides the host?",
+                "options": [
+                  "Only the file name",
+                  "The service through the port and the resource through the path",
+                  "The cable type",
+                  "The MAC address"
+                ],
+                "answer": 1,
+                "why": "Scheme, host, port, path, query and fragment together locate one resource."
+              },
+              {
+                "q": "Which statement about the application layer is NOT correct?",
+                "options": [
+                  "An application protocol defines message formats",
+                  "An API hides the protocol details from the programmer",
+                  "It moves bits across a single cable",
+                  "It provides web, mail and file transfer"
+                ],
+                "answer": 2,
+                "why": "Moving bits on one link is the physical layer's job, several layers below this one."
+              },
+              {
+                "q": "Why does an application need a port number?",
+                "options": [
+                  "To choose the cable",
+                  "To encrypt the data",
+                  "To set the data rate",
+                  "To name the service on the host"
+                ],
+                "answer": 3,
+                "why": "One host runs many services, and the port picks which one a message is meant for."
+              }
+            ],
+            "examTip": "Name the three design issues naming, model and protocol, and give one example of each from the web.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MV-T02",
@@ -933,7 +2253,70 @@
               "kind": "subtopic",
               "definition": "Caching, TTL values and threats such as cache poisoning, addressed by DNSSEC."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "DNS turns names people can remember into addresses machines can route to. Its name space is a tree: the root at the top, then top level domains, then second level domains, then individual hosts. Root servers point to top level domain servers, which point to authoritative servers, and a local resolver asks on the user's behalf. Resolution is either recursive, where the server does all the work, or iterative, where it returns the next server to ask. Answers are stored as resource records, and each carries a time to live so caches expire.",
+            "example": "Typing a college website name makes the resolver ask a root server, then the domain server, then the college's own server. The answer is cached, so a second visit is instant.",
+            "quiz": [
+              {
+                "q": "Which record holds the IPv4 address of a name?",
+                "options": [
+                  "A",
+                  "CNAME",
+                  "MX",
+                  "NS"
+                ],
+                "answer": 0,
+                "why": "An A record gives the IPv4 address, and an AAAA record gives the IPv6 one."
+              },
+              {
+                "q": "What does a CNAME record do?",
+                "options": [
+                  "Names the mail server",
+                  "Gives an alias that points at another name",
+                  "Holds the text of the domain",
+                  "Lists the name servers"
+                ],
+                "answer": 1,
+                "why": "A canonical name record lets one name act as an alias for another."
+              },
+              {
+                "q": "Which statement about DNS is NOT correct?",
+                "options": [
+                  "Resource records carry a time to live",
+                  "The name space is a tree with a root at the top",
+                  "DNS is a single central database",
+                  "Resolution may be recursive or iterative"
+                ],
+                "answer": 2,
+                "why": "DNS is a distributed hierarchy, which is exactly what lets it scale to the whole Internet."
+              },
+              {
+                "q": "Which record tells mail where to go for a domain?",
+                "options": [
+                  "PTR record",
+                  "SOA record",
+                  "A record",
+                  "MX record"
+                ],
+                "answer": 3,
+                "why": "The mail exchanger record names the server that accepts mail for that domain."
+              },
+              {
+                "q": "What threat does DNSSEC address?",
+                "options": [
+                  "Cache poisoning, by signing the answers",
+                  "Cable failure",
+                  "Address shortage",
+                  "Slow resolution"
+                ],
+                "answer": 0,
+                "why": "Signed records let a resolver check that an answer came from the zone that owns it."
+              }
+            ],
+            "examTip": "Draw the name space tree, list the server types, then name four record types and what each holds.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MV-T03",
@@ -971,7 +2354,70 @@
               "kind": "subtopic",
               "definition": "STARTTLS, SPF, DKIM and DMARC reduce spoofing and eavesdropping."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Email is a store and forward service rather than a direct conversation. User agents let people compose and read mail, while mail servers transfer it and hold it in mailboxes. SMTP is the push protocol on port 25 that sends a message from one server to the next. At the other end, POP3 downloads messages and usually deletes them from the server, while IMAP keeps them there and syncs folders across devices. A message has RFC 822 headers such as From, To and Subject, and MIME extends that to attachments and other character sets.",
+            "example": "Reading mail on a phone and then on a laptop shows the same folders when IMAP is used. With POP3 the messages would already have been downloaded to whichever device got there first.",
+            "quiz": [
+              {
+                "q": "Which protocol pushes mail from one server to the next?",
+                "options": [
+                  "IMAP",
+                  "SMTP",
+                  "HTTP",
+                  "POP3"
+                ],
+                "answer": 1,
+                "why": "SMTP is the push protocol used to send mail and to relay it between servers."
+              },
+              {
+                "q": "Which protocol keeps messages on the server and syncs folders across devices?",
+                "options": [
+                  "FTP",
+                  "POP3",
+                  "IMAP",
+                  "SMTP"
+                ],
+                "answer": 2,
+                "why": "IMAP leaves the mail on the server, so several devices see the same state."
+              },
+              {
+                "q": "Which statement about email is NOT correct?",
+                "options": [
+                  "SMTP uses port 25",
+                  "MIME allows attachments",
+                  "POP3 downloads and usually deletes mail from the server",
+                  "IMAP is used to send mail between servers"
+                ],
+                "answer": 3,
+                "why": "Sending between servers is SMTP; IMAP only retrieves and manages mail at the mailbox end."
+              },
+              {
+                "q": "Which of these is a mail security mechanism?",
+                "options": [
+                  "DKIM",
+                  "ARP",
+                  "NAT",
+                  "CRC"
+                ],
+                "answer": 0,
+                "why": "DKIM signs the message so the receiver can check the domain and that the content was not altered."
+              },
+              {
+                "q": "What does MIME add to email?",
+                "options": [
+                  "Faster delivery",
+                  "Attachments, images and other character sets",
+                  "Encryption by default",
+                  "Routing between servers"
+                ],
+                "answer": 1,
+                "why": "MIME extends the plain text format so binary and non ASCII content can travel as mail."
+              }
+            ],
+            "examTip": "Draw the path user agent, sending server, receiving server, user agent, and name the protocol on each hop.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MV-T04",
@@ -1021,7 +2467,70 @@
               "kind": "subtopic",
               "definition": "AJAX, REST APIs and single page applications changed the web from static pages to interactive programs."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "The web is a set of hyperlinked documents fetched with HTTP and named by URLs. A URL carries the scheme, host, port, path, query and fragment, so a browser knows exactly what to ask for. HTTP is a text request response protocol, and it is stateless, so cookies or tokens carry any state a session needs. The methods GET, POST, PUT, DELETE, HEAD and OPTIONS say what the client intends, and the response carries a status code. Codes run 1xx informational, 2xx success, 3xx redirection, 4xx client error and 5xx server error.",
+            "example": "Loading a results page sends a GET to the server. Submitting the exam form sends a POST, because the data changes something on the server rather than only reading it.",
+            "quiz": [
+              {
+                "q": "Which status code class means the client made a mistake?",
+                "options": [
+                  "2xx",
+                  "3xx",
+                  "4xx",
+                  "5xx"
+                ],
+                "answer": 2,
+                "why": "4xx means the request was wrong, as with 404 for a page that does not exist."
+              },
+              {
+                "q": "Which method should submit data that changes something on the server?",
+                "options": [
+                  "HEAD",
+                  "OPTIONS",
+                  "GET",
+                  "POST"
+                ],
+                "answer": 3,
+                "why": "GET is for reading, while POST carries data that creates or changes a resource."
+              },
+              {
+                "q": "Which statement about the web is NOT correct?",
+                "options": [
+                  "A 5xx code means the request succeeded",
+                  "HTTP is stateless, so cookies carry session state",
+                  "A URL names the scheme, host, path and more",
+                  "A proxy can cache responses to speed up delivery"
+                ],
+                "answer": 0,
+                "why": "5xx means the server failed; success is the 2xx family."
+              },
+              {
+                "q": "Why does HTTP use cookies?",
+                "options": [
+                  "To make pages load faster",
+                  "To carry state across a stateless protocol",
+                  "To encrypt the connection",
+                  "To name the server"
+                ],
+                "answer": 1,
+                "why": "Each request stands alone in HTTP, so the cookie is what ties them into one session."
+              },
+              {
+                "q": "What does a persistent connection do?",
+                "options": [
+                  "Encrypts every request",
+                  "Names the server",
+                  "Keeps the TCP connection open for several requests",
+                  "Stores pages forever"
+                ],
+                "answer": 2,
+                "why": "Reusing one connection removes the handshake cost for every object on a page."
+              }
+            ],
+            "examTip": "Write the six URL parts, the main methods and the five status classes, each with one example.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MV-T05",
@@ -1053,7 +2562,70 @@
               "kind": "subtopic",
               "definition": "Managed devices store data in MIBs and agents report to a manager, with traps for events."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Apart from the web and email, the application layer carries several older but still common services. FTP moves files and uses two connections: a control connection on port 21 that stays open, and a separate data connection for each transfer. Telnet gives a remote login but sends everything, including passwords, in the clear, which is why SSH replaced it. SSH encrypts the session and can tunnel other traffic through it. DHCP leases an IP configuration automatically, LDAP holds directory information, and SNMP lets a manager watch and configure network devices.",
+            "example": "A laptop joins the hostel network and gets an address, a mask and a gateway without anyone typing them. That is DHCP leasing a configuration for a few hours.",
+            "quiz": [
+              {
+                "q": "Which port does FTP use for its control connection?",
+                "options": [
+                  "22",
+                  "25",
+                  "20",
+                  "21"
+                ],
+                "answer": 3,
+                "why": "Port 21 carries the commands, while a separate data connection carries the file itself."
+              },
+              {
+                "q": "Why is SSH preferred over Telnet?",
+                "options": [
+                  "It encrypts the session, including the password",
+                  "It uses fewer packets",
+                  "It works without a network",
+                  "It is older"
+                ],
+                "answer": 0,
+                "why": "Telnet sends everything in the clear, which anyone on the path can read."
+              },
+              {
+                "q": "Which statement about these applications is NOT correct?",
+                "options": [
+                  "LDAP holds directory information such as users",
+                  "FTP uses one connection for both commands and data",
+                  "DHCP leases IP configuration automatically",
+                  "SNMP is used for network management"
+                ],
+                "answer": 1,
+                "why": "FTP keeps control and data on separate connections, which is why firewalls need special handling."
+              },
+              {
+                "q": "What does SNMP use to report an event without being asked?",
+                "options": [
+                  "A token",
+                  "A ping",
+                  "A trap",
+                  "A cookie"
+                ],
+                "answer": 2,
+                "why": "An agent sends a trap to the manager when something happens, instead of waiting to be polled."
+              },
+              {
+                "q": "Which service hands out an IP address automatically when a device joins a network?",
+                "options": [
+                  "SNMP",
+                  "SMTP",
+                  "DNS",
+                  "DHCP"
+                ],
+                "answer": 3,
+                "why": "DHCP leases an address, a mask, a gateway and usually the DNS server to use."
+              }
+            ],
+            "examTip": "Give one line each on FTP, Telnet, SSH, DHCP, LDAP and SNMP, with a port number where there is one.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MV-T06",
@@ -1079,7 +2651,70 @@
               "kind": "subtopic",
               "definition": "IDS and IPS watch for attacks, while VPN tunnels carry private traffic over public networks."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Network security protects data while it travels. The goals are confidentiality, integrity, availability and authentication, and the attacks against them are interception, modification, masquerading and denial of service. A firewall sits between two networks and controls what passes, by packet filtering, stateful inspection or acting as an application proxy. Intrusion detection and prevention systems watch traffic for attack patterns and can act on what they find. A virtual private network carries private traffic across a public network inside an encrypted tunnel.",
+            "example": "A college firewall blocks traffic to known command and control addresses. Its intrusion detection system raises an alert when a lab machine starts scanning the network.",
+            "quiz": [
+              {
+                "q": "Which goal is attacked when someone reads data they should not see?",
+                "options": [
+                  "Confidentiality",
+                  "Authentication",
+                  "Accounting",
+                  "Availability"
+                ],
+                "answer": 0,
+                "why": "Confidentiality means keeping the data readable only by those allowed to read it."
+              },
+              {
+                "q": "Which firewall method tracks the state of every connection?",
+                "options": [
+                  "Packet filtering",
+                  "Stateful inspection",
+                  "Application proxy",
+                  "NAT"
+                ],
+                "answer": 1,
+                "why": "Stateful inspection remembers which connections were opened and admits their replies."
+              },
+              {
+                "q": "Which statement about network security is NOT correct?",
+                "options": [
+                  "A VPN encrypts traffic across a public network",
+                  "An IDS watches for attack patterns",
+                  "A firewall can only block traffic, never log it",
+                  "Denial of service attacks availability"
+                ],
+                "answer": 2,
+                "why": "Logging is a standard firewall function, and the logs are what make an incident review possible."
+              },
+              {
+                "q": "What does a VPN provide?",
+                "options": [
+                  "More IP addresses",
+                  "A domain name",
+                  "Faster routing",
+                  "An encrypted tunnel over a public network"
+                ],
+                "answer": 3,
+                "why": "The tunnel hides the contents, and often the real addresses, from anyone on the public path."
+              },
+              {
+                "q": "Masquerading is an attack on which goal?",
+                "options": [
+                  "Authentication",
+                  "Availability",
+                  "Throughput",
+                  "Bandwidth"
+                ],
+                "answer": 0,
+                "why": "Pretending to be someone else defeats authentication, which is about proving identity."
+              }
+            ],
+            "examTip": "Match the four goals against the four attack types in a table, then add a line on firewalls, IDS and VPNs.",
+            "verified": false
+          }
         },
         {
           "id": "CSCA421-MV-T07",
@@ -1129,7 +2764,70 @@
               "kind": "subtopic",
               "definition": "Symmetric is fast but needs key distribution, asymmetric solves distribution but is slow, so both are combined in TLS."
             }
-          ]
+          ],
+          "card": {
+            "explanation": "Cryptography turns a plaintext into a ciphertext with a key, and only the right key turns it back. Symmetric schemes such as DES, 3DES and AES use the same secret key both ways. They are fast, but the key has to be shared first. Asymmetric schemes such as RSA and elliptic curve cryptography use a public and a private key, which solves key distribution and also allows signatures. A digital signature is a hash encrypted with the private key, and a certificate authority vouches for the public key. Hash functions such as the SHA family compress a message into a fixed digest.",
+            "example": "Visiting a bank site, the browser checks the site certificate, agrees a key with asymmetric cryptography, then switches to AES for the session. That mix is what TLS does.",
+            "quiz": [
+              {
+                "q": "Which type of cryptography uses the same key to encrypt and decrypt?",
+                "options": [
+                  "Asymmetric",
+                  "Symmetric",
+                  "Hashing",
+                  "Steganography"
+                ],
+                "answer": 1,
+                "why": "One shared secret key does both jobs, which is fast but needs a safe way to share it."
+              },
+              {
+                "q": "What is a digital signature?",
+                "options": [
+                  "A password stored on the server",
+                  "A scanned image of a signature",
+                  "A hash encrypted with the sender's private key",
+                  "The message encrypted twice"
+                ],
+                "answer": 2,
+                "why": "Anyone with the public key can check the hash, which proves origin and integrity together."
+              },
+              {
+                "q": "Which statement about cryptography is NOT correct?",
+                "options": [
+                  "A certificate authority vouches for a public key",
+                  "AES is a symmetric algorithm",
+                  "RSA is an asymmetric algorithm",
+                  "A hash can be reversed to recover the message"
+                ],
+                "answer": 3,
+                "why": "A hash is one way by design, which is why it proves integrity but cannot be undone."
+              },
+              {
+                "q": "Why does TLS use both kinds of cryptography?",
+                "options": [
+                  "Asymmetric solves key exchange, symmetric is fast for bulk data",
+                  "Because the browser requires it",
+                  "To use two keys at once for extra safety",
+                  "Because one is free and the other is not"
+                ],
+                "answer": 0,
+                "why": "The slow asymmetric step agrees a key, then the fast symmetric one carries the data."
+              },
+              {
+                "q": "Which key does a sender use to create a digital signature?",
+                "options": [
+                  "Their public key",
+                  "Their private key",
+                  "The receiver's public key",
+                  "A shared session key"
+                ],
+                "answer": 1,
+                "why": "Only the holder of the private key could have made it, and that is what proves the origin."
+              }
+            ],
+            "examTip": "Define plaintext, ciphertext, key and hash, then contrast symmetric with asymmetric and say why TLS mixes them.",
+            "verified": false
+          }
         }
       ]
     }

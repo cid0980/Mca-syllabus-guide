@@ -44,6 +44,7 @@
 			<div class="gutter actions">
 				<a class="btn btn--primary" href={`/feed/${encodeURIComponent(data.code)}/I`}>Start studying</a>
 				<a class="btn btn--secondary" href={`/quiz/${encodeURIComponent(data.code)}/I`}>Quiz me</a>
+				<a class="btn btn--secondary" href={`/exam/${encodeURIComponent(data.code)}/I`}>Exam mode</a>
 			</div>
 		{:else}
 			<div class="gutter actions">
@@ -53,7 +54,8 @@
 				<p class="notice-title">Definitions ready, cards pending</p>
 				<p class="notice-text">
 					Every topic and subtopic of {data.code} is stored with its own definition and is readable
-					now. Swipe cards with examples, quizzes and exam tips are generated in build step 5.
+					now. Cards with explanations, examples, quizzes and exam tips appear here as they are
+					written.
 				</p>
 			</aside>
 		{/if}
@@ -118,12 +120,15 @@
 
 	.actions {
 		display: flex;
+		flex-wrap: wrap;
 		gap: var(--sp-2);
 		padding-top: var(--sp-4);
 	}
 
+	/* basis keeps three buttons on one line where they fit and wraps them where they do not,
+	   so the row can never overflow or squash the labels together */
 	.actions .btn {
-		flex: 1;
+		flex: 1 1 7.5rem;
 	}
 
 	.notice {
