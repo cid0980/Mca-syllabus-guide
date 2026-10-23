@@ -10,6 +10,8 @@ export const KEYS = {
 	streak: 'sf:streak',
 	settings: 'sf:settings',
 	lastOpened: 'sf:lastOpened',
+	/** which daily reminder slots have already fired — see $lib/reminders.ts */
+	reminder: 'sf:reminder',
 	ai: 'sf:ai',
 	/** finished quiz runs; also written by $lib/quiz.ts, which uses this same key */
 	quiz: 'sf:quiz'

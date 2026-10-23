@@ -7,9 +7,13 @@
 	import { goto } from '$app/navigation';
 	import BottomNav from '$lib/components/BottomNav.svelte';
 	import { hydrateAll } from '$lib/stores/hydrate';
+	import { initReminders } from '$lib/reminders';
 
 	onMount(async () => {
 		hydrateAll();
+
+		// after hydration, so the reminder reads the stored settings and today's progress
+		initReminders();
 
 		/**
 		 * Offline shell fallback.

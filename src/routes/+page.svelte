@@ -6,6 +6,7 @@
 	import { progress, percentSeenByIds, streak } from '$lib/stores/progress';
 	import { lastOpened } from '$lib/stores/lastOpened';
 	import { hydrated } from '$lib/stores/hydrate';
+	import DailyGoalCard from '$lib/components/DailyGoalCard.svelte';
 
 	let semester = 1;
 
@@ -80,6 +81,8 @@
 			<span class="story-label">All</span>
 		</a>
 	</div>
+
+	<DailyGoalCard />
 
 	<!-- only a real study action sets this, so it never points at a deck that was only opened -->
 	{#if $hydrated && $lastOpened}

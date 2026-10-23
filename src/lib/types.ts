@@ -30,4 +30,30 @@ export interface StreakState {
 /** Stored under `sf:settings`. */
 export interface Settings {
 	theme: 'dark' | 'light' | 'system';
+	reminder: ReminderSettings;
+}
+
+/**
+ * The daily study reminder.
+ *
+ * `hour`/`minute` is the local time of the first nudge of the day. After it fires the reminder
+ * repeats every `repeatHours` hours until the goal is met or the day runs out (the last slot is
+ * 23:00), so `repeatHours: 0` means exactly one nudge.
+ */
+export interface ReminderSettings {
+	enabled: boolean;
+	hour: number;
+	minute: number;
+	/** Cards to mark as read before the day counts as done. */
+	goal: number;
+	repeatHours: number;
+}
+
+/**
+ * Stored under `sf:reminder`. Which slots have already fired today, so a reload (or the service
+ * worker waking up) does not send the same nudge twice.
+ */
+export interface ReminderState {
+	day: string;
+	fired: number[];
 }

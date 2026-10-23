@@ -23,6 +23,7 @@
 	import ListRow from '$lib/components/ListRow.svelte';
 	import BackupPanel from '$lib/components/BackupPanel.svelte';
 	import { hydrated } from '$lib/stores/hydrate';
+	import ReminderPanel from '$lib/components/ReminderPanel.svelte';
 
 	const themes = [
 		{ value: 'dark' as const, label: 'Dark', icon: Moon },
@@ -310,6 +311,9 @@
 			</button>
 		{/each}
 	</div>
+
+	<p class="section-label">Daily reminder</p>
+	<ReminderPanel notify={(message) => notify(message)} />
 
 	<p class="section-label">Your data in this browser</p>
 	<div class="group">

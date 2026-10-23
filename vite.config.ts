@@ -29,7 +29,12 @@ export default defineConfig({
 		SvelteKitPWA({
 			registerType: 'autoUpdate',
 			manifest: false, // Using static/manifest.webmanifest directly
-			workbox: {
+			// A hand-written worker (src/service-worker.ts) instead of a generated one, because the
+			// daily reminder needs push / notificationclick / periodicsync handlers of its own.
+			strategies: 'injectManifest',
+			srcDir: 'src',
+			filename: 'service-worker.ts',
+			injectManifest: {
 				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,webmanifest,json}']
 			},
 			// the dev service worker intercepts every request and makes navigation feel slow,

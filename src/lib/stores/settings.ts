@@ -1,10 +1,16 @@
-/** App settings. key `sf:settings` -> { theme }. Theme is applied pre-paint by src/app.html. */
+/**
+ * App settings. key `sf:settings` -> { theme, reminder }.
+ * Theme is applied pre-paint by src/app.html.
+ */
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
-import type { Settings } from '$lib/types';
+import type { ReminderSettings, Settings } from '$lib/types';
 import { KEYS, readJSON, writeJSON } from '$lib/storage';
 
-const DEFAULTS: Settings = { theme: 'system' };
+const DEFAULTS: Settings = {
+	theme: 'system',
+	reminder: { enabled: false, hour: 21, minute: 0, goal: 2, repeatHours: 2 }
+};
 
 export const settings = writable<Settings>(DEFAULTS);
 
@@ -13,7 +19,9 @@ let ready = false;
 export function initSettings(): void {
 	if (!browser || ready) return;
 	ready = true;
-	const stored = readJSON<Settings>(KEYS.settings, DEFAULTS);
+	// settings written before reminders existed have no `reminder` key, so fill the defaults in
+	const stored = { ...DEFAULTS, ...readJSON<Partial<Settings>>(KEYS.settings, {}) };
+	stored.reminder = { ...DEFAULTS.reminder, ...(stored.reminder ?? {}) };
 	settings.set(stored);
 	applyTheme(stored.theme);
 	settings.subscribe((v) => {
@@ -32,6 +40,10 @@ export function applyTheme(theme: Settings['theme']): void {
 
 export function setTheme(theme: Settings['theme']): void {
 	settings.update((s) => ({ ...s, theme }));
+}
+
+export function setReminder(patch: Partial<ReminderSettings>): void {
+	settings.update((s) => ({ ...s, reminder: { ...s.reminder, ...patch } }));
 }
 
 /** Resolved theme actually on screen right now. */
