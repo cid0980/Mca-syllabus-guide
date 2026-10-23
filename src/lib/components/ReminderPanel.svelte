@@ -48,10 +48,22 @@
 
 	$: timeValue = `${String(cfg.hour).padStart(2, '0')}:${String(cfg.minute).padStart(2, '0')}`;
 
+	/** The whole day's schedule, for the summary line under the switch. */
 	$: slotTimes = slotsForDay(cfg, new Date()).map(
 		(d) =>
 			d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
 	);
+
+	/** "9:00 PM, 10:00 PM and 11:00 PM" — reads as a sentence, not a list dump. */
+	$: schedule =
+		slotTimes.length > 1
+			? `${slotTimes.slice(0, -1).join(', ')} and ${slotTimes[slotTimes.length - 1]}`
+			: (slotTimes[0] ?? '');
+
+	/** The slot still to come, or null when the goal is met or the day has run out of slots. */
+	$: nextLabel = $today.nextNudgeAt
+		? $today.nextNudgeAt.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
+		: null;
 
 	function onTime(event: Event) {
 		const value = (event.currentTarget as HTMLInputElement).value;
@@ -112,7 +124,7 @@
 				<span class="row-title">Daily reminder</span>
 				<span class="row-sub">
 					{#if cfg.enabled}
-						{cfg.goal === 1 ? '1 card a day' : `${cfg.goal} cards a day`}, nudging at {slotTimes.join(' and ')}
+						{cfg.goal === 1 ? '1 card a day' : `${cfg.goal} cards a day`}, nudging at {schedule}
 					{:else}
 						Off. A nudge at your set time until the daily goal is met.
 					{/if}
@@ -199,10 +211,16 @@
 				{#if $today.met}
 					<CircleCheck size={14} />
 					<span>Goal met for today. No more nudges until tomorrow.</span>
+				{:else if nextLabel}
+					<BellRing size={14} />
+					<span>
+						{$today.done} of {cfg.goal} cards read today. Next nudge at {nextLabel}{#if slotTimes.length > 1}, then again until the goal is met.{/if}
+					</span>
 				{:else}
 					<BellRing size={14} />
 					<span>
-						{$today.done} of {cfg.goal} cards read today. Next nudge at {slotTimes[0]}{#if slotTimes.length > 1}, then again until the goal is met.{/if}
+						{$today.done} of {cfg.goal} cards read today. Today's nudges have all gone — the
+						banner on Home still shows where you stand.
 					</span>
 				{/if}
 			</p>
